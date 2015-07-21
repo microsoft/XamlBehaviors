@@ -6,32 +6,31 @@
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tga;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
     <Filter Include="Resource Files\en-us">
-      <UniqueIdentifier>{9ce9dc75-be5c-4726-83f2-35abf19e49a1}</UniqueIdentifier>
+      <UniqueIdentifier>{e3612b44-636f-480d-b6e3-e66a155376d5}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Microsoft.Xaml.Interactivity.cpp" />
-    <ClCompile Include="pch.cpp" />
     <ClCompile Include="ActionCollection.cpp" />
     <ClCompile Include="BehaviorCollection.cpp" />
-    <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="Interaction.cpp" />
+    <ClCompile Include="pch.cpp" />
     <ClCompile Include="VisualStateUtilities.cpp" />
+    <ClCompile Include="Microsoft.Xaml.Interactivity.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Microsoft.Xaml.Interactivity.h" />
-    <ClInclude Include="pch.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="ActionCollection.h" />
     <ClInclude Include="BehaviorCollection.h" />
     <ClInclude Include="IAction.h" />
     <ClInclude Include="IBehavior.h" />
     <ClInclude Include="Interaction.h" />
+    <ClInclude Include="pch.h" />
     <ClInclude Include="ResourceHelper.h" />
     <ClInclude Include="VisualStateUtilities.h" />
+    <ClInclude Include="Microsoft.Xaml.Interactivity.h" />
   </ItemGroup>
   <ItemGroup>
-    <PRIResource Include="Resources\en-US\Strings.resw">
+    <PRIResource Include="..\Microsoft.Xaml.Interactions\Resources\en-US\Strings.resw">
       <Filter>Resource Files\en-us</Filter>
     </PRIResource>
   </ItemGroup>

@@ -5,14 +5,42 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tga;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Resource Files\en-us">
+      <UniqueIdentifier>{73ebd3b4-24ea-4852-b1c5-ed658141c291}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Microsoft.Xaml.Interactions.cpp" />
     <ClCompile Include="pch.cpp" />
+    <ClCompile Include="ControlStoryboardAction.cpp" />
+    <ClCompile Include="NavigateToPageAction.cpp" />
+    <ClCompile Include="PlaySoundAction.cpp" />
+    <ClCompile Include="EventManager.cpp" />
+    <ClCompile Include="EventTriggerBehavior.cpp" />
+    <ClCompile Include="GoToStateAction.cpp" />
+    <ClCompile Include="IncrementalUpdateBehavior.cpp" />
+    <ClCompile Include="InvokeCommandAction.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Microsoft.Xaml.Interactions.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="InvokeCommandAction.h" />
+    <ClInclude Include="NavigateToPageAction.h" />
+    <ClInclude Include="PlaySoundAction.h" />
+    <ClInclude Include="ResourceHelper.h" />
+    <ClInclude Include="ControlStoryboardAction.h" />
+    <ClInclude Include="ControlStoryboardOption.h" />
+    <ClInclude Include="EventManager.h" />
+    <ClInclude Include="EventTriggerBehavior.h" />
+    <ClInclude Include="GoToStateAction.h" />
+    <ClInclude Include="IncrementalUpdateBehavior.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="resource1.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="..\Microsoft.Xaml.Interactivity\Resources\en-US\Strings.resw">
+      <Filter>Resource Files\en-us</Filter>
+    </PRIResource>
   </ItemGroup>
 </Project>
