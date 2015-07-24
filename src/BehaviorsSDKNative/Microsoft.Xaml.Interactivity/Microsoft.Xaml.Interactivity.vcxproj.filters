@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tga;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Resource Files\en-us">
+      <UniqueIdentifier>{e3612b44-636f-480d-b6e3-e66a155376d5}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ActionCollection.cpp" />
+    <ClCompile Include="BehaviorCollection.cpp" />
+    <ClCompile Include="Interaction.cpp" />
+    <ClCompile Include="pch.cpp" />
+    <ClCompile Include="VisualStateUtilities.cpp" />
+    <ClCompile Include="Microsoft.Xaml.Interactivity.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="ActionCollection.h" />
+    <ClInclude Include="BehaviorCollection.h" />
+    <ClInclude Include="IAction.h" />
+    <ClInclude Include="IBehavior.h" />
+    <ClInclude Include="Interaction.h" />
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="ResourceHelper.h" />
+    <ClInclude Include="VisualStateUtilities.h" />
+    <ClInclude Include="Microsoft.Xaml.Interactivity.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="..\Microsoft.Xaml.Interactions\Resources\en-US\Strings.resw">
+      <Filter>Resource Files\en-us</Filter>
+    </PRIResource>
+  </ItemGroup>
+</Project>
