@@ -1,6 +1,5 @@
-// -------------------------------------------------------------------
-// Copyright (c) Microsoft Corporation. All Rights Reserved.
-// -------------------------------------------------------------------
+// Copyright (c) Microsoft. All rights reserved.
+// Licensed under the MIT license. See LICENSE file in the project root for full license information.
 #pragma warning(disable: 6298)
 #include "pch.h"
 #include "EventTriggerBehavior.h"

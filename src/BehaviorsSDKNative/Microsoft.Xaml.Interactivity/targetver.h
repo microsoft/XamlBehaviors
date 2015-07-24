@@ -1,5 +1,8 @@
 ﻿#pragma once
 
+// Copyright (c) Microsoft. All rights reserved.
+// Licensed under the MIT license. See LICENSE file in the project root for full license information.
+
 // Including SDKDDKVer.h defines the highest available Windows platform.
 
 // If you wish to build your application for a previous Windows platform, include WinSDKVer.h and
