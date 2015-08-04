@@ -30,7 +30,7 @@
     <ProjectGuid>{eaf5de54-6367-456a-8012-76775f514c5e}</ProjectGuid>
     <Keyword>DynamicLibrary</Keyword>
     <ProjectName>Microsoft.Xaml.Interactions</ProjectName>
-    <RootNamespace>Microsoft_Xaml_Interactions</RootNamespace>
+    <RootNamespace>Microsoft.Xaml.Interactions</RootNamespace>
     <DefaultLanguage>en-US</DefaultLanguage>
     <MinimumVisualStudioVersion>14.0</MinimumVisualStudioVersion>
     <AppContainerApplication>true</AppContainerApplication>
