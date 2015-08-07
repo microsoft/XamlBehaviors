@@ -16,13 +16,15 @@
   </metadata>
   
   <files>
-      <file target="lib\uap10.0\Microsoft.Xaml.Interactivity.winmd"                      src="..\src\BehaviorsSDKNative\Release\Microsoft.Xaml.Interactivity\Microsoft.Xaml.Interactivity.winmd" />
-	  <file target="lib\uap10.0\Microsoft.Xaml.Interactivity.xml"                      src="..\src\BehaviorsSDKNative\Release\Microsoft.Xaml.Interactivity\Microsoft.Xaml.Interactivity.xml" />
-	  <file target="lib\uap10.0\Microsoft.Xaml.Interactions.winmd"                       src="..\src\BehaviorsSDKNative\Release\Microsoft.Xaml.Interactions\Microsoft.Xaml.Interactions.winmd" />
-	  <file target="lib\uap10.0\Microsoft.Xaml.Interactions.xml"                       src="..\src\BehaviorsSDKNative\Release\Microsoft.Xaml.Interactions\Microsoft.Xaml.Interactions.xml" />
+      <file target="lib\uap10.0\Microsoft.Xaml.Interactivity.winmd"                      			 src="..\src\BehaviorsSDKNative\Release\Microsoft.Xaml.Interactivity\Microsoft.Xaml.Interactivity.winmd" />
+	  <file target="lib\uap10.0\Microsoft.Xaml.Interactivity.xml"                      				 src="..\src\BehaviorsSDKNative\Release\Microsoft.Xaml.Interactivity\Microsoft.Xaml.Interactivity.xml" />
+	  <file target="lib\uap10.0\Microsoft.Xaml.Interactions.winmd"                       			 src="..\src\BehaviorsSDKNative\Release\Microsoft.Xaml.Interactions\Microsoft.Xaml.Interactions.winmd" />
+	  <file target="lib\uap10.0\Microsoft.Xaml.Interactions.xml"                       				 src="..\src\BehaviorsSDKNative\Release\Microsoft.Xaml.Interactions\Microsoft.Xaml.Interactions.xml" />
 	  
-	  <file target="lib\uap10.0\en\Microsoft.Xaml.Interactivity.xml"                      src="..\src\BehaviorsSDKNative\Release\Microsoft.Xaml.Interactivity\Microsoft.Xaml.Interactivity.xml" />
-	  <file target="lib\uap10.0\en\Microsoft.Xaml.Interactions.xml"                       src="..\src\BehaviorsSDKNative\Release\Microsoft.Xaml.Interactions\Microsoft.Xaml.Interactions.xml" />
+	  <file target="lib\uap10.0\en\ Microsoft.Xaml.Interactivity.xml"                      			 src="..\src\BehaviorsSDKNative\Release\Microsoft.Xaml.Interactivity\Microsoft.Xaml.Interactivity.xml" />
+	  <file target="lib\uap10.0\en\Microsoft.Xaml.Interactions.xml"                       			 src="..\src\BehaviorsSDKNative\Release\Microsoft.Xaml.Interactions\Microsoft.Xaml.Interactions.xml" />
+	  
+	  <file target="build\native\BehaviorsSDK-Native.targets"										 src="BehaviorsSDK-Native.targets" />
 	  
 	  <file target="runtimes\win10-x86\native\Microsoft.Xaml.Interactivity.dll"                      src="..\src\BehaviorsSDKNative\Release\Microsoft.Xaml.Interactivity\Microsoft.Xaml.Interactivity.dll" />
 	  <file target="runtimes\win10-x86\native\Microsoft.Xaml.Interactivity.pri"                      src="..\src\BehaviorsSDKNative\Release\Microsoft.Xaml.Interactivity\Microsoft.Xaml.Interactivity.pri" />
