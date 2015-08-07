@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>BehaviorsSDK-Managed</id>
+    <version>1.0.0</version>
+	<title>Behaviors SDK (Managed)</title>
+    <authors>Microsoft</authors>
+    <owners>Microsoft</owners>
+	<requireLicenseAcceptance>true</requireLicenseAcceptance>
+	<description>Visual Studio Behaviors SDK, managed code version. Now OSS!</description>
+    <licenseUrl>https://github.com/Microsoft/XamlBehaviors/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/Microsoft/XamlBehaviors</projectUrl>
+    <releaseNotes>Initial release to open source.</releaseNotes>
+    <copyright>Copyright © Microsoft Corporation</copyright>
+    <tags>Behavior Action Behaviors Actions Blend Managed C#</tags>
+  </metadata>
+  
+  <files>
+      <file target="lib\uap10.0\Microsoft.Xaml.Interactivity.dll"                      src="..\src\BehaviorsSDKManaged\Microsoft.Xaml.Interactions\bin\Release\Microsoft.Xaml.Interactivity.dll" />
+	  <file target="lib\uap10.0\Microsoft.Xaml.Interactivity.pri"                      src="..\src\BehaviorsSDKManaged\Microsoft.Xaml.Interactions\bin\Release\Microsoft.Xaml.Interactivity.pri" />
+	  <file target="lib\uap10.0\Microsoft.Xaml.Interactions.dll"                       src="..\src\BehaviorsSDKManaged\Microsoft.Xaml.Interactions\bin\Release\Microsoft.Xaml.Interactions.dll" />
+	  <file target="lib\uap10.0\Microsoft.Xaml.Interactions.pri"                       src="..\src\BehaviorsSDKManaged\Microsoft.Xaml.Interactions\bin\Release\Microsoft.Xaml.Interactions.pri" />
+	  
+	  <file target="lib\uap10.0\Microsoft.Xaml.Interactivity\Properties\Microsoft.Xaml.Interactivity.rd.xml"                     src="..\src\BehaviorsSDKManaged\Microsoft.Xaml.Interactivity\Properties\Microsoft.Xaml.Interactivity.rd.xml" />
+	  <file target="lib\uap10.0\Microsoft.Xaml.Interactions\Properties\Microsoft.Xaml.Interactions.rd.xml"                       src="..\src\BehaviorsSDKManaged\Microsoft.Xaml.Interactions\Properties\Microsoft.Xaml.Interactions.rd.xml" />
+  </files>
+  
+</package>

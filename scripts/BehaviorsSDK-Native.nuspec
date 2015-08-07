@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>BehaviorsSDK-Native</id>
+    <version>1.0.0</version>
+	<title>Behaviors SDK (Native)</title>
+    <authors>Microsoft</authors>
+    <owners>Microsoft</owners>
+	<requireLicenseAcceptance>true</requireLicenseAcceptance>
+	<description>Visual Studio Behaviors SDK, native code version. Now OSS!</description>
+    <licenseUrl>https://github.com/Microsoft/XamlBehaviors/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/Microsoft/XamlBehaviors</projectUrl>
+    <releaseNotes>Initial release to open source.</releaseNotes>
+    <copyright>Copyright © Microsoft Corporation</copyright>
+    <tags>Behavior Action Behaviors Actions Blend Native C++</tags>
+  </metadata>
+  
+  <files>
+      <file target="lib\uap10.0\Microsoft.Xaml.Interactivity.winmd"                      			 src="..\src\BehaviorsSDKNative\Release\Microsoft.Xaml.Interactivity\Microsoft.Xaml.Interactivity.winmd" />
+	  <file target="lib\uap10.0\Microsoft.Xaml.Interactivity.xml"                      				 src="..\src\BehaviorsSDKNative\Release\Microsoft.Xaml.Interactivity\Microsoft.Xaml.Interactivity.xml" />
+	  <file target="lib\uap10.0\Microsoft.Xaml.Interactions.winmd"                       			 src="..\src\BehaviorsSDKNative\Release\Microsoft.Xaml.Interactions\Microsoft.Xaml.Interactions.winmd" />
+	  <file target="lib\uap10.0\Microsoft.Xaml.Interactions.xml"                       				 src="..\src\BehaviorsSDKNative\Release\Microsoft.Xaml.Interactions\Microsoft.Xaml.Interactions.xml" />
+	  
+	  <file target="lib\uap10.0\en\ Microsoft.Xaml.Interactivity.xml"                      			 src="..\src\BehaviorsSDKNative\Release\Microsoft.Xaml.Interactivity\Microsoft.Xaml.Interactivity.xml" />
+	  <file target="lib\uap10.0\en\Microsoft.Xaml.Interactions.xml"                       			 src="..\src\BehaviorsSDKNative\Release\Microsoft.Xaml.Interactions\Microsoft.Xaml.Interactions.xml" />
+	  
+	  <file target="build\native\BehaviorsSDK-Native.targets"										 src="BehaviorsSDK-Native.targets" />
+	  
+	  <file target="runtimes\win10-x86\native\Microsoft.Xaml.Interactivity.dll"                      src="..\src\BehaviorsSDKNative\Release\Microsoft.Xaml.Interactivity\Microsoft.Xaml.Interactivity.dll" />
+	  <file target="runtimes\win10-x86\native\Microsoft.Xaml.Interactivity.pri"                      src="..\src\BehaviorsSDKNative\Release\Microsoft.Xaml.Interactivity\Microsoft.Xaml.Interactivity.pri" />
+	  <file target="runtimes\win10-x86\native\Microsoft.Xaml.Interactions.dll"                       src="..\src\BehaviorsSDKNative\Release\Microsoft.Xaml.Interactions\Microsoft.Xaml.Interactions.dll" />
+	  <file target="runtimes\win10-x86\native\Microsoft.Xaml.Interactions.pri"                       src="..\src\BehaviorsSDKNative\Release\Microsoft.Xaml.Interactions\Microsoft.Xaml.Interactions.pri" />
+	  
+	  <file target="runtimes\win10-x64\native\Microsoft.Xaml.Interactivity.dll"                      src="..\src\BehaviorsSDKNative\x64\Release\Microsoft.Xaml.Interactivity\Microsoft.Xaml.Interactivity.dll" />
+	  <file target="runtimes\win10-x64\native\Microsoft.Xaml.Interactivity.pri"                      src="..\src\BehaviorsSDKNative\x64\Release\Microsoft.Xaml.Interactivity\Microsoft.Xaml.Interactivity.pri" />
+	  <file target="runtimes\win10-x64\native\Microsoft.Xaml.Interactions.dll"                       src="..\src\BehaviorsSDKNative\x64\Release\Microsoft.Xaml.Interactions\Microsoft.Xaml.Interactions.dll" />
+	  <file target="runtimes\win10-x64\native\Microsoft.Xaml.Interactions.pri"                       src="..\src\BehaviorsSDKNative\x64\Release\Microsoft.Xaml.Interactions\Microsoft.Xaml.Interactions.pri" />
+	  
+	  <file target="runtimes\win10-arm\native\Microsoft.Xaml.Interactivity.dll"                      src="..\src\BehaviorsSDKNative\ARM\Release\Microsoft.Xaml.Interactivity\Microsoft.Xaml.Interactivity.dll" />
+	  <file target="runtimes\win10-arm\native\Microsoft.Xaml.Interactivity.pri"                      src="..\src\BehaviorsSDKNative\ARM\Release\Microsoft.Xaml.Interactivity\Microsoft.Xaml.Interactivity.pri" />
+	  <file target="runtimes\win10-arm\native\Microsoft.Xaml.Interactions.dll"                       src="..\src\BehaviorsSDKNative\ARM\Release\Microsoft.Xaml.Interactions\Microsoft.Xaml.Interactions.dll" />
+	  <file target="runtimes\win10-arm\native\Microsoft.Xaml.Interactions.pri"                       src="..\src\BehaviorsSDKNative\ARM\Release\Microsoft.Xaml.Interactions\Microsoft.Xaml.Interactions.pri" />
+  </files>
+</package>

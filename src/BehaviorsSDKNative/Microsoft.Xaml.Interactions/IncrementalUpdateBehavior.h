@@ -26,7 +26,7 @@ namespace Microsoft { namespace Xaml { namespace Interactions { namespace Core
 			class UIElementComparator
 			{
 			public:
-				bool operator()(const ::Windows::UI::Xaml::UIElement^ x, const ::Windows::UI::Xaml::UIElement^ y) { return reinterpret_cast<const void*>(x) < reinterpret_cast<const void*>(y); }
+				bool operator()(const ::Windows::UI::Xaml::UIElement^ x, const ::Windows::UI::Xaml::UIElement^ y) const { return reinterpret_cast<const void*>(x) < reinterpret_cast<const void*>(y); }
 			};
 
 			class PhasedElementRecord
