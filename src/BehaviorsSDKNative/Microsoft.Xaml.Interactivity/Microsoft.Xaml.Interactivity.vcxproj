@@ -141,6 +141,7 @@
     <ClCompile>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <GenerateXMLDocumentationFiles>true</GenerateXMLDocumentationFiles>
+      <PreprocessorDefinitions>_WINRT_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <!-- <CompileAsWinRT>false</CompileAsWinRT> -->
     </ClCompile>
     <Link>
@@ -154,6 +155,7 @@
     <ClCompile>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <GenerateXMLDocumentationFiles>true</GenerateXMLDocumentationFiles>
+      <PreprocessorDefinitions>_WINRT_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <!-- <CompileAsWinRT>false</CompileAsWinRT> -->
     </ClCompile>
     <Link>
@@ -167,6 +169,7 @@
     <ClCompile>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <GenerateXMLDocumentationFiles>true</GenerateXMLDocumentationFiles>
+      <PreprocessorDefinitions>_WINRT_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <!-- <CompileAsWinRT>false</CompileAsWinRT> -->
     </ClCompile>
     <Link>
@@ -180,6 +183,7 @@
     <ClCompile>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <GenerateXMLDocumentationFiles>true</GenerateXMLDocumentationFiles>
+      <PreprocessorDefinitions>_WINRT_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <!-- <CompileAsWinRT>false</CompileAsWinRT> -->
     </ClCompile>
     <Link>
@@ -193,6 +197,7 @@
     <ClCompile>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <GenerateXMLDocumentationFiles>true</GenerateXMLDocumentationFiles>
+      <PreprocessorDefinitions>_WINRT_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <!-- <CompileAsWinRT>false</CompileAsWinRT> -->
     </ClCompile>
     <Link>
