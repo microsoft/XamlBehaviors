@@ -23,14 +23,14 @@ Getting Started
 Code Example
 ------------
 For an example of using Behaviors in an application, here is a snippet of XAML:
-
+```xml
     <Button x:Name="button" Content=Click Me">
 	    <Interactivity:Interaction.Behaviors>
 		    <Core:EventTriggerBehavior EventName="Click"
 		    SourceObject="{Binding ElementName=button}"/>
 	    </Interactivity:Interaction.Behaviors>
     </Button>
-
+```
 Using Behaviors SDK
 -------------------
 The [documentation](https://github.com/Microsoft/XamlBehaviors/wiki) explains how to install Visual Studio, add the Behaviors SDK NuGet package to your project, and get started using the API.
