@@ -1,6 +1,6 @@
 ﻿// Copyright (c) Microsoft. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
-namespace Microsoft.Xaml.Interactions
+namespace Microsoft.Xaml.Interactions.Core
 {
     using Windows.UI.Xaml;
     using Windows.UI.Xaml.Controls;
