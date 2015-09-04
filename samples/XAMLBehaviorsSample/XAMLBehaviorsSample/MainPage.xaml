@@ -1,0 +1,68 @@
+﻿<Page
+    x:Class="XAMLBehaviorsSample.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:XAMLBehaviorsSample"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{StaticResource DarkGreyBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="9*" />
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Text="XAML Behaviors Sample" Foreground="{StaticResource PaleGreyBrush}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="66.667"/>
+        <RelativePanel Grid.Row="1">
+            <Rectangle Fill="{StaticResource PinkBrush}" Height="5" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWith="" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignTopWithPanel="True"/>
+            <Rectangle x:Name="HorizontalCenter" Fill="{StaticResource PinkBrush}" Width="5" RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True"/>
+            <Rectangle x:Name="LeftSplit" Fill="{StaticResource PinkBrush}" Height="5" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWith="HorizontalCenter"/>
+            <RelativePanel RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWith="HorizontalCenter" RelativePanel.AlignBottomWith="LeftSplit" RelativePanel.AlignTopWithPanel="True">
+                <TextBlock x:Name="TriggerTitle" Text="Triggers" Foreground="{StaticResource PaleGreyBrush}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40" Margin="0,15,0,0" RelativePanel.AlignHorizontalCenterWithPanel="True"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0" RelativePanel.Below="TriggerTitle" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True" >
+                    <Button x:Name="DataTriggerButton" Content="Data Trigger" Height="175" Width="175" FontSize="26.667" Style="{StaticResource TriggerButton}" />
+                    <Button x:Name="EventTriggerButton" Content="Event Trigger" Height="175" Width="175" FontSize="26.667" Style="{StaticResource TriggerButton}"/>
+                    <Button x:Name="IncrementalUpdateButton" Content="Incremental Update" Height="175" Width="175" FontSize="26.667" Style="{StaticResource TriggerButton}" />
+                </StackPanel>
+            </RelativePanel>
+            <RelativePanel RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWith="HorizontalCenter" RelativePanel.AlignBottomWith="" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignTopWith="LeftSplit">
+                <TextBlock x:Name="CustomTitle" Text="Custom Behaviors" Foreground="{StaticResource PaleGreyBrush}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40" Margin="0,15,0,0" RelativePanel.AlignHorizontalCenterWithPanel="True"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0" RelativePanel.Below="CustomTitle" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True" >
+                    <Button x:Name="CustomTrigger" Content="Custom Trigger" Height="175" Width="175" FontSize="33.333" Style="{StaticResource TriggerButton}" />
+                    <Button x:Name="CustomAction" Content="Custom Action" Height="175" Width="175" FontSize="33.333" Style="{StaticResource TriggerButton}"/>
+                </StackPanel>
+            </RelativePanel>
+            <RelativePanel RelativePanel.AlignRightWith="" RelativePanel.AlignBottomWith="" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignTopWith="" RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignLeftWith="HorizontalCenter" RelativePanel.AlignRightWithPanel="True">
+                <TextBlock x:Name="ActionsTitle" Text="Actions" Foreground="{StaticResource PaleGreyBrush}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40" Margin="0,15,0,0" RelativePanel.AlignHorizontalCenterWithPanel="True"/>
+                <StackPanel x:Name="ChangePropertyActionStack" Orientation="Vertical" Margin="0,20,0,20" RelativePanel.Below="ActionsTitle" RelativePanel.AlignHorizontalCenterWithPanel="True" >
+                    <Button x:Name="ChangePropertyActionButton" Height="100" Width="100" FontSize="33.333" Style="{StaticResource TriggerButton}" HorizontalAlignment="Center" />
+                    <TextBlock Text="Change Property" Foreground="{StaticResource PinkBrush}" Margin="0,15,0,0" HorizontalAlignment="Center" FontSize="20" />
+                </StackPanel>
+                <StackPanel x:Name="CallMethodActionStack" Orientation="Vertical" Margin="0,20,50,20" RelativePanel.Below="ActionsTitle" RelativePanel.LeftOf="ChangePropertyActionStack" >
+                    <Button x:Name="CallMethodActionButton" Height="100" Width="100" FontSize="33.333" Style="{StaticResource TriggerButton}" HorizontalAlignment="Center" />
+                    <TextBlock Text="Call Method" Foreground="{StaticResource PinkBrush}" Margin="0,15,0,0" HorizontalAlignment="Center" FontSize="20" />
+                </StackPanel>
+                <StackPanel x:Name="ControlStoryboardActionStack" Orientation="Vertical" Margin="50,20,0,20" RelativePanel.Below="ActionsTitle" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.LeftOf="" RelativePanel.RightOf="ChangePropertyActionStack" >
+                    <Button x:Name="ControlStoryboardActionButton" Height="100" Width="100" FontSize="33.333" Style="{StaticResource TriggerButton}" HorizontalAlignment="Center" />
+                    <TextBlock Text="Control Storyboard" Foreground="{StaticResource PinkBrush}" Margin="0,15,0,0" HorizontalAlignment="Center" FontSize="20" />
+                </StackPanel>
+                <StackPanel x:Name="GoToStateActionStack" Orientation="Vertical" Margin="0,20,50,20" RelativePanel.Below="CallMethodActionStack" RelativePanel.LeftOf="InvokeCommandActionStack" >
+                    <Button x:Name="GoToStateActionButton" Height="100" Width="100" FontSize="33.333" Style="{StaticResource TriggerButton}" HorizontalAlignment="Center" />
+                    <TextBlock Text="Go To State" Foreground="{StaticResource PinkBrush}" Margin="0,15,0,0" HorizontalAlignment="Center" FontSize="20" />
+                </StackPanel>
+                <StackPanel x:Name="InvokeCommandActionStack" Orientation="Vertical" Margin="0,20,0,20" RelativePanel.Below="ChangePropertyActionStack" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.LeftOf="" >
+                    <Button x:Name="InvokeCommandActionButton" Height="100" Width="100" FontSize="33.333" Style="{StaticResource TriggerButton}" HorizontalAlignment="Center" />
+                    <TextBlock Text="Invoke Command" Foreground="{StaticResource PinkBrush}" Margin="0,15,0,0" HorizontalAlignment="Center" FontSize="20" />
+                </StackPanel>
+                <StackPanel x:Name="NavigateToPageActionStack" Orientation="Vertical" Margin="50,20,0,20" RelativePanel.Below="ControlStoryboardActionStack" RelativePanel.LeftOf="" RelativePanel.RightOf="InvokeCommandActionStack" >
+                    <Button x:Name="NavigateToPageActionButton" Height="100" Width="100" FontSize="33.333" Style="{StaticResource TriggerButton}" HorizontalAlignment="Center" />
+                    <TextBlock Text="Navigate To Page" Foreground="{StaticResource PinkBrush}" Margin="0,15,0,0" HorizontalAlignment="Center" FontSize="20" />
+                </StackPanel>
+                <StackPanel x:Name="PlaySoundActionStack" Orientation="Vertical" Margin="0,20,50,20" RelativePanel.Below="GoToStateActionStack" RelativePanel.LeftOf="InvokeCommandActionStack" >
+                    <Button x:Name="PlaySoundActionButton" Height="100" Width="100" FontSize="33.333" Style="{StaticResource TriggerButton}" HorizontalAlignment="Center" />
+                    <TextBlock Text="Play Sound" Foreground="{StaticResource PinkBrush}" Margin="0,15,0,0" HorizontalAlignment="Center" FontSize="20" />
+                </StackPanel>
+            </RelativePanel>
+        </RelativePanel>
+    </Grid>
+</Page>
