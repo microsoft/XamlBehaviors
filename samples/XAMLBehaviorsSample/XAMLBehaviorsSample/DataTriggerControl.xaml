@@ -1,0 +1,59 @@
+﻿<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:XAMLBehaviorsSample"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Interactivity="using:Microsoft.Xaml.Interactivity" xmlns:Interactions="using:Microsoft.Xaml.Interactions"
+    x:Class="XAMLBehaviorsSample.DataTriggerControl"
+    mc:Ignorable="d"
+    d:DesignHeight="600"
+    d:DesignWidth="800">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="7*" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="DataTriggerBehavior" FontSize="40" VerticalAlignment="Stretch" Foreground="{StaticResource DarkGreyBrush}" />
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="2*" />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Column="0" TextWrapping="WrapWholeWords" Margin="0,0,10,0" FontSize="20" Foreground="{StaticResource DarkGreyBrush}">
+                <TextBlock.Text>
+                    DataTriggerBehavior performs an action when the data the behaviors is bound to meets a specified condition. 
+                    In this example, when the bound data of the slider's value reaches above 50, the behavior triggers an action to change the color of the rectangle. 
+                </TextBlock.Text>
+            </TextBlock>
+            
+            <Grid Grid.Column="1" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="5*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Rectangle x:Name="DataTriggerRectangle" Grid.Row="0" Fill="{StaticResource RoyalBlueBrush}" Margin="10,0,0,0" Stroke="{StaticResource HighlightBrush}" StrokeThickness="5">
+                    <Interactivity:Interaction.Behaviors>
+                        <Interactions:DataTriggerBehavior Binding="{Binding Value, ElementName=slider}" ComparisonCondition="GreaterThan" Value="50">
+                            <Interactions:ChangePropertyAction TargetObject="{Binding ElementName=DataTriggerRectangle}" PropertyName="Fill" Value="{StaticResource PaleYellowBrush}"/>
+                        </Interactions:DataTriggerBehavior>
+                        <Interactions:DataTriggerBehavior Binding="{Binding Value, ElementName=slider}" ComparisonCondition="LessThanOrEqual" Value="50">
+                            <Interactions:ChangePropertyAction TargetObject="{Binding ElementName=DataTriggerRectangle}" PropertyName="Fill" Value="{StaticResource RoyalBlueBrush}"/>
+                        </Interactions:DataTriggerBehavior>
+                    </Interactivity:Interaction.Behaviors>
+                </Rectangle>
+                <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,0,0,0">
+                    <TextBlock Text="{Binding Value, ElementName=slider}" VerticalAlignment="Center" Margin="0,0,20,6" FontSize="26.667" Width="50" Foreground="{StaticResource DarkGreyBrush}"/>
+                    <Slider x:Name="slider" Grid.Row="1" Width="250" Margin="10,0,0,0"/>
+                </StackPanel>
+                
+
+            </Grid>
+
+        </Grid>
+    </Grid>
+</UserControl>

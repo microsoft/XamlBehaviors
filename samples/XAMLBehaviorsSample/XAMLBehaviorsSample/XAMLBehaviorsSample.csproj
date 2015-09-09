@@ -96,8 +96,38 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CallMethodControl.xaml.cs">
+      <DependentUpon>CallMethodControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChangePropertyControl.xaml.cs">
+      <DependentUpon>ChangePropertyControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ControlStoryboardControl.xaml.cs">
+      <DependentUpon>ControlStoryboardControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DataTriggerControl.xaml.cs">
+      <DependentUpon>DataTriggerControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EventTriggerControl.xaml.cs">
+      <DependentUpon>EventTriggerControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GoToStateControl.xaml.cs">
+      <DependentUpon>GoToStateControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="IncrementalUpdateControl.xaml.cs">
+      <DependentUpon>IncrementalUpdateControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="InvokeCommandControl.xaml.cs">
+      <DependentUpon>InvokeCommandControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NavigateToPageControl.xaml.cs">
+      <DependentUpon>NavigateToPageControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PlaySoundControl.xaml.cs">
+      <DependentUpon>PlaySoundControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -108,6 +138,9 @@
     <None Include="XAMLBehaviorsSample_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Cheer.mp3" />
+    <Content Include="Assets\Ding.mp3" />
+    <Content Include="Assets\Whistle.mp3" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -122,6 +155,38 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="CallMethodControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ChangePropertyControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ControlStoryboardControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DataTriggerControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EventTriggerControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GoToStateControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="IncrementalUpdateControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="InvokeCommandControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -130,6 +195,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Page>
+    <Page Include="NavigateToPageControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PlaySoundControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">

@@ -22,9 +22,93 @@ namespace XAMLBehaviorsSample
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        DataTriggerControl _datatrigger;
+        EventTriggerControl _eventtrigger;
+        IncrementalUpdateControl _incrementaltrigger;
+
+        CallMethodControl _callmethodaction;
+        GoToStateControl _gotostateaction;
+        ChangePropertyControl _changepropertyaction;
+        ControlStoryboardControl _controlstoryboardaction;
+        PlaySoundControl _playsoundaction;
+        NavigateToPageControl _navigatetopageaction;
+        InvokeCommandControl _invokecommandaction;
+
         public MainPage()
         {
             this.InitializeComponent();
+
+            _datatrigger = new DataTriggerControl();
+            _eventtrigger = new EventTriggerControl();
+            _incrementaltrigger = new IncrementalUpdateControl();
+
+            _callmethodaction = new CallMethodControl();
+            _gotostateaction = new GoToStateControl();
+            _changepropertyaction = new ChangePropertyControl();
+            _controlstoryboardaction = new ControlStoryboardControl();
+            _playsoundaction = new PlaySoundControl();
+            _navigatetopageaction = new NavigateToPageControl();
+            _invokecommandaction = new InvokeCommandControl();
+        }
+
+        private void DataTriggerButton_Click(object sender, RoutedEventArgs e)
+        {
+            BehaviorsContent.Children.Clear();
+            BehaviorsContent.Children.Add(_datatrigger);
+        }
+
+        private void EventTriggerButton_Click(object sender, RoutedEventArgs e)
+        {
+            BehaviorsContent.Children.Clear();
+            BehaviorsContent.Children.Add(_eventtrigger);
+        }
+
+        private void IncrementalUpdateButton_Click(object sender, RoutedEventArgs e)
+        {
+            BehaviorsContent.Children.Clear();
+            BehaviorsContent.Children.Add(_incrementaltrigger);
+        }
+
+        private void CallMethodButton_Click(object sender, RoutedEventArgs e)
+        {
+            ActionsContent.Children.Clear();
+            ActionsContent.Children.Add(_callmethodaction);
+        }
+
+        private void ChangePropertyButton_Click(object sender, RoutedEventArgs e)
+        {
+            ActionsContent.Children.Clear();
+            ActionsContent.Children.Add(_changepropertyaction);
+        }
+
+        private void ControlStoryboardButton_Click(object sender, RoutedEventArgs e)
+        {
+            ActionsContent.Children.Clear();
+            ActionsContent.Children.Add(_controlstoryboardaction);
+        }
+
+        private void PlaySoundButton_Click(object sender, RoutedEventArgs e)
+        {
+            ActionsContent.Children.Clear();
+            ActionsContent.Children.Add(_playsoundaction);
+        }
+
+        private void GoToStateButton_Click(object sender, RoutedEventArgs e)
+        {
+            ActionsContent.Children.Clear();
+            ActionsContent.Children.Add(_gotostateaction);
+        }
+
+        private void InvokeCommandButton_Click(object sender, RoutedEventArgs e)
+        {
+            ActionsContent.Children.Clear();
+            ActionsContent.Children.Add(_invokecommandaction);
+        }
+
+        private void NavigateToPageButton_Click(object sender, RoutedEventArgs e)
+        {
+            ActionsContent.Children.Clear();
+            ActionsContent.Children.Add(_navigatetopageaction);
         }
     }
 }
