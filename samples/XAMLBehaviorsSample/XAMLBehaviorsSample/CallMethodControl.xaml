@@ -37,7 +37,7 @@
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
                 <Border BorderThickness="5" Background="{StaticResource DarkGreyBrush}" BorderBrush="{StaticResource HighlightBrush}">
-                    <TextBlock Text="{x:Bind Count}" FontSize="200" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="{StaticResource PinkBrush}"/>
+                    <TextBlock Text="{Binding Count}" FontSize="200" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="{StaticResource PinkBrush}"/>
                 </Border>
                 <Button x:Name="button" Content="Click Me" HorizontalAlignment="Stretch" Grid.Row="1" VerticalAlignment="Stretch" Margin="0,10,0,10" d:LayoutOverrides="Width, Height" FontSize="20" Foreground="{StaticResource PaleGreyBrush}" Background="{StaticResource DarkGreyBrush}" Style="{StaticResource ActionsButton}" BorderBrush="{StaticResource HighlightBrush}" BorderThickness="2">
                     <Interactivity:Interaction.Behaviors>

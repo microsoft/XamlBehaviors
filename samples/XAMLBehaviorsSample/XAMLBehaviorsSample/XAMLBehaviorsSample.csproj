@@ -123,6 +123,9 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="NavigatePageSample.xaml.cs">
+      <DependentUpon>NavigatePageSample.xaml</DependentUpon>
+    </Compile>
     <Compile Include="NavigateToPageControl.xaml.cs">
       <DependentUpon>NavigateToPageControl.xaml</DependentUpon>
     </Compile>
@@ -195,6 +198,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Page>
+    <Page Include="NavigatePageSample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="NavigateToPageControl.xaml">
       <SubType>Designer</SubType>

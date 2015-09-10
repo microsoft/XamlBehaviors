@@ -36,7 +36,7 @@
                 <Button x:Name="button1" Content="Click Me" HorizontalAlignment="Stretch" Grid.Row="0" VerticalAlignment="Stretch" Margin="10,0,0,10" d:LayoutOverrides="Width, Height" FontSize="20" Foreground="{StaticResource PaleGreyBrush}" Background="{StaticResource DarkGreyBrush}" Style="{StaticResource ActionsButton}" BorderBrush="{StaticResource HighlightBrush}" BorderThickness="2">
                     <Interactivity:Interaction.Behaviors>
                         <Interactions:EventTriggerBehavior EventName="Click" SourceObject="{Binding ElementName=button1}">
-                            <Interactions:NavigateToPageAction TargetPage="MainPage.xaml"/>
+                            <Interactions:NavigateToPageAction TargetPage="XAMLBehaviorsSample.NavigatePageSample"/>
                         </Interactions:EventTriggerBehavior>
                     </Interactivity:Interaction.Behaviors>
                 </Button>

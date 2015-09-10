@@ -38,19 +38,40 @@
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            <TextBlock Grid.Column="0" TextWrapping="WrapWholeWords" Margin="0,0,10,0" FontSize="20" Foreground="{StaticResource DarkGreyBrush}">
-                <TextBlock.Text>
-                    IncrementalUpdateBehavior attaches to the DataTemplate inside ListViewBase controls (i.e. ListView and GridView). 
+            <StackPanel Grid.Column="1" >
+                <TextBlock TextWrapping="WrapWholeWords" Margin="10,0,0,0" FontSize="20" Foreground="{StaticResource DarkGreyBrush}">
+                    <TextBlock.Text>
+                        IncrementalUpdateBehavior attaches to the DataTemplate inside ListViewBase controls (i.e. ListView and GridView). 
                     It enables deferred rendering for specified elements in the ItemTemplate used by the view. 
-                    In the sample, declaring elements in the GridView in certain phases defers updates until there is render time available, resulting in a smoother expeirence.  
-                </TextBlock.Text>
-            </TextBlock>
+                    In the sample, declaring elements in the GridView in certain phases defers updates until there is render time available, resulting in a smoother expeirence.
+                    </TextBlock.Text>
+                </TextBlock>
+                <TextBlock TextWrapping="WrapWholeWords" Margin="10,0,0,0" FontSize="15" Foreground="{StaticResource RoyalBlueBrush}" xml:space="preserve">
+                    <TextBlock.Text>
+&lt;DataTemplate x:Key="GridViewItem">
+    &lt;StackPanel>
+        &lt;Rectangle>
+            &lt;Interactivity:Interaction.Behaviors>
+                &lt;Interactions:IncrementalUpdateBehavior Phase="2"/>
+            &lt;/Interactivity:Interaction.Behaviors>
+        &lt;/Rectangle>
+        &lt;TextBlock Text="{Binding Count}">
+            &lt;Interactivity:Interaction.Behaviors>
+                &lt;Interactions:IncrementalUpdateBehavior Phase="1"/>
+            &lt;/Interactivity:Interaction.Behaviors>
+        &lt;/TextBlock>
+    &lt;/StackPanel>
+&lt;/DataTemplate>
+                    </TextBlock.Text>
+                </TextBlock>
+            </StackPanel>
 
-            <Grid Grid.Column="1" >
-                <GridView x:Name="gridViewSample" HorizontalAlignment="Center" VerticalAlignment="Top" ItemTemplate="{StaticResource GridViewItem}">
+
+            <Grid Grid.Column="0" Margin="0,0,10,0" BorderThickness="5" BorderBrush="{StaticResource HighlightBrush}">
+                <GridView x:Name="gridViewSample" HorizontalAlignment="Center" VerticalAlignment="Top" ItemTemplate="{StaticResource GridViewItem}" ScrollViewer.VerticalScrollBarVisibility="Visible">
                     <GridView.ItemsPanel>
                         <ItemsPanelTemplate>
                             <ItemsWrapGrid Orientation="Horizontal" />
