@@ -34,6 +34,9 @@ namespace XAMLBehaviorsSample
         NavigateToPageControl _navigatetopageaction;
         InvokeCommandControl _invokecommandaction;
 
+        CustomBehaviorControl _custombehavioraction;
+        CustomActionControl _customactionaction;
+
         public MainPage()
         {
             this.InitializeComponent();
@@ -49,6 +52,27 @@ namespace XAMLBehaviorsSample
             _playsoundaction = new PlaySoundControl();
             _navigatetopageaction = new NavigateToPageControl();
             _invokecommandaction = new InvokeCommandControl();
+
+            _custombehavioraction = new CustomBehaviorControl();
+            _customactionaction = new CustomActionControl();
+        }
+
+        private bool CheckLastPage(Type desiredPage)
+        {
+            var lastPage = Frame.BackStack.LastOrDefault();
+            return (lastPage != null && lastPage.SourcePageType.Equals(desiredPage)) ? true : false;
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+
+            if(CheckLastPage(typeof (NavigatePageSample)))
+            {
+                pivot.SelectedIndex = 1;
+                ActionsContent.Children.Clear();
+                ActionsContent.Children.Add(_navigatetopageaction);
+            }
         }
 
         private void DataTriggerButton_Click(object sender, RoutedEventArgs e)
@@ -109,6 +133,18 @@ namespace XAMLBehaviorsSample
         {
             ActionsContent.Children.Clear();
             ActionsContent.Children.Add(_navigatetopageaction);
+        }
+
+        private void CustomBehavior_Click(object sender, RoutedEventArgs e)
+        {
+            CustomContent.Children.Clear();
+            CustomContent.Children.Add(_custombehavioraction);
+        }
+
+        private void CustomAction_Click(object sender, RoutedEventArgs e)
+        {
+            CustomContent.Children.Clear();
+            CustomContent.Children.Add(_customactionaction);
         }
     }
 }

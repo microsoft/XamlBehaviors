@@ -21,36 +21,47 @@
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            <TextBlock Grid.Column="0" TextWrapping="WrapWholeWords" Margin="0,0,10,0" FontSize="20" Foreground="{StaticResource DarkGreyBrush}">
-                <TextBlock.Text>
-                    ChangePropertyAction represents an action that will change a specified property to a specified value when invoked.
-                    In this example, clicking the button triggers the ChangePropertyAction that changes the color property of the rectangle. 
-                </TextBlock.Text>
-            </TextBlock>
+            <StackPanel Grid.Column="1">
+                <TextBlock TextWrapping="WrapWholeWords" Margin="10,0,0,0" FontSize="20" Foreground="{StaticResource DarkGreyBrush}">
+                    <TextBlock.Text>
+                        ChangePropertyAction represents an action that will change a specified property to a specified value when invoked.
+                    In this example, clicking the button triggers the ChangePropertyAction that changes the color property of the rectangle.
+                    </TextBlock.Text>
+                </TextBlock>
+                <RichTextBlock TextWrapping="WrapWholeWords" Margin="10,20,0,0" FontSize="15" Foreground="{StaticResource PinkBrush}" xml:space="preserve" IsTextSelectionEnabled="True">
+                    <Paragraph>&lt;Button x:Name="button1" Content="Yellow">
+    &lt;Interactivity:Interaction.Behaviors>
+        &lt;Interactions:EventTriggerBehavior EventName="Click" SourceObject="{Binding ElementName=button1}">
+            &lt;Interactions:ChangePropertyAction TargetObject="{Binding ElementName=DataTriggerRectangle}" PropertyName="Fill" Value="{StaticResource PaleYellowBrush}"/>
+        &lt;/Interactions:EventTriggerBehavior>
+        &lt;/Interactivity:Interaction.Behaviors>
+&lt;/Button></Paragraph>
+                </RichTextBlock>
+            </StackPanel>
 
-            <Grid Grid.Column="1" >
+            <Grid Grid.Column="0" Margin="0,0,10,0">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="5*"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                <Rectangle x:Name="DataTriggerRectangle" Grid.Row="0" Fill="{StaticResource PinkBrush}" Margin="0,5,0,0" Stroke="{StaticResource HighlightBrush}" StrokeThickness="5"  />
+                <Rectangle x:Name="DataTriggerRectangle" Grid.Row="0" Fill="{StaticResource PinkBrush}" Stroke="{StaticResource HighlightBrush}" StrokeThickness="5"  />
 
                 <Grid Grid.Row="1">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
-                    <Button x:Name="button1" Content="Yellow" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,10,5,10" Style="{StaticResource ActionsButton}"  d:LayoutOverrides="Width, Height" Background="{StaticResource DarkGreyBrush}">
+                    <Button x:Name="button1" Content="Yellow" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,10,5,10" Style="{StaticResource ActionsButton}"  d:LayoutOverrides="Width, Height" Background="{StaticResource DarkGreyBrush}" BorderBrush="{StaticResource HighlightBrush}">
                         <Interactivity:Interaction.Behaviors>
                             <Interactions:EventTriggerBehavior EventName="Click" SourceObject="{Binding ElementName=button1}">
                                 <Interactions:ChangePropertyAction TargetObject="{Binding ElementName=DataTriggerRectangle}" PropertyName="Fill" Value="{StaticResource PaleYellowBrush}"/>
                             </Interactions:EventTriggerBehavior>
                         </Interactivity:Interaction.Behaviors>
                     </Button>
-                    <Button x:Name="button2" Content="Pink" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5,10,0,10" Style="{StaticResource ActionsButton}"  d:LayoutOverrides="Width, Height" Background="{StaticResource DarkGreyBrush}">
+                    <Button x:Name="button2" Content="Pink" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5,10,0,10" Style="{StaticResource ActionsButton}"  d:LayoutOverrides="Width, Height" Background="{StaticResource DarkGreyBrush}" BorderBrush="{StaticResource HighlightBrush}">
                         <Interactivity:Interaction.Behaviors>
                             <Interactions:EventTriggerBehavior EventName="Click" SourceObject="{Binding ElementName=button2}">
                                 <Interactions:ChangePropertyAction TargetObject="{Binding ElementName=DataTriggerRectangle}" PropertyName="Fill" Value="{StaticResource PinkBrush}"/>

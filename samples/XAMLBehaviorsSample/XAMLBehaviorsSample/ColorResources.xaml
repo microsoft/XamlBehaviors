@@ -3,12 +3,12 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:XAMLBehaviorsSample">
 
-    <Color x:Key="PaleGrey">#F0F1EE</Color>
+    <Color x:Key="PaleGrey">#FFE9E9E9</Color>
     <Color x:Key="DarkGrey">#333332</Color>
     <Color x:Key="Highlight">#888887</Color>
     <Color x:Key="RoyalBlue">#1352A2</Color>
-    <Color x:Key="PaleYellow">#FFD464</Color>
-    <Color x:Key="Pink">#FB6964</Color>
+    <Color x:Key="PaleYellow">#FFF3C345</Color>
+    <Color x:Key="Pink">#FFE95F5B</Color>
 
     <SolidColorBrush x:Key="PaleGreyBrush" Color="{StaticResource PaleGrey}" />
     <SolidColorBrush x:Key="DarkGreyBrush" Color="{StaticResource DarkGrey}" />
@@ -20,6 +20,7 @@
     <Style x:Key="BehaviorButton" TargetType="Button">
         <Setter Property="Background" Value="{ThemeResource SystemControlBackgroundBaseLowBrush}"/>
         <Setter Property="Foreground" Value="{StaticResource PaleGreyBrush}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource HighlightBrush}" />
         <Setter Property="BorderThickness" Value="5"/>
         <Setter Property="Padding" Value="8,4,8,4"/>
         <Setter Property="Margin" Value="0,4,0,4"/>
@@ -43,7 +44,7 @@
                                 <VisualState x:Name="PointerOver">
                                     <Storyboard>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush" Storyboard.TargetName="ContentPresenter">
-                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource HighlightBrush}"/>
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource RoyalBlueBrush}"/>
                                         </ObjectAnimationUsingKeyFrames>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderThickness" Storyboard.TargetName="ContentPresenter">
                                             <DiscreteObjectKeyFrame KeyTime="0" Value="5"/>
@@ -93,6 +94,7 @@
     <Style x:Key="ActionsButton" TargetType="Button">
         <Setter Property="Background" Value="{ThemeResource SystemControlBackgroundBaseLowBrush}"/>
         <Setter Property="Foreground" Value="{StaticResource PaleGreyBrush}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource HighlightBrush}" />
         <Setter Property="BorderThickness" Value="5"/>
         <Setter Property="Padding" Value="8,4,8,4"/>
         <Setter Property="Margin" Value="0,4,0,4"/>
@@ -116,7 +118,7 @@
                                 <VisualState x:Name="PointerOver">
                                     <Storyboard>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush" Storyboard.TargetName="ContentPresenter">
-                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource HighlightBrush}"/>
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource PinkBrush}"/>
                                         </ObjectAnimationUsingKeyFrames>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderThickness" Storyboard.TargetName="ContentPresenter">
                                             <DiscreteObjectKeyFrame KeyTime="0" Value="5"/>
@@ -165,7 +167,8 @@
 
     <Style x:Key="CustomButton" TargetType="Button">
         <Setter Property="Background" Value="{ThemeResource SystemControlBackgroundBaseLowBrush}"/>
-        <Setter Property="Foreground" Value="{StaticResource HighlightBrush}"/>
+        <Setter Property="Foreground" Value="{StaticResource PaleGreyBrush}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource HighlightBrush}" />
         <Setter Property="BorderThickness" Value="5"/>
         <Setter Property="Padding" Value="8,4,8,4"/>
         <Setter Property="Margin" Value="0,4,0,4"/>
@@ -189,7 +192,7 @@
                                 <VisualState x:Name="PointerOver">
                                     <Storyboard>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush" Storyboard.TargetName="ContentPresenter">
-                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource HighlightBrush}"/>
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource PaleYellowBrush}"/>
                                         </ObjectAnimationUsingKeyFrames>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderThickness" Storyboard.TargetName="ContentPresenter">
                                             <DiscreteObjectKeyFrame KeyTime="0" Value="5"/>

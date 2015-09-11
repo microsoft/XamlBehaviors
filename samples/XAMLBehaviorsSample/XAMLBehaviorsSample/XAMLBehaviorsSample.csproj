@@ -102,12 +102,23 @@
     <Compile Include="ChangePropertyControl.xaml.cs">
       <DependentUpon>ChangePropertyControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ContentDialogSample.xaml.cs">
+      <DependentUpon>ContentDialogSample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ContentDialogPopUp.cs" />
     <Compile Include="ControlStoryboardControl.xaml.cs">
       <DependentUpon>ControlStoryboardControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomActionControl.xaml.cs">
+      <DependentUpon>CustomActionControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomBehaviorControl.xaml.cs">
+      <DependentUpon>CustomBehaviorControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="DataTriggerControl.xaml.cs">
       <DependentUpon>DataTriggerControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DragPositionBehavior.cs" />
     <Compile Include="EventTriggerControl.xaml.cs">
       <DependentUpon>EventTriggerControl.xaml</DependentUpon>
     </Compile>
@@ -166,7 +177,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ContentDialogSample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ControlStoryboardControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomActionControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomBehaviorControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -210,6 +233,12 @@
     <Page Include="PlaySoundControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Properties\DesignTimeResources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <ContainsDesignTimeResources>true</ContainsDesignTimeResources>
     </Page>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">

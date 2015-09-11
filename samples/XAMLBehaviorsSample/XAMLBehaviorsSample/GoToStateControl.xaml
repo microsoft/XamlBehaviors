@@ -21,23 +21,37 @@
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            <TextBlock Grid.Column="0" TextWrapping="WrapWholeWords" Margin="0,0,10,0" FontSize="20" Foreground="{StaticResource DarkGreyBrush}">
-                <TextBlock.Text>
-                    GoToStateAction represents an action that will transition a FrameworkElement (i.e. Button) to a specified VisualState when triggered. 
-                    In this example, clicking the below button will trigger the GoToStateAction to make the sample button transition into a disabled state. 
-                </TextBlock.Text>
-            </TextBlock>
+            <StackPanel Grid.Column="1">
+                <TextBlock TextWrapping="WrapWholeWords" Margin="10,0,0,0" FontSize="20" Foreground="{StaticResource DarkGreyBrush}">
+                    <TextBlock.Text>
+                        GoToStateAction represents an action that will transition a FrameworkElement (i.e. Button) to a specified VisualState when triggered. 
+                        In this example, clicking the below button will trigger the GoToStateAction to make the sample button transition into a disabled state. 
+                    </TextBlock.Text>
+                </TextBlock>
+                <RichTextBlock TextWrapping="WrapWholeWords" Margin="10,20,0,0" FontSize="15" Foreground="{StaticResource PinkBrush}" xml:space="preserve" IsTextSelectionEnabled="True">
+                    <Paragraph>&lt;CheckBox x:Name="checkBox">
+    &lt;Interactivity:Interaction.Behaviors>
+        &lt;Interactions:DataTriggerBehavior Binding="{Binding IsChecked, ElementName=checkBox}" Value="True">
+            &lt;Interactions:GoToStateAction StateName="Disabled" TargetObject="{Binding ElementName=sampleStateButton}"/>
+        &lt;/Interactions:DataTriggerBehavior>
+        &lt;Interactions:DataTriggerBehavior Binding="{Binding IsChecked, ElementName=checkBox}" Value="False">
+            &lt;Interactions:GoToStateAction StateName="Normal" TargetObject="{Binding ElementName=sampleStateButton}"/>
+        &lt;/Interactions:DataTriggerBehavior>
+    &lt;/Interactivity:Interaction.Behaviors>
+&lt;/CheckBox></Paragraph>
+                </RichTextBlock>
+            </StackPanel>
 
-            <Grid Grid.Column="1" >
+            <Grid Grid.Column="0" Margin="0,0,10,0">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="5*"/>
+                    <RowDefinition Height="2*"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
 
-                <Button x:Name="sampleStateButton" Grid.Row="0" Content="Sample Button" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="20,0,20,0">
+                <Button x:Name="sampleStateButton" Grid.Row="0" Content="Sample Button" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="0,0,0,0">
                     <Button.Resources>
                         <Style x:Key="ButtonDisableSample" TargetType="Button">
                             <Setter Property="Background" Value="{StaticResource PinkBrush}"/>

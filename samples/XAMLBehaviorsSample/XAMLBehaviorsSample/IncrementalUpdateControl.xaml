@@ -49,9 +49,8 @@
                     In the sample, declaring elements in the GridView in certain phases defers updates until there is render time available, resulting in a smoother expeirence.
                     </TextBlock.Text>
                 </TextBlock>
-                <TextBlock TextWrapping="WrapWholeWords" Margin="10,0,0,0" FontSize="15" Foreground="{StaticResource RoyalBlueBrush}" xml:space="preserve">
-                    <TextBlock.Text>
-&lt;DataTemplate x:Key="GridViewItem">
+                <RichTextBlock TextWrapping="WrapWholeWords" Margin="10,20,0,0" FontSize="15" Foreground="{StaticResource RoyalBlueBrush}" xml:space="preserve" IsTextSelectionEnabled="True">
+                    <Paragraph>&lt;DataTemplate x:Key="GridViewItem">
     &lt;StackPanel>
         &lt;Rectangle>
             &lt;Interactivity:Interaction.Behaviors>
@@ -65,8 +64,8 @@
         &lt;/TextBlock>
     &lt;/StackPanel>
 &lt;/DataTemplate>
-                    </TextBlock.Text>
-                </TextBlock>
+                    </Paragraph>
+                </RichTextBlock>
             </StackPanel>
 
 

@@ -7,7 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Pivot Title="Behaviors Sample" Background="{StaticResource PaleGreyBrush}">
+    <Pivot x:Name="pivot" Title="Behaviors Sample" Background="{StaticResource PaleGreyBrush}">
         <Pivot.TitleTemplate>
             <DataTemplate>
                 <Grid Background="Transparent">
@@ -62,14 +62,14 @@
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
-                    <Button x:Name="CallMethodButton" Content="Call Method" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource BehaviorButton}" Background="{StaticResource PinkBrush}" Click="CallMethodButton_Click"/>
-                    <Button x:Name="ChangePropertyButton" Content="Change Property" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource BehaviorButton}" Background="{StaticResource PinkBrush}" Click="ChangePropertyButton_Click"/>
-                    <Button x:Name="ControlStoryboardButton" Content="Control Storyboard" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource BehaviorButton}" Background="{StaticResource PinkBrush}" Click="ControlStoryboardButton_Click"/>
-                    <Button x:Name="PlaySoundButton" Content="Play Sound" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource BehaviorButton}" Background="{StaticResource PinkBrush}" Click="PlaySoundButton_Click"/>
+                    <Button x:Name="CallMethodButton" Content="Call Method" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource ActionsButton}" Background="{StaticResource PinkBrush}" Click="CallMethodButton_Click"/>
+                    <Button x:Name="ChangePropertyButton" Content="Change Property" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource ActionsButton}" Background="{StaticResource PinkBrush}" Click="ChangePropertyButton_Click"/>
+                    <Button x:Name="ControlStoryboardButton" Content="Control Storyboard" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource ActionsButton}" Background="{StaticResource PinkBrush}" Click="ControlStoryboardButton_Click"/>
+                    <Button x:Name="PlaySoundButton" Content="Play Sound" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource ActionsButton}" Background="{StaticResource PinkBrush}" Click="PlaySoundButton_Click"/>
 
-                    <Button x:Name="GoToStateButton" Content="Go To State" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource BehaviorButton}" Background="{StaticResource PinkBrush}" Click="GoToStateButton_Click"/>
-                    <Button x:Name="InvokeCommandButton" Content="Invoke Command" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource BehaviorButton}" Background="{StaticResource PinkBrush}" Click="InvokeCommandButton_Click"/>
-                    <Button x:Name="NavigateToPageButton" Content="Navigate To Page" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource BehaviorButton}" Background="{StaticResource PinkBrush}" Click="NavigateToPageButton_Click"/>
+                    <Button x:Name="GoToStateButton" Content="Go To State" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource ActionsButton}" Background="{StaticResource PinkBrush}" Click="GoToStateButton_Click"/>
+                    <Button x:Name="InvokeCommandButton" Content="Invoke Command" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource ActionsButton}" Background="{StaticResource PinkBrush}" Click="InvokeCommandButton_Click"/>
+                    <Button x:Name="NavigateToPageButton" Content="Navigate To Page" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource ActionsButton}" Background="{StaticResource PinkBrush}" Click="NavigateToPageButton_Click"/>
                 </Grid>
                 <Grid x:Name="ActionsContent" Grid.Column="1" Margin="20,0,0,10">
                     <TextBlock Text="Select an Action for a Sample" FontSize="40" VerticalAlignment="Stretch" Foreground="{StaticResource DarkGreyBrush}" />
@@ -87,10 +87,11 @@
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
-                    <Button x:Name="CustomBehavior" Content="Custom Behavior" Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource CustomButton}" Background="{StaticResource PaleYellowBrush}"/>
-                    <Button x:Name="CustomAction" Content="Custom Action" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource CustomButton}" Background="{StaticResource PaleYellowBrush}"/>
+                    <Button x:Name="CustomBehavior" Content="Custom Behavior" Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource CustomButton}" Background="{StaticResource PaleYellowBrush}" Click="CustomBehavior_Click"/>
+                    <Button x:Name="CustomAction" Content="Custom Action" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource CustomButton}" Background="{StaticResource PaleYellowBrush}" Click="CustomAction_Click"/>
                 </Grid>
                 <Grid x:Name="CustomContent" Grid.Column="1" Margin="20,0,0,10">
+                    <TextBlock Text="Select a Custom Behavior/Action for a Sample" FontSize="40" VerticalAlignment="Stretch" Foreground="{StaticResource DarkGreyBrush}" />
                 </Grid>
             </Grid>
         </PivotItem>

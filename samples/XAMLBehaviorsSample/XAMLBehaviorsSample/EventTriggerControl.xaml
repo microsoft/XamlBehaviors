@@ -31,26 +31,25 @@
                     In this example, the EventTriggerBehavior listens for the "Click" event on the button. When it is fired, it triggers the changing of the rectangle's color.
                     </TextBlock.Text>
                 </TextBlock>
-                <TextBlock TextWrapping="WrapWholeWords" Margin="10,0,0,0" FontSize="15" Foreground="{StaticResource RoyalBlueBrush}" xml:space="preserve">
-                    <TextBlock.Text>
-&lt;Button x:Name="button"&gt;
+                <RichTextBlock TextWrapping="WrapWholeWords" Margin="10,20,0,0" FontSize="15" Foreground="{StaticResource RoyalBlueBrush}" xml:space="preserve" IsTextSelectionEnabled="True">
+                    <Paragraph>&lt;Button x:Name="button"&gt;
     &lt;Interactivity:Interaction.Behaviors&gt;
         &lt;Interactions:EventTriggerBehavior EventName="Click" SourceObject="{Binding ElementName=button}"&gt;
             &lt;Interactions:ChangePropertyAction TargetObject="{Binding ElementName=DataTriggerRectangle}" PropertyName="Fill" Value="{StaticResource PaleYellowBrush}"/&gt;
         &lt;/Interactions:EventTriggerBehavior&gt;
     &lt;/Interactivity:Interaction.Behaviors&gt;
-&lt;/Button&gt;</TextBlock.Text>
-                </TextBlock>
+&lt;/Button&gt;</Paragraph>
+                </RichTextBlock>
             </StackPanel>
 
-            <Grid Grid.Column="0" >
+            <Grid Grid.Column="0" Margin="0,0,10,0" >
                 <Grid.RowDefinitions>
                     <RowDefinition Height="5*"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                <Rectangle x:Name="DataTriggerRectangle" Grid.Row="0" Fill="{StaticResource RoyalBlueBrush}" Margin="0,0,10,0" Stroke="{StaticResource HighlightBrush}" StrokeThickness="5">
+                <Rectangle x:Name="DataTriggerRectangle" Grid.Row="0" Fill="{StaticResource RoyalBlueBrush}" Stroke="{StaticResource HighlightBrush}" StrokeThickness="5">
                 </Rectangle>
-                <Button x:Name="button" Content="Click Me" HorizontalAlignment="Stretch" Grid.Row="1" VerticalAlignment="Stretch" Margin="0,10,10,10" d:LayoutOverrides="Width, Height" FontSize="20" Foreground="{StaticResource PaleGreyBrush}" Background="{StaticResource DarkGreyBrush}" Style="{StaticResource BehaviorButton}" BorderBrush="{StaticResource HighlightBrush}" BorderThickness="2">
+                <Button x:Name="button" Content="Click Me" HorizontalAlignment="Stretch" Grid.Row="1" VerticalAlignment="Stretch" Margin="0,10,0,10" d:LayoutOverrides="Width, Height" FontSize="20" Foreground="{StaticResource PaleGreyBrush}" Background="{StaticResource DarkGreyBrush}" Style="{StaticResource BehaviorButton}" BorderBrush="{StaticResource HighlightBrush}">
                     <Interactivity:Interaction.Behaviors>
                         <Interactions:EventTriggerBehavior EventName="Click" SourceObject="{Binding ElementName=button}">
                             <Interactions:ChangePropertyAction TargetObject="{Binding ElementName=DataTriggerRectangle}" PropertyName="Fill" Value="{StaticResource PaleYellowBrush}"/>
@@ -58,7 +57,6 @@
                     </Interactivity:Interaction.Behaviors>
                 </Button>
             </Grid>
-
         </Grid>
     </Grid>
 </UserControl>

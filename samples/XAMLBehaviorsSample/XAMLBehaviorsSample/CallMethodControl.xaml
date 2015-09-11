@@ -21,25 +21,36 @@
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            <TextBlock Grid.Column="0" TextWrapping="WrapWholeWords" Margin="0,0,10,0" FontSize="20" Foreground="{StaticResource DarkGreyBrush}">
-                <TextBlock.Text>
-                    CallMethodAction represents an action which when triggered, calls a method on a specified object. 
-                    In this example, Pressing the button triggers the CallMethodAction to invoke a method that increments the number displayed. 
-                </TextBlock.Text>
-            </TextBlock>
+            <StackPanel Grid.Column="1">
+                <TextBlock TextWrapping="WrapWholeWords" Margin="10,0,0,0" FontSize="20" Foreground="{StaticResource DarkGreyBrush}">
+                    <TextBlock.Text>
+                        CallMethodAction represents an action which when triggered, calls a method on a specified object. 
+                        In this example, Pressing the button triggers the CallMethodAction to invoke a method that increments the number displayed. 
+                    </TextBlock.Text>
+                </TextBlock>
+                <RichTextBlock TextWrapping="WrapWholeWords" Margin="10,20,0,0" FontSize="15" Foreground="{StaticResource PinkBrush}" xml:space="preserve" IsTextSelectionEnabled="True">
+                    <Paragraph>&lt;Button x:Name="button">
+    &lt;Interactivity:Interaction.Behaviors>
+        &lt;Interactions:EventTriggerBehavior EventName="Click" SourceObject="{Binding ElementName=button}">
+            &lt;Interactions:CallMethodAction TargetObject="{Binding}" MethodName="IncrementCount"/>
+        &lt;/Interactions:EventTriggerBehavior>
+    &lt;/Interactivity:Interaction.Behaviors>
+&lt;/Button></Paragraph>
+                </RichTextBlock>
+            </StackPanel>
 
-            <Grid Grid.Column="1" >
+            <Grid Grid.Column="0" Margin="0,0,10,0">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="5*"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                <Border BorderThickness="5" Background="{StaticResource DarkGreyBrush}" BorderBrush="{StaticResource HighlightBrush}">
-                    <TextBlock Text="{Binding Count}" FontSize="200" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="{StaticResource PinkBrush}"/>
+                <Border BorderThickness="5" Background="{StaticResource PinkBrush}" BorderBrush="{StaticResource HighlightBrush}">
+                    <TextBlock Text="{Binding Count}" FontSize="200" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="{StaticResource PaleYellowBrush}"/>
                 </Border>
-                <Button x:Name="button" Content="Click Me" HorizontalAlignment="Stretch" Grid.Row="1" VerticalAlignment="Stretch" Margin="0,10,0,10" d:LayoutOverrides="Width, Height" FontSize="20" Foreground="{StaticResource PaleGreyBrush}" Background="{StaticResource DarkGreyBrush}" Style="{StaticResource ActionsButton}" BorderBrush="{StaticResource HighlightBrush}" BorderThickness="2">
+                <Button x:Name="button" Content="Click Me" HorizontalAlignment="Stretch" Grid.Row="1" VerticalAlignment="Stretch" Margin="0,10,0,10" d:LayoutOverrides="Width, Height" FontSize="20" Foreground="{StaticResource PaleGreyBrush}" Background="{StaticResource DarkGreyBrush}" Style="{StaticResource ActionsButton}" BorderBrush="{StaticResource HighlightBrush}">
                     <Interactivity:Interaction.Behaviors>
                         <Interactions:EventTriggerBehavior EventName="Click" SourceObject="{Binding ElementName=button}">
                             <Interactions:CallMethodAction TargetObject="{Binding}" MethodName="IncrementCount"/>

@@ -8,14 +8,46 @@
     x:Class="XAMLBehaviorsSample.NavigatePageSample"
     mc:Ignorable="d">
 
-    <Grid Background="{StaticResource PinkBrush}">
-        <Button x:Name="button" Content="Button" HorizontalAlignment="Stretch" Margin="292,256,434,272" VerticalAlignment="Stretch">
-            <Interactivity:Interaction.Behaviors>
-                <Interactions:EventTriggerBehavior EventName="Click" SourceObject="{Binding ElementName=button}">
-                    <Interactions:NavigateToPageAction TargetPage="XAMLBehaviorsSample.MainPage"/>
-                </Interactions:EventTriggerBehavior>
-            </Interactivity:Interaction.Behaviors>
-        </Button>
 
-    </Grid>
+    <Pivot Title="Behaviors Sample" Background="{StaticResource PaleGreyBrush}">
+        <Pivot.TitleTemplate>
+            <DataTemplate>
+                <Grid Background="Transparent">
+                    <TextBlock Text="{Binding}" FontSize="40" Foreground="{StaticResource DarkGreyBrush}"/>
+                </Grid>
+            </DataTemplate>
+        </Pivot.TitleTemplate>
+        <Pivot.HeaderTemplate>
+            <DataTemplate>
+                <Grid Background="Transparent">
+                    <TextBlock Text="{Binding}" FontSize="33.333" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                </Grid>
+            </DataTemplate>
+        </Pivot.HeaderTemplate>
+        
+        <PivotItem Header="NavigateToPageAction Sample">
+            <Grid Margin="0,10,0,10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                
+                <Button x:Name="button" Content="Go Back" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource ActionsButton}" BorderBrush="{StaticResource HighlightBrush}" Background="{StaticResource PinkBrush}" FontSize="40" Foreground="{StaticResource PaleGreyBrush}" >
+                    <Interactivity:Interaction.Behaviors>
+                        <Interactions:EventTriggerBehavior EventName="Click" SourceObject="{Binding ElementName=button}">
+                            <Interactions:NavigateToPageAction TargetPage="XAMLBehaviorsSample.MainPage"/>
+                        </Interactions:EventTriggerBehavior>
+                    </Interactivity:Interaction.Behaviors>
+                </Button>
+            </Grid>
+        </PivotItem>
+    </Pivot>
+
+    
 </Page>
