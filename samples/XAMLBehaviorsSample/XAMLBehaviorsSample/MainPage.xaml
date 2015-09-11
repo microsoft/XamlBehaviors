@@ -7,62 +7,95 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{StaticResource DarkGreyBrush}">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
-            <RowDefinition Height="9*" />
-        </Grid.RowDefinitions>
-        <TextBlock Grid.Row="0" Text="XAML Behaviors Sample" Foreground="{StaticResource PaleGreyBrush}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="66.667"/>
-        <RelativePanel Grid.Row="1">
-            <Rectangle Fill="{StaticResource PinkBrush}" Height="5" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWith="" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignTopWithPanel="True"/>
-            <Rectangle x:Name="HorizontalCenter" Fill="{StaticResource PinkBrush}" Width="5" RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True"/>
-            <Rectangle x:Name="LeftSplit" Fill="{StaticResource PinkBrush}" Height="5" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWith="HorizontalCenter"/>
-            <RelativePanel RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWith="HorizontalCenter" RelativePanel.AlignBottomWith="LeftSplit" RelativePanel.AlignTopWithPanel="True">
-                <TextBlock x:Name="TriggerTitle" Text="Triggers" Foreground="{StaticResource PaleGreyBrush}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40" Margin="0,15,0,0" RelativePanel.AlignHorizontalCenterWithPanel="True"/>
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0" RelativePanel.Below="TriggerTitle" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True" >
-                    <Button x:Name="DataTriggerButton" Content="Data Trigger" Height="175" Width="175" FontSize="26.667" Style="{StaticResource TriggerButton}" />
-                    <Button x:Name="EventTriggerButton" Content="Event Trigger" Height="175" Width="175" FontSize="26.667" Style="{StaticResource TriggerButton}"/>
-                    <Button x:Name="IncrementalUpdateButton" Content="Incremental Update" Height="175" Width="175" FontSize="26.667" Style="{StaticResource TriggerButton}" />
-                </StackPanel>
-            </RelativePanel>
-            <RelativePanel RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWith="HorizontalCenter" RelativePanel.AlignBottomWith="" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignTopWith="LeftSplit">
-                <TextBlock x:Name="CustomTitle" Text="Custom Behaviors" Foreground="{StaticResource PaleGreyBrush}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40" Margin="0,15,0,0" RelativePanel.AlignHorizontalCenterWithPanel="True"/>
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0" RelativePanel.Below="CustomTitle" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True" >
-                    <Button x:Name="CustomTrigger" Content="Custom Trigger" Height="175" Width="175" FontSize="33.333" Style="{StaticResource TriggerButton}" />
-                    <Button x:Name="CustomAction" Content="Custom Action" Height="175" Width="175" FontSize="33.333" Style="{StaticResource TriggerButton}"/>
-                </StackPanel>
-            </RelativePanel>
-            <RelativePanel RelativePanel.AlignRightWith="" RelativePanel.AlignBottomWith="" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignTopWith="" RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignLeftWith="HorizontalCenter" RelativePanel.AlignRightWithPanel="True">
-                <TextBlock x:Name="ActionsTitle" Text="Actions" Foreground="{StaticResource PaleGreyBrush}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40" Margin="0,15,0,0" RelativePanel.AlignHorizontalCenterWithPanel="True"/>
-                <StackPanel x:Name="ChangePropertyActionStack" Orientation="Vertical" Margin="0,20,0,20" RelativePanel.Below="ActionsTitle" RelativePanel.AlignHorizontalCenterWithPanel="True" >
-                    <Button x:Name="ChangePropertyActionButton" Height="100" Width="100" FontSize="33.333" Style="{StaticResource TriggerButton}" HorizontalAlignment="Center" />
-                    <TextBlock Text="Change Property" Foreground="{StaticResource PinkBrush}" Margin="0,15,0,0" HorizontalAlignment="Center" FontSize="20" />
-                </StackPanel>
-                <StackPanel x:Name="CallMethodActionStack" Orientation="Vertical" Margin="0,20,50,20" RelativePanel.Below="ActionsTitle" RelativePanel.LeftOf="ChangePropertyActionStack" >
-                    <Button x:Name="CallMethodActionButton" Height="100" Width="100" FontSize="33.333" Style="{StaticResource TriggerButton}" HorizontalAlignment="Center" />
-                    <TextBlock Text="Call Method" Foreground="{StaticResource PinkBrush}" Margin="0,15,0,0" HorizontalAlignment="Center" FontSize="20" />
-                </StackPanel>
-                <StackPanel x:Name="ControlStoryboardActionStack" Orientation="Vertical" Margin="50,20,0,20" RelativePanel.Below="ActionsTitle" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.LeftOf="" RelativePanel.RightOf="ChangePropertyActionStack" >
-                    <Button x:Name="ControlStoryboardActionButton" Height="100" Width="100" FontSize="33.333" Style="{StaticResource TriggerButton}" HorizontalAlignment="Center" />
-                    <TextBlock Text="Control Storyboard" Foreground="{StaticResource PinkBrush}" Margin="0,15,0,0" HorizontalAlignment="Center" FontSize="20" />
-                </StackPanel>
-                <StackPanel x:Name="GoToStateActionStack" Orientation="Vertical" Margin="0,20,50,20" RelativePanel.Below="CallMethodActionStack" RelativePanel.LeftOf="InvokeCommandActionStack" >
-                    <Button x:Name="GoToStateActionButton" Height="100" Width="100" FontSize="33.333" Style="{StaticResource TriggerButton}" HorizontalAlignment="Center" />
-                    <TextBlock Text="Go To State" Foreground="{StaticResource PinkBrush}" Margin="0,15,0,0" HorizontalAlignment="Center" FontSize="20" />
-                </StackPanel>
-                <StackPanel x:Name="InvokeCommandActionStack" Orientation="Vertical" Margin="0,20,0,20" RelativePanel.Below="ChangePropertyActionStack" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.LeftOf="" >
-                    <Button x:Name="InvokeCommandActionButton" Height="100" Width="100" FontSize="33.333" Style="{StaticResource TriggerButton}" HorizontalAlignment="Center" />
-                    <TextBlock Text="Invoke Command" Foreground="{StaticResource PinkBrush}" Margin="0,15,0,0" HorizontalAlignment="Center" FontSize="20" />
-                </StackPanel>
-                <StackPanel x:Name="NavigateToPageActionStack" Orientation="Vertical" Margin="50,20,0,20" RelativePanel.Below="ControlStoryboardActionStack" RelativePanel.LeftOf="" RelativePanel.RightOf="InvokeCommandActionStack" >
-                    <Button x:Name="NavigateToPageActionButton" Height="100" Width="100" FontSize="33.333" Style="{StaticResource TriggerButton}" HorizontalAlignment="Center" />
-                    <TextBlock Text="Navigate To Page" Foreground="{StaticResource PinkBrush}" Margin="0,15,0,0" HorizontalAlignment="Center" FontSize="20" />
-                </StackPanel>
-                <StackPanel x:Name="PlaySoundActionStack" Orientation="Vertical" Margin="0,20,50,20" RelativePanel.Below="GoToStateActionStack" RelativePanel.LeftOf="InvokeCommandActionStack" >
-                    <Button x:Name="PlaySoundActionButton" Height="100" Width="100" FontSize="33.333" Style="{StaticResource TriggerButton}" HorizontalAlignment="Center" />
-                    <TextBlock Text="Play Sound" Foreground="{StaticResource PinkBrush}" Margin="0,15,0,0" HorizontalAlignment="Center" FontSize="20" />
-                </StackPanel>
-            </RelativePanel>
-        </RelativePanel>
-    </Grid>
+    <Pivot x:Name="pivot" Title="Behaviors Sample" Background="{StaticResource PaleGreyBrush}">
+        <Pivot.TitleTemplate>
+            <DataTemplate>
+                <Grid Background="Transparent">
+                    <TextBlock Text="{Binding}" FontSize="40" Foreground="{StaticResource DarkGreyBrush}"/>
+                </Grid>
+            </DataTemplate>
+        </Pivot.TitleTemplate>
+        <Pivot.HeaderTemplate>
+            <DataTemplate>
+                <Grid Background="Transparent">
+                    <TextBlock Text="{Binding}" FontSize="46.667" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                </Grid>
+            </DataTemplate>
+        </Pivot.HeaderTemplate>
+        
+        <PivotItem Header="Behaviors">
+            <Grid Margin="0,10,0,10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="3*"/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Button x:Name="DataTriggerButton" Content="Data Trigger" Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource BehaviorButton}" Background="{StaticResource RoyalBlueBrush}" Click="DataTriggerButton_Click"/>
+                    <Button x:Name="EventTriggerButton" Content="Event Trigger" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource BehaviorButton}" Background="{StaticResource RoyalBlueBrush}" Click="EventTriggerButton_Click"/>
+                    <Button x:Name="IncrementalUpdateButton" Content="Incremental Update" Grid.Row="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource BehaviorButton}" Background="{StaticResource RoyalBlueBrush}" Click="IncrementalUpdateButton_Click"/>
+                </Grid>
+                <Grid x:Name="BehaviorsContent" Grid.Column="1" Margin="20,0,0,10">
+                    <TextBlock Text="Select a Behavior for a Sample" FontSize="40" VerticalAlignment="Stretch" Foreground="{StaticResource DarkGreyBrush}" />
+                </Grid>
+            </Grid>
+        </PivotItem>
+        <PivotItem Header="Actions">
+            <Grid Margin="0,10,0,10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="3*"/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Button x:Name="CallMethodButton" Content="Call Method" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource ActionsButton}" Background="{StaticResource PinkBrush}" Click="CallMethodButton_Click"/>
+                    <Button x:Name="ChangePropertyButton" Content="Change Property" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource ActionsButton}" Background="{StaticResource PinkBrush}" Click="ChangePropertyButton_Click"/>
+                    <Button x:Name="ControlStoryboardButton" Content="Control Storyboard" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource ActionsButton}" Background="{StaticResource PinkBrush}" Click="ControlStoryboardButton_Click"/>
+                    <Button x:Name="PlaySoundButton" Content="Play Sound" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource ActionsButton}" Background="{StaticResource PinkBrush}" Click="PlaySoundButton_Click"/>
+
+                    <Button x:Name="GoToStateButton" Content="Go To State" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource ActionsButton}" Background="{StaticResource PinkBrush}" Click="GoToStateButton_Click"/>
+                    <Button x:Name="InvokeCommandButton" Content="Invoke Command" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource ActionsButton}" Background="{StaticResource PinkBrush}" Click="InvokeCommandButton_Click"/>
+                    <Button x:Name="NavigateToPageButton" Content="Navigate To Page" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource ActionsButton}" Background="{StaticResource PinkBrush}" Click="NavigateToPageButton_Click"/>
+                </Grid>
+                <Grid x:Name="ActionsContent" Grid.Column="1" Margin="20,0,0,10">
+                    <TextBlock Text="Select an Action for a Sample" FontSize="40" VerticalAlignment="Stretch" Foreground="{StaticResource DarkGreyBrush}" />
+                </Grid>
+            </Grid>
+        </PivotItem>
+        <PivotItem Header="Custom">
+            <Grid Margin="0,10,0,10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="3*"/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Button x:Name="CustomBehavior" Content="Custom Behavior" Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource CustomButton}" Background="{StaticResource PaleYellowBrush}" Click="CustomBehavior_Click"/>
+                    <Button x:Name="CustomAction" Content="Custom Action" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource CustomButton}" Background="{StaticResource PaleYellowBrush}" Click="CustomAction_Click"/>
+                </Grid>
+                <Grid x:Name="CustomContent" Grid.Column="1" Margin="20,0,0,10">
+                    <TextBlock Text="Select a Custom Behavior/Action for a Sample" FontSize="40" VerticalAlignment="Stretch" Foreground="{StaticResource DarkGreyBrush}" />
+                </Grid>
+            </Grid>
+        </PivotItem>
+    </Pivot>
+
+
 </Page>
