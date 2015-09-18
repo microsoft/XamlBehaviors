@@ -16,9 +16,7 @@
             <RowDefinition Height="7*" />
         </Grid.RowDefinitions>
 
-        <Viewbox VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,0,0,10">
-            <TextBlock Text="EventTriggerBehavior" FontSize="40" VerticalAlignment="Stretch" Foreground="{StaticResource DarkGreyBrush}" />
-        </Viewbox>
+        <TextBlock Text="EventTriggerBehavior" FontSize="40" VerticalAlignment="Stretch" Foreground="{StaticResource DarkGreyBrush}" />
 
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
@@ -26,15 +24,14 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            <ScrollViewer Grid.Column="1" ScrollViewer.VerticalScrollBarVisibility="Auto" >
-                <StackPanel >
-                    <TextBlock TextWrapping="WrapWholeWords" Margin="10,0,0,0" FontSize="20" Foreground="{StaticResource DarkGreyBrush}">
-                        <TextBlock.Text>
-                            EventTriggerBehavior listens for a specific event on its source and executes an action when the event is fired.
+            <StackPanel Grid.Column="1" >
+                <TextBlock TextWrapping="WrapWholeWords" Margin="10,0,0,0" FontSize="20" Foreground="{StaticResource DarkGreyBrush}">
+                    <TextBlock.Text>
+                        EventTriggerBehavior listens for a specific event on its source and executes an action when the event is fired.
                     In this example, the EventTriggerBehavior listens for the "Click" event on the button. When it is fired, it triggers the changing of the rectangle's color.
-                        </TextBlock.Text>
-                    </TextBlock>
-                    <RichTextBlock TextWrapping="WrapWholeWords" Margin="10,20,0,0" FontSize="15" Foreground="{StaticResource RoyalBlueBrush}" xml:space="preserve" IsTextSelectionEnabled="True">
+                    </TextBlock.Text>
+                </TextBlock>
+                <RichTextBlock TextWrapping="WrapWholeWords" Margin="10,20,0,0" FontSize="15" Foreground="{StaticResource RoyalBlueBrush}" xml:space="preserve" IsTextSelectionEnabled="True">
                     <Paragraph>&lt;Button x:Name="button"&gt;
     &lt;Interactivity:Interaction.Behaviors&gt;
         &lt;Interactions:EventTriggerBehavior EventName="Click" SourceObject="{Binding ElementName=button}"&gt;
@@ -43,8 +40,7 @@
     &lt;/Interactivity:Interaction.Behaviors&gt;
 &lt;/Button&gt;</Paragraph>
                 </RichTextBlock>
-                </StackPanel>
-            </ScrollViewer>
+            </StackPanel>
 
             <Grid Grid.Column="0" Margin="0,0,10,0" >
                 <Grid.RowDefinitions>

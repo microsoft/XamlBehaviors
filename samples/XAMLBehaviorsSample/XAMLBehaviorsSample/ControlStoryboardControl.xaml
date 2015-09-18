@@ -28,25 +28,23 @@
             <RowDefinition Height="7*" />
         </Grid.RowDefinitions>
 
-        <Viewbox VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,0,0,10">
-            <TextBlock Text="ControlStoryboardAction" FontSize="40" VerticalAlignment="Stretch" Foreground="{StaticResource DarkGreyBrush}" />
-        </Viewbox>
-        
+        <TextBlock Text="ControlStoryboardAction" FontSize="40" VerticalAlignment="Stretch" Foreground="{StaticResource DarkGreyBrush}" />
+
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            <ScrollViewer Grid.Column="1" ScrollViewer.VerticalScrollBarVisibility="Auto" >
-                <StackPanel Grid.Column="1">
-                    <TextBlock TextWrapping="WrapWholeWords" Margin="10,0,0,0" FontSize="20" Foreground="{StaticResource DarkGreyBrush}">
-                        <TextBlock.Text>
-                            ControlStoryboardAction represents an action that will change the state of the specified Storyboard when executed.
-                    In this example, clicking the button triggers the ControlStoryboardAction to toggle playing and pausing a storyboard that changes the size of the rectangle.
-                        </TextBlock.Text>
-                    </TextBlock>
-                    <RichTextBlock TextWrapping="WrapWholeWords" Margin="10,20,0,0" FontSize="15" Foreground="{StaticResource PinkBrush}" xml:space="preserve" IsTextSelectionEnabled="True">
+
+            <StackPanel Grid.Column="1">
+                <TextBlock TextWrapping="WrapWholeWords" Margin="10,0,0,0" FontSize="20" Foreground="{StaticResource DarkGreyBrush}">
+                <TextBlock.Text>
+                    ControlStoryboardAction represents an action that will change the state of the specified Storyboard when executed.
+                    In this example, clicking the button triggers the ControlStoryboardAction to toggle playing and pausing a storyboard that changes the size of the rectangle. 
+                </TextBlock.Text>
+            </TextBlock>
+                <RichTextBlock TextWrapping="WrapWholeWords" Margin="10,20,0,0" FontSize="15" Foreground="{StaticResource PinkBrush}" xml:space="preserve" IsTextSelectionEnabled="True">
                     <Paragraph>&lt;Button x:Name="button">
     &lt;Interactivity:Interaction.Behaviors>
         &lt;Interactions:EventTriggerBehavior EventName="Click">
@@ -55,8 +53,7 @@
     &lt;/Interactivity:Interaction.Behaviors>
 &lt;/Button></Paragraph>
                 </RichTextBlock>
-                </StackPanel>
-            </ScrollViewer>
+            </StackPanel>
 
             <Grid Grid.Column="0"  Margin="0,0,10,0">
                 <Grid.RowDefinitions>

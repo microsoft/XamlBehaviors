@@ -4,7 +4,7 @@
     xmlns:local="using:XAMLBehaviorsSample"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:Interactivity="using:Microsoft.Xaml.Interactivity" xmlns:Interactions="using:Microsoft.Xaml.Interactions.Core"
+    xmlns:Interactivity="using:Microsoft.Xaml.Interactivity" xmlns:Interactions="using:Microsoft.Xaml.Interactions"
     x:Class="XAMLBehaviorsSample.CustomBehaviorControl"
     mc:Ignorable="d"
     d:DesignHeight="600"
@@ -16,33 +16,29 @@
             <RowDefinition Height="7*" />
         </Grid.RowDefinitions>
 
-        <Viewbox VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,0,0,10">
-            <TextBlock Text="Custom Behavior - DragPositionBehavior" FontSize="40" VerticalAlignment="Stretch" Foreground="{StaticResource DarkGreyBrush}" />
-        </Viewbox>
-        
+        <TextBlock Text="Custom Behavior - DragPositionBehavior" FontSize="40" VerticalAlignment="Stretch" Foreground="{StaticResource DarkGreyBrush}" />
+
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            <ScrollViewer Grid.Column="1" ScrollViewer.VerticalScrollBarVisibility="Auto" >
-                <StackPanel Grid.Column="1">
-                    <TextBlock TextWrapping="WrapWholeWords" Margin="10,0,10,0" FontSize="20" Foreground="{StaticResource DarkGreyBrush}">
-                        <TextBlock.Text>
-                            Implementing a Custom Behavior for DragPositionBehavior allows controls to be moved around the canvas.
-                        In this example, the shapes are able to be dragged around the page using a mouse drag.
-                        </TextBlock.Text>
-                    </TextBlock>
-                    <RichTextBlock TextWrapping="WrapWholeWords" Margin="10,20,0,0" FontSize="15" Foreground="{StaticResource PaleYellowBrush}" xml:space="preserve" IsTextSelectionEnabled="True">
+            <StackPanel Grid.Column="1">
+                <TextBlock TextWrapping="WrapWholeWords" Margin="10,0,10,0" FontSize="20" Foreground="{StaticResource DarkGreyBrush}">
+                    <TextBlock.Text>
+                        Implementing a Custom Behavior for DragPositionBehavior allows controls to be moved around the canvas.
+                        In this example, the shapes are able to be dragged around the page using a mouse drag. 
+                    </TextBlock.Text>
+                </TextBlock>
+                <RichTextBlock TextWrapping="WrapWholeWords" Margin="10,20,0,0" FontSize="15" Foreground="{StaticResource PaleYellowBrush}" xml:space="preserve" IsTextSelectionEnabled="True">
 					<Paragraph>&lt;Rectangle>
     &lt;Interactivity:Interaction.Behaviors>
         &lt;Behaviors:DragPositionBehavior/>
     &lt;/Interactivity:Interaction.Behaviors>
 &lt;/Rectangle></Paragraph>
 				</RichTextBlock>
-                </StackPanel>
-            </ScrollViewer>
+            </StackPanel>
 
             <Grid Grid.Column="0" Margin="0,0,10,10" BorderBrush="{StaticResource HighlightBrush}" BorderThickness="5" Background="{StaticResource PaleYellowBrush}">
                 <Ellipse Fill="{StaticResource DarkGreyBrush}" HorizontalAlignment="Left" Height="125" Stroke="Black" VerticalAlignment="Top" Width="125" StrokeThickness="0" Margin="15">
