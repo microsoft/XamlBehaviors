@@ -1,0 +1,86 @@
+﻿<UserControl
+    x:Class="XAMLBehaviorsSample.IncrementalUpdateControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:XAMLBehaviorsSample"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Interactivity="using:Microsoft.Xaml.Interactivity" xmlns:Interactions="using:Microsoft.Xaml.Interactions.Core"
+    mc:Ignorable="d"
+    d:DesignHeight="600"
+    d:DesignWidth="800">
+    
+    <UserControl.Resources>
+        <DataTemplate x:Key="GridViewItem">
+            <StackPanel Height="125" Width="125" Margin="20" Background="{StaticResource HighlightBrush}" >
+                <Rectangle Height="100" Width="125" Fill="{StaticResource RoyalBlueBrush}">
+                    <Interactivity:Interaction.Behaviors>
+                        <Interactions:IncrementalUpdateBehavior Phase="2"/>
+                    </Interactivity:Interaction.Behaviors>
+                </Rectangle>
+                <TextBlock Text="{Binding Count}" FontSize="16" VerticalAlignment="Center" Foreground="{StaticResource PaleGreyBrush}" Margin="5,0,0,0" >
+                    <Interactivity:Interaction.Behaviors>
+                        <Interactions:IncrementalUpdateBehavior Phase="1"/>
+                    </Interactivity:Interaction.Behaviors>
+                </TextBlock>
+            </StackPanel>
+        </DataTemplate>
+    </UserControl.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="7*" />
+        </Grid.RowDefinitions>
+
+        <Viewbox VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,0,0,10">
+            <TextBlock Text="IncrementalUpdateBehavior" FontSize="40" VerticalAlignment="Stretch" Foreground="{StaticResource DarkGreyBrush}" />
+        </Viewbox>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <ScrollViewer Grid.Column="1" ScrollViewer.VerticalScrollBarVisibility="Auto" >
+                <StackPanel Grid.Column="1" >
+                    <TextBlock TextWrapping="WrapWholeWords" Margin="10,0,0,0" FontSize="20" Foreground="{StaticResource DarkGreyBrush}">
+                        <TextBlock.Text>
+                            IncrementalUpdateBehavior attaches to the DataTemplate inside ListViewBase controls (i.e. ListView and GridView). 
+                    It enables deferred rendering for specified elements in the ItemTemplate used by the view. 
+                    In the sample, declaring elements in the GridView in certain phases defers updates until there is render time available, resulting in a smoother expeirence.
+                        </TextBlock.Text>
+                    </TextBlock>
+                    <RichTextBlock TextWrapping="WrapWholeWords" Margin="10,20,0,0" FontSize="15" Foreground="{StaticResource RoyalBlueBrush}" xml:space="preserve" IsTextSelectionEnabled="True">
+                    <Paragraph>&lt;DataTemplate x:Key="GridViewItem">
+    &lt;StackPanel>
+        &lt;Rectangle>
+            &lt;Interactivity:Interaction.Behaviors>
+                &lt;Interactions:IncrementalUpdateBehavior Phase="2"/>
+            &lt;/Interactivity:Interaction.Behaviors>
+        &lt;/Rectangle>
+        &lt;TextBlock Text="{Binding Count}">
+            &lt;Interactivity:Interaction.Behaviors>
+                &lt;Interactions:IncrementalUpdateBehavior Phase="1"/>
+            &lt;/Interactivity:Interaction.Behaviors>
+        &lt;/TextBlock>
+    &lt;/StackPanel>
+&lt;/DataTemplate>
+                    </Paragraph>
+                </RichTextBlock>
+                </StackPanel>
+            </ScrollViewer>
+
+            <Grid Grid.Column="0" Margin="0,0,10,0" BorderThickness="5" BorderBrush="{StaticResource HighlightBrush}">
+                <GridView x:Name="gridViewSample" HorizontalAlignment="Stretch" VerticalAlignment="Top" ItemTemplate="{StaticResource GridViewItem}" ScrollViewer.VerticalScrollBarVisibility="Visible">
+                    <GridView.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <ItemsWrapGrid Orientation="Horizontal" />
+                        </ItemsPanelTemplate>
+                    </GridView.ItemsPanel>
+                </GridView>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

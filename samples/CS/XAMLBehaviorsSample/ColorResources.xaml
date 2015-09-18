@@ -21,7 +21,7 @@
         <Setter Property="Background" Value="{ThemeResource SystemControlBackgroundBaseLowBrush}"/>
         <Setter Property="Foreground" Value="{StaticResource PaleGreyBrush}"/>
         <Setter Property="BorderBrush" Value="{StaticResource HighlightBrush}" />
-        <Setter Property="BorderThickness" Value="5"/>
+        <Setter Property="BorderThickness" Value="3"/>
         <Setter Property="Padding" Value="8,4,8,4"/>
         <Setter Property="Margin" Value="0,4,0,4"/>
         <Setter Property="HorizontalAlignment" Value="Left"/>
@@ -47,7 +47,7 @@
                                             <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource RoyalBlueBrush}"/>
                                         </ObjectAnimationUsingKeyFrames>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderThickness" Storyboard.TargetName="ContentPresenter">
-                                            <DiscreteObjectKeyFrame KeyTime="0" Value="5"/>
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="3"/>
                                         </ObjectAnimationUsingKeyFrames>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentPresenter">
                                             <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource PaleGrey}"/>
@@ -95,7 +95,7 @@
         <Setter Property="Background" Value="{ThemeResource SystemControlBackgroundBaseLowBrush}"/>
         <Setter Property="Foreground" Value="{StaticResource PaleGreyBrush}"/>
         <Setter Property="BorderBrush" Value="{StaticResource HighlightBrush}" />
-        <Setter Property="BorderThickness" Value="5"/>
+        <Setter Property="BorderThickness" Value="3"/>
         <Setter Property="Padding" Value="8,4,8,4"/>
         <Setter Property="Margin" Value="0,4,0,4"/>
         <Setter Property="HorizontalAlignment" Value="Left"/>
@@ -121,7 +121,7 @@
                                             <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource PinkBrush}"/>
                                         </ObjectAnimationUsingKeyFrames>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderThickness" Storyboard.TargetName="ContentPresenter">
-                                            <DiscreteObjectKeyFrame KeyTime="0" Value="5"/>
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="3"/>
                                         </ObjectAnimationUsingKeyFrames>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentPresenter">
                                             <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource PaleGrey}"/>
@@ -169,7 +169,7 @@
         <Setter Property="Background" Value="{ThemeResource SystemControlBackgroundBaseLowBrush}"/>
         <Setter Property="Foreground" Value="{StaticResource PaleGreyBrush}"/>
         <Setter Property="BorderBrush" Value="{StaticResource HighlightBrush}" />
-        <Setter Property="BorderThickness" Value="5"/>
+        <Setter Property="BorderThickness" Value="3"/>
         <Setter Property="Padding" Value="8,4,8,4"/>
         <Setter Property="Margin" Value="0,4,0,4"/>
         <Setter Property="HorizontalAlignment" Value="Left"/>
@@ -195,7 +195,7 @@
                                             <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource PaleYellowBrush}"/>
                                         </ObjectAnimationUsingKeyFrames>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderThickness" Storyboard.TargetName="ContentPresenter">
-                                            <DiscreteObjectKeyFrame KeyTime="0" Value="5"/>
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="3"/>
                                         </ObjectAnimationUsingKeyFrames>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentPresenter">
                                             <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource PaleGrey}"/>

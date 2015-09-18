@@ -7,6 +7,7 @@ using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Foundation.Metadata;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -72,8 +73,16 @@ namespace XAMLBehaviorsSample
                 // When the navigation stack isn't restored navigate to the first page,
                 // configuring the new page by passing required information as a navigation
                 // parameter
-                rootFrame.Navigate(typeof(MainPage), e.Arguments);
-            }
+
+                if (DetectMobile())
+                {
+                    rootFrame.Navigate(typeof(MainPage_Mobile), e.Arguments);
+                }
+                else
+                {
+                    rootFrame.Navigate(typeof(MainPage), e.Arguments);
+                }
+            } 
             // Ensure the current window is active
             Window.Current.Activate();
         }
@@ -100,6 +109,21 @@ namespace XAMLBehaviorsSample
             var deferral = e.SuspendingOperation.GetDeferral();
             //TODO: Save application state and stop any background activity
             deferral.Complete();
+        }
+
+        private bool DetectMobile()
+        {
+            bool isHardwareButtonsAPIPresent =
+                ApiInformation.IsTypePresent("Windows.Phone.UI.Input.HardwareButtons");
+
+            if (isHardwareButtonsAPIPresent)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

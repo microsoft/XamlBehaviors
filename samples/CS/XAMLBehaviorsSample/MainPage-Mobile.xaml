@@ -1,0 +1,106 @@
+﻿<Page
+    x:Class="XAMLBehaviorsSample.MainPage_Mobile"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:XAMLBehaviorsSample"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Pivot x:Name="pivot" Title="Behaviors Sample" Background="{StaticResource PaleGreyBrush}">
+        <Pivot.TitleTemplate>
+            <DataTemplate>
+                <Grid Background="Transparent">
+                    <TextBlock Text="{Binding}" FontSize="20" Foreground="{StaticResource DarkGreyBrush}"/>
+                </Grid>
+            </DataTemplate>
+        </Pivot.TitleTemplate>
+        <Pivot.HeaderTemplate>
+            <DataTemplate>
+                <Grid Background="Transparent">
+                    <TextBlock Text="{Binding}" FontSize="25" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                </Grid>
+            </DataTemplate>
+        </Pivot.HeaderTemplate>
+
+        <PivotItem Header="Behaviors">
+            <Grid Margin="0,5,0,5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="5*"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Column="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="DataTriggerButton" Content="Data Trigger" Grid.Column="0" Margin="3,0,3,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource BehaviorButton}" Background="{StaticResource RoyalBlueBrush}" Click="DataTriggerButton_Click" FontSize="13.333"/>
+                    <Button x:Name="EventTriggerButton" Content="Event Trigger" Grid.Column="1" Margin="3,0,3,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource BehaviorButton}" Background="{StaticResource RoyalBlueBrush}" Click="EventTriggerButton_Click" FontSize="13.333"/>
+                    <Button x:Name="IncrementalUpdateButton" Content="Incremental Update" Grid.Column="2" Margin="3,0,3,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource BehaviorButton}" Background="{StaticResource RoyalBlueBrush}" Click="IncrementalUpdateButton_Click" FontSize="13.333"/>
+                </Grid>
+                <Grid x:Name="BehaviorsContent" Grid.Row="1" Margin="0,10,0,10">
+                    <Viewbox VerticalAlignment="Top" HorizontalAlignment="Left">
+                        <TextBlock Text="Select a Behavior for a Sample" FontSize="20" TextWrapping="WrapWholeWords" VerticalAlignment="Stretch" Foreground="{StaticResource DarkGreyBrush}" />
+                    </Viewbox>
+                </Grid>
+            </Grid>
+        </PivotItem>
+        <PivotItem Header="Actions">
+            <Grid Margin="0,5,0,5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="5*"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Column="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="3"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="CallMethodButton" Content="Call Method" Margin="3,0,3,0" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource ActionsButton}" Background="{StaticResource PinkBrush}" Click="CallMethodButton_Click" FontSize="9.333"/>
+                    <Button x:Name="ChangePropertyButton" Content="Change Property" Margin="3,0,3,0" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource ActionsButton}" Background="{StaticResource PinkBrush}" Click="ChangePropertyButton_Click" FontSize="9.333"/>
+                    <Button x:Name="ControlStoryboardButton" Content="Control Storyboard" Margin="3,0,3,0" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource ActionsButton}" Background="{StaticResource PinkBrush}" Click="ControlStoryboardButton_Click" FontSize="9.333"/>
+                    <Button x:Name="PlaySoundButton" Content="Play Sound" Margin="3,0,3,0" Grid.Row="0" Grid.Column="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource ActionsButton}" Background="{StaticResource PinkBrush}" Click="PlaySoundButton_Click" FontSize="9.333"/>
+
+                    <Button x:Name="GoToStateButton" Content="Go To State" Margin="3,0,3,0" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource ActionsButton}" Background="{StaticResource PinkBrush}" Click="GoToStateButton_Click" FontSize="9.333"/>
+                    <Button x:Name="InvokeCommandButton" Content="Invoke Command" Margin="3,0,3,0" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource ActionsButton}" Background="{StaticResource PinkBrush}" Click="InvokeCommandButton_Click" FontSize="9.333"/>
+                    <Button x:Name="NavigateToPageButton" Content="Navigate To Page" Margin="3,0,3,0" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource ActionsButton}" Background="{StaticResource PinkBrush}" Click="NavigateToPageButton_Click" FontSize="9.333"/>
+                </Grid>
+                <Grid x:Name="ActionsContent" Grid.Row="1" Margin="0,10,0,10">
+                    <Viewbox VerticalAlignment="Top" HorizontalAlignment="Left">
+                        <TextBlock Text="Select an Action for a Sample" FontSize="20" TextWrapping="WrapWholeWords"  VerticalAlignment="Stretch" Foreground="{StaticResource DarkGreyBrush}" />
+                    </Viewbox>
+                </Grid>
+            </Grid>
+        </PivotItem>
+        <PivotItem Header="Custom">
+            <Grid Margin="0,5,0,5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="5*"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="CustomBehavior" Content="Custom Behavior" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource CustomButton}" Background="{StaticResource PaleYellowBrush}" Click="CustomBehavior_Click" Margin="3,4" FontSize="13.333"/>
+                    <Button x:Name="CustomAction" Content="Custom Action" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource CustomButton}" Background="{StaticResource PaleYellowBrush}" Click="CustomAction_Click" Margin="3,4" FontSize="13.333"/>
+                </Grid>
+                <Grid x:Name="CustomContent" Grid.Row="1" Margin="0,10,0,10">
+                    <Viewbox VerticalAlignment="Top" HorizontalAlignment="Left">
+                        <TextBlock Text="Select a Custom Behavior/Action for a Sample" FontSize="40" TextWrapping="WrapWholeWords"  VerticalAlignment="Stretch" Foreground="{StaticResource DarkGreyBrush}" />
+                    </Viewbox>
+                </Grid>
+            </Grid>
+        </PivotItem>
+    </Pivot>
+
+</Page>
