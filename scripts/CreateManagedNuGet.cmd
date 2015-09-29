@@ -8,7 +8,7 @@ IF %ERRORLEVEL% NEQ 0 (
     GOTO END
 )
 
-IF EXIST ..\src\BehaviorsSDKManaged\Microsoft.Xaml.Interactions\bin\Release\Microsoft.Xaml.Interactions.dll (
+IF EXIST ..\out\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactions.dll (
 	IF "%1"=="" (
 		GOTO PackWithFileVersion
 	)
