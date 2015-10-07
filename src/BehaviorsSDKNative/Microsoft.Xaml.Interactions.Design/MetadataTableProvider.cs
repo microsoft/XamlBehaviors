@@ -12,11 +12,9 @@ using Microsoft.Xaml.Interactions.Media;
 
 namespace Microsoft.Xaml.Interactivity.Design
 {
-    internal class MetadataTableProvider : IProvideAttributeTable, IRequireAttributeTableTypeResolver
+    internal class MetadataTableProvider : IProvideAttributeTable
     {
         private AttributeTableBuilder attributeTableBuilder;
-
-        public IAttributeTableTypeResolver TypeResolver { set; private get; }
 
         public AttributeTable AttributeTable
         {

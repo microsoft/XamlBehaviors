@@ -9,11 +9,9 @@ using Microsoft.Xaml.Interactivity.Design.Properties;
 
 namespace Microsoft.Xaml.Interactivity.Design
 {
-    internal class MetadataTableProvider : IProvideAttributeTable, IRequireAttributeTableTypeResolver
+    internal class MetadataTableProvider : IProvideAttributeTable
     {
         private AttributeTableBuilder attributeTableBuilder;
-
-        public IAttributeTableTypeResolver TypeResolver { set; private get; }
 
         public AttributeTable AttributeTable
         {
@@ -34,15 +32,6 @@ namespace Microsoft.Xaml.Interactivity.Design
         private void AddAttribute<T>(Attribute attribute)
         {
             attributeTableBuilder.AddCustomAttributes(typeof(T), attribute);
-        }
-
-        private void AddAttribute(string typeName, Attribute attribute)
-        {
-            Type type = this.TypeResolver.ResolveType(typeName);
-            if (type != null)
-            {
-                attributeTableBuilder.AddCustomAttributes(type, attribute);
-            }
         }
     }
 }
