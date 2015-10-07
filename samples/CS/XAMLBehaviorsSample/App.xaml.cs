@@ -74,14 +74,14 @@ namespace XAMLBehaviorsSample
                 // configuring the new page by passing required information as a navigation
                 // parameter
 
-                if (DetectMobile())
-                {
-                    rootFrame.Navigate(typeof(MainPage_Mobile), e.Arguments);
-                }
-                else
-                {
+                //if (DetectMobile())
+                //{
+                //    rootFrame.Navigate(typeof(MainPage_Mobile), e.Arguments);
+                //}
+                //else
+                //{
                     rootFrame.Navigate(typeof(MainPage), e.Arguments);
-                }
+               // }
             } 
             // Ensure the current window is active
             Window.Current.Activate();

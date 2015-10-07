@@ -97,14 +97,8 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="CallMethodControl-Mobile.xaml.cs">
-      <DependentUpon>CallMethodControl-Mobile.xaml</DependentUpon>
-    </Compile>
     <Compile Include="CallMethodControl.xaml.cs">
       <DependentUpon>CallMethodControl.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ChangePropertyControl-Mobile.xaml.cs">
-      <DependentUpon>ChangePropertyControl-Mobile.xaml</DependentUpon>
     </Compile>
     <Compile Include="ChangePropertyControl.xaml.cs">
       <DependentUpon>ChangePropertyControl.xaml</DependentUpon>
@@ -113,75 +107,39 @@
       <DependentUpon>ContentDialogSample.xaml</DependentUpon>
     </Compile>
     <Compile Include="ContentDialogPopUp.cs" />
-    <Compile Include="ControlStoryboardControl-Mobile.xaml.cs">
-      <DependentUpon>ControlStoryboardControl-Mobile.xaml</DependentUpon>
-    </Compile>
     <Compile Include="ControlStoryboardControl.xaml.cs">
       <DependentUpon>ControlStoryboardControl.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="CustomActionControl-Mobile.xaml.cs">
-      <DependentUpon>CustomActionControl-Mobile.xaml</DependentUpon>
     </Compile>
     <Compile Include="CustomActionControl.xaml.cs">
       <DependentUpon>CustomActionControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="CustomBehaviorControl-Mobile.xaml.cs">
-      <DependentUpon>CustomBehaviorControl-Mobile.xaml</DependentUpon>
-    </Compile>
     <Compile Include="CustomBehaviorControl.xaml.cs">
       <DependentUpon>CustomBehaviorControl.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="DataTriggerControl-Mobile.xaml.cs">
-      <DependentUpon>DataTriggerControl-Mobile.xaml</DependentUpon>
     </Compile>
     <Compile Include="DataTriggerControl.xaml.cs">
       <DependentUpon>DataTriggerControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="DragPositionBehavior.cs" />
-    <Compile Include="EventTriggerControl-Mobile.xaml.cs">
-      <DependentUpon>EventTriggerControl-Mobile.xaml</DependentUpon>
-    </Compile>
     <Compile Include="EventTriggerControl.xaml.cs">
       <DependentUpon>EventTriggerControl.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="GoToStateControl-Mobile.xaml.cs">
-      <DependentUpon>GoToStateControl-Mobile.xaml</DependentUpon>
     </Compile>
     <Compile Include="GoToStateControl.xaml.cs">
       <DependentUpon>GoToStateControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="IncrementalUpdateControl-Mobile.xaml.cs">
-      <DependentUpon>IncrementalUpdateControl-Mobile.xaml</DependentUpon>
-    </Compile>
     <Compile Include="IncrementalUpdateControl.xaml.cs">
       <DependentUpon>IncrementalUpdateControl.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="InvokeCommandControl-Mobile.xaml.cs">
-      <DependentUpon>InvokeCommandControl-Mobile.xaml</DependentUpon>
     </Compile>
     <Compile Include="InvokeCommandControl.xaml.cs">
       <DependentUpon>InvokeCommandControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MainPage-Mobile.xaml.cs">
-      <DependentUpon>MainPage-Mobile.xaml</DependentUpon>
-    </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="NavigatePageSample-Mobile.xaml.cs">
-      <DependentUpon>NavigatePageSample-Mobile.xaml</DependentUpon>
     </Compile>
     <Compile Include="NavigatePageSample.xaml.cs">
       <DependentUpon>NavigatePageSample.xaml</DependentUpon>
     </Compile>
-    <Compile Include="NavigateToPageControl-Mobile.xaml.cs">
-      <DependentUpon>NavigateToPageControl-Mobile.xaml</DependentUpon>
-    </Compile>
     <Compile Include="NavigateToPageControl.xaml.cs">
       <DependentUpon>NavigateToPageControl.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="PlaySoundControl-Mobile.xaml.cs">
-      <DependentUpon>PlaySoundControl-Mobile.xaml</DependentUpon>
     </Compile>
     <Compile Include="PlaySoundControl.xaml.cs">
       <DependentUpon>PlaySoundControl.xaml</DependentUpon>
@@ -212,7 +170,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="CallMethodControl-Mobile.xaml">
+    <Page Include="CallMethodControl.DeviceFamily-Mobile.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -220,7 +178,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ChangePropertyControl-Mobile.xaml">
+    <Page Include="ChangePropertyControl.DeviceFamily-Mobile.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -232,7 +190,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ControlStoryboardControl-Mobile.xaml">
+    <Page Include="ControlStoryboardControl.DeviceFamily-Mobile.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -240,7 +198,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="CustomActionControl-Mobile.xaml">
+    <Page Include="CustomActionControl.DeviceFamily-Mobile.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -248,7 +206,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="CustomBehaviorControl-Mobile.xaml">
+    <Page Include="CustomBehaviorControl.DeviceFamily-Mobile.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -256,7 +214,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="DataTriggerControl-Mobile.xaml">
+    <Page Include="DataTriggerControl.DeviceFamily-Mobile.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -264,7 +222,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="EventTriggerControl-Mobile.xaml">
+    <Page Include="EventTriggerControl.DeviceFamily-Mobile.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -272,7 +230,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="GoToStateControl-Mobile.xaml">
+    <Page Include="GoToStateControl.DeviceFamily-Mobile.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -280,7 +238,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="IncrementalUpdateControl-Mobile.xaml">
+    <Page Include="IncrementalUpdateControl.DeviceFamily-Mobile.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -288,7 +246,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="InvokeCommandControl-Mobile.xaml">
+    <Page Include="InvokeCommandControl.DeviceFamily-Mobile.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -296,7 +254,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainPage-Mobile.xaml">
+    <Page Include="MainPage.DeviceFamily-Mobile.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -309,15 +267,15 @@
       <Generator>MSBuild:Compile</Generator>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Page>
-    <Page Include="NavigatePageSample-Mobile.xaml">
-      <Generator>MSBuild:Compile</Generator>
+    <Page Include="NavigatePageSample.DeviceFamily-Mobile.xaml">
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="NavigatePageSample.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="NavigateToPageControl-Mobile.xaml">
+    <Page Include="NavigateToPageControl.DeviceFamily-Mobile.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -325,7 +283,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="PlaySoundControl-Mobile.xaml">
+    <Page Include="PlaySoundControl.DeviceFamily-Mobile.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

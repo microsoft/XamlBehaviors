@@ -83,6 +83,7 @@ namespace XAMLBehaviorsSample
 
         private void EventTriggerButton_Click(object sender, RoutedEventArgs e)
         {
+            _eventtrigger = new EventTriggerControl();
             BehaviorsContent.Children.Clear();
             BehaviorsContent.Children.Add(_eventtrigger);
         }
