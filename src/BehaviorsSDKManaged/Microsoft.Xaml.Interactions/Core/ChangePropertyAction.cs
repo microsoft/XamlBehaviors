@@ -19,7 +19,7 @@ namespace Microsoft.Xaml.Interactions.Core
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes")]
         public static readonly DependencyProperty PropertyNameProperty = DependencyProperty.Register(
             "PropertyName",
-            typeof(string),
+            typeof(PropertyPath),
             typeof(ChangePropertyAction),
             new PropertyMetadata(null));
 
@@ -46,11 +46,11 @@ namespace Microsoft.Xaml.Interactions.Core
         /// <summary>
         /// Gets or sets the name of the property to change. This is a dependency property.
         /// </summary>
-        public string PropertyName
+        public PropertyPath PropertyName
         {
             get
             {
-                return (string)this.GetValue(ChangePropertyAction.PropertyNameProperty);
+                return (PropertyPath)this.GetValue(ChangePropertyAction.PropertyNameProperty);
             }
             set
             {
@@ -108,7 +108,7 @@ namespace Microsoft.Xaml.Interactions.Core
                 targetObject = sender;
             }
 
-            if (targetObject == null || string.IsNullOrEmpty(this.PropertyName))
+            if (targetObject == null || this.PropertyName == null)
             {
                 return false;
             }
@@ -120,7 +120,7 @@ namespace Microsoft.Xaml.Interactions.Core
         private void UpdatePropertyValue(object targetObject)
         {
             Type targetType = targetObject.GetType();
-            PropertyInfo propertyInfo = targetType.GetRuntimeProperty(this.PropertyName);
+            PropertyInfo propertyInfo = targetType.GetRuntimeProperty(this.PropertyName.Path);
             this.ValidateProperty(targetType.Name, propertyInfo);
 
             Exception innerException = null;
