@@ -109,7 +109,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ActionCollection.cs" />
+    <Compile Include="Behavior.cs" />
     <Compile Include="BehaviorCollection.cs" />
+    <Compile Include="BehaviorOfT.cs" />
     <Compile Include="CustomPropertyValueEditorAttribute.cs" />
     <Compile Include="DefaultEventAttribute.cs" />
     <Compile Include="GlobalSuppressions.cs" />
