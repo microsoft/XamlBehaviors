@@ -44,6 +44,16 @@ namespace Microsoft.Xaml.Interactivity
             {
                 behaviorCollection = new BehaviorCollection();
                 obj.SetValue(Interaction.BehaviorsProperty, behaviorCollection);
+
+                var frameworkElement = obj as FrameworkElement;
+
+                if (frameworkElement != null)
+                {
+                    frameworkElement.Loaded -= FrameworkElement_Loaded;
+                    frameworkElement.Loaded += FrameworkElement_Loaded;
+                    frameworkElement.Unloaded -= FrameworkElement_Unloaded;
+                    frameworkElement.Unloaded += FrameworkElement_Unloaded;
+                }
             }
 
             return behaviorCollection;
@@ -106,6 +116,26 @@ namespace Microsoft.Xaml.Interactivity
             if (newCollection != null && sender != null)
             {
                 newCollection.Attach(sender);
+            }
+        }
+
+        private static void FrameworkElement_Loaded(object sender, RoutedEventArgs e)
+        {
+            var d = sender as DependencyObject;
+
+            if (d != null)
+            {
+                GetBehaviors(d).Attach(d);
+            }
+        }
+
+        private static void FrameworkElement_Unloaded(object sender, RoutedEventArgs e)
+        {
+            var d = sender as DependencyObject;
+
+            if (d != null)
+            {
+                GetBehaviors(d).Detach();
             }
         }
     }
