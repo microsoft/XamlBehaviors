@@ -18,22 +18,6 @@ namespace Microsoft.Xaml.Interactivity
         {
             base.Attach(associatedObject);
             this.AssociatedObject = (T)associatedObject;
-            OnAttached();
         }
-
-        public override void Detach()
-        {
-            base.Detach();
-            OnDetaching();
-        }
-
-        protected virtual void OnAttached()
-        {
-        }
-
-        protected virtual void OnDetaching()
-        {
-        }
-
     }
 }

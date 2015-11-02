@@ -14,9 +14,20 @@ namespace Microsoft.Xaml.Interactivity
         public virtual void Attach(DependencyObject associatedObject)
         {
             AssociatedObject = associatedObject;
+            OnAttached();
         }
 
         public virtual void Detach()
+        {
+            OnDetaching();
+        }
+
+
+        protected virtual void OnAttached()
+        {
+        }
+
+        protected virtual void OnDetaching()
         {
         }
     }
