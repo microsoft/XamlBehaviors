@@ -22,8 +22,14 @@ namespace Microsoft.Xaml.Interactivity
         protected override void OnAttached()
         {
             base.OnAttached();
-            
-            if (this.AssociatedObject == null) throw new InvalidOperationException(ResourceHelper.GetString("InvalidAssociatedObjectExceptionMessage"));
+
+            if (this.AssociatedObject == null)
+            {
+                string actualType = base.AssociatedObject.GetType().FullName;
+                string expectedType = typeof (T).FullName;
+                string message = string.Format(ResourceHelper.GetString("InvalidAssociatedObjectExceptionMessage"), actualType, expectedType);
+                throw new InvalidOperationException(message);
+            }
         }
     }
 }
