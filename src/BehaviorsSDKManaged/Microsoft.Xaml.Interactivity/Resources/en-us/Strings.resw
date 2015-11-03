@@ -123,6 +123,9 @@
   <data name="DuplicateBehaviorInCollectionExceptionMessage" xml:space="preserve">
     <value>Cannot add an instance of a behavior to a BehaviorCollection more than once.</value>
   </data>
+  <data name="InvalidAssociatedObjectExceptionMessage" xml:space="preserve">
+    <value>AssociatedObject is not of the right type</value>
+  </data>
   <data name="NonActionAddedToActionCollectionExceptionMessage" xml:space="preserve">
     <value>Only IAction types are supported in an ActionCollection.</value>
   </data>
