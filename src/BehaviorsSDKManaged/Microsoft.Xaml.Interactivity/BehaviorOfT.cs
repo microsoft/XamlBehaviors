@@ -1,5 +1,7 @@
 ﻿// Copyright (c) Microsoft. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
+
+using System;
 using Windows.UI.Xaml;
 
 namespace Microsoft.Xaml.Interactivity
@@ -12,12 +14,15 @@ namespace Microsoft.Xaml.Interactivity
     public abstract class Behavior<T> : Behavior where T : DependencyObject
     {
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
-        public new T AssociatedObject { get; set; }
-
-        public override void Attach(DependencyObject associatedObject)
+        public new T AssociatedObject
         {
-            base.Attach(associatedObject);
-            this.AssociatedObject = (T)associatedObject;
+            get { return base.AssociatedObject as T; }
+        }
+
+        protected override void OnAttached()
+        {
+            base.OnAttached();
+            if (this.AssociatedObject == null) throw new InvalidOperationException("AssociatedObject is not of the right type");
         }
     }
 }

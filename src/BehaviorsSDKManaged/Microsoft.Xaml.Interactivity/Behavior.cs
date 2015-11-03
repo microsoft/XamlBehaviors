@@ -9,19 +9,18 @@ namespace Microsoft.Xaml.Interactivity
     /// </summary>
     public abstract class Behavior : DependencyObject, IBehavior
     {
-        public DependencyObject AssociatedObject { get; set; }
+        public DependencyObject AssociatedObject { get; private set; }
 
-        public virtual void Attach(DependencyObject associatedObject)
+        public void Attach(DependencyObject associatedObject)
         {
             AssociatedObject = associatedObject;
             OnAttached();
         }
 
-        public virtual void Detach()
+        public void Detach()
         {
             OnDetaching();
         }
-
 
         protected virtual void OnAttached()
         {
