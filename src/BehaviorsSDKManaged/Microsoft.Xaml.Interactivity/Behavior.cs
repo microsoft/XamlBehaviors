@@ -1,5 +1,7 @@
 ﻿// Copyright (c) Microsoft. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
+
+using System;
 using Windows.UI.Xaml;
 
 namespace Microsoft.Xaml.Interactivity
@@ -13,6 +15,8 @@ namespace Microsoft.Xaml.Interactivity
 
         public void Attach(DependencyObject associatedObject)
         {
+            if (associatedObject == null) throw new ArgumentNullException(nameof(associatedObject));
+
             AssociatedObject = associatedObject;
             OnAttached();
         }
