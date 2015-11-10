@@ -14,7 +14,9 @@
         <Implementation>Microsoft.Xaml.Interactions.dll</Implementation>
       </Reference>
       <ReferenceCopyLocalPaths Include="$(MSBuildThisFileDirectory)..\..\runtimes\win10-$(behaviors-Platform)\native\Microsoft.Xaml.Interactivity.dll" />
-	  <ReferenceCopyLocalPaths Include="$(MSBuildThisFileDirectory)..\..\runtimes\win10-$(behaviors-Platform)\native\Microsoft.Xaml.Interactions.dll" />
+      <ReferenceCopyLocalPaths Include="$(MSBuildThisFileDirectory)..\..\runtimes\win10-$(behaviors-Platform)\native\Microsoft.Xaml.Interactions.dll" />
+      <ReferenceCopyLocalPaths Include="$(MSBuildThisFileDirectory)..\..\runtimes\win10-$(behaviors-Platform)\native\Microsoft.Xaml.Interactions.pri" />
+      <ReferenceCopyLocalPaths Include="$(MSBuildThisFileDirectory)..\..\runtimes\win10-$(behaviors-Platform)\native\Microsoft.Xaml.Interactivity.pri" />
   </ItemGroup>
 
 </Project>

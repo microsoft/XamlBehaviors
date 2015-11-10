@@ -39,8 +39,12 @@
     <ClInclude Include="resource1.h" />
   </ItemGroup>
   <ItemGroup>
-    <PRIResource Include="..\Microsoft.Xaml.Interactivity\Resources\en-US\Strings.resw">
-      <Filter>Resource Files\en-us</Filter>
-    </PRIResource>
+    <PRIResource Include="Resources\de-DE\Strings.resw" />
+    <PRIResource Include="Resources\en-US\Strings.resw" />
+    <PRIResource Include="Resources\pt-BR\Strings.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactions.de-DE.xlf" />
+    <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactions.pt-BR.xlf" />
   </ItemGroup>
 </Project>

@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="CallMethodActionValidMethodNotFoundExceptionMessage" xml:space="preserve">
+    <value>Keine Methode mit der Bezeichnung {0} im Objekt vom Typ {1} gefunden, die mit der erwarteten Signatur übereinstimmt.</value>
+    <comment>{0} is the name of the method that could not be found. {1} is the name of the type that was searched for the method.</comment>
+  </data>
+  <data name="CannotAttachBehaviorMultipleTimesExceptionMessage" xml:space="preserve">
+    <value>Eine Instanz eines Verhaltens kann nicht mehreren Objekten gleichzeitig angefügt werden.</value>
+  </data>
+  <data name="CannotFindEventNameExceptionMessage" xml:space="preserve">
+    <value>Kein Ereignis mit der Bezeichnung {0} auf Typ {1} gefunden.</value>
+    <comment>{0} is the EventName property value specified by the user. {1} is the Type we are trying to find an event on.</comment>
+  </data>
+  <data name="ChangePropertyActionCannotFindPropertyNameExceptionMessage" xml:space="preserve">
+    <value>Keine Eigenschaft mit der Bezeichnung {0} auf Typ {1} gefunden.</value>
+    <comment>{0} is the PropertyName property value specified by the user. {1} is the Type we are trying to find a property on.</comment>
+  </data>
+  <data name="ChangePropertyActionCannotSetValueExceptionMessage" xml:space="preserve">
+    <value>Kann keinen Wert vom Typ {0} zu einer Eigenschaft {1} vom Typ {2} zuweisen. Die Eigenschaft {1} kann nur Werten vom Typ {2} zugewiesen werden.</value>
+    <comment>{0} is the type name of the illegal value, or "null" if value is null. {1} is the name of the property. {2} is the type of the property.</comment>
+  </data>
+  <data name="ChangePropertyActionPropertyIsReadOnlyExceptionMessage" xml:space="preserve">
+    <value>Die vom Typ {1} definierte Eigenschaft {0} gibt keine Methode zum Festlegen an und kann daher nicht geändert werden.</value>
+    <comment>{0} is the name of the property. {1} is the name of the type that defines the property.</comment>
+  </data>
+  <data name="EventNotSupportedExceptionMessage" xml:space="preserve">
+    <value>Ereignis {0} ist nicht unterstützt. Erwägen Sie die Implementierung eines benutzerdefinierten IBehavior, um auf dieses Ereignis zu reagieren.</value>
+    <comment>{0} is the name of an event.</comment>
+  </data>
+  <data name="GoToStateActionTargetHasNoStateGroups" xml:space="preserve">
+    <value>Das Ziel {0} definiert keine VisualStateGroups.</value>
+    <comment>{0} is an element name and could be an empty string.</comment>
+  </data>
+  <data name="InvalidLeftOperand" xml:space="preserve">
+    <value>Die Bindungseigenschaft vom Typ {0} kann nicht mit dem Operator {1} verwendet werden.</value>
+    <comment>{0} is the type of the DataTriggerBehavior.Binding property specified by the user. {1} is one of the ComparisonConditionType enum values.</comment>
+  </data>
+  <data name="InvalidOperands" xml:space="preserve">
+    <value>Die Bindungseigenschaft vom Typ {0} und die Werteigenschaft vom Typ {1} können nicht mit dem Operator {2} verwendet werden.</value>
+    <comment>{0} is the type of the DataTriggerBehavior.Binding property specified by the user. {1} is the type of the DataTriggerBehavior.Value property specified by the user. {2} is one of the ComparisonConditionType enum values.</comment>
+  </data>
+  <data name="InvalidRightOperand" xml:space="preserve">
+    <value>Die Werteigenschaft vom Typ {0} kann nicht mit dem Operator {1} verwendet werden.</value>
+    <comment>{1} is the type of the DataTriggerBehavior.Value property specified by the user. {1} is one of the ComparisonConditionType enum values.</comment>
+  </data>
+</root>

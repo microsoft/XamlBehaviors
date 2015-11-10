@@ -28,7 +28,8 @@ GOTO END
 :PACK
 SET NUGET_ARGS=^
     -nopackageanalysis ^
-    -version %VERSION%
+    -version %VERSION% ^
+    -Verbosity detailed
 
 nuget pack BehaviorsSDK-Managed.nuspec %NUGET_ARGS%
 

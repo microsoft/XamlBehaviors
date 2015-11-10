@@ -23,7 +23,8 @@ GOTO PACK
 :PACK
 SET NUGET_ARGS=^
     -nopackageanalysis ^
-    -version %VERSION%
+    -version %VERSION% ^
+    -Verbosity detailed
 
 nuget pack BehaviorsSDK-Native.nuspec %NUGET_ARGS%
 
