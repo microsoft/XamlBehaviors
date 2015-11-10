@@ -1,0 +1,352 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{099818b6-eb4b-4a05-9db1-ed5401d283b4}</ProjectGuid>
+    <RootNamespace>XAMLBehaviorsSampleCpp</RootNamespace>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <MinimumVisualStudioVersion>14.0</MinimumVisualStudioVersion>
+    <AppContainerApplication>true</AppContainerApplication>
+    <ApplicationType>Windows Store</ApplicationType>
+    <WindowsTargetPlatformVersion>10.0.10240.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformMinVersion>10.0.10240.0</WindowsTargetPlatformMinVersion>
+    <ApplicationTypeRevision>10.0</ApplicationTypeRevision>
+    <EnableDotNetNativeCompatibleProfile>true</EnableDotNetNativeCompatibleProfile>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|ARM">
+      <Configuration>Debug</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|ARM">
+      <Configuration>Release</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v140</PlatformToolset>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v140</PlatformToolset>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v140</PlatformToolset>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <PackageCertificateKeyFile>XAMLBehaviorsSampleCpp_TemporaryKey.pfx</PackageCertificateKeyFile>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+    <ClCompile>
+      <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
+      <DisableSpecificWarnings>4453;28204</DisableSpecificWarnings>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+    <ClCompile>
+      <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
+      <DisableSpecificWarnings>4453;28204</DisableSpecificWarnings>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
+      <DisableSpecificWarnings>4453;28204</DisableSpecificWarnings>
+      <CompileAsWinRT>true</CompileAsWinRT>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
+      <DisableSpecificWarnings>4453;28204</DisableSpecificWarnings>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
+      <DisableSpecificWarnings>4453;28204</DisableSpecificWarnings>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
+      <DisableSpecificWarnings>4453;28204</DisableSpecificWarnings>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="ContentDialogPopUp.h" />
+    <ClInclude Include="ContentDialogSample.xaml.h">
+      <DependentUpon>ContentDialogSample.xaml</DependentUpon>
+    </ClInclude>
+    <ClInclude Include="ControlStoryboardControl.xaml.h">
+      <DependentUpon>ControlStoryboardControl.xaml</DependentUpon>
+    </ClInclude>
+    <ClInclude Include="CustomActionControl.xaml.h">
+      <DependentUpon>CustomActionControl.xaml</DependentUpon>
+    </ClInclude>
+    <ClInclude Include="CustomBehaviorControl.xaml.h">
+      <DependentUpon>CustomBehaviorControl.xaml</DependentUpon>
+    </ClInclude>
+    <ClInclude Include="DragPositionBehavior.h" />
+    <ClInclude Include="EventTriggerControl.xaml.h">
+      <DependentUpon>EventTriggerControl.xaml</DependentUpon>
+    </ClInclude>
+    <ClInclude Include="GoToStateControl.xaml.h">
+      <DependentUpon>GoToStateControl.xaml</DependentUpon>
+    </ClInclude>
+    <ClInclude Include="IncrementalSample.h" />
+    <ClInclude Include="IncrementalUpdateControl.xaml.h">
+      <DependentUpon>IncrementalUpdateControl.xaml</DependentUpon>
+    </ClInclude>
+    <ClInclude Include="InvokeCommandControl.xaml.h">
+      <DependentUpon>InvokeCommandControl.xaml</DependentUpon>
+    </ClInclude>
+    <ClInclude Include="NavigatePageSample.xaml.h">
+      <DependentUpon>NavigatePageSample.xaml</DependentUpon>
+    </ClInclude>
+    <ClInclude Include="NavigateToPageControl.xaml.h">
+      <DependentUpon>NavigateToPageControl.xaml</DependentUpon>
+    </ClInclude>
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="App.xaml.h">
+      <DependentUpon>App.xaml</DependentUpon>
+    </ClInclude>
+    <ClInclude Include="MainPage.xaml.h">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </ClInclude>
+    <ClInclude Include="PlaySoundControl.xaml.h">
+      <DependentUpon>PlaySoundControl.xaml</DependentUpon>
+    </ClInclude>
+    <ClInclude Include="SampleCommand.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="ContentDialogSample.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ControlStoryboardControl.DeviceFamily-Mobile.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ControlStoryboardControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CustomActionControl.DeviceFamily-Mobile.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CustomActionControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CustomBehaviorControl.DeviceFamily-Mobile.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CustomBehaviorControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="EventTriggerControl.DeviceFamily-Mobile.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="EventTriggerControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GoToStateControl.DeviceFamily-Mobile.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GoToStateControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="IncrementalUpdateControl.DeviceFamily-Mobile.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="IncrementalUpdateControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="InvokeCommandControl.DeviceFamily-Mobile.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="InvokeCommandControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainPage.DeviceFamily-Mobile.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="NavigatePageSample.DeviceFamily-Mobile.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="NavigatePageSample.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="NavigateToPageControl.DeviceFamily-Mobile.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="NavigateToPageControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PlaySoundControl.DeviceFamily-Mobile.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PlaySoundControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SampleResources.xaml">
+      <DeploymentContent>true</DeploymentContent>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XAMLBehaviorsSampleCpp_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Assets\LockScreenLogo.scale-200.png" />
+    <Image Include="Assets\SplashScreen.scale-200.png" />
+    <Image Include="Assets\Square150x150Logo.scale-200.png" />
+    <Image Include="Assets\Square44x44Logo.scale-200.png" />
+    <Image Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Image Include="Assets\StoreLogo.png" />
+    <Image Include="Assets\Wide310x150Logo.scale-200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="App.xaml.cpp">
+      <DependentUpon>App.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="ContentDialogPopUp.cpp" />
+    <ClCompile Include="ContentDialogSample.xaml.cpp">
+      <DependentUpon>ContentDialogSample.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="ControlStoryboardControl.xaml.cpp">
+      <DependentUpon>ControlStoryboardControl.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="CustomActionControl.xaml.cpp">
+      <DependentUpon>CustomActionControl.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="CustomBehaviorControl.xaml.cpp">
+      <DependentUpon>CustomBehaviorControl.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="DragPositionBehavior.cpp" />
+    <ClCompile Include="EventTriggerControl.xaml.cpp">
+      <DependentUpon>EventTriggerControl.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="GoToStateControl.xaml.cpp">
+      <DependentUpon>GoToStateControl.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="IncrementalSample.cpp" />
+    <ClCompile Include="IncrementalUpdateControl.xaml.cpp">
+      <DependentUpon>IncrementalUpdateControl.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="InvokeCommandControl.xaml.cpp">
+      <DependentUpon>InvokeCommandControl.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="MainPage.xaml.cpp">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="NavigatePageSample.xaml.cpp">
+      <DependentUpon>NavigatePageSample.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="NavigateToPageControl.xaml.cpp">
+      <DependentUpon>NavigateToPageControl.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="pch.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="PlaySoundControl.xaml.cpp">
+      <DependentUpon>PlaySoundControl.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="SampleCommand.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <SDKReference Include="Microsoft.VCLibs.120, Version=14.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="Assets\Cheer.mp3" />
+    <Media Include="Assets\Ding.mp3" />
+    <Media Include="Assets\Whistle.mp3" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="..\packages\BehaviorsSDK-Native.1.0.0\build\native\BehaviorsSDK-Native.targets" Condition="Exists('..\packages\BehaviorsSDK-Native.1.0.0\build\native\BehaviorsSDK-Native.targets')" />
+  </ImportGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\BehaviorsSDK-Native.1.0.0\build\native\BehaviorsSDK-Native.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\BehaviorsSDK-Native.1.0.0\build\native\BehaviorsSDK-Native.targets'))" />
+  </Target>
+</Project>
