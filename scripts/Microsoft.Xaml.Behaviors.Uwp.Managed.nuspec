@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package >
     <metadata>
-        <id>BehaviorsSDK-Managed</id>
+        <id>Microsoft.Xaml.Behaviors.Uwp.Managed</id>
         <version>1.0.0</version>
         <title>Behaviors SDK (Managed)</title>
         <authors>Microsoft</authors>

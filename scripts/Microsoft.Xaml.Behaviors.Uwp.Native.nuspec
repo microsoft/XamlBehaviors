@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0"?>
 <package >
   <metadata>
-    <id>BehaviorsSDK-Native</id>
+    <id>Microsoft.Xaml.Behaviors.Uwp.Native</id>
     <version>1.0.0</version>
     <title>Behaviors SDK (Native)</title>
     <authors>Microsoft</authors>
@@ -27,7 +27,7 @@
     <file target="lib\uap10.0\en\Microsoft.Xaml.Interactivity.xml"              src="..\out\BehaviorsSDKNative\bin\Win32\Release\Microsoft.Xaml.Interactivity\Microsoft.Xaml.Interactivity.xml" />
     <file target="lib\uap10.0\en\Microsoft.Xaml.Interactions.xml"               src="..\out\BehaviorsSDKNative\bin\Win32\Release\Microsoft.Xaml.Interactions\Microsoft.Xaml.Interactions.xml" />
 
-    <file target="build\native\BehaviorsSDK-Native.targets"                     src="BehaviorsSDK-Native.targets" />
+    <file target="build\native\Microsoft.Xaml.Behaviors.Uwp.Native.targets"     src="Microsoft.Xaml.Behaviors.Uwp.Native.targets" />
 
     <file target="runtimes\win10-x86\native\Microsoft.Xaml.Interactivity.dll"   src="..\out\BehaviorsSDKNative\bin\Win32\Release\Microsoft.Xaml.Interactivity\Microsoft.Xaml.Interactivity.dll" />
     <file target="runtimes\win10-x86\native\Microsoft.Xaml.Interactivity.pri"   src="..\out\BehaviorsSDKNative\bin\Win32\Release\Microsoft.Xaml.Interactivity\Microsoft.Xaml.Interactivity.pri" />
