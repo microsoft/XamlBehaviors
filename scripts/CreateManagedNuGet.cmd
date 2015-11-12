@@ -30,7 +30,7 @@ SET NUGET_ARGS=^
     -nopackageanalysis ^
     -version %VERSION%
 
-nuget pack BehaviorsSDK-Managed.nuspec %NUGET_ARGS%
+nuget pack Microsoft.Xaml.Behaviors.Uwp.Managed.nuspec %NUGET_ARGS%
 
 :END
 
