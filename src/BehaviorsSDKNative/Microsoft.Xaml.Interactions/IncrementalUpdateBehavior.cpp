@@ -111,6 +111,15 @@ void IncrementalUpdateBehavior::IncrementalUpdater::CachePhaseElement(FrameworkE
 		// get the cache for this phase
 		auto& elementPhaseRecord = elementCacheRecord[phase];
 
+		// first see if the element is already there
+		for (auto it = elementPhaseRecord.begin(); it < elementPhaseRecord.end(); it++)
+		{
+			if (it->_frameworkElement == phaseElement)
+			{
+				return;
+			}
+		}
+
 		// insert the element
 		PhasedElementRecord phasedElementRecord(phaseElement);
 		elementPhaseRecord.push_back(phasedElementRecord);
@@ -138,6 +147,7 @@ void IncrementalUpdateBehavior::IncrementalUpdater::UncachePhaseElement(Framewor
 		{
 			if (it->_frameworkElement == phaseElement)
 			{
+				it->ThawAndShow();
 				elementPhaseRecord.erase(it);
 				break;
 			}
@@ -191,8 +201,6 @@ void IncrementalUpdateBehavior::IncrementalUpdater::OnContainerContentChanging(W
 			}
 		}
 	}
-
-	e->Handled = true;
 }
 
 void IncrementalUpdateBehavior::IncrementalUpdater::OnContainerContentChangingCallback(Windows::UI::Xaml::Controls::ListViewBase^ sender, ContainerContentChangingEventArgs^ e)

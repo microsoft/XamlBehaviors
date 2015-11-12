@@ -310,8 +310,6 @@ namespace Microsoft.Xaml.Interactions.Core
                             }
                         }
                     }
-
-                    e.Handled = true;
                 }
             }
 
@@ -399,8 +397,19 @@ namespace Microsoft.Xaml.Interactions.Core
                         elementCacheRecord.ElementsByPhase.Insert(phaseIndex, new List<PhasedElementRecord>());
                     }
 
+                    List<PhasedElementRecord> phasedElementRecords = elementCacheRecord.ElementsByPhase[phaseIndex];
+
+                    // first see if the element is already there
+                    for (int i = 0; i < phasedElementRecords.Count; i++)
+                    {
+                        if (phasedElementRecords[i].FrameworkElement == phaseElement)
+                        {
+                            return;
+                        }
+                    }
+
                     // insert the element
-                    elementCacheRecord.ElementsByPhase[phaseIndex].Add(new PhasedElementRecord(phaseElement));
+                   phasedElementRecords.Add(new PhasedElementRecord(phaseElement));
                 }
             }
 
@@ -430,6 +439,8 @@ namespace Microsoft.Xaml.Interactions.Core
                             {
                                 if (phasedElementRecords[i].FrameworkElement == phaseElement)
                                 {
+                                    phasedElementRecords[i].ThawAndShow();
+
                                     phasedElementRecords.RemoveAt(i);
 
                                     if (phasedElementRecords.Count == 0)
