@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <package >
     <metadata>
         <id>Microsoft.Xaml.Behaviors.Uwp.Managed</id>
@@ -17,15 +17,23 @@
 
     <files>
         <file target="lib\uap10.0\Microsoft.Xaml.Interactivity.dll"                 src="..\out\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactivity.dll" />
+        <file target="lib\uap10.0\Microsoft.Xaml.Interactivity.pdb"                 src="..\out\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactivity.pdb" />
+        <file target="lib\uap10.0\Microsoft.Xaml.Interactivity.xml"                 src="..\out\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactivity.xml" />
         <file target="lib\uap10.0\Microsoft.Xaml.Interactivity.pri"                 src="..\out\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactivity.pri" />
         <file target="lib\uap10.0\Microsoft.Xaml.Interactions.dll"                  src="..\out\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactions.dll" />
+        <file target="lib\uap10.0\Microsoft.Xaml.Interactions.pdb"                  src="..\out\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactions.pdb" />
+        <file target="lib\uap10.0\Microsoft.Xaml.Interactions.xml"                  src="..\out\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactions.xml" />
         <file target="lib\uap10.0\Microsoft.Xaml.Interactions.pri"                  src="..\out\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactions.pri" />
 
         <file target="lib\uap10.0\Design\Microsoft.Xaml.Interactivity.Design.dll"   src="..\out\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactivity.Design.dll" />
+        <file target="lib\uap10.0\Design\Microsoft.Xaml.Interactivity.Design.pdb"   src="..\out\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactivity.Design.pdb" />
         <file target="lib\uap10.0\Design\Microsoft.Xaml.Interactions.Design.dll"    src="..\out\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactions.Design.dll" />
+        <file target="lib\uap10.0\Design\Microsoft.Xaml.Interactions.Design.pdb"    src="..\out\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactions.Design.pdb" />
 
         <file target="lib\uap10.0\Microsoft.Xaml.Interactivity\Properties\Microsoft.Xaml.Interactivity.rd.xml"  src="..\src\BehaviorsSDKManaged\Microsoft.Xaml.Interactivity\Properties\Microsoft.Xaml.Interactivity.rd.xml" />
         <file target="lib\uap10.0\Microsoft.Xaml.Interactions\Properties\Microsoft.Xaml.Interactions.rd.xml"    src="..\src\BehaviorsSDKManaged\Microsoft.Xaml.Interactions\Properties\Microsoft.Xaml.Interactions.rd.xml" />
+
+        <file target="src\BehaviorsSDKManaged" src="..\src\BehaviorsSDKManaged\**\*.cs" />
     </files>
 
 </package>

@@ -25,7 +25,7 @@ SET NUGET_ARGS=^
     -nopackageanalysis ^
     -version %VERSION%
 
-nuget pack Microsoft.Xaml.Behaviors.Uwp.Native.nuspec %NUGET_ARGS%
+nuget pack Microsoft.Xaml.Behaviors.Uwp.Native.nuspec -Symbols %NUGET_ARGS%
 
 :END
 
