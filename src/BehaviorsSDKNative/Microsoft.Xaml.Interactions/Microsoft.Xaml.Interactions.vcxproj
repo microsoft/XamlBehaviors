@@ -245,6 +245,7 @@
     <PRIResource Include="Resources\de-DE\Strings.resw" />
     <PRIResource Include="Resources\en-US\Strings.resw" />
     <PRIResource Include="Resources\es-ES\Strings.resw" />
+    <PRIResource Include="Resources\fr-FR\Strings.resw" />
     <PRIResource Include="Resources\pt-BR\Strings.resw" />
   </ItemGroup>
   <ItemGroup>
@@ -255,6 +256,7 @@
   <ItemGroup>
     <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactions.de-DE.xlf" />
     <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactions.es-ES.xlf" />
+    <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactions.fr-FR.xlf" />
     <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactions.pt-BR.xlf" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
