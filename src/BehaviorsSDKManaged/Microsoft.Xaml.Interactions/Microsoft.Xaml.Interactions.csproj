@@ -109,6 +109,7 @@
   <ItemGroup>
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
     <None Include="project.json" />
+    <PRIResource Include="Resources\it-IT\Strings.resw" />
     <PRIResource Include="Resources\fr-FR\Strings.resw" />
     <PRIResource Include="Resources\es-ES\Strings.resw" />
     <PRIResource Include="Resources\de-DE\Strings.resw" />
@@ -145,6 +146,7 @@
     <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactions.de-DE.xlf" />
     <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactions.es-ES.xlf" />
     <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactions.fr-FR.xlf" />
+    <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactions.it-IT.xlf" />
     <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactions.pt-BR.xlf" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
