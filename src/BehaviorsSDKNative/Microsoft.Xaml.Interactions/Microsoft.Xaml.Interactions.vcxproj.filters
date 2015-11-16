@@ -48,6 +48,8 @@
     <PRIResource Include="Resources\ja-JP\Strings.resw" />
     <PRIResource Include="Resources\ko-KR\Strings.resw" />
     <PRIResource Include="Resources\ru-RU\Strings.resw" />
+    <PRIResource Include="Resources\zh-CN\Strings.resw" />
+    <PRIResource Include="Resources\zh-TW\Strings.resw" />
   </ItemGroup>
   <ItemGroup>
     <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactions.de-DE.xlf" />
@@ -58,5 +60,7 @@
     <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactions.ja-JP.xlf" />
     <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactions.ko-KR.xlf" />
     <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactions.ru-RU.xlf" />
+    <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactions.zh-CN.xlf" />
+    <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactions.zh-TW.xlf" />
   </ItemGroup>
 </Project>

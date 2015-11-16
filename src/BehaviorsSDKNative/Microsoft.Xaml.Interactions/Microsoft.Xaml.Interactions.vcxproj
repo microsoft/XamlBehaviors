@@ -251,6 +251,8 @@
     <PRIResource Include="Resources\ko-KR\Strings.resw" />
     <PRIResource Include="Resources\pt-BR\Strings.resw" />
     <PRIResource Include="Resources\ru-RU\Strings.resw" />
+    <PRIResource Include="Resources\zh-CN\Strings.resw" />
+    <PRIResource Include="Resources\zh-TW\Strings.resw" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Microsoft.Xaml.Interactivity\Microsoft.Xaml.Interactivity.vcxproj">
@@ -266,6 +268,8 @@
     <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactions.ko-KR.xlf" />
     <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactions.pt-BR.xlf" />
     <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactions.ru-RU.xlf" />
+    <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactions.zh-CN.xlf" />
+    <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactions.zh-TW.xlf" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\Microsoft.Multilingual.PriResources.targets" Label="MultilingualAppToolkit" Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\Microsoft.Multilingual.PriResources.targets')" />

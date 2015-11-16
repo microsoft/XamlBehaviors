@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="CallMethodActionValidMethodNotFoundExceptionMessage" xml:space="preserve">
+    <value>在類型 {1} 的物件上找不到符合預期的簽章且名稱為 {0} 的方法。</value>
+    <comment>{0} is the name of the method that could not be found. {1} is the name of the type that was searched for the method.</comment>
+  </data>
+  <data name="CannotAttachBehaviorMultipleTimesExceptionMessage" xml:space="preserve">
+    <value>無法一次將行為執行個體附加到多個物件。</value>
+  </data>
+  <data name="CannotFindEventNameExceptionMessage" xml:space="preserve">
+    <value>在類型 {1} 上找不到名稱為 {0} 的事件。</value>
+    <comment>{0} is the EventName property value specified by the user. {1} is the Type we are trying to find an event on.</comment>
+  </data>
+  <data name="ChangePropertyActionCannotFindPropertyNameExceptionMessage" xml:space="preserve">
+    <value>在類型 {1} 上找不到名稱為 {0} 的屬性。</value>
+    <comment>{0} is the PropertyName property value specified by the user. {1} is the Type we are trying to find a property on.</comment>
+  </data>
+  <data name="ChangePropertyActionCannotSetValueExceptionMessage" xml:space="preserve">
+    <value>無法將類型 {0} 的值指派給類型 {2} 的屬性 {1}。只有類型 {2} 的值能夠指派給 {1} 屬性。</value>
+    <comment>{0} is the type name of the illegal value, or "null" if value is null. {1} is the name of the property. {2} is the type of the property.</comment>
+  </data>
+  <data name="ChangePropertyActionPropertyIsReadOnlyExceptionMessage" xml:space="preserve">
+    <value>類型 {1} 所定義的屬性 {0} 未公開 set 方法，因此無法修改。</value>
+    <comment>{0} is the name of the property. {1} is the name of the type that defines the property.</comment>
+  </data>
+  <data name="EventNotSupportedExceptionMessage" xml:space="preserve">
+    <value>不支援事件 {0}。請考慮實作自訂的 IBehavior 以回應這個事件。</value>
+    <comment>{0} is the name of an event.</comment>
+  </data>
+  <data name="GoToStateActionTargetHasNoStateGroups" xml:space="preserve">
+    <value>目標 {0} 未定義任何 VisualStateGroups。</value>
+    <comment>{0} is an element name and could be an empty string.</comment>
+  </data>
+  <data name="InvalidLeftOperand" xml:space="preserve">
+    <value>類型 {0} 的 Binding 屬性無法搭配運算子 {1} 一起使用。</value>
+    <comment>{0} is the type of the DataTriggerBehavior.Binding property specified by the user. {1} is one of the ComparisonConditionType enum values.</comment>
+  </data>
+  <data name="InvalidOperands" xml:space="preserve">
+    <value>類型 {0} 的 Binding 屬性和類型 {1} 的 Value 屬性無法搭配運算子 {2} 一起使用。</value>
+    <comment>{0} is the type of the DataTriggerBehavior.Binding property specified by the user. {1} is the type of the DataTriggerBehavior.Value property specified by the user. {2} is one of the ComparisonConditionType enum values.</comment>
+  </data>
+  <data name="InvalidRightOperand" xml:space="preserve">
+    <value>類型 {0} 的 Value 屬性無法搭配運算子 {1} 一起使用。</value>
+    <comment>{1} is the type of the DataTriggerBehavior.Value property specified by the user. {1} is one of the ComparisonConditionType enum values.</comment>
+  </data>
+</root>

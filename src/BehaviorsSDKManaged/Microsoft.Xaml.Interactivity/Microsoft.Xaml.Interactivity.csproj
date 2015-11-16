@@ -109,6 +109,8 @@
   <ItemGroup>
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
     <None Include="project.json" />
+    <PRIResource Include="Resources\zh-TW\Strings.resw" />
+    <PRIResource Include="Resources\zh-CN\Strings.resw" />
     <PRIResource Include="Resources\ru-RU\Strings.resw" />
     <PRIResource Include="Resources\ko-KR\Strings.resw" />
     <PRIResource Include="Resources\ja-JP\Strings.resw" />
@@ -149,6 +151,8 @@
       <SubType>Designer</SubType>
     </XliffResource>
     <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactivity.ru-RU.xlf" />
+    <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactivity.zh-CN.xlf" />
+    <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactivity.zh-TW.xlf" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
