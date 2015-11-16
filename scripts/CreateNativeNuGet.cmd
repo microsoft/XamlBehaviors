@@ -26,7 +26,7 @@ SET NUGET_ARGS=^
     -version %VERSION% ^
     -Verbosity detailed
 
-nuget pack Microsoft.Xaml.Behaviors.Uwp.Native.nuspec %NUGET_ARGS%
+nuget pack Microsoft.Xaml.Behaviors.Uwp.Native.nuspec -Symbols %NUGET_ARGS%
 
 :END
 
