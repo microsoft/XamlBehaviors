@@ -8,7 +8,7 @@ namespace Microsoft { namespace Xaml { namespace Interactivity
 	{
 		inline Platform::String^ GetString(Platform::String^ resourceName)
 		{
-			Windows::ApplicationModel::Resources::ResourceLoader^ strings = Windows::ApplicationModel::Resources::ResourceLoader::GetForCurrentView("Microsoft.Xaml.Interactivity/Strings");
+			Windows::ApplicationModel::Resources::ResourceLoader^ strings = Windows::ApplicationModel::Resources::ResourceLoader::GetForCurrentView("Microsoft.Xaml.Interactivity/Resources");
 			return strings->GetString(resourceName);
 		}
 	}

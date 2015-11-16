@@ -30,8 +30,28 @@
     <ClInclude Include="Microsoft.Xaml.Interactivity.h" />
   </ItemGroup>
   <ItemGroup>
-    <PRIResource Include="..\Microsoft.Xaml.Interactions\Resources\en-US\Strings.resw">
-      <Filter>Resource Files\en-us</Filter>
-    </PRIResource>
+    <PRIResource Include="Resources\de-DE\Strings.resw" />
+    <PRIResource Include="Resources\en-US\Strings.resw" />
+    <PRIResource Include="Resources\pt-BR\Strings.resw" />
+    <PRIResource Include="Resources\es-ES\Strings.resw" />
+    <PRIResource Include="Resources\fr-FR\Strings.resw" />
+    <PRIResource Include="Resources\it-IT\Strings.resw" />
+    <PRIResource Include="Resources\ja-JP\Strings.resw" />
+    <PRIResource Include="Resources\ko-KR\Strings.resw" />
+    <PRIResource Include="Resources\ru-RU\Strings.resw" />
+    <PRIResource Include="Resources\zh-CN\Strings.resw" />
+    <PRIResource Include="Resources\zh-TW\Strings.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactivity.pt-BR.xlf" />
+    <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactivity.de-DE.xlf" />
+    <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactivity.es-ES.xlf" />
+    <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactivity.fr-FR.xlf" />
+    <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactivity.it-IT.xlf" />
+    <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactivity.ja-JP.xlf" />
+    <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactivity.ko-KR.xlf" />
+    <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactivity.ru-RU.xlf" />
+    <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactivity.zh-CN.xlf" />
+    <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactivity.zh-TW.xlf" />
   </ItemGroup>
 </Project>

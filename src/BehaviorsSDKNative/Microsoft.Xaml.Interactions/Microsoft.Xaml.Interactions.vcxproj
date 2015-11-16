@@ -1,5 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="MultilingualAppToolkit">
+    <MultilingualAppToolkitVersion>4.0</MultilingualAppToolkitVersion>
+    <MultilingualFallbackLanguage>en-US</MultilingualFallbackLanguage>
+  </PropertyGroup>
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|ARM">
       <Configuration>Debug</Configuration>
@@ -238,14 +242,40 @@
     <ClCompile Include="PlaySoundAction.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <PRIResource Include="..\Microsoft.Xaml.Interactivity\Resources\en-US\Strings.resw" />
+    <PRIResource Include="Resources\de-DE\Strings.resw" />
+    <PRIResource Include="Resources\en-US\Strings.resw" />
+    <PRIResource Include="Resources\es-ES\Strings.resw" />
+    <PRIResource Include="Resources\fr-FR\Strings.resw" />
+    <PRIResource Include="Resources\it-IT\Strings.resw" />
+    <PRIResource Include="Resources\ja-JP\Strings.resw" />
+    <PRIResource Include="Resources\ko-KR\Strings.resw" />
+    <PRIResource Include="Resources\pt-BR\Strings.resw" />
+    <PRIResource Include="Resources\ru-RU\Strings.resw" />
+    <PRIResource Include="Resources\zh-CN\Strings.resw" />
+    <PRIResource Include="Resources\zh-TW\Strings.resw" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Microsoft.Xaml.Interactivity\Microsoft.Xaml.Interactivity.vcxproj">
       <Project>{721b956c-043c-4658-8aa7-d72fd5f112bf}</Project>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactions.de-DE.xlf" />
+    <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactions.es-ES.xlf" />
+    <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactions.fr-FR.xlf" />
+    <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactions.it-IT.xlf" />
+    <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactions.ja-JP.xlf" />
+    <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactions.ko-KR.xlf" />
+    <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactions.pt-BR.xlf" />
+    <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactions.ru-RU.xlf" />
+    <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactions.zh-CN.xlf" />
+    <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactions.zh-TW.xlf" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\Microsoft.Multilingual.PriResources.targets" Label="MultilingualAppToolkit" Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\Microsoft.Multilingual.PriResources.targets')" />
+  <Target Name="MATPrerequisite" BeforeTargets="PrepareForBuild" Condition="!Exists('$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\Microsoft.Multilingual.PriResources.targets')" Label="MultilingualAppToolkit">
+    <Warning Text="$(MSBuildProjectFile) is Multilingual build enabled, but the Multilingual App Toolkit is unavailable during the build. If building with Visual Studio, please check to ensure that toolkit is properly installed." />
+  </Target>
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
 </Project>

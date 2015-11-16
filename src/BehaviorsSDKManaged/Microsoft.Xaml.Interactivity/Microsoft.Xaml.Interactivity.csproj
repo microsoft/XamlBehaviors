@@ -102,9 +102,25 @@
     <ErrorReport>prompt</ErrorReport>
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
+  <PropertyGroup Label="MultilingualAppToolkit">
+    <MultilingualAppToolkitVersion>4.0</MultilingualAppToolkitVersion>
+    <MultilingualFallbackLanguage>en-US</MultilingualFallbackLanguage>
+  </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
     <None Include="project.json" />
+    <PRIResource Include="Resources\zh-TW\Strings.resw" />
+    <PRIResource Include="Resources\zh-CN\Strings.resw" />
+    <PRIResource Include="Resources\ru-RU\Strings.resw" />
+    <PRIResource Include="Resources\ko-KR\Strings.resw" />
+    <PRIResource Include="Resources\ja-JP\Strings.resw" />
+    <PRIResource Include="Resources\it-IT\Strings.resw" />
+    <PRIResource Include="Resources\fr-FR\Strings.resw" />
+    <PRIResource Include="Resources\es-ES\Strings.resw" />
+    <PRIResource Include="Resources\de-DE\Strings.resw" />
+    <PRIResource Include="Resources\pt-BR\Strings.resw">
+      <SubType>Designer</SubType>
+    </PRIResource>
     <PRIResource Include="Resources\en-us\Strings.resw" />
   </ItemGroup>
   <ItemGroup>
@@ -124,10 +140,28 @@
     <Compile Include="VisualStateUtilities.cs" />
     <Content Include="Properties\Microsoft.Xaml.Interactivity.rd.xml" />
   </ItemGroup>
+  <ItemGroup>
+    <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactivity.de-DE.xlf" />
+    <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactivity.es-ES.xlf" />
+    <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactivity.fr-FR.xlf" />
+    <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactivity.it-IT.xlf" />
+    <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactivity.ja-JP.xlf" />
+    <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactivity.ko-KR.xlf" />
+    <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactivity.pt-BR.xlf">
+      <SubType>Designer</SubType>
+    </XliffResource>
+    <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactivity.ru-RU.xlf" />
+    <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactivity.zh-CN.xlf" />
+    <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactivity.zh-TW.xlf" />
+  </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\Microsoft.Multilingual.PriResources.targets" Label="MultilingualAppToolkit" Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\Microsoft.Multilingual.PriResources.targets')" />
+  <Target Name="MATPrerequisite" BeforeTargets="PrepareForBuild" Condition="!Exists('$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\Microsoft.Multilingual.PriResources.targets')" Label="MultilingualAppToolkit">
+    <Warning Text="$(MSBuildProjectFile) is Multilingual build enabled, but the Multilingual App Toolkit is unavailable during the build. If building with Visual Studio, please check to ensure that toolkit is properly installed." />
+  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

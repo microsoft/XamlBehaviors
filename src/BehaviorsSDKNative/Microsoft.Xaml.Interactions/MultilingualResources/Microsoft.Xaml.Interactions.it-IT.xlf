@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
+  <file datatype="xml" source-language="en-US" target-language="it-IT" original="MICROSOFT.XAML.INTERACTIONS/RESOURCES/EN-US/STRINGS.RESW" tool-id="MultilingualAppToolkit" product-name="n/a" product-version="n/a" build-num="n/a">
+    <header>
+      <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="4.0.1466.0" tool-company="Microsoft" />
+    </header>
+    <body>
+      <group id="MICROSOFT.XAML.INTERACTIONS/RESOURCES/EN-US/STRINGS.RESW" datatype="resx">
+        <trans-unit id="CallMethodActionValidMethodNotFoundExceptionMessage" translate="yes" xml:space="preserve">
+          <source>Cannot find method named {0} on object of type {1} that matches the expected signature.</source>
+          <target state="final">Impossibile trovare il metodo denominato {0} in un oggetto di tipo {1} corrispondente alla firma prevista.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">{0} is the name of the method that could not be found. {1} is the name of the type that was searched for the method.</note>
+        </trans-unit>
+        <trans-unit id="CannotAttachBehaviorMultipleTimesExceptionMessage" translate="yes" xml:space="preserve">
+          <source>An instance of a behavior cannot be attached to more than one object at a time.</source>
+          <target state="final">Impossibile associare l'istanza di un comportamento a più di un oggetto alla volta.</target>
+        </trans-unit>
+        <trans-unit id="CannotFindEventNameExceptionMessage" translate="yes" xml:space="preserve">
+          <source>Cannot find an event named {0} on type {1}.</source>
+          <target state="final">Impossibile trovare un evento denominato {0} nel tipo {1}.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">{0} is the EventName property value specified by the user. {1} is the Type we are trying to find an event on.</note>
+        </trans-unit>
+        <trans-unit id="ChangePropertyActionCannotFindPropertyNameExceptionMessage" translate="yes" xml:space="preserve">
+          <source>Cannot find a property named {0} on type {1}.</source>
+          <target state="final">Impossibile trovare una proprietà denominata {0} nel tipo {1}.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">{0} is the PropertyName property value specified by the user. {1} is the Type we are trying to find a property on.</note>
+        </trans-unit>
+        <trans-unit id="ChangePropertyActionCannotSetValueExceptionMessage" translate="yes" xml:space="preserve">
+          <source>Cannot assign value of type {0} to property {1} of type {2}. The {1} property can be assigned only values of type {2}.</source>
+          <target state="final">Impossibile assegnare un valore di tipo {0} alla proprietà {1} di tipo {2}. Alla proprietà {1} possono essere assegnati solo valori di tipo {2}.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">{0} is the type name of the illegal value, or "null" if value is null. {1} is the name of the property. {2} is the type of the property.</note>
+        </trans-unit>
+        <trans-unit id="ChangePropertyActionPropertyIsReadOnlyExceptionMessage" translate="yes" xml:space="preserve">
+          <source>Property {0} defined by type {1} does not expose a set method and therefore cannot be modified.</source>
+          <target state="final">La proprietà {0} definita dal tipo {1} non espone un metodo set. Impossibile modificarla.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">{0} is the name of the property. {1} is the name of the type that defines the property.</note>
+        </trans-unit>
+        <trans-unit id="EventNotSupportedExceptionMessage" translate="yes" xml:space="preserve">
+          <source>Event {0} is not supported. Consider implementing a custom IBehavior to respond to this event.</source>
+          <target state="final">L'evento {0} non è supportato. Implementare un elemento IBehavior personalizzato per rispondere a questo evento.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">{0} is the name of an event.</note>
+        </trans-unit>
+        <trans-unit id="GoToStateActionTargetHasNoStateGroups" translate="yes" xml:space="preserve">
+          <source>Target {0} does not define any VisualStateGroups.</source>
+          <target state="final">La destinazione {0} non definisce VisualStateGroups.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">{0} is an element name and could be an empty string.</note>
+        </trans-unit>
+        <trans-unit id="InvalidLeftOperand" translate="yes" xml:space="preserve">
+          <source>Binding property of type {0} cannot be used with operator {1}.</source>
+          <target state="final">Impossibile utilizzare la proprietà Binding di tipo {0} con l'operatore {1}.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">{0} is the type of the DataTriggerBehavior.Binding property specified by the user. {1} is one of the ComparisonConditionType enum values.</note>
+        </trans-unit>
+        <trans-unit id="InvalidOperands" translate="yes" xml:space="preserve">
+          <source>Binding property of type {0} and Value property of type {1} cannot be used with operator {2}.</source>
+          <target state="final">Impossibile utilizzare la proprietà Binding di tipo {0} e la proprietà Value di tipo {1} con l'operatore {2}.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">{0} is the type of the DataTriggerBehavior.Binding property specified by the user. {1} is the type of the DataTriggerBehavior.Value property specified by the user. {2} is one of the ComparisonConditionType enum values.</note>
+        </trans-unit>
+        <trans-unit id="InvalidRightOperand" translate="yes" xml:space="preserve">
+          <source>Value property of type {0} cannot be used with operator {1}.</source>
+          <target state="final">Impossibile utilizzare la proprietà Value di tipo {0} con l'operatore {1}.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">{1} is the type of the DataTriggerBehavior.Value property specified by the user. {1} is one of the ComparisonConditionType enum values.</note>
+        </trans-unit>
+      </group>
+    </body>
+  </file>
+</xliff>
