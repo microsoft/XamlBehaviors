@@ -8,26 +8,27 @@
       <group id="MICROSOFT.XAML.INTERACTIONS/RESOURCES/EN-US/STRINGS.RESW">
         <trans-unit id="CallMethodActionValidMethodNotFoundExceptionMessage" translate="yes" xml:space="preserve">
           <source>Cannot find method named {0} on object of type {1} that matches the expected signature.</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Não consigo encontrar o método chamado {0} no objeto do tipo {1} que corresponda a assinatura esperada.</target>
+          <target state="needs-review-translation">Não é possível encontrar o método de nome {0} no objeto de tipo {1} que corresponda a assinatura esperada.
+</target>
           <note from="MultilingualBuild" annotates="source" priority="2">{0} is the name of the method that could not be found. {1} is the name of the type that was searched for the method.</note>
         </trans-unit>
         <trans-unit id="CannotAttachBehaviorMultipleTimesExceptionMessage" translate="yes" xml:space="preserve">
           <source>An instance of a behavior cannot be attached to more than one object at a time.</source>
-          <target state="needs-review-translation">Uma instância de um comportamento não pode ser anexada a mais de um objeto por vez.</target>
+          <target state="needs-review-translation">Não é possível anexar uma instância de Behavior a mais de um objeto simultaneamente.</target>
         </trans-unit>
         <trans-unit id="CannotFindEventNameExceptionMessage" translate="yes" xml:space="preserve">
           <source>Cannot find an event named {0} on type {1}.</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Não consigo encontrar um evento chamado {0} no tipo {1}.</target>
+          <target state="needs-review-translation">Não é possível encontrar um evento de nome {0} no tipo {1}.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">{0} is the EventName property value specified by the user. {1} is the Type we are trying to find an event on.</note>
         </trans-unit>
         <trans-unit id="ChangePropertyActionCannotFindPropertyNameExceptionMessage" translate="yes" xml:space="preserve">
           <source>Cannot find a property named {0} on type {1}.</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Não consigo encontrar uma propriedade chamada {0} no tipo {1}.</target>
+          <target state="needs-review-translation">Não é possível encontrar uma propriedade de nome {0} no tipo {1}.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">{0} is the PropertyName property value specified by the user. {1} is the Type we are trying to find a property on.</note>
         </trans-unit>
         <trans-unit id="ChangePropertyActionCannotSetValueExceptionMessage" translate="yes" xml:space="preserve">
           <source>Cannot assign value of type {0} to property {1} of type {2}. The {1} property can be assigned only values of type {2}.</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Não podemos atribuir valor do tipo {0} de {1} de Propriedade do tipo {2}. A propriedade {1} pode ser atribuída somente valores do tipo {2}.</target>
+          <target state="needs-review-translation">Nao é possível atribuir um valor do tipo {0} à propriedade {1} de tipo {2}. A propriedade {1} pode receber somente valores do tipo {2}.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">{0} is the type name of the illegal value, or "null" if value is null. {1} is the name of the property. {2} is the type of the property.</note>
         </trans-unit>
         <trans-unit id="ChangePropertyActionPropertyIsReadOnlyExceptionMessage" translate="yes" xml:space="preserve">
@@ -42,22 +43,24 @@
         </trans-unit>
         <trans-unit id="GoToStateActionTargetHasNoStateGroups" translate="yes" xml:space="preserve">
           <source>Target {0} does not define any VisualStateGroups.</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Destino {0} não define qualquer VisualStateGroups.</target>
+          <target state="needs-review-translation">O destino {0} não define qualquer VisualStateGroups.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">{0} is an element name and could be an empty string.</note>
         </trans-unit>
         <trans-unit id="InvalidLeftOperand" translate="yes" xml:space="preserve">
           <source>Binding property of type {0} cannot be used with operator {1}.</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Vinculação de Propriedade do tipo {0} não pode ser usado com operador {1}.</target>
+          <target state="needs-review-translation">A propriedade Binding do tipo {0} não pode ser usada com o operador {2}.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">{0} is the type of the DataTriggerBehavior.Binding property specified by the user. {1} is one of the ComparisonConditionType enum values.</note>
         </trans-unit>
         <trans-unit id="InvalidOperands" translate="yes" xml:space="preserve">
           <source>Binding property of type {0} and Value property of type {1} cannot be used with operator {2}.</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Vinculação de Propriedade do tipo {0} e propriedade de valor do tipo {1} não pode ser usado com operador {2}.</target>
+          <target state="needs-review-translation">A propriedade Binding do tipo {0} e a propriedade Value do tipo {1} não podem ser usadas com o operador {2}.
+
+</target>
           <note from="MultilingualBuild" annotates="source" priority="2">{0} is the type of the DataTriggerBehavior.Binding property specified by the user. {1} is the type of the DataTriggerBehavior.Value property specified by the user. {2} is one of the ComparisonConditionType enum values.</note>
         </trans-unit>
         <trans-unit id="InvalidRightOperand" translate="yes" xml:space="preserve">
           <source>Value property of type {0} cannot be used with operator {1}.</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Propriedade de valor do tipo {0} não pode ser usada com operador {1}.</target>
+          <target state="needs-review-translation">A propriedade de valor do tipo {0} não pode ser usada com o operador {1}.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">{1} is the type of the DataTriggerBehavior.Value property specified by the user. {1} is one of the ComparisonConditionType enum values.</note>
         </trans-unit>
       </group>

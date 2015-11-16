@@ -16,7 +16,7 @@
     <value>No se puede adjuntar una instancia de Behavior a más de un objeto simultáneamente.</value>
   </data>
   <data name="DuplicateBehaviorInCollectionExceptionMessage" xml:space="preserve">
-    <value>No se puede adjuntar una instancia de Behavior a más de un objeto simultáneamente.</value>
+    <value>No se puede agregar una instancia de Behavior a un BehaviorCollection más de una vez.</value>
   </data>
   <data name="NonActionAddedToActionCollectionExceptionMessage" xml:space="preserve">
     <value>Solo se admiten tipos IAction en ActionCollection.</value>
