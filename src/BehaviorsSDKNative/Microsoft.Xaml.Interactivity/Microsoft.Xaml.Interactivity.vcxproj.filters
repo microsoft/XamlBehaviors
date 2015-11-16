@@ -33,9 +33,11 @@
     <PRIResource Include="Resources\de-DE\Strings.resw" />
     <PRIResource Include="Resources\en-US\Strings.resw" />
     <PRIResource Include="Resources\pt-BR\Strings.resw" />
+    <PRIResource Include="Resources\es-ES\Strings.resw" />
   </ItemGroup>
   <ItemGroup>
     <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactivity.pt-BR.xlf" />
     <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactivity.de-DE.xlf" />
+    <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactivity.es-ES.xlf" />
   </ItemGroup>
 </Project>

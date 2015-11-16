@@ -109,6 +109,7 @@
   <ItemGroup>
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
     <None Include="project.json" />
+    <PRIResource Include="Resources\es-ES\Strings.resw" />
     <PRIResource Include="Resources\de-DE\Strings.resw" />
     <PRIResource Include="Resources\pt-BR\Strings.resw">
       <SubType>Designer</SubType>
@@ -134,6 +135,7 @@
   </ItemGroup>
   <ItemGroup>
     <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactivity.de-DE.xlf" />
+    <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactivity.es-ES.xlf" />
     <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactivity.pt-BR.xlf">
       <SubType>Designer</SubType>
     </XliffResource>
