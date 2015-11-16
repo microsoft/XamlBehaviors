@@ -51,11 +51,15 @@
     <file target="runtimes\win10-arm\native\Microsoft.Xaml.Interactivity.pdb"   src="..\out\BehaviorsSDKNative\bin\ARM\Release\Microsoft.Xaml.Interactivity\Microsoft.Xaml.Interactivity.pdb" />
     <file target="runtimes\win10-arm\native\Microsoft.Xaml.Interactivity.pri"   src="..\out\BehaviorsSDKNative\bin\ARM\Release\Microsoft.Xaml.Interactivity\Microsoft.Xaml.Interactivity.pri" />
     <file target="runtimes\win10-arm\native\Microsoft.Xaml.Interactions.dll"    src="..\out\BehaviorsSDKNative\bin\ARM\Release\Microsoft.Xaml.Interactions\Microsoft.Xaml.Interactions.dll" />
-    <file target="runtimes\win10-arm\native\Microsoft.Xaml.Interactions.pdb"    src="..\out\BehaviorsSDKNative\bin\ARM\Release\Microsoft.Xaml.Interactions\Microsoft.Xaml.Interactions.pdblib\uap10.0" />
+    <file target="runtimes\win10-arm\native\Microsoft.Xaml.Interactions.pdb"    src="..\out\BehaviorsSDKNative\bin\ARM\Release\Microsoft.Xaml.Interactions\Microsoft.Xaml.Interactions.pdb" />
     <file target="runtimes\win10-arm\native\Microsoft.Xaml.Interactions.pri"    src="..\out\BehaviorsSDKNative\bin\ARM\Release\Microsoft.Xaml.Interactions\Microsoft.Xaml.Interactions.pri" />
 
-    <file target="src\BehaviorsSDKNative" src="..\src\BehaviorsSDKNative\**\*.cs" />
-    <file target="src\BehaviorsSDKNative" src="..\src\BehaviorsSDKNative\**\*.cpp" />
-    <file target="src\BehaviorsSDKNative" src="..\src\BehaviorsSDKNative\**\*.h" />
+    <file target="src\BehaviorsSDKNative\Microsoft.Xaml.Interactions"           src="..\src\BehaviorsSDKNative\Microsoft.Xaml.Interactions\**\*.cpp" />
+    <file target="src\BehaviorsSDKNative\Microsoft.Xaml.Interactions"           src="..\src\BehaviorsSDKNative\Microsoft.Xaml.Interactions\**\*.h" />
+    <file target="src\BehaviorsSDKNative\Microsoft.Xaml.Interactivity"          src="..\src\BehaviorsSDKNative\Microsoft.Xaml.Interactivity\**\*.cpp" />
+    <file target="src\BehaviorsSDKNative\Microsoft.Xaml.Interactivity"          src="..\src\BehaviorsSDKNative\Microsoft.Xaml.Interactivity\**\*.h" />
+
+    <file target="src\BehaviorsSDKNative\Microsoft.Xaml.Interactions.Design"    src="..\src\BehaviorsSDKNative\Microsoft.Xaml.Interactions.Design\**\*.cs" />
+    <file target="src\BehaviorsSDKNative\Microsoft.Xaml.Interactivity.Design"   src="..\src\BehaviorsSDKNative\Microsoft.Xaml.Interactivity.Design\**\*.cs" />
   </files>
 </package>

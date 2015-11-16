@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23321.0
+VisualStudioVersion = 14.0.24710.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Microsoft.Xaml.Interactivity", "Microsoft.Xaml.Interactivity\Microsoft.Xaml.Interactivity.vcxproj", "{721B956C-043C-4658-8AA7-D72FD5F112BF}"
 EndProject
@@ -13,6 +13,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Xaml.Interactions.Design", "Microsoft.Xaml.Interactions.Design\Microsoft.Xaml.Interactions.Design.csproj", "{A3161818-5AA8-4A7C-A6CD-B19EDA5F3AE1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Xaml.Interactivity.Design", "Microsoft.Xaml.Interactivity.Design\Microsoft.Xaml.Interactivity.Design.csproj", "{76BF4E75-B1E7-4BFA-AE67-BAF6800DAC78}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NativeUnitTests", "NativeUnitTests\NativeUnitTests.csproj", "{D8F350B3-B5FB-4CED-AF8B-595EBFE16461}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -86,6 +88,26 @@ Global
 		{76BF4E75-B1E7-4BFA-AE67-BAF6800DAC78}.Release|x64.Build.0 = Release|Any CPU
 		{76BF4E75-B1E7-4BFA-AE67-BAF6800DAC78}.Release|x86.ActiveCfg = Release|Any CPU
 		{76BF4E75-B1E7-4BFA-AE67-BAF6800DAC78}.Release|x86.Build.0 = Release|Any CPU
+		{D8F350B3-B5FB-4CED-AF8B-595EBFE16461}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{D8F350B3-B5FB-4CED-AF8B-595EBFE16461}.Debug|ARM.ActiveCfg = Debug|ARM
+		{D8F350B3-B5FB-4CED-AF8B-595EBFE16461}.Debug|ARM.Build.0 = Debug|ARM
+		{D8F350B3-B5FB-4CED-AF8B-595EBFE16461}.Debug|ARM.Deploy.0 = Debug|ARM
+		{D8F350B3-B5FB-4CED-AF8B-595EBFE16461}.Debug|x64.ActiveCfg = Debug|x64
+		{D8F350B3-B5FB-4CED-AF8B-595EBFE16461}.Debug|x64.Build.0 = Debug|x64
+		{D8F350B3-B5FB-4CED-AF8B-595EBFE16461}.Debug|x64.Deploy.0 = Debug|x64
+		{D8F350B3-B5FB-4CED-AF8B-595EBFE16461}.Debug|x86.ActiveCfg = Debug|x86
+		{D8F350B3-B5FB-4CED-AF8B-595EBFE16461}.Debug|x86.Build.0 = Debug|x86
+		{D8F350B3-B5FB-4CED-AF8B-595EBFE16461}.Debug|x86.Deploy.0 = Debug|x86
+		{D8F350B3-B5FB-4CED-AF8B-595EBFE16461}.Release|Any CPU.ActiveCfg = Release|x86
+		{D8F350B3-B5FB-4CED-AF8B-595EBFE16461}.Release|ARM.ActiveCfg = Release|ARM
+		{D8F350B3-B5FB-4CED-AF8B-595EBFE16461}.Release|ARM.Build.0 = Release|ARM
+		{D8F350B3-B5FB-4CED-AF8B-595EBFE16461}.Release|ARM.Deploy.0 = Release|ARM
+		{D8F350B3-B5FB-4CED-AF8B-595EBFE16461}.Release|x64.ActiveCfg = Release|x64
+		{D8F350B3-B5FB-4CED-AF8B-595EBFE16461}.Release|x64.Build.0 = Release|x64
+		{D8F350B3-B5FB-4CED-AF8B-595EBFE16461}.Release|x64.Deploy.0 = Release|x64
+		{D8F350B3-B5FB-4CED-AF8B-595EBFE16461}.Release|x86.ActiveCfg = Release|x86
+		{D8F350B3-B5FB-4CED-AF8B-595EBFE16461}.Release|x86.Build.0 = Release|x86
+		{D8F350B3-B5FB-4CED-AF8B-595EBFE16461}.Release|x86.Deploy.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
