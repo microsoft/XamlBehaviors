@@ -71,3 +71,8 @@ nuget push Microsoft.Xaml.Behaviors.Uwp.Managed.1.0.0.nupkg              // uplo
 nuget push Microsoft.Xaml.Behaviors.Uwp.Managed.1.0.0.symbols.nupkg      // upload just the symbols for Microsoft.Xaml.Behaviors.Uwp.Managed.1.0.0.nupkg
 
 In VS, setting http://srv.symbolsource.org/pdb/Public as a symbol file location will enable lookups to this package. You will have symbols and source in your behavior debugging sessions. Full details at http://docs.nuget.org/Create/Creating-and-Publishing-a-Symbol-Package and http://www.symbolsource.org/Public/Home/VisualStudio.
+
+Versioning
+----------
+
+Version files are all collected together into the source trees for the two SDKs, in src\<SDK>\Version. When revising a version for either SDK, be sure to change it in all files represented here before rebuilding and re-packaging. Keeping the NuGet package version in sync with the assemblies in that package will help avoid confusion.

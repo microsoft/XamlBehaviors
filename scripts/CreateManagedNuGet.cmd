@@ -17,7 +17,7 @@ IF EXIST ..\out\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactio
 	GOTO PACK
 	
 	:PackWithFileVersion
-	SET /p VERSION=<VERSION
+        SET /p VERSION=<..\src\BehaviorsSDKManaged\Version\NuGetPackageVersion.txt
 	GOTO PACK
 )
 
@@ -29,9 +29,10 @@ GOTO END
 SET NUGET_ARGS=^
     -nopackageanalysis ^
     -version %VERSION% ^
-    -Verbosity detailed
+    -Verbosity detailed ^
+    -Symbols
 
-nuget pack Microsoft.Xaml.Behaviors.Uwp.Managed.nuspec -Symbols %NUGET_ARGS%
+nuget pack Microsoft.Xaml.Behaviors.Uwp.Managed.nuspec %NUGET_ARGS%
 
 :END
 

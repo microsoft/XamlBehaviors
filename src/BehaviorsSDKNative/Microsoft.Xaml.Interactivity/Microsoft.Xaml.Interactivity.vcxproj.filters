@@ -28,6 +28,7 @@
     <ClInclude Include="ResourceHelper.h" />
     <ClInclude Include="VisualStateUtilities.h" />
     <ClInclude Include="Microsoft.Xaml.Interactivity.h" />
+    <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
     <PRIResource Include="Resources\de-DE\Strings.resw" />
@@ -53,5 +54,10 @@
     <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactivity.ru-RU.xlf" />
     <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactivity.zh-CN.xlf" />
     <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactivity.zh-TW.xlf" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Microsoft.Xaml.Interactivity.Version.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>

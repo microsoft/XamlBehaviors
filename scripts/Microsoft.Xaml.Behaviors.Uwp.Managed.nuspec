@@ -2,7 +2,7 @@
 <package >
     <metadata>
         <id>Microsoft.Xaml.Behaviors.Uwp.Managed</id>
-        <version>1.0.0</version>
+        <version>0.0.0</version><!--Overridden using -Version switch in nuget pack command-->
         <title>Behaviors SDK (Managed)</title>
         <authors>Microsoft</authors>
         <owners>Microsoft</owners>

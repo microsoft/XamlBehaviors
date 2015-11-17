@@ -141,6 +141,7 @@
     <Compile Include="Media\ControlStoryboardOption.cs" />
     <Compile Include="Media\PlaySoundAction.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="..\Version\Version.cs" />
     <Content Include="Properties\Microsoft.Xaml.Interactions.rd.xml" />
   </ItemGroup>
   <ItemGroup>

@@ -16,7 +16,7 @@ SET VERSION=%1
 GOTO PACK
 
 :PackWithFileVersion
-SET /p VERSION=<VERSION
+SET /p VERSION=<..\src\BehaviorsSDKNative\Version\NuGetPackageVersion.txt
 GOTO PACK
 
 
@@ -24,9 +24,10 @@ GOTO PACK
 SET NUGET_ARGS=^
     -nopackageanalysis ^
     -version %VERSION% ^
-    -Verbosity detailed
+    -Verbosity detailed ^
+    -Symbols
 
-nuget pack Microsoft.Xaml.Behaviors.Uwp.Native.nuspec -Symbols %NUGET_ARGS%
+nuget pack Microsoft.Xaml.Behaviors.Uwp.Native.nuspec %NUGET_ARGS%
 
 :END
 
