@@ -3,16 +3,15 @@
     <metadata>
         <id>Microsoft.Xaml.Behaviors.Uwp.Managed</id>
         <version>1.0.0</version>
-        <title>Behaviors SDK (Managed)</title>
+        <title>Microsoft.Xaml.Behaviors.Uwp.Managed</title>
         <authors>Microsoft</authors>
-        <owners>Microsoft</owners>
+        <owners>xamlexperiencesteam,Microsoft</owners>
         <requireLicenseAcceptance>true</requireLicenseAcceptance>
-        <description>Visual Studio Behaviors SDK, managed code version. Now OSS!</description>
-        <licenseUrl>https://github.com/Microsoft/XamlBehaviors/blob/master/LICENSE</licenseUrl>
-        <projectUrl>https://github.com/Microsoft/XamlBehaviors</projectUrl>
-        <releaseNotes>Initial release to open source.</releaseNotes>
+        <description>Easily add interactivity to your apps using XAML Behaviors. Now with UWP support! Behaviors encapsulate reusable functionalities for elements that can be easily added to your XAML without the need for more imperative code. This is the managed version for C# UWP projects.</description>
+        <licenseUrl>http://go.microsoft.com/fwlink/?LinkID=708401</licenseUrl>
+        <projectUrl>http://go.microsoft.com/fwlink/?LinkID=651678</projectUrl>
         <copyright>Copyright © Microsoft Corporation</copyright>
-        <tags>Behavior Action Behaviors Actions Blend Managed C#</tags>
+        <tags>Behavior Action Behaviors Actions Blend Managed C# Interaction Interactivity Interactions</tags>
     </metadata>
 
     <files>
