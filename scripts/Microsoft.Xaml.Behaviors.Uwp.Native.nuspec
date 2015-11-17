@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>Microsoft.Xaml.Behaviors.Uwp.Native</id>
-    <version>1.0.0</version>
+    <version>0.0.0</version><!--Overridden using -Version switch in nuget pack command-->
     <title>Microsoft.Xaml.Behaviors.Uwp.Native</title>
     <authors>Microsoft</authors>
     <owners>xamlexperiencesteam,Microsoft</owners>
