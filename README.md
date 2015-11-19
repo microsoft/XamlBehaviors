@@ -43,7 +43,7 @@ Building Behaviors from Source
 ------------------------------
 **What You Need**
 
- - [Visual Studio 2015](https://www.visualstudio.com/features/windows-apps-games-vs) w/ Update 1
+ - [Visual Studio 2015 Update 1 w/ Universal Windows Tools](https://www.visualstudio.com/features/windows-apps-games-vs)
 
 **Clone the Repository**
 
