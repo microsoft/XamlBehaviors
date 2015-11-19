@@ -63,4 +63,9 @@
     <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactions.zh-CN.xlf" />
     <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactions.zh-TW.xlf" />
   </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\Version\Microsoft.Xaml.Interactions.Version.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
 </Project>

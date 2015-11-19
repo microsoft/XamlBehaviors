@@ -140,6 +140,7 @@
     <Compile Include="IBehavior.cs" />
     <Compile Include="Interaction.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="..\Version\Version.cs" />
     <Compile Include="ResourceHelper.cs" />
     <Compile Include="TypeConstraintAttribute.cs" />
     <Compile Include="VisualStateUtilities.cs" />
