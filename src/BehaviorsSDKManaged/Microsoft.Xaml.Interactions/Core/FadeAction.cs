@@ -11,7 +11,7 @@ namespace Microsoft.Xaml.Interactions.Core
         FadeOut
     }
 
-    public class FadeBehaviour : DependencyObject, IAction
+    public class FadeAction : DependencyObject, IAction
     {
         public FadeTypes FadeType
         {
@@ -21,7 +21,7 @@ namespace Microsoft.Xaml.Interactions.Core
 
         // Using a DependencyProperty as the backing store for FadeType.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty FadeTypeProperty =
-            DependencyProperty.Register("FadeType", typeof(FadeTypes), typeof(FadeBehaviour), new PropertyMetadata(FadeTypes.FadeOut));
+            DependencyProperty.Register("FadeType", typeof(FadeTypes), typeof(FadeAction), new PropertyMetadata(FadeTypes.FadeOut));
 
         public TimeSpan Duration
         {
@@ -31,7 +31,7 @@ namespace Microsoft.Xaml.Interactions.Core
 
         // Using a DependencyProperty as the backing store for Duration.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty DurationProperty =
-            DependencyProperty.Register("Duration", typeof(TimeSpan), typeof(FadeBehaviour), new PropertyMetadata(TimeSpan.FromSeconds(0.5)));
+            DependencyProperty.Register("Duration", typeof(TimeSpan), typeof(FadeAction), new PropertyMetadata(TimeSpan.FromSeconds(0.5)));
 
         public object Execute(object sender, object parameter)
         {
