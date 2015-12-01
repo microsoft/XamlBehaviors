@@ -241,6 +241,33 @@ namespace Microsoft.Xaml.Interactions.Design.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to An action that will fade the Opacity property..
+        /// </summary>
+        internal static string Description_FadeAction {
+            get {
+                return ResourceManager.GetString("Description_FadeAction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Gets or set the duration of the fade effect..
+        /// </summary>
+        internal static string Description_FadeAction_Duration {
+            get {
+                return ResourceManager.GetString("Description_FadeAction_Duration", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Gets or set the type of fade that will be executed, FadeIn or FadeOut..
+        /// </summary>
+        internal static string Description_FadeAction_FadeType {
+            get {
+                return ResourceManager.GetString("Description_FadeAction_FadeType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to An action that will transition a FrameworkElement to a specified VisualState when executed..
         /// </summary>
         internal static string Description_GoToStateAction {
