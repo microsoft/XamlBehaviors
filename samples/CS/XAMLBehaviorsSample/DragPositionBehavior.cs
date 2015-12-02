@@ -8,18 +8,18 @@ namespace XAMLBehaviorsSample
 {
     public class DragPositionBehavior : DependencyObject, IBehavior
     {
-        private UIElement _parent = null;
-        private Point _prevPoint;
-        private int _pointerId = -1;
+        private UIElement parent = null;
+        private Point prevPoint;
+        private int pointerId = -1;
 
-        private void _initialise(FrameworkElement element)
+        private void initialise(FrameworkElement element)
         {
             element.RenderTransform = new CompositeTransform();
         }
 
-        private void _cleanup()
+        private void cleanup()
         {
-            _parent = null;
+            parent = null;
             AssociatedObject = null;
         }
 
@@ -39,7 +39,7 @@ namespace XAMLBehaviorsSample
                 {
                     fe.PointerPressed += fe_PointerPressed;
                     fe.PointerReleased += fe_PointerReleased;
-                    _initialise(fe);
+                    initialise(fe);
                 }
             }
         }
@@ -47,33 +47,33 @@ namespace XAMLBehaviorsSample
         void fe_PointerPressed(object sender, PointerRoutedEventArgs e)
         {
             var fe = AssociatedObject as FrameworkElement;
-            _parent = (UIElement)fe.Parent;
+            parent = (UIElement)fe.Parent;
 
-            _prevPoint = e.GetCurrentPoint(_parent).Position;
-            _parent.PointerMoved += move;
-            _pointerId = (int)e.Pointer.PointerId;
+            prevPoint = e.GetCurrentPoint(parent).Position;
+            parent.PointerMoved += move;
+            pointerId = (int)e.Pointer.PointerId;
         }
 
         private void move(object o, PointerRoutedEventArgs args)
         {
-            if (args.Pointer.PointerId != _pointerId)
+            if (args.Pointer.PointerId != pointerId)
                 return;
 
             var fe = AssociatedObject as FrameworkElement;
-            var pos = args.GetCurrentPoint(_parent).Position;
+            var pos = args.GetCurrentPoint(parent).Position;
             var tr = (CompositeTransform)fe.RenderTransform;
-            tr.TranslateX += pos.X - _prevPoint.X;
-            tr.TranslateY += pos.Y - _prevPoint.Y;
-            _prevPoint = pos;
+            tr.TranslateX += pos.X - prevPoint.X;
+            tr.TranslateY += pos.Y - prevPoint.Y;
+            prevPoint = pos;
         }
 
         void fe_PointerReleased(object sender, PointerRoutedEventArgs e)
         {
             var fe = AssociatedObject as FrameworkElement;
-            if (e.Pointer.PointerId != _pointerId)
+            if (e.Pointer.PointerId != pointerId)
                 return;
-            _parent.PointerMoved -= move;
-            _pointerId = -1;
+            parent.PointerMoved -= move;
+            pointerId = -1;
         }
 
         public void Detach()
@@ -85,7 +85,7 @@ namespace XAMLBehaviorsSample
                 fe.PointerReleased -= fe_PointerReleased;
             }
 
-            _cleanup();
+            cleanup();
         }
     }
 }
