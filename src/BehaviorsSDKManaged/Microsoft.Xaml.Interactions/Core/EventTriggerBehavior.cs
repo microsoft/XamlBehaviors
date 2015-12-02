@@ -3,7 +3,6 @@
 namespace Microsoft.Xaml.Interactions.Core
 {
     using System;
-    using System.Diagnostics;
     using System.Globalization;
     using System.Reflection;
     using System.Runtime.InteropServices.WindowsRuntime;
@@ -16,7 +15,7 @@ namespace Microsoft.Xaml.Interactions.Core
     /// A behavior that listens for a specified event on its source and executes its actions when that event is fired.
     /// </summary>
     [ContentPropertyAttribute(Name = "Actions")]
-    public sealed class EventTriggerBehavior : DependencyObject, IBehavior
+    public sealed class EventTriggerBehavior : Behavior
     {
         /// <summary>
         /// Identifies the <seealso cref="Actions"/> dependency property.
@@ -48,7 +47,6 @@ namespace Microsoft.Xaml.Interactions.Core
             typeof(EventTriggerBehavior),
             new PropertyMetadata(null, new PropertyChangedCallback(EventTriggerBehavior.OnSourceObjectChanged)));
 
-        private DependencyObject associatedObject;
         private object resolvedSource;
         private Delegate eventHandler;
         private bool isLoadedEventRegistered;
@@ -113,50 +111,21 @@ namespace Microsoft.Xaml.Interactions.Core
         }
 
         /// <summary>
-        /// Gets the <seealso cref="Windows.UI.Xaml.DependencyObject"/> to which the <seealso cref="IBehavior"/> is attached.
+        /// Called after the behavior is attached to the <see cref="Microsoft.Xaml.Interactivity.Behavior.AssociatedObject"/>.
         /// </summary>
-        public DependencyObject AssociatedObject
+        protected override void OnAttached()
         {
-            get
-            {
-                return this.associatedObject;
-            }
-        }
-
-        /// <summary>
-        /// Attaches to the specified object.
-        /// </summary>
-        /// <param name="associatedObject">The <seealso cref="Windows.UI.Xaml.DependencyObject"/> to which the <seealso cref="IBehavior"/> will be attached.</param>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1500:VariableNamesShouldNotMatchFieldNames", MessageId = "associatedObject")]
-        public void Attach(DependencyObject associatedObject)
-        {
-            if (associatedObject == this.associatedObject || Windows.ApplicationModel.DesignMode.DesignModeEnabled)
-            {
-                return;
-            }
-
-            if (this.associatedObject != null)
-            {
-                throw new InvalidOperationException(string.Format(
-                    CultureInfo.CurrentCulture,
-                    ResourceHelper.CannotAttachBehaviorMultipleTimesExceptionMessage,
-                    associatedObject,
-                    this.associatedObject));
-            }
-
-            Debug.Assert(associatedObject != null, "Cannot attach the behavior to a null object.");
-
-            this.associatedObject = associatedObject;
+            base.OnAttached();
             this.SetResolvedSource(this.ComputeResolvedSource());
         }
 
         /// <summary>
-        /// Detaches this instance from its associated object.
+        /// Called when the behavior is being detached from its <see cref="Microsoft.Xaml.Interactivity.Behavior.AssociatedObject"/>.
         /// </summary>
-        public void Detach()
+        protected override void OnDetaching()
         {
+            base.OnDetaching();
             this.SetResolvedSource(null);
-            this.associatedObject = null;
         }
 
         private void SetResolvedSource(object newSource)
