@@ -13,12 +13,21 @@ namespace Microsoft.Xaml.Interactivity
     /// <typeparam name="T">The object type to attach to</typeparam>
     public abstract class Behavior<T> : Behavior where T : DependencyObject
     {
+        /// <summary>
+        /// Gets the object to which this behavior is attached.
+        /// </summary>
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public new T AssociatedObject
         {
             get { return base.AssociatedObject as T; }
         }
 
+        /// <summary>
+        /// Called after the behavior is attached to the <see cref="Microsoft.Xaml.Interactivity.Behavior.AssociatedObject"/>.
+        /// </summary>
+        /// <remarks>
+        /// Override this to hook up functionality to the <see cref="Microsoft.Xaml.Interactivity.Behavior.AssociatedObject"/>
+        /// </remarks>
         protected override void OnAttached()
         {
             base.OnAttached();
