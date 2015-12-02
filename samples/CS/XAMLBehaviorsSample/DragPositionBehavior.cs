@@ -56,14 +56,14 @@ namespace XAMLBehaviorsSample
 
         private void move(object o, PointerRoutedEventArgs args)
         {
-            if (args.Pointer.PointerId != this._pointerId)
+            if (args.Pointer.PointerId != _pointerId)
                 return;
 
             var fe = AssociatedObject as FrameworkElement;
             var pos = args.GetCurrentPoint(_parent).Position;
             var tr = (CompositeTransform)fe.RenderTransform;
-            tr.TranslateX += pos.X - this._prevPoint.X;
-            tr.TranslateY += pos.Y - this._prevPoint.Y;
+            tr.TranslateX += pos.X - _prevPoint.X;
+            tr.TranslateY += pos.Y - _prevPoint.Y;
             _prevPoint = pos;
         }
 
