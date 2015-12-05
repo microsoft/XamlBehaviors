@@ -145,7 +145,7 @@
     <Compile Include="Media\PlaySoundAction.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="..\Version\Version.cs" />
-    <Content Include="Properties\Microsoft.Xaml.Interactions.rd.xml" />
+    <EmbeddedResource Include="Properties\Microsoft.Xaml.Interactions.rd.xml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Microsoft.Xaml.Interactivity\Microsoft.Xaml.Interactivity.csproj">

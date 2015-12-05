@@ -30,9 +30,6 @@
         <file target="lib\uap10.0\Design\Microsoft.Xaml.Interactions.Design.dll"    src="..\out\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactions.Design.dll" />
         <file target="lib\uap10.0\Design\Microsoft.Xaml.Interactions.Design.pdb"    src="..\out\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactions.Design.pdb" />
 
-        <file target="lib\uap10.0\Microsoft.Xaml.Interactivity\Properties\Microsoft.Xaml.Interactivity.rd.xml"  src="..\src\BehaviorsSDKManaged\Microsoft.Xaml.Interactivity\Properties\Microsoft.Xaml.Interactivity.rd.xml" />
-        <file target="lib\uap10.0\Microsoft.Xaml.Interactions\Properties\Microsoft.Xaml.Interactions.rd.xml"    src="..\src\BehaviorsSDKManaged\Microsoft.Xaml.Interactions\Properties\Microsoft.Xaml.Interactions.rd.xml" />
-
         <file target="src\BehaviorsSDKManaged\Microsoft.Xaml.Interactions"          src="..\src\BehaviorsSDKManaged\Microsoft.Xaml.Interactions\**\*.cs" />
         <file target="src\BehaviorsSDKManaged\Microsoft.Xaml.Interactions.Design"   src="..\src\BehaviorsSDKManaged\Microsoft.Xaml.Interactions.Design\**\*.cs" />
         <file target="src\BehaviorsSDKManaged\Microsoft.Xaml.Interactivity"         src="..\src\BehaviorsSDKManaged\Microsoft.Xaml.Interactivity\**\*.cs" />
