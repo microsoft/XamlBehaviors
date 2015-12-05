@@ -3,7 +3,6 @@
 namespace Microsoft.Xaml.Interactions.Core
 {
     using System;
-    using System.Diagnostics;
     using System.Globalization;
     using Windows.UI.Xaml;
     using Windows.UI.Xaml.Markup;
@@ -13,7 +12,7 @@ namespace Microsoft.Xaml.Interactions.Core
     /// A behavior that performs actions when the bound data meets a specified condition.
     /// </summary>
     [ContentPropertyAttribute(Name = "Actions")]
-    public sealed class DataTriggerBehavior : DependencyObject, IBehavior
+    public sealed class DataTriggerBehavior : Behavior
     {
         /// <summary> q
         /// Identifies the <seealso cref="Actions"/> dependency property.
@@ -55,8 +54,6 @@ namespace Microsoft.Xaml.Interactions.Core
             typeof(object),
             typeof(DataTriggerBehavior),
             new PropertyMetadata(null, new PropertyChangedCallback(DataTriggerBehavior.OnValueChanged)));
-
-        private DependencyObject associatedObject;
 
         /// <summary>
         /// Gets the collection of actions associated with the behavior. This is a dependency property.
@@ -120,51 +117,6 @@ namespace Microsoft.Xaml.Interactions.Core
             {
                 this.SetValue(DataTriggerBehavior.ValueProperty, value);
             }
-        }
-
-        /// <summary>
-        /// Gets the <seealso cref="Windows.UI.Xaml.DependencyObject"/> to which the <seealso cref="IBehavior"/> is attached.
-        /// </summary>
-        public DependencyObject AssociatedObject
-        {
-            get
-            {
-                return this.associatedObject;
-            }
-        }
-
-        /// <summary>
-        /// Attaches to the specified object.
-        /// </summary>
-        /// <param name="associatedObject">The <seealso cref="Windows.UI.Xaml.DependencyObject"/> to which the <seealso cref="IBehavior"/> will be attached.</param>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1500:VariableNamesShouldNotMatchFieldNames", MessageId = "associatedObject")]
-        public void Attach(DependencyObject associatedObject)
-        {
-            if (associatedObject == this.associatedObject || Windows.ApplicationModel.DesignMode.DesignModeEnabled)
-            {
-                return;
-            }
-
-            if (this.associatedObject != null)
-            {
-                throw new InvalidOperationException(string.Format(
-                    CultureInfo.CurrentCulture,
-                    ResourceHelper.CannotAttachBehaviorMultipleTimesExceptionMessage,
-                    associatedObject,
-                    this.associatedObject));
-            }
-
-            Debug.Assert(associatedObject != null, "Cannot attach the behavior to a null object.");
-
-            this.associatedObject = associatedObject;
-        }
-
-        /// <summary>
-        /// Detaches this instance from its associated object.
-        /// </summary>
-        public void Detach()
-        {
-            this.associatedObject = null;
         }
 
         private static bool Compare(object leftOperand, ComparisonConditionType operatorType, object rightOperand)

@@ -4,8 +4,6 @@ namespace Microsoft.Xaml.Interactions.Core
 {
     using System;
     using System.Collections.Generic;
-    using System.Diagnostics;
-    using System.Globalization;
     using Windows.UI.Xaml;
     using Windows.UI.Xaml.Controls;
     using Windows.UI.Xaml.Controls.Primitives;
@@ -16,7 +14,7 @@ namespace Microsoft.Xaml.Interactions.Core
     /// A behavior that allows incremental updating of <seealso cref="Windows.UI.Xaml.Controls.ListView"/> and <seealso cref="Windows.UI.Xaml.Controls.GridView"/> contents to support faster updating.
     /// By attaching this behavior to elements in the <seealso cref="Windows.UI.Xaml.Controls.ItemsControl.ItemTemplate"/> used by these views, some of the updates can be deferred until there is render time available, resulting in a smoother experience.
     /// </summary>
-    public sealed class IncrementalUpdateBehavior : DependencyObject, IBehavior
+    public sealed class IncrementalUpdateBehavior : Behavior<FrameworkElement>
     {
         /// <summary>
         /// Identifies the <seealso cref="Phase"/> dependency property.
@@ -37,7 +35,6 @@ namespace Microsoft.Xaml.Interactions.Core
             typeof(IncrementalUpdateBehavior),
             new PropertyMetadata(null, new PropertyChangedCallback(IncrementalUpdateBehavior.OnIncrementalUpdaterChanged)));
 
-        private DependencyObject associatedObject = null;
         private IncrementalUpdater updater = null;
 
         /// <summary>
@@ -53,7 +50,7 @@ namespace Microsoft.Xaml.Interactions.Core
         {
             IncrementalUpdateBehavior behavior = (IncrementalUpdateBehavior)sender;
             IncrementalUpdater incrementalUpdater = behavior.FindUpdater();
-            FrameworkElement frameworkElement = behavior.associatedObject as FrameworkElement;
+            FrameworkElement frameworkElement = behavior.AssociatedObject;
 
             if (incrementalUpdater != null && frameworkElement != null)
             {
@@ -89,21 +86,18 @@ namespace Microsoft.Xaml.Interactions.Core
         private void OnAssociatedObjectLoaded(object sender, RoutedEventArgs e)
         {
             IncrementalUpdater incrementalUpdater = this.FindUpdater();
-            FrameworkElement frameworkElement = (FrameworkElement)this.associatedObject;
 
-            if (incrementalUpdater != null && frameworkElement != null)
+            if (incrementalUpdater != null)
             {
-                incrementalUpdater.CachePhaseElement(frameworkElement, this.Phase);
+                incrementalUpdater.CachePhaseElement(this.AssociatedObject, this.Phase);
             }
         }
 
         private void OnAssociatedObjectUnloaded(object sender, RoutedEventArgs e)
         {
-            FrameworkElement frameworkElement = (FrameworkElement)this.associatedObject;
-
-            if (this.updater != null && frameworkElement != null)
+            if (this.updater != null)
             {
-                this.updater.UncachePhaseElement(frameworkElement, this.Phase);
+                this.updater.UncachePhaseElement(this.AssociatedObject, this.Phase);
             }
 
             this.updater = null;
@@ -116,7 +110,7 @@ namespace Microsoft.Xaml.Interactions.Core
                 return this.updater;
             }
 
-            DependencyObject ancestor = this.associatedObject;
+            DependencyObject ancestor = this.AssociatedObject;
             while (ancestor != null)
             {
                 DependencyObject parent = VisualTreeHelper.GetParent(ancestor);
@@ -140,58 +134,26 @@ namespace Microsoft.Xaml.Interactions.Core
         }
 
         /// <summary>
-        /// Gets the <seealso cref="Windows.UI.Xaml.DependencyObject"/> to which the <seealso cref="IBehavior"/> is attached.
+        /// Called after the behavior is attached to the <see cref="Microsoft.Xaml.Interactivity.Behavior.AssociatedObject"/>.
         /// </summary>
-        public DependencyObject AssociatedObject
+        protected override void OnAttached()
         {
-            get { return this.associatedObject; }
+            base.OnAttached();
+
+            this.AssociatedObject.Loaded += this.OnAssociatedObjectLoaded;
+            this.AssociatedObject.Unloaded += this.OnAssociatedObjectUnloaded;
         }
 
         /// <summary>
-        /// Attaches to the specified object.
+        /// Called when the behavior is being detached from its <see cref="Microsoft.Xaml.Interactivity.Behavior.AssociatedObject"/>.
         /// </summary>
-        /// <param name="associatedObject">The <seealso cref="Windows.UI.Xaml.DependencyObject"/> to which the <seealso cref="IBehavior"/> will be attached.</param>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1500:VariableNamesShouldNotMatchFieldNames", MessageId = "associatedObject")]
-        public void Attach(DependencyObject associatedObject)
+        protected override void OnDetaching()
         {
-            if (associatedObject == this.associatedObject || Windows.ApplicationModel.DesignMode.DesignModeEnabled)
-            {
-                return;
-            }
+            base.OnDetaching();
 
-            if (this.associatedObject != null)
-            {
-                throw new InvalidOperationException(string.Format(
-                    CultureInfo.CurrentCulture,
-                    ResourceHelper.CannotAttachBehaviorMultipleTimesExceptionMessage,
-                    associatedObject,
-                    this.associatedObject));
-            }
-
-            Debug.Assert(associatedObject != null, "Cannot attach the behavior to a null object.");
-
-            this.associatedObject = associatedObject;
-            FrameworkElement frameworkElement = associatedObject as FrameworkElement;
-            if (frameworkElement != null)
-            {
-                frameworkElement.Loaded += this.OnAssociatedObjectLoaded;
-                frameworkElement.Unloaded += this.OnAssociatedObjectUnloaded;
-            }
-        }
-
-        /// <summary>
-        /// Detaches this instance from its associated object.
-        /// </summary>
-        public void Detach()
-        {
-            FrameworkElement frameworkElement = this.associatedObject as FrameworkElement;
-            if (frameworkElement != null)
-            {
-                frameworkElement.Loaded -= this.OnAssociatedObjectLoaded;
-                frameworkElement.Unloaded -= this.OnAssociatedObjectUnloaded;
-                // no need to perform the work that Unloaded would have done - that's just housekeeping on the cache, which is now going away
-            }
-            this.associatedObject = null;
+            this.AssociatedObject.Loaded -= this.OnAssociatedObjectLoaded;
+            this.AssociatedObject.Unloaded -= this.OnAssociatedObjectUnloaded;
+            // no need to perform the work that Unloaded would have done - that's just housekeeping on the cache, which is now going away
         }
 
         private class IncrementalUpdater
@@ -409,7 +371,7 @@ namespace Microsoft.Xaml.Interactions.Core
                     }
 
                     // insert the element
-                   phasedElementRecords.Add(new PhasedElementRecord(phaseElement));
+                    phasedElementRecords.Add(new PhasedElementRecord(phaseElement));
                 }
             }
 
