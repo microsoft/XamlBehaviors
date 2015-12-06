@@ -144,7 +144,7 @@
     <Compile Include="ResourceHelper.cs" />
     <Compile Include="TypeConstraintAttribute.cs" />
     <Compile Include="VisualStateUtilities.cs" />
-    <Content Include="Properties\Microsoft.Xaml.Interactivity.rd.xml" />
+    <EmbeddedResource Include="Properties\Microsoft.Xaml.Interactivity.rd.xml" />
   </ItemGroup>
   <ItemGroup>
     <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactivity.de-DE.xlf" />
