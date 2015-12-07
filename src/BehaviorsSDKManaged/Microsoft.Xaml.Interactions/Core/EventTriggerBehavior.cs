@@ -51,6 +51,8 @@ namespace Microsoft.Xaml.Interactions.Core
         private Delegate eventHandler;
         private bool isLoadedEventRegistered;
         private bool isWindowsRuntimeEvent;
+        private Func<Delegate, EventRegistrationToken> addEventHandlerMethod;
+        private Action<EventRegistrationToken> removeEventHandlerMethod;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="EventTriggerBehavior"/> class.
@@ -170,7 +172,7 @@ namespace Microsoft.Xaml.Interactions.Core
             if (eventName != "Loaded")
             {
                 Type sourceObjectType = this.resolvedSource.GetType();
-                EventInfo info = sourceObjectType.GetRuntimeEvent(this.EventName);
+                EventInfo info = sourceObjectType.GetRuntimeEvent(eventName);
                 if (info == null)
                 {
                     throw new ArgumentException(string.Format(
@@ -186,10 +188,10 @@ namespace Microsoft.Xaml.Interactions.Core
                 this.isWindowsRuntimeEvent = EventTriggerBehavior.IsWindowsRuntimeType(info.EventHandlerType);
                 if (this.isWindowsRuntimeEvent)
                 {
-                    WindowsRuntimeMarshal.AddEventHandler<Delegate>(
-                                add => (EventRegistrationToken)info.AddMethod.Invoke(this.resolvedSource, new object[] { add }),
-                                token => info.RemoveMethod.Invoke(this.resolvedSource, new object[] { token }),
-                                this.eventHandler);
+                    this.addEventHandlerMethod = add => (EventRegistrationToken)info.AddMethod.Invoke(this.resolvedSource, new object[] { add });
+                    this.removeEventHandlerMethod = token => info.RemoveMethod.Invoke(this.resolvedSource, new object[] { token });
+
+                    WindowsRuntimeMarshal.AddEventHandler(this.addEventHandlerMethod, this.removeEventHandlerMethod, this.eventHandler);
                 }
                 else
                 {
@@ -224,9 +226,7 @@ namespace Microsoft.Xaml.Interactions.Core
                 EventInfo info = this.resolvedSource.GetType().GetRuntimeEvent(eventName);
                 if (this.isWindowsRuntimeEvent)
                 {
-                    WindowsRuntimeMarshal.RemoveEventHandler<Delegate>(
-                        token => info.RemoveMethod.Invoke(this.resolvedSource, new object[] { token }),
-                        this.eventHandler);
+                    WindowsRuntimeMarshal.RemoveEventHandler(this.removeEventHandlerMethod, this.eventHandler);
                 }
                 else
                 {
