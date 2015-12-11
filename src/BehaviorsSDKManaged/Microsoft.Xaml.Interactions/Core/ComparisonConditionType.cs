@@ -9,15 +9,33 @@ namespace Microsoft.Xaml.Interactions.Core
     using System.Threading.Tasks;
 
     /// <summary>
-	/// Represents one ternary condition.
-	/// </summary>
-	public enum ComparisonConditionType
+    /// Represents one ternary condition.
+    /// </summary>
+    public enum ComparisonConditionType
     {
+        /// <summary>
+        /// Specifies an equal condition.
+        /// </summary>
         Equal,
+        /// <summary>
+        /// Specifies a not equal condition.
+        /// </summary>
         NotEqual,
+        /// <summary>
+        /// Specifies a less than condition.
+        /// </summary>
         LessThan,
+        /// <summary>
+        /// Specifies a less than or equal condition.
+        /// </summary>
         LessThanOrEqual,
+        /// <summary>
+        /// Specifies a greater than condition.
+        /// </summary>
         GreaterThan,
+        /// <summary>
+        /// Specifies a greater than or equal condition.
+        /// </summary>
         GreaterThanOrEqual
     }
 }
