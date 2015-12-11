@@ -7,11 +7,29 @@ namespace Microsoft.Xaml.Interactions.Media
 	/// </summary>
 	public enum ControlStoryboardOption
 	{
-		Play,
+        /// <summary>
+        /// Specifies the play operation.
+        /// </summary>
+        Play,
+        /// <summary>
+        /// Specifies the stop operation.
+        /// </summary>
 		Stop,
+        /// <summary>
+        /// Specifies the TogglePlayPause operation.
+        /// </summary>
 		TogglePlayPause,
+        /// <summary>
+        /// Specifies the pause operation.
+        /// </summary>
 		Pause,
+        /// <summary>
+        /// Specifies the resume operation.
+        /// </summary>
 		Resume,
+        /// <summary>
+        /// Specifies the SkipToFill operation.
+        /// </summary>
 		SkipToFill
-	}
+    }
 }
