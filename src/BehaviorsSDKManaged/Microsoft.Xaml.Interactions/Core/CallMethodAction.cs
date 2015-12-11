@@ -15,6 +15,9 @@ namespace Microsoft.Xaml.Interactions.Core
     /// </summary>
     public sealed class CallMethodAction : DependencyObject, IAction
     {
+        /// <summary>
+        /// Identifies the <seealso cref="MethodName"/> dependency property.
+        /// </summary>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes")]
         public static readonly DependencyProperty MethodNameProperty = DependencyProperty.Register(
             "MethodName",
@@ -22,6 +25,9 @@ namespace Microsoft.Xaml.Interactions.Core
             typeof(CallMethodAction),
             new PropertyMetadata(null, new PropertyChangedCallback(CallMethodAction.OnMethodNameChanged)));
 
+        /// <summary>
+        /// Identifies the <seealso cref="TargetObject"/> dependency property.
+        /// </summary>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes")]
         public static readonly DependencyProperty TargetObjectProperty = DependencyProperty.Register(
             "TargetObject",
