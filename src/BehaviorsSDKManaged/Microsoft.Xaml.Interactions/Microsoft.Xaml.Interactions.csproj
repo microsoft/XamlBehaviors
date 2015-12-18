@@ -145,6 +145,8 @@
     <Compile Include="Media\PlaySoundAction.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="..\Version\Version.cs" />
+    <Compile Include="Utility\IVisualTreeHelper.cs" />
+    <Compile Include="Utility\UwpVisualTreeHelper.cs" />
     <EmbeddedResource Include="Properties\Microsoft.Xaml.Interactions.rd.xml" />
   </ItemGroup>
   <ItemGroup>

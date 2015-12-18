@@ -60,7 +60,7 @@ Object^ NavigateToPageAction::Execute(Object^ sender, Object^ parameter)
 		navigateElement = dynamic_cast<INavigate^>(senderObject);
 		if (navigateElement == nullptr)
 		{
-			sender = VisualTreeHelper::GetParent(senderObject);
+			senderObject = VisualTreeHelper::GetParent(senderObject);
 		}
 	}
 
