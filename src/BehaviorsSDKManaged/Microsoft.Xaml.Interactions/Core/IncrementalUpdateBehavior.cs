@@ -329,7 +329,7 @@ namespace Microsoft.Xaml.Interactions.Core
             {
                 if (phase < 0)
                 {
-                    throw new ArgumentOutOfRangeException("phase");
+                    throw new ArgumentOutOfRangeException(nameof(phase));
                 }
 
                 if (phase <= 0)
