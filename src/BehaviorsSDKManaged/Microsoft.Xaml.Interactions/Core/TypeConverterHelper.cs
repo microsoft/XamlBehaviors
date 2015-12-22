@@ -26,7 +26,7 @@ namespace Microsoft.Xaml.Interactions.Core
         {
             if (string.IsNullOrEmpty(destinationTypeFullName))
             {
-                throw new ArgumentNullException("destinationTypeFullName");
+                throw new ArgumentNullException(nameof(destinationTypeFullName));
             }
 
             string scope = TypeConverterHelper.GetScope(destinationTypeFullName);

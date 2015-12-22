@@ -37,7 +37,7 @@ namespace Microsoft.Xaml.Interactivity
         {
             if (obj == null)
             {
-                throw new ArgumentNullException("obj");
+                throw new ArgumentNullException(nameof(obj));
             }
             BehaviorCollection behaviorCollection = (BehaviorCollection)obj.GetValue(Interaction.BehaviorsProperty);
             if (behaviorCollection == null)
@@ -68,7 +68,7 @@ namespace Microsoft.Xaml.Interactivity
         {
             if (obj == null)
             {
-                throw new ArgumentNullException("obj");
+                throw new ArgumentNullException(nameof(obj));
             }
             obj.SetValue(Interaction.BehaviorsProperty, value);
         }

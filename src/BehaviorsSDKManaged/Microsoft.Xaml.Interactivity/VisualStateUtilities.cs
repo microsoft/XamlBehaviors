@@ -25,12 +25,12 @@ namespace Microsoft.Xaml.Interactivity
         {
             if (control == null)
             {
-                throw new ArgumentNullException("control");
+                throw new ArgumentNullException(nameof(control));
             }
 
             if (string.IsNullOrEmpty(stateName))
             {
-                throw new ArgumentNullException("stateName");
+                throw new ArgumentNullException(nameof(stateName));
             }
 
             control.ApplyTemplate();
@@ -47,7 +47,7 @@ namespace Microsoft.Xaml.Interactivity
         {
             if (element == null)
             {
-                throw new ArgumentNullException("element");
+                throw new ArgumentNullException(nameof(element));
             }
 
             IList<VisualStateGroup> visualStateGroups = VisualStateManager.GetVisualStateGroups(element);
@@ -79,7 +79,7 @@ namespace Microsoft.Xaml.Interactivity
         {
             if (element == null)
             {
-                throw new ArgumentNullException("element");
+                throw new ArgumentNullException(nameof(element));
             }
 
             // Try to find an element which is the immediate child of a UserControl, ControlTemplate or other such "boundary" element
