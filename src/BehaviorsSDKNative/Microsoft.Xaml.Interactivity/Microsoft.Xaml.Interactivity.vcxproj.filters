@@ -42,6 +42,7 @@
     <PRIResource Include="Resources\ru-RU\Strings.resw" />
     <PRIResource Include="Resources\zh-CN\Strings.resw" />
     <PRIResource Include="Resources\zh-TW\Strings.resw" />
+    <PRIResource Include="Resources\uk-UA\Strings.resw" />
   </ItemGroup>
   <ItemGroup>
     <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactivity.pt-BR.xlf" />
@@ -54,6 +55,7 @@
     <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactivity.ru-RU.xlf" />
     <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactivity.zh-CN.xlf" />
     <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactivity.zh-TW.xlf" />
+    <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactivity.uk-UA.xlf" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Microsoft.Xaml.Interactivity.Version.rc">
