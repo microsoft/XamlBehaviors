@@ -253,6 +253,7 @@
     <PRIResource Include="Resources\ru-RU\Strings.resw" />
     <PRIResource Include="Resources\zh-CN\Strings.resw" />
     <PRIResource Include="Resources\zh-TW\Strings.resw" />
+    <PRIResource Include="Resources\uk-UA\Strings.resw" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Microsoft.Xaml.Interactivity\Microsoft.Xaml.Interactivity.vcxproj">
@@ -270,6 +271,7 @@
     <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactions.ru-RU.xlf" />
     <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactions.zh-CN.xlf" />
     <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactions.zh-TW.xlf" />
+    <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactions.uk-UA.xlf" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="..\Version\Microsoft.Xaml.Interactions.Version.rc" />
