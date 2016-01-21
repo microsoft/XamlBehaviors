@@ -12,10 +12,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="CallMethodActionValidMethodNotFoundExceptionMessage" xml:space="preserve">
-    <value>Невозможно найти метод с именем {0} в объекте типа {1}, который соответствовал бы ожидаемой подписи.</value>
-    <comment>{0} is the name of the method that could not be found. {1} is the name of the type that was searched for the method.</comment>
-  </data>
   <data name="CannotAttachBehaviorMultipleTimesExceptionMessage" xml:space="preserve">
     <value>Невозможно прикрепить экземпляр поведения к нескольким объектам одновременно.</value>
   </data>

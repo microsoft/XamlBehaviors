@@ -1,0 +1,32 @@
+﻿<UserControl
+    x:Class="XAMLBehaviorsSample.CallDataContextMethodDescription"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:XAMLBehaviorsSample"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="400">
+    <StackPanel d:LayoutOverrides="Width, Height">
+        <RichTextBlock TextWrapping="WrapWholeWords" Margin="10,0,20,0" FontSize="20" Foreground="{StaticResource DarkGreyBrush}">
+            <Paragraph>
+                <Run Text="CallDataContextMethodAction represents an action which when triggered, calls a method on the DataContext of the object it is attached to (AssociatedObject). If no such method is found, the AssociatedObject's Parent's DataContext is examined, and so on until a proper method is found or the top of the visual tree is reached. This Action is very useful for MVVM projects, where the DataContext is typically set to the ViewModel"/>
+            </Paragraph>
+            <Paragraph Margin="0, 10, 0, 0">
+                <Run Text="In this example, pressing the &quot;Add random number&quot; button triggers the CallDataContextMehodAction, which invokes the AddRandomNumber() method of the ViewModel. Each such number has a Delete button defined in the ItemTemplate, which invokes the Delete(int number) method of the same ViewModel by &quot;climbing&quot; the visual tree until such a method is found. Once the Delete method is found in the CallDataContextMethodViewModel class, it is passed the DataContext of the associated HyperLinkButton, which is the integer itself inside the item template."/>
+            </Paragraph>
+        </RichTextBlock>
+        <RichTextBlock TextWrapping="WrapWholeWords" Margin="10,20,0,0" FontSize="15" Foreground="{StaticResource PinkBrush}" xml:space="preserve" IsTextSelectionEnabled="True">
+			<Paragraph>
+				<Run Text="&lt;Button Content=&quot;Add random number&quot;&gt;&#xA;    &lt;interactivity:Interaction.Behaviors&gt;&#xA;        &lt;core:EventTriggerBehavior EventName=&quot;Click&quot;&gt;&#xA;            &lt;core:CallDataContextMethodAction MethodName=&quot;AddRandomNumber&quot;/&gt;&#xA;        &lt;/core:EventTriggerBehavior&gt;&#xA;    &lt;/interactivity:Interaction.Behaviors&gt;&#xA;&lt;/Button&gt;"/>
+			</Paragraph>
+			<Paragraph Margin="0,20,0,0" Foreground="{StaticResource DarkGreyBrush}">
+				<Run Text="Inside the ItemTemplate:"/>
+			</Paragraph>
+			<Paragraph Margin="0,10,0,0">
+				<Run Text="&lt;HyperlinkButton Content=&quot;Delete&quot;&gt;&#xA;    &lt;interactivity:Interaction.Behaviors&gt;&#xA;        &lt;core:EventTriggerBehavior EventName=&quot;Click&quot;&gt;&#xA;            &lt;core:CallDataContextMethodAction MethodName=&quot;DeleteNumber&quot;/&gt;&#xA;        &lt;/core:EventTriggerBehavior&gt;&#xA;    &lt;/interactivity:Interaction.Behaviors&gt;&#xA;&lt;/HyperlinkButton&gt;&#xA;            "/>
+			</Paragraph>
+		</RichTextBlock>
+    </StackPanel>
+</UserControl>

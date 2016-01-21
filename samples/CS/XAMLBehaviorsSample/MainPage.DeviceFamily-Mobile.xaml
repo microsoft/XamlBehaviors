@@ -50,7 +50,7 @@
             <Grid Margin="0,5,0,5">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
-                    <RowDefinition Height="5*"/>
+                    <RowDefinition Height="4*"/>
                 </Grid.RowDefinitions>
                 <Grid Grid.Column="0">
                     <Grid.RowDefinitions>
@@ -64,14 +64,15 @@
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <Button x:Name="CallMethodButton" Content="Call Method" Margin="3,0,3,0" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource ActionsButton}" Background="{StaticResource PinkBrush}" Click="CallMethodButton_Click" FontSize="9.333"/>
-                    <Button x:Name="ChangePropertyButton" Content="Change Property" Margin="3,0,3,0" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource ActionsButton}" Background="{StaticResource PinkBrush}" Click="ChangePropertyButton_Click" FontSize="9.333"/>
-                    <Button x:Name="ControlStoryboardButton" Content="Control Storyboard" Margin="3,0,3,0" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource ActionsButton}" Background="{StaticResource PinkBrush}" Click="ControlStoryboardButton_Click" FontSize="9.333"/>
-                    <Button x:Name="PlaySoundButton" Content="Play Sound" Margin="3,0,3,0" Grid.Row="0" Grid.Column="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource ActionsButton}" Background="{StaticResource PinkBrush}" Click="PlaySoundButton_Click" FontSize="9.333"/>
-
-                    <Button x:Name="GoToStateButton" Content="Go To State" Margin="3,0,3,0" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource ActionsButton}" Background="{StaticResource PinkBrush}" Click="GoToStateButton_Click" FontSize="9.333"/>
-                    <Button x:Name="InvokeCommandButton" Content="Invoke Command" Margin="3,0,3,0" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource ActionsButton}" Background="{StaticResource PinkBrush}" Click="InvokeCommandButton_Click" FontSize="9.333"/>
-                    <Button x:Name="NavigateToPageButton" Content="Navigate To Page" Margin="3,0,3,0" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource ActionsButton}" Background="{StaticResource PinkBrush}" Click="NavigateToPageButton_Click" FontSize="9.333"/>
+                    <Button x:Name="CallDataContextMethodButton" Content="Call DataContext Method"  Margin="3,0,3,0" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource ActionsButton}" Background="{StaticResource PinkBrush}" Click="CallDataContextMethodButton_Click" FontSize="9.333"/>
+                    <Button x:Name="CallMethodButton" Content="Call Method" Margin="3,0,3,0" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource ActionsButton}" Background="{StaticResource PinkBrush}" Click="CallMethodButton_Click" FontSize="9.333"/>
+                    <Button x:Name="ChangePropertyButton" Content="Change Property" Margin="3,0,3,0" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource ActionsButton}" Background="{StaticResource PinkBrush}" Click="ChangePropertyButton_Click" FontSize="9.333"/>
+                    <Button x:Name="ControlStoryboardButton" Content="Control Storyboard" Margin="3,0,3,0" Grid.Row="0" Grid.Column="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource ActionsButton}" Background="{StaticResource PinkBrush}" Click="ControlStoryboardButton_Click" FontSize="9.333"/>
+                    
+                    <Button x:Name="PlaySoundButton" Content="Play Sound" Margin="3,0,3,0" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource ActionsButton}" Background="{StaticResource PinkBrush}" Click="PlaySoundButton_Click" FontSize="9.333"/>
+                    <Button x:Name="GoToStateButton" Content="Go To State" Margin="3,0,3,0" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource ActionsButton}" Background="{StaticResource PinkBrush}" Click="GoToStateButton_Click" FontSize="9.333"/>
+                    <Button x:Name="InvokeCommandButton" Content="Invoke Command" Margin="3,0,3,0" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource ActionsButton}" Background="{StaticResource PinkBrush}" Click="InvokeCommandButton_Click" FontSize="9.333"/>
+                    <Button x:Name="NavigateToPageButton" Content="Navigate To Page" Margin="3,0,3,0" Grid.Row="2" Grid.Column="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource ActionsButton}" Background="{StaticResource PinkBrush}" Click="NavigateToPageButton_Click" FontSize="9.333"/>
                 </Grid>
                 <Grid x:Name="ActionsContent" Grid.Row="1" Margin="0,10,0,10">
                     <Viewbox VerticalAlignment="Top" HorizontalAlignment="Left">

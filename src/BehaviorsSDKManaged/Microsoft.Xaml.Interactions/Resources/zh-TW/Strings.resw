@@ -12,10 +12,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="CallMethodActionValidMethodNotFoundExceptionMessage" xml:space="preserve">
-    <value>在類型 {1} 的物件上找不到符合預期的簽章且名稱為 {0} 的方法。</value>
-    <comment>{0} is the name of the method that could not be found. {1} is the name of the type that was searched for the method.</comment>
-  </data>
   <data name="CannotAttachBehaviorMultipleTimesExceptionMessage" xml:space="preserve">
     <value>無法一次將行為執行個體附加到多個物件。</value>
   </data>

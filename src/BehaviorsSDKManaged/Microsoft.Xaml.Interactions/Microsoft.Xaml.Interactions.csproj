@@ -127,6 +127,7 @@
     <PRIResource Include="Resources\en-us\Strings.resw" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\CallDataContextMethodAction.cs" />
     <Compile Include="Core\CallMethodAction.cs" />
     <Compile Include="Core\ChangePropertyAction.cs" />
     <Compile Include="Core\ComparisonConditionType.cs" />

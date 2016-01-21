@@ -6,11 +6,6 @@
     </header>
     <body>
       <group id="MICROSOFT.XAML.INTERACTIONS/RESOURCES/EN-US/STRINGS.RESW" datatype="resx">
-        <trans-unit id="CallMethodActionValidMethodNotFoundExceptionMessage" translate="yes" xml:space="preserve">
-          <source>Cannot find method named {0} on object of type {1} that matches the expected signature.</source>
-          <target state="final">Keine Methode mit der Bezeichnung {0} im Objekt vom Typ {1} gefunden, die mit der erwarteten Signatur übereinstimmt.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">{0} is the name of the method that could not be found. {1} is the name of the type that was searched for the method.</note>
-        </trans-unit>
         <trans-unit id="CannotAttachBehaviorMultipleTimesExceptionMessage" translate="yes" xml:space="preserve">
           <source>An instance of a behavior cannot be attached to more than one object at a time.</source>
           <target state="final">Eine Instanz eines Verhaltens kann nicht mehreren Objekten gleichzeitig angefügt werden.</target>
@@ -59,6 +54,16 @@
           <source>Value property of type {0} cannot be used with operator {1}.</source>
           <target state="final">Die Werteigenschaft vom Typ {0} kann nicht mit dem Operator {1} verwendet werden.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">{1} is the type of the DataTriggerBehavior.Value property specified by the user. {1} is one of the ComparisonConditionType enum values.</note>
+        </trans-unit>
+        <trans-unit id="CallDataContextMethodActionValidMethodNotFoundExceptionMessage" translate="yes" xml:space="preserve">
+          <source>CallDataContextMethod cannot find a method named '{0}' that matches the expected signature in the DataContext or ancestors.</source>
+          <target state="new">CallDataContextMethod cannot find a method named '{0}' that matches the expected signature in the DataContext or ancestors.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">{0} is the name of the method that could not be found.</note>
+        </trans-unit>
+        <trans-unit id="CallMethodActionMethodNotFoundExceptionMessage" translate="yes" xml:space="preserve">
+          <source>Cannot find method named {0} on object of type {1} that matches the expected signature.</source>
+          <target state="new">Cannot find method named {0} on object of type {1} that matches the expected signature.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">{0} is the name of the method that could not be found. {1} is the name of the type that was searched for the method.</note>
         </trans-unit>
       </group>
     </body>

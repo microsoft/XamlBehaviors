@@ -12,10 +12,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="CallMethodActionValidMethodNotFoundExceptionMessage" xml:space="preserve">
-    <value>No se puede encontrar el método denominado {0} en el objeto de tipo {1} que coincida con la signatura esperada.</value>
-    <comment>{0} is the name of the method that could not be found. {1} is the name of the type that was searched for the method.</comment>
-  </data>
   <data name="CannotAttachBehaviorMultipleTimesExceptionMessage" xml:space="preserve">
     <value>No se puede adjuntar una instancia de Behavior a más de un objeto simultáneamente.</value>
   </data>
