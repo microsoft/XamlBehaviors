@@ -12,6 +12,7 @@ Getting Started
 
  - [Documentation](https://github.com/Microsoft/XamlBehaviors/wiki)
  - [Samples](/samples)
+ - [![Join the chat at https://gitter.im/Microsoft/XamlBehaviors](https://badges.gitter.im/Microsoft/XamlBehaviors.svg)](https://gitter.im/Microsoft/XamlBehaviors?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 **More Info**
 
