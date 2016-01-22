@@ -6,7 +6,7 @@ XAML Behaviors is an easy-to-use means of adding common and reusable interactivi
 | Platform | Status |
 | -------- | ------ |
 | Managed | <img src="https://ci.appveyor.com/api/projects/status/0dptycdhhykyscr4/branch/master?svg=true"/> |
-| Native |  |
+| Native | <img src="https://ci.appveyor.com/api/projects/status/897ervx359xqa7vh/branch/master?svg=true"/> |
 
 Getting Started
 -------------------
