@@ -26,6 +26,7 @@ namespace XAMLBehaviorsSample
         EventTriggerControl _eventtrigger;
         IncrementalUpdateControl _incrementaltrigger;
 
+        CallDataContextMethodControl _calldatacontextmethodaction;
         CallMethodControl _callmethodaction;
         GoToStateControl _gotostateaction;
         ChangePropertyControl _changepropertyaction;
@@ -45,6 +46,7 @@ namespace XAMLBehaviorsSample
             _eventtrigger = new EventTriggerControl();
             _incrementaltrigger = new IncrementalUpdateControl();
 
+            _calldatacontextmethodaction = new CallDataContextMethodControl();
             _callmethodaction = new CallMethodControl();
             _gotostateaction = new GoToStateControl();
             _changepropertyaction = new ChangePropertyControl();
@@ -100,6 +102,12 @@ namespace XAMLBehaviorsSample
             ActionsContent.Children.Add(_callmethodaction);
         }
 
+        private void CallDataContextMethodButton_Click(object sender, RoutedEventArgs e)
+        {
+            ActionsContent.Children.Clear();
+            ActionsContent.Children.Add(_calldatacontextmethodaction);
+        }
+
         private void ChangePropertyButton_Click(object sender, RoutedEventArgs e)
         {
             ActionsContent.Children.Clear();
@@ -147,5 +155,6 @@ namespace XAMLBehaviorsSample
             CustomContent.Children.Clear();
             CustomContent.Children.Add(_customactionaction);
         }
+
     }
 }

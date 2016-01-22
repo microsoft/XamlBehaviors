@@ -64,12 +64,13 @@
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
-                    <Button x:Name="CallMethodButton" Content="Call Method" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource ActionsButton}" Background="{StaticResource PinkBrush}" Click="CallMethodButton_Click"/>
+                    <Button x:Name="CallDataContextMethodButton" Content="Call DataContext Method" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource ActionsButton}" Background="{StaticResource PinkBrush}" Click="CallDataContextMethodButton_Click"/>
+                    <Button x:Name="CallMethodButton" Content="Call Method" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource ActionsButton}" Background="{StaticResource PinkBrush}" Click="CallMethodButton_Click"/>
                     <Button x:Name="ChangePropertyButton" Content="Change Property" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource ActionsButton}" Background="{StaticResource PinkBrush}" Click="ChangePropertyButton_Click"/>
                     <Button x:Name="ControlStoryboardButton" Content="Control Storyboard" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource ActionsButton}" Background="{StaticResource PinkBrush}" Click="ControlStoryboardButton_Click"/>
                     <Button x:Name="PlaySoundButton" Content="Play Sound" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource ActionsButton}" Background="{StaticResource PinkBrush}" Click="PlaySoundButton_Click"/>
 
-                    <Button x:Name="GoToStateButton" Content="Go To State" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource ActionsButton}" Background="{StaticResource PinkBrush}" Click="GoToStateButton_Click"/>
+                    <Button x:Name="GoToStateButton" Content="Go To State" Grid.Row="3" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource ActionsButton}" Background="{StaticResource PinkBrush}" Click="GoToStateButton_Click"/>
                     <Button x:Name="InvokeCommandButton" Content="Invoke Command" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource ActionsButton}" Background="{StaticResource PinkBrush}" Click="InvokeCommandButton_Click"/>
                     <Button x:Name="NavigateToPageButton" Content="Navigate To Page" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource ActionsButton}" Background="{StaticResource PinkBrush}" Click="NavigateToPageButton_Click"/>
                 </Grid>

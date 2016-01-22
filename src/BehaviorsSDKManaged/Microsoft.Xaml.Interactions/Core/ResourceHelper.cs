@@ -13,6 +13,15 @@ namespace Microsoft.Xaml.Interactions.Core
             return strings.GetString(resourceName);
         }
 
+        public static string CallDataContextMethodActionMethodNotFoundExceptionMessage
+        {
+            get
+            {
+                return ResourceHelper.GetString("CallDataContextMethodActionMethodNotFoundExceptionMessage");
+            }
+        }
+
+
         public static string CallMethodActionValidMethodNotFoundExceptionMessage
         {
             get

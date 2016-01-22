@@ -117,7 +117,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="CallMethodActionValidMethodNotFoundExceptionMessage" xml:space="preserve">
+  <data name="CallDataContextMethodActionValidMethodNotFoundExceptionMessage" xml:space="preserve">
+    <value>CallDataContextMethod cannot find a method named '{0}' that matches the expected signature in the DataContext or ancestors.</value>
+    <comment>{0} is the name of the method that could not be found.</comment>
+  </data>
+  <data name="CallMethodActionMethodNotFoundExceptionMessage" xml:space="preserve">
     <value>Cannot find method named {0} on object of type {1} that matches the expected signature.</value>
     <comment>{0} is the name of the method that could not be found. {1} is the name of the type that was searched for the method.</comment>
   </data>

@@ -97,6 +97,13 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CallDataContextMethod\CallDataContextMethodControl.xaml.cs">
+      <DependentUpon>CallDataContextMethodControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CallDataContextMethod\CallDataContextMethodDescription.xaml.cs">
+      <DependentUpon>CallDataContextMethodDescription.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CallDataContextMethod\CallDataContextMethodViewModel.cs" />
     <Compile Include="CallMethodControl.xaml.cs">
       <DependentUpon>CallMethodControl.xaml</DependentUpon>
     </Compile>
@@ -170,6 +177,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="CallDataContextMethod\CallDataContextMethodControl.DeviceFamily-Mobile.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CallDataContextMethod\CallDataContextMethodControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CallDataContextMethod\CallDataContextMethodDescription.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="CallMethodControl.DeviceFamily-Mobile.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -298,8 +317,21 @@
       <ContainsDesignTimeResources>true</ContainsDesignTimeResources>
     </Page>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\src\BehaviorsSDKManaged\Microsoft.Xaml.Interactions\Microsoft.Xaml.Interactions.csproj">
+      <Project>{a338a7f2-9010-477b-8a6e-6c2b2495c33c}</Project>
+      <Name>Microsoft.Xaml.Interactions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\BehaviorsSDKManaged\Microsoft.Xaml.Interactivity\Microsoft.Xaml.Interactivity.csproj">
+      <Project>{7ffc1385-c3e1-487c-9a81-de48dd63ecb9}</Project>
+      <Name>Microsoft.Xaml.Interactivity</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

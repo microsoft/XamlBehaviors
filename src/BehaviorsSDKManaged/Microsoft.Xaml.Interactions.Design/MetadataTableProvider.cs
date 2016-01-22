@@ -253,6 +253,14 @@ namespace Microsoft.Xaml.Interactivity.Design
                     new CategoryAttribute(Resources.Category_Common_Properties));
                 #endregion
 
+                #region CallDataContextMethodAction
+                AddAttributes<CallDataContextMethodAction>(
+                    "MethodName",
+                    new PropertyOrderAttribute(order = PropertyOrder.CreateAfter(PropertyOrder.Default)),
+                    new DescriptionAttribute(Resources.Description_CallMethodAction_MethodName),
+                    new CategoryAttribute(Resources.Category_Common_Properties));
+                #endregion
+
                 return attributeTableBuilder.CreateTable();
             }
         }
