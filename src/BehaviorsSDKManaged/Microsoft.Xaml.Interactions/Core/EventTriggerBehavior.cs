@@ -185,7 +185,7 @@ namespace Microsoft.Xaml.Interactions.Core
                 MethodInfo methodInfo = typeof(EventTriggerBehavior).GetTypeInfo().GetDeclaredMethod("OnEvent");
                 this.eventHandler = methodInfo.CreateDelegate(info.EventHandlerType, this);
 
-                this.isWindowsRuntimeEvent = EventTriggerBehavior.IsWindowsRuntimeType(info.EventHandlerType);
+                this.isWindowsRuntimeEvent = EventTriggerBehavior.IsWindowsRuntimeEvent(info);
                 if (this.isWindowsRuntimeEvent)
                 {
                     this.addEventHandlerMethod = add => (EventRegistrationToken)info.AddMethod.Invoke(this.resolvedSource, new object[] { add });
@@ -286,6 +286,13 @@ namespace Microsoft.Xaml.Interactions.Core
             }
 
             return (parent != null || (rootVisual != null && element == rootVisual));
+        }
+
+        private static bool IsWindowsRuntimeEvent(EventInfo eventInfo)
+        {
+            return eventInfo != null &&
+                EventTriggerBehavior.IsWindowsRuntimeType(eventInfo.EventHandlerType) &&
+                EventTriggerBehavior.IsWindowsRuntimeType(eventInfo.DeclaringType);
         }
 
         private static bool IsWindowsRuntimeType(Type type)
