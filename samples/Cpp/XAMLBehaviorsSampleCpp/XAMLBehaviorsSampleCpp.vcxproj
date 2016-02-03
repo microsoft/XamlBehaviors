@@ -264,9 +264,6 @@
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
-    <None Include="packages.config">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="XAMLBehaviorsSampleCpp_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
@@ -339,14 +336,16 @@
     <Media Include="Assets\Ding.mp3" />
     <Media Include="Assets\Whistle.mp3" />
   </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Xaml.Interactions">
+      <HintPath>..\..\..\out\BehaviorsSDKNative\bin\Win32\Debug\Microsoft.Xaml.Interactions\Microsoft.Xaml.Interactions.winmd</HintPath>
+      <IsWinMDFile>true</IsWinMDFile>
+    </Reference>
+    <Reference Include="Microsoft.Xaml.Interactivity">
+      <HintPath>..\..\..\out\BehaviorsSDKNative\bin\Win32\Debug\Microsoft.Xaml.Interactivity\Microsoft.Xaml.Interactivity.winmd</HintPath>
+      <IsWinMDFile>true</IsWinMDFile>
+    </Reference>
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
-  <ImportGroup Label="ExtensionTargets">
-    <Import Project="..\packages\Microsoft.Xaml.Behaviors.Uwp.Native.1.0.0\build\native\Microsoft.Xaml.Behaviors.Uwp.Native.targets" Condition="Exists('..\packages\Microsoft.Xaml.Behaviors.Uwp.Native.1.0.0\build\native\Microsoft.Xaml.Behaviors.Uwp.Native.targets')" />
-  </ImportGroup>
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Microsoft.Xaml.Behaviors.Uwp.Native.1.0.0\build\native\Microsoft.Xaml.Behaviors.Uwp.Native.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Xaml.Behaviors.Uwp.Native.1.0.0\build\native\Microsoft.Xaml.Behaviors.Uwp.Native.targets'))" />
-  </Target>
+  <ImportGroup Label="ExtensionTargets" />
 </Project>
