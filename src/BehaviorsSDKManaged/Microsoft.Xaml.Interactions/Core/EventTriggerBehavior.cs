@@ -175,11 +175,7 @@ namespace Microsoft.Xaml.Interactions.Core
                 EventInfo info = sourceObjectType.GetRuntimeEvent(eventName);
                 if (info == null)
                 {
-                    throw new ArgumentException(string.Format(
-                        CultureInfo.CurrentCulture,
-                        ResourceHelper.CannotFindEventNameExceptionMessage,
-                        this.EventName,
-                        sourceObjectType.Name));
+                    return;
                 }
 
                 MethodInfo methodInfo = typeof(EventTriggerBehavior).GetTypeInfo().GetDeclaredMethod("OnEvent");
