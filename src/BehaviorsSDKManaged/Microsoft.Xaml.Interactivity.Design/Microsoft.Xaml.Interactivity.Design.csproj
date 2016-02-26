@@ -17,7 +17,7 @@
     <OutputPath>..\..\..\out\$(SolutionName)\bin\$(Platform)\$(Configuration)\</OutputPath>
     <IntermediateOutputPath>..\..\..\out\$(SolutionName)\obj\$(Platform)\$(Configuration)\</IntermediateOutputPath>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -26,7 +26,7 @@
     <WarningLevel>4</WarningLevel>
     <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <DefineConstants>TRACE</DefineConstants>
@@ -48,9 +48,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Xaml">
-      <RequiredTargetFramework>4.0</RequiredTargetFramework>
-    </Reference>
+    <Reference Include="System.Xaml" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="WindowsBase" />
@@ -63,30 +61,6 @@
     </Reference>
     <Reference Include="Windows.Foundation.UniversalApiContract">
       <HintPath>$(ProgramFiles)\Windows Kits\10\References\Windows.Foundation.UniversalApiContract\1.0.0.0\Windows.Foundation.UniversalApiContract.winmd</HintPath>
-      <Aliases>WindowsRuntime</Aliases>
-      <Private>False</Private>
-    </Reference>
-    <!--<Reference Include="System.Runtime">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>$(ProgramFiles)\Reference Assemblies\Microsoft\Framework\.NETCore\v4.5.1\System.Runtime.dll</HintPath>
-      <Aliases>WindowsRuntime</Aliases>
-      <Private>False</Private>
-    </Reference>-->
-    <Reference Include="System.Runtime.InteropServices.WindowsRuntime">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>$(ProgramFiles)\Reference Assemblies\Microsoft\Framework\.NETCore\v4.5.1\System.Runtime.InteropServices.WindowsRuntime.dll</HintPath>
-      <Aliases>WindowsRuntime</Aliases>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="System.Runtime.WindowsRuntime">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>$(ProgramFiles)\Reference Assemblies\Microsoft\Framework\.NETCore\v4.5.1\System.Runtime.WindowsRuntime.dll</HintPath>
-      <Aliases>WindowsRuntime</Aliases>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="System.Runtime.WindowsRuntime.UI.Xaml">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>$(ProgramFiles)\Reference Assemblies\Microsoft\Framework\.NETCore\v4.5.1\System.Runtime.WindowsRuntime.UI.Xaml.dll</HintPath>
       <Aliases>WindowsRuntime</Aliases>
       <Private>False</Private>
     </Reference>
