@@ -3,7 +3,10 @@
 
 extern alias WindowsRuntime;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
+using System.Reflection;
 using Microsoft.Windows.Design.Metadata;
 using Microsoft.Windows.Design.PropertyEditing;
 using Microsoft.Windows.Design.PropertyEditing.Editors;
@@ -28,26 +31,29 @@ namespace Microsoft.Xaml.Interactivity.Design
 
                 #region IncrementalUpdateBehavior
                 AddAttributes<IncrementalUpdateBehavior>(
-                    new DescriptionAttribute(Resources.Description_IncrementalUpdateBehavior));
+                    new DescriptionAttribute(Resources.Description_IncrementalUpdateBehavior)
+                );
 
                 AddAttributes<IncrementalUpdateBehavior>(
-                    nameof(IncrementalUpdateBehavior.Phase),
+                    "Phase",
                     new DescriptionAttribute(Resources.Description_IncrementalUpdateBehavior_Phase),
                     new CategoryAttribute(Resources.Category_Common_Properties));
                 #endregion
 
                 #region EventTriggerBehavior
                 AddAttributes<EventTriggerBehavior>(
-                    new DescriptionAttribute(Resources.Description_EventTriggerBehavior));
+                    new DescriptionAttribute(Resources.Description_EventTriggerBehavior)
+                    );
 
                 AddAttributes<EventTriggerBehavior>(
-                    nameof(EventTriggerBehavior.EventName),
+                    "EventName",
                     new DescriptionAttribute(Resources.Description_EventTriggerBehavior_EventName),
                     CreateEditorAttribute<EventPickerPropertyValueEditor>(),
-                    new CategoryAttribute(Resources.Category_Common_Properties));
+                    new CategoryAttribute(Resources.Category_Common_Properties)
+                    );
 
                 AddAttributes<EventTriggerBehavior>(
-                    nameof(EventTriggerBehavior.SourceObject),
+                    "SourceObject",
                     new DescriptionAttribute(Resources.Description_EventTriggerBehavior_SourceObject),
                     CreateEditorAttribute<ElementBindingPickerPropertyValueEditor>(),
                     new CategoryAttribute(Resources.Category_Common_Properties));
@@ -59,21 +65,22 @@ namespace Microsoft.Xaml.Interactivity.Design
 
                 #region DataTriggerBehavior
                 AddAttributes<DataTriggerBehavior>(
-                    new DefaultBindingPropertyAttribute(nameof(DataTriggerBehavior.Binding)));
+                    new DefaultBindingPropertyAttribute("Binding")
+                    );
 
                 AddAttributes<DataTriggerBehavior>(
-                    nameof(DataTriggerBehavior.Binding),
+                    "Binding",
                     new DescriptionAttribute(Resources.Description_DataTriggerBehavior_Binding),
                     CreateEditorAttribute<PropertyBindingPickerPropertyValueEditor>(),
                     new CategoryAttribute(Resources.Category_Common_Properties));
 
                 AddAttributes<DataTriggerBehavior>(
-                    nameof(DataTriggerBehavior.ComparisonCondition),
+                    "ComparisonCondition",
                     new DescriptionAttribute(Resources.Description_DataTriggerBehavior_ComparisonCondition),
                     new CategoryAttribute(Resources.Category_Common_Properties));
 
                 AddAttributes<DataTriggerBehavior>(
-                    nameof(DataTriggerBehavior.Value),
+                    "Value",
                     new DescriptionAttribute(Resources.Description_DataTriggerBehavior_Value),
                     new CategoryAttribute(Resources.Category_Common_Properties),
                     new TypeConverterAttribute(typeof(StringConverter)));
@@ -85,22 +92,23 @@ namespace Microsoft.Xaml.Interactivity.Design
 
                 #region ChangePropertyAction
                 AddAttributes<ChangePropertyAction>(
-                    new DescriptionAttribute(Resources.Description_ChangePropertyAction));
+                    new DescriptionAttribute(Resources.Description_ChangePropertyAction)
+                    );
 
                 AddAttributes<ChangePropertyAction>(
-                    nameof(ChangePropertyAction.PropertyName),
+                    "PropertyName",
                     CreateEditorAttribute<PropertyPickerPropertyValueEditor>(),
                     new CategoryAttribute(Resources.Category_Common_Properties),
                     new DescriptionAttribute(Resources.Description_ChangePropertyAction_PropertyName));
 
                 AddAttributes<ChangePropertyAction>(
-                    nameof(ChangePropertyAction.TargetObject),
+                    "TargetObject",
                     new DescriptionAttribute(Resources.Description_ChangePropertyAction_TargetObject),
                     CreateEditorAttribute<ElementBindingPickerPropertyValueEditor>(),
                     new CategoryAttribute(Resources.Category_Common_Properties));
 
                 AddAttributes<ChangePropertyAction>(
-                    nameof(ChangePropertyAction.Value),
+                    "Value",
                     new DescriptionAttribute(Resources.Description_ChangePropertyAction_Value),
                     new CategoryAttribute(Resources.Category_Common_Properties),
                     new BrowsableAttribute(false));
@@ -110,36 +118,36 @@ namespace Microsoft.Xaml.Interactivity.Design
                 #region InvokeCommandAction
                 AddAttributes<InvokeCommandAction>(
                     new DescriptionAttribute(Resources.Description_InvokeCommandAction),
-                    new DefaultBindingPropertyAttribute(nameof(InvokeCommandAction.Command)));
+                    new DefaultBindingPropertyAttribute("Command"));
 
                 AddAttributes<InvokeCommandAction>(
-                    nameof(InvokeCommandAction.Command),
+                    "Command",
                     new CategoryAttribute(Resources.Category_Common_Properties),
                     CreateEditorAttribute<PropertyBindingPickerPropertyValueEditor>(),
                     new DescriptionAttribute(Resources.Description_InvokeCommandAction_Command));
 
                 AddAttributes<InvokeCommandAction>(
-                    nameof(InvokeCommandAction.CommandParameter),
+                    "CommandParameter",
                     new TypeConverterAttribute(typeof(StringConverter)),
                     new CategoryAttribute(Resources.Category_Common_Properties),
                     new DescriptionAttribute(Resources.Description_InvokeCommandAction_CommandParameter),
                     new EditorBrowsableAttribute(EditorBrowsableState.Advanced));
 
                 AddAttributes<InvokeCommandAction>(
-                    nameof(InvokeCommandAction.InputConverter),
+                    "InputConverter",
                     new CategoryAttribute(Resources.Category_Common_Properties),
                     new DescriptionAttribute(Resources.Description_InvokeCommandAction_InputConverter),
                     new EditorBrowsableAttribute(EditorBrowsableState.Advanced));
 
                 AddAttributes<InvokeCommandAction>(
-                    nameof(InvokeCommandAction.InputConverterParameter),
+                    "InputConverterParameter",
                     new TypeConverterAttribute(typeof(StringConverter)),
                     new CategoryAttribute(Resources.Category_Common_Properties),
                     new DescriptionAttribute(Resources.Description_InvokeCommandAction_InputConverterParameter),
                     new EditorBrowsableAttribute(EditorBrowsableState.Advanced));
 
                 AddAttributes<InvokeCommandAction>(
-                    nameof(InvokeCommandAction.InputConverterLanguage),
+                    "InputConverterLanguage",
                     new CategoryAttribute(Resources.Category_Common_Properties),
                     new DescriptionAttribute(Resources.Description_InvokeCommandAction_InputConverterLanguage),
                     new TypeConverterAttribute(typeof(CultureInfoNamesConverter)),
@@ -148,15 +156,16 @@ namespace Microsoft.Xaml.Interactivity.Design
 
                 #region ControlStoryboardAction
                 AddAttributes<ControlStoryboardAction>(
-                    new DescriptionAttribute(Resources.Description_ControlStoryboardAction));
+                    new DescriptionAttribute(Resources.Description_ControlStoryboardAction)
+                    );
 
                 AddAttributes<ControlStoryboardAction>(
-                    nameof(ControlStoryboardAction.ControlStoryboardOption),
+                    "ControlStoryboardOption",
                     new DescriptionAttribute(Resources.Description_ControlStoryboardAction_ControlStoryboardOption),
                     new CategoryAttribute(Resources.Category_Common_Properties));
 
                 AddAttributes<ControlStoryboardAction>(
-                    nameof(ControlStoryboardAction.Storyboard),
+                    "Storyboard",
                     new DescriptionAttribute(Resources.Description_ControlStoryboardAction_Storyboard),
                     new CategoryAttribute(Resources.Category_Common_Properties),
                     CreateEditorAttribute<StoryboardPickerPropertyValueEditor>(),
@@ -165,21 +174,22 @@ namespace Microsoft.Xaml.Interactivity.Design
 
                 #region GotoStateAction
                 AddAttributes<GoToStateAction>(
-                    new DescriptionAttribute(Resources.Description_GoToStateAction));
+                    new DescriptionAttribute(Resources.Description_GoToStateAction)
+                    );
 
                 AddAttributes<GoToStateAction>(
-                    nameof(GoToStateAction.StateName),
+                    "StateName",
                     CreateEditorAttribute<StatePickerPropertyValueEditor>(),
                     new DescriptionAttribute(Resources.Description_GoToStateAction_StateName),
                     new CategoryAttribute(Resources.Category_Common_Properties));
 
                 AddAttributes<GoToStateAction>(
-                    nameof(GoToStateAction.UseTransitions),
+                    "UseTransitions",
                     new DescriptionAttribute(Resources.Description_GoToStateAction_UseTransitions),
                     new CategoryAttribute(Resources.Category_Common_Properties));
 
                 AddAttributes<GoToStateAction>(
-                    nameof(GoToStateAction.TargetObject),
+                    "TargetObject",
                     new CategoryAttribute(Resources.Category_Common_Properties),
                     new DescriptionAttribute(Resources.Description_GoToStateAction_TargetObject),
                     CreateEditorAttribute<ElementBindingPickerPropertyValueEditor>());
@@ -187,16 +197,17 @@ namespace Microsoft.Xaml.Interactivity.Design
 
                 #region NavigateToPageAction
                 AddAttributes<NavigateToPageAction>(
-                    new DescriptionAttribute(Resources.Description_NavigateToPageAction));
+                    new DescriptionAttribute(Resources.Description_NavigateToPageAction)
+                    );
 
                 AddAttributes<NavigateToPageAction>(
-                    nameof(NavigateToPageAction.TargetPage),
+                    "TargetPage",
                     CreateEditorAttribute<PagePickerPropertyValueEditor>(),
                     new DescriptionAttribute(Resources.Description_NavigateToPageAction_TargetPage),
                     new CategoryAttribute(Resources.Category_Common_Properties));
 
                 AddAttributes<NavigateToPageAction>(
-                    nameof(NavigateToPageAction.Parameter),
+                    "Parameter",
                     new DescriptionAttribute(Resources.Description_NavigateToPageAction_Parameter),
                     new CategoryAttribute(Resources.Category_Common_Properties),
                     new TypeConverterAttribute(typeof(StringConverter)));
@@ -204,16 +215,17 @@ namespace Microsoft.Xaml.Interactivity.Design
 
                 #region PlaySoundAction
                 AddAttributes<PlaySoundAction>(
-                    new DescriptionAttribute(Resources.Description_PlaySoundAction));
+                    new DescriptionAttribute(Resources.Description_PlaySoundAction)
+                    );
 
                 AddAttributes<PlaySoundAction>(
-                    nameof(PlaySoundAction.Source),
+                    "Source",
                     CreateEditorAttribute<UriPropertyValueEditor>(),
                     new DescriptionAttribute(Resources.Description_PlaySoundAction_Source),
                     new CategoryAttribute(Resources.Category_Common_Properties));
 
                 AddAttributes<PlaySoundAction>(
-                    nameof(PlaySoundAction.Volume),
+                    "Volume",
                     new NumberRangesAttribute(0, 0, 1, 1, false),
                     new NumberIncrementsAttribute(0.001, 0.01, 0.1),
                     new DescriptionAttribute(Resources.Description_PlaySoundAction_Volume),
@@ -225,17 +237,17 @@ namespace Microsoft.Xaml.Interactivity.Design
 
                 AddAttributes<CallMethodAction>(
                     new DescriptionAttribute(Resources.Description_CallMethodAction),
-                    new DefaultBindingPropertyAttribute(nameof(CallMethodAction.TargetObject)));
+                    new DefaultBindingPropertyAttribute("TargetObject"));
 
                 AddAttributes<CallMethodAction>(
-                    nameof(CallMethodAction.TargetObject),
+                    "TargetObject",
                     new PropertyOrderAttribute(order = PropertyOrder.CreateAfter(order)),
                     new DescriptionAttribute(Resources.Description_CallMethodAction_TargetObject),
                     CreateEditorAttribute<ElementBindingPickerPropertyValueEditor>(),
                     new CategoryAttribute(Resources.Category_Common_Properties));
 
                 AddAttributes<CallMethodAction>(
-                    nameof(CallMethodAction.MethodName),
+                    "MethodName",
                     new PropertyOrderAttribute(order = PropertyOrder.CreateAfter(order)),
                     new DescriptionAttribute(Resources.Description_CallMethodAction_MethodName),
                     new CategoryAttribute(Resources.Category_Common_Properties));
@@ -270,11 +282,33 @@ namespace Microsoft.Xaml.Interactivity.Design
                 AddAttribute<T>(propertyName, attribute);
             }
         }
-
         private static EditorAttribute CreateEditorAttribute<T>() where T : PropertyValueEditor
         {
             return PropertyValueEditor.CreateEditorAttribute(typeof(T));
         }
 
+    }
+
+    public static class RuntimeMethodExtensions
+    {
+        public static MethodInfo GetRuntimeMethodExt(this Type type, string name, params Type[] types)
+        {
+            List<string> typeNames = new List<string>();
+            foreach (Type localType in types)
+            {
+                typeNames.Add(localType.Name);
+            }
+            // Find potential methods with the correct name and the right number of parameters
+            // and parameter names
+            var potentials = (from ele in type.GetRuntimeMethods()
+                              where ele.Name.Equals(name)
+                              let param = ele.GetParameters()
+                              where param.Length == types.Length
+                              && param.Select(p => p.ParameterType.Name).SequenceEqual(typeNames)
+                              select ele);
+
+            // Maybe check if we have more than 1? Or not?
+            return potentials.FirstOrDefault();
+        }
     }
 }

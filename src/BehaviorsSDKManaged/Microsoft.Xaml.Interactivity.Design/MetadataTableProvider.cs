@@ -34,5 +34,19 @@ namespace Microsoft.Xaml.Interactivity.Design
         {
             attributeTableBuilder.AddCustomAttributes(typeof(T), attribute);
         }
+
+        private void AddAttribute(string type, Attribute attribute)
+        {
+            attributeTableBuilder.AddCustomAttributes(Type.GetType(type), attribute);
+        }
+
+        private void AddAttribute<T>(string propertyName, Attribute attribute)
+        {
+            attributeTableBuilder.AddCustomAttributes(typeof(T), propertyName, attribute);
+        }
+        private void AddAttribute(string type, string propertyName, Attribute attribute)
+        {
+            attributeTableBuilder.AddCustomAttributes(Type.GetType(type), propertyName, attribute);
+        }
     }
 }
