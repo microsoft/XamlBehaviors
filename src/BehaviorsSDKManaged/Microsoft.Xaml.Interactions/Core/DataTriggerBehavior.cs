@@ -12,18 +12,8 @@ namespace Microsoft.Xaml.Interactions.Core
     /// A behavior that performs actions when the bound data meets a specified condition.
     /// </summary>
     [ContentPropertyAttribute(Name = "Actions")]
-    public sealed class DataTriggerBehavior : Behavior
+    public sealed class DataTriggerBehavior : Trigger
     {
-        /// <summary> q
-        /// Identifies the <seealso cref="Actions"/> dependency property.
-        /// </summary>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes")]
-        public static readonly DependencyProperty ActionsProperty = DependencyProperty.Register(
-            "Actions",
-            typeof(ActionCollection),
-            typeof(DataTriggerBehavior),
-            new PropertyMetadata(null));
-
         /// <summary>
         /// Identifies the <seealso cref="Binding"/> dependency property.
         /// </summary>
@@ -54,24 +44,6 @@ namespace Microsoft.Xaml.Interactions.Core
             typeof(object),
             typeof(DataTriggerBehavior),
             new PropertyMetadata(null, new PropertyChangedCallback(DataTriggerBehavior.OnValueChanged)));
-
-        /// <summary>
-        /// Gets the collection of actions associated with the behavior. This is a dependency property.
-        /// </summary>
-        public ActionCollection Actions
-        {
-            get
-            {
-                ActionCollection actionCollection = (ActionCollection)this.GetValue(DataTriggerBehavior.ActionsProperty);
-                if (actionCollection == null)
-                {
-                    actionCollection = new ActionCollection();
-                    this.SetValue(DataTriggerBehavior.ActionsProperty, actionCollection);
-                }
-
-                return actionCollection;
-            }
-        }
 
         /// <summary>
         /// Gets or sets the bound object that the <see cref="DataTriggerBehavior"/> will listen to. This is a dependency property.

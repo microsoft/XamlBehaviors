@@ -15,18 +15,8 @@ namespace Microsoft.Xaml.Interactions.Core
     /// A behavior that listens for a specified event on its source and executes its actions when that event is fired.
     /// </summary>
     [ContentPropertyAttribute(Name = "Actions")]
-    public sealed class EventTriggerBehavior : Behavior
+    public sealed class EventTriggerBehavior : Trigger
     {
-        /// <summary>
-        /// Identifies the <seealso cref="Actions"/> dependency property.
-        /// </summary>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes")]
-        public static readonly DependencyProperty ActionsProperty = DependencyProperty.Register(
-            "Actions",
-            typeof(ActionCollection),
-            typeof(EventTriggerBehavior),
-            new PropertyMetadata(null));
-
         /// <summary>
         /// Identifies the <seealso cref="EventName"/> dependency property.
         /// </summary>
@@ -59,24 +49,6 @@ namespace Microsoft.Xaml.Interactions.Core
         /// </summary>
         public EventTriggerBehavior()
         {
-        }
-
-        /// <summary>
-        /// Gets the collection of actions associated with the behavior. This is a dependency property.
-        /// </summary>
-        public ActionCollection Actions
-        {
-            get
-            {
-                ActionCollection actionCollection = (ActionCollection)this.GetValue(EventTriggerBehavior.ActionsProperty);
-                if (actionCollection == null)
-                {
-                    actionCollection = new ActionCollection();
-                    this.SetValue(EventTriggerBehavior.ActionsProperty, actionCollection);
-                }
-
-                return actionCollection;
-            }
         }
 
         /// <summary>
