@@ -158,7 +158,7 @@ namespace Microsoft.Xaml.Interactions.Core
             }
 
             object resolvedParameter;
-            if (this.CommandParameter != null)
+            if (this.ReadLocalValue(InvokeCommandAction.CommandParameterProperty) != DependencyProperty.UnsetValue)
             {
                 resolvedParameter = this.CommandParameter;
             }
