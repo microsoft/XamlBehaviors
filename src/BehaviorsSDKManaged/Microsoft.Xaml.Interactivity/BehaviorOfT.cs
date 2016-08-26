@@ -16,7 +16,6 @@ namespace Microsoft.Xaml.Interactivity
         /// <summary>
         /// Gets the object to which this behavior is attached.
         /// </summary>
-        [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public new T AssociatedObject
         {
             get { return base.AssociatedObject as T; }
