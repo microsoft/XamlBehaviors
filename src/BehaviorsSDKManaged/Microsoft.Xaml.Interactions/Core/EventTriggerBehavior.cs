@@ -7,14 +7,12 @@ namespace Microsoft.Xaml.Interactions.Core
     using System.Reflection;
     using System.Runtime.InteropServices.WindowsRuntime;
     using Windows.UI.Xaml;
-    using Windows.UI.Xaml.Markup;
     using Windows.UI.Xaml.Media;
     using Interactivity;
 
     /// <summary>
     /// A behavior that listens for a specified event on its source and executes its actions when that event is fired.
     /// </summary>
-    [ContentPropertyAttribute(Name = "Actions")]
     public sealed class EventTriggerBehavior : Trigger
     {
         /// <summary>
