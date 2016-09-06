@@ -53,12 +53,12 @@ Building Behaviors from Source
 **What You Need**
 
  - [Visual Studio 2015 Update 1 w/ Universal Windows Tools](https://www.visualstudio.com/features/windows-apps-games-vs)
+ - [Multilingual App Toolkit](https://developer.microsoft.com/en-us/windows/develop/multilingual-app-toolkit)
 
 **Clone the Repository**
 
--Go to 'View' -> 'Team Explorer' -> 'Local Git Repositories' -> 'Clone'
--Add the XAML Behaviors repository URL (https://github.com/Microsoft/XamlBehaviors) and hit 'Clone'
- 
+ - Go to 'View' -> 'Team Explorer' -> 'Local Git Repositories' -> 'Clone'
+ - Add the XAML Behaviors repository URL (https://github.com/Microsoft/XamlBehaviors) and hit 'Clone'
 
 **Build and Create Managed XAML Behaviors NuGet**
  
@@ -67,6 +67,7 @@ Building Behaviors from Source
  - Build [Ctrl + B]
  - Install the latest NuGet command-line tool by running **scripts/download-nuget.cmd**
  - Run **scripts/CreateManagedNuGet.cmd** 
+   - *(Optional)* Provide a version number to the command line to override the default version 	
  
 **Build and Create Native XAML Behaviors NuGet**
  
@@ -74,3 +75,4 @@ Building Behaviors from Source
  - [Batch Build](https://msdn.microsoft.com/en-us/library/169az28z(v=vs.90).aspx) for x86, x64, and ARM in Release
  - Install the latest NuGet command-line tool by running **scripts/download-nuget.cmd**
  - Run **scripts/CreateNativeNuGet.cmd** 
+  - *(Optional)* Provide a version number to the command line to override the default version
