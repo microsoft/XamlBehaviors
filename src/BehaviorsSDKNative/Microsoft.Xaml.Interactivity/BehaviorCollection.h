@@ -24,7 +24,7 @@ namespace Microsoft { namespace Xaml { namespace Interactivity
 		{
 			::Windows::UI::Xaml::DependencyObject^ get()
 			{
-				return this->associatedObject;
+				return this->associatedObject.Resolve<Windows::UI::Xaml::DependencyObject>();
 			}
 		}
 
@@ -46,7 +46,7 @@ namespace Microsoft { namespace Xaml { namespace Interactivity
 		// After a VectorChanged event we need to compare the current state of the collection
 		// with the old collection so that we can call Detach on all removed items.
 		std::vector<IBehavior^> oldCollection;
-		::Windows::UI::Xaml::DependencyObject^ associatedObject;
+		::Platform::WeakReference associatedObject;
 
 		void OnVectorChanged(
 			::Windows::Foundation::Collections::IObservableVector<::Windows::UI::Xaml::DependencyObject^>^ sender,
