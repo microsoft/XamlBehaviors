@@ -32,6 +32,16 @@ namespace Microsoft.Xaml.Interactions.Core
             typeof(DataTriggerBehavior),
             new PropertyMetadata(ComparisonConditionType.Equal,
                 new PropertyChangedCallback(DataTriggerBehavior.OnValueChanged)));
+                
+        /// <summary>
+        /// Identifies the <seealso cref="Otherwise"/> dependency property.
+        /// </summary>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes")]
+        public static readonly DependencyProperty OtherwiseProperty = DependencyProperty.Register(
+            "Otherwise",
+            typeof(ActionCollection),
+            typeof(DataTriggerBehavior),
+            new PropertyMetadata(null));
 
         /// <summary>
         /// Identifies the <seealso cref="Value"/> dependency property.
@@ -70,6 +80,24 @@ namespace Microsoft.Xaml.Interactions.Core
             set
             {
                 this.SetValue(DataTriggerBehavior.ComparisonConditionProperty, value);
+            }
+        }
+
+        /// <summary>
+        /// Gets the collection of actions associated with the behavior to be executed when the expression evaluates to false. This is a dependency property.
+        /// </summary>
+        public ActionCollection Otherwise
+        {
+            get
+            {
+                ActionCollection actionCollection = (ActionCollection)this.GetValue(DataTriggerBehavior.OtherwiseProperty);
+                if (actionCollection == null)
+                {
+                    actionCollection = new ActionCollection();
+                    this.SetValue(DataTriggerBehavior.OtherwiseProperty, actionCollection);
+                }
+
+                return actionCollection;
             }
         }
 
@@ -210,6 +238,10 @@ namespace Microsoft.Xaml.Interactions.Core
             if (DataTriggerBehavior.Compare(dataTriggerBehavior.Binding, dataTriggerBehavior.ComparisonCondition, dataTriggerBehavior.Value))
             {
                 Interaction.ExecuteActions(dataTriggerBehavior.AssociatedObject, dataTriggerBehavior.Actions, args);
+            }
+            else
+            {
+                Interaction.ExecuteActions(dataTriggerBehavior.AssociatedObject, dataTriggerBehavior.Otherwise, args);
             }
         }
     }
