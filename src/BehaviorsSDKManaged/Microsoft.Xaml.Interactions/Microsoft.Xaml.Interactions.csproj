@@ -140,6 +140,7 @@
     <Compile Include="Core\NavigateToPageAction.cs" />
     <Compile Include="Core\ResourceHelper.cs" />
     <Compile Include="Core\TypeConverterHelper.cs" />
+    <Compile Include="Core\VisualStateChangedBehavior.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Media\ControlStoryboardAction.cs" />
     <Compile Include="Media\ControlStoryboardOption.cs" />
