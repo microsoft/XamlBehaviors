@@ -241,6 +241,23 @@ namespace Microsoft.Xaml.Interactivity.Design
                     new CategoryAttribute(Resources.Category_Common_Properties));
                 #endregion
 
+                #region
+                AddAttributes<FadeAction>(
+                    new DescriptionAttribute(Resources.Description_FadeAction),
+                    new CategoryAttribute(Resources.Category_Common_Properties)
+                    );
+
+                AddAttributes<FadeAction>(
+                    "Duration",
+                    new DescriptionAttribute(Resources.Description_FadeAction_Duration),
+                    new CategoryAttribute(Resources.Category_Common_Properties));
+
+                AddAttributes<FadeAction>(
+                    "FadeType",
+                    new DescriptionAttribute(Resources.Description_FadeAction_FadeType),
+                    new CategoryAttribute(Resources.Category_Common_Properties));
+                #endregion
+
                 return attributeTableBuilder.CreateTable();
             }
         }

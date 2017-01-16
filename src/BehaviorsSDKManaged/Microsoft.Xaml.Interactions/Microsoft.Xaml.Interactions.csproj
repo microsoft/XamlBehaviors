@@ -134,6 +134,7 @@
     <Compile Include="Core\DataBindingHelper.cs" />
     <Compile Include="Core\DataTriggerBehavior.cs" />
     <Compile Include="Core\EventTriggerBehavior.cs" />
+	<Compile Include="Core\FadeAction.cs" />
     <Compile Include="Core\GoToStateAction.cs" />
     <Compile Include="Core\IncrementalUpdateBehavior.cs" />
     <Compile Include="Core\InvokeCommandAction.cs" />
