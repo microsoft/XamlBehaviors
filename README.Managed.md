@@ -1,5 +1,4 @@
-# **XAML Behaviors**
-XAML Behaviors is an easy-to-use means of adding common and reusable interactivity to your Windows UWP applications with minimal code. It is available for both native and managed applications. Use of XAML Behaviors is governed by the MIT License
+# XAML Behaviors
 
 ## Build Status
 ![](https://ci.appveyor.com/api/projects/status/0dptycdhhykyscr4/branch/master?svg=true)
