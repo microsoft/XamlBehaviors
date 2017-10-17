@@ -1,8 +1,5 @@
-# XAML Behaviors
-
 ## Build Status
 ![](https://ci.appveyor.com/api/projects/status/0dptycdhhykyscr4/branch/master?svg=true)
-
 
 ## Getting Started
 
