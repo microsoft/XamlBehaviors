@@ -5,16 +5,13 @@
 
 
 ## Getting Started
-### Where to get it**
-
- - NuGet package for [Native](https://www.nuget.org/packages/Microsoft.Xaml.Behaviors.Uwp.Native/) and [Managed](https://www.nuget.org/packages/Microsoft.Xaml.Behaviors.Uwp.Managed/)
- - [Source Code](https://github.com/Microsoft/XamlBehaviors)
 
 ### Resources
 
  - [Documentation](https://github.com/Microsoft/XamlBehaviors/wiki)
  - [Samples](/samples)
  - [Changelog](https://github.com/Microsoft/XamlBehaviors/wiki/Changelog)
+ - [Source Code](https://github.com/Microsoft/XamlBehaviors)
  - [![Join the chat at https://gitter.im/Microsoft/XamlBehaviors](https://badges.gitter.im/Microsoft/XamlBehaviors.svg)](https://gitter.im/Microsoft/XamlBehaviors?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 ### More Info
