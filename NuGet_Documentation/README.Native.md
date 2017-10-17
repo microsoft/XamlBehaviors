@@ -1,8 +1,5 @@
-# XAML Behaviors
-
 ## Build Status
 ![](https://ci.appveyor.com/api/projects/status/897ervx359xqa7vh/branch/master?svg=true)
-
 
 ## Getting Started
 
@@ -68,4 +65,3 @@ The [documentation](https://github.com/Microsoft/XamlBehaviors/wiki) explains ho
  - Install the latest NuGet command-line tool by running **scripts/download-nuget.cmd**
  - Run **scripts/CreateNativeNuGet.cmd** 
   - *(Optional)* Provide a version number to the command line to override the default version
-
