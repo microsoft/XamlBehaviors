@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk" ToolsVersion="15.0">
 	<PropertyGroup>
 		<TargetFrameworks>MonoAndroid80;xamarinios10;uap10.0;netstandard2.0</TargetFrameworks>
-		<TargetFrameworksCI>MonoAndroid60;MonoAndroid70;MonoAndroid71;MonoAndroid80;xamarinios10;net46;uap10.0;netstandard2.0</TargetFrameworksCI>
+		<TargetFrameworksCI>MonoAndroid71;MonoAndroid80;xamarinios10;net46;uap10.0;netstandard2.0</TargetFrameworksCI>
 	</PropertyGroup>
 
 	<PropertyGroup>
@@ -12,13 +12,16 @@
 		<OutputPath>..\..\..\out\$(SolutionName)\bin\$(Platform)\$(Configuration)\</OutputPath>
 		
 		<DefineConstants>NETFX_CORE;WINDOWS_UWP</DefineConstants>
+		
+		<PackageId>Uno.Microsoft.Xaml.Behaviors.Interactivity</PackageId>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 	</PropertyGroup>
 
 	<ItemGroup>
 		<PackageReference Include="MSBuild.Sdk.Extras" Version="1.5.4" PrivateAssets="All" />
 		<PackageReference Include="Uno.UI" Version="1.31.0-dev.8" PrivateAssets="All" />
 	</ItemGroup>
-
+	
 	<ItemGroup Condition=" '$(TargetFramework)' == 'uap10.0' ">
 		<PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform " Version="5.4.2" />
 	</ItemGroup>
@@ -29,5 +32,4 @@
 	</ItemGroup>
 
 	<Import Project="$(MSBuildSDKExtrasTargets)" Condition="Exists('$(MSBuildSDKExtrasTargets)')" />
-
 </Project>

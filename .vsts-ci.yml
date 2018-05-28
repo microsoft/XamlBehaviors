@@ -3,19 +3,15 @@ phases:
   variables:
     NUGET_PACKAGES: $(Agent.WorkFolder)\.nuget
     NUGET_HTTP_CACHE_PATH: $(Agent.WorkFolder)\.nuget-http-cache
-    CombinedConfiguration: Release|Any CPU
-    CI_Build: true
-
-  queue:
-    demands:
-    - VS15.5.5
 
   steps:
-  - task: gittools.gitversion.gitversion-task.GitVersion@3
-  
+  - task: GitVersion@3
+    inputs:
+      updateAssemblyInfo: false
+      
   - task: NuGetToolInstaller@0
     inputs:
-        versionSpec: 4.6.0
+        versionSpec: 4.7.0
         checkLatest: false
 
   - task: NuGetCommand@2
@@ -23,35 +19,37 @@ phases:
       command: restore
       solution: src/BehaviorsSDKManaged/BehaviorsSDKManaged.sln
       selectOrConfig: select
-      feedRestore: nventive
       includeNuGetOrg: true
       verbosityRestore: Normal
-  
-  - task: VSBuild@1
+
+  - task: MSBuild@1
     inputs:
-      solution: 'src/BehaviorsSDKManaged/BehaviorsSDKManaged.sln'
-      platform: 'Any CPU'
-      configuration: Release
-  
-  - task: VSBuild@1
+      solution: src/BehaviorsSDKManaged/BehaviorsSDKManaged.sln
+      msbuildLocationMethod: version
+      msbuildVersion: latest
+      msbuildArchitecture: x86
+      msbuildArguments: /r /p:Configuration=Release "/p:PackageOutputPath=$(build.artifactstagingdirectory)\nuget" "/p:PackageVersion=%GITVERSION_FullSemVer%" "/p:InformationalVersion=%GITVERSION_InformationalVersion%" /detailedsummary /bl:$(build.artifactstagingdirectory)\build-lib.binlog
+      clean: false
+      maximumCpuCount: true
+      restoreNugetPackages: false
+      logProjectEvents: false
+      createLogFile: false
+
+  - task: MSBuild@1
     inputs:
-      solution: 'samples/CS/XAMLBehaviorsSample.sln'
-    enabled: false
-  
-  - task: NuGetCommand@2
-    inputs:
-      command: pack
-      packagesToPack: 'scripts/Microsoft.Xaml.Behaviors.Uwp.Managed.nuspec'
-      versioningScheme: byEnvVar
-      versionEnvVar: 'GitVersion_NuGetVersion'
-  
-  - task: CopyFiles@2
-    inputs:
-      SourceFolder: '$(build.sourcesdirectory)'
-      Contents: '**\bin\$(BuildConfiguration)\**'
-      TargetFolder: '$(build.artifactstagingdirectory)'
+      solution: samples/CS/XAMLBehaviorsSample.sln
+      msbuildLocationMethod: version
+      msbuildVersion: latest
+      msbuildArchitecture: x86
+      msbuildArguments: /r /p:Configuration=Release  /detailedsummary /bl:$(build.artifactstagingdirectory)\build-sample.binlog
+      clean: false
+      maximumCpuCount: true
+      restoreNugetPackages: false
+      logProjectEvents: false
+      createLogFile: false
   
   - task: PublishBuildArtifacts@1
+    condition: always()
     inputs:
       PathtoPublish: '$(build.artifactstagingdirectory)'
       ArtifactName: drop

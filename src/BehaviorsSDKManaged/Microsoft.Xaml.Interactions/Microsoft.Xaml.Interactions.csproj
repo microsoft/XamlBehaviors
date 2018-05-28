@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk" ToolsVersion="15.0">
 	<PropertyGroup>
 		<TargetFrameworks>MonoAndroid80;xamarinios10;uap10.0;netstandard2.0</TargetFrameworks>
-		<TargetFrameworksCI>MonoAndroid60;MonoAndroid70;MonoAndroid71;MonoAndroid80;xamarinios10;net46;uap10.0;netstandard2.0</TargetFrameworksCI>
+		<TargetFrameworksCI>MonoAndroid71;MonoAndroid80;xamarinios10;net46;uap10.0;netstandard2.0</TargetFrameworksCI>
 	</PropertyGroup>
 
 	<PropertyGroup>
@@ -12,7 +12,8 @@
 		<OutputPath>..\..\..\out\$(SolutionName)\bin\$(Platform)\$(Configuration)\</OutputPath>
 
 		<DefineConstants>NETFX_CORE;WINDOWS_UWP</DefineConstants>
-		<PackageId>Microsoft.Xaml.Behaviors.Uwp.Managed</PackageId>
+		<PackageId>Uno.Microsoft.Xaml.Behaviors.Uwp.Managed</PackageId>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 	</PropertyGroup>
 	
   <PropertyGroup Label="MultilingualAppToolkit">
