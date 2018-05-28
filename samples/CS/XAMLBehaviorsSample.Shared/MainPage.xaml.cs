@@ -69,11 +69,9 @@ namespace XAMLBehaviorsSample
 
 			if (CheckLastPage(typeof(NavigatePageSample)))
 			{
-#if !NETSTANDARD2_0
 				pivot.SelectedIndex = 1;
 				ActionsContent.Children.Clear();
 				ActionsContent.Children.Add(_navigatetopageaction);
-#endif
 			}
 		}
 
@@ -96,7 +94,6 @@ namespace XAMLBehaviorsSample
 			BehaviorsContent.Children.Add(_incrementaltrigger);
 		}
 
-#if !NETSTANDARD2_0
 		private void CallMethodButton_Click(object sender, RoutedEventArgs e)
 		{
 			ActionsContent.Children.Clear();
@@ -150,6 +147,5 @@ namespace XAMLBehaviorsSample
 			CustomContent.Children.Clear();
 			CustomContent.Children.Add(_customactionaction);
 		}
-#endif
 	}
 }
