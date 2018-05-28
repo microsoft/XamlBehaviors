@@ -10,11 +10,6 @@
 		<StartupObject />
 	</PropertyGroup>
 
-	<ItemGroup>
-		<PackageReference Include="Uno.UI" Version="1.28.1-wasm.2495" PrivateAssets="All" />
-		<PackageReference Include="Uno.Wasm.Bootstrap" Version="1.0.0-dev.17" />
-	</ItemGroup>
-
 	<Import Project="..\XAMLBehaviorsSample.Shared\XAMLBehaviorsSample.Shared.projitems" Label="Shared" />
 
 	<ItemGroup>
@@ -32,6 +27,7 @@
 	</ItemGroup>
 	
 	<ItemGroup>
+		<PackageReference Include="Uno.Wasm.Bootstrap" Version="1.0.0-dev.17" />
 		<PackageReference Include="Uno.UI" Version="1.31.0-dev.8" PrivateAssets="All" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Console" Version="1.1.1" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Filter" Version="1.1.1" />
