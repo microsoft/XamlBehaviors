@@ -14,10 +14,10 @@
 
 	<ItemGroup>
 		<Reference Include="Microsoft.Xaml.Interactions">
-			<HintPath>..\..\..\out\BehaviorsSDKManaged\bin\AnyCPU\Debug\netstandard2.0\Microsoft.Xaml.Interactions.dll</HintPath>
+			<HintPath>..\..\..\out\BehaviorsSDKManaged\bin\AnyCPU\$(Configuration)\netstandard2.0\Microsoft.Xaml.Interactions.dll</HintPath>
 		</Reference>
 		<Reference Include="Microsoft.Xaml.Interactivity">
-			<HintPath>..\..\..\out\BehaviorsSDKManaged\bin\AnyCPU\Debug\netstandard2.0\Microsoft.Xaml.Interactivity.dll</HintPath>
+			<HintPath>..\..\..\out\BehaviorsSDKManaged\bin\AnyCPU\$(Configuration)\netstandard2.0\Microsoft.Xaml.Interactivity.dll</HintPath>
 		</Reference>
 	</ItemGroup>
 
