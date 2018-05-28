@@ -14,7 +14,7 @@ namespace Microsoft.Xaml.Interactions.Core
     /// A behavior that listens for a specified event on its source and executes its actions when that event is fired.
     /// </summary>
     public sealed class EventTriggerBehavior : Trigger
-    {
+	{
         /// <summary>
         /// Identifies the <seealso cref="EventName"/> dependency property.
         /// </summary>
@@ -151,7 +151,8 @@ namespace Microsoft.Xaml.Interactions.Core
                 MethodInfo methodInfo = typeof(EventTriggerBehavior).GetTypeInfo().GetDeclaredMethod("OnEvent");
                 this.eventHandler = methodInfo.CreateDelegate(info.EventHandlerType, this);
 
-                this.isWindowsRuntimeEvent = EventTriggerBehavior.IsWindowsRuntimeEvent(info);
+#if !NETSTANDARD2_0
+				this.isWindowsRuntimeEvent = EventTriggerBehavior.IsWindowsRuntimeEvent(info);
                 if (this.isWindowsRuntimeEvent)
                 {
                     this.addEventHandlerMethod = add => (EventRegistrationToken)info.AddMethod.Invoke(this.resolvedSource, new object[] { add });
@@ -160,7 +161,8 @@ namespace Microsoft.Xaml.Interactions.Core
                     WindowsRuntimeMarshal.AddEventHandler(this.addEventHandlerMethod, this.removeEventHandlerMethod, this.eventHandler);
                 }
                 else
-                {
+#endif
+				{
                     info.AddEventHandler(this.resolvedSource, this.eventHandler);
                 }
             }
@@ -189,13 +191,15 @@ namespace Microsoft.Xaml.Interactions.Core
                     return;
                 }
 
-                EventInfo info = this.resolvedSource.GetType().GetRuntimeEvent(eventName);
+				EventInfo info = this.resolvedSource.GetType().GetRuntimeEvent(eventName);
+#if !NETSTANDARD2_0
                 if (this.isWindowsRuntimeEvent)
                 {
                     WindowsRuntimeMarshal.RemoveEventHandler(this.removeEventHandlerMethod, this.eventHandler);
                 }
                 else
-                {
+#endif
+				{
                     info.RemoveEventHandler(this.resolvedSource, this.eventHandler);
                 }
 
@@ -243,7 +247,7 @@ namespace Microsoft.Xaml.Interactions.Core
             }
 
             UIElement rootVisual = Window.Current.Content;
-            DependencyObject parent = element.Parent;
+			DependencyObject parent = element.Parent;
             if (parent == null)
             {
                 // If the element is the child of a ControlTemplate it will have a null parent even when it is loaded.

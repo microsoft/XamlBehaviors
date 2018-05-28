@@ -10,10 +10,10 @@ namespace Microsoft.Xaml.Interactions.Core
     using Windows.UI.Xaml;
     using Microsoft.Xaml.Interactivity;
 
-    /// <summary>
-    /// An action that calls a method on a specified object when invoked.
-    /// </summary>
-    public sealed class CallMethodAction : DependencyObject, IAction
+	/// <summary>
+	/// An action that calls a method on a specified object when invoked.
+	/// </summary>
+	public sealed partial class CallMethodAction : DependencyObject, IAction
     {
         /// <summary>
         /// Identifies the <seealso cref="MethodName"/> dependency property.

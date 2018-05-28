@@ -8,7 +8,7 @@ using Windows.UI.Xaml;
 
 namespace XAMLBehaviorsSample
 {
-    class ContentDialogPopUp : DependencyObject, IAction
+    partial class ContentDialogPopUp : DependencyObject, IAction
     {
         ContentDialogSample samplecd;
 
@@ -21,7 +21,7 @@ namespace XAMLBehaviorsSample
 
         public async void ShowCD()
         {
-            await samplecd.ShowAsync();
-        }
+			await samplecd.ShowAsync();
+		}
     }
 }

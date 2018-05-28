@@ -10,18 +10,18 @@ namespace Microsoft.Xaml.Interactions.Utility
     /// </summary>
     internal interface IVisualTreeHelper
     {
-        /// <summary>
-        /// Returns an object's parent object in the visual tree.
-        /// </summary>
-        /// <param name="reference">
-        /// The object for which to get the parent object.
-        /// </param>
-        /// <returns>
-        /// The parent object of the reference object in the visual tree. 
-        /// </returns>
-        /// <remarks>
-        /// THREAD SAFETY: This method should be called on the object's Dispatcher thread.
-        /// </remarks>
-        DependencyObject GetParent(DependencyObject reference);
+		/// <summary>
+		/// Returns an object's parent object in the visual tree.
+		/// </summary>
+		/// <param name="reference">
+		/// The object for which to get the parent object.
+		/// </param>
+		/// <returns>
+		/// The parent object of the reference object in the visual tree. 
+		/// </returns>
+		/// <remarks>
+		/// THREAD SAFETY: This method should be called on the object's Dispatcher thread.
+		/// </remarks>
+		DependencyObject GetParent(DependencyObject reference);
     }
 }

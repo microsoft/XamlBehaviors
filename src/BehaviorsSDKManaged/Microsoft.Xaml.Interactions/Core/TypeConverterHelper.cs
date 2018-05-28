@@ -24,7 +24,7 @@ namespace Microsoft.Xaml.Interactions.Core
         /// <exception cref="ArgumentNullException">destinationTypeFullName cannot be null.</exception>
         public static Object Convert(string value, string destinationTypeFullName)
         {
-            if (string.IsNullOrEmpty(destinationTypeFullName))
+			if (string.IsNullOrEmpty(destinationTypeFullName))
             {
                 throw new ArgumentNullException(nameof(destinationTypeFullName));
             }
@@ -52,7 +52,11 @@ namespace Microsoft.Xaml.Interactions.Core
                 }
             }
 
-            string type = TypeConverterHelper.GetType(destinationTypeFullName);
+#if HAS_UNO
+			return null;
+#else
+
+			string type = TypeConverterHelper.GetType(destinationTypeFullName);
             string contentControlXaml = string.Format(CultureInfo.InvariantCulture, TypeConverterHelper.ContentControlFormatString, scope, type, value);
 
             ContentControl contentControl = XamlReader.Load(contentControlXaml) as ContentControl;
@@ -62,6 +66,7 @@ namespace Microsoft.Xaml.Interactions.Core
             }
 
             return null;
+#endif
         }
 
         private static String GetScope(string name)

@@ -1,0 +1,50 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<NoWarn>$(NoWarn),NU1701</NoWarn>
+		<DefineConstants>$(DefineConstants);__WASM__</DefineConstants>
+		<WasmHead>true</WasmHead>
+		<ApplicationIcon />
+		<OutputType>Exe</OutputType>
+		<StartupObject />
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Uno.UI" Version="1.28.1-wasm.2495" PrivateAssets="All" />
+	</ItemGroup>
+
+	<Import Project="..\XAMLBehaviorsSample.Shared\XAMLBehaviorsSample.Shared.projitems" Label="Shared" />
+
+	<ItemGroup>
+		<Reference Include="Microsoft.Xaml.Interactions">
+			<HintPath>..\..\..\out\BehaviorsSDKManaged\bin\AnyCPU\Debug\netstandard2.0\Microsoft.Xaml.Interactions.dll</HintPath>
+		</Reference>
+		<Reference Include="Microsoft.Xaml.Interactivity">
+			<HintPath>..\..\..\out\BehaviorsSDKManaged\bin\AnyCPU\Debug\netstandard2.0\Microsoft.Xaml.Interactivity.dll</HintPath>
+		</Reference>
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="**\*.xaml" Exclude="bin\**\*.xaml;obj\**\*.xaml" />
+		<Page Include="**\*.xaml" Exclude="bin\**\*.xaml;obj\**\*.xaml" />
+	</ItemGroup>
+	
+	<ItemGroup>
+		<PackageReference Include="Uno.UI" Version="1.31.0-dev.8" PrivateAssets="All" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Console" Version="1.1.1" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Filter" Version="1.1.1" />
+		<PackageReference Include="Uno.Wasm.ShellBase" Version="1.0.0-dev.22" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Debug">
+			<Version>1.1.1</Version>
+		</PackageReference>
+		<PackageReference Include="Microsoft.Extensions.Logging.Filter">
+			<Version>1.1.1</Version>
+		</PackageReference>
+		<PackageReference Include="Microsoft.Extensions.Logging.Console">
+			<Version>1.1.1</Version>
+		</PackageReference>
+	</ItemGroup>
+
+
+</Project>

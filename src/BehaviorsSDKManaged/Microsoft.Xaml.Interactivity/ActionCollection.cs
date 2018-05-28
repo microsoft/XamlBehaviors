@@ -6,10 +6,10 @@ namespace Microsoft.Xaml.Interactivity
     using Windows.Foundation.Collections;
     using Windows.UI.Xaml;
 
-    /// <summary>
-    /// Represents a collection of IActions.
-    /// </summary>
-    public sealed class ActionCollection : DependencyObjectCollection
+	/// <summary>
+	/// Represents a collection of IActions.
+	/// </summary>
+	public sealed class ActionCollection : DependencyObjectCollection
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ActionCollection"/> class.
@@ -32,7 +32,7 @@ namespace Microsoft.Xaml.Interactivity
             }
             else if (collectionChange == CollectionChange.ItemInserted || collectionChange == CollectionChange.ItemChanged)
             {
-                DependencyObject changedItem = this[(int)eventArgs.Index];
+				DependencyObject changedItem = this[(int)eventArgs.Index];
                 ActionCollection.VerifyType(changedItem);
             }
         }

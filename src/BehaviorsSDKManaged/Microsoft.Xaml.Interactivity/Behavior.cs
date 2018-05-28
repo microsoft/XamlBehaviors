@@ -11,7 +11,7 @@ namespace Microsoft.Xaml.Interactivity
     /// <summary>
     /// A base class for behaviors, implementing the basic plumbing of IBehavior
     /// </summary>
-    public abstract class Behavior : DependencyObject, IBehavior
+    public abstract partial class Behavior : DependencyObject, IBehavior
     {
         /// <summary>
         /// Gets the <see cref="Windows.UI.Xaml.DependencyObject"/> to which the behavior is attached.

@@ -9,7 +9,7 @@ namespace Microsoft.Xaml.Interactions.Media
 	/// <summary>
 	/// An action that will change the state of the specified <seealso cref="Windows.UI.Xaml.Media.Animation.Storyboard"/> when executed.
 	/// </summary>
-	public sealed class ControlStoryboardAction : DependencyObject, IAction
+	public sealed partial class ControlStoryboardAction : DependencyObject, IAction
 	{
 		/// <summary>
 		/// Identifies the <seealso cref="ControlStoryboardOption"/> dependency property.

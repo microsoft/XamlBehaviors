@@ -7,7 +7,12 @@ namespace Microsoft.Xaml.Interactions.Media
 	using Interactivity;
 	using Windows.UI.Xaml;
 	using Windows.UI.Xaml.Controls;
-	using Windows.UI.Xaml.Controls.Primitives;
+
+#if HAS_UNO
+	using Popup = Windows.UI.Xaml.Controls.Popup;
+#else
+	using Popup = Windows.UI.Xaml.Controls.Primitives.Popup;
+#endif
 
 	/// <summary>
 	/// An action that will play a sound to completion.
@@ -16,7 +21,7 @@ namespace Microsoft.Xaml.Interactions.Media
 	/// This action is intended for use with short sound effects that don't need to be stopped or controlled. If you are trying 
 	/// to create a music player or game, it may not meet your needs.
 	/// </remarks>
-	public sealed class PlaySoundAction : DependencyObject, IAction
+	public sealed partial class PlaySoundAction : DependencyObject, IAction
 	{
 		private const string MsAppXSchemeFormatString = "ms-appx:///{0}";
 

@@ -10,7 +10,7 @@ namespace Microsoft.Xaml.Interactions.Core
     /// <summary>
     /// Executes a specified <see cref="System.Windows.Input.ICommand"/> when invoked. 
     /// </summary>
-    public sealed class InvokeCommandAction : DependencyObject, IAction
+    public sealed partial class InvokeCommandAction : DependencyObject, IAction
     {
         /// <summary>
         /// Identifies the <seealso cref="Command"/> dependency property.

@@ -11,7 +11,7 @@ namespace Microsoft.Xaml.Interactions.Core
     /// <summary>
     /// An action that switches the current visual to the specified <see cref="Windows.UI.Xaml.Controls.Page"/>.
     /// </summary>
-    public sealed class NavigateToPageAction : DependencyObject, IAction
+    public sealed partial class NavigateToPageAction : DependencyObject, IAction
     {
         private readonly IVisualTreeHelper visualTreeHelper;
 

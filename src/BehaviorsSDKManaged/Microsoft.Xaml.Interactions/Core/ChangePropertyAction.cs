@@ -11,7 +11,7 @@ namespace Microsoft.Xaml.Interactions.Core
     /// <summary>
     /// An action that will change a specified property to a specified value when invoked.
     /// </summary>
-    public sealed class ChangePropertyAction : DependencyObject, IAction
+    public sealed partial class ChangePropertyAction : DependencyObject, IAction
     {
         /// <summary>
         /// Identifies the <seealso cref="PropertyName"/> dependency property.

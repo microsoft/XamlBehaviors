@@ -6,19 +6,19 @@ using Windows.UI.Xaml;
 
 namespace Microsoft.Xaml.Interactivity
 {
-    /// <summary>
-    /// A base class for behaviors, implementing the basic plumbing of ITrigger
-    /// </summary>
-    /// <typeparam name="T">The object type to attach to</typeparam>
-    public abstract class Trigger<T> : Trigger where T : DependencyObject
-    {
-        /// <summary>
-        /// Gets the object to which this behavior is attached.
-        /// </summary>
-        [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
+	/// <summary>
+	/// A base class for behaviors, implementing the basic plumbing of ITrigger
+	/// </summary>
+	/// <typeparam name="T">The object type to attach to</typeparam>
+	public abstract class Trigger<T> : Trigger where T : DependencyObject
+	{
+		/// <summary>
+		/// Gets the object to which this behavior is attached.
+		/// </summary>
+		[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public new T AssociatedObject
         {
-            get { return base.AssociatedObject as T; }
+            get { return (T)base.AssociatedObject; }
         }
 
         /// <summary>

@@ -40,11 +40,11 @@ namespace Microsoft.Xaml.Interactions.Core
             {
                 propertyList = new List<DependencyProperty>();
 
-                while (type != null && type != typeof(DependencyObject))
+                while (type != null && type != typeof(Object))
                 {
                     foreach (FieldInfo fieldInfo in type.GetRuntimeFields())
                     {
-                        if (fieldInfo.IsPublic && fieldInfo.FieldType == typeof(DependencyProperty))
+                        if (fieldInfo.IsPublic && typeof(DependencyProperty).IsAssignableFrom(fieldInfo.FieldType))
                         {
                             DependencyProperty property = fieldInfo.GetValue(null) as DependencyProperty;
                             if (property != null)
@@ -65,11 +65,11 @@ namespace Microsoft.Xaml.Interactions.Core
 
         private static void RefreshBinding(DependencyObject target, DependencyProperty property)
         {
-            BindingExpression binding = target.ReadLocalValue(property) as BindingExpression;
+			BindingExpression binding = target.ReadLocalValue(property) as BindingExpression;
             if (binding != null && binding.ParentBinding != null)
             {
                 BindingOperations.SetBinding(target, property, binding.ParentBinding);
             }
-        }
+		}
     }
 }

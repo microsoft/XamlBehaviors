@@ -5,10 +5,10 @@ namespace Microsoft.Xaml.Interactions.Utility
     using Windows.UI.Xaml;
     using Windows.UI.Xaml.Media;
 
-    /// <summary>
-    /// IVisualTreeHelper implementation that calls the real VisualTreeHelper.
-    /// </summary>
-    internal class UwpVisualTreeHelper : IVisualTreeHelper
+	/// <summary>
+	/// IVisualTreeHelper implementation that calls the real VisualTreeHelper.
+	/// </summary>
+	internal partial class UwpVisualTreeHelper : IVisualTreeHelper
     {
         #region IVisualTreeHelper implementation
 

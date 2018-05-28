@@ -8,10 +8,10 @@ namespace Microsoft.Xaml.Interactivity
     using Windows.Foundation.Collections;
     using Windows.UI.Xaml;
 
-    /// <summary>
-    /// Represents a collection of IBehaviors with a shared <see cref="Microsoft.Xaml.Interactivity.BehaviorCollection.AssociatedObject"/>.
-    /// </summary>
-    public sealed class BehaviorCollection : DependencyObjectCollection
+	/// <summary>
+	/// Represents a collection of IBehaviors with a shared <see cref="Microsoft.Xaml.Interactivity.BehaviorCollection.AssociatedObject"/>.
+	/// </summary>
+	public sealed class BehaviorCollection : DependencyObjectCollection
     {
         // After a VectorChanged event we need to compare the current state of the collection
         // with the old collection so that we can call Detach on all removed items.

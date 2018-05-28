@@ -11,7 +11,7 @@ using Windows.UI.Xaml.Media;
 
 namespace XAMLBehaviorsSample
 {
-    public class DragPositionBehavior : DependencyObject, IBehavior
+    public partial class DragPositionBehavior : DependencyObject, IBehavior
     {
         public DependencyObject AssociatedObject
         {
@@ -43,9 +43,9 @@ namespace XAMLBehaviorsSample
 
             if (!(fe.RenderTransform is TranslateTransform))
                 fe.RenderTransform = new TranslateTransform();
-            prevPoint = e.GetCurrentPoint(parent).Position;
-            parent.PointerMoved += move;
-            pointerId = (int)e.Pointer.PointerId;
+			prevPoint = e.GetCurrentPoint(parent).Position;
+			parent.PointerMoved += move;
+			pointerId = (int)e.Pointer.PointerId;
         }
 
         private void move(object o, PointerRoutedEventArgs args)
@@ -53,20 +53,20 @@ namespace XAMLBehaviorsSample
             if (args.Pointer.PointerId != pointerId)
                 return;
 
-            var fe = AssociatedObject as FrameworkElement;
-            var pos = args.GetCurrentPoint(parent).Position;
-            var tr = (TranslateTransform)fe.RenderTransform;
-            tr.X += pos.X - prevPoint.X;
-            tr.Y += pos.Y - prevPoint.Y;
-            prevPoint = pos;
-        }
+			var fe = AssociatedObject as FrameworkElement;
+			var pos = args.GetCurrentPoint(parent).Position;
+			var tr = (TranslateTransform)fe.RenderTransform;
+			tr.X += pos.X - prevPoint.X;
+			tr.Y += pos.Y - prevPoint.Y;
+			prevPoint = pos;
+		}
         void fe_PointerReleased(object sender, PointerRoutedEventArgs e)
         {
             var fe = AssociatedObject as FrameworkElement;
             if (e.Pointer.PointerId != pointerId)
                 return;
-            parent.PointerMoved -= move;
-            pointerId = -1;
+			parent.PointerMoved -= move;
+			pointerId = -1;
         }
         public void Detach()
         {

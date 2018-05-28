@@ -48,7 +48,7 @@ namespace XAMLBehaviorsSample
             }
 #endif
 
-            Frame rootFrame = Window.Current.Content as Frame;
+            Frame rootFrame = Windows.UI.Xaml.Window.Current.Content as Frame;
 
             // Do not repeat app initialization when the Window already has content,
             // just ensure that the window is active
@@ -65,7 +65,7 @@ namespace XAMLBehaviorsSample
                 }
 
                 // Place the frame in the current Window
-                Window.Current.Content = rootFrame;
+				Windows.UI.Xaml.Window.Current.Content = rootFrame;
             }
 
             if (rootFrame.Content == null)
@@ -82,9 +82,9 @@ namespace XAMLBehaviorsSample
                 //{
                     rootFrame.Navigate(typeof(MainPage), e.Arguments);
                // }
-            } 
-            // Ensure the current window is active
-            Window.Current.Activate();
+            }
+			// Ensure the current window is active
+			Windows.UI.Xaml.Window.Current.Activate();
         }
 
         /// <summary>
@@ -113,10 +113,14 @@ namespace XAMLBehaviorsSample
 
         private bool DetectMobile()
         {
-            bool isHardwareButtonsAPIPresent =
-                ApiInformation.IsTypePresent("Windows.Phone.UI.Input.HardwareButtons");
+			bool isHardwareButtonsAPIPresent =
+#if !XAMARIN
+				ApiInformation.IsTypePresent("Windows.Phone.UI.Input.HardwareButtons");
+#else
+				false;
+#endif
 
-            if (isHardwareButtonsAPIPresent)
+			if (isHardwareButtonsAPIPresent)
             {
                 return true;
             }

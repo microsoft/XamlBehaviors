@@ -16,7 +16,7 @@ namespace Microsoft.Xaml.Interactions.Core
     /// the element tree in an attempt to locate an alternative target that defines states. <see cref="Windows.UI.Xaml.Controls.ControlTemplate"/> and <see cref="Windows.UI.Xaml.Controls.UserControl"/> are 
     /// two common results.
     /// </remarks>
-    public sealed class GoToStateAction : DependencyObject, IAction
+    public sealed partial class GoToStateAction : DependencyObject, IAction
     {
         /// <summary>
         /// Identifies the <seealso cref="UseTransitions"/> dependency property.

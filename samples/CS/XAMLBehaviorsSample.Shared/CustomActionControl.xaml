@@ -1,11 +1,12 @@
 ﻿<UserControl
+    x:Class="XAMLBehaviorsSample.CustomActionControl"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:XAMLBehaviorsSample"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:Interactivity="using:Microsoft.Xaml.Interactivity" xmlns:Interactions="using:Microsoft.Xaml.Interactions.Core"
-    x:Class="XAMLBehaviorsSample.CustomBehaviorControl"
+    xmlns:Behaviors="using:XAMLBehaviorsSample"
     mc:Ignorable="d"
     d:DesignHeight="600"
     d:DesignWidth="800">
@@ -16,10 +17,10 @@
             <RowDefinition Height="7*" />
         </Grid.RowDefinitions>
 
-        <Viewbox VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,0,0,10">
-            <TextBlock Text="Custom Behavior - DragPositionBehavior" FontSize="40" VerticalAlignment="Stretch" Foreground="{StaticResource DarkGreyBrush}" />
-        </Viewbox>
-        
+        <ContentControl VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,0,0,10">
+            <TextBlock Text="Custom Action - ContentDialogPopUp" FontSize="40" VerticalAlignment="Stretch" Foreground="{StaticResource DarkGreyBrush}" />
+        </ContentControl>
+
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
@@ -27,34 +28,36 @@
             </Grid.ColumnDefinitions>
 
             <ScrollViewer Grid.Column="1" ScrollViewer.VerticalScrollBarVisibility="Auto" >
-                <StackPanel Grid.Column="1">
+                <StackPanel>
                     <TextBlock TextWrapping="WrapWholeWords" Margin="10,0,10,0" FontSize="20" Foreground="{StaticResource DarkGreyBrush}">
                         <TextBlock.Text>
-                            Implementing a Custom Behavior for DragPositionBehavior allows controls to be moved around the canvas.
-                        In this example, the shapes are able to be dragged around the page using a mouse drag.
+                            This example illustrates a custom action that brings up a ContentDialog when the button is clicked.
                         </TextBlock.Text>
                     </TextBlock>
                     <RichTextBlock TextWrapping="WrapWholeWords" Margin="10,20,0,0" FontSize="15" Foreground="{StaticResource PaleYellowBrush}" xml:space="preserve" IsTextSelectionEnabled="True">
-					<Paragraph>&lt;Rectangle>
+					<Paragraph>&lt;Button x:Name="button">
     &lt;Interactivity:Interaction.Behaviors>
-        &lt;Behaviors:DragPositionBehavior/>
+        &lt;Interactions:EventTriggerBehavior EventName="Click" SourceObject="{Binding ElementName=button}">
+            &lt;Behaviors:ContentDialogPopUp/>
+        &lt;/Interactions:EventTriggerBehavior>
     &lt;/Interactivity:Interaction.Behaviors>
-&lt;/Rectangle></Paragraph>
+&lt;/Button></Paragraph>
 				</RichTextBlock>
                 </StackPanel>
             </ScrollViewer>
 
-            <Grid Grid.Column="0" Margin="0,0,10,10" BorderBrush="{StaticResource HighlightBrush}" BorderThickness="5" Background="{StaticResource PaleYellowBrush}">
-                <Ellipse Fill="{StaticResource DarkGreyBrush}" HorizontalAlignment="Left" Height="125" Stroke="Black" VerticalAlignment="Top" Width="125" StrokeThickness="0" Margin="15">
+            <Grid Grid.Column="0" Margin="0,0,10,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="2*"/>
+                </Grid.RowDefinitions>
+                <Button x:Name="button" Content="Click Me" HorizontalAlignment="Stretch" Grid.Row="0" VerticalAlignment="Stretch" Margin="0,0,10,10" d:LayoutOverrides="Width, Height" FontSize="20" Foreground="{StaticResource PaleGreyBrush}" Background="{StaticResource DarkGreyBrush}" Style="{StaticResource CustomButton}" BorderBrush="{StaticResource HighlightBrush}">
                     <Interactivity:Interaction.Behaviors>
-                        <local:DragPositionBehavior/>
+                        <Interactions:EventTriggerBehavior EventName="Click" SourceObject="{Binding ElementName=button}">
+                            <Behaviors:ContentDialogPopUp/>
+                        </Interactions:EventTriggerBehavior>
                     </Interactivity:Interaction.Behaviors>
-                </Ellipse>
-                <Rectangle Fill="{StaticResource PinkBrush}" HorizontalAlignment="Right" Height="125" Stroke="Black" VerticalAlignment="Bottom" Width="200" StrokeThickness="0" Margin="15">
-                    <Interactivity:Interaction.Behaviors>
-                        <local:DragPositionBehavior />
-                    </Interactivity:Interaction.Behaviors>
-                </Rectangle>
+                </Button>
             </Grid>
         </Grid>
     </Grid>

@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<TargetFramework>netstandard2.0</TargetFramework>
+	</PropertyGroup>
+
+	<ItemGroup>
+
+		<UpToDateCheckInput Include="ts\**\*" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Uno.UI" Version="1.28.1-wasm.2495" PrivateAssets="All" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Console" Version="1.1.1" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Filter" Version="1.1.1" />
+		<PackageReference Include="Uno.Wasm.ShellBase" Version="1.0.0-dev.22" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Uno_UI_Typescript_Files Include="ts\**\*" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\XamlBehaviorsSample.Wasm\XamlBehaviorsSample.Wasm.csproj" />
+	</ItemGroup>
+
+
+</Project>

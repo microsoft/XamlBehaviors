@@ -1,0 +1,59 @@
+phases:
+- phase: VS_Latest
+  variables:
+    NUGET_PACKAGES: $(Agent.WorkFolder)\.nuget
+    NUGET_HTTP_CACHE_PATH: $(Agent.WorkFolder)\.nuget-http-cache
+    CombinedConfiguration: Release|Any CPU
+    CI_Build: true
+
+  queue:
+    demands:
+    - VS15.5.5
+
+  steps:
+  - task: gittools.gitversion.gitversion-task.GitVersion@3
+  
+  - task: NuGetToolInstaller@0
+    inputs:
+        versionSpec: 4.6.0
+        checkLatest: false
+
+  - task: NuGetCommand@2
+    inputs:
+      command: restore
+      solution: src/BehaviorsSDKManaged/BehaviorsSDKManaged.sln
+      selectOrConfig: select
+      feedRestore: nventive
+      includeNuGetOrg: true
+      verbosityRestore: Normal
+  
+  - task: VSBuild@1
+    inputs:
+      solution: 'src/BehaviorsSDKManaged/BehaviorsSDKManaged.sln'
+      platform: 'Any CPU'
+      configuration: Release
+  
+  - task: VSBuild@1
+    inputs:
+      solution: 'samples/CS/XAMLBehaviorsSample.sln'
+    enabled: false
+  
+  - task: NuGetCommand@2
+    inputs:
+      command: pack
+      packagesToPack: 'scripts/Microsoft.Xaml.Behaviors.Uwp.Managed.nuspec'
+      versioningScheme: byEnvVar
+      versionEnvVar: 'GitVersion_NuGetVersion'
+  
+  - task: CopyFiles@2
+    inputs:
+      SourceFolder: '$(build.sourcesdirectory)'
+      Contents: '**\bin\$(BuildConfiguration)\**'
+      TargetFolder: '$(build.artifactstagingdirectory)'
+  
+  - task: PublishBuildArtifacts@1
+    inputs:
+      PathtoPublish: '$(build.artifactstagingdirectory)'
+      ArtifactName: drop
+      publishLocation: Container
+  

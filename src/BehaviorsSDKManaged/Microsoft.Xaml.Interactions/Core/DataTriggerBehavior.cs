@@ -11,7 +11,7 @@ namespace Microsoft.Xaml.Interactions.Core
     /// A behavior that performs actions when the bound data meets a specified condition.
     /// </summary>
     public sealed class DataTriggerBehavior : Trigger
-    {
+	{
         /// <summary>
         /// Identifies the <seealso cref="Binding"/> dependency property.
         /// </summary>

@@ -14,7 +14,7 @@ namespace Microsoft.Xaml.Interactions.Core
     /// A behavior that allows incremental updating of <seealso cref="Windows.UI.Xaml.Controls.ListView"/> and <seealso cref="Windows.UI.Xaml.Controls.GridView"/> contents to support faster updating.
     /// By attaching this behavior to elements in the <seealso cref="Windows.UI.Xaml.Controls.ItemsControl.ItemTemplate"/> used by these views, some of the updates can be deferred until there is render time available, resulting in a smoother experience.
     /// </summary>
-    public sealed class IncrementalUpdateBehavior : Behavior<FrameworkElement>
+    public sealed partial class IncrementalUpdateBehavior : Behavior<FrameworkElement>
     {
         /// <summary>
         /// Identifies the <seealso cref="Phase"/> dependency property.
@@ -236,9 +236,13 @@ namespace Microsoft.Xaml.Interactions.Core
 
             private void OnContainerContentChanging(ListViewBase sender, ContainerContentChangingEventArgs e)
             {
-                UIElement contentTemplateRoot = e.ItemContainer.ContentTemplateRoot;
+#if HAS_UNO
+				UIElement contentTemplateRoot = e.ItemContainer.ContentTemplateRoot as UIElement /* UNO TODO */;
+#else
+				UIElement contentTemplateRoot = e.ItemContainer.ContentTemplateRoot;
+#endif
 
-                ElementCacheRecord elementCacheRecord;
+				ElementCacheRecord elementCacheRecord;
                 if (this.elementCache.TryGetValue(contentTemplateRoot, out elementCacheRecord))
                 {
                     if (!e.InRecycleQueue)
@@ -277,9 +281,12 @@ namespace Microsoft.Xaml.Interactions.Core
 
             private void OnContainerContentChangingCallback(ListViewBase sender, ContainerContentChangingEventArgs e)
             {
+#if HAS_UNO
+                UIElement contentTemplateRoot = e.ItemContainer.ContentTemplateRoot as UIElement /* UNO TODO */;
+#else
                 UIElement contentTemplateRoot = e.ItemContainer.ContentTemplateRoot;
-
-                ElementCacheRecord elementCacheRecord;
+#endif
+				ElementCacheRecord elementCacheRecord;
                 if (this.elementCache.TryGetValue(contentTemplateRoot, out elementCacheRecord))
                 {
                     int phaseIndex = elementCacheRecord.Phases.BinarySearch((int)e.Phase);
@@ -317,9 +324,13 @@ namespace Microsoft.Xaml.Interactions.Core
 
                     if (item != null)
                     {
-                        return item.ContentTemplateRoot;
-                    }
-                    ancestor = parent;
+#if HAS_UNO
+						return item.ContentTemplateRoot as UIElement /* UNO TODO */;
+#else
+						return item.ContentTemplateRoot;
+#endif
+					}
+					ancestor = parent;
                 }
 
                 return null;

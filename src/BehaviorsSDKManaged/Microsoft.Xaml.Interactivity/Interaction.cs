@@ -6,10 +6,10 @@ namespace Microsoft.Xaml.Interactivity
     using System.Collections.Generic;
     using Windows.UI.Xaml;
 
-    /// <summary>
-    /// Defines a <see cref="BehaviorCollection"/> attached property and provides a method for executing an <seealso cref="ActionCollection"/>.
-    /// </summary>
-    public sealed class Interaction
+	/// <summary>
+	/// Defines a <see cref="BehaviorCollection"/> attached property and provides a method for executing an <seealso cref="ActionCollection"/>.
+	/// </summary>
+	public sealed class Interaction
     {
         /// <remarks>
         /// CA1053: Static holder types should not have public constructors

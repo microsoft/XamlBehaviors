@@ -11,14 +11,14 @@
     <AssemblyName>XAMLBehaviorsSample</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
-    <TargetPlatformVersion>10.0.10240.0</TargetPlatformVersion>
-    <TargetPlatformMinVersion>10.0.10240.0</TargetPlatformMinVersion>
+    <TargetPlatformVersion>10.0.15063.0</TargetPlatformVersion>
+    <TargetPlatformMinVersion>10.0.15063.0</TargetPlatformMinVersion>
     <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
     <EnableDotNetNativeCompatibleProfile>true</EnableDotNetNativeCompatibleProfile>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <PackageCertificateKeyFile>XAMLBehaviorsSample_TemporaryKey.pfx</PackageCertificateKeyFile>
-    <PackageCertificateThumbprint>A59F5EC5577FD12DC7C715F9B786ED18FE397750</PackageCertificateThumbprint>
+    <PackageCertificateThumbprint>AFA9B96DE3D22CBF4F1C64038F800248A0BA3076</PackageCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
     <DebugSymbols>true</DebugSymbols>
@@ -92,205 +92,30 @@
   <ItemGroup>
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
     <None Include="project.json" />
+    <None Include="XAMLBehaviorsSample_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App.xaml.cs">
-      <DependentUpon>App.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="CallMethodControl.xaml.cs">
-      <DependentUpon>CallMethodControl.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ChangePropertyControl.xaml.cs">
-      <DependentUpon>ChangePropertyControl.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ContentDialogSample.xaml.cs">
-      <DependentUpon>ContentDialogSample.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ContentDialogPopUp.cs" />
-    <Compile Include="ControlStoryboardControl.xaml.cs">
-      <DependentUpon>ControlStoryboardControl.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="CustomActionControl.xaml.cs">
-      <DependentUpon>CustomActionControl.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="CustomBehaviorControl.xaml.cs">
-      <DependentUpon>CustomBehaviorControl.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="DataTriggerControl.xaml.cs">
-      <DependentUpon>DataTriggerControl.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="DragPositionBehavior.cs" />
-    <Compile Include="EventTriggerControl.xaml.cs">
-      <DependentUpon>EventTriggerControl.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="GoToStateControl.xaml.cs">
-      <DependentUpon>GoToStateControl.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="IncrementalUpdateControl.xaml.cs">
-      <DependentUpon>IncrementalUpdateControl.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="InvokeCommandControl.xaml.cs">
-      <DependentUpon>InvokeCommandControl.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="MainPage.xaml.cs">
-      <DependentUpon>MainPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="NavigatePageSample.xaml.cs">
-      <DependentUpon>NavigatePageSample.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="NavigateToPageControl.xaml.cs">
-      <DependentUpon>NavigateToPageControl.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="PlaySoundControl.xaml.cs">
-      <DependentUpon>PlaySoundControl.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
-    <None Include="XAMLBehaviorsSample_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Cheer.mp3" />
     <Content Include="Assets\Ding.mp3" />
-    <Content Include="Assets\Whistle.mp3" />
-    <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
     <Content Include="Assets\Square150x150Logo.scale-200.png" />
     <Content Include="Assets\Square44x44Logo.scale-200.png" />
     <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
     <Content Include="Assets\StoreLogo.png" />
+    <Content Include="Assets\Whistle.mp3" />
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
+    <Content Include="Properties\Default.rd.xml" />
   </ItemGroup>
   <ItemGroup>
-    <ApplicationDefinition Include="App.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </ApplicationDefinition>
-    <Page Include="CallMethodControl.DeviceFamily-Mobile.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="CallMethodControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="ChangePropertyControl.DeviceFamily-Mobile.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="ChangePropertyControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="ContentDialogSample.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="ControlStoryboardControl.DeviceFamily-Mobile.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="ControlStoryboardControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="CustomActionControl.DeviceFamily-Mobile.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="CustomActionControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="CustomBehaviorControl.DeviceFamily-Mobile.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="CustomBehaviorControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="DataTriggerControl.DeviceFamily-Mobile.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="DataTriggerControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="EventTriggerControl.DeviceFamily-Mobile.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="EventTriggerControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="GoToStateControl.DeviceFamily-Mobile.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="GoToStateControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="IncrementalUpdateControl.DeviceFamily-Mobile.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="IncrementalUpdateControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="InvokeCommandControl.DeviceFamily-Mobile.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="InvokeCommandControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="MainPage.DeviceFamily-Mobile.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="MainPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="ColorResources.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Page>
-    <Page Include="NavigatePageSample.DeviceFamily-Mobile.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="NavigatePageSample.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="NavigateToPageControl.DeviceFamily-Mobile.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="NavigateToPageControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="PlaySoundControl.DeviceFamily-Mobile.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="PlaySoundControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Properties\DesignTimeResources.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -308,6 +133,7 @@
       <HintPath>..\..\..\out\BehaviorsSDKManaged\bin\AnyCPU\Debug\Microsoft.Xaml.Interactivity.dll</HintPath>
     </Reference>
   </ItemGroup>
+  <Import Project="..\XAMLBehaviorsSample.Shared\XAMLBehaviorsSample.Shared.projitems" Label="Shared" />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

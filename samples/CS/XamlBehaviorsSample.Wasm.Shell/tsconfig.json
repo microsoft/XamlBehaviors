@@ -1,0 +1,14 @@
+﻿{
+	"compilerOptions": {
+			"module": "none",
+			"declaration": true,
+			"diagnostics": true,
+			"noImplicitAny": true,
+			"outFile": "js/Uno.UI.js",
+			//"inlineSourceMap": true,
+			"locale": "en-US"
+	},
+	"include": [
+		"ts/**/*"
+	]
+}

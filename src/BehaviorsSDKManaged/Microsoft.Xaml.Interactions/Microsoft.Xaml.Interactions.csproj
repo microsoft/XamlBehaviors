@@ -1,118 +1,38 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
-  <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A338A7F2-9010-477B-8A6E-6C2B2495C33C}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Microsoft.Xaml.Interactions</RootNamespace>
-    <AssemblyName>Microsoft.Xaml.Interactions</AssemblyName>
-    <DefaultLanguage>en-US</DefaultLanguage>
-    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
-    <TargetPlatformVersion>10.0.10586.0</TargetPlatformVersion>
-    <TargetPlatformMinVersion>10.0.10240.0</TargetPlatformMinVersion>
-    <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
-    <FileAlignment>512</FileAlignment>
-    <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <OutputPath>..\..\..\out\$(SolutionName)\bin\$(Platform)\$(Configuration)\</OutputPath>
-    <IntermediateOutputPath>..\..\..\out\$(SolutionName)\obj\$(Platform)\$(Configuration)\</IntermediateOutputPath>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <DocumentationFile>..\..\..\out\BehaviorsSDKManaged\bin\AnyCPU\Debug\Microsoft.Xaml.Interactions.XML</DocumentationFile>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <DocumentationFile>..\..\..\out\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactions.XML</DocumentationFile>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
-    <PlatformTarget>ARM</PlatformTarget>
-    <DebugSymbols>true</DebugSymbols>
-    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
-    <NoWarn>;2008</NoWarn>
-    <DebugType>full</DebugType>
-    <PlatformTarget>ARM</PlatformTarget>
-    <UseVSHostingProcess>false</UseVSHostingProcess>
-    <ErrorReport>prompt</ErrorReport>
-    <Prefer32Bit>true</Prefer32Bit>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
-    <PlatformTarget>ARM</PlatformTarget>
-    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
-    <Optimize>true</Optimize>
-    <NoWarn>;2008</NoWarn>
-    <DebugType>pdbonly</DebugType>
-    <PlatformTarget>ARM</PlatformTarget>
-    <UseVSHostingProcess>false</UseVSHostingProcess>
-    <ErrorReport>prompt</ErrorReport>
-    <Prefer32Bit>true</Prefer32Bit>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
-    <PlatformTarget>x64</PlatformTarget>
-    <DebugSymbols>true</DebugSymbols>
-    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
-    <NoWarn>;2008</NoWarn>
-    <DebugType>full</DebugType>
-    <PlatformTarget>x64</PlatformTarget>
-    <UseVSHostingProcess>false</UseVSHostingProcess>
-    <ErrorReport>prompt</ErrorReport>
-    <Prefer32Bit>true</Prefer32Bit>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
-    <PlatformTarget>x64</PlatformTarget>
-    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
-    <Optimize>true</Optimize>
-    <NoWarn>;2008</NoWarn>
-    <DebugType>pdbonly</DebugType>
-    <PlatformTarget>x64</PlatformTarget>
-    <UseVSHostingProcess>false</UseVSHostingProcess>
-    <ErrorReport>prompt</ErrorReport>
-    <Prefer32Bit>true</Prefer32Bit>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
-    <PlatformTarget>x86</PlatformTarget>
-    <DebugSymbols>true</DebugSymbols>
-    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
-    <NoWarn>;2008</NoWarn>
-    <DebugType>full</DebugType>
-    <PlatformTarget>x86</PlatformTarget>
-    <UseVSHostingProcess>false</UseVSHostingProcess>
-    <ErrorReport>prompt</ErrorReport>
-    <Prefer32Bit>true</Prefer32Bit>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
-    <PlatformTarget>x86</PlatformTarget>
-    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
-    <Optimize>true</Optimize>
-    <NoWarn>;2008</NoWarn>
-    <DebugType>pdbonly</DebugType>
-    <PlatformTarget>x86</PlatformTarget>
-    <UseVSHostingProcess>false</UseVSHostingProcess>
-    <ErrorReport>prompt</ErrorReport>
-    <Prefer32Bit>true</Prefer32Bit>
-  </PropertyGroup>
+﻿<Project Sdk="Microsoft.NET.Sdk" ToolsVersion="15.0">
+	<PropertyGroup>
+		<TargetFrameworks>MonoAndroid80;xamarinios10;uap10.0;netstandard2.0</TargetFrameworks>
+		<TargetFrameworksCI>MonoAndroid60;MonoAndroid70;MonoAndroid71;MonoAndroid80;xamarinios10;net46;uap10.0;netstandard2.0</TargetFrameworksCI>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<AssemblyName>Microsoft.Xaml.Interactions</AssemblyName>
+		<RootNamespace>Microsoft.Xaml.Interactions</RootNamespace>
+		<NoWarn>$(NoWarn);NU1701</NoWarn>
+		
+		<OutputPath>..\..\..\out\$(SolutionName)\bin\$(Platform)\$(Configuration)\</OutputPath>
+
+		<DefineConstants>NETFX_CORE;WINDOWS_UWP</DefineConstants>
+		<PackageId>Microsoft.Xaml.Behaviors.Uwp.Managed</PackageId>
+	</PropertyGroup>
+	
   <PropertyGroup Label="MultilingualAppToolkit">
     <MultilingualAppToolkitVersion>4.0</MultilingualAppToolkitVersion>
     <MultilingualFallbackLanguage>en-US</MultilingualFallbackLanguage>
   </PropertyGroup>
-  <ItemGroup>
-    <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
-    <None Include="project.json" />
-    <None Include="..\..\..\key\35MSSharedLib1024.snk" />
-  </ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="MSBuild.Sdk.Extras" Version="1.5.4" PrivateAssets="All" />
+		<PackageReference Include="Uno.UI" Version="1.31.0-dev.8" PrivateAssets="All" />
+	</ItemGroup>
+
+	<ItemGroup Condition=" '$(TargetFramework)' == 'uap10.0' ">
+		<PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform " Version="5.4.2" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Include="..\Version\Version.cs" />
+	</ItemGroup>
+	
   <ItemGroup>
     <PRIResource Include="Resources\zh-TW\Strings.resw" />
     <PRIResource Include="Resources\zh-CN\Strings.resw" />
@@ -126,36 +46,17 @@
     <PRIResource Include="Resources\pt-BR\Strings.resw" />
     <PRIResource Include="Resources\en-us\Strings.resw" />
     <PRIResource Include="Resources\uk-UA\Strings.resw" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Core\CallMethodAction.cs" />
-    <Compile Include="Core\ChangePropertyAction.cs" />
-    <Compile Include="Core\ComparisonConditionType.cs" />
-    <Compile Include="Core\DataBindingHelper.cs" />
-    <Compile Include="Core\DataTriggerBehavior.cs" />
-    <Compile Include="Core\EventTriggerBehavior.cs" />
-    <Compile Include="Core\GoToStateAction.cs" />
-    <Compile Include="Core\IncrementalUpdateBehavior.cs" />
-    <Compile Include="Core\InvokeCommandAction.cs" />
-    <Compile Include="Core\NavigateToPageAction.cs" />
-    <Compile Include="Core\ResourceHelper.cs" />
-    <Compile Include="Core\TypeConverterHelper.cs" />
-    <Compile Include="GlobalSuppressions.cs" />
-    <Compile Include="Media\ControlStoryboardAction.cs" />
-    <Compile Include="Media\ControlStoryboardOption.cs" />
-    <Compile Include="Media\PlaySoundAction.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="..\Version\Version.cs" />
-    <Compile Include="Utility\IVisualTreeHelper.cs" />
-    <Compile Include="Utility\UwpVisualTreeHelper.cs" />
+		
     <EmbeddedResource Include="Properties\Microsoft.Xaml.Interactions.rd.xml" />
   </ItemGroup>
+	
   <ItemGroup>
     <ProjectReference Include="..\Microsoft.Xaml.Interactivity\Microsoft.Xaml.Interactivity.csproj">
       <Project>{7ffc1385-c3e1-487c-9a81-de48dd63ecb9}</Project>
       <Name>Microsoft.Xaml.Interactivity</Name>
     </ProjectReference>
   </ItemGroup>
+	
   <ItemGroup>
     <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactions.de-DE.xlf" />
     <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactions.es-ES.xlf" />
@@ -169,19 +70,11 @@
     <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactions.zh-TW.xlf" />
     <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactions.uk-UA.xlf" />
   </ItemGroup>
-  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
-    <VisualStudioVersion>14.0</VisualStudioVersion>
-  </PropertyGroup>
-  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
-  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\Microsoft.Multilingual.PriResources.targets" Label="MultilingualAppToolkit" Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\Microsoft.Multilingual.PriResources.targets')" />
+
+	<Import Project="$(MSBuildSDKExtrasTargets)" Condition="Exists('$(MSBuildSDKExtrasTargets)')" />
+	
   <Target Name="MATPrerequisite" BeforeTargets="PrepareForBuild" Condition="!Exists('$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\Microsoft.Multilingual.PriResources.targets')" Label="MultilingualAppToolkit">
     <Warning Text="$(MSBuildProjectFile) is Multilingual build enabled, but the Multilingual App Toolkit is unavailable during the build. If building with Visual Studio, please check to ensure that toolkit is properly installed." />
   </Target>
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
+
 </Project>

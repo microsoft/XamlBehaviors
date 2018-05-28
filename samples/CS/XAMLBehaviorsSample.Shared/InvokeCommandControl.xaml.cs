@@ -59,9 +59,9 @@ namespace XAMLBehaviorsSample
 
             this.DataContext = this;
             darkgreybrush = new SolidColorBrush();
-            darkgreybrush.Color = Color.FromArgb(255, 51, 51, 50);
+            darkgreybrush.Color = ColorHelper.FromArgb(255, 51, 51, 50);
             pinkbrush = new SolidColorBrush();
-            pinkbrush.Color = Color.FromArgb(255, 233, 95, 91);
+            pinkbrush.Color = ColorHelper.FromArgb(255, 233, 95, 91);
         }
 
         private void UpdateCountCommand_CanExecuteChanged(object sender, EventArgs e)
