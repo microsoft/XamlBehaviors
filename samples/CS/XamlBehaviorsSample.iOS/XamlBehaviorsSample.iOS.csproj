@@ -95,7 +95,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <InterfaceDefinition Include="Resources\LaunchScreen.xib" />
     <Content Include="Entitlements.plist" />
-    <BundleResource Include="project.json" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Xaml.Interactions">
@@ -108,6 +107,11 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Xamarin.iOS" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Uno.UI">
+      <Version>1.31.0-dev.8</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="..\XAMLBehaviorsSample.Shared\XAMLBehaviorsSample.Shared.projitems" Label="Shared" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
