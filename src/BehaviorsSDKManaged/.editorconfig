@@ -19,7 +19,7 @@ insert_final_newline = false
 
 # this. and Me. preferences
 dotnet_style_qualification_for_event = true:suggestion
-dotnet_style_qualification_for_field = true:silent
+dotnet_style_qualification_for_field = true:suggestion
 dotnet_style_qualification_for_method = true:silent
 dotnet_style_qualification_for_property = true:silent
 
