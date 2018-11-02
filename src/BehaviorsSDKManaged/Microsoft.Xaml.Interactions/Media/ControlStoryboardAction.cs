@@ -31,7 +31,7 @@ namespace Microsoft.Xaml.Interactions.Media
 			typeof(ControlStoryboardAction),
 			new PropertyMetadata(null, new PropertyChangedCallback(ControlStoryboardAction.OnStoryboardChanged)));
 
-		private bool isPaused;
+		private bool _isPaused;
 
 		/// <summary>
 		/// Gets or sets the action to execute on the <see cref="Windows.UI.Xaml.Media.Animation.Storyboard"/>. This is a dependency property.
@@ -92,17 +92,17 @@ namespace Microsoft.Xaml.Interactions.Media
 
 						if (currentState == ClockState.Stopped)
 						{
-							this.isPaused = false;
+							this._isPaused = false;
 							this.Storyboard.Begin();
 						}
-						else if (this.isPaused)
+						else if (this._isPaused)
 						{
-							this.isPaused = false;
+							this._isPaused = false;
 							this.Storyboard.Resume();
 						}
 						else
 						{
-							this.isPaused = true;
+							this._isPaused = true;
 							this.Storyboard.Pause();
 						}
 					}
@@ -133,7 +133,7 @@ namespace Microsoft.Xaml.Interactions.Media
 			ControlStoryboardAction action = sender as ControlStoryboardAction;
 			if (action != null)
 			{
-				action.isPaused = false;
+				action._isPaused = false;
 			}
 		}
 	}

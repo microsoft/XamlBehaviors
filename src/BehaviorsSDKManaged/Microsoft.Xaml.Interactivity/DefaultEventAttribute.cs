@@ -10,8 +10,8 @@ namespace Microsoft.Xaml.Interactivity
 	[AttributeUsage(AttributeTargets.Class, AllowMultiple = true)]
 	public sealed class DefaultEventAttribute : Attribute
 	{
-		private readonly Type targetType;
-		private readonly string eventName;
+		private readonly Type _targetType;
+		private readonly string _eventName;
 
 		/// <summary>
 		/// Initializes a new instance of the <see cref="DefaultEventAttribute"/> class.
@@ -20,8 +20,8 @@ namespace Microsoft.Xaml.Interactivity
 		/// <param name="eventName">The event name for the EventTriggerBehavior.</param>
 		public DefaultEventAttribute(Type targetType, string eventName)
 		{
-			this.targetType = targetType;
-			this.eventName = eventName;
+			this._targetType = targetType;
+			this._eventName = eventName;
 		}
 
 		/// <summary>
@@ -31,7 +31,7 @@ namespace Microsoft.Xaml.Interactivity
 		{
 			get
 			{
-				return this.targetType;
+				return this._targetType;
 			}
 		}
 
@@ -42,7 +42,7 @@ namespace Microsoft.Xaml.Interactivity
 		{
 			get
 			{
-				return this.eventName;
+				return this._eventName;
 			}
 		}
 	}
