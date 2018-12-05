@@ -15,15 +15,15 @@ namespace Microsoft.Xaml.Interactivity.Design
 {
     internal class MetadataTableProvider : IProvideAttributeTable
     {
-        private AttributeTableBuilder attributeTableBuilder;
+        private AttributeTableBuilder _attributeTableBuilder;
 
         public AttributeTable AttributeTable
         {
             get
             {
-                if (attributeTableBuilder == null)
+                if (_attributeTableBuilder == null)
                 {
-                    attributeTableBuilder = new AttributeTableBuilder();
+                    _attributeTableBuilder = new AttributeTableBuilder();
                 }
 
                 #region IncrementalUpdateBehavior
@@ -241,13 +241,13 @@ namespace Microsoft.Xaml.Interactivity.Design
                     new CategoryAttribute(Resources.Category_Common_Properties));
                 #endregion
 
-                return attributeTableBuilder.CreateTable();
+                return _attributeTableBuilder.CreateTable();
             }
         }
 
         private void AddAttribute<T>(Attribute attribute)
         {
-            attributeTableBuilder.AddCustomAttributes(typeof(T), attribute);
+            _attributeTableBuilder.AddCustomAttributes(typeof(T), attribute);
         }
         
         private void AddAttributes<T>(params Attribute[] attributes)
@@ -260,7 +260,7 @@ namespace Microsoft.Xaml.Interactivity.Design
 
         private void AddAttribute<T>(string propertyName, Attribute attribute)
         {
-            attributeTableBuilder.AddCustomAttributes(typeof(T), propertyName, attribute);
+            _attributeTableBuilder.AddCustomAttributes(typeof(T), propertyName, attribute);
         }
 
         private void AddAttributes<T>(string propertyName, params Attribute[] attributes)

@@ -40,7 +40,7 @@ namespace Microsoft.Xaml.Interactions.Media
 			typeof(PlaySoundAction),
 			new PropertyMetadata(0.5));
 
-		private Popup popup;
+		private Popup _popup;
 
 		/// <summary>
 		/// Gets or sets the location of the sound file. This is used to set the source property of a <see cref="Windows.UI.Xaml.Controls.MediaElement"/>. This is a dependency property.
@@ -103,9 +103,9 @@ namespace Microsoft.Xaml.Interactions.Media
 				}
 			}
 
-			this.popup = new Popup();
+			this._popup = new Popup();
 			MediaElement mediaElement = new MediaElement();
-			popup.Child = mediaElement;
+			_popup.Child = mediaElement;
 
 			// It is legal (although not advisable) to provide a video file. By setting visibility to collapsed, only the sound track should play.
 			mediaElement.Visibility = Visibility.Collapsed;
@@ -115,27 +115,27 @@ namespace Microsoft.Xaml.Interactions.Media
 			mediaElement.MediaEnded += this.MediaElement_MediaEnded;
 			mediaElement.MediaFailed += this.MediaElement_MediaFailed;
 
-			this.popup.IsOpen = true;
+			this._popup.IsOpen = true;
 			return true;
 		}
 
 		private void MediaElement_MediaFailed(object sender, ExceptionRoutedEventArgs e)
 		{
-			if (this.popup != null)
+			if (this._popup != null)
 			{
-				this.popup.IsOpen = false;
-				this.popup.Child = null;
-				this.popup = null;
+				this._popup.IsOpen = false;
+				this._popup.Child = null;
+				this._popup = null;
 			}
 		}
 
 		private void MediaElement_MediaEnded(object sender, RoutedEventArgs e)
 		{
-			if (this.popup != null)
+			if (this._popup != null)
 			{
-				this.popup.IsOpen = false;
-				this.popup.Child = null;
-				this.popup = null;
+				this._popup.IsOpen = false;
+				this._popup.Child = null;
+				this._popup = null;
 			}
 		}
 	}

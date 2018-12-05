@@ -60,16 +60,16 @@ namespace ManagedUnitTests
 
     public class StubAction : DependencyObject, IAction
     {
-        private readonly object returnValue;
+        private readonly object _returnValue;
 
         public StubAction()
         {
-            this.returnValue = null;
+            this._returnValue = null;
         }
 
         public StubAction(object returnValue)
         {
-            this.returnValue = returnValue;
+            this._returnValue = returnValue;
         }
 
         public object Sender
@@ -95,7 +95,7 @@ namespace ManagedUnitTests
             this.ExecuteCount++;
             this.Sender = sender;
             this.Parameter = parameter;
-            return this.returnValue;
+            return this._returnValue;
         }
     }
 
