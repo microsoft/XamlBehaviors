@@ -116,6 +116,9 @@
     <Compile Include="CustomBehaviorControl.xaml.cs">
       <DependentUpon>CustomBehaviorControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SwipeTriggerControl.xaml.cs">
+      <DependentUpon>SwipeTriggerControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DataTriggerControl.xaml.cs">
       <DependentUpon>DataTriggerControl.xaml</DependentUpon>
     </Compile>
@@ -213,6 +216,10 @@
     <Page Include="CustomBehaviorControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SwipeTriggerControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="DataTriggerControl.DeviceFamily-Mobile.xaml">
       <Generator>MSBuild:Compile</Generator>

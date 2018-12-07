@@ -1,0 +1,107 @@
+﻿<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="using:XAMLBehaviorsSample"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:Interactivity="using:Microsoft.Xaml.Interactivity"
+             xmlns:Interactions="using:Microsoft.Xaml.Interactions.Core"
+             x:Class="XAMLBehaviorsSample.SwipeTriggerControl"
+             mc:Ignorable="d"
+             d:DesignHeight="600"
+             d:DesignWidth="800">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="7*" />
+        </Grid.RowDefinitions>
+
+        <Viewbox VerticalAlignment="Top"
+                 HorizontalAlignment="Left"
+                 Margin="0,0,0,10">
+            <TextBlock Text="SwipeTriggerBehavior"
+                       FontSize="40"
+                       VerticalAlignment="Stretch"
+                       Foreground="{StaticResource DarkGreyBrush}" />
+        </Viewbox>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="3*" />
+            </Grid.ColumnDefinitions>
+
+            <ScrollViewer Grid.Column="1"
+                          ScrollViewer.VerticalScrollBarVisibility="Auto">
+                <StackPanel>
+                    <TextBlock TextWrapping="WrapWholeWords"
+                               Margin="10,0,0,0"
+                               FontSize="20"
+                               Foreground="{StaticResource DarkGreyBrush}">
+                        <TextBlock.Text>
+                            SwipeTriggerBehavior performs an action when the user swipes a UIElement in a given direction (default = All).
+                        </TextBlock.Text>
+                    </TextBlock>
+                    <RichTextBlock TextWrapping="WrapWholeWords"
+                                   Margin="10,20,0,0"
+                                   FontSize="15"
+                                   Foreground="{StaticResource RoyalBlueBrush}"
+                                   xml:space="preserve"
+                                   IsTextSelectionEnabled="True">
+                    <Paragraph>&lt;Rectangle x:Name=&quot;rectangleMove&quot; Grid.Row=&quot;0&quot; Fill=&quot;{StaticResource RoyalBlueBrush}&quot; Stroke=&quot;{StaticResource HighlightBrush}&quot; StrokeThickness=&quot;5&quot;&gt;
+    &lt;Interactivity:Interaction.Behaviors&gt;
+        &lt;Interactions:SwipeTriggerBehavior&gt;
+            &lt;Interactions:InvokeCommandAction Command=&quot;{x:Bind SwipeCommand}&quot; /&gt;
+        &lt;/Interactions:SwipeTriggerBehavior&gt;
+        &lt;Interactions:SwipeTriggerBehavior Direction=&quot;Left&quot;&gt;
+            &lt;Interactions:ChangePropertyAction PropertyName=&quot;Fill&quot; Value=&quot;Red&quot; /&gt;
+        &lt;/Interactions:SwipeTriggerBehavior&gt;
+        &lt;Interactions:SwipeTriggerBehavior Direction=&quot;Right&quot;&gt;
+            &lt;Interactions:ChangePropertyAction PropertyName=&quot;Fill&quot; Value=&quot;Yellow&quot; /&gt;
+        &lt;/Interactions:SwipeTriggerBehavior&gt;
+    &lt;/Interactivity:Interaction.Behaviors&gt;
+&lt;/Rectangle&gt;</Paragraph>
+                </RichTextBlock>
+                </StackPanel>
+            </ScrollViewer>
+            <Grid Grid.Column="0"
+                  Margin="0,0,10,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.ChildrenTransitions>
+                    <TransitionCollection>
+                        <RepositionThemeTransition />
+                    </TransitionCollection>
+                </Grid.ChildrenTransitions>
+                <Rectangle x:Name="rectangleMove"
+                           Grid.Row="0"
+                           Fill="{StaticResource RoyalBlueBrush}"
+                           Stroke="{StaticResource HighlightBrush}"
+                           StrokeThickness="5">
+                    <Interactivity:Interaction.Behaviors>
+                        <Interactions:SwipeTriggerBehavior>
+                            <Interactions:InvokeCommandAction Command="{x:Bind SwipeCommand}" />
+                        </Interactions:SwipeTriggerBehavior>
+                        <Interactions:SwipeTriggerBehavior Direction="Left">
+                            <Interactions:ChangePropertyAction PropertyName="Fill"
+                                                               Value="Red" />
+                        </Interactions:SwipeTriggerBehavior>
+                        <Interactions:SwipeTriggerBehavior Direction="Right">
+                            <Interactions:ChangePropertyAction PropertyName="Fill"
+                                                               Value="Yellow" />
+                        </Interactions:SwipeTriggerBehavior>
+                    </Interactivity:Interaction.Behaviors>
+                </Rectangle>
+            </Grid>
+
+        </Grid>
+    </Grid>
+</UserControl>

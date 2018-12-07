@@ -22,6 +22,7 @@ namespace XAMLBehaviorsSample
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        SwipeTriggerControl _swipetrigger;
         DataTriggerControl _datatrigger;
         EventTriggerControl _eventtrigger;
         IncrementalUpdateControl _incrementaltrigger;
@@ -41,6 +42,7 @@ namespace XAMLBehaviorsSample
         {
             this.InitializeComponent();
 
+            _swipetrigger = new SwipeTriggerControl();
             _datatrigger = new DataTriggerControl();
             _eventtrigger = new EventTriggerControl();
             _incrementaltrigger = new IncrementalUpdateControl();
@@ -73,6 +75,11 @@ namespace XAMLBehaviorsSample
                 ActionsContent.Children.Clear();
                 ActionsContent.Children.Add(_navigatetopageaction);
             }
+        }
+
+        private void SwipeTriggerButton_Click(object sender, RoutedEventArgs e) {
+            BehaviorsContent.Children.Clear();
+            BehaviorsContent.Children.Add(_swipetrigger);
         }
 
         private void DataTriggerButton_Click(object sender, RoutedEventArgs e)
@@ -147,5 +154,7 @@ namespace XAMLBehaviorsSample
             CustomContent.Children.Clear();
             CustomContent.Children.Add(_customactionaction);
         }
+
+        
     }
 }

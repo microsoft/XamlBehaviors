@@ -31,13 +31,22 @@
                 </Grid.ColumnDefinitions>
                 <Grid Grid.Column="0">
                     <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
-                    <Button x:Name="DataTriggerButton" Content="Data Trigger" Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource BehaviorButton}" Background="{StaticResource RoyalBlueBrush}" Click="DataTriggerButton_Click"/>
-                    <Button x:Name="EventTriggerButton" Content="Event Trigger" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource BehaviorButton}" Background="{StaticResource RoyalBlueBrush}" Click="EventTriggerButton_Click"/>
-                    <Button x:Name="IncrementalUpdateButton" Content="Incremental Update" Grid.Row="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource BehaviorButton}" Background="{StaticResource RoyalBlueBrush}" Click="IncrementalUpdateButton_Click"/>
+                    <Button x:Name="SwipeTriggerButton"
+                            Content="Swipe Trigger"
+                            Grid.Row="0"
+                            HorizontalAlignment="Stretch"
+                            VerticalAlignment="Stretch"
+                            Style="{StaticResource BehaviorButton}"
+                            Background="{StaticResource RoyalBlueBrush}"
+                            Click="SwipeTriggerButton_Click" />
+                    <Button x:Name="DataTriggerButton" Content="Data Trigger" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource BehaviorButton}" Background="{StaticResource RoyalBlueBrush}" Click="DataTriggerButton_Click"/>
+                    <Button x:Name="EventTriggerButton" Content="Event Trigger" Grid.Row="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource BehaviorButton}" Background="{StaticResource RoyalBlueBrush}" Click="EventTriggerButton_Click"/>
+                    <Button x:Name="IncrementalUpdateButton" Content="Incremental Update" Grid.Row="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource BehaviorButton}" Background="{StaticResource RoyalBlueBrush}" Click="IncrementalUpdateButton_Click"/>
                 </Grid>
                 <Grid x:Name="BehaviorsContent" Grid.Column="1" Margin="20,0,0,10">
                     <Viewbox VerticalAlignment="Top" HorizontalAlignment="Left">
