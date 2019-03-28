@@ -58,8 +58,11 @@
     <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactivity.uk-UA.xlf" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="Microsoft.Xaml.Interactivity.Version.rc">
+    <ResourceCompile Include="..\Version\Microsoft.Xaml.Interactivity.Version.rc">
       <Filter>Resource Files</Filter>
     </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
 </Project>
