@@ -119,6 +119,7 @@
     <NuspecFile>..\..\..\scripts\Microsoft.Xaml.Behaviors.Uwp.Managed.nuspec</NuspecFile>
     <PackageOutputPath>..\..\..\scripts</PackageOutputPath>
   </PropertyGroup>
+  <Import Project="..\Version\NuGetPackageVersion.props" />
   <Import Project="..\..\..\scripts\Microsoft.Xaml.Behaviors.Signing.targets" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\NuGet.Build.Tasks.Pack.4.9.4\build\NuGet.Build.Tasks.Pack.targets" Condition="Exists('..\packages\NuGet.Build.Tasks.Pack.4.9.4\build\NuGet.Build.Tasks.Pack.targets')" />
