@@ -73,4 +73,4 @@ Building Behaviors from Source
  - Open the "BehaviorsSDKNative.sln" solution in Visual Studio
  - [Batch Build](https://msdn.microsoft.com/en-us/library/169az28z(v=vs.90).aspx) for x86, x64, and ARM in Release
  - Run **msbuild /t:Pack src/BehaviorsSDKNative/Microsoft.Xaml.Interactions.Design/Microsoft.Xaml.Interactions.Design.csproj** 
-  - *(Optional)* Add /p:TimestampPackage=true to include the timestamp in the NuGet package version
+   - *(Optional)* Add /p:TimestampPackage=true to include the timestamp in the NuGet package version
