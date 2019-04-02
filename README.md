@@ -52,7 +52,7 @@ Building Behaviors from Source
 ------------------------------
 **What You Need**
 
- - [Visual Studio 2015 Update 1 w/ Universal Windows Tools](https://www.visualstudio.com/features/windows-apps-games-vs)
+ - [Visual Studio 2017 w/ Universal Windows Tools](https://visualstudio.microsoft.com/vs/features/universal-windows-platform/)
  - [Multilingual App Toolkit](https://developer.microsoft.com/en-us/windows/develop/multilingual-app-toolkit)
 
 **Clone the Repository**
@@ -65,14 +65,12 @@ Building Behaviors from Source
  - Open the "BehaviorsSDKManaged.sln" solution in Visual Studio
  - Change Build Configuration to Release
  - Build [Ctrl + B]
- - Install the latest NuGet command-line tool by running **scripts/download-nuget.cmd**
- - Run **scripts/CreateManagedNuGet.cmd** 
-   - *(Optional)* Provide a version number to the command line to override the default version 	
+ - Run **msbuild /t:Pack src/BehaviorsSDKManaged/Microsoft.Xaml.Interactions.Design/Microsoft.Xaml.Interactions.Design.csproj** 
+   - *(Optional)* Add /p:TimestampPackage=true to include the timestamp in the NuGet package version
  
 **Build and Create Native XAML Behaviors NuGet**
  
  - Open the "BehaviorsSDKNative.sln" solution in Visual Studio
  - [Batch Build](https://msdn.microsoft.com/en-us/library/169az28z(v=vs.90).aspx) for x86, x64, and ARM in Release
- - Install the latest NuGet command-line tool by running **scripts/download-nuget.cmd**
- - Run **scripts/CreateNativeNuGet.cmd** 
-  - *(Optional)* Provide a version number to the command line to override the default version
+ - Run **msbuild /t:Pack src/BehaviorsSDKNative/Microsoft.Xaml.Interactions.Design/Microsoft.Xaml.Interactions.Design.csproj** 
+   - *(Optional)* Add /p:TimestampPackage=true to include the timestamp in the NuGet package version
