@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk" ToolsVersion="15.0">
+﻿<Project Sdk="MSBuild.Sdk.Extras" ToolsVersion="15.0">
 	<PropertyGroup>
 		<TargetFrameworks>MonoAndroid80;xamarinios10;uap10.0;netstandard2.0</TargetFrameworks>
 		<TargetFrameworksCI>MonoAndroid71;MonoAndroid80;xamarinios10;net46;uap10.0;netstandard2.0</TargetFrameworksCI>
@@ -33,12 +33,7 @@
     <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactivity.uk-UA.xlf" />
 	</ItemGroup>
 	<ItemGroup>
-		<PackageReference Include="MSBuild.Sdk.Extras" Version="1.5.4" PrivateAssets="All" />
 		<PackageReference Include="Uno.UI" Version="1.31.0-dev.8" />
-	</ItemGroup>
-	
-	<ItemGroup Condition=" '$(TargetFramework)' == 'uap10.0' ">
-		<PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform " Version="5.4.2" />
 	</ItemGroup>
 
 	<ItemGroup>
