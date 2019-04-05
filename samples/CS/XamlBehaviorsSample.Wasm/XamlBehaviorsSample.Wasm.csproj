@@ -48,6 +48,7 @@
 			<Version>1.1.1</Version>
 		</PackageReference>
     <DotNetCliToolReference Include="Uno.Wasm.Bootstrap.Cli" Version="1.0.0-dev.258" />
+    <PackageReference Include="Uno.UI.Sample.Banner" Version="1.44.0-dev.14" />
   </ItemGroup>
 	
 	<ItemGroup>
