@@ -161,10 +161,10 @@ namespace Microsoft.Xaml.Interactions.Core
                     WindowsRuntimeMarshal.AddEventHandler(this._addEventHandlerMethod, this._removeEventHandlerMethod, this._eventHandler);
                 }
                 else
+#endif
                 {
                     info.AddEventHandler(this._resolvedSource, this._eventHandler);
                 }
-#endif
             }
             else if (!this._isLoadedEventRegistered)
             {
