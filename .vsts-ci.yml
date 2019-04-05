@@ -52,6 +52,13 @@ phases:
     condition: always()
     inputs:
       PathtoPublish: '$(build.artifactstagingdirectory)'
-      ArtifactName: drop
+      ArtifactName: xamlbehavior-drop
       publishLocation: Container
   
+  
+  - task: PublishBuildArtifacts@1
+    displayName: Publish Wasm site files
+    inputs:
+      pathToPublish: .\samples\CS\XamlBehaviorsSample.Wasm\bin\Release\netstandard2.0\dist
+      artifactType: container
+      artifactName: xamlbehavior-wasm

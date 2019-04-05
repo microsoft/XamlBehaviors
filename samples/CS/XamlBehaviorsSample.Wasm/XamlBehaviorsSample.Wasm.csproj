@@ -11,6 +11,10 @@
 	</PropertyGroup>
 
 	<Import Project="..\XAMLBehaviorsSample.Shared\XAMLBehaviorsSample.Shared.projitems" Label="Shared" />
+	
+	<ItemGroup>
+		<LinkerDescriptor Include="LinkerConfig.xml" />
+	</ItemGroup>
 
 	<ItemGroup>
 		<Reference Include="Microsoft.Xaml.Interactions">
@@ -20,6 +24,19 @@
 			<HintPath>..\..\..\out\BehaviorsSDKManaged\bin\AnyCPU\$(Configuration)\netstandard2.0\Microsoft.Xaml.Interactivity.dll</HintPath>
 		</Reference>
 	</ItemGroup>
+	
+	<ItemGroup>
+		<EmbeddedResource Include="WasmCSS\**\*.css" />
+		<EmbeddedResource Include="WasmScripts\**\*.js" />
+
+		<UpToDateCheckInput Include="ts\**\*" />
+		<UpToDateCheckInput Include="WasmCSS\**\*" />
+		<UpToDateCheckInput Include="WasmScripts\**\*" />
+	</ItemGroup>
+	
+	<ItemGroup>
+		<Content Include="tsconfig.json" />
+	</ItemGroup>
 
 	<ItemGroup>
 		<None Include="**\*.xaml" Exclude="bin\**\*.xaml;obj\**\*.xaml" />
@@ -27,8 +44,10 @@
 	</ItemGroup>
 	
 	<ItemGroup>
-		<PackageReference Include="Uno.Wasm.Bootstrap" Version="1.0.0-dev.17" />
-		<PackageReference Include="Uno.UI" Version="1.31.0-dev.8" PrivateAssets="All" />
+		<PackageReference Include="Microsoft.TypeScript.Compiler" Version="2.8.3" />
+		<PackageReference Include="Microsoft.TypeScript.MSBuild" Version="2.8.3" />
+		<PackageReference Include="Uno.Wasm.Bootstrap" Version="1.0.0-dev.40" />
+		<PackageReference Include="Uno.UI" Version="1.31.0-dev.193" PrivateAssets="All" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Console" Version="1.1.1" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Filter" Version="1.1.1" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug">

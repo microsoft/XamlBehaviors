@@ -1,0 +1,5 @@
+﻿<linker>
+	<assembly fullname="XamlBehaviorsSample.Wasm" />
+	<assembly fullname="Microsoft.Xaml.Interactivity" />
+	<assembly fullname="Microsoft.Xaml.Interactions" />
+</linker>
