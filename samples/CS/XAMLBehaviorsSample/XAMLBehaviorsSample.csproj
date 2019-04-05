@@ -114,14 +114,14 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.Xaml.Interactions, Version=1.0.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\out\BehaviorsSDKManaged\bin\AnyCPU\$(Configuration)\Microsoft.Xaml.Interactions.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Xaml.Interactivity, Version=1.0.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\out\BehaviorsSDKManaged\bin\AnyCPU\$(Configuration)\Microsoft.Xaml.Interactivity.dll</HintPath>
-    </Reference>
+    <ProjectReference Include="..\..\..\src\BehaviorsSDKManaged\Microsoft.Xaml.Interactions\Microsoft.Xaml.Interactions.csproj">
+      <Project>{a338a7f2-9010-477b-8a6e-6c2b2495c33c}</Project>
+      <Name>Microsoft.Xaml.Interactions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\BehaviorsSDKManaged\Microsoft.Xaml.Interactivity\Microsoft.Xaml.Interactivity.csproj">
+      <Project>{7ffc1385-c3e1-487c-9a81-de48dd63ecb9}</Project>
+      <Name>Microsoft.Xaml.Interactivity</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="..\XAMLBehaviorsSample.Shared\XAMLBehaviorsSample.Shared.projitems" Label="Shared" />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">

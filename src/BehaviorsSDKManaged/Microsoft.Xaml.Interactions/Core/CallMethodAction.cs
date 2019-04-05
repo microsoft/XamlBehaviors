@@ -35,9 +35,9 @@ namespace Microsoft.Xaml.Interactions.Core
             typeof(CallMethodAction),
             new PropertyMetadata(null, new PropertyChangedCallback(CallMethodAction.OnTargetObjectChanged)));
 
-        private Type targetObjectType;
-        private List<MethodDescriptor> methodDescriptors = new List<MethodDescriptor>();
-        private MethodDescriptor cachedMethodDescriptor;
+        private Type _targetObjectType;
+        private List<MethodDescriptor> _methodDescriptors = new List<MethodDescriptor>();
+        private MethodDescriptor _cachedMethodDescriptor;
 
         /// <summary>
         /// Gets or sets the name of the method to invoke. This is a dependency property.
@@ -105,7 +105,7 @@ namespace Microsoft.Xaml.Interactions.Core
                         CultureInfo.CurrentCulture,
                         ResourceHelper.CallMethodActionValidMethodNotFoundExceptionMessage,
                         this.MethodName,
-                        this.targetObjectType));
+                        this._targetObjectType));
                 }
 
                 return false;
@@ -132,13 +132,13 @@ namespace Microsoft.Xaml.Interactions.Core
 
             if (parameterTypeInfo == null)
             {
-                return this.cachedMethodDescriptor;
+                return this._cachedMethodDescriptor;
             }
 
             MethodDescriptor mostDerivedMethod = null;
 
             // Loop over the methods looking for the one whose type is closest to the type of the given parameter.
-            foreach (MethodDescriptor currentMethod in this.methodDescriptors)
+            foreach (MethodDescriptor currentMethod in this._methodDescriptors)
             {
                 TypeInfo currentTypeInfo = currentMethod.SecondParameterTypeInfo;
 
@@ -151,34 +151,34 @@ namespace Microsoft.Xaml.Interactions.Core
                 }
             }
 
-            return mostDerivedMethod ?? this.cachedMethodDescriptor;
+            return mostDerivedMethod ?? this._cachedMethodDescriptor;
         }
 
         private void UpdateTargetType(Type newTargetType)
         {
-            if (newTargetType == this.targetObjectType)
+            if (newTargetType == this._targetObjectType)
             {
                 return;
             }
 
-            this.targetObjectType = newTargetType;
+            this._targetObjectType = newTargetType;
 
             this.UpdateMethodDescriptors();
         }
 
         private void UpdateMethodDescriptors()
         {
-            this.methodDescriptors.Clear();
-            this.cachedMethodDescriptor = null;
+            this._methodDescriptors.Clear();
+            this._cachedMethodDescriptor = null;
 
-            if (string.IsNullOrEmpty(this.MethodName) || this.targetObjectType == null)
+            if (string.IsNullOrEmpty(this.MethodName) || this._targetObjectType == null)
             {
                 return;
             }
 
             // Find all public methods that match the given name  and have either no parameters,
             // or two parameters where the first is of type Object.
-            foreach (MethodInfo method in this.targetObjectType.GetRuntimeMethods())
+            foreach (MethodInfo method in this._targetObjectType.GetRuntimeMethods())
             {
                 if (string.Equals(method.Name, this.MethodName, StringComparison.Ordinal)
                     && method.ReturnType == typeof(void)
@@ -188,11 +188,11 @@ namespace Microsoft.Xaml.Interactions.Core
                     if (parameters.Length == 0)
                     {
                         // There can be only one parameterless method of the given name.
-                        this.cachedMethodDescriptor = new MethodDescriptor(method, parameters);
+                        this._cachedMethodDescriptor = new MethodDescriptor(method, parameters);
                     }
                     else if (parameters.Length == 2 && parameters[0].ParameterType == typeof(object))
                     {
-                        this.methodDescriptors.Add(new MethodDescriptor(method, parameters));
+                        this._methodDescriptors.Add(new MethodDescriptor(method, parameters));
                     }
                 }
             }
@@ -200,21 +200,21 @@ namespace Microsoft.Xaml.Interactions.Core
             // We didn't find a parameterless method, so we want to find a method that accepts null
             // as a second parameter, but if we have more than one of these it is ambigious which
             // we should call, so we do nothing.
-            if (this.cachedMethodDescriptor == null)
+            if (this._cachedMethodDescriptor == null)
             {
-                foreach (MethodDescriptor method in this.methodDescriptors)
+                foreach (MethodDescriptor method in this._methodDescriptors)
                 {
                     TypeInfo typeInfo = method.SecondParameterTypeInfo;
                     if (!typeInfo.IsValueType || (typeInfo.IsGenericType && typeInfo.GetGenericTypeDefinition() == typeof(Nullable<>)))
                     {
-                        if (this.cachedMethodDescriptor != null)
+                        if (this._cachedMethodDescriptor != null)
                         {
-                            this.cachedMethodDescriptor = null;
+                            this._cachedMethodDescriptor = null;
                             return;
                         }
                         else
                         {
-                            this.cachedMethodDescriptor = method;
+                            this._cachedMethodDescriptor = method;
                         }
                     }
                 }

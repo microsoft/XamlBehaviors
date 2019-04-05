@@ -35,7 +35,7 @@ namespace Microsoft.Xaml.Interactions.Core
             typeof(IncrementalUpdateBehavior),
             new PropertyMetadata(null, new PropertyChangedCallback(IncrementalUpdateBehavior.OnIncrementalUpdaterChanged)));
 
-        private IncrementalUpdater updater = null;
+        private IncrementalUpdater _updater = null;
 
         /// <summary>
         /// Gets or sets the relative priority of this incremental update. Lower Phase values are addressed first.
@@ -95,19 +95,19 @@ namespace Microsoft.Xaml.Interactions.Core
 
         private void OnAssociatedObjectUnloaded(object sender, RoutedEventArgs e)
         {
-            if (this.updater != null)
+            if (this._updater != null)
             {
-                this.updater.UncachePhaseElement(this.AssociatedObject, this.Phase);
+                this._updater.UncachePhaseElement(this.AssociatedObject, this.Phase);
             }
 
-            this.updater = null;
+            this._updater = null;
         }
 
         private IncrementalUpdater FindUpdater()
         {
-            if (this.updater != null)
+            if (this._updater != null)
             {
-                return this.updater;
+                return this._updater;
             }
 
             DependencyObject ancestor = this.AssociatedObject;
@@ -158,79 +158,79 @@ namespace Microsoft.Xaml.Interactions.Core
 
         private class IncrementalUpdater
         {
-            private ListViewBase associatedListViewBase = null;
-            private Dictionary<UIElement, ElementCacheRecord> elementCache = new Dictionary<UIElement, ElementCacheRecord>();
+            private ListViewBase _associatedListViewBase = null;
+            private Dictionary<UIElement, ElementCacheRecord> _elementCache = new Dictionary<UIElement, ElementCacheRecord>();
 
             private class PhasedElementRecord
             {
-                private readonly FrameworkElement frameworkElement;
-                private object localOpacity;
-                private object localDataContext;
-                private bool isFrozen;
+                private readonly FrameworkElement _frameworkElement;
+                private object _localOpacity;
+                private object _localDataContext;
+                private bool _isFrozen;
 
                 public PhasedElementRecord(FrameworkElement frameworkElement)
                 {
-                    this.frameworkElement = frameworkElement;
+                    this._frameworkElement = frameworkElement;
                 }
 
-                public FrameworkElement FrameworkElement { get { return this.frameworkElement; } }
+                public FrameworkElement FrameworkElement { get { return this._frameworkElement; } }
 
                 public void FreezeAndHide()
                 {
-                    if (this.isFrozen)
+                    if (this._isFrozen)
                     {
                         return;
                     }
 
-                    this.isFrozen = true;
-                    this.localOpacity = this.frameworkElement.ReadLocalValue(FrameworkElement.OpacityProperty);
-                    this.localDataContext = this.frameworkElement.ReadLocalValue(FrameworkElement.DataContextProperty);
-                    this.frameworkElement.Opacity = 0.0;
-                    this.frameworkElement.DataContext = this.frameworkElement.DataContext;
+                    this._isFrozen = true;
+                    this._localOpacity = this._frameworkElement.ReadLocalValue(FrameworkElement.OpacityProperty);
+                    this._localDataContext = this._frameworkElement.ReadLocalValue(FrameworkElement.DataContextProperty);
+                    this._frameworkElement.Opacity = 0.0;
+                    this._frameworkElement.DataContext = this._frameworkElement.DataContext;
                 }
 
                 public void ThawAndShow()
                 {
-                    if (!this.isFrozen)
+                    if (!this._isFrozen)
                     {
                         return;
                     }
 
-                    if (this.localOpacity != DependencyProperty.UnsetValue)
+                    if (this._localOpacity != DependencyProperty.UnsetValue)
                     {
-                        this.frameworkElement.SetValue(FrameworkElement.OpacityProperty, this.localOpacity);
+                        this._frameworkElement.SetValue(FrameworkElement.OpacityProperty, this._localOpacity);
                     }
                     else
                     {
-                        this.frameworkElement.ClearValue(FrameworkElement.OpacityProperty);
+                        this._frameworkElement.ClearValue(FrameworkElement.OpacityProperty);
                     }
 
-                    if (this.localDataContext != DependencyProperty.UnsetValue)
+                    if (this._localDataContext != DependencyProperty.UnsetValue)
                     {
-                        this.frameworkElement.SetValue(FrameworkElement.DataContextProperty, this.localDataContext);
+                        this._frameworkElement.SetValue(FrameworkElement.DataContextProperty, this._localDataContext);
                     }
                     else
                     {
-                        this.frameworkElement.ClearValue(FrameworkElement.DataContextProperty);
+                        this._frameworkElement.ClearValue(FrameworkElement.DataContextProperty);
                     }
 
-                    this.isFrozen = false;
+                    this._isFrozen = false;
                 }
             }
 
             private class ElementCacheRecord
             {
-                private List<int> phases = new List<int>();
-                private List<List<PhasedElementRecord>> elementsByPhase = new List<List<PhasedElementRecord>>();
+                private List<int> _phases = new List<int>();
+                private List<List<PhasedElementRecord>> _elementsByPhase = new List<List<PhasedElementRecord>>();
 
                 public List<int> Phases
                 {
-                    get { return this.phases; }
+                    get { return this._phases; }
                 }
 
                 public List<List<PhasedElementRecord>> ElementsByPhase
                 {
-                    get { return this.elementsByPhase; }
+                    get { return this._elementsByPhase; }
                 }
             }
 
@@ -242,8 +242,8 @@ namespace Microsoft.Xaml.Interactions.Core
 				UIElement contentTemplateRoot = e.ItemContainer.ContentTemplateRoot;
 #endif
 
-				ElementCacheRecord elementCacheRecord;
-                if (this.elementCache.TryGetValue(contentTemplateRoot, out elementCacheRecord))
+                ElementCacheRecord elementCacheRecord;
+                if (this._elementCache.TryGetValue(contentTemplateRoot, out elementCacheRecord))
                 {
                     if (!e.InRecycleQueue)
                     {
@@ -286,8 +286,9 @@ namespace Microsoft.Xaml.Interactions.Core
 #else
                 UIElement contentTemplateRoot = e.ItemContainer.ContentTemplateRoot;
 #endif
-				ElementCacheRecord elementCacheRecord;
-                if (this.elementCache.TryGetValue(contentTemplateRoot, out elementCacheRecord))
+
+                ElementCacheRecord elementCacheRecord;
+                if (this._elementCache.TryGetValue(contentTemplateRoot, out elementCacheRecord))
                 {
                     int phaseIndex = elementCacheRecord.Phases.BinarySearch((int)e.Phase);
 
@@ -353,10 +354,10 @@ namespace Microsoft.Xaml.Interactions.Core
                 {
                     // get the cache for this element
                     ElementCacheRecord elementCacheRecord;
-                    if (!this.elementCache.TryGetValue(contentTemplateRoot, out elementCacheRecord))
+                    if (!this._elementCache.TryGetValue(contentTemplateRoot, out elementCacheRecord))
                     {
                         elementCacheRecord = new ElementCacheRecord();
-                        this.elementCache.Add(contentTemplateRoot, elementCacheRecord);
+                        this._elementCache.Add(contentTemplateRoot, elementCacheRecord);
                     }
 
                     // get the cache for this phase
@@ -398,7 +399,7 @@ namespace Microsoft.Xaml.Interactions.Core
                 {
                     // get the cache for this element
                     ElementCacheRecord elementCacheRecord;
-                    if (this.elementCache.TryGetValue(contentTemplateRoot, out elementCacheRecord))
+                    if (this._elementCache.TryGetValue(contentTemplateRoot, out elementCacheRecord))
                     {
                         // get the cache for this phase
                         int phaseIndex = elementCacheRecord.Phases.BinarySearch(phase);
@@ -430,21 +431,21 @@ namespace Microsoft.Xaml.Interactions.Core
 
             public void Attach(DependencyObject dependencyObject)
             {
-                this.associatedListViewBase = dependencyObject as ListViewBase;
+                this._associatedListViewBase = dependencyObject as ListViewBase;
 
-                if (this.associatedListViewBase != null)
+                if (this._associatedListViewBase != null)
                 {
-                    this.associatedListViewBase.ContainerContentChanging += this.OnContainerContentChanging;
+                    this._associatedListViewBase.ContainerContentChanging += this.OnContainerContentChanging;
                 }
             }
 
             public void Detach()
             {
-                if (this.associatedListViewBase != null)
+                if (this._associatedListViewBase != null)
                 {
-                    this.associatedListViewBase.ContainerContentChanging -= this.OnContainerContentChanging;
+                    this._associatedListViewBase.ContainerContentChanging -= this.OnContainerContentChanging;
                 }
-                this.associatedListViewBase = null;
+                this._associatedListViewBase = null;
             }
         }
     }

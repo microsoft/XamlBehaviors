@@ -1,62 +1,39 @@
 ﻿<?xml version="1.0"?>
 <package >
-	<metadata>
-		<id>Microsoft.Xaml.Behaviors.Uwp.Managed</id>
-		<version>0.0.0</version>
-		<!--Overridden using -Version switch in nuget pack command-->
-		<title>Microsoft.Xaml.Behaviors.Uwp.Managed</title>
-		<authors>Microsoft</authors>
-		<owners>xamlexperiencesteam,Microsoft</owners>
-		<requireLicenseAcceptance>true</requireLicenseAcceptance>
-		<description>Easily add interactivity to your apps using XAML Behaviors. Now with UWP support! Behaviors encapsulate reusable functionalities for elements that can be easily added to your XAML without the need for more imperative code. This is the managed version for C# UWP projects.</description>
-		<licenseUrl>http://go.microsoft.com/fwlink/?LinkID=708401</licenseUrl>
-		<projectUrl>http://go.microsoft.com/fwlink/?LinkID=651678</projectUrl>
-		<iconUrl>http://go.microsoft.com/fwlink/?LinkID=708511</iconUrl>
-		<copyright>Copyright © Microsoft Corporation</copyright>
-		<tags>Behavior Action Behaviors Actions Blend Managed C# Interaction Interactivity Interactions</tags>
-		
-		<dependencies>
-			<!-- Android --> 
-			<group targetFramework="MonoAndroid">
-			<dependency id="Uno.UI" version="1.7.0-dev.o.1" />
-			</group>
+    <metadata>
+        <id>Microsoft.Xaml.Behaviors.Uwp.Managed</id>
+        <version>$version$</version><!--Overridden using -Version switch in nuget pack command-->
+        <title>Microsoft.Xaml.Behaviors.Uwp.Managed</title>
+        <authors>Microsoft</authors>
+        <owners>xamlexperiencesteam,Microsoft</owners>
+        <requireLicenseAcceptance>true</requireLicenseAcceptance>
+        <description>Easily add interactivity to your apps using XAML Behaviors. Now with UWP support! Behaviors encapsulate reusable functionalities for elements that can be easily added to your XAML without the need for more imperative code. This is the managed version for C# UWP projects.</description>
+        <licenseUrl>http://go.microsoft.com/fwlink/?LinkID=708401</licenseUrl>
+        <projectUrl>http://go.microsoft.com/fwlink/?LinkID=651678</projectUrl>
+        <iconUrl>http://go.microsoft.com/fwlink/?LinkID=708511</iconUrl>
+        <copyright>&#169; Microsoft Corporation. All rights reserved.</copyright>
+        <tags>Behavior Action Behaviors Actions Blend Managed C# Interaction Interactivity Interactions</tags>
+    </metadata>
 
-			<!-- iOS -->
-			<group targetFramework="Xamarin.iOS10">
-			<dependency id="Uno.UI" version="1.7.0-dev.o.1" />
-			</group>
-		</dependencies>
-	</metadata>
+    <files>
+        <file target="lib\uap10.0\Microsoft.Xaml.Interactivity.dll"                 src="..\out\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactivity.dll" />
+        <file target="lib\uap10.0\Microsoft.Xaml.Interactivity.pdb"                 src="..\out\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactivity.pdb" />
+        <file target="lib\uap10.0\Microsoft.Xaml.Interactivity.xml"                 src="..\out\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactivity.xml" />
+        <file target="lib\uap10.0\Microsoft.Xaml.Interactivity.pri"                 src="..\out\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactivity.pri" />
+        <file target="lib\uap10.0\Microsoft.Xaml.Interactions.dll"                  src="..\out\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactions.dll" />
+        <file target="lib\uap10.0\Microsoft.Xaml.Interactions.pdb"                  src="..\out\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactions.pdb" />
+        <file target="lib\uap10.0\Microsoft.Xaml.Interactions.xml"                  src="..\out\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactions.xml" />
+        <file target="lib\uap10.0\Microsoft.Xaml.Interactions.pri"                  src="..\out\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactions.pri" />
 
-	<files>
-		<file target="lib\uap10.0\Microsoft.Xaml.Interactivity.dll"									src="..\out\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactivity.dll" />
-		<file target="lib\uap10.0\Microsoft.Xaml.Interactivity.pdb"									src="..\out\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactivity.pdb" />
-		<file target="lib\uap10.0\Microsoft.Xaml.Interactivity.xml"									src="..\out\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactivity.xml" />
-		<file target="lib\uap10.0\Microsoft.Xaml.Interactivity.pri"									src="..\out\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactivity.pri" />
-		<file target="lib\uap10.0\Microsoft.Xaml.Interactions.dll"									src="..\out\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactions.dll" />
-		<file target="lib\uap10.0\Microsoft.Xaml.Interactions.pdb"									src="..\out\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactions.pdb" />
-		<file target="lib\uap10.0\Microsoft.Xaml.Interactions.xml"									src="..\out\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactions.xml" />
-		<file target="lib\uap10.0\Microsoft.Xaml.Interactions.pri"									src="..\out\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactions.pri" />
+        <file target="lib\uap10.0\Design\Microsoft.Xaml.Interactivity.Design.dll"   src="..\out\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactivity.Design.dll" />
+        <file target="lib\uap10.0\Design\Microsoft.Xaml.Interactivity.Design.pdb"   src="..\out\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactivity.Design.pdb" />
+        <file target="lib\uap10.0\Design\Microsoft.Xaml.Interactions.Design.dll"    src="..\out\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactions.Design.dll" />
+        <file target="lib\uap10.0\Design\Microsoft.Xaml.Interactions.Design.pdb"    src="..\out\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactions.Design.pdb" />
 
-		<file target="lib\Xamarin.iOS10"																						src="..\out\BehaviorsSDKManaged.Interactivity.iOS\bin\AnyCPU\Release\Microsoft.Xaml.Interactivity.dll" />
-		<file target="lib\Xamarin.iOS10"																						src="..\out\BehaviorsSDKManaged.Interactivity.iOS\bin\AnyCPU\Release\Microsoft.Xaml.Interactivity.pdb" />
-		<file target="lib\Xamarin.iOS10"																						src="..\out\BehaviorsSDKManaged.Interactions.iOS\bin\AnyCPU\Release\Microsoft.Xaml.Interactions.dll" />
-		<file target="lib\Xamarin.iOS10"																						src="..\out\BehaviorsSDKManaged.Interactions.iOS\bin\AnyCPU\Release\Microsoft.Xaml.Interactions.pdb" />
-
-		<file target="lib\MonoAndroid"																							src="..\out\BehaviorsSDKManaged.Android\bin\AnyCPU\Release\Microsoft.Xaml.Interactivity.dll" />
-		<file target="lib\MonoAndroid"																							src="..\out\BehaviorsSDKManaged.Android\bin\AnyCPU\Release\Microsoft.Xaml.Interactivity.pdb" />
-		<file target="lib\MonoAndroid"																							src="..\out\BehaviorsSDKManaged.Android\bin\AnyCPU\Release\Microsoft.Xaml.Interactions.dll" />
-		<file target="lib\MonoAndroid"																							src="..\out\BehaviorsSDKManaged.Android\bin\AnyCPU\Release\Microsoft.Xaml.Interactions.pdb" />
-
-		<file target="lib\uap10.0\Design\Microsoft.Xaml.Interactivity.Design.dll"		src="..\out\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactivity.Design.dll" />
-		<file target="lib\uap10.0\Design\Microsoft.Xaml.Interactivity.Design.pdb"		src="..\out\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactivity.Design.pdb" />
-		<file target="lib\uap10.0\Design\Microsoft.Xaml.Interactions.Design.dll"		src="..\out\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactions.Design.dll" />
-		<file target="lib\uap10.0\Design\Microsoft.Xaml.Interactions.Design.pdb"		src="..\out\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactions.Design.pdb" />
-
-		<file target="src\BehaviorsSDKManaged\Microsoft.Xaml.Interactions"					src="..\src\BehaviorsSDKManaged\Microsoft.Xaml.Interactions\**\*.cs" />
-		<file target="src\BehaviorsSDKManaged\Microsoft.Xaml.Interactions.Design"		src="..\src\BehaviorsSDKManaged\Microsoft.Xaml.Interactions.Design\**\*.cs" />
-		<file target="src\BehaviorsSDKManaged\Microsoft.Xaml.Interactivity"					src="..\src\BehaviorsSDKManaged\Microsoft.Xaml.Interactivity\**\*.cs" />
-		<file target="src\BehaviorsSDKManaged\Microsoft.Xaml.Interactivity.Design"	src="..\src\BehaviorsSDKManaged\Microsoft.Xaml.Interactivity.Design\**\*.cs" />
-	</files>
+        <file target="src\BehaviorsSDKManaged\Microsoft.Xaml.Interactions"          src="..\src\BehaviorsSDKManaged\Microsoft.Xaml.Interactions\**\*.cs" />
+        <file target="src\BehaviorsSDKManaged\Microsoft.Xaml.Interactions.Design"   src="..\src\BehaviorsSDKManaged\Microsoft.Xaml.Interactions.Design\**\*.cs" />
+        <file target="src\BehaviorsSDKManaged\Microsoft.Xaml.Interactivity"         src="..\src\BehaviorsSDKManaged\Microsoft.Xaml.Interactivity\**\*.cs" />
+        <file target="src\BehaviorsSDKManaged\Microsoft.Xaml.Interactivity.Design"  src="..\src\BehaviorsSDKManaged\Microsoft.Xaml.Interactivity.Design\**\*.cs" />
+    </files>
 
 </package>

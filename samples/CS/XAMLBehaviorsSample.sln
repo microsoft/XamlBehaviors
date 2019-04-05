@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27520.0
+VisualStudioVersion = 15.0.28307.136
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XAMLBehaviorsSample", "XAMLBehaviorsSample\XAMLBehaviorsSample.csproj", "{050C4B73-9A9F-469B-9FA7-FB481894391F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Xaml.Interactions", "..\..\src\BehaviorsSDKManaged\Microsoft.Xaml.Interactions\Microsoft.Xaml.Interactions.csproj", "{A338A7F2-9010-477B-8A6E-6C2B2495C33C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Xaml.Interactivity", "..\..\src\BehaviorsSDKManaged\Microsoft.Xaml.Interactivity\Microsoft.Xaml.Interactivity.csproj", "{7FFC1385-C3E1-487C-9A81-DE48DD63ECB9}"
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "XAMLBehaviorsSample.Shared", "XAMLBehaviorsSample.Shared\XAMLBehaviorsSample.Shared.shproj", "{E1728140-C649-4880-993E-7D6A0B2F4D88}"
 EndProject
@@ -264,6 +268,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {552AC61E-2471-40D4-B2EC-D757146B3786}
+		SolutionGuid = {BAEA616E-866E-41F8-B6B8-ED0114DDB811}
 	EndGlobalSection
 EndGlobal
