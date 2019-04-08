@@ -83,12 +83,8 @@
     <AndroidResource Include="Resources\values\Styles.xml" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.Xaml.Interactions">
-      <HintPath>..\..\..\out\XAMLBehaviorsSample\bin\AnyCPU\Debug\monoandroid80\80\Microsoft.Xaml.Interactions.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Xaml.Interactivity">
-      <HintPath>..\..\..\out\XAMLBehaviorsSample\bin\AnyCPU\Debug\monoandroid80\80\Microsoft.Xaml.Interactivity.dll</HintPath>
-    </Reference>
+    <ProjectReference Include="..\..\..\src\BehaviorsSDKManaged\Microsoft.Xaml.Interactions\Microsoft.Xaml.Interactions.csproj" />
+    <ProjectReference Include="..\..\..\src\BehaviorsSDKManaged\Microsoft.Xaml.Interactivity\Microsoft.Xaml.Interactivity.csproj" />
   </ItemGroup>
   <Import Project="..\XamlBehaviorsSample.Shared\XamlBehaviorsSample.Shared.projitems" Label="Shared" Condition="Exists('..\XamlBehaviorsSample.Shared\XamlBehaviorsSample.Shared.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
