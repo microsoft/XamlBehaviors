@@ -98,10 +98,10 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Xaml.Interactions">
-      <HintPath>..\..\..\out\BehaviorsSDKManaged\bin\AnyCPU\$(Configuration)\xamarinios10\Microsoft.Xaml.Interactions.dll</HintPath>
+      <HintPath>..\..\..\out\XAMLBehaviorsSample\bin\AnyCPU\Debug\monoandroid80\80\Microsoft.Xaml.Interactions.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Xaml.Interactivity">
-      <HintPath>..\..\..\out\BehaviorsSDKManaged\bin\AnyCPU\$(Configuration)\xamarinios10\Microsoft.Xaml.Interactivity.dll</HintPath>
+      <HintPath>..\..\..\out\XAMLBehaviorsSample\bin\AnyCPU\Debug\monoandroid80\80\Microsoft.Xaml.Interactivity.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
@@ -110,7 +110,10 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Uno.UI">
-      <Version>1.31.0-dev.193</Version>
+      <Version>1.45.0-dev.1163</Version>
+    </PackageReference>
+    <PackageReference Include="Uno.UI.Sample.Banner">
+      <Version>1.44.0-dev.14</Version>
     </PackageReference>
   </ItemGroup>
   <Import Project="..\XAMLBehaviorsSample.Shared\XAMLBehaviorsSample.Shared.projitems" Label="Shared" />

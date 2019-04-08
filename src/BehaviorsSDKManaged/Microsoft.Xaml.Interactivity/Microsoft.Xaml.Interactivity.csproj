@@ -1,7 +1,6 @@
-﻿<Project Sdk="Microsoft.NET.Sdk" ToolsVersion="15.0">
+﻿<Project Sdk="MSBuild.Sdk.Extras" ToolsVersion="15.0">
 	<PropertyGroup>
 		<TargetFrameworks>MonoAndroid80;xamarinios10;uap10.0;netstandard2.0</TargetFrameworks>
-		<TargetFrameworksCI>MonoAndroid71;MonoAndroid80;xamarinios10;net46;uap10.0;netstandard2.0</TargetFrameworksCI>
 	</PropertyGroup>
 
 	<PropertyGroup>
@@ -18,12 +17,22 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="MSBuild.Sdk.Extras" Version="1.5.4" PrivateAssets="All" />
-		<PackageReference Include="Uno.UI" Version="1.31.0-dev.8" />
+    <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactivity.de-DE.xlf" />
+    <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactivity.es-ES.xlf" />
+    <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactivity.fr-FR.xlf" />
+    <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactivity.it-IT.xlf" />
+    <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactivity.ja-JP.xlf" />
+    <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactivity.ko-KR.xlf" />
+    <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactivity.pt-BR.xlf">
+      <SubType>Designer</SubType>
+    </XliffResource>
+    <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactivity.ru-RU.xlf" />
+    <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactivity.zh-CN.xlf" />
+    <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactivity.zh-TW.xlf" />
+    <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactivity.uk-UA.xlf" />
 	</ItemGroup>
-	
-	<ItemGroup Condition=" '$(TargetFramework)' == 'uap10.0' ">
-		<PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform " Version="5.4.2" />
+	<ItemGroup>
+		<PackageReference Include="Uno.UI" Version="1.45.0-dev.1163" />
 	</ItemGroup>
 
 	<ItemGroup>

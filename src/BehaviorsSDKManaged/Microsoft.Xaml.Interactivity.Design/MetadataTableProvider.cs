@@ -12,27 +12,27 @@ namespace Microsoft.Xaml.Interactivity.Design
 {
     internal class MetadataTableProvider : IProvideAttributeTable
     {
-        private AttributeTableBuilder attributeTableBuilder;
+        private AttributeTableBuilder _attributeTableBuilder;
 
         public AttributeTable AttributeTable
         {
             get
             {
-                if (attributeTableBuilder == null)
+                if (_attributeTableBuilder == null)
                 {
-                    attributeTableBuilder = new AttributeTableBuilder();
+                    _attributeTableBuilder = new AttributeTableBuilder();
                 }
 
                 AddAttribute<ActionCollection>(new CategoryAttribute(Resources.Category_Name_Actions));
                 AddAttribute<BehaviorCollection>(new ToolboxBrowsableAttribute(false));
 
-                return attributeTableBuilder.CreateTable();
+                return _attributeTableBuilder.CreateTable();
             }
         }
 
         private void AddAttribute<T>(Attribute attribute)
         {
-            attributeTableBuilder.AddCustomAttributes(typeof(T), attribute);
+            _attributeTableBuilder.AddCustomAttributes(typeof(T), attribute);
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
 	<PropertyGroup>
 		<TargetFramework>netstandard2.0</TargetFramework>
@@ -8,21 +8,13 @@
 		<ApplicationIcon />
 		<OutputType>Exe</OutputType>
 		<StartupObject />
-	</PropertyGroup>
+    <MonoRuntimeDebuggerEnabled>true</MonoRuntimeDebuggerEnabled>
+  </PropertyGroup>
 
 	<Import Project="..\XAMLBehaviorsSample.Shared\XAMLBehaviorsSample.Shared.projitems" Label="Shared" />
 	
 	<ItemGroup>
 		<LinkerDescriptor Include="LinkerConfig.xml" />
-	</ItemGroup>
-
-	<ItemGroup>
-		<Reference Include="Microsoft.Xaml.Interactions">
-			<HintPath>..\..\..\out\BehaviorsSDKManaged\bin\AnyCPU\$(Configuration)\netstandard2.0\Microsoft.Xaml.Interactions.dll</HintPath>
-		</Reference>
-		<Reference Include="Microsoft.Xaml.Interactivity">
-			<HintPath>..\..\..\out\BehaviorsSDKManaged\bin\AnyCPU\$(Configuration)\netstandard2.0\Microsoft.Xaml.Interactivity.dll</HintPath>
-		</Reference>
 	</ItemGroup>
 	
 	<ItemGroup>
@@ -33,10 +25,6 @@
 		<UpToDateCheckInput Include="WasmCSS\**\*" />
 		<UpToDateCheckInput Include="WasmScripts\**\*" />
 	</ItemGroup>
-	
-	<ItemGroup>
-		<Content Include="tsconfig.json" />
-	</ItemGroup>
 
 	<ItemGroup>
 		<None Include="**\*.xaml" Exclude="bin\**\*.xaml;obj\**\*.xaml" />
@@ -46,8 +34,8 @@
 	<ItemGroup>
 		<PackageReference Include="Microsoft.TypeScript.Compiler" Version="2.8.3" />
 		<PackageReference Include="Microsoft.TypeScript.MSBuild" Version="2.8.3" />
-		<PackageReference Include="Uno.Wasm.Bootstrap" Version="1.0.0-dev.40" />
-		<PackageReference Include="Uno.UI" Version="1.31.0-dev.193" PrivateAssets="All" />
+		<PackageReference Include="Uno.Wasm.Bootstrap" Version="1.0.0-dev.258" />
+		<PackageReference Include="Uno.UI" Version="1.45.0-dev.1163" PrivateAssets="All" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Console" Version="1.1.1" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Filter" Version="1.1.1" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug">
@@ -59,6 +47,17 @@
 		<PackageReference Include="Microsoft.Extensions.Logging.Console">
 			<Version>1.1.1</Version>
 		</PackageReference>
+    <DotNetCliToolReference Include="Uno.Wasm.Bootstrap.Cli" Version="1.0.0-dev.258" />
+    <PackageReference Include="Uno.UI.Sample.Banner" Version="1.44.0-dev.14" />
+  </ItemGroup>
+	
+	<ItemGroup>
+	  <Folder Include="wwwroot\" />
+	</ItemGroup>
+	
+	<ItemGroup>
+	  <ProjectReference Include="..\..\..\src\BehaviorsSDKManaged\Microsoft.Xaml.Interactions\Microsoft.Xaml.Interactions.csproj" />
+	  <ProjectReference Include="..\..\..\src\BehaviorsSDKManaged\Microsoft.Xaml.Interactivity\Microsoft.Xaml.Interactivity.csproj" />
 	</ItemGroup>
 
 

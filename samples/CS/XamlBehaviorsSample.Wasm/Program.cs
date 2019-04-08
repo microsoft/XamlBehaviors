@@ -16,13 +16,13 @@ namespace XamlBehaviorsSample.Wasm
 	{
 		static void Main(string[] args)
 		{
-			// ConfigureFilters(LogExtensionPoint.AmbientLoggerFactory);
+            ConfigureFilters(LogExtensionPoint.AmbientLoggerFactory);
 
-			var app = new XAMLBehaviorsSample.App();
+            Application.Start(_ => new XAMLBehaviorsSample.App());
 		}
 
 		static void ConfigureFilters(ILoggerFactory factory)
-		{
+		{ 
 			factory
 				.WithFilter(new FilterLoggerSettings
 					{
@@ -49,9 +49,9 @@ namespace XamlBehaviorsSample.Wasm
 						// { "nVentive.Umbrella.Views.Controls.IfDataContext", LogLevel.Debug },
 						   
 						// Layouter specific messages
-						{ "Windows.UI.Xaml.Controls", LogLevel.Debug },
-						{ "Windows.UI.Xaml.Controls.Layouter", LogLevel.Debug },
-						{ "Windows.UI.Xaml.Controls.Panel", LogLevel.Debug },
+						//{ "Windows.UI.Xaml.Controls", LogLevel.Debug },
+						//{ "Windows.UI.Xaml.Controls.Layouter", LogLevel.Debug },
+						//{ "Windows.UI.Xaml.Controls.Panel", LogLevel.Debug },
 						   
 						// Binding related messages
 						// { "Windows.UI.Xaml.Data", LogLevel.Debug },

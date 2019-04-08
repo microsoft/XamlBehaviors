@@ -48,13 +48,9 @@ namespace Microsoft.Xaml.Interactions.Core
                 }
                 else if (string.Equals(destinationTypeFullName, typeof(double).FullName, StringComparison.Ordinal))
                 {
-                    return double.Parse(value, CultureInfo.CurrentCulture);
+                    return double.Parse(value, CultureInfo.InvariantCulture);
                 }
             }
-
-#if HAS_UNO
-			return null;
-#else
 
 			string type = TypeConverterHelper.GetType(destinationTypeFullName);
             string contentControlXaml = string.Format(CultureInfo.InvariantCulture, TypeConverterHelper.ContentControlFormatString, scope, type, value);
@@ -66,7 +62,6 @@ namespace Microsoft.Xaml.Interactions.Core
             }
 
             return null;
-#endif
         }
 
         private static String GetScope(string name)

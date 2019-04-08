@@ -15,7 +15,7 @@ namespace Microsoft.Xaml.Interactivity
     {
         // After a VectorChanged event we need to compare the current state of the collection
         // with the old collection so that we can call Detach on all removed items.
-        private readonly List<IBehavior> oldCollection = new List<IBehavior>();
+        private readonly List<IBehavior> _oldCollection = new List<IBehavior>();
 
         /// <summary>
         /// Initializes a new instance of the <see cref="BehaviorCollection"/> class.
@@ -81,14 +81,14 @@ namespace Microsoft.Xaml.Interactivity
             }
 
             this.AssociatedObject = null;
-            this.oldCollection.Clear();
+            this._oldCollection.Clear();
         }
 
         private void BehaviorCollection_VectorChanged(IObservableVector<DependencyObject> sender, IVectorChangedEventArgs eventArgs)
         {
             if (eventArgs.CollectionChange == CollectionChange.Reset)
             {
-                foreach (IBehavior behavior in this.oldCollection)
+                foreach (IBehavior behavior in this._oldCollection)
                 {
                     if (behavior.AssociatedObject != null)
                     {
@@ -96,11 +96,11 @@ namespace Microsoft.Xaml.Interactivity
                     }
                 }
 
-                this.oldCollection.Clear();
+                this._oldCollection.Clear();
 
                 foreach (DependencyObject newItem in this)
                 {
-                    this.oldCollection.Add(this.VerifiedAttach(newItem));
+                    this._oldCollection.Add(this.VerifiedAttach(newItem));
                 }
 
 #if DEBUG
@@ -115,29 +115,29 @@ namespace Microsoft.Xaml.Interactivity
             switch (eventArgs.CollectionChange)
             {
                 case CollectionChange.ItemInserted:
-                    this.oldCollection.Insert(eventIndex, this.VerifiedAttach(changedItem));
+                    this._oldCollection.Insert(eventIndex, this.VerifiedAttach(changedItem));
 
                     break;
 
                 case CollectionChange.ItemChanged:
-                    IBehavior oldItem = this.oldCollection[eventIndex];
+                    IBehavior oldItem = this._oldCollection[eventIndex];
                     if (oldItem.AssociatedObject != null)
                     {
                         oldItem.Detach();
                     }
 
-                    this.oldCollection[eventIndex] = this.VerifiedAttach(changedItem);
+                    this._oldCollection[eventIndex] = this.VerifiedAttach(changedItem);
 
                     break;
 
                 case CollectionChange.ItemRemoved:
-                    oldItem = this.oldCollection[eventIndex];
+                    oldItem = this._oldCollection[eventIndex];
                     if (oldItem.AssociatedObject != null)
                     {
                         oldItem.Detach();
                     }
 
-                    this.oldCollection.RemoveAt(eventIndex);
+                    this._oldCollection.RemoveAt(eventIndex);
                     break;
 
                 default:
@@ -158,7 +158,7 @@ namespace Microsoft.Xaml.Interactivity
                 throw new InvalidOperationException(ResourceHelper.GetString("NonBehaviorAddedToBehaviorCollectionExceptionMessage"));
             }
 
-            if (this.oldCollection.Contains(behavior))
+            if (this._oldCollection.Contains(behavior))
             {
                 throw new InvalidOperationException(ResourceHelper.GetString("DuplicateBehaviorInCollectionExceptionMessage"));
             }
@@ -174,12 +174,12 @@ namespace Microsoft.Xaml.Interactivity
         [Conditional("DEBUG")]
         private void VerifyOldCollectionIntegrity()
         {
-            bool isValid = (this.Count == this.oldCollection.Count);
+            bool isValid = (this.Count == this._oldCollection.Count);
             if (isValid)
             {
                 for (int i = 0; i < this.Count; i++)
                 {
-                    if (this[i] != this.oldCollection[i])
+                    if (this[i] != this._oldCollection[i])
                     {
                         isValid = false;
                         break;

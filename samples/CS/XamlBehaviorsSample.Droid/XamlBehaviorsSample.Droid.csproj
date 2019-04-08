@@ -55,7 +55,10 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Uno.UI">
-      <Version>1.31.0-dev.195</Version>
+      <Version>1.45.0-dev.1163</Version>
+    </PackageReference>
+    <PackageReference Include="Uno.UI.Sample.Banner">
+      <Version>1.44.0-dev.14</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
@@ -80,12 +83,8 @@
     <AndroidResource Include="Resources\values\Styles.xml" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.Xaml.Interactions">
-      <HintPath>..\..\..\out\BehaviorsSDKManaged\bin\AnyCPU\$(Configuration)\monoandroid80\Microsoft.Xaml.Interactions.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Xaml.Interactivity">
-      <HintPath>..\..\..\out\BehaviorsSDKManaged\bin\AnyCPU\$(Configuration)\monoandroid80\Microsoft.Xaml.Interactivity.dll</HintPath>
-    </Reference>
+    <ProjectReference Include="..\..\..\src\BehaviorsSDKManaged\Microsoft.Xaml.Interactions\Microsoft.Xaml.Interactions.csproj" />
+    <ProjectReference Include="..\..\..\src\BehaviorsSDKManaged\Microsoft.Xaml.Interactivity\Microsoft.Xaml.Interactivity.csproj" />
   </ItemGroup>
   <Import Project="..\XamlBehaviorsSample.Shared\XamlBehaviorsSample.Shared.projitems" Label="Shared" Condition="Exists('..\XamlBehaviorsSample.Shared\XamlBehaviorsSample.Shared.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
