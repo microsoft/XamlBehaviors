@@ -67,7 +67,7 @@
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="2*" />
                     </Grid.ColumnDefinitions>
 
                     <ScrollViewer Grid.Column="1" ScrollViewer.VerticalScrollBarVisibility="Auto" >
@@ -75,17 +75,20 @@
                             <TextBlock TextWrapping="WrapWholeWords" Margin="10,0,0,0" FontSize="20" Foreground="{StaticResource DarkGreyBrush}">
                                 <TextBlock.Text>
                                     DataTriggerBehavior performs an action when the data the behaviors is bound to meets a specified condition. 
-                    In this example, when the bound data of the slider's value reaches above 50, the behavior triggers an action to change the color of the rectangle.
+                    In this example, when the bound enum changes its value, the behavior triggers an action to change the color of the rectangle based on which enum value it equals to.
                                 </TextBlock.Text>
                             </TextBlock>
                             <RichTextBlock TextWrapping="WrapWholeWords" Margin="10,20,0,0" FontSize="15" Foreground="{StaticResource RoyalBlueBrush}" xml:space="preserve" IsTextSelectionEnabled="True">
-                    <Paragraph>&lt;Rectangle x:Name="DataTriggerRectangle"&gt;
+                    <Paragraph>&lt;Rectangle x:Name="DataTriggerEnumRectangle" Grid.Row="0" Fill="{StaticResource RoyalBlueBrush}" Stroke="{StaticResource HighlightBrush}" StrokeThickness="5"&gt;
     &lt;Interactivity:Interaction.Behaviors&gt;
-        &lt;Interactions:DataTriggerBehavior Binding="{Binding Value, ElementName=slider}" ComparisonCondition="GreaterThan" Value="50"&gt;
-            &lt;Interactions:ChangePropertyAction TargetObject="{Binding ElementName=DataTriggerRectangle}" PropertyName="Fill" Value="{StaticResource PaleYellowBrush}"/&gt;
+        &lt;Interactions:DataTriggerBehavior Binding="{Binding State}" Value="StateOne"&gt;
+            &lt;Interactions:ChangePropertyAction PropertyName="Fill" Value="Red"/&gt;
         &lt;/Interactions:DataTriggerBehavior&gt;
-        &lt;Interactions:DataTriggerBehavior Binding="{Binding Value, ElementName=slider}" ComparisonCondition="LessThanOrEqual" Value="50"&gt;
-            &lt;Interactions:ChangePropertyAction TargetObject="{Binding ElementName=DataTriggerRectangle}" PropertyName="Fill" Value="{StaticResource RoyalBlueBrush}"/&gt;
+        &lt;Interactions:DataTriggerBehavior Binding="{Binding State}" Value="StateTwo"&gt;
+            &lt;Interactions:ChangePropertyAction PropertyName="Fill" Value="Green"/&gt;
+        &lt;/Interactions:DataTriggerBehavior&gt;
+        &lt;Interactions:DataTriggerBehavior Binding="{Binding State}" Value="StateThree"&gt;
+            &lt;Interactions:ChangePropertyAction PropertyName="Fill" Value="Blue"/&gt;
         &lt;/Interactions:DataTriggerBehavior&gt;
     &lt;/Interactivity:Interaction.Behaviors&gt;
 &lt;/Rectangle&gt;</Paragraph>
