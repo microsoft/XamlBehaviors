@@ -93,7 +93,7 @@ namespace Microsoft.Xaml.Interactions.Core
         {
             if (leftOperand != null && rightOperand != null)
             {
-                rightOperand = TypeConverterHelper.Convert(rightOperand.ToString(), leftOperand.GetType().FullName);
+                rightOperand = TypeConverterHelper.Convert(rightOperand.ToString(), leftOperand.GetType());
             }
 
             IComparable leftComparableOperand = leftOperand as IComparable;
