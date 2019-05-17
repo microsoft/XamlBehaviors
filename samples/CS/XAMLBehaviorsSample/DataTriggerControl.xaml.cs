@@ -19,7 +19,7 @@ using Windows.UI.Xaml.Navigation;
 
 namespace XAMLBehaviorsSample
 {
-    public enum StateEnum { StateOne, StateTwo, StateThree };
+
     public sealed partial class DataTriggerControl : UserControl, INotifyPropertyChanged
     {
         private StateEnum _state;
