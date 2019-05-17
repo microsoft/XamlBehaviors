@@ -42,7 +42,6 @@ namespace XAMLBehaviorsSample
             {
                 _state = value;
                 NotifyPropertyChanged();
-                
             }
         }
 
