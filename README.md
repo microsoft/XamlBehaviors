@@ -33,15 +33,15 @@ Code Example
 For an example of using Behaviors in an application, here is a snippet of XAML:
 ```xml
 <Button>
-	<Interactivity:Interaction.Behaviors>
-		<Core:EventTriggerBehavior EventName="Click">
-			<Core:ChangePropertyAction PropertyName="Background">
-				<Core:ChangePropertyAction.Value>
-					<SolidColorBrush Color="Red"/>
-				</Core:ChangePropertyAction.Value>
-			</Core:ChangePropertyAction>
-		</Core:EventTriggerBehavior>
-	</Interactivity:Interaction.Behaviors>
+    <Interactivity:Interaction.Behaviors>
+        <Core:EventTriggerBehavior EventName="Click">
+            <Core:ChangePropertyAction PropertyName="Background">
+                <Core:ChangePropertyAction.Value>
+                    <SolidColorBrush Color="Red"/>
+                </Core:ChangePropertyAction.Value>
+            </Core:ChangePropertyAction>
+        </Core:EventTriggerBehavior>
+    </Interactivity:Interaction.Behaviors>
 </Button>
 ```
 Using Behaviors SDK
