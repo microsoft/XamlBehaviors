@@ -1,11 +1,12 @@
 ﻿// Copyright (c) Microsoft. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
+using System;
+using System.Collections.Generic;
+using Microsoft.UI.Xaml;
+using System.Diagnostics.CodeAnalysis;
+
 namespace Microsoft.Xaml.Interactivity
 {
-    using System;
-    using System.Collections.Generic;
-    using Windows.UI.Xaml;
-
     /// <summary>
     /// Defines a <see cref="BehaviorCollection"/> attached property and provides a method for executing an <seealso cref="ActionCollection"/>.
     /// </summary>
@@ -21,7 +22,7 @@ namespace Microsoft.Xaml.Interactivity
         /// <summary>
         /// Gets or sets the <see cref="BehaviorCollection"/> associated with a specified object.
         /// </summary>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes")]
+        [SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes")]
         public static readonly DependencyProperty BehaviorsProperty = DependencyProperty.RegisterAttached(
             "Behaviors",
             typeof(BehaviorCollection),
@@ -31,7 +32,7 @@ namespace Microsoft.Xaml.Interactivity
         /// <summary>
         /// Gets the <see cref="BehaviorCollection"/> associated with a specified object.
         /// </summary>
-        /// <param name="obj">The <see cref="Windows.UI.Xaml.DependencyObject"/> from which to retrieve the <see cref="BehaviorCollection"/>.</param>
+        /// <param name="obj">The <see cref="Microsoft.UI.Xaml.DependencyObject"/> from which to retrieve the <see cref="BehaviorCollection"/>.</param>
         /// <returns>A <see cref="BehaviorCollection"/> containing the behaviors associated with the specified object.</returns>
         public static BehaviorCollection GetBehaviors(DependencyObject obj)
         {
@@ -62,7 +63,7 @@ namespace Microsoft.Xaml.Interactivity
         /// <summary>
         /// Sets the <see cref="BehaviorCollection"/> associated with a specified object.
         /// </summary>
-        /// <param name="obj">The <see cref="Windows.UI.Xaml.DependencyObject"/> on which to set the <see cref="BehaviorCollection"/>.</param>
+        /// <param name="obj">The <see cref="Microsoft.UI.Xaml.DependencyObject"/> on which to set the <see cref="BehaviorCollection"/>.</param>
         /// <param name="value">The <see cref="BehaviorCollection"/> associated with the object.</param>
         public static void SetBehaviors(DependencyObject obj, BehaviorCollection value)
         {
@@ -76,7 +77,7 @@ namespace Microsoft.Xaml.Interactivity
         /// <summary>
         /// Executes all actions in the <see cref="ActionCollection"/> and returns their results.
         /// </summary>
-        /// <param name="sender">The <see cref="System.Object"/> which will be passed on to the action.</param>
+        /// <param name="sender">The <see cref="object"/> which will be passed on to the action.</param>
         /// <param name="actions">The set of actions to execute.</param>
         /// <param name="parameter">The value of this parameter is determined by the calling behavior.</param>
         /// <returns>Returns the results of the actions.</returns>

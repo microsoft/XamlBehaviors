@@ -3,7 +3,7 @@
 namespace Microsoft.Xaml.Interactions.Media
 {
     /// <summary>
-    /// Represents operations that can be applied to <seealso cref="Windows.UI.Xaml.Media.Animation.Storyboard"/>.
+    /// Represents operations that can be applied to <seealso cref="Microsoft.UI.Xaml.Media.Animation.Storyboard"/>.
     /// </summary>
     public enum ControlStoryboardOption
     {

@@ -1,7 +1,6 @@
 ﻿// Copyright (c) Microsoft. All rights reserved. 
 // Licensed under the MIT license. See LICENSE file in the project root for full license information. 
 
-extern alias WindowsRuntime;
 using System;
 using System.ComponentModel;
 using Microsoft.Windows.Design.Metadata;
@@ -47,7 +46,7 @@ namespace Microsoft.Xaml.Interactivity.Design
                     new CategoryAttribute(Resources.Category_Common_Properties));
 
                 AddAttributes<EventTriggerBehavior>(
-                    nameof(EventTriggerBehavior.SourceObject),
+                    "SourceObject", //nameof(EventTriggerBehavior.SourceObject),
                     new DescriptionAttribute(Resources.Description_EventTriggerBehavior_SourceObject),
                     CreateEditorAttribute<ElementBindingPickerPropertyValueEditor>(),
                     new CategoryAttribute(Resources.Category_Common_Properties));
@@ -59,10 +58,10 @@ namespace Microsoft.Xaml.Interactivity.Design
 
                 #region DataTriggerBehavior
                 AddAttributes<DataTriggerBehavior>(
-                    new DefaultBindingPropertyAttribute(nameof(DataTriggerBehavior.Binding)));
+                    new DefaultBindingPropertyAttribute("Binding")); // new DefaultBindingPropertyAttribute(nameof(DataTriggerBehavior.Binding)));
 
                 AddAttributes<DataTriggerBehavior>(
-                    nameof(DataTriggerBehavior.Binding),
+                    "Binding", //nameof(DataTriggerBehavior.Binding),
                     new DescriptionAttribute(Resources.Description_DataTriggerBehavior_Binding),
                     CreateEditorAttribute<PropertyBindingPickerPropertyValueEditor>(),
                     new CategoryAttribute(Resources.Category_Common_Properties));
@@ -73,7 +72,7 @@ namespace Microsoft.Xaml.Interactivity.Design
                     new CategoryAttribute(Resources.Category_Common_Properties));
 
                 AddAttributes<DataTriggerBehavior>(
-                    nameof(DataTriggerBehavior.Value),
+                    "Value", //nameof(DataTriggerBehavior.Value),
                     new DescriptionAttribute(Resources.Description_DataTriggerBehavior_Value),
                     new CategoryAttribute(Resources.Category_Common_Properties),
                     new TypeConverterAttribute(typeof(StringConverter)));
@@ -88,19 +87,19 @@ namespace Microsoft.Xaml.Interactivity.Design
                     new DescriptionAttribute(Resources.Description_ChangePropertyAction));
 
                 AddAttributes<ChangePropertyAction>(
-                    nameof(ChangePropertyAction.PropertyName),
+                    "PropertyName", // nameof(ChangePropertyAction.PropertyName),
                     CreateEditorAttribute<PropertyPickerPropertyValueEditor>(),
                     new CategoryAttribute(Resources.Category_Common_Properties),
                     new DescriptionAttribute(Resources.Description_ChangePropertyAction_PropertyName));
 
                 AddAttributes<ChangePropertyAction>(
-                    nameof(ChangePropertyAction.TargetObject),
+                    "TargetObject", //nameof(ChangePropertyAction.TargetObject),
                     new DescriptionAttribute(Resources.Description_ChangePropertyAction_TargetObject),
                     CreateEditorAttribute<ElementBindingPickerPropertyValueEditor>(),
                     new CategoryAttribute(Resources.Category_Common_Properties));
 
                 AddAttributes<ChangePropertyAction>(
-                    nameof(ChangePropertyAction.Value),
+                    "Value", //nameof(ChangePropertyAction.Value),
                     new DescriptionAttribute(Resources.Description_ChangePropertyAction_Value),
                     new CategoryAttribute(Resources.Category_Common_Properties),
                     new BrowsableAttribute(false));
@@ -110,29 +109,29 @@ namespace Microsoft.Xaml.Interactivity.Design
                 #region InvokeCommandAction
                 AddAttributes<InvokeCommandAction>(
                     new DescriptionAttribute(Resources.Description_InvokeCommandAction),
-                    new DefaultBindingPropertyAttribute(nameof(InvokeCommandAction.Command)));
+                    new DefaultBindingPropertyAttribute("Command")); //new DefaultBindingPropertyAttribute(nameof(InvokeCommandAction.Command)));
 
                 AddAttributes<InvokeCommandAction>(
-                    nameof(InvokeCommandAction.Command),
+                    "Command", //nameof(InvokeCommandAction.Command),
                     new CategoryAttribute(Resources.Category_Common_Properties),
                     CreateEditorAttribute<PropertyBindingPickerPropertyValueEditor>(),
                     new DescriptionAttribute(Resources.Description_InvokeCommandAction_Command));
 
                 AddAttributes<InvokeCommandAction>(
-                    nameof(InvokeCommandAction.CommandParameter),
+                    "CommandParameter", //nameof(InvokeCommandAction.CommandParameter),
                     new TypeConverterAttribute(typeof(StringConverter)),
                     new CategoryAttribute(Resources.Category_Common_Properties),
                     new DescriptionAttribute(Resources.Description_InvokeCommandAction_CommandParameter),
                     new EditorBrowsableAttribute(EditorBrowsableState.Advanced));
 
                 AddAttributes<InvokeCommandAction>(
-                    nameof(InvokeCommandAction.InputConverter),
+                    "InputConverter", //nameof(InvokeCommandAction.InputConverter),
                     new CategoryAttribute(Resources.Category_Common_Properties),
                     new DescriptionAttribute(Resources.Description_InvokeCommandAction_InputConverter),
                     new EditorBrowsableAttribute(EditorBrowsableState.Advanced));
 
                 AddAttributes<InvokeCommandAction>(
-                    nameof(InvokeCommandAction.InputConverterParameter),
+                    "InputConverterParameter", //nameof(InvokeCommandAction.InputConverterParameter),
                     new TypeConverterAttribute(typeof(StringConverter)),
                     new CategoryAttribute(Resources.Category_Common_Properties),
                     new DescriptionAttribute(Resources.Description_InvokeCommandAction_InputConverterParameter),
@@ -156,7 +155,7 @@ namespace Microsoft.Xaml.Interactivity.Design
                     new CategoryAttribute(Resources.Category_Common_Properties));
 
                 AddAttributes<ControlStoryboardAction>(
-                    nameof(ControlStoryboardAction.Storyboard),
+                    "Storyboard", //nameof(ControlStoryboardAction.Storyboard),
                     new DescriptionAttribute(Resources.Description_ControlStoryboardAction_Storyboard),
                     new CategoryAttribute(Resources.Category_Common_Properties),
                     CreateEditorAttribute<StoryboardPickerPropertyValueEditor>(),
@@ -179,7 +178,7 @@ namespace Microsoft.Xaml.Interactivity.Design
                     new CategoryAttribute(Resources.Category_Common_Properties));
 
                 AddAttributes<GoToStateAction>(
-                    nameof(GoToStateAction.TargetObject),
+                    "TargetObject", //nameof(GoToStateAction.TargetObject),
                     new CategoryAttribute(Resources.Category_Common_Properties),
                     new DescriptionAttribute(Resources.Description_GoToStateAction_TargetObject),
                     CreateEditorAttribute<ElementBindingPickerPropertyValueEditor>());
@@ -196,7 +195,7 @@ namespace Microsoft.Xaml.Interactivity.Design
                     new CategoryAttribute(Resources.Category_Common_Properties));
 
                 AddAttributes<NavigateToPageAction>(
-                    nameof(NavigateToPageAction.Parameter),
+                    "Parameter", //nameof(NavigateToPageAction.Parameter),
                     new DescriptionAttribute(Resources.Description_NavigateToPageAction_Parameter),
                     new CategoryAttribute(Resources.Category_Common_Properties),
                     new TypeConverterAttribute(typeof(StringConverter)));
@@ -225,10 +224,10 @@ namespace Microsoft.Xaml.Interactivity.Design
 
                 AddAttributes<CallMethodAction>(
                     new DescriptionAttribute(Resources.Description_CallMethodAction),
-                    new DefaultBindingPropertyAttribute(nameof(CallMethodAction.TargetObject)));
+                    new DefaultBindingPropertyAttribute("TargetObject")); //new DefaultBindingPropertyAttribute(nameof(CallMethodAction.TargetObject)));
 
                 AddAttributes<CallMethodAction>(
-                    nameof(CallMethodAction.TargetObject),
+                    "TargetObject", //nameof(CallMethodAction.TargetObject),
                     new PropertyOrderAttribute(order = PropertyOrder.CreateAfter(order)),
                     new DescriptionAttribute(Resources.Description_CallMethodAction_TargetObject),
                     CreateEditorAttribute<ElementBindingPickerPropertyValueEditor>(),

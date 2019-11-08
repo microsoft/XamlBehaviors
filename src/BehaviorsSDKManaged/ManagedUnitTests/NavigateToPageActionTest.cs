@@ -1,7 +1,7 @@
-﻿using Microsoft.VisualStudio.TestPlatform.UnitTestFramework;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Microsoft.Xaml.Interactions.Core;
-using Windows.UI.Xaml;
-using AppContainerUITestMethod = Microsoft.VisualStudio.TestPlatform.UnitTestFramework.AppContainer.UITestMethodAttribute;
+using Microsoft.UI.Xaml;
+using AppContainerUITestMethod = Microsoft.VisualStudio.TestTools.UnitTesting.AppContainer.UITestMethodAttribute;
 
 namespace ManagedUnitTests
 {

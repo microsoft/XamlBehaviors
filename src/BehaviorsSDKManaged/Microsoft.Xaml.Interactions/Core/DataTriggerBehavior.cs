@@ -1,10 +1,13 @@
 ﻿// Copyright (c) Microsoft. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
+
+using System;
+using System.Globalization;
+using Microsoft.UI.Xaml;
+using System.Diagnostics.CodeAnalysis;
+
 namespace Microsoft.Xaml.Interactions.Core
 {
-    using System;
-    using System.Globalization;
-    using Windows.UI.Xaml;
     using Interactivity;
 
     /// <summary>
@@ -15,7 +18,7 @@ namespace Microsoft.Xaml.Interactions.Core
         /// <summary>
         /// Identifies the <seealso cref="Binding"/> dependency property.
         /// </summary>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes")]
+        [SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes")]
         public static readonly DependencyProperty BindingProperty = DependencyProperty.Register(
             "Binding",
             typeof(object),
@@ -25,7 +28,7 @@ namespace Microsoft.Xaml.Interactions.Core
         /// <summary>
         /// Identifies the <seealso cref="ComparisonCondition"/> dependency property.
         /// </summary>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes")]
+        [SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes")]
         public static readonly DependencyProperty ComparisonConditionProperty = DependencyProperty.Register(
             "ComparisonCondition",
             typeof(ComparisonConditionType),
@@ -36,7 +39,7 @@ namespace Microsoft.Xaml.Interactions.Core
         /// <summary>
         /// Identifies the <seealso cref="Value"/> dependency property.
         /// </summary>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes")]
+        [SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes")]
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
             "Value",
             typeof(object),
@@ -59,7 +62,7 @@ namespace Microsoft.Xaml.Interactions.Core
         }
 
         /// <summary>
-        /// Gets or sets the type of comparison to be performed between <see cref="DataTriggerBehavior.Binding"/> and <see cref="DataTriggerBehavior.Value"/>. This is a dependency property.
+        /// Gets or sets the type of comparison to be performed between <see cref="Binding"/> and <see cref="Value"/>. This is a dependency property.
         /// </summary>
         public ComparisonConditionType ComparisonCondition
         {
@@ -74,9 +77,9 @@ namespace Microsoft.Xaml.Interactions.Core
         }
 
         /// <summary>
-        /// Gets or sets the value to be compared with the value of <see cref="DataTriggerBehavior.Binding"/>. This is a dependency property.
+        /// Gets or sets the value to be compared with the value of <see cref="Binding"/>. This is a dependency property.
         /// </summary>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1721:PropertyNamesShouldNotMatchGetMethods")]
+        [SuppressMessage("Microsoft.Naming", "CA1721:PropertyNamesShouldNotMatchGetMethods")]
         public object Value
         {
             get

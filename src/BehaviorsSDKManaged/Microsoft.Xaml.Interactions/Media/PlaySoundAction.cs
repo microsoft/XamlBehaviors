@@ -1,13 +1,15 @@
 ﻿// Copyright (c) Microsoft. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
+
+using System;
+using System.Globalization;
+using Microsoft.UI.Xaml;
+using Microsoft.UI.Xaml.Controls.Primitives;
+using System.Diagnostics.CodeAnalysis;
+
 namespace Microsoft.Xaml.Interactions.Media
 {
-	using System;
-	using System.Globalization;
-	using Interactivity;
-	using Windows.UI.Xaml;
-	using Windows.UI.Xaml.Controls;
-	using Windows.UI.Xaml.Controls.Primitives;
+    using Interactivity;
 
 	/// <summary>
 	/// An action that will play a sound to completion.
@@ -23,7 +25,7 @@ namespace Microsoft.Xaml.Interactions.Media
 		/// <summary>
 		/// Identifies the <seealso cref="Source"/> dependency property.
 		/// </summary>
-		[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes")]
+		[SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes")]
 		public static readonly DependencyProperty SourceProperty = DependencyProperty.Register(
 			"Source",
 			typeof(string),
@@ -33,7 +35,7 @@ namespace Microsoft.Xaml.Interactions.Media
 		/// <summary>
 		/// Identifies the <seealso cref="Volume"/> dependency property.
 		/// </summary>
-		[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes")]
+		[SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes")]
 		public static readonly DependencyProperty VolumeProperty = DependencyProperty.Register(
 			"Volume",
 			typeof(double),
@@ -82,7 +84,7 @@ namespace Microsoft.Xaml.Interactions.Media
 		/// <summary>
 		/// Executes the action.
 		/// </summary>
-		/// <param name="sender">The <see cref="System.Object"/> that is passed to the action by the behavior. Generally this is <seealso cref="Microsoft.Xaml.Interactivity.IBehavior.AssociatedObject"/> or a target object.</param>
+		/// <param name="sender">The <see cref="object"/> that is passed to the action by the behavior. Generally this is <seealso cref="IBehavior.AssociatedObject"/> or a target object.</param>
 		/// <param name="parameter">The value of this parameter is determined by the caller.</param>
 		/// <returns>True if <see cref="Windows.UI.Xaml.Controls.MediaElement.Source"/> is set successfully; else false.</returns>
 		public object Execute(object sender, object parameter)
@@ -104,18 +106,20 @@ namespace Microsoft.Xaml.Interactions.Media
 			}
 
 			this._popup = new Popup();
+            /*
+             * Commented out until WinUI3 supports it
 			MediaElement mediaElement = new MediaElement();
-			_popup.Child = mediaElement;
+            _popup.Child = mediaElement;
 
-			// It is legal (although not advisable) to provide a video file. By setting visibility to collapsed, only the sound track should play.
-			mediaElement.Visibility = Visibility.Collapsed;
-			mediaElement.Source = sourceUri;
-			mediaElement.Volume = this.Volume;
+            // It is legal (although not advisable) to provide a video file. By setting visibility to collapsed, only the sound track should play.
+            mediaElement.Visibility = Visibility.Collapsed;
+            mediaElement.Source = sourceUri;
+            mediaElement.Volume = this.Volume;
 
-			mediaElement.MediaEnded += this.MediaElement_MediaEnded;
-			mediaElement.MediaFailed += this.MediaElement_MediaFailed;
-
-			this._popup.IsOpen = true;
+            mediaElement.MediaEnded += this.MediaElement_MediaEnded;
+            mediaElement.MediaFailed += this.MediaElement_MediaFailed;
+            */
+            this._popup.IsOpen = true;
 			return true;
 		}
 

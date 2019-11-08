@@ -1,11 +1,12 @@
 ﻿// Copyright (c) Microsoft. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
+using System;
+using System.Globalization;
+using Microsoft.UI.Xaml.Controls;
+using Microsoft.UI.Xaml.Markup;
+
 namespace Microsoft.Xaml.Interactions.Core
 {
-    using System;
-    using System.Globalization;
-    using Windows.UI.Xaml.Controls;
-    using Windows.UI.Xaml.Markup;
     using Interactivity;
 
     /// <summary>

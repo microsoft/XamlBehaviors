@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using Microsoft.Xaml.Interactions.Utility;
-using Windows.UI.Xaml;
+using Microsoft.UI.Xaml;
 
 namespace ManagedUnitTests
 {

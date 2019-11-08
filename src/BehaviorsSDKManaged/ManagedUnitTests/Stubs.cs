@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Windows.Input;
 using Microsoft.Xaml.Interactivity;
-using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Navigation;
+using Microsoft.UI.Xaml;
+using Microsoft.UI.Xaml.Controls;
+using Microsoft.UI.Xaml.Data;
+using Microsoft.UI.Xaml.Navigation;
 
 namespace ManagedUnitTests
 {

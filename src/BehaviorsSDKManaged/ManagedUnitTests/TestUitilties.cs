@@ -1,6 +1,6 @@
 ﻿using System;
-using Microsoft.VisualStudio.TestPlatform.UnitTestFramework;
-using Windows.UI.Xaml;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Microsoft.UI.Xaml;
 
 namespace ManagedUnitTests
 {

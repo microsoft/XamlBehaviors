@@ -1,12 +1,13 @@
 ﻿// Copyright (c) Microsoft. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
+using System;
+using System.Collections.Generic;
+using System.Reflection;
+using Microsoft.UI.Xaml;
+using Microsoft.UI.Xaml.Data;
+
 namespace Microsoft.Xaml.Interactions.Core
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Reflection;
-    using Windows.UI.Xaml;
-    using Windows.UI.Xaml.Data;
     using Interactivity;
 
     internal static class DataBindingHelper

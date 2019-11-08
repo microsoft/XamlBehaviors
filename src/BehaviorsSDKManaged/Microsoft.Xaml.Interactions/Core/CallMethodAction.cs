@@ -1,15 +1,17 @@
 ﻿// Copyright (c) Microsoft. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
+
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Globalization;
+using System.Reflection;
+using Microsoft.UI.Xaml;
+using Microsoft.Xaml.Interactivity;
+using System.Diagnostics.CodeAnalysis;
+
 namespace Microsoft.Xaml.Interactions.Core
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Diagnostics;
-    using System.Globalization;
-    using System.Reflection;
-    using Windows.UI.Xaml;
-    using Microsoft.Xaml.Interactivity;
-
     /// <summary>
     /// An action that calls a method on a specified object when invoked.
     /// </summary>
@@ -18,7 +20,7 @@ namespace Microsoft.Xaml.Interactions.Core
         /// <summary>
         /// Identifies the <seealso cref="MethodName"/> dependency property.
         /// </summary>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes")]
+        [SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes")]
         public static readonly DependencyProperty MethodNameProperty = DependencyProperty.Register(
             "MethodName",
             typeof(string),
@@ -28,7 +30,7 @@ namespace Microsoft.Xaml.Interactions.Core
         /// <summary>
         /// Identifies the <seealso cref="TargetObject"/> dependency property.
         /// </summary>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes")]
+        [SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes")]
         public static readonly DependencyProperty TargetObjectProperty = DependencyProperty.Register(
             "TargetObject",
             typeof(object),
@@ -74,7 +76,7 @@ namespace Microsoft.Xaml.Interactions.Core
         /// <summary>
         /// Executes the action.
         /// </summary>
-        /// <param name="sender">The <see cref="System.Object"/> that is passed to the action by the behavior. Generally this is <seealso cref="Microsoft.Xaml.Interactivity.IBehavior.AssociatedObject"/> or a target object.</param>
+        /// <param name="sender">The <see cref="object"/> that is passed to the action by the behavior. Generally this is <seealso cref="IBehavior.AssociatedObject"/> or a target object.</param>
         /// <param name="parameter">The value of this parameter is determined by the caller.</param>
         /// <returns>True if the method is called; else false.</returns>
         public object Execute(object sender, object parameter)

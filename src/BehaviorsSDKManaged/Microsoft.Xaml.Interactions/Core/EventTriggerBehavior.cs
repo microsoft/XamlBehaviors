@@ -1,13 +1,14 @@
 ﻿// Copyright (c) Microsoft. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
+using System;
+using System.Reflection;
+using System.Runtime.InteropServices.WindowsRuntime;
+using Microsoft.UI.Xaml;
+using Microsoft.UI.Xaml.Media;
+using System.Diagnostics.CodeAnalysis;
+
 namespace Microsoft.Xaml.Interactions.Core
 {
-    using System;
-    using System.Globalization;
-    using System.Reflection;
-    using System.Runtime.InteropServices.WindowsRuntime;
-    using Windows.UI.Xaml;
-    using Windows.UI.Xaml.Media;
     using Interactivity;
 
     /// <summary>
@@ -18,7 +19,7 @@ namespace Microsoft.Xaml.Interactions.Core
         /// <summary>
         /// Identifies the <seealso cref="EventName"/> dependency property.
         /// </summary>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes")]
+        [SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes")]
         public static readonly DependencyProperty EventNameProperty = DependencyProperty.Register(
             "EventName",
             typeof(string),
@@ -28,7 +29,7 @@ namespace Microsoft.Xaml.Interactions.Core
         /// <summary>
         /// Identifies the <seealso cref="SourceObject"/> dependency property.
         /// </summary>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes")]
+        [SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes")]
         public static readonly DependencyProperty SourceObjectProperty = DependencyProperty.Register(
             "SourceObject",
             typeof(object),
@@ -67,7 +68,7 @@ namespace Microsoft.Xaml.Interactions.Core
 
         /// <summary>
         /// Gets or sets the source object from which this behavior listens for events.
-        /// If <seealso cref="SourceObject"/> is not set, the source will default to <seealso cref="Microsoft.Xaml.Interactivity.Behavior.AssociatedObject"/>. This is a dependency property.
+        /// If <seealso cref="SourceObject"/> is not set, the source will default to <seealso cref="Behavior.AssociatedObject"/>. This is a dependency property.
         /// </summary>
         public object SourceObject
         {
@@ -83,7 +84,7 @@ namespace Microsoft.Xaml.Interactions.Core
         }
 
         /// <summary>
-        /// Called after the behavior is attached to the <see cref="Microsoft.Xaml.Interactivity.Behavior.AssociatedObject"/>.
+        /// Called after the behavior is attached to the <see cref="Behavior.AssociatedObject"/>.
         /// </summary>
         protected override void OnAttached()
         {
@@ -92,7 +93,7 @@ namespace Microsoft.Xaml.Interactions.Core
         }
 
         /// <summary>
-        /// Called when the behavior is being detached from its <see cref="Microsoft.Xaml.Interactivity.Behavior.AssociatedObject"/>.
+        /// Called when the behavior is being detached from its <see cref="Behavior.AssociatedObject"/>.
         /// </summary>
         protected override void OnDetaching()
         {

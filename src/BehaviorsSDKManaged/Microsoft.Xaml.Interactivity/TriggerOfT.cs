@@ -2,7 +2,8 @@
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
 using System;
-using Windows.UI.Xaml;
+using Microsoft.UI.Xaml;
+using System.ComponentModel;
 
 namespace Microsoft.Xaml.Interactivity
 {
@@ -15,7 +16,7 @@ namespace Microsoft.Xaml.Interactivity
         /// <summary>
         /// Gets the object to which this behavior is attached.
         /// </summary>
-        [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
+        [EditorBrowsable(EditorBrowsableState.Never)]
         public new T AssociatedObject
         {
             get { return base.AssociatedObject as T; }
