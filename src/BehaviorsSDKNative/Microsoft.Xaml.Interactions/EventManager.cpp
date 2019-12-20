@@ -27,7 +27,7 @@ using namespace Windows::UI::Xaml::Controls;
 using namespace Microsoft::Xaml::Interactions::Core;
 using namespace Windows::UI::Xaml::Controls::Primitives;
 
-struct CompareString
+struct CompareStringX
 {
 	bool operator() (const wchar_t* lhs, const wchar_t* rhs) const
 	{
@@ -35,8 +35,8 @@ struct CompareString
 	}
 };
 
-typedef std::map<const wchar_t*, RegisterHandler, CompareString> EventNameToRegisterHandlerMap;
-typedef std::map<const wchar_t*, UnregisterHandler, CompareString> EventNameToUnregisterHandlerMap;
+typedef std::map<const wchar_t*, RegisterHandler, CompareStringX> EventNameToRegisterHandlerMap;
+typedef std::map<const wchar_t*, UnregisterHandler, CompareStringX> EventNameToUnregisterHandlerMap;
 
 namespace Global
 {
