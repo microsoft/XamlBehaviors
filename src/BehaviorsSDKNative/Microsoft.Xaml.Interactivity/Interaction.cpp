@@ -1,93 +1,95 @@
-// Copyright (c) Microsoft. All rights reserved.
-// Licensed under the MIT license. See LICENSE file in the project root for full license information.
 #include "pch.h"
 #include "Interaction.h"
 #include "BehaviorCollection.h"
-#include "IAction.h"
 
-using namespace Platform;
-using namespace Platform::Collections;
+namespace winrt
+{
+using namespace Windows::Foundation;
 using namespace Windows::Foundation::Collections;
 using namespace Windows::UI::Xaml;
 using namespace Microsoft::Xaml::Interactivity;
+} // namespace winrt
 
+namespace winrt::Microsoft::Xaml::Interactivity::implementation
+{
 namespace DependencyProperties
 {
-	static DependencyProperty^ Behaviors = DependencyProperty::RegisterAttached(
-		"Behaviors",
-		BehaviorCollection::typeid,
-		Interaction::typeid,
-		ref new PropertyMetadata(nullptr, ref new PropertyChangedCallback(&Interaction::OnBehaviorsChanged)));
+static DependencyProperty Behaviors = DependencyProperty::RegisterAttached(
+    L"Behaviors",
+    xaml_typename<Microsoft::Xaml::Interactivity::BehaviorCollection>(),
+    xaml_typename<Microsoft::Xaml::Interactivity::Interaction>(),
+    PropertyMetadata(nullptr, {&Interaction::OnBehaviorsChanged}));
 }
 
-void Interaction::OnBehaviorsChanged(DependencyObject^ sender, DependencyPropertyChangedEventArgs^ args)
+void Interaction::OnBehaviorsChanged(DependencyObject const &sender, DependencyPropertyChangedEventArgs const &args)
 {
-	BehaviorCollection^ oldCollection = safe_cast<BehaviorCollection^>(args->OldValue);
-	BehaviorCollection^ newCollection = safe_cast<BehaviorCollection^>(args->NewValue);
+  auto oldCollection = args.OldValue().as<Microsoft::Xaml::Interactivity::BehaviorCollection>();
+  auto newCollection = args.NewValue().as<Microsoft::Xaml::Interactivity::BehaviorCollection>();
 
-	if (oldCollection == newCollection)
-	{
-		return;
-	}
+    if (oldCollection == newCollection)
+    {
+        return;
+    }
 
-	if (oldCollection != nullptr && oldCollection->AssociatedObject != nullptr)
-	{
-		oldCollection->Detach();
-	}
+    if (oldCollection != nullptr && oldCollection.AssociatedObject() != nullptr)
+    {
+        oldCollection.Detach();
+    }
 
-	if (newCollection != nullptr && sender != nullptr)
-	{
-		newCollection->Attach(sender);
-	}
+    if (newCollection != nullptr && sender != nullptr)
+    {
+        newCollection.Attach(sender);
+    }
 }
 
-DependencyProperty^ Interaction::BehaviorsProperty::get()
+DependencyProperty Interaction::BehaviorsProperty()
 {
-	return DependencyProperties::Behaviors;
+    return DependencyProperties::Behaviors;
 }
 
-IIterable<Object^>^ Interaction::ExecuteActions(Object^ sender, ActionCollection^ actions, Object^ parameter)
+IIterable<IInspectable> Interaction::ExecuteActions(IInspectable const &sender, ActionCollection const &actions, IInspectable const &parameter)
 {
-	if (actions == nullptr || Windows::ApplicationModel::DesignMode::DesignModeEnabled)
-	{
-		return ref new Vector<Object^>();
-	}
+    IVector<IInspectable> results = winrt::single_threaded_vector<IInspectable>();
 
-	std::vector<Object^> results;
-	for (auto& dependencyObject : actions)
-	{
-		IAction^ action = safe_cast<IAction^>(static_cast<Object^>(dependencyObject));
-		results.push_back(action->Execute(sender, parameter));
-	}
+    if (actions == nullptr || Windows::ApplicationModel::DesignMode::DesignModeEnabled())
+    {
+        return results;
+    }
 
-	return ref new Vector<Object^>(std::move(results));
+    for (auto &dependencyObject : actions)
+    {
+        auto action = dependencyObject.as<IAction>();
+        results.Append(action.Execute(sender, parameter));
+    }
+
+    return results;
 }
 
-BehaviorCollection^ Interaction::GetBehaviors(DependencyObject^ obj)
+Microsoft::Xaml::Interactivity::BehaviorCollection Interaction::GetBehaviors(DependencyObject const &obj)
 {
-	if (obj == nullptr)
-	{
-		#pragma warning(suppress: 6298)
-		throw ref new InvalidArgumentException("obj");
-	}
+    if (obj == nullptr)
+    {
+        throw winrt::hresult_invalid_argument(L"obj");
+    }
 
-	BehaviorCollection^ behaviors = safe_cast<BehaviorCollection^>(obj->GetValue(Interaction::BehaviorsProperty));
-	if (behaviors == nullptr)
-	{
-		behaviors = ref new BehaviorCollection();
-		Interaction::SetBehaviors(obj, behaviors);
-	}
+    auto behaviors = obj.GetValue(Interaction::BehaviorsProperty()).as<Microsoft::Xaml::Interactivity::BehaviorCollection>();
+    if (behaviors == nullptr)
+    {
+        behaviors = make<BehaviorCollection>();
+        Interaction::SetBehaviors(obj, behaviors);
+    }
 
-	return behaviors;
+    return behaviors;
 }
 
-void Interaction::SetBehaviors(DependencyObject^ obj, BehaviorCollection^ value)
+void Interaction::SetBehaviors(DependencyObject const &obj, Microsoft::Xaml::Interactivity::BehaviorCollection const &value)
 {
-	if (obj == nullptr)
-	{
-		#pragma warning(suppress: 6298)
-		throw ref new InvalidArgumentException("obj");
-	}
+    if (obj == nullptr)
+    {
+        throw winrt::hresult_invalid_argument(L"obj");
+    }
 
-	obj->SetValue(Interaction::BehaviorsProperty, value);
+    obj.SetValue(Interaction::BehaviorsProperty(), value);
 }
+
+} // namespace winrt::Microsoft::Xaml::Interactivity::implementation

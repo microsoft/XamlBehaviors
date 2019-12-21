@@ -1,117 +1,116 @@
-// Copyright (c) Microsoft. All rights reserved.
-// Licensed under the MIT license. See LICENSE file in the project root for full license information.
-#pragma warning(disable: 6298)
 #include "pch.h"
 #include "VisualStateUtilities.h"
 
-using namespace Platform;
+namespace winrt
+{
 using namespace Windows::UI::Xaml;
 using namespace Windows::UI::Xaml::Controls;
 using namespace Windows::UI::Xaml::Media;
 using namespace Windows::Foundation::Collections;
-using namespace Microsoft::Xaml::Interactivity;
+} // namespace winrt
 
-bool VisualStateUtilities::GoToState(Control^ control, String^ stateName, bool useTransitions)
+namespace winrt::Microsoft::Xaml::Interactivity::implementation
 {
-	if (control == nullptr)
-	{
-		#pragma warning(suppress: 6298)
-		throw ref new InvalidArgumentException("control");
-	}
+bool VisualStateUtilities::GoToState(Control const &control, hstring const &stateName, bool useTransitions)
+{
+    if (control == nullptr)
+    {
+        throw hresult_invalid_argument(L"control");
+    }
 
-	if (stateName == nullptr)
-	{
-		#pragma warning(suppress: 6298)
-		throw ref new InvalidArgumentException("stateName");
-	}
+    if (stateName.empty())
+    {
+        throw hresult_invalid_argument(L"stateName");
+    }
 
-	control->ApplyTemplate();
-	return VisualStateManager::GoToState(control, stateName, useTransitions);
+    control.ApplyTemplate();
+    return VisualStateManager::GoToState(control, stateName, useTransitions);
 }
 
-IVector<VisualStateGroup^>^ VisualStateUtilities::GetVisualStateGroups(FrameworkElement^ element)
+IVector<VisualStateGroup> VisualStateUtilities::GetVisualStateGroups(FrameworkElement const &element)
 {
-	if (element == nullptr)
-	{
-		#pragma warning(suppress: 6298)
-		throw ref new InvalidArgumentException("element");
-	}
+    if (element == nullptr)
+    {
+        throw hresult_invalid_argument(L"element");
+    }
 
-	IVector<VisualStateGroup^>^ visualStateGroups = VisualStateManager::GetVisualStateGroups(element);
+    auto visualStateGroups = VisualStateManager::GetVisualStateGroups(element);
 
-	if (visualStateGroups == nullptr || visualStateGroups->Size == 0)
-	{
-		int childrenCount = VisualTreeHelper::GetChildrenCount(element);
-		if (childrenCount > 0)
-		{
-			FrameworkElement^ childElement = dynamic_cast<FrameworkElement^>(VisualTreeHelper::GetChild(element, 0));
-			if (childElement != nullptr)
-			{
-				visualStateGroups = VisualStateManager::GetVisualStateGroups(childElement);
-			}
-		}
-	}
+    if (visualStateGroups == nullptr || visualStateGroups.Size() == 0)
+    {
+        int childrenCount = VisualTreeHelper::GetChildrenCount(element);
+        if (childrenCount > 0)
+        {
+            auto childElement = VisualTreeHelper::GetChild(element, 0).try_as<FrameworkElement>();
+            if (childElement)
+            {
+                visualStateGroups = VisualStateManager::GetVisualStateGroups(childElement);
+            }
+        }
+    }
 
-	return visualStateGroups;
+    return visualStateGroups;
 }
 
-Control^ VisualStateUtilities::FindNearestStatefulControl(FrameworkElement^ element)
+Control VisualStateUtilities::FindNearestStatefulControl(FrameworkElement const &element)
 {
-	if (element == nullptr)
-	{
-		#pragma warning(suppress: 6298)
-		throw ref new InvalidArgumentException("element");
-	}
+    if (element == nullptr)
+    {
+        throw hresult_invalid_argument(L"element");
+    }
 
-	// Try to find an element which is the immediate child of a UserControl, ControlTemplate or other such "boundary" element
-	FrameworkElement^ parent = dynamic_cast<FrameworkElement^>(element->Parent);
+    FrameworkElement localElement = element;
+    // Try to find an element which is the immediate child of a UserControl, ControlTemplate or other such "boundary" element
+    auto parent = localElement.Parent().as<FrameworkElement>();
 
-	// bubble up looking for a place to stop
-	while (!VisualStateUtilities::HasVisualStateGroupsDefined(element) && VisualStateUtilities::ShouldContinueTreeWalk(parent))
-	{
-		element = parent;
-		parent = dynamic_cast<FrameworkElement^>(element->Parent);
-	}
+    // bubble up looking for a place to stop
+    while (!VisualStateUtilities::HasVisualStateGroupsDefined(localElement) && VisualStateUtilities::ShouldContinueTreeWalk(parent))
+    {
+        localElement = parent;
+        parent = localElement.Parent().as<FrameworkElement>();
+    }
 
-	if (VisualStateUtilities::HasVisualStateGroupsDefined(element))
-	{
-		// Once we've found such an element, use the VisualTreeHelper to get it's parent. For most elements the two are the 
-		// same, but for children of a ControlElement this will give the control that contains the template.
-		Control^ templatedParent = dynamic_cast<Control^>(VisualTreeHelper::GetParent(element));
+    if (VisualStateUtilities::HasVisualStateGroupsDefined(localElement))
+    {
+        // Once we've found such an element, use the VisualTreeHelper to get it's parent. For most elements the two are the
+        // same, but for children of a ControlElement this will give the control that contains the template.
+        auto templatedParent = VisualTreeHelper::GetParent(localElement).try_as<Control>();
 
-		if (templatedParent != nullptr)
-		{
-			return templatedParent;
-		}
-		else
-		{
-			return  dynamic_cast<Control^>(element);
-		}
-	}
+        if (templatedParent)
+        {
+            return templatedParent;
+        }
+        else
+        {
+            return localElement.as<Control>();
+        }
+    }
 
-	return nullptr;
+    return nullptr;
 }
 
-bool VisualStateUtilities::HasVisualStateGroupsDefined(FrameworkElement^ frameworkElement)
+bool VisualStateUtilities::HasVisualStateGroupsDefined(FrameworkElement const &frameworkElement)
 {
-	return frameworkElement != nullptr && VisualStateManager::GetVisualStateGroups(frameworkElement)->Size != 0;
+    return frameworkElement != nullptr && VisualStateManager::GetVisualStateGroups(frameworkElement).Size() != 0;
 }
 
-bool VisualStateUtilities::ShouldContinueTreeWalk(FrameworkElement^ element)
+bool VisualStateUtilities::ShouldContinueTreeWalk(FrameworkElement const &element)
 {
-	if (element == nullptr || dynamic_cast<UserControl^>(element) != nullptr)
-	{
-		return false;
-	}
-	else if (element->Parent == nullptr)
-	{
-		// Stop if parent's parent is null AND parent isn't the template root of a ControlTemplate or DataTemplate
-		FrameworkElement^ templatedParent = dynamic_cast<FrameworkElement^>(VisualTreeHelper::GetParent(element));
-		if (templatedParent == nullptr || (!(dynamic_cast<Control^>(element) != nullptr) && !(dynamic_cast<ContentPresenter^>(element) != nullptr)))
-		{
-			return false;
-		}
-	}
+    if (element == nullptr || element.try_as<UserControl>() != nullptr)
+    {
+        return false;
+    }
+    else if (element.Parent() == nullptr)
+    {
+        // Stop if parent's parent is null AND parent isn't the template root of a ControlTemplate or DataTemplate
+        auto templatedParent = VisualTreeHelper::GetParent(element).try_as<FrameworkElement>();
+        if (templatedParent == nullptr || (!(element.try_as<Control>() != nullptr) && !(element.try_as<ContentPresenter>() != nullptr)))
+        {
+            return false;
+        }
+    }
 
-	return true;
+    return true;
 }
+
+} // namespace winrt::Microsoft::Xaml::Interactivity::implementation

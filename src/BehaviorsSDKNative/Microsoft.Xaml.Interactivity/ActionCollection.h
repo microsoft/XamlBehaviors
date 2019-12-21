@@ -1,26 +1,33 @@
 // Copyright (c) Microsoft. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 #pragma once
+#include "ActionCollection.g.h"
 
-namespace Microsoft { namespace Xaml { namespace Interactivity
+namespace winrt::Microsoft::Xaml::Interactivity::implementation
 {
-	/// <summary>
-	/// Represents a collection of IActions.
-	/// </summary>
-	public ref class ActionCollection sealed : ::Windows::UI::Xaml::DependencyObjectCollection
-	{
-	public:
-		/// <summary>
-		/// Initializes a new instance of the <see cref="ActionCollection"/> class.
-		/// </summary>
-		ActionCollection();
+/// <summary>
+/// Represents a collection of IActions.
+/// </summary>
+struct ActionCollection : ActionCollectionT<ActionCollection>
+{
+    /// <summary>
+    /// Initializes a new instance of the <see cref="ActionCollection"/> class.
+    /// </summary>
+    ActionCollection();
 
-	private:
-		void OnVectorChanged(
-			::Windows::Foundation::Collections::IObservableVector<::Windows::UI::Xaml::DependencyObject^>^ sender,
-			::Windows::Foundation::Collections::IVectorChangedEventArgs^ eventArgs);
+private:
+    VectorChanged_revoker _vectorChanged;
 
-		static void VerifyType(::Windows::UI::Xaml::DependencyObject^ item);
-	};
+    void OnVectorChanged(
+        Windows::Foundation::Collections::IObservableVector<Windows::UI::Xaml::DependencyObject> const &sender,
+        Windows::Foundation::Collections::IVectorChangedEventArgs const &event);
 
-}}}
+    static void VerifyType(Windows::UI::Xaml::DependencyObject const &item);
+};
+} // namespace winrt::Microsoft::Xaml::Interactivity::implementation
+namespace winrt::Microsoft::Xaml::Interactivity::factory_implementation
+{
+struct ActionCollection : ActionCollectionT<ActionCollection, implementation::ActionCollection>
+{
+};
+} // namespace winrt::Microsoft::Xaml::Interactivity::factory_implementation

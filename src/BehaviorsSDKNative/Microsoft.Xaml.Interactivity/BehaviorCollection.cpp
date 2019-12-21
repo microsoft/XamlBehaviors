@@ -2,178 +2,187 @@
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 #include "pch.h"
 #include "BehaviorCollection.h"
-#include "IBehavior.h"
-#include "ResourceHelper.h"
 
-using namespace Platform;
-using namespace Platform::Collections;
-using namespace Windows::UI::Xaml;
-using namespace Microsoft::Xaml::Interactivity;
-using namespace Windows::Foundation::Collections;
-
-BehaviorCollection::BehaviorCollection()
+namespace winrt
 {
-	this->associatedObject = nullptr;
-	this->VectorChanged += ref new VectorChangedEventHandler<DependencyObject^>(this, &BehaviorCollection::OnVectorChanged);
+using namespace Windows::ApplicationModel;
+using namespace Windows::Foundation::Collections;
+using namespace Windows::UI::Xaml;
+} // namespace winrt
+
+namespace winrt::Microsoft::Xaml::Interactivity::implementation
+{
+BehaviorCollection::BehaviorCollection() : associatedObject(nullptr)
+{
+    _vectorChanged = VectorChanged(auto_revoke, {get_weak(), &BehaviorCollection::OnVectorChanged});
 }
 
 BehaviorCollection::~BehaviorCollection()
 {
-	this->Detach();
+    Detach();
 }
 
-void BehaviorCollection::OnVectorChanged(IObservableVector<DependencyObject^>^ sender, IVectorChangedEventArgs^ eventArgs)
+void BehaviorCollection::OnVectorChanged(IObservableVector<DependencyObject> const &sender, IVectorChangedEventArgs const &eventArgs)
 {
-	if (eventArgs->CollectionChange == CollectionChange::Reset)
-	{
-		for (auto& behavior : this->oldCollection)
-		{
-			if (behavior->AssociatedObject != nullptr)
-			{
-				behavior->Detach();
-			}
-		}
+    if (eventArgs.CollectionChange() == CollectionChange::Reset)
+    {
+        for (auto &behavior : this->oldCollection)
+        {
+            if (behavior.AssociatedObject() != nullptr)
+            {
+                behavior.Detach();
+            }
+        }
 
-		this->oldCollection.clear();
-		this->oldCollection.reserve(this->Size);
+        this->oldCollection.clear();
+        this->oldCollection.reserve(this->Size());
 
-		for (const auto& newItem : this)
-		{
-			this->oldCollection.push_back(this->VerifiedAttach(newItem));
-		}
+        for (const auto &newItem : *this)
+        {
+            this->oldCollection.push_back(VerifiedAttach(newItem));
+        }
 
 #if _DEBUG
-		this->VerifyOldCollectionIntegrity();
+        this->VerifyOldCollectionIntegrity();
 #endif
 
-		return;
-	}
+        return;
+    }
 
-	unsigned int eventIndex = eventArgs->Index;
-	DependencyObject^ changedItem = this->GetAt(eventIndex);
+    unsigned int eventIndex = eventArgs.Index();
+    auto changedItem = this->GetAt(eventIndex);
 
-	switch (eventArgs->CollectionChange)
-	{
-	case CollectionChange::ItemInserted:
-		{
-			this->oldCollection.insert(oldCollection.begin() + eventIndex, this->VerifiedAttach(changedItem));
-		}
-		break;
+    switch (eventArgs.CollectionChange())
+    {
+    case CollectionChange::ItemInserted:
+    {
+        this->oldCollection.insert(oldCollection.begin() + eventIndex, this->VerifiedAttach(changedItem));
+    }
+    break;
 
-	case CollectionChange::ItemChanged:
-		{
-			IBehavior^ oldItem = this->oldCollection[eventIndex];
-			if (oldItem->AssociatedObject != nullptr)
-			{
-				oldItem->Detach();
-			}
+    case CollectionChange::ItemChanged:
+    {
+        auto oldItem = this->oldCollection[eventIndex];
+        if (oldItem.AssociatedObject() != nullptr)
+        {
+            oldItem.Detach();
+        }
 
-			this->oldCollection[eventIndex] = this->VerifiedAttach(changedItem);
-		}
-		break;
+        this->oldCollection[eventIndex] = this->VerifiedAttach(changedItem);
+    }
+    break;
 
-	case CollectionChange::ItemRemoved:
-		{
-			IBehavior^ oldItem = this->oldCollection[eventIndex];
-			if (oldItem->AssociatedObject != nullptr)
-			{
-				oldItem->Detach();
-			}
+    case CollectionChange::ItemRemoved:
+    {
+        auto oldItem = this->oldCollection[eventIndex];
+        if (oldItem.AssociatedObject() != nullptr)
+        {
+            oldItem.Detach();
+        }
 
-			this->oldCollection.erase(oldCollection.begin() + eventIndex);
-		}
-		break;
+        this->oldCollection.erase(oldCollection.begin() + eventIndex);
+    }
+    break;
 
-	default:
-		_ASSERT(false);
-		break;
-	}
+    default:
+        _ASSERT(false);
+        break;
+    }
 
 #if _DEBUG
-	this->VerifyOldCollectionIntegrity();
+    this->VerifyOldCollectionIntegrity();
 #endif
 }
 
-void BehaviorCollection::Attach(DependencyObject^ associatedObject)
+DependencyObject BehaviorCollection::AssociatedObject()
 {
-	if (associatedObject == this->AssociatedObject)
-	{
-		return;
-	}
-
-	if (Windows::ApplicationModel::DesignMode::DesignModeEnabled)
-	{
-		return;
-	}
-
-	if (this->AssociatedObject != nullptr)
-	{
-		throw ref new FailureException(ResourceHelper::GetString("CannotAttachBehaviorMultipleTimesExceptionMessage"));
-	}
-
-	_ASSERT(associatedObject != nullptr);
-	this->associatedObject = associatedObject;
-
-	for (DependencyObject^ item : this)
-	{
-		IBehavior^ behaviorItem = safe_cast<IBehavior^>(item);
-		behaviorItem->Attach(this->AssociatedObject);
-	}
+    return associatedObject.get();
 }
 
+void BehaviorCollection::Attach(DependencyObject const &associatedObject)
+{
+    if (associatedObject == AssociatedObject())
+    {
+        return;
+    }
+
+    if (DesignMode::DesignModeEnabled())
+    {
+        return;
+    }
+
+    if (AssociatedObject() != nullptr)
+    {
+        //ResourceHelper::GetString("CannotAttachBehaviorMultipleTimesExceptionMessage")
+        throw winrt::hresult_invalid_argument(L"CannotAttachBehaviorMultipleTimesExceptionMessage");
+    }
+
+    _ASSERT(associatedObject != nullptr);
+    this->associatedObject = associatedObject;
+
+    for (auto const &item : *this)
+    {
+        auto behaviorItem = item.as<IBehavior>();
+        behaviorItem.Attach(associatedObject);
+    }
+}
 void BehaviorCollection::Detach()
 {
-	for (auto& item : this->oldCollection)
-	{
-		if (item->AssociatedObject != nullptr)
-		{
-			item->Detach();
-		}
-	}
+    for (auto& item : this->oldCollection)
+    {
+        if (item.AssociatedObject() != nullptr)
+        {
+            item.Detach();
+        }
+    }
 
-	this->oldCollection.clear();
+    this->oldCollection.clear();
 
-	this->associatedObject = nullptr;
+    this->associatedObject = nullptr;
 }
 
-IBehavior^ BehaviorCollection::VerifiedAttach(DependencyObject^ item)
+IBehavior BehaviorCollection::VerifiedAttach(DependencyObject const& item)
 {
-	IBehavior^ behavior = dynamic_cast<IBehavior^>(item);
-	if (behavior == nullptr)
-	{
-		throw ref new FailureException(ResourceHelper::GetString("NonBehaviorAddedToBehaviorCollectionExceptionMessage"));
-	}
+    auto behavior = item.as<IBehavior>();
+    if (behavior == nullptr)
+    {
+      // ResourceHelper::GetString("NonBehaviorAddedToBehaviorCollectionExceptionMessage")
+      throw winrt::hresult_invalid_argument(L"NonBehaviorAddedToBehaviorCollectionExceptionMessage");
+    }
 
-	auto found = std::find(begin(this->oldCollection), end(this->oldCollection), behavior);
-	if (found != this->oldCollection.end())
-	{
-		throw ref new FailureException(ResourceHelper::GetString("DuplicateBehaviorInCollectionExceptionMessage"));
-	}
+    auto found = std::find(begin(this->oldCollection), end(this->oldCollection), behavior);
+    if (found != this->oldCollection.end())
+    {
+      // ResourceHelper::GetString("DuplicateBehaviorInCollectionExceptionMessage")
+      throw winrt::hresult_invalid_argument(L"DuplicateBehaviorInCollectionExceptionMessage");
+    }
 
-	if (this->AssociatedObject != nullptr)
-	{
-		behavior->Attach(this->AssociatedObject);
-	}
+    if (this->AssociatedObject() != nullptr)
+    {
+        behavior.Attach(this->AssociatedObject());
+    }
 
-	return behavior;
+    return behavior;
 }
 
 #if _DEBUG
 void BehaviorCollection::VerifyOldCollectionIntegrity()
 {
-	bool isValid = (this->Size == this->oldCollection.size());
-	if (isValid)
-	{
-		for (unsigned int i = 0; i < this->Size; i++)
-		{
-			if (safe_cast<IBehavior^>(this->GetAt(i)) != this->oldCollection[i])
-			{
-				isValid = false;
-				break;
-			}
-		}
-	}
+    bool isValid = (this->Size() == this->oldCollection.size());
+    if (isValid)
+    {
+        for (unsigned int i = 0; i < this->Size(); i++)
+        {
+            if (GetAt(i).as<IBehavior>() != this->oldCollection[i])
+            {
+                isValid = false;
+                break;
+            }
+        }
+    }
 
-	_ASSERT(isValid);
+    _ASSERT(isValid);
 }
 #endif
+
+} // namespace winrt::Microsoft::Xaml::Interactivity::implementation

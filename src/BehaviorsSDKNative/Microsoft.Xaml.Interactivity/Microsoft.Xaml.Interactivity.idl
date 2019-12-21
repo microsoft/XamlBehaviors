@@ -1,0 +1,58 @@
+// Copyright (c) Microsoft. All rights reserved.
+// Licensed under the MIT license. See LICENSE file in the project root for full license information.
+namespace Microsoft
+{
+    namespace Xaml
+    {
+        namespace Interactivity
+        {
+            [uuid(FF80E985-5A7F-3D59-B0FC-D0279FB0E071)]
+            [version(0x00000001)]
+            interface IAction : IInspectable
+            {
+                IInspectable Execute(IInspectable sender, IInspectable parameter);
+            }
+
+            [uuid(B31BD8CC-BF08-3B71-B743-058E3DBCE955)]
+            [version(0x00000001)]
+            interface IBehavior : IInspectable
+            {
+                Windows.UI.Xaml.DependencyObject AssociatedObject{ get; };
+                void Attach(Windows.UI.Xaml.DependencyObject associatedObject);
+                void Detach();
+            }
+
+            [default_interface]
+            runtimeclass ActionCollection : Windows.UI.Xaml.DependencyObjectCollection
+            {
+                ActionCollection();
+            }
+
+            [default_interface]
+            runtimeclass BehaviorCollection : Windows.UI.Xaml.DependencyObjectCollection
+            {
+                BehaviorCollection();
+                Windows.UI.Xaml.DependencyObject AssociatedObject{ get; };
+                void Attach(Windows.UI.Xaml.DependencyObject associatedObject);
+                void Detach();
+            }
+
+            [default_interface]
+            static runtimeclass Interaction
+            {
+                static Windows.UI.Xaml.DependencyProperty BehaviorsProperty{ get; };
+                static Microsoft.Xaml.Interactivity.BehaviorCollection GetBehaviors(Windows.UI.Xaml.DependencyObject obj);
+                static void SetBehaviors(Windows.UI.Xaml.DependencyObject obj, Microsoft.Xaml.Interactivity.BehaviorCollection value);
+                static Windows.Foundation.Collections.IIterable<IInspectable> ExecuteActions(IInspectable sender, Microsoft.Xaml.Interactivity.ActionCollection actions, IInspectable parameter);
+            }
+
+            [default_interface]
+            static runtimeclass VisualStateUtilities
+            {
+                static Windows.UI.Xaml.Controls.Control FindNearestStatefulControl(Windows.UI.Xaml.FrameworkElement element);
+                static Boolean GoToState(Windows.UI.Xaml.Controls.Control ctrl, String stateName, Boolean useTransitions);
+                static Windows.Foundation.Collections.IVector<Windows.UI.Xaml.VisualStateGroup> GetVisualStateGroups(Windows.UI.Xaml.FrameworkElement element);
+            }
+        }
+    }
+}

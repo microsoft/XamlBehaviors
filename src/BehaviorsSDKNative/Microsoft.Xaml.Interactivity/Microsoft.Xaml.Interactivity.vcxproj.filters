@@ -21,11 +21,8 @@
     <ClInclude Include="targetver.h" />
     <ClInclude Include="ActionCollection.h" />
     <ClInclude Include="BehaviorCollection.h" />
-    <ClInclude Include="IAction.h" />
-    <ClInclude Include="IBehavior.h" />
     <ClInclude Include="Interaction.h" />
     <ClInclude Include="pch.h" />
-    <ClInclude Include="ResourceHelper.h" />
     <ClInclude Include="VisualStateUtilities.h" />
     <ClInclude Include="Microsoft.Xaml.Interactivity.h" />
     <ClInclude Include="resource.h" />
@@ -64,5 +61,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Midl Include="Microsoft.Xaml.Interactivity.idl" />
   </ItemGroup>
 </Project>
