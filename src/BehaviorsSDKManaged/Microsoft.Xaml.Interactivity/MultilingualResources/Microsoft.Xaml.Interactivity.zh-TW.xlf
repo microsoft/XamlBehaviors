@@ -22,6 +22,10 @@
           <source>Only IBehavior types are supported in a BehaviorCollection.</source>
           <target state="final">BehaviorCollection 只支援 IBehavior 類型。</target>
         </trans-unit>
+        <trans-unit id="InvalidAssociatedObjectExceptionMessage" translate="yes" xml:space="preserve">
+          <source>AssociatedObject is of type {0} but should be of type {1}.</source>
+          <target state="new">AssociatedObject is of type {0} but should be of type {1}.</target>
+        </trans-unit>
       </group>
     </body>
   </file>
