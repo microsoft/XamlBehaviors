@@ -82,6 +82,7 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <Import Project="..\..\..\scripts\Microsoft.Xaml.Behaviors.Signing.targets" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PackageId>Microsoft.Xaml.Behaviors.Uwp.Managed</PackageId>
