@@ -12,6 +12,10 @@
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
+# NuGet v3
+*.nuget.props
+*.nuget.targets
+
 # Build results
 [Dd]ebug/
 [Dd]ebugPublic/

@@ -12,8 +12,6 @@
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
-	<OutputPath>..\..\..\out\$(SolutionName)\bin\$(Platform)\$(Configuration)\</OutputPath>
-    <IntermediateOutputPath>..\..\..\out\$(SolutionName)\obj\$(Platform)\$(Configuration)\</IntermediateOutputPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -32,6 +30,10 @@
   </PropertyGroup>
   <PropertyGroup>
     <DefineConstants>$(DefineConstants);SurfaceIsolation</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OutputPath>..\..\..\out\$(SolutionName)\bin\$(Platform)\$(Configuration)\</OutputPath>
+    <IntermediateOutputPath>..\..\..\out\$(SolutionName)\obj\$(Platform)\$(Configuration)\</IntermediateOutputPath>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.VisualStudio.DesignTools.Extensibility, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -53,8 +55,8 @@
     <Compile Include="..\Microsoft.Xaml.Interactivity.Design\MetadataTableProvider.cs">
       <Link>MetadataTableProvider.cs</Link>
     </Compile>
-    <Compile Include="..\Microsoft.Xaml.Interactivity.Design\Properties\Resources.Designer.cs">
-      <Link>Properties\Resources.Designer.cs</Link>
+    <Compile Include="..\Microsoft.Xaml.Interactivity.Design\Properties\DesignTools.Resources.Designer.cs">
+      <Link>Properties\DesignTools.Resources.Designer.cs</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
@@ -67,7 +69,7 @@
       <Link>Properties\Resources.resx</Link>
       <CustomToolNamespace>Microsoft.Xaml.Interactivity.Design.Properties</CustomToolNamespace>
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources1.Designer.cs</LastGenOutput>
+      <LastGenOutput>DesignTools.Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

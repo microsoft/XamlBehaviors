@@ -84,9 +84,9 @@
     <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
   </PropertyGroup>
   <PropertyGroup>
-		<OutputPath>..\..\..\out\$(SolutionName)\bin\$(Platform)\$(Configuration)\</OutputPath>
-		<IntermediateOutputPath>..\..\..\out\$(SolutionName)\obj\$(Platform)\$(Configuration)\</IntermediateOutputPath>
-	</PropertyGroup>
+    <OutputPath>..\..\..\out\$(SolutionName)\bin\$(Platform)\$(Configuration)\</OutputPath>
+    <IntermediateOutputPath>..\..\..\out\$(SolutionName)\obj\$(Platform)\$(Configuration)\</IntermediateOutputPath>
+  </PropertyGroup>
   <ItemGroup>
     <!--A reference to the entire .Net Framework and Windows SDK are automatically included-->
     <SDKReference Include="TestPlatform.Universal, Version=$(UnitTestPlatformVersion)" />
