@@ -2,43 +2,45 @@
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 #include "pch.h"
 #include "ActionCollection.h"
-#include "IAction.h"
-#include "ResourceHelper.h"
 
-using namespace Platform;
-using namespace Windows::UI::Xaml;
+namespace winrt
+{
 using namespace Windows::Foundation::Collections;
-using namespace Microsoft::Xaml::Interactivity;
+using namespace Windows::UI::Xaml;
+} // namespace winrt
 
+namespace winrt::Microsoft::Xaml::Interactivity::implementation
+{
 ActionCollection::ActionCollection()
 {
-	this->VectorChanged += ref new VectorChangedEventHandler<DependencyObject^>(this, &ActionCollection::OnVectorChanged);
+    _vectorChanged = VectorChanged(auto_revoke, {get_weak(), &ActionCollection::OnVectorChanged});
 }
 
-void ActionCollection::OnVectorChanged(IObservableVector<DependencyObject^>^ sender, IVectorChangedEventArgs^ eventArgs)
+void ActionCollection::OnVectorChanged(IObservableVector<DependencyObject> const &, IVectorChangedEventArgs const &event)
 {
-	CollectionChange collectionChange = eventArgs->CollectionChange;
+    auto collectionChange = event.CollectionChange();
 
-	if (collectionChange == CollectionChange::Reset)
-	{
-		for (const auto& item : this)
-		{
-			ActionCollection::VerifyType(item);
-		}
-	}
-	else if (collectionChange == CollectionChange::ItemInserted || collectionChange == CollectionChange::ItemChanged)
-	{
-		auto changedItem = this->GetAt(eventArgs->Index);
-		ActionCollection::VerifyType(changedItem);
-	}
+    if (collectionChange == CollectionChange::Reset)
+    {
+        for (auto const &item : *this)
+        {
+            ActionCollection::VerifyType(item);
+        }
+    }
+    else if (collectionChange == CollectionChange::ItemInserted || collectionChange == CollectionChange::ItemChanged)
+    {
+        auto changedItem = GetAt(event.Index());
+        ActionCollection::VerifyType(changedItem);
+    }
 }
 
-void ActionCollection::VerifyType(DependencyObject^ item)
+void ActionCollection::VerifyType(DependencyObject const &item)
 {
-	IAction^ action = dynamic_cast<IAction^>(item);
-
-	if (action == nullptr)
-	{
-		throw ref new FailureException(ResourceHelper::GetString("NonActionAddedToActionCollectionExceptionMessage"));
-	}
+    auto type = item.try_as<IAction>();
+    if (type == nullptr)
+    {
+        // ResourceHelper::GetString("NonActionAddedToActionCollectionExceptionMessage")
+        throw winrt::hresult_invalid_argument(L"NonActionAddedToActionCollectionExceptionMessage");
+    }
 }
+} // namespace winrt::Microsoft::Xaml::Interactivity::implementation
