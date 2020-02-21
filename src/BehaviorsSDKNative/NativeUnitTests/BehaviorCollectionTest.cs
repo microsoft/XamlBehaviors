@@ -1,46 +1,47 @@
 ﻿// -------------------------------------------------------------------
 // Copyright (c) Microsoft Corporation. All Rights Reserved.
 // -------------------------------------------------------------------
+
+using System.Runtime.InteropServices;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Microsoft.VisualStudio.TestTools.UnitTesting.AppContainer;
+using Microsoft.Xaml.Interactivity;
+using Windows.UI.Xaml.Controls;
+
 namespace BehaviorsXamlSdkUnitTests
 {
-    using Microsoft.VisualStudio.TestPlatform.UnitTestFramework;
-    using Microsoft.Xaml.Interactivity;
-    using Windows.UI.Xaml.Controls;
-    using AppContainerUITestMethod = Microsoft.VisualStudio.TestPlatform.UnitTestFramework.AppContainer.UITestMethodAttribute;
-
     [TestClass]
     public class BehaviorCollectionTest
     {
-        [AppContainerUITestMethod]
+        [UITestMethod]
         public void VectorChanged_NonBehaviorAdded_ExceptionThrown()
         {
             BehaviorCollection behaviorCollection = new BehaviorCollection();
             behaviorCollection.Add(new StubBehavior());
 
-            TestUtilities.AssertThrowsException(() => behaviorCollection.Add(new TextBlock()));
+            Assert.ThrowsException<COMException>(() => behaviorCollection.Add(new TextBlock()));
         }
 
-        [AppContainerUITestMethod]
+        [UITestMethod]
         public void VectorChanged_BehaviorChangedToNonBehavior_ExceptionThrown()
         {
             BehaviorCollection behaviorCollection = new BehaviorCollection();
             behaviorCollection.Add(new StubBehavior());
 
-            TestUtilities.AssertThrowsException(() => behaviorCollection[0] = new ToggleSwitch());
+            Assert.ThrowsException<COMException>(() => behaviorCollection[0] = new ToggleSwitch());
         }
 
-        [AppContainerUITestMethod]
+        [UITestMethod]
         public void VectorChanged_DuplicateAdd_ExceptionThrown()
         {
             BehaviorCollection behaviorCollection = new BehaviorCollection();
             StubBehavior stub = new StubBehavior();
             behaviorCollection.Add(stub);
 
-            TestUtilities.AssertThrowsException(() => behaviorCollection.Add(stub));
-
+            Assert.ThrowsException<COMException>(() => behaviorCollection.Add(stub));
         }
 
-        [AppContainerUITestMethod]
+        [UITestMethod]
         public void VectorChanged_AddWhileNotAttached_AttachNotCalled()
         {
             BehaviorCollection behaviorCollection = new BehaviorCollection();
@@ -50,7 +51,7 @@ namespace BehaviorsXamlSdkUnitTests
             TestUtilities.AssertNotAttached(stub);
         }
 
-        [AppContainerUITestMethod]
+        [UITestMethod]
         public void VectorChanged_AddWhileAttached_AllAttached()
         {
             BehaviorCollection behaviorCollection = new BehaviorCollection();
@@ -66,7 +67,7 @@ namespace BehaviorsXamlSdkUnitTests
             }
         }
 
-        [AppContainerUITestMethod]
+        [UITestMethod]
         public void VectorChanged_ReplaceWhileAttached_OldDetachedNewAttached()
         {
             BehaviorCollection behaviorCollection = new BehaviorCollection();
@@ -85,7 +86,7 @@ namespace BehaviorsXamlSdkUnitTests
         }
 
 
-        [AppContainerUITestMethod]
+        [UITestMethod]
         public void VectorChanged_RemoveWhileNotAttached_DetachNotCalled()
         {
             BehaviorCollection behaviorCollection = new BehaviorCollection();
@@ -97,7 +98,7 @@ namespace BehaviorsXamlSdkUnitTests
             TestUtilities.AssertNotDetached(behavior);
         }
 
-        [AppContainerUITestMethod]
+        [UITestMethod]
         public void VectorChanged_RemoveWhileAttached_Detached()
         {
             BehaviorCollection behaviorCollection = new BehaviorCollection();
@@ -110,7 +111,7 @@ namespace BehaviorsXamlSdkUnitTests
             TestUtilities.AssertDetached(behavior);
         }
 
-        [AppContainerUITestMethod]
+        [UITestMethod]
         public void VectorChanged_ResetWhileNotAttached_DetachNotCalled()
         {
             StubBehavior[] behaviorArray = { new StubBehavior(), new StubBehavior(), new StubBehavior() };
@@ -129,7 +130,7 @@ namespace BehaviorsXamlSdkUnitTests
             }
         }
 
-        [AppContainerUITestMethod]
+        [UITestMethod]
         public void VectorChanged_ResetWhileAttached_AllDetached()
         {
             StubBehavior[] behaviorArray = { new StubBehavior(), new StubBehavior(), new StubBehavior() };
@@ -150,7 +151,7 @@ namespace BehaviorsXamlSdkUnitTests
             }
         }
 
-        [AppContainerUITestMethod]
+        [UITestMethod]
         public void Attach_MultipleBehaviors_AllAttached()
         {
             BehaviorCollection behaviorCollection = new BehaviorCollection();
@@ -169,7 +170,7 @@ namespace BehaviorsXamlSdkUnitTests
             }
         }
 
-        [AppContainerUITestMethod]
+        [UITestMethod]
         public void Attach_Null_AttachNotCalledOnItems()
         {
             BehaviorCollection behaviorCollection = new BehaviorCollection();
@@ -185,17 +186,17 @@ namespace BehaviorsXamlSdkUnitTests
             }
         }
 
-        [AppContainerUITestMethod]
+        [UITestMethod]
         public void Attach_MultipleObjects_ExceptionThrown()
         {
             BehaviorCollection behaviorCollection = new BehaviorCollection();
             StubBehavior stub = new StubBehavior();
             behaviorCollection.Attach(new Button());
 
-            TestUtilities.AssertThrowsException(() => behaviorCollection.Attach(new StackPanel()));
+            Assert.ThrowsException<COMException>(() => behaviorCollection.Attach(new StackPanel()));
         }
 
-        [AppContainerUITestMethod]
+        [UITestMethod]
         public void Attach_NonNullThenNull_ExceptionThrown()
         {
             BehaviorCollection behaviorCollection = new BehaviorCollection();
@@ -203,10 +204,10 @@ namespace BehaviorsXamlSdkUnitTests
 
             behaviorCollection.Attach(new Button());
 
-            TestUtilities.AssertThrowsException(() => behaviorCollection.Attach(null));
+            Assert.ThrowsException<COMException>(() => behaviorCollection.Attach(null));
         }
 
-        [AppContainerUITestMethod]
+        [UITestMethod]
         public void Attach_MultipleTimeSameObject_AttachCalledOnce()
         {
             BehaviorCollection behaviorCollection = new BehaviorCollection() { new StubBehavior() };
@@ -219,7 +220,7 @@ namespace BehaviorsXamlSdkUnitTests
             TestUtilities.AssertAttached((StubBehavior)behaviorCollection[0], button);
         }
 
-        [AppContainerUITestMethod]
+        [UITestMethod]
         public void Detach_NotAttached_DetachNotCalledOnItems()
         {
             BehaviorCollection behaviorCollection = new BehaviorCollection() { new StubBehavior() };
@@ -229,7 +230,7 @@ namespace BehaviorsXamlSdkUnitTests
             TestUtilities.AssertNotDetached((StubBehavior)behaviorCollection[0]);
         }
 
-        [AppContainerUITestMethod]
+        [UITestMethod]
         public void Detach_Attached_AllItemsDetached()
         {
             BehaviorCollection behaviorCollection = new BehaviorCollection();

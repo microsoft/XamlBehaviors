@@ -1,10 +1,6 @@
 ﻿// Copyright (c) Microsoft. All rights reserved. 
 // Licensed under the MIT license. See LICENSE file in the project root for full license information. 
 
-#if !SurfaceIsolation
-extern alias WindowsRuntime;
-#endif
-
 using System.ComponentModel;
 using Microsoft.Xaml.Interactions.Design.Properties;
 

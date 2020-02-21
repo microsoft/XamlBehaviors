@@ -22,6 +22,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2B3854DD-E11F-4758-A892-E27E9AAD92C6}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
+		..\..\key\35MSSharedLib1024.snk = ..\..\key\35MSSharedLib1024.snk
 		..\..\scripts\download-nuget.cmd = ..\..\scripts\download-nuget.cmd
 		..\..\scripts\Microsoft.Xaml.Behaviors.Signing.targets = ..\..\scripts\Microsoft.Xaml.Behaviors.Signing.targets
 		..\..\scripts\Microsoft.Xaml.Behaviors.Uwp.Managed.nuspec = ..\..\scripts\Microsoft.Xaml.Behaviors.Uwp.Managed.nuspec
@@ -103,6 +104,8 @@ Global
 		{A3161818-5AA8-4A7C-A6CD-B19EDA5F3AE1}.Release|x86.ActiveCfg = Release|Any CPU
 		{A3161818-5AA8-4A7C-A6CD-B19EDA5F3AE1}.Release|x86.Build.0 = Release|Any CPU
 		{9A26166B-1E98-4723-9B42-FB64BDC231E6}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{9A26166B-1E98-4723-9B42-FB64BDC231E6}.Debug|Any CPU.Build.0 = Debug|x86
+		{9A26166B-1E98-4723-9B42-FB64BDC231E6}.Debug|Any CPU.Deploy.0 = Debug|x86
 		{9A26166B-1E98-4723-9B42-FB64BDC231E6}.Debug|ARM.ActiveCfg = Debug|ARM
 		{9A26166B-1E98-4723-9B42-FB64BDC231E6}.Debug|ARM.Build.0 = Debug|ARM
 		{9A26166B-1E98-4723-9B42-FB64BDC231E6}.Debug|ARM.Deploy.0 = Debug|ARM
