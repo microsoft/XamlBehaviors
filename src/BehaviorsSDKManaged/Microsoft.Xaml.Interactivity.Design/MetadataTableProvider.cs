@@ -15,6 +15,8 @@ using Microsoft.Xaml.Interactivity.Design.Properties;
 
 [assembly: ProvideMetadata(typeof(Microsoft.Xaml.Interactivity.Design.MetadataTableProvider))]
 
+// Please note that both the .Design and .DesignTools project
+// use the same namespace: Microsoft.Xaml.Interactivity.Design
 namespace Microsoft.Xaml.Interactivity.Design
 {
     partial class MetadataTableProvider : IProvideAttributeTable

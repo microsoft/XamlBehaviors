@@ -5,7 +5,7 @@ using System;
 using Microsoft.Xaml.Interactions.Core;
 using Microsoft.Xaml.Interactions.Media;
 
-namespace Microsoft.Xaml.Interactivity.Design
+namespace Microsoft.Xaml.Interactions.Design
 {
     partial class MetadataTableProvider
     {
