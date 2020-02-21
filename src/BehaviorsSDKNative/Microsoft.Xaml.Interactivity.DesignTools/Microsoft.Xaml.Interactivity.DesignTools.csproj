@@ -73,5 +73,7 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <Import Project="..\Version\NuGetPackageVersion.props" />
+  <Import Project="..\..\..\scripts\Microsoft.Xaml.Behaviors.Signing.targets" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
