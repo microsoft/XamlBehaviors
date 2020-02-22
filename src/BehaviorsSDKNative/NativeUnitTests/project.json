@@ -1,9 +1,12 @@
 ﻿{
   "dependencies": {
-    "Microsoft.NETCore.UniversalWindowsPlatform": "5.0.0"
+    "Microsoft.NET.Test.Sdk": "16.5.0",
+    "Microsoft.NETCore.UniversalWindowsPlatform": "6.2.9",
+    "MSTest.TestAdapter": "2.1.0",
+    "MSTest.TestFramework": "2.1.0"
   },
   "frameworks": {
-    "uap10.0": {}
+    "uap10.0.10240": {}
   },
   "runtimes": {
     "win10-arm": {},

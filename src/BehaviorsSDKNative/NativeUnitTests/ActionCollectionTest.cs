@@ -1,33 +1,34 @@
 ﻿// -------------------------------------------------------------------
 // Copyright (c) Microsoft Corporation. All Rights Reserved.
 // -------------------------------------------------------------------
+
+using System.Runtime.InteropServices;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Microsoft.VisualStudio.TestTools.UnitTesting.AppContainer;
+using Microsoft.Xaml.Interactivity;
+using Windows.UI.Xaml.Controls;
+
 namespace BehaviorsXamlSdkUnitTests
 {
-    using System;
-    using Microsoft.VisualStudio.TestPlatform.UnitTestFramework;
-    using Microsoft.Xaml.Interactivity;
-    using Windows.UI.Xaml.Controls;
-    using AppContainerUITestMethod = Microsoft.VisualStudio.TestPlatform.UnitTestFramework.AppContainer.UITestMethodAttribute;
-
     [TestClass]
     public class ActionCollectionTest
     {
-        [AppContainerUITestMethod]
+        [UITestMethod]
         public void VectorChanged_NonActionAdded_ExceptionThrown()
         {
             ActionCollection actionCollection = new ActionCollection();
             actionCollection.Add(new StubAction());
 
-            TestUtilities.AssertThrowsException(() => actionCollection.Add(new Button()));
+            Assert.ThrowsException<COMException>(() => actionCollection.Add(new Button()));
         }
 
-        [AppContainerUITestMethod]
+        [UITestMethod]
         public void VectorChanged_ActionChangedToNonAction_ExceptionThrown()
         {
             ActionCollection actionCollection = new ActionCollection();
             actionCollection.Add(new StubAction());
 
-            TestUtilities.AssertThrowsException(() => actionCollection[0] = new Button());
+            Assert.ThrowsException<COMException>(() => actionCollection[0] = new Button());
         }
     }
 }

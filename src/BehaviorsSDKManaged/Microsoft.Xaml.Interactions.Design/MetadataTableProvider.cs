@@ -1,10 +1,6 @@
 ﻿// Copyright (c) Microsoft. All rights reserved. 
 // Licensed under the MIT license. See LICENSE file in the project root for full license information. 
 
-#if !SurfaceIsolation
-extern alias WindowsRuntime;
-#endif
-
 using System.ComponentModel;
 using Microsoft.Xaml.Interactions.Design.Properties;
 
@@ -18,9 +14,11 @@ using Microsoft.Windows.Design.PropertyEditing;
 using Editors = Microsoft.Windows.Design.PropertyEditing.Editors;
 #endif
 
-[assembly: ProvideMetadata(typeof(Microsoft.Xaml.Interactivity.Design.MetadataTableProvider))]
+[assembly: ProvideMetadata(typeof(Microsoft.Xaml.Interactions.Design.MetadataTableProvider))]
 
-namespace Microsoft.Xaml.Interactivity.Design
+// Please note that both the .Design and .DesignTools project
+// use the same namespace: Microsoft.Xaml.Interactions.Design
+namespace Microsoft.Xaml.Interactions.Design
 {
     partial class MetadataTableProvider : IProvideAttributeTable
     {
