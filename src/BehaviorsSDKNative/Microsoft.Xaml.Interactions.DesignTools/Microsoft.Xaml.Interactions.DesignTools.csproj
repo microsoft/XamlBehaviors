@@ -36,12 +36,6 @@
     <IntermediateOutputPath>..\..\..\out\$(SolutionName)\obj\$(Platform)\$(Configuration)\</IntermediateOutputPath>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.VisualStudio.DesignTools.Extensibility, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.VisualStudio.DesignTools.Extensibility.16.4.29519.181\lib\net45\Microsoft.VisualStudio.DesignTools.Extensibility.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.VisualStudio.DesignTools.Interaction, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.VisualStudio.DesignTools.Extensibility.16.4.29519.181\lib\net45\Microsoft.VisualStudio.DesignTools.Interaction.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -65,15 +59,17 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="..\Microsoft.Xaml.Interactions.Design\Properties\Resources.resx">
       <Link>Properties\Resources.resx</Link>
       <CustomToolNamespace>Microsoft.Xaml.Interactions.Design.Properties</CustomToolNamespace>
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>DesignTools.Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.DesignTools.Extensibility">
+      <Version>16.4.29519.181</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="..\Version\NuGetPackageVersion.props" />
   <Import Project="..\..\..\scripts\Microsoft.Xaml.Behaviors.Signing.targets" />
