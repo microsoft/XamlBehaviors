@@ -45,10 +45,10 @@ namespace Microsoft.Xaml.Interactions.Media
 		private Popup _popup;
 
 		/// <summary>
-		/// Gets or sets the location of the sound file. This is used to set the source property of a <see cref="Windows.UI.Xaml.Controls.MediaElement"/>. This is a dependency property.
+		/// Gets or sets the location of the sound file. This is used to set the source property of a <see cref="Microsoft.UI.Xaml.Controls.MediaElement"/>. This is a dependency property.
 		/// </summary>
 		/// <remarks>
-		/// The sound can be any file format supported by <see cref="Windows.UI.Xaml.Controls.MediaElement"/>. In the case of a video, it will play only the
+		/// The sound can be any file format supported by <see cref="Microsoft.UI.Xaml.Controls.MediaElement"/>. In the case of a video, it will play only the
 		/// audio portion.
 		/// </remarks>
 		public string Source
@@ -64,7 +64,7 @@ namespace Microsoft.Xaml.Interactions.Media
 		}
 
 		/// <summary>
-		/// Gets or set the volume of the sound. This is used to set the <see cref="Windows.UI.Xaml.Controls.MediaElement.Volume"/> property of the <see cref="Windows.UI.Xaml.Controls.MediaElement"/>. This is a dependency property.
+		/// Gets or set the volume of the sound. This is used to set the <see cref="Microsoft.UI.Xaml.Controls.MediaElement.Volume"/> property of the <see cref="Microsoft.UI.Xaml.Controls.MediaElement"/>. This is a dependency property.
 		/// </summary>
 		/// <remarks>
 		/// By default this is set to 0.5.
@@ -86,7 +86,7 @@ namespace Microsoft.Xaml.Interactions.Media
 		/// </summary>
 		/// <param name="sender">The <see cref="object"/> that is passed to the action by the behavior. Generally this is <seealso cref="IBehavior.AssociatedObject"/> or a target object.</param>
 		/// <param name="parameter">The value of this parameter is determined by the caller.</param>
-		/// <returns>True if <see cref="Windows.UI.Xaml.Controls.MediaElement.Source"/> is set successfully; else false.</returns>
+		/// <returns>True if <see cref="Microsoft.UI.Xaml.Controls.MediaElement.Source"/> is set successfully; else false.</returns>
 		public object Execute(object sender, object parameter)
 		{
 			if (string.IsNullOrEmpty(this.Source))
