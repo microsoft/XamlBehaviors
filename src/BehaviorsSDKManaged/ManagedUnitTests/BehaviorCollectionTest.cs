@@ -1,14 +1,17 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+// Copyright (c) Microsoft. All rights reserved. 
+// Licensed under the MIT license. See LICENSE file in the project root for full license information. 
+
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Microsoft.VisualStudio.TestTools.UnitTesting.AppContainer;
 using Microsoft.Xaml.Interactivity;
 using Microsoft.UI.Xaml.Controls;
-using AppContainerUITestMethod = Microsoft.VisualStudio.TestTools.UnitTesting.AppContainer.UITestMethodAttribute;
 
 namespace ManagedUnitTests
 {
     [TestClass]
     public class BehaviorCollectionTest
     {
-        [AppContainerUITestMethod]
+        [UITestMethod]
         public void VectorChanged_NonBehaviorAdded_ExceptionThrown()
         {
             BehaviorCollection behaviorCollection = new BehaviorCollection();
@@ -17,7 +20,7 @@ namespace ManagedUnitTests
             TestUtilities.AssertThrowsInvalidOperationException(() => behaviorCollection.Add(new TextBlock()));
         }
 
-        [AppContainerUITestMethod]
+        [UITestMethod]
         public void VectorChanged_BehaviorChangedToNonBehavior_ExceptionThrown()
         {
             BehaviorCollection behaviorCollection = new BehaviorCollection();
@@ -26,7 +29,7 @@ namespace ManagedUnitTests
             TestUtilities.AssertThrowsInvalidOperationException(() => behaviorCollection[0] = new ToggleSwitch());
         }
 
-        [AppContainerUITestMethod]
+        [UITestMethod]
         public void VectorChanged_DuplicateAdd_ExceptionThrown()
         {
             BehaviorCollection behaviorCollection = new BehaviorCollection();
@@ -37,7 +40,7 @@ namespace ManagedUnitTests
 
         }
 
-        [AppContainerUITestMethod]
+        [UITestMethod]
         public void VectorChanged_AddWhileNotAttached_AttachNotCalled()
         {
             BehaviorCollection behaviorCollection = new BehaviorCollection();
@@ -47,7 +50,7 @@ namespace ManagedUnitTests
             TestUtilities.AssertNotAttached(stub);
         }
 
-        [AppContainerUITestMethod]
+        [UITestMethod]
         public void VectorChanged_AddWhileAttached_AllAttached()
         {
             BehaviorCollection behaviorCollection = new BehaviorCollection();
@@ -63,7 +66,7 @@ namespace ManagedUnitTests
             }
         }
 
-        [AppContainerUITestMethod]
+        [UITestMethod]
         public void VectorChanged_ReplaceWhileAttached_OldDetachedNewAttached()
         {
             BehaviorCollection behaviorCollection = new BehaviorCollection();
@@ -82,7 +85,7 @@ namespace ManagedUnitTests
         }
 
 
-        [AppContainerUITestMethod]
+        [UITestMethod]
         public void VectorChanged_RemoveWhileNotAttached_DetachNotCalled()
         {
             BehaviorCollection behaviorCollection = new BehaviorCollection();
@@ -94,7 +97,7 @@ namespace ManagedUnitTests
             TestUtilities.AssertNotDetached(behavior);
         }
 
-        [AppContainerUITestMethod]
+        [UITestMethod]
         public void VectorChanged_RemoveWhileAttached_Detached()
         {
             BehaviorCollection behaviorCollection = new BehaviorCollection();
@@ -107,7 +110,7 @@ namespace ManagedUnitTests
             TestUtilities.AssertDetached(behavior);
         }
 
-        [AppContainerUITestMethod]
+        [UITestMethod]
         public void VectorChanged_ResetWhileNotAttached_DetachNotCalled()
         {
             StubBehavior[] behaviorArray = { new StubBehavior(), new StubBehavior(), new StubBehavior() };
@@ -126,7 +129,7 @@ namespace ManagedUnitTests
             }
         }
 
-        [AppContainerUITestMethod]
+        [UITestMethod]
         public void VectorChanged_ResetWhileAttached_AllDetached()
         {
             StubBehavior[] behaviorArray = { new StubBehavior(), new StubBehavior(), new StubBehavior() };
@@ -147,7 +150,7 @@ namespace ManagedUnitTests
             }
         }
 
-        [AppContainerUITestMethod]
+        [UITestMethod]
         public void Attach_MultipleBehaviors_AllAttached()
         {
             BehaviorCollection behaviorCollection = new BehaviorCollection();
@@ -166,7 +169,7 @@ namespace ManagedUnitTests
             }
         }
 
-        [AppContainerUITestMethod]
+        [UITestMethod]
         public void Attach_Null_AttachNotCalledOnItems()
         {
             BehaviorCollection behaviorCollection = new BehaviorCollection();
@@ -182,7 +185,7 @@ namespace ManagedUnitTests
             }
         }
 
-        [AppContainerUITestMethod]
+        [UITestMethod]
         public void Attach_MultipleObjects_ExceptionThrown()
         {
             BehaviorCollection behaviorCollection = new BehaviorCollection();
@@ -192,7 +195,7 @@ namespace ManagedUnitTests
             TestUtilities.AssertThrowsInvalidOperationException(() => behaviorCollection.Attach(new StackPanel()));
         }
 
-        [AppContainerUITestMethod]
+        [UITestMethod]
         public void Attach_NonNullThenNull_ExceptionThrown()
         {
             BehaviorCollection behaviorCollection = new BehaviorCollection();
@@ -203,7 +206,7 @@ namespace ManagedUnitTests
             TestUtilities.AssertThrowsInvalidOperationException(() => behaviorCollection.Attach(null));
         }
 
-        [AppContainerUITestMethod]
+        [UITestMethod]
         public void Attach_MultipleTimeSameObject_AttachCalledOnce()
         {
             BehaviorCollection behaviorCollection = new BehaviorCollection() { new StubBehavior() };
@@ -216,7 +219,7 @@ namespace ManagedUnitTests
             TestUtilities.AssertAttached((StubBehavior)behaviorCollection[0], button);
         }
 
-        [AppContainerUITestMethod]
+        [UITestMethod]
         public void Detach_NotAttached_DetachNotCalledOnItems()
         {
             BehaviorCollection behaviorCollection = new BehaviorCollection() { new StubBehavior() };
@@ -226,7 +229,7 @@ namespace ManagedUnitTests
             TestUtilities.AssertNotDetached((StubBehavior)behaviorCollection[0]);
         }
 
-        [AppContainerUITestMethod]
+        [UITestMethod]
         public void Detach_Attached_AllItemsDetached()
         {
             BehaviorCollection behaviorCollection = new BehaviorCollection();

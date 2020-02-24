@@ -1,7 +1,10 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+// Copyright (c) Microsoft. All rights reserved. 
+// Licensed under the MIT license. See LICENSE file in the project root for full license information. 
+
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Microsoft.VisualStudio.TestTools.UnitTesting.AppContainer;
 using Microsoft.Xaml.Interactions.Core;
 using Microsoft.UI.Xaml;
-using AppContainerUITestMethod = Microsoft.VisualStudio.TestTools.UnitTesting.AppContainer.UITestMethodAttribute;
 
 namespace ManagedUnitTests
 {
@@ -10,7 +13,7 @@ namespace ManagedUnitTests
     {
         private static readonly string TestPageName = typeof(BlankPage).FullName;
 
-        [AppContainerUITestMethod]
+        [UITestMethod]
         public void Execute_SenderImplementsINavigate_NavigatesToSender()
         {
             // Arrange
@@ -27,7 +30,7 @@ namespace ManagedUnitTests
             Assert.AreEqual(NavigateToPageActionTest.TestPageName, navigateTarget.NavigatedTypeFullName);
         }
 
-        [AppContainerUITestMethod]
+        [UITestMethod]
         public void Execute_SenderDoesNotImplementINavigate_NavigatesToAncestor()
         {
             // Arrange
@@ -46,7 +49,7 @@ namespace ManagedUnitTests
             Assert.AreEqual(NavigateToPageActionTest.TestPageName, navigateTarget.NavigatedTypeFullName);
         }
 
-        [AppContainerUITestMethod]
+        [UITestMethod]
         public void Execute_NoAncestorImplementsINavigate_Fails()
         {
             // Arrange

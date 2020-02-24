@@ -3,7 +3,7 @@
 
 using System;
 
-namespace Microsoft.Xaml.Interactivity.Design
+namespace Microsoft.Xaml.Interactions.Design
 {
     partial class MetadataTableProvider
     {

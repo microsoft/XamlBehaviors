@@ -1,19 +1,21 @@
 ﻿// -------------------------------------------------------------------
 // Copyright (c) Microsoft Corporation. All Rights Reserved.
 // -------------------------------------------------------------------
+
+using System.Collections.Generic;
+using System.Linq;
+
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Microsoft.VisualStudio.TestTools.UnitTesting.AppContainer;
+using Microsoft.Xaml.Interactivity;
+using Windows.UI.Xaml.Controls;
+
 namespace BehaviorsXamlSdkUnitTests
 {
-    using System.Collections.Generic;
-    using System.Linq;
-    using Microsoft.VisualStudio.TestPlatform.UnitTestFramework;
-    using Microsoft.Xaml.Interactivity;
-    using Windows.UI.Xaml.Controls;
-    using AppContainerUITestMethod = Microsoft.VisualStudio.TestPlatform.UnitTestFramework.AppContainer.UITestMethodAttribute;
-
     [TestClass]
     public class InteractionTest
     {
-        [AppContainerUITestMethod]
+        [UITestMethod]
         public void SetBehaviors_MultipleBehaviors_AllAttached()
         {
             BehaviorCollection behaviorCollection = new BehaviorCollection();
@@ -32,7 +34,7 @@ namespace BehaviorsXamlSdkUnitTests
             }
         }
 
-        [AppContainerUITestMethod]
+        [UITestMethod]
         public void SetBehaviors_MultipleSets_DoesNotReattach()
         {
             BehaviorCollection behaviorCollection = new BehaviorCollection() { new StubBehavior() };
@@ -47,7 +49,7 @@ namespace BehaviorsXamlSdkUnitTests
             }
         }
 
-        [AppContainerUITestMethod]
+        [UITestMethod]
         public void SetBehaviors_CollectionThenNull_DeatchCollection()
         {
             BehaviorCollection behaviorCollection = new BehaviorCollection() { new StubBehavior() };
@@ -63,7 +65,7 @@ namespace BehaviorsXamlSdkUnitTests
             }
         }
 
-        [AppContainerUITestMethod]
+        [UITestMethod]
         public void SetBehaviors_NullThenNull_NoOp()
         {
             // As long as this doesn't crash/assert, we're good.
@@ -74,7 +76,7 @@ namespace BehaviorsXamlSdkUnitTests
             Interaction.SetBehaviors(button, null);
         }
 
-        [AppContainerUITestMethod]
+        [UITestMethod]
         public void SetBehaviors_ManualDetachThenNull_DoesNotDoubleDetach()
         {
             BehaviorCollection behaviorCollection = new BehaviorCollection();
@@ -99,7 +101,7 @@ namespace BehaviorsXamlSdkUnitTests
             }
         }
 
-        [AppContainerUITestMethod]
+        [UITestMethod]
         public void ExecuteActions_NullParameters_ReturnsEmptyEnumerable()
         {
             // Mostly just want to test that this doesn't throw any exceptions.
@@ -109,7 +111,7 @@ namespace BehaviorsXamlSdkUnitTests
             Assert.AreEqual(0, result.Count(), "Calling ExecuteActions with a null ActionCollection should return an empty enumerable.");
         }
 
-        [AppContainerUITestMethod]
+        [UITestMethod]
         public void ExecuteActions_MultipleActions_AllActionsExecuted()
         {
             ActionCollection actions = new ActionCollection();
@@ -130,7 +132,7 @@ namespace BehaviorsXamlSdkUnitTests
             }
         }
 
-        [AppContainerUITestMethod]
+        [UITestMethod]
         public void ExecuteActions_ActionsWithResults_ResultsInActionOrder()
         {
             string[] expectedReturnValues = { "A", "B", "C" };

@@ -2,6 +2,7 @@
 // Licensed under the MIT license. See LICENSE file in the project root for full license information. 
 
 using System;
+using Microsoft.Xaml.Interactivity;
 
 namespace Microsoft.Xaml.Interactivity.Design
 {
@@ -9,7 +10,7 @@ namespace Microsoft.Xaml.Interactivity.Design
     {
         private void AddAttribute(Type type, Attribute attribute)
         {
-            _attributeTableBuilder.AddCustomAttributes(type, attribute);
+            attributeTableBuilder.AddCustomAttributes(type, attribute);
         }
 
         private void AddAttributes(Type type, params Attribute[] attributes)
@@ -22,7 +23,7 @@ namespace Microsoft.Xaml.Interactivity.Design
 
         private void AddAttribute(Type type, string propertyName, Attribute attribute)
         {
-            _attributeTableBuilder.AddCustomAttributes(type, propertyName, attribute);
+            attributeTableBuilder.AddCustomAttributes(type, propertyName, attribute);
         }
 
         private void AddAttributes(Type type, string propertyName, params Attribute[] attributes)

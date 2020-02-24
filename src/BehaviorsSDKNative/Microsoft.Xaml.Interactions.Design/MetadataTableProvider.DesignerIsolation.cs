@@ -11,7 +11,7 @@ namespace Microsoft.Xaml.Interactions.Design
     {
         private void AddAttribute(Type type, Attribute attribute)
         {
-            _attributeTableBuilder.AddCustomAttributes(type, attribute);
+            attributeTableBuilder.AddCustomAttributes(type, attribute);
         }
 
         private void AddAttributes(Type type, params Attribute[] attributes)
@@ -24,7 +24,7 @@ namespace Microsoft.Xaml.Interactions.Design
 
         private void AddAttribute(Type type, string propertyName, Attribute attribute)
         {
-            _attributeTableBuilder.AddCustomAttributes(type, propertyName, attribute);
+            attributeTableBuilder.AddCustomAttributes(type, propertyName, attribute);
         }
 
         private void AddAttributes(Type type, string propertyName, params Attribute[] attributes)
@@ -42,14 +42,14 @@ namespace Microsoft.Xaml.Interactions.Design
         {
             internal static readonly Type IncrementalUpdateBehavior = typeof(IncrementalUpdateBehavior);
             internal static readonly Type EventTriggerBehavior = typeof(EventTriggerBehavior);
-            internal static readonly Type DataTriggerBehavior = typeof(DataTriggerBehavior);
-            internal static readonly Type ChangePropertyAction = typeof(ChangePropertyAction);
+            //internal static readonly Type DataTriggerBehavior = typeof(DataTriggerBehavior);
+            //internal static readonly Type ChangePropertyAction = typeof(ChangePropertyAction);
             internal static readonly Type InvokeCommandAction = typeof(InvokeCommandAction);
             internal static readonly Type ControlStoryboardAction = typeof(ControlStoryboardAction);
             internal static readonly Type GoToStateAction = typeof(GoToStateAction);
             internal static readonly Type NavigateToPageAction = typeof(NavigateToPageAction);
             internal static readonly Type PlaySoundAction = typeof(PlaySoundAction);
-            internal static readonly Type CallMethodAction = typeof(CallMethodAction);
+            //internal static readonly Type CallMethodAction = typeof(CallMethodAction);
         }
     }
 }

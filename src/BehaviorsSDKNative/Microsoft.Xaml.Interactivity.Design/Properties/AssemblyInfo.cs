@@ -1,8 +1,6 @@
 ﻿using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Windows;
-using Microsoft.Windows.Design.Metadata;
-using Microsoft.Xaml.Interactivity.Design;
 
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
@@ -12,7 +10,7 @@ using Microsoft.Xaml.Interactivity.Design;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("Microsoft.Xaml.Interactivity.Design")]
-[assembly: AssemblyCopyright("Copyright ©  2015")]
+[assembly: AssemblyCopyright("Copyright © Microsoft 2015-2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -39,7 +37,3 @@ using Microsoft.Xaml.Interactivity.Design;
                                       //(used if a resource is not found in the page, 
                                       // app, or any theme specific resource dictionaries)
 )]
-
-
-// Entry point for metadata provider
-[assembly: ProvideMetadata(typeof(MetadataTableProvider))]

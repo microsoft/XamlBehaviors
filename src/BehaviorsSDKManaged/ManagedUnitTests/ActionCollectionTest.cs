@@ -1,20 +1,24 @@
-﻿using Microsoft.Xaml.Interactions.Media;
-using AppContainerUITestMethod = Microsoft.VisualStudio.TestTools.UnitTesting.AppContainer.UITestMethodAttribute;
+// Copyright (c) Microsoft. All rights reserved. 
+// Licensed under the MIT license. See LICENSE file in the project root for full license information. 
+
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Microsoft.VisualStudio.TestTools.UnitTesting.AppContainer;
+using Microsoft.Xaml.Interactions.Media;
+using AppContainerUITestMethod = Microsoft.VisualStudio.TestTools.UnitTesting.AppContainer.UITestMethodAttribute;
 
 namespace ManagedUnitTests
 {
     [TestClass]
     public class ActionCollectionTest
     {
-        [AppContainerUITestMethod]
+        [UITestMethod]
         public void Constructor_DefaultConstructor_SetsVolumeCorrectly()
         {
             PlaySoundAction playSoundAction = new PlaySoundAction();
             Assert.AreEqual(0.5, playSoundAction.Volume, "Volume should be initialized to 0.5");
         }
 
-        [AppContainerUITestMethod]
+        [UITestMethod]
         public void Invoke_RelativeSource_Invokes()
         {
             PlaySoundAction playSoundAction = new PlaySoundAction();
@@ -24,7 +28,7 @@ namespace ManagedUnitTests
             Assert.IsTrue(result);
         }
 
-        [AppContainerUITestMethod]
+        [UITestMethod]
         public void Invoke_AbsoluteSource_Invokes()
         {
             PlaySoundAction playSoundAction = new PlaySoundAction();
@@ -34,7 +38,7 @@ namespace ManagedUnitTests
             Assert.IsTrue(result);
         }
 
-        [AppContainerUITestMethod]
+        [UITestMethod]
         public void Invoke_InvalidSource_ReturnsFalse()
         {
             PlaySoundAction playSoundAction = new PlaySoundAction();
