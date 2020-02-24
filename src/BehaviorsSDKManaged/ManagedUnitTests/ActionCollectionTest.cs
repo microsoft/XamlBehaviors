@@ -4,7 +4,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Microsoft.VisualStudio.TestTools.UnitTesting.AppContainer;
 using Microsoft.Xaml.Interactions.Media;
-using AppContainerUITestMethod = Microsoft.VisualStudio.TestTools.UnitTesting.AppContainer.UITestMethodAttribute;
 
 namespace ManagedUnitTests
 {

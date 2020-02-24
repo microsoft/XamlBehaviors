@@ -137,9 +137,9 @@
     <Error Condition="!Exists('..\packages\Microsoft.VisualStudioEng.MicroBuild.Core.0.4.1\build\Microsoft.VisualStudioEng.MicroBuild.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.VisualStudioEng.MicroBuild.Core.0.4.1\build\Microsoft.VisualStudioEng.MicroBuild.Core.targets'))" />
     <Error Condition="!Exists('..\packages\Microsoft.WinUI.3.0.0-alpha.200210.0\build\Microsoft.WinUI.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.WinUI.3.0.0-alpha.200210.0\build\Microsoft.WinUI.props'))" />
     <Error Condition="!Exists('..\packages\Microsoft.WinUI.3.0.0-alpha.200210.0\build\Microsoft.WinUI.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.WinUI.3.0.0-alpha.200210.0\build\Microsoft.WinUI.targets'))" />
-    <Error Condition="!Exists('..\packages\NuGet.Build.Tasks.Pack.5.3.1\build\NuGet.Build.Tasks.Pack.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NuGet.Build.Tasks.Pack.5.3.1\build\NuGet.Build.Tasks.Pack.targets'))" />
+    <Error Condition="!Exists('..\packages\NuGet.Build.Tasks.Pack.5.4.0\build\NuGet.Build.Tasks.Pack.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NuGet.Build.Tasks.Pack.5.4.0\build\NuGet.Build.Tasks.Pack.targets'))" />
   </Target>
   <Import Project="..\packages\Microsoft.VisualStudioEng.MicroBuild.Core.0.4.1\build\Microsoft.VisualStudioEng.MicroBuild.Core.targets" Condition="Exists('..\packages\Microsoft.VisualStudioEng.MicroBuild.Core.0.4.1\build\Microsoft.VisualStudioEng.MicroBuild.Core.targets')" />
   <Import Project="..\packages\Microsoft.WinUI.3.0.0-alpha.200210.0\build\Microsoft.WinUI.targets" Condition="Exists('..\packages\Microsoft.WinUI.3.0.0-alpha.200210.0\build\Microsoft.WinUI.targets')" />
-  <Import Project="..\packages\NuGet.Build.Tasks.Pack.5.3.1\build\NuGet.Build.Tasks.Pack.targets" Condition="Exists('..\packages\NuGet.Build.Tasks.Pack.5.3.1\build\NuGet.Build.Tasks.Pack.targets')" />
+  <Import Project="..\packages\NuGet.Build.Tasks.Pack.5.4.0\build\NuGet.Build.Tasks.Pack.targets" Condition="Exists('..\packages\NuGet.Build.Tasks.Pack.5.4.0\build\NuGet.Build.Tasks.Pack.targets')" />
 </Project>
