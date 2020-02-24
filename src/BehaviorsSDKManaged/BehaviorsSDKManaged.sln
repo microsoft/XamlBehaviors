@@ -23,7 +23,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
 		..\..\.gitignore = ..\..\.gitignore
-		..\..\key\35MSSharedLib1024.snk = ..\..\key\35MSSharedLib1024.snk
 		..\..\scripts\download-nuget.cmd = ..\..\scripts\download-nuget.cmd
 		..\..\scripts\Microsoft.Xaml.Behaviors.Signing.targets = ..\..\scripts\Microsoft.Xaml.Behaviors.Signing.targets
 		..\..\scripts\Microsoft.Xaml.Behaviors.Uwp.Managed.nuspec = ..\..\scripts\Microsoft.Xaml.Behaviors.Uwp.Managed.nuspec
