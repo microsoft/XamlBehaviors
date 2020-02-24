@@ -3,7 +3,7 @@
   <PropertyGroup>
     <SignAssembly>false</SignAssembly>
     <DelaySign>true</DelaySign>
-    <AssemblyOriginatorKeyFile>..\..\..\key\35MSSharedLib1024.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>..\..\..\key\FinalPublicKey.snk</AssemblyOriginatorKeyFile>
     <GenerateNuspecDependsOn>$(GenerateNuspecDependsOn);TimestampNugetPackage</GenerateNuspecDependsOn>
   </PropertyGroup>
   <PropertyGroup Condition="'$(SignType)' == 'real'">
