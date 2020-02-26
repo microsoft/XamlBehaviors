@@ -76,12 +76,6 @@
       <Aliases>WindowsRuntime</Aliases>
       <Private>False</Private>
     </Reference>
-    <!--<Reference Include="System.Runtime">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>$(ProgramFiles)\Reference Assemblies\Microsoft\Framework\.NETCore\v4.5.1\System.Runtime.dll</HintPath>
-      <Aliases>WindowsRuntime</Aliases>
-      <Private>False</Private>
-    </Reference>-->
     <Reference Include="System.Runtime.InteropServices.WindowsRuntime">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>$(ProgramFiles)\Reference Assemblies\Microsoft\Framework\.NETCore\v4.5.1\System.Runtime.InteropServices.WindowsRuntime.dll</HintPath>
@@ -146,11 +140,4 @@
   </ItemGroup>
   <Import Project="..\..\..\scripts\Microsoft.Xaml.Behaviors.Signing.targets" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
 </Project>
