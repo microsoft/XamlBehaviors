@@ -1,5 +1,6 @@
 ﻿{
   "dependencies": {
+    "Microsoft.NET.Test.Sdk": "16.5.0",
     "Microsoft.NETCore.UniversalWindowsPlatform": "6.2.9",
     "MSTest.TestAdapter": "2.1.0",
     "MSTest.TestFramework": "2.1.0"
