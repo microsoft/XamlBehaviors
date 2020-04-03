@@ -34,8 +34,9 @@
 	<ItemGroup>
 		<PackageReference Include="Microsoft.TypeScript.Compiler" Version="2.8.3" />
 		<PackageReference Include="Microsoft.TypeScript.MSBuild" Version="2.8.3" />
-		<PackageReference Include="Uno.Wasm.Bootstrap" Version="1.0.0-dev.258" />
-		<PackageReference Include="Uno.UI" Version="1.45.0-dev.1163" PrivateAssets="All" />
+		<PackageReference Include="Uno.Wasm.Bootstrap" Version="1.2.0-dev.24" />
+    <PackageReference Include="Uno.Wasm.Bootstrap.DevServer" Version="1.2.0-dev.24" />
+		<PackageReference Include="Uno.UI" Version="2.2.0-dev.486" PrivateAssets="All" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Console" Version="1.1.1" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Filter" Version="1.1.1" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug">
@@ -47,8 +48,7 @@
 		<PackageReference Include="Microsoft.Extensions.Logging.Console">
 			<Version>1.1.1</Version>
 		</PackageReference>
-    <DotNetCliToolReference Include="Uno.Wasm.Bootstrap.Cli" Version="1.0.0-dev.258" />
-    <PackageReference Include="Uno.UI.Sample.Banner" Version="1.44.0-dev.14" />
+    <PackageReference Include="Uno.UI.Sample.Banner" Version="1.44.0-dev.23" />
   </ItemGroup>
 	
 	<ItemGroup>

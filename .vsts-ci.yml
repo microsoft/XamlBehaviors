@@ -1,26 +1,18 @@
-phases:
-- phase: VS_Latest
+jobs:
+- job: VS_Latest
   variables:
     NUGET_PACKAGES: $(Agent.WorkFolder)\.nuget
     NUGET_HTTP_CACHE_PATH: $(Agent.WorkFolder)\.nuget-http-cache
 
-  steps:
-  - task: GitVersion@3
-    inputs:
-      updateAssemblyInfo: false
-      
-  - task: NuGetToolInstaller@0
-    inputs:
-        versionSpec: 4.7.0
-        checkLatest: false
+  pool:
+    vmImage: 'windows-2019'
 
-  - task: NuGetCommand@2
+  steps:
+
+  - task: GitVersion@5
     inputs:
-      command: restore
-      solution: src/BehaviorsSDKManaged/BehaviorsSDKManaged.sln
-      selectOrConfig: select
-      includeNuGetOrg: true
-      verbosityRestore: Normal
+      useConfigFile: true
+      configFilePath: gitversion.yml
 
   - task: MSBuild@1
     inputs:
