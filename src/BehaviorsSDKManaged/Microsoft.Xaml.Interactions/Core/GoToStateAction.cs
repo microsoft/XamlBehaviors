@@ -1,19 +1,21 @@
 ﻿// Copyright (c) Microsoft. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
+using System;
+using System.Globalization;
+using Microsoft.UI.Xaml;
+using Microsoft.UI.Xaml.Controls;
+using System.Diagnostics.CodeAnalysis;
+
 namespace Microsoft.Xaml.Interactions.Core
 {
-    using System;
-    using System.Globalization;
-    using Windows.UI.Xaml;
-    using Windows.UI.Xaml.Controls;
     using Interactivity;
 
     /// <summary>
-    /// An action that will transition a <see cref="Windows.UI.Xaml.FrameworkElement"/> to a specified <seealso cref="Windows.UI.Xaml.VisualState"/> when executed.
+    /// An action that will transition a <see cref="FrameworkElement"/> to a specified <seealso cref="VisualState"/> when executed.
     /// </summary>
     /// <remarks>
     /// If the <seealso cref="TargetObject"/> property is set, this action will attempt to change the state of the targeted element. If it is not set, the action walks
-    /// the element tree in an attempt to locate an alternative target that defines states. <see cref="Windows.UI.Xaml.Controls.ControlTemplate"/> and <see cref="Windows.UI.Xaml.Controls.UserControl"/> are 
+    /// the element tree in an attempt to locate an alternative target that defines states. <see cref="ControlTemplate"/> and <see cref="UserControl"/> are 
     /// two common results.
     /// </remarks>
     public sealed class GoToStateAction : DependencyObject, IAction
@@ -21,7 +23,7 @@ namespace Microsoft.Xaml.Interactions.Core
         /// <summary>
         /// Identifies the <seealso cref="UseTransitions"/> dependency property.
         /// </summary>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes")]
+        [SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes")]
         public static readonly DependencyProperty UseTransitionsProperty = DependencyProperty.Register(
             "UseTransitions",
             typeof(bool),
@@ -31,7 +33,7 @@ namespace Microsoft.Xaml.Interactions.Core
         /// <summary>
         /// Identifies the <seealso cref="StateName"/> dependency property.
         /// </summary>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes")]
+        [SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes")]
         public static readonly DependencyProperty StateNameProperty = DependencyProperty.Register(
             "StateName",
             typeof(string),
@@ -41,7 +43,7 @@ namespace Microsoft.Xaml.Interactions.Core
         /// <summary>
         /// Identifies the <seealso cref="TargetObject"/> dependency property.
         /// </summary>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes")]
+        [SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes")]
         public static readonly DependencyProperty TargetObjectProperty = DependencyProperty.Register(
             "TargetObject",
             typeof(FrameworkElement),
@@ -49,7 +51,7 @@ namespace Microsoft.Xaml.Interactions.Core
             new PropertyMetadata(null));
 
         /// <summary>
-        /// Gets or sets whether or not to use a <see cref="Windows.UI.Xaml.VisualTransition"/> to transition between states. This is a dependency property.
+        /// Gets or sets whether or not to use a <see cref="VisualTransition"/> to transition between states. This is a dependency property.
         /// </summary>
         public bool UseTransitions
         {
@@ -64,7 +66,7 @@ namespace Microsoft.Xaml.Interactions.Core
         }
 
         /// <summary>
-        /// Gets or sets the name of the <see cref="Windows.UI.Xaml.VisualState"/>. This is a dependency property.
+        /// Gets or sets the name of the <see cref="VisualState"/>. This is a dependency property.
         /// </summary>
         public string StateName
         {
@@ -96,7 +98,7 @@ namespace Microsoft.Xaml.Interactions.Core
         /// <summary>
         /// Executes the action.
         /// </summary>
-        /// <param name="sender">The <see cref="System.Object"/> that is passed to the action by the behavior. Generally this is <seealso cref="Microsoft.Xaml.Interactivity.IBehavior.AssociatedObject"/> or a target object.</param>
+        /// <param name="sender">The <see cref="object"/> that is passed to the action by the behavior. Generally this is <seealso cref="IBehavior.AssociatedObject"/> or a target object.</param>
         /// <param name="parameter">The value of this parameter is determined by the caller.</param>
         /// <returns>True if the transition to the specified state succeeds; else false.</returns>
         public object Execute(object sender, object parameter)

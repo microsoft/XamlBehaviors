@@ -2,8 +2,8 @@
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 namespace Microsoft.Xaml.Interactions.Utility
 {
-    using Windows.UI.Xaml;
-    using Windows.UI.Xaml.Media;
+    using Microsoft.UI.Xaml;
+    using Microsoft.UI.Xaml.Media;
 
     /// <summary>
     /// IVisualTreeHelper implementation that calls the real VisualTreeHelper.

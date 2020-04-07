@@ -1,9 +1,10 @@
 ﻿// Copyright (c) Microsoft. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
+
+using System;
+
 namespace Microsoft.Xaml.Interactivity
 {
-	using System;
-
 	/// <summary>
 	/// Provides design tools information about which EventName to set for EventTriggerBehavior when instantiating an <see cref="Microsoft.Xaml.Interactivity.IAction"/>.
 	/// </summary>

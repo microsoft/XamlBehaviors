@@ -1,26 +1,27 @@
 ﻿// Copyright (c) Microsoft. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
+using System;
+using System.Collections.Generic;
+using Microsoft.UI.Xaml;
+using Microsoft.UI.Xaml.Controls;
+using Microsoft.UI.Xaml.Media;
+using System.Diagnostics.CodeAnalysis;
+
 namespace Microsoft.Xaml.Interactivity
 {
-    using System;
-    using System.Collections.Generic;
-    using Windows.UI.Xaml;
-    using Windows.UI.Xaml.Controls;
-    using Windows.UI.Xaml.Media;
-
     /// <summary>
-    /// Provides various standard operations for working with <seealso cref="Windows.UI.Xaml.VisualStateManager"/>.
+    /// Provides various standard operations for working with <seealso cref="Microsoft.UI.Xaml.VisualStateManager"/>.
     /// </summary>
     public static class VisualStateUtilities
     {
         /// <summary>
         /// Transitions the control between two states.
         /// </summary>
-        /// <param name="control">The <see cref="Windows.UI.Xaml.Controls.Control"/> to transition between states.</param>
+        /// <param name="control">The <see cref="Microsoft.UI.Xaml.Controls.Control"/> to transition between states.</param>
         /// <param name="stateName">The state to transition to.</param>
-        /// <param name="useTransitions">True to use a <see cref="Windows.UI.Xaml.VisualTransition"/> to transition between states; otherwise, false.</param>
+        /// <param name="useTransitions">True to use a <see cref="Microsoft.UI.Xaml.VisualTransition"/> to transition between states; otherwise, false.</param>
         /// <returns>True if the <paramref name="control"/> is successfully transitioned to the new state; otherwise, false.</returns>
-        /// <exception cref="System.ArgumentNullException"><paramref name="control"/> or <paramref name="stateName"/> is null.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="control"/> or <paramref name="stateName"/> is null.</exception>
         public static bool GoToState(Control control, string stateName, bool useTransitions)
         {
             if (control == null)
@@ -40,9 +41,9 @@ namespace Microsoft.Xaml.Interactivity
         /// <summary>
         /// Gets the value of the VisualStateManager.VisualStateGroups attached property.
         /// </summary>
-        /// <param name="element">The <see cref="Windows.UI.Xaml.FrameworkElement"/> from which to get the VisualStateManager.VisualStateGroups.</param>
+        /// <param name="element">The <see cref="Microsoft.UI.Xaml.FrameworkElement"/> from which to get the VisualStateManager.VisualStateGroups.</param>
         /// <returns>The list of VisualStateGroups in the given element.</returns>
-        /// <exception cref="System.ArgumentNullException"><paramref name="element"/> is null.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="element"/> is null.</exception>
         public static IList<VisualStateGroup> GetVisualStateGroups(FrameworkElement element)
         {
             if (element == null)
@@ -71,10 +72,10 @@ namespace Microsoft.Xaml.Interactivity
         /// <summary>
         /// Find the nearest parent which contains visual states.
         /// </summary>
-        /// <param name="element">The <see cref="Windows.UI.Xaml.FrameworkElement"/> from which to find the nearest stateful control.</param>
-        /// <returns>The nearest <see cref="Windows.UI.Xaml.Controls.Control"/> that contains visual states; else null.</returns>
-        /// <exception cref="System.ArgumentNullException"><paramref name="element"/> is null.</exception>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", MessageId = "Stateful")]
+        /// <param name="element">The <see cref="Microsoft.UI.Xaml.FrameworkElement"/> from which to find the nearest stateful control.</param>
+        /// <returns>The nearest <see cref="Microsoft.UI.Xaml.Controls.Control"/> that contains visual states; else null.</returns>
+        /// <exception cref="ArgumentNullException"><paramref name="element"/> is null.</exception>
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", MessageId = "Stateful")]
         public static Control FindNearestStatefulControl(FrameworkElement element)
         {
             if (element == null)

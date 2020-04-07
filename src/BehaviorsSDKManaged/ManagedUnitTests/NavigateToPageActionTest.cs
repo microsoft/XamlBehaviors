@@ -1,10 +1,10 @@
-﻿// Copyright (c) Microsoft. All rights reserved. 
+// Copyright (c) Microsoft. All rights reserved. 
 // Licensed under the MIT license. See LICENSE file in the project root for full license information. 
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Microsoft.VisualStudio.TestTools.UnitTesting.AppContainer;
 using Microsoft.Xaml.Interactions.Core;
-using Windows.UI.Xaml;
+using Microsoft.UI.Xaml;
 
 namespace ManagedUnitTests
 {

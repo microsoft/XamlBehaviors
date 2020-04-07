@@ -4,7 +4,7 @@
 using System;
 using System.Diagnostics;
 using System.Globalization;
-using Windows.UI.Xaml;
+using Microsoft.UI.Xaml;
 
 namespace Microsoft.Xaml.Interactivity
 {
@@ -14,15 +14,15 @@ namespace Microsoft.Xaml.Interactivity
     public abstract class Behavior : DependencyObject, IBehavior
     {
         /// <summary>
-        /// Gets the <see cref="Windows.UI.Xaml.DependencyObject"/> to which the behavior is attached.
+        /// Gets the <see cref="Microsoft.UI.Xaml.DependencyObject"/> to which the behavior is attached.
         /// </summary>
         public DependencyObject AssociatedObject { get; private set; }
 
         /// <summary>
-        /// Attaches the behavior to the specified <see cref="Windows.UI.Xaml.DependencyObject"/>.
+        /// Attaches the behavior to the specified <see cref="Microsoft.UI.Xaml.DependencyObject"/>.
         /// </summary>
-        /// <param name="associatedObject">The <see cref="Windows.UI.Xaml.DependencyObject"/> to which to attach.</param>
-        /// <exception cref="System.ArgumentNullException"><paramref name="associatedObject"/> is null.</exception>
+        /// <param name="associatedObject">The <see cref="Microsoft.UI.Xaml.DependencyObject"/> to which to attach.</param>
+        /// <exception cref="ArgumentNullException"><paramref name="associatedObject"/> is null.</exception>
         public void Attach(DependencyObject associatedObject)
         {
             if (associatedObject == this.AssociatedObject || Windows.ApplicationModel.DesignMode.DesignModeEnabled)

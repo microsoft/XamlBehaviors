@@ -13,6 +13,9 @@
         <iconUrl>http://go.microsoft.com/fwlink/?LinkID=708511</iconUrl>
         <copyright>&#169; Microsoft Corporation. All rights reserved.</copyright>
         <tags>Behavior Action Behaviors Actions Blend Managed C# Interaction Interactivity Interactions</tags>
+        <dependencies>
+            <dependency id="Microsoft.WinUI" version="3.0.0-alpha.200210.0"/>
+        </dependencies>
     </metadata>
 
     <files>
