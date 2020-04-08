@@ -4,6 +4,7 @@
 using System;
 using System.Globalization;
 using Microsoft.UI.Xaml;
+using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
 using System.Diagnostics.CodeAnalysis;
 
@@ -11,14 +12,14 @@ namespace Microsoft.Xaml.Interactions.Media
 {
     using Interactivity;
 
-	/// <summary>
-	/// An action that will play a sound to completion.
-	/// </summary>
-	/// <remarks>
-	/// This action is intended for use with short sound effects that don't need to be stopped or controlled. If you are trying 
-	/// to create a music player or game, it may not meet your needs.
-	/// </remarks>
-	public sealed class PlaySoundAction : DependencyObject, IAction
+    /// <summary>
+    /// An action that will play a sound to completion.
+    /// </summary>
+    /// <remarks>
+    /// This action is intended for use with short sound effects that don't need to be stopped or controlled. If you are trying 
+    /// to create a music player or game, it may not meet your needs.
+    /// </remarks>
+    public sealed class PlaySoundAction : DependencyObject, IAction
 	{
 		private const string MsAppXSchemeFormatString = "ms-appx:///{0}";
 
@@ -106,8 +107,7 @@ namespace Microsoft.Xaml.Interactions.Media
 			}
 
 			this._popup = new Popup();
-            /*
-             * Commented out until WinUI3 supports it
+
 			MediaElement mediaElement = new MediaElement();
             _popup.Child = mediaElement;
 
@@ -118,7 +118,7 @@ namespace Microsoft.Xaml.Interactions.Media
 
             mediaElement.MediaEnded += this.MediaElement_MediaEnded;
             mediaElement.MediaFailed += this.MediaElement_MediaFailed;
-            */
+            
             this._popup.IsOpen = true;
 			return true;
 		}
