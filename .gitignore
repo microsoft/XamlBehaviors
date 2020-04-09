@@ -216,3 +216,4 @@ GeneratedArtifacts/
 _Pvt_Extensions/
 ModelManifest.xml
 **/MigrationBackup
+/samples/Cpp/XAMLBehaviorsSampleCpp/Generated Files
