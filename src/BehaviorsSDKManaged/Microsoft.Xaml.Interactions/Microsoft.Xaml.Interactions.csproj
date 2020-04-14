@@ -1,7 +1,7 @@
 ﻿<Project Sdk="MSBuild.Sdk.Extras" ToolsVersion="15.0">
 	<PropertyGroup>
-		<TargetFrameworks>MonoAndroid80;xamarinios10;uap10.0;netstandard2.0</TargetFrameworks>
-		<TargetFrameworksCI>MonoAndroid71;MonoAndroid80;xamarinios10;net46;uap10.0;netstandard2.0</TargetFrameworksCI>
+		<TargetFrameworks>MonoAndroid90;xamarinmac20;xamarinios10;uap10.0;netstandard2.0</TargetFrameworks>
+		<TargetFrameworksCI>MonoAndroid90;xamarinmac20;xamarinios10;net46;uap10.0;netstandard2.0</TargetFrameworksCI>
 	</PropertyGroup>
 
 	<PropertyGroup>
@@ -14,6 +14,9 @@
 		<DefineConstants>NETFX_CORE;WINDOWS_UWP</DefineConstants>
 		<PackageId>Uno.Microsoft.Xaml.Behaviors.Uwp.Managed</PackageId>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		
+		<!--https://github.com/xamarin/AndroidSupportComponents/issues/176-->
+		<XamarinAndroidSupportSkipVerifyVersions>true</XamarinAndroidSupportSkipVerifyVersions>
 	</PropertyGroup>
 	
   <PropertyGroup Label="MultilingualAppToolkit">
@@ -22,7 +25,7 @@
   </PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Uno.UI" Version="1.45.0-dev.1163" />
+		<PackageReference Include="Uno.UI" Version="2.2.0-dev.486" />
 	</ItemGroup>
 
 	<ItemGroup>

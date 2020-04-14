@@ -22,6 +22,7 @@ Global
 		XAMLBehaviorsSample.Shared\XAMLBehaviorsSample.Shared.projitems*{050c4b73-9a9f-469b-9fa7-fb481894391f}*SharedItemsImports = 4
 		XAMLBehaviorsSample.Shared\XAMLBehaviorsSample.Shared.projitems*{39986530-814f-4087-8d29-e2388dff6f4c}*SharedItemsImports = 4
 		XAMLBehaviorsSample.Shared\XAMLBehaviorsSample.Shared.projitems*{5576d7ed-79d7-4962-a246-d122fc229a94}*SharedItemsImports = 4
+		XAMLBehaviorsSample.Shared\XAMLBehaviorsSample.Shared.projitems*{6fb1ada8-462d-40ff-aedd-afc3ec4a4c91}*SharedItemsImports = 5
 		XAMLBehaviorsSample.Shared\XAMLBehaviorsSample.Shared.projitems*{e1728140-c649-4880-993e-7d6a0b2f4d88}*SharedItemsImports = 13
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -122,7 +122,7 @@
       <Version>6.2.8</Version>
     </PackageReference>
     <PackageReference Include="Uno.UI.Sample.Banner">
-      <Version>1.44.0-dev.14</Version>
+      <Version>1.44.0-dev.23</Version>
     </PackageReference>
   </ItemGroup>
   <Import Project="..\XAMLBehaviorsSample.Shared\XAMLBehaviorsSample.Shared.projitems" Label="Shared" />

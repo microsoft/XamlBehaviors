@@ -1,6 +1,6 @@
 ﻿<Project Sdk="MSBuild.Sdk.Extras" ToolsVersion="15.0">
 	<PropertyGroup>
-		<TargetFrameworks>MonoAndroid80;xamarinios10;uap10.0;netstandard2.0</TargetFrameworks>
+		<TargetFrameworks>MonoAndroid90;xamarinmac20;xamarinios10;uap10.0;netstandard2.0</TargetFrameworks>
 	</PropertyGroup>
 
 	<PropertyGroup>
@@ -14,6 +14,9 @@
 		
 		<PackageId>Uno.Microsoft.Xaml.Behaviors.Interactivity</PackageId>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		
+		<!--https://github.com/xamarin/AndroidSupportComponents/issues/176-->
+		<XamarinAndroidSupportSkipVerifyVersions>true</XamarinAndroidSupportSkipVerifyVersions>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -32,7 +35,7 @@
     <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactivity.uk-UA.xlf" />
 	</ItemGroup>
 	<ItemGroup>
-		<PackageReference Include="Uno.UI" Version="1.45.0-dev.1163" />
+		<PackageReference Include="Uno.UI" Version="2.2.0-dev.486" />
 	</ItemGroup>
 
 	<ItemGroup>
