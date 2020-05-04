@@ -130,26 +130,8 @@
     <PRIResource Include="Resources\uk-UA\Strings.resw" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Core\CallMethodAction.cs" />
-    <Compile Include="Core\ChangePropertyAction.cs" />
-    <Compile Include="Core\ComparisonConditionType.cs" />
-    <Compile Include="Core\DataBindingHelper.cs" />
-    <Compile Include="Core\DataTriggerBehavior.cs" />
-    <Compile Include="Core\EventTriggerBehavior.cs" />
-    <Compile Include="Core\GoToStateAction.cs" />
-    <Compile Include="Core\IncrementalUpdateBehavior.cs" />
-    <Compile Include="Core\InvokeCommandAction.cs" />
-    <Compile Include="Core\NavigateToPageAction.cs" />
-    <Compile Include="Core\ResourceHelper.cs" />
-    <Compile Include="Core\TypeConverterHelper.cs" />
-    <Compile Include="GlobalSuppressions.cs" />
-    <Compile Include="Media\ControlStoryboardAction.cs" />
-    <Compile Include="Media\ControlStoryboardOption.cs" />
-    <Compile Include="Media\PlaySoundAction.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="..\Version\Version.cs" />
-    <Compile Include="Utility\IVisualTreeHelper.cs" />
-    <Compile Include="Utility\UwpVisualTreeHelper.cs" />
     <EmbeddedResource Include="Properties\Microsoft.Xaml.Interactions.rd.xml" />
   </ItemGroup>
   <ItemGroup>
@@ -171,6 +153,8 @@
     <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactions.zh-TW.xlf" />
     <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactions.uk-UA.xlf" />
   </ItemGroup>
+  <ItemGroup />
+  <Import Project="..\Microsoft.Xaml.Interactions.Shared\Microsoft.Xaml.Interactions.Shared.projitems" Label="Shared" />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
