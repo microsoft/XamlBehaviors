@@ -35,6 +35,7 @@
     <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>..\..\..\out\WinUI\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactions.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <PlatformTarget>x86</PlatformTarget>
@@ -55,6 +56,7 @@
     <DebugType>pdbonly</DebugType>
     <UseVSHostingProcess>false</UseVSHostingProcess>
     <ErrorReport>prompt</ErrorReport>
+    <DocumentationFile>..\..\..\out\WinUI\BehaviorsSDKManaged\bin\x86\Release\Microsoft.Xaml.Interactions.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
     <PlatformTarget>ARM</PlatformTarget>
@@ -75,6 +77,7 @@
     <DebugType>pdbonly</DebugType>
     <UseVSHostingProcess>false</UseVSHostingProcess>
     <ErrorReport>prompt</ErrorReport>
+    <DocumentationFile>..\..\..\out\WinUI\BehaviorsSDKManaged\bin\ARM\Release\Microsoft.Xaml.Interactions.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM64'">
     <PlatformTarget>ARM64</PlatformTarget>
@@ -95,6 +98,7 @@
     <DebugType>pdbonly</DebugType>
     <UseVSHostingProcess>false</UseVSHostingProcess>
     <ErrorReport>prompt</ErrorReport>
+    <DocumentationFile>..\..\..\out\WinUI\BehaviorsSDKManaged\bin\ARM64\Release\Microsoft.Xaml.Interactions.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
     <PlatformTarget>x64</PlatformTarget>
@@ -115,9 +119,14 @@
     <DebugType>pdbonly</DebugType>
     <UseVSHostingProcess>false</UseVSHostingProcess>
     <ErrorReport>prompt</ErrorReport>
+    <DocumentationFile>..\..\..\out\WinUI\BehaviorsSDKManaged\bin\x64\Release\Microsoft.Xaml.Interactions.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup>
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OutputPath>..\..\..\out\WinUI\$(SolutionName)\bin\$(Platform)\$(Configuration)\</OutputPath>
+    <IntermediateOutputPath>..\..\..\out\WinUI\$(SolutionName)\obj\$(Platform)\$(Configuration)\</IntermediateOutputPath>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -133,6 +142,67 @@
     <PackageReference Include="Microsoft.WinUI">
       <Version>3.0.0-alpha.200210.0</Version>
     </PackageReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <PRIResource Include="..\Microsoft.Xaml.Interactions\Resources\de-DE\Strings.resw">
+      <Link>Resources\de-DE\Strings.resw</Link>
+    </PRIResource>
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="..\Microsoft.Xaml.Interactions\Resources\en-us\Strings.resw">
+      <Link>Resources\en-US\Strings.resw</Link>
+    </PRIResource>
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="..\Microsoft.Xaml.Interactions\Resources\es-ES\Strings.resw">
+      <Link>Resources\es-ES\Strings.resw</Link>
+    </PRIResource>
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="..\Microsoft.Xaml.Interactions\Resources\fr-FR\Strings.resw">
+      <Link>Resources\fr-FR\Strings.resw</Link>
+    </PRIResource>
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="..\Microsoft.Xaml.Interactions\Resources\it-IT\Strings.resw">
+      <Link>Resources\it-IT\Strings.resw</Link>
+    </PRIResource>
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="..\Microsoft.Xaml.Interactions\Resources\ja-JP\Strings.resw">
+      <Link>Resources\ja-JP\Strings.resw</Link>
+    </PRIResource>
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="..\Microsoft.Xaml.Interactions\Resources\ko-KR\Strings.resw">
+      <Link>Resources\ko-KR\Strings.resw</Link>
+    </PRIResource>
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="..\Microsoft.Xaml.Interactions\Resources\pt-BR\Strings.resw">
+      <Link>Resources\pt-BR\Strings.resw</Link>
+    </PRIResource>
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="..\Microsoft.Xaml.Interactions\Resources\ru-RU\Strings.resw">
+      <Link>Resources\ru-RU\Strings.resw</Link>
+    </PRIResource>
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="..\Microsoft.Xaml.Interactions\Resources\uk-UA\Strings.resw">
+      <Link>Resources\uk-UA\Strings.resw</Link>
+    </PRIResource>
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="..\Microsoft.Xaml.Interactions\Resources\zh-CN\Strings.resw">
+      <Link>Resources\zh-CN\Strings.resw</Link>
+    </PRIResource>
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="..\Microsoft.Xaml.Interactions\Resources\zh-TW\Strings.resw">
+      <Link>Resources\zh-TW\Strings.resw</Link>
+    </PRIResource>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
