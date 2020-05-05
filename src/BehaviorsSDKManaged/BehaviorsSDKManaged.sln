@@ -57,7 +57,6 @@ Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		Microsoft.Xaml.Interactions.Shared\Microsoft.Xaml.Interactions.Shared.projitems*{0b356a23-7184-4e11-9706-2bf6a5fc82eb}*SharedItemsImports = 13
 		Microsoft.Xaml.Interactivity.Shared\Microsoft.Xaml.Interactivity.Shared.projitems*{52e3ed43-3013-4155-ad87-6df52a265d59}*SharedItemsImports = 13
-		Microsoft.Xaml.Interactions.Shared\Microsoft.Xaml.Interactions.Shared.projitems*{53214a0e-68bb-4891-b3c4-55e0fa108661}*SharedItemsImports = 4
 		Microsoft.Xaml.Interactivity.Shared\Microsoft.Xaml.Interactivity.Shared.projitems*{7119f232-7bef-42f9-9ba1-52654adc98b6}*SharedItemsImports = 4
 		Microsoft.Xaml.Interactivity.Shared\Microsoft.Xaml.Interactivity.Shared.projitems*{7ffc1385-c3e1-487c-9a81-de48dd63ecb9}*SharedItemsImports = 4
 		Microsoft.Xaml.Interactions.Shared\Microsoft.Xaml.Interactions.Shared.projitems*{a338a7f2-9010-477b-8a6e-6c2b2495c33c}*SharedItemsImports = 4
