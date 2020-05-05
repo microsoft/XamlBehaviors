@@ -1,0 +1,51 @@
+﻿<?xml version="1.0"?>
+<package >
+    <metadata>
+        <id>Microsoft.Xaml.Behaviors.WinUI.Managed</id>
+        <version>$version$</version><!--Overridden using -Version switch in nuget pack command-->
+        <title>Microsoft.Xaml.Behaviors.WinUI.Managed</title>
+        <authors>Microsoft</authors>
+        <owners>xamlexperiencesteam,Microsoft</owners>
+        <requireLicenseAcceptance>true</requireLicenseAcceptance>
+        <description>Easily add interactivity to your WinUI apps using XAML Behaviors. Behaviors encapsulate reusable functionalities for elements that can be easily added to your XAML without the need for more imperative code. This is the managed version for C# UWP WinUI projects.</description>
+        <license type="expression">MIT</license>
+        <projectUrl>http://go.microsoft.com/fwlink/?LinkID=651678</projectUrl>
+        <iconUrl>http://go.microsoft.com/fwlink/?LinkID=708511</iconUrl>
+        <copyright>&#169; Microsoft Corporation. All rights reserved.</copyright>
+        <tags>Behavior Action Behaviors Actions Blend Managed C# Interaction Interactivity Interactions WinUI</tags>
+    </metadata>
+
+    <files>
+        <file target="lib\uap10.0\Microsoft.Xaml.Interactivity.dll"                     src="..\out\WinUI\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactivity.dll" />
+        <file target="lib\uap10.0\Microsoft.Xaml.Interactivity.pdb"                     src="..\out\WinUI\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactivity.pdb" />
+        <file target="lib\uap10.0\Microsoft.Xaml.Interactivity.xml"                     src="..\out\WinUI\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactivity.xml" />
+        <file target="lib\uap10.0\Microsoft.Xaml.Interactivity.pri"                     src="..\out\WinUI\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactivity.pri" />
+        <file target="lib\uap10.0\Microsoft.Xaml.Interactions.dll"                      src="..\out\WinUI\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactions.dll" />
+        <file target="lib\uap10.0\Microsoft.Xaml.Interactions.pdb"                      src="..\out\WinUI\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactions.pdb" />
+        <file target="lib\uap10.0\Microsoft.Xaml.Interactions.xml"                      src="..\out\WinUI\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactions.xml" />
+        <file target="lib\uap10.0\Microsoft.Xaml.Interactions.pri"                      src="..\out\WinUI\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactions.pri" />
+
+        <!--
+        <file target="lib\uap10.0\Design\Microsoft.Xaml.Interactivity.Design.dll"       src="..\out\WinUI\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactivity.Design.dll" />
+        <file target="lib\uap10.0\Design\Microsoft.Xaml.Interactivity.Design.pdb"       src="..\out\WinUI\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactivity.Design.pdb" />
+        <file target="lib\uap10.0\Design\Microsoft.Xaml.Interactions.Design.dll"        src="..\out\WinUI\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactions.Design.dll" />
+        <file target="lib\uap10.0\Design\Microsoft.Xaml.Interactions.Design.pdb"        src="..\out\WinUI\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactions.Design.pdb" />
+        -->
+      
+        <file target="lib\uap10.0\Design\Microsoft.Xaml.Interactivity.DesignTools.dll"   src="..\out\WinUI\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactivity.DesignTools.dll" />
+        <file target="lib\uap10.0\Design\Microsoft.Xaml.Interactivity.DesignTools.pdb"   src="..\out\WinUI\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactivity.DesignTools.pdb" />
+        <file target="lib\uap10.0\Design\Microsoft.Xaml.Interactions.DesignTools.dll"    src="..\out\WinUI\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactions.DesignTools.dll" />
+        <file target="lib\uap10.0\Design\Microsoft.Xaml.Interactions.DesignTools.pdb"    src="..\out\WinUI\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactions.DesignTools.pdb" />
+
+        <file target="src\BehaviorsSDKManaged\Microsoft.Xaml.Interactions.WinUI"              src="..\src\BehaviorsSDKManaged\Microsoft.Xaml.Interactions.WinUI\**\*.cs" />
+        <file target="src\BehaviorsSDKManaged\Microsoft.Xaml.Interactivity.WinUI"             src="..\src\BehaviorsSDKManaged\Microsoft.Xaml.Interactivity.WinUI\**\*.cs" />
+        <!--
+        <file target="src\BehaviorsSDKManaged\Microsoft.Xaml.Interactions.Design"       src="..\src\BehaviorsSDKManaged\Microsoft.Xaml.Interactions.Design\**\*.cs" />  
+        <file target="src\BehaviorsSDKManaged\Microsoft.Xaml.Interactivity.Design"      src="..\src\BehaviorsSDKManaged\Microsoft.Xaml.Interactivity.Design\**\*.cs" />
+        -->
+
+        <file target="src\BehaviorsSDKManaged\Microsoft.Xaml.Interactions.DesignTools"       src="..\src\BehaviorsSDKManaged\Microsoft.Xaml.Interactions.DesignTools\**\*.cs" />
+        <file target="src\BehaviorsSDKManaged\Microsoft.Xaml.Interactivity.DesignTools"      src="..\src\BehaviorsSDKManaged\Microsoft.Xaml.Interactivity.DesignTools\**\*.cs" />
+    </files>
+
+</package>
