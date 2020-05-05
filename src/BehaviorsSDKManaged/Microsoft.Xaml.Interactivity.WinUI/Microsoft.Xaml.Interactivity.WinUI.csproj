@@ -134,6 +134,67 @@
       <Version>3.0.0-alpha.200210.0</Version>
     </PackageReference>
   </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <PRIResource Include="..\Microsoft.Xaml.Interactivity\Resources\de-DE\Strings.resw">
+      <Link>Resources\de-DE\Strings.resw</Link>
+    </PRIResource>
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="..\Microsoft.Xaml.Interactivity\Resources\en-us\Strings.resw">
+      <Link>Resources\en-us\Strings.resw</Link>
+    </PRIResource>
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="..\Microsoft.Xaml.Interactivity\Resources\es-ES\Strings.resw">
+      <Link>Resources\es-ES\Strings.resw</Link>
+    </PRIResource>
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="..\Microsoft.Xaml.Interactivity\Resources\fr-FR\Strings.resw">
+      <Link>Resources\fr-FR\Strings.resw</Link>
+    </PRIResource>
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="..\Microsoft.Xaml.Interactivity\Resources\it-IT\Strings.resw">
+      <Link>Resources\it-IT\Strings.resw</Link>
+    </PRIResource>
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="..\Microsoft.Xaml.Interactivity\Resources\ja-JP\Strings.resw">
+      <Link>Resources\ja-JP\Strings.resw</Link>
+    </PRIResource>
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="..\Microsoft.Xaml.Interactivity\Resources\ko-KR\Strings.resw">
+      <Link>Resources\ko-KR\Strings.resw</Link>
+    </PRIResource>
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="..\Microsoft.Xaml.Interactivity\Resources\pt-BR\Strings.resw">
+      <Link>Resources\pt-BR\Strings.resw</Link>
+    </PRIResource>
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="..\Microsoft.Xaml.Interactivity\Resources\ru-RU\Strings.resw">
+      <Link>Resources\ru-RU\Strings.resw</Link>
+    </PRIResource>
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="..\Microsoft.Xaml.Interactivity\Resources\uk-UA\Strings.resw">
+      <Link>Resources\uk-UA\Strings.resw</Link>
+    </PRIResource>
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="..\Microsoft.Xaml.Interactivity\Resources\zh-CN\Strings.resw">
+      <Link>Resources\zh-CN\Strings.resw</Link>
+    </PRIResource>
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="..\Microsoft.Xaml.Interactivity\Resources\zh-TW\Strings.resw">
+      <Link>Resources\zh-TW\Strings.resw</Link>
+    </PRIResource>
+  </ItemGroup>
   <Import Project="..\Microsoft.Xaml.Interactivity.Shared\Microsoft.Xaml.Interactivity.Shared.projitems" Label="Shared" />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
