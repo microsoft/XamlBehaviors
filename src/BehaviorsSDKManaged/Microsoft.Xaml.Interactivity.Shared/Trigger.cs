@@ -2,8 +2,15 @@
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
+
+#if WinUI
+using Microsoft.UI.Xaml;
+using Microsoft.UI.Xaml.Markup;
+#else
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Markup;
+#endif
 
 namespace Microsoft.Xaml.Interactivity
 {
@@ -16,7 +23,7 @@ namespace Microsoft.Xaml.Interactivity
         /// <summary>
         /// Identifies the <seealso cref="Actions"/> dependency property.
         /// </summary>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes")]
+        [SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes")]
         public static readonly DependencyProperty ActionsProperty = DependencyProperty.Register(
             "Actions",
             typeof(ActionCollection),

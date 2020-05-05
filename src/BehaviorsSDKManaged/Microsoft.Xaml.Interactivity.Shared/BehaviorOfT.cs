@@ -2,20 +2,25 @@
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
 using System;
+
+#if WinUI
+using Microsoft.UI.Xaml;
+#else
 using Windows.UI.Xaml;
+#endif
 
 namespace Microsoft.Xaml.Interactivity
 {
     /// <summary>
-    /// A base class for behaviors, implementing the basic plumbing of ITrigger
+    /// A base class for behaviors making them code compatible with older frameworks,
+    /// and allow for typed associtated objects.
     /// </summary>
     /// <typeparam name="T">The object type to attach to</typeparam>
-    public abstract class Trigger<T> : Trigger where T : DependencyObject
+    public abstract class Behavior<T> : Behavior where T : DependencyObject
     {
         /// <summary>
         /// Gets the object to which this behavior is attached.
         /// </summary>
-        [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public new T AssociatedObject
         {
             get { return base.AssociatedObject as T; }
@@ -34,7 +39,7 @@ namespace Microsoft.Xaml.Interactivity
             if (this.AssociatedObject == null)
             {
                 string actualType = base.AssociatedObject.GetType().FullName;
-                string expectedType = typeof(T).FullName;
+                string expectedType = typeof (T).FullName;
                 string message = string.Format(ResourceHelper.GetString("InvalidAssociatedObjectExceptionMessage"), actualType, expectedType);
                 throw new InvalidOperationException(message);
             }

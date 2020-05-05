@@ -1,13 +1,19 @@
 ﻿// Copyright (c) Microsoft. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
+
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using Windows.Foundation.Collections;
+
+#if WinUI
+using Microsoft.UI.Xaml;
+#else
+using Windows.UI.Xaml;
+#endif
+
 namespace Microsoft.Xaml.Interactivity
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Diagnostics;
-    using Windows.Foundation.Collections;
-    using Windows.UI.Xaml;
-
     /// <summary>
     /// Represents a collection of IBehaviors with a shared <see cref="Microsoft.Xaml.Interactivity.BehaviorCollection.AssociatedObject"/>.
     /// </summary>
@@ -26,19 +32,20 @@ namespace Microsoft.Xaml.Interactivity
         }
 
         /// <summary>
-        /// Gets the <see cref="Windows.UI.Xaml.DependencyObject"/> to which the <see cref="BehaviorCollection"/> is attached.
+        /// Gets the <see cref="DependencyObject"/> to which the <see cref="BehaviorCollection"/> is attached.
         /// </summary>
-        public DependencyObject AssociatedObject
-        {
+        public DependencyObject AssociatedObject {
             get;
             private set;
         }
 
         /// <summary>
-        /// Attaches the collection of behaviors to the specified <see cref="Windows.UI.Xaml.DependencyObject"/>.
+        /// Attaches the collection of behaviors to the specified <see cref="DependencyObject"/>.
         /// </summary>
-        /// <param name="associatedObject">The <see cref="Windows.UI.Xaml.DependencyObject"/> to which to attach.</param>
-        /// <exception cref="InvalidOperationException">The <see cref="BehaviorCollection"/> is already attached to a different <see cref="Windows.UI.Xaml.DependencyObject"/>.</exception>
+        /// <param name="associatedObject">The <see cref="DependencyObject"/> to which to attach.</param>
+        /// <exception cref="InvalidOperationException">
+        /// The <see cref="BehaviorCollection"/> is already attached to a different <see cref="DependencyObject"/>.
+        /// </exception>
         public void Attach(DependencyObject associatedObject)
         {
             if (associatedObject == this.AssociatedObject)

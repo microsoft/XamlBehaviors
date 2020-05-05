@@ -1,14 +1,24 @@
 ﻿// Copyright (c) Microsoft. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
+
+using System;
+using System.Diagnostics.CodeAnalysis;
+using System.Globalization;
+
+using Microsoft.Xaml.Interactivity;
+
+#if WinUI
+using Microsoft.UI.Xaml;
+using Microsoft.UI.Xaml.Controls;
+using Microsoft.UI.Xaml.Controls.Primitives;
+#else
+using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Controls.Primitives;
+#endif
+
 namespace Microsoft.Xaml.Interactions.Media
 {
-	using System;
-	using System.Globalization;
-	using Interactivity;
-	using Windows.UI.Xaml;
-	using Windows.UI.Xaml.Controls;
-	using Windows.UI.Xaml.Controls.Primitives;
-
 	/// <summary>
 	/// An action that will play a sound to completion.
 	/// </summary>
@@ -23,7 +33,7 @@ namespace Microsoft.Xaml.Interactions.Media
 		/// <summary>
 		/// Identifies the <seealso cref="Source"/> dependency property.
 		/// </summary>
-		[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes")]
+		[SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes")]
 		public static readonly DependencyProperty SourceProperty = DependencyProperty.Register(
 			"Source",
 			typeof(string),
@@ -33,7 +43,7 @@ namespace Microsoft.Xaml.Interactions.Media
 		/// <summary>
 		/// Identifies the <seealso cref="Volume"/> dependency property.
 		/// </summary>
-		[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes")]
+		[SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes")]
 		public static readonly DependencyProperty VolumeProperty = DependencyProperty.Register(
 			"Volume",
 			typeof(double),

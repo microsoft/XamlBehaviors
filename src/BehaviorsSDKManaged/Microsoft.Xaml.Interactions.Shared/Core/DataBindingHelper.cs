@@ -1,14 +1,22 @@
 ﻿// Copyright (c) Microsoft. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
+
+using System;
+using System.Collections.Generic;
+using System.Reflection;
+
+using Microsoft.Xaml.Interactivity;
+
+#if WinUI
+using Microsoft.UI.Xaml;
+using Microsoft.UI.Xaml.Data;
+#else
+using Windows.UI.Xaml;
+using Windows.UI.Xaml.Data;
+#endif
+
 namespace Microsoft.Xaml.Interactions.Core
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Reflection;
-    using Windows.UI.Xaml;
-    using Windows.UI.Xaml.Data;
-    using Interactivity;
-
     internal static class DataBindingHelper
     {
         private static readonly Dictionary<Type, List<DependencyProperty>> DependenciesPropertyCache = new Dictionary<Type, List<DependencyProperty>>();

@@ -1,9 +1,14 @@
 ﻿// Copyright (c) Microsoft. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
+
+#if WinUI
+using Microsoft.UI.Xaml;
+#else
+using Windows.UI.Xaml;
+#endif
+
 namespace Microsoft.Xaml.Interactivity
 {
-    using Windows.UI.Xaml;
-
     /// <summary>
     /// Interface implemented by all custom behaviors.
     /// </summary>
