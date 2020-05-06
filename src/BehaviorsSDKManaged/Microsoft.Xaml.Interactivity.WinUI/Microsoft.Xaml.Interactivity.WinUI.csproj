@@ -17,7 +17,7 @@
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
   </PropertyGroup>
-    <PropertyGroup>
+  <PropertyGroup>
     <OutputPath>..\..\..\out\WinUI\$(SolutionName)\bin\$(Platform)\$(Configuration)\</OutputPath>
     <IntermediateOutputPath>..\..\..\out\WinUI\$(SolutionName)\obj\$(Platform)\$(Configuration)\</IntermediateOutputPath>
   </PropertyGroup>
@@ -213,6 +213,7 @@
     <PackageOutputPath>..\..\..\out\NuGetPackages</PackageOutputPath>
   </PropertyGroup>
   <Import Project="..\Version\NuGetPackageVersion.props" />
+  <Import Project="..\packages\NuGet.Build.Tasks.Pack.4.9.4\build\NuGet.Build.Tasks.Pack.targets" Condition="Exists('..\packages\NuGet.Build.Tasks.Pack.4.9.4\build\NuGet.Build.Tasks.Pack.targets')" />
   <PropertyGroup>
     <DefineConstants>$(DefineConstants);WinUI</DefineConstants>
   </PropertyGroup>
