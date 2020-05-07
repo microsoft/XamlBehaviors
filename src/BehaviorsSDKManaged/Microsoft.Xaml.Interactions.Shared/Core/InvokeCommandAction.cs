@@ -9,6 +9,7 @@ using Microsoft.Xaml.Interactivity;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Data;
 using Microsoft.UI.Xaml.Input;
+using System.Windows.Input;
 #else
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Data;
