@@ -127,10 +127,10 @@
     </PackageReference>
 -->
     <PackageReference Include="Microsoft.WinUI">
-      <Version>3.0.0-preview1.200506.0-nightly</Version>
+      <Version>3.0.0-preview1.200515.3</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.Windows.CsWinRT">
-      <Version>0.1.0-prerelease.200505.1</Version>
+      <Version>0.1.0-prerelease.200512.7</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup />
