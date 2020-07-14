@@ -14,7 +14,7 @@
         <copyright>&#169; Microsoft Corporation. All rights reserved.</copyright>
         <tags>Behavior Action Behaviors Actions Blend Managed C# Interaction Interactivity Interactions WinUI</tags>
         <dependencies>
-          <dependency id="Microsoft.WinUI" version="3.0.0-preview2.200704.0-CI" />
+          <dependency id="Microsoft.WinUI" version="3.0.0-preview2.200713.0" />
         </dependencies>
     </metadata>
 
