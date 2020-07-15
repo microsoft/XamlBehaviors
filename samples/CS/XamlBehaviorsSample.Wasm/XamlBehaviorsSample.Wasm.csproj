@@ -50,7 +50,7 @@
 		<PackageReference Include="Microsoft.Extensions.Logging.Console">
 			<Version>1.1.1</Version>
 		</PackageReference>
-    <PackageReference Include="Uno.UI.Sample.Banner" Version="1.44.0-dev.23" />
+    <PackageReference Include="Uno.UI.Sample.Banner" Version="1.44.0-dev.29" />
   </ItemGroup>
 	
 	<ItemGroup>
