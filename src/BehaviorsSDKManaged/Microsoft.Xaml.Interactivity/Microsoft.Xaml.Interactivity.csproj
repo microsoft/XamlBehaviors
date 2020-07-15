@@ -20,22 +20,22 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-    <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactivity.de-DE.xlf" />
-    <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactivity.es-ES.xlf" />
-    <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactivity.fr-FR.xlf" />
-    <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactivity.it-IT.xlf" />
-    <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactivity.ja-JP.xlf" />
-    <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactivity.ko-KR.xlf" />
-    <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactivity.pt-BR.xlf">
-      <SubType>Designer</SubType>
-    </XliffResource>
-    <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactivity.ru-RU.xlf" />
-    <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactivity.zh-CN.xlf" />
-    <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactivity.zh-TW.xlf" />
-    <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactivity.uk-UA.xlf" />
+		<XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactivity.de-DE.xlf" />
+		<XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactivity.es-ES.xlf" />
+		<XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactivity.fr-FR.xlf" />
+		<XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactivity.it-IT.xlf" />
+		<XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactivity.ja-JP.xlf" />
+		<XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactivity.ko-KR.xlf" />
+		<XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactivity.pt-BR.xlf">
+			<SubType>Designer</SubType>
+		</XliffResource>
+		<XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactivity.ru-RU.xlf" />
+		<XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactivity.zh-CN.xlf" />
+		<XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactivity.zh-TW.xlf" />
+		<XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactivity.uk-UA.xlf" />
 	</ItemGroup>
 	<ItemGroup>
-		<PackageReference Include="Uno.UI" Version="2.2.0-dev.486" />
+		<PackageReference Include="Uno.UI" Version="3.0.0-dev.783" />
 	</ItemGroup>
 
 	<ItemGroup>
