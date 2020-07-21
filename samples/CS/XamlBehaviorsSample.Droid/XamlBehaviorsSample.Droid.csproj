@@ -63,10 +63,10 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Uno.UI">
-      <Version>3.0.0-dev.840</Version>
+      <Version>3.0.0-dev.899</Version>
     </PackageReference>
     <PackageReference Include="Uno.UI.Sample.Banner">
-      <Version>1.44.0-dev.31</Version>
+      <Version>1.44.0-dev.33</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>

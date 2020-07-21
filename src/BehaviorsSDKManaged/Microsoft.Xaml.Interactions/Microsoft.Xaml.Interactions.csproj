@@ -25,7 +25,7 @@
   </PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Uno.UI" Version="3.0.0-dev.840" />
+		<PackageReference Include="Uno.UI" Version="3.0.0-dev.899" />
 	</ItemGroup>
 
 	<ItemGroup>

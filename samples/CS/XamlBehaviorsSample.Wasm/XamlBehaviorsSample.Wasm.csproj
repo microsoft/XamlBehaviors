@@ -3,8 +3,6 @@
 	<PropertyGroup>
 		<TargetFramework>netstandard2.0</TargetFramework>
 		<NoWarn>$(NoWarn),NU1701</NoWarn>
-		<DefineConstants>$(DefineConstants);__WASM__</DefineConstants>
-		<WasmHead>true</WasmHead>
 		<ApplicationIcon />
 		<OutputType>Exe</OutputType>
 		<StartupObject />
@@ -36,9 +34,9 @@
 		  <PrivateAssets>all</PrivateAssets>
 		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
-		<PackageReference Include="Uno.Wasm.Bootstrap" Version="1.3.0" />
-    <PackageReference Include="Uno.Wasm.Bootstrap.DevServer" Version="1.3.0" />
-		<PackageReference Include="Uno.UI" Version="3.0.0-dev.840" PrivateAssets="All" />
+		<PackageReference Include="Uno.Wasm.Bootstrap" Version="1.4.0-dev.9" />
+    <PackageReference Include="Uno.Wasm.Bootstrap.DevServer" Version="1.4.0-dev.9" />
+		<PackageReference Include="Uno.UI.WebAssembly" Version="3.0.0-dev.899" PrivateAssets="All" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Console" Version="1.1.1" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Filter" Version="1.1.1" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug">
@@ -50,7 +48,7 @@
 		<PackageReference Include="Microsoft.Extensions.Logging.Console">
 			<Version>1.1.1</Version>
 		</PackageReference>
-    <PackageReference Include="Uno.UI.Sample.Banner" Version="1.44.0-dev.31" />
+    <PackageReference Include="Uno.UI.Sample.Banner" Version="1.44.0-dev.33" />
   </ItemGroup>
 	
 	<ItemGroup>
