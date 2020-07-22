@@ -59,6 +59,13 @@
     <file target="runtimes\win10-arm\native\Microsoft.Xaml.Interactions.pdb"         src="..\out\BehaviorsSDKNative\bin\ARM\Release\Microsoft.Xaml.Interactions\Microsoft.Xaml.Interactions.pdb" />
     <file target="runtimes\win10-arm\native\Microsoft.Xaml.Interactions.pri"         src="..\out\BehaviorsSDKNative\bin\ARM\Release\Microsoft.Xaml.Interactions\Microsoft.Xaml.Interactions.pri" />
 
+    <file target="runtimes\win10-arm64\native\Microsoft.Xaml.Interactivity.dll"      src="..\out\BehaviorsSDKNative\bin\ARM64\Release\Microsoft.Xaml.Interactivity\Microsoft.Xaml.Interactivity.dll" />
+    <file target="runtimes\win10-arm64\native\Microsoft.Xaml.Interactivity.pdb"      src="..\out\BehaviorsSDKNative\bin\ARM64\Release\Microsoft.Xaml.Interactivity\Microsoft.Xaml.Interactivity.pdb" />
+    <file target="runtimes\win10-arm64\native\Microsoft.Xaml.Interactivity.pri"      src="..\out\BehaviorsSDKNative\bin\ARM64\Release\Microsoft.Xaml.Interactivity\Microsoft.Xaml.Interactivity.pri" />
+    <file target="runtimes\win10-arm64\native\Microsoft.Xaml.Interactions.dll"       src="..\out\BehaviorsSDKNative\bin\ARM64\Release\Microsoft.Xaml.Interactions\Microsoft.Xaml.Interactions.dll" />
+    <file target="runtimes\win10-arm64\native\Microsoft.Xaml.Interactions.pdb"       src="..\out\BehaviorsSDKNative\bin\ARM64\Release\Microsoft.Xaml.Interactions\Microsoft.Xaml.Interactions.pdb" />
+    <file target="runtimes\win10-arm64\native\Microsoft.Xaml.Interactions.pri"       src="..\out\BehaviorsSDKNative\bin\ARM64\Release\Microsoft.Xaml.Interactions\Microsoft.Xaml.Interactions.pri" />
+
     <file target="src\BehaviorsSDKNative\Microsoft.Xaml.Interactions"                src="..\src\BehaviorsSDKNative\Microsoft.Xaml.Interactions\**\*.cpp" />
     <file target="src\BehaviorsSDKNative\Microsoft.Xaml.Interactions"                src="..\src\BehaviorsSDKNative\Microsoft.Xaml.Interactions\**\*.h" />
     <file target="src\BehaviorsSDKNative\Microsoft.Xaml.Interactivity"               src="..\src\BehaviorsSDKNative\Microsoft.Xaml.Interactivity\**\*.cpp" />
