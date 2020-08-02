@@ -120,13 +120,13 @@ namespace Microsoft.Xaml.Interactions.Core
 
         private void UpdatePropertyValue(object targetObject)
         {
-            int GetTypeHierarchyDepth(Type type)
+            int GetTypeHierarchyDepth(TypeInfo type)
             {
                 int depth = 1;
                 while (type.BaseType != null)
                 {
                     depth++;
-                    type = type.BaseType;
+                    type = type.BaseType.GetTypeInfo();
                 }
                 return depth;
             }
@@ -134,7 +134,7 @@ namespace Microsoft.Xaml.Interactions.Core
             Type targetType = targetObject.GetType();
             var properties = targetType.GetRuntimeProperties()
                                        .Where(p => p.Name == this.PropertyName.Path)
-                                       .OrderByDescending(p => GetTypeHierarchyDepth(p.DeclaringType));
+                                       .OrderByDescending(p => GetTypeHierarchyDepth(p.DeclaringType.GetTypeInfo()));
             PropertyInfo propertyInfo = properties.First();
             this.ValidateProperty(targetType.Name, propertyInfo);
 
