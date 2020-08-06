@@ -19,15 +19,15 @@ namespace Microsoft.Xaml.Interactivity
     public abstract class Behavior : DependencyObject, IBehavior
     {
         /// <summary>
-        /// Gets the <see cref="Windows.UI.Xaml.DependencyObject"/> to which the behavior is attached.
+        /// Gets the <see cref="DependencyObject"/> to which the behavior is attached.
         /// </summary>
         public DependencyObject AssociatedObject { get; private set; }
 
         /// <summary>
-        /// Attaches the behavior to the specified <see cref="Windows.UI.Xaml.DependencyObject"/>.
+        /// Attaches the behavior to the specified <see cref="DependencyObject"/>.
         /// </summary>
-        /// <param name="associatedObject">The <see cref="Windows.UI.Xaml.DependencyObject"/> to which to attach.</param>
-        /// <exception cref="System.ArgumentNullException"><paramref name="associatedObject"/> is null.</exception>
+        /// <param name="associatedObject">The <see cref="DependencyObject"/> to which to attach.</param>
+        /// <exception cref="global::System.ArgumentNullException"><paramref name="associatedObject"/> is null.</exception>
         public void Attach(DependencyObject associatedObject)
         {
             if (associatedObject == this.AssociatedObject || Windows.ApplicationModel.DesignMode.DesignModeEnabled)

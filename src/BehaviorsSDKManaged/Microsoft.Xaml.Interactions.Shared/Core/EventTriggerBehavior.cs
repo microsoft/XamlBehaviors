@@ -4,7 +4,6 @@
 using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
-using System.Runtime.InteropServices.WindowsRuntime;
 
 using Microsoft.Xaml.Interactivity;
 
@@ -14,6 +13,7 @@ using Microsoft.UI.Xaml.Media;
 #else
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Media;
+using System.Runtime.InteropServices.WindowsRuntime;
 #endif
 
 namespace Microsoft.Xaml.Interactions.Core
@@ -46,9 +46,11 @@ namespace Microsoft.Xaml.Interactions.Core
         private object _resolvedSource;
         private Delegate _eventHandler;
         private bool _isLoadedEventRegistered;
+#if !WinUI
         private bool _isWindowsRuntimeEvent;
         private Func<Delegate, EventRegistrationToken> _addEventHandlerMethod;
         private Action<EventRegistrationToken> _removeEventHandlerMethod;
+#endif
 
         /// <summary>
         /// Initializes a new instance of the <see cref="EventTriggerBehavior"/> class.
@@ -159,6 +161,9 @@ namespace Microsoft.Xaml.Interactions.Core
                 MethodInfo methodInfo = typeof(EventTriggerBehavior).GetTypeInfo().GetDeclaredMethod("OnEvent");
                 this._eventHandler = methodInfo.CreateDelegate(info.EventHandlerType, this);
 
+#if WinUI
+                info.AddEventHandler(this._resolvedSource, this._eventHandler);
+#else
                 this._isWindowsRuntimeEvent = EventTriggerBehavior.IsWindowsRuntimeEvent(info);
                 if (this._isWindowsRuntimeEvent)
                 {
@@ -171,6 +176,7 @@ namespace Microsoft.Xaml.Interactions.Core
                 {
                     info.AddEventHandler(this._resolvedSource, this._eventHandler);
                 }
+#endif
             }
             else if (!this._isLoadedEventRegistered)
             {
@@ -198,6 +204,9 @@ namespace Microsoft.Xaml.Interactions.Core
                 }
 
                 EventInfo info = this._resolvedSource.GetType().GetRuntimeEvent(eventName);
+#if WinUI
+                info.RemoveEventHandler(this._resolvedSource, this._eventHandler);
+#else
                 if (this._isWindowsRuntimeEvent)
                 {
                     WindowsRuntimeMarshal.RemoveEventHandler(this._removeEventHandlerMethod, this._eventHandler);
@@ -206,6 +215,7 @@ namespace Microsoft.Xaml.Interactions.Core
                 {
                     info.RemoveEventHandler(this._resolvedSource, this._eventHandler);
                 }
+#endif
 
                 this._eventHandler = null;
             }
