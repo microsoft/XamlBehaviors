@@ -216,3 +216,6 @@ GeneratedArtifacts/
 _Pvt_Extensions/
 ModelManifest.xml
 **/MigrationBackup
+
+# VS Generated files
+/**/Generated Files
