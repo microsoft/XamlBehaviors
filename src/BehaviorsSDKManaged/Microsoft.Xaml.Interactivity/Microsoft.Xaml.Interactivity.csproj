@@ -35,7 +35,7 @@
 		<XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactivity.uk-UA.xlf" />
 	</ItemGroup>
 	<ItemGroup>
-		<PackageReference Include="Uno.UI" Version="3.0.0-dev.899" />
+		<PackageReference Include="Uno.UI" Version="3.0.11" />
 	</ItemGroup>
 
 	<ItemGroup>
