@@ -5,8 +5,8 @@ Build Status
 -------------------
 | Platform | Status |
 | -------- | ------ |
-| Managed | <img src="https://ci.appveyor.com/api/projects/status/0dptycdhhykyscr4/branch/master?svg=true"/> |
-| Native | <img src="https://ci.appveyor.com/api/projects/status/897ervx359xqa7vh/branch/master?svg=true"/> |
+| Managed | ![Build Managed](https://github.com/microsoft/XamlBehaviors/workflows/Build%20Managed/badge.svg) |
+| Native | ![Build Native](https://github.com/microsoft/XamlBehaviors/workflows/Build%20Native/badge.svg) |
 
 Getting Started
 -------------------
