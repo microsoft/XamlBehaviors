@@ -4,9 +4,10 @@ namespace Microsoft.Xaml.Interactions.Core
 {
     using System;
     using System.Globalization;
+    using System.Linq;
     using System.Reflection;
-    using Windows.UI.Xaml;
     using Interactivity;
+    using Windows.UI.Xaml;
 
     /// <summary>
     /// An action that will change a specified property to a specified value when invoked.
@@ -119,8 +120,22 @@ namespace Microsoft.Xaml.Interactions.Core
 
         private void UpdatePropertyValue(object targetObject)
         {
+            int GetTypeHierarchyDepth(TypeInfo type)
+            {
+                int depth = 1;
+                while (type.BaseType != null)
+                {
+                    depth++;
+                    type = type.BaseType.GetTypeInfo();
+                }
+                return depth;
+            }
+
             Type targetType = targetObject.GetType();
-            PropertyInfo propertyInfo = targetType.GetRuntimeProperty(this.PropertyName.Path);
+            var properties = targetType.GetRuntimeProperties()
+                                       .Where(p => p.Name == this.PropertyName.Path)
+                                       .OrderByDescending(p => GetTypeHierarchyDepth(p.DeclaringType.GetTypeInfo()));
+            PropertyInfo propertyInfo = properties.First();
             this.ValidateProperty(targetType.Name, propertyInfo);
 
             Exception innerException = null;
