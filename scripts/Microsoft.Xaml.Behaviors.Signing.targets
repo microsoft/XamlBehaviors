@@ -15,6 +15,10 @@
       <Authenticode>Microsoft400</Authenticode>
       <StrongName>StrongName</StrongName>
     </FilesToSign>
+    <FilesToSign Include="$(OutputPath)$(AssemblyName).winmd" Condition="!($(AssemblyName.Contains('.Design')) OR $(AssemblyName.Contains('.DesignTools')))">
+      <Authenticode>Microsoft400</Authenticode>
+      <StrongName>StrongName</StrongName>
+    </FilesToSign>
   </ItemGroup>
 
   <Target Name="TimestampNugetPackage">

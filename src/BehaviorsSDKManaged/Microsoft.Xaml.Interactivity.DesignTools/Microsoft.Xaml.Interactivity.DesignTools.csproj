@@ -68,7 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.VisualStudio.DesignTools.Extensibility">
-      <Version>16.4.29519.181</Version>
+      <Version>16.7.30329.38</Version>
     </PackageReference>
   </ItemGroup>
   <Import Project="..\..\..\scripts\Microsoft.Xaml.Behaviors.Signing.targets" />
