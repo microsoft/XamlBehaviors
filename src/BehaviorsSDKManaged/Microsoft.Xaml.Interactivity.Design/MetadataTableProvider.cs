@@ -1,38 +1,42 @@
 ﻿// Copyright (c) Microsoft. All rights reserved. 
 // Licensed under the MIT license. See LICENSE file in the project root for full license information. 
 
-extern alias WindowsRuntime;
-using System;
 using System.ComponentModel;
+
+#if SurfaceIsolation
+using Microsoft.VisualStudio.DesignTools.Extensibility;
+using Microsoft.VisualStudio.DesignTools.Extensibility.Metadata;
+using Microsoft.Xaml.Interactivity.Design.Properties;
+#else
 using Microsoft.Windows.Design;
 using Microsoft.Windows.Design.Metadata;
 using Microsoft.Xaml.Interactivity.Design.Properties;
+#endif
 
+[assembly: ProvideMetadata(typeof(Microsoft.Xaml.Interactivity.Design.MetadataTableProvider))]
+
+// Please note that both the .Design and .DesignTools project
+// use the same namespace: Microsoft.Xaml.Interactivity.Design
 namespace Microsoft.Xaml.Interactivity.Design
 {
-    internal class MetadataTableProvider : IProvideAttributeTable
+    partial class MetadataTableProvider : IProvideAttributeTable
     {
-        private AttributeTableBuilder attributeTableBuilder;
+        private AttributeTableBuilder _attributeTableBuilder;
 
         public AttributeTable AttributeTable
         {
             get
             {
-                if (attributeTableBuilder == null)
+                if (_attributeTableBuilder == null)
                 {
-                    attributeTableBuilder = new AttributeTableBuilder();
+                    _attributeTableBuilder = new AttributeTableBuilder();
                 }
 
-                AddAttribute<ActionCollection>(new CategoryAttribute(Resources.Category_Name_Actions));
-                AddAttribute<BehaviorCollection>(new ToolboxBrowsableAttribute(false));
+                AddAttributes(Targets.ActionCollection, new CategoryAttribute(Resources.Category_Name_Actions));
+                AddAttributes(Targets.BehaviorCollection, new ToolboxBrowsableAttribute(false));
 
-                return attributeTableBuilder.CreateTable();
+                return _attributeTableBuilder.CreateTable();
             }
-        }
-
-        private void AddAttribute<T>(Attribute attribute)
-        {
-            attributeTableBuilder.AddCustomAttributes(typeof(T), attribute);
         }
     }
 }

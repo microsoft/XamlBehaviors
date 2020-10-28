@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29806.167
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Xaml.Interactivity", "Microsoft.Xaml.Interactivity\Microsoft.Xaml.Interactivity.csproj", "{7FFC1385-C3E1-487C-9A81-DE48DD63ECB9}"
 EndProject
@@ -18,6 +18,22 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Xaml.Interactions
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManagedUnitTests", "ManagedUnitTests\ManagedUnitTests.csproj", "{9A26166B-1E98-4723-9B42-FB64BDC231E6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2B3854DD-E11F-4758-A892-E27E9AAD92C6}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		..\..\.gitignore = ..\..\.gitignore
+		..\..\scripts\download-nuget.cmd = ..\..\scripts\download-nuget.cmd
+		..\..\scripts\Microsoft.Xaml.Behaviors.Signing.targets = ..\..\scripts\Microsoft.Xaml.Behaviors.Signing.targets
+		..\..\scripts\Microsoft.Xaml.Behaviors.Uwp.Managed.nuspec = ..\..\scripts\Microsoft.Xaml.Behaviors.Uwp.Managed.nuspec
+		..\..\scripts\Microsoft.Xaml.Behaviors.Uwp.Native.nuspec = ..\..\scripts\Microsoft.Xaml.Behaviors.Uwp.Native.nuspec
+		..\..\scripts\Microsoft.Xaml.Behaviors.Uwp.Native.targets = ..\..\scripts\Microsoft.Xaml.Behaviors.Uwp.Native.targets
+		Version\NuGetPackageVersion.props = Version\NuGetPackageVersion.props
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Xaml.Interactions.DesignTools", "Microsoft.Xaml.Interactions.DesignTools\Microsoft.Xaml.Interactions.DesignTools.csproj", "{B6F7C183-33A0-4942-B680-97BEA6011890}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Xaml.Interactivity.DesignTools", "Microsoft.Xaml.Interactivity.DesignTools\Microsoft.Xaml.Interactivity.DesignTools.csproj", "{0EA6E46C-C612-45E3-A4E0-A0F0D699606B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -88,6 +104,8 @@ Global
 		{A3161818-5AA8-4A7C-A6CD-B19EDA5F3AE1}.Release|x86.ActiveCfg = Release|Any CPU
 		{A3161818-5AA8-4A7C-A6CD-B19EDA5F3AE1}.Release|x86.Build.0 = Release|Any CPU
 		{9A26166B-1E98-4723-9B42-FB64BDC231E6}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{9A26166B-1E98-4723-9B42-FB64BDC231E6}.Debug|Any CPU.Build.0 = Debug|x86
+		{9A26166B-1E98-4723-9B42-FB64BDC231E6}.Debug|Any CPU.Deploy.0 = Debug|x86
 		{9A26166B-1E98-4723-9B42-FB64BDC231E6}.Debug|ARM.ActiveCfg = Debug|ARM
 		{9A26166B-1E98-4723-9B42-FB64BDC231E6}.Debug|ARM.Build.0 = Debug|ARM
 		{9A26166B-1E98-4723-9B42-FB64BDC231E6}.Debug|ARM.Deploy.0 = Debug|ARM
@@ -107,8 +125,43 @@ Global
 		{9A26166B-1E98-4723-9B42-FB64BDC231E6}.Release|x86.ActiveCfg = Release|x86
 		{9A26166B-1E98-4723-9B42-FB64BDC231E6}.Release|x86.Build.0 = Release|x86
 		{9A26166B-1E98-4723-9B42-FB64BDC231E6}.Release|x86.Deploy.0 = Release|x86
+		{B6F7C183-33A0-4942-B680-97BEA6011890}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6F7C183-33A0-4942-B680-97BEA6011890}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6F7C183-33A0-4942-B680-97BEA6011890}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{B6F7C183-33A0-4942-B680-97BEA6011890}.Debug|ARM.Build.0 = Debug|Any CPU
+		{B6F7C183-33A0-4942-B680-97BEA6011890}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{B6F7C183-33A0-4942-B680-97BEA6011890}.Debug|x64.Build.0 = Debug|Any CPU
+		{B6F7C183-33A0-4942-B680-97BEA6011890}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B6F7C183-33A0-4942-B680-97BEA6011890}.Debug|x86.Build.0 = Debug|Any CPU
+		{B6F7C183-33A0-4942-B680-97BEA6011890}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6F7C183-33A0-4942-B680-97BEA6011890}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6F7C183-33A0-4942-B680-97BEA6011890}.Release|ARM.ActiveCfg = Release|Any CPU
+		{B6F7C183-33A0-4942-B680-97BEA6011890}.Release|ARM.Build.0 = Release|Any CPU
+		{B6F7C183-33A0-4942-B680-97BEA6011890}.Release|x64.ActiveCfg = Release|Any CPU
+		{B6F7C183-33A0-4942-B680-97BEA6011890}.Release|x64.Build.0 = Release|Any CPU
+		{B6F7C183-33A0-4942-B680-97BEA6011890}.Release|x86.ActiveCfg = Release|Any CPU
+		{B6F7C183-33A0-4942-B680-97BEA6011890}.Release|x86.Build.0 = Release|Any CPU
+		{0EA6E46C-C612-45E3-A4E0-A0F0D699606B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EA6E46C-C612-45E3-A4E0-A0F0D699606B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EA6E46C-C612-45E3-A4E0-A0F0D699606B}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{0EA6E46C-C612-45E3-A4E0-A0F0D699606B}.Debug|ARM.Build.0 = Debug|Any CPU
+		{0EA6E46C-C612-45E3-A4E0-A0F0D699606B}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{0EA6E46C-C612-45E3-A4E0-A0F0D699606B}.Debug|x64.Build.0 = Debug|Any CPU
+		{0EA6E46C-C612-45E3-A4E0-A0F0D699606B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{0EA6E46C-C612-45E3-A4E0-A0F0D699606B}.Debug|x86.Build.0 = Debug|Any CPU
+		{0EA6E46C-C612-45E3-A4E0-A0F0D699606B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EA6E46C-C612-45E3-A4E0-A0F0D699606B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0EA6E46C-C612-45E3-A4E0-A0F0D699606B}.Release|ARM.ActiveCfg = Release|Any CPU
+		{0EA6E46C-C612-45E3-A4E0-A0F0D699606B}.Release|ARM.Build.0 = Release|Any CPU
+		{0EA6E46C-C612-45E3-A4E0-A0F0D699606B}.Release|x64.ActiveCfg = Release|Any CPU
+		{0EA6E46C-C612-45E3-A4E0-A0F0D699606B}.Release|x64.Build.0 = Release|Any CPU
+		{0EA6E46C-C612-45E3-A4E0-A0F0D699606B}.Release|x86.ActiveCfg = Release|Any CPU
+		{0EA6E46C-C612-45E3-A4E0-A0F0D699606B}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5590EAFF-6ECD-427C-A50A-A9ABFD9CDB2B}
 	EndGlobalSection
 EndGlobal

@@ -7,14 +7,12 @@ namespace Microsoft.Xaml.Interactions.Core
     using System.Reflection;
     using System.Runtime.InteropServices.WindowsRuntime;
     using Windows.UI.Xaml;
-    using Windows.UI.Xaml.Markup;
     using Windows.UI.Xaml.Media;
     using Interactivity;
 
     /// <summary>
     /// A behavior that listens for a specified event on its source and executes its actions when that event is fired.
     /// </summary>
-    [ContentPropertyAttribute(Name = "Actions")]
     public sealed class EventTriggerBehavior : Trigger
     {
         /// <summary>
@@ -37,12 +35,12 @@ namespace Microsoft.Xaml.Interactions.Core
             typeof(EventTriggerBehavior),
             new PropertyMetadata(null, new PropertyChangedCallback(EventTriggerBehavior.OnSourceObjectChanged)));
 
-        private object resolvedSource;
-        private Delegate eventHandler;
-        private bool isLoadedEventRegistered;
-        private bool isWindowsRuntimeEvent;
-        private Func<Delegate, EventRegistrationToken> addEventHandlerMethod;
-        private Action<EventRegistrationToken> removeEventHandlerMethod;
+        private object _resolvedSource;
+        private Delegate _eventHandler;
+        private bool _isLoadedEventRegistered;
+        private bool _isWindowsRuntimeEvent;
+        private Func<Delegate, EventRegistrationToken> _addEventHandlerMethod;
+        private Action<EventRegistrationToken> _removeEventHandlerMethod;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="EventTriggerBehavior"/> class.
@@ -104,19 +102,19 @@ namespace Microsoft.Xaml.Interactions.Core
 
         private void SetResolvedSource(object newSource)
         {
-            if (this.AssociatedObject == null || this.resolvedSource == newSource)
+            if (this.AssociatedObject == null || this._resolvedSource == newSource)
             {
                 return;
             }
 
-            if (this.resolvedSource != null)
+            if (this._resolvedSource != null)
             {
                 this.UnregisterEvent(this.EventName);
             }
 
-            this.resolvedSource = newSource;
+            this._resolvedSource = newSource;
 
-            if (this.resolvedSource != null)
+            if (this._resolvedSource != null)
             {
                 this.RegisterEvent(this.EventName);
             }
@@ -143,7 +141,7 @@ namespace Microsoft.Xaml.Interactions.Core
 
             if (eventName != "Loaded")
             {
-                Type sourceObjectType = this.resolvedSource.GetType();
+                Type sourceObjectType = this._resolvedSource.GetType();
                 EventInfo info = sourceObjectType.GetRuntimeEvent(eventName);
                 if (info == null)
                 {
@@ -151,27 +149,27 @@ namespace Microsoft.Xaml.Interactions.Core
                 }
 
                 MethodInfo methodInfo = typeof(EventTriggerBehavior).GetTypeInfo().GetDeclaredMethod("OnEvent");
-                this.eventHandler = methodInfo.CreateDelegate(info.EventHandlerType, this);
+                this._eventHandler = methodInfo.CreateDelegate(info.EventHandlerType, this);
 
-                this.isWindowsRuntimeEvent = EventTriggerBehavior.IsWindowsRuntimeEvent(info);
-                if (this.isWindowsRuntimeEvent)
+                this._isWindowsRuntimeEvent = EventTriggerBehavior.IsWindowsRuntimeEvent(info);
+                if (this._isWindowsRuntimeEvent)
                 {
-                    this.addEventHandlerMethod = add => (EventRegistrationToken)info.AddMethod.Invoke(this.resolvedSource, new object[] { add });
-                    this.removeEventHandlerMethod = token => info.RemoveMethod.Invoke(this.resolvedSource, new object[] { token });
+                    this._addEventHandlerMethod = add => (EventRegistrationToken)info.AddMethod.Invoke(this._resolvedSource, new object[] { add });
+                    this._removeEventHandlerMethod = token => info.RemoveMethod.Invoke(this._resolvedSource, new object[] { token });
 
-                    WindowsRuntimeMarshal.AddEventHandler(this.addEventHandlerMethod, this.removeEventHandlerMethod, this.eventHandler);
+                    WindowsRuntimeMarshal.AddEventHandler(this._addEventHandlerMethod, this._removeEventHandlerMethod, this._eventHandler);
                 }
                 else
                 {
-                    info.AddEventHandler(this.resolvedSource, this.eventHandler);
+                    info.AddEventHandler(this._resolvedSource, this._eventHandler);
                 }
             }
-            else if (!this.isLoadedEventRegistered)
+            else if (!this._isLoadedEventRegistered)
             {
-                FrameworkElement element = this.resolvedSource as FrameworkElement;
+                FrameworkElement element = this._resolvedSource as FrameworkElement;
                 if (element != null && !EventTriggerBehavior.IsElementLoaded(element))
                 {
-                    this.isLoadedEventRegistered = true;
+                    this._isLoadedEventRegistered = true;
                     element.Loaded += this.OnEvent;
                 }
             }
@@ -186,34 +184,34 @@ namespace Microsoft.Xaml.Interactions.Core
 
             if (eventName != "Loaded")
             {
-                if (this.eventHandler == null)
+                if (this._eventHandler == null)
                 {
                     return;
                 }
 
-                EventInfo info = this.resolvedSource.GetType().GetRuntimeEvent(eventName);
-                if (this.isWindowsRuntimeEvent)
+                EventInfo info = this._resolvedSource.GetType().GetRuntimeEvent(eventName);
+                if (this._isWindowsRuntimeEvent)
                 {
-                    WindowsRuntimeMarshal.RemoveEventHandler(this.removeEventHandlerMethod, this.eventHandler);
+                    WindowsRuntimeMarshal.RemoveEventHandler(this._removeEventHandlerMethod, this._eventHandler);
                 }
                 else
                 {
-                    info.RemoveEventHandler(this.resolvedSource, this.eventHandler);
+                    info.RemoveEventHandler(this._resolvedSource, this._eventHandler);
                 }
 
-                this.eventHandler = null;
+                this._eventHandler = null;
             }
-            else if (this.isLoadedEventRegistered)
+            else if (this._isLoadedEventRegistered)
             {
-                this.isLoadedEventRegistered = false;
-                FrameworkElement element = (FrameworkElement)this.resolvedSource;
+                this._isLoadedEventRegistered = false;
+                FrameworkElement element = (FrameworkElement)this._resolvedSource;
                 element.Loaded -= this.OnEvent;
             }
         }
 
         private void OnEvent(object sender, object eventArgs)
         {
-            Interaction.ExecuteActions(this.resolvedSource, this.Actions, eventArgs);
+            Interaction.ExecuteActions(this._resolvedSource, this.Actions, eventArgs);
         }
 
         private static void OnSourceObjectChanged(DependencyObject dependencyObject, DependencyPropertyChangedEventArgs args)
@@ -225,7 +223,7 @@ namespace Microsoft.Xaml.Interactions.Core
         private static void OnEventNameChanged(DependencyObject dependencyObject, DependencyPropertyChangedEventArgs args)
         {
             EventTriggerBehavior behavior = (EventTriggerBehavior)dependencyObject;
-            if (behavior.AssociatedObject == null || behavior.resolvedSource == null)
+            if (behavior.AssociatedObject == null || behavior._resolvedSource == null)
             {
                 return;
             }

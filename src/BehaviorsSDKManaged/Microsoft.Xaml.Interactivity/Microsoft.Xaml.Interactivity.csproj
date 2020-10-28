@@ -11,13 +11,13 @@
     <AssemblyName>Microsoft.Xaml.Interactivity</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
-    <TargetPlatformVersion>10.0.10586.0</TargetPlatformVersion>
+    <TargetPlatformVersion>10.0.19041.0</TargetPlatformVersion>
     <TargetPlatformMinVersion>10.0.10240.0</TargetPlatformMinVersion>
     <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <OutputPath>..\..\..\out\$(SolutionName)\bin\$(Platform)\$(Configuration)\</OutputPath>
-    <IntermediateOutputPath>..\..\..\out\$(SolutionName)\obj\$(Platform)\$(Configuration)\</IntermediateOutputPath>
+    <AppxBundlePlatforms>x86|x64|arm</AppxBundlePlatforms>
+    <RuntimeIdentifiers>win10-arm;win10-arm-aot;win10-x86;win10-x86-aot;win10-x64;win10-x64-aot</RuntimeIdentifiers>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -108,11 +108,10 @@
     <MultilingualAppToolkitVersion>4.0</MultilingualAppToolkitVersion>
     <MultilingualFallbackLanguage>en-US</MultilingualFallbackLanguage>
   </PropertyGroup>
-  <ItemGroup>
-    <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
-    <None Include="project.json" />
-    <None Include="..\..\..\key\35MSSharedLib1024.snk" />
-  </ItemGroup>
+  <PropertyGroup>
+    <OutputPath>..\..\..\out\$(SolutionName)\bin\$(Platform)\$(Configuration)\</OutputPath>
+    <IntermediateOutputPath>..\..\..\out\$(SolutionName)\obj\$(Platform)\$(Configuration)\</IntermediateOutputPath>
+  </PropertyGroup>
   <ItemGroup>
     <PRIResource Include="Resources\zh-TW\Strings.resw" />
     <PRIResource Include="Resources\zh-CN\Strings.resw" />
@@ -165,19 +164,21 @@
     <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactivity.zh-TW.xlf" />
     <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactivity.uk-UA.xlf" />
   </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
+      <Version>6.2.10</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudioEng.MicroBuild.Core">
+      <Version>0.4.1</Version>
+    </PackageReference>
+  </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
+  <Import Project="..\..\..\scripts\Microsoft.Xaml.Behaviors.Signing.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\Microsoft.Multilingual.PriResources.targets" Label="MultilingualAppToolkit" Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\Microsoft.Multilingual.PriResources.targets')" />
-  <Target Name="MATPrerequisite" BeforeTargets="PrepareForBuild" Condition="!Exists('$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\Microsoft.Multilingual.PriResources.targets')" Label="MultilingualAppToolkit">
+  <Target Name="MATPrerequisite" BeforeTargets="PrepareForBuild" Condition="!Exists('$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\Microsoft.Multilingual.PriResources.targets') AND '$(AzureDevOps)' != 'true'" Label="MultilingualAppToolkit">
     <Warning Text="$(MSBuildProjectFile) is Multilingual build enabled, but the Multilingual App Toolkit is unavailable during the build. If building with Visual Studio, please check to ensure that toolkit is properly installed." />
   </Target>
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
 </Project>

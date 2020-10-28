@@ -1,19 +1,14 @@
 ﻿// -------------------------------------------------------------------
 // Copyright (c) Microsoft Corporation. All Rights Reserved.
 // -------------------------------------------------------------------
+
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Windows.UI.Xaml;
+
 namespace BehaviorsXamlSdkUnitTests
 {
-    using System;
-    using Microsoft.VisualStudio.TestPlatform.UnitTestFramework;
-    using Windows.UI.Xaml;
-
     public static class TestUtilities
     {
-        public static void AssertThrowsException(Action action)
-        {
-            Assert.ThrowsException<Exception>(action);
-        }
-
         public static void AssertDetached(StubBehavior behavior)
         {
             Assert.AreEqual(1, behavior.DetachCount, "The Behavior should be detached.");

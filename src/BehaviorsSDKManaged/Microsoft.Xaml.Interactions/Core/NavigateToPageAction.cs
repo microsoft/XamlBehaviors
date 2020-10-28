@@ -13,7 +13,7 @@ namespace Microsoft.Xaml.Interactions.Core
     /// </summary>
     public sealed class NavigateToPageAction : DependencyObject, IAction
     {
-        private readonly IVisualTreeHelper visualTreeHelper;
+        private readonly IVisualTreeHelper _visualTreeHelper;
 
         /// <summary>
         /// Identifies the <seealso cref="TargetPage"/> dependency property.
@@ -52,7 +52,7 @@ namespace Microsoft.Xaml.Interactions.Core
         /// </param>
         internal NavigateToPageAction(IVisualTreeHelper visualTreeHelper)
         {
-            this.visualTreeHelper = visualTreeHelper;
+            this._visualTreeHelper = visualTreeHelper;
         }
 
         /// <summary>
@@ -123,7 +123,7 @@ namespace Microsoft.Xaml.Interactions.Core
                 navigateElement = senderObject as INavigate;
                 if (navigateElement == null)
                 {
-                    senderObject = this.visualTreeHelper.GetParent(senderObject);
+                    senderObject = this._visualTreeHelper.GetParent(senderObject);
                 }
             }
 

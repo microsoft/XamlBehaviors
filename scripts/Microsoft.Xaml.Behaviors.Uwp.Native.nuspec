@@ -2,64 +2,78 @@
 <package >
   <metadata>
     <id>Microsoft.Xaml.Behaviors.Uwp.Native</id>
-    <version>0.0.0</version><!--Overridden using -Version switch in nuget pack command-->
+    <version>$version$</version><!--Overridden using -Version switch in nuget pack command-->
     <title>Microsoft.Xaml.Behaviors.Uwp.Native</title>
     <authors>Microsoft</authors>
     <owners>xamlexperiencesteam,Microsoft</owners>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <description>Easily add interactivity to your apps using XAML Behaviors. Now with UWP support! Behaviors encapsulate reusable functionalities for elements that can be easily added to your XAML without the need for more imperative code. This is the native version for C++ UWP projects.</description>
-    <licenseUrl>http://go.microsoft.com/fwlink/?LinkID=708401</licenseUrl>
+    <license type="expression">MIT</license>
     <projectUrl>http://go.microsoft.com/fwlink/?LinkID=651678</projectUrl>
     <iconUrl>http://go.microsoft.com/fwlink/?LinkID=708511</iconUrl>
-    <copyright>Copyright © Microsoft Corporation</copyright>
+    <copyright>&#169; Microsoft Corporation. All rights reserved.</copyright>
     <tags>Behavior Action Behaviors Actions Blend Native C++ Interaction Interactivity Interactions</tags>
   </metadata>
 
   <files>
-    <file target="lib\uap10.0\Microsoft.Xaml.Interactivity.winmd"               src="..\out\BehaviorsSDKNative\bin\Win32\Release\Microsoft.Xaml.Interactivity\Microsoft.Xaml.Interactivity.winmd" />
-    <file target="lib\uap10.0\Microsoft.Xaml.Interactivity.xml"                 src="..\out\BehaviorsSDKNative\bin\Win32\Release\Microsoft.Xaml.Interactivity\Microsoft.Xaml.Interactivity.xml" />
-    <file target="lib\uap10.0\Microsoft.Xaml.Interactivity.pdb"                 src="..\out\BehaviorsSDKNative\bin\Win32\Release\Microsoft.Xaml.Interactivity\Microsoft.Xaml.Interactivity.pdb" />
-    <file target="lib\uap10.0\Microsoft.Xaml.Interactions.winmd"                src="..\out\BehaviorsSDKNative\bin\Win32\Release\Microsoft.Xaml.Interactions\Microsoft.Xaml.Interactions.winmd" />
-    <file target="lib\uap10.0\Microsoft.Xaml.Interactions.xml"                  src="..\out\BehaviorsSDKNative\bin\Win32\Release\Microsoft.Xaml.Interactions\Microsoft.Xaml.Interactions.xml" />
-    <file target="lib\uap10.0\Microsoft.Xaml.Interactions.pdb"                  src="..\out\BehaviorsSDKNative\bin\Win32\Release\Microsoft.Xaml.Interactions\Microsoft.Xaml.Interactions.pdb" />
+    <file target="lib\uap10.0\Microsoft.Xaml.Interactivity.winmd"                    src="..\out\BehaviorsSDKNative\bin\Win32\Release\Microsoft.Xaml.Interactivity\Microsoft.Xaml.Interactivity.winmd" />
+    <file target="lib\uap10.0\Microsoft.Xaml.Interactivity.xml"                      src="..\out\BehaviorsSDKNative\bin\Win32\Release\Microsoft.Xaml.Interactivity\Microsoft.Xaml.Interactivity.xml" />
+    <file target="lib\uap10.0\Microsoft.Xaml.Interactivity.pdb"                      src="..\out\BehaviorsSDKNative\bin\Win32\Release\Microsoft.Xaml.Interactivity\Microsoft.Xaml.Interactivity_stripped.pdb" />
+    <file target="lib\uap10.0\Microsoft.Xaml.Interactions.winmd"                     src="..\out\BehaviorsSDKNative\bin\Win32\Release\Microsoft.Xaml.Interactions\Microsoft.Xaml.Interactions.winmd" />
+    <file target="lib\uap10.0\Microsoft.Xaml.Interactions.xml"                       src="..\out\BehaviorsSDKNative\bin\Win32\Release\Microsoft.Xaml.Interactions\Microsoft.Xaml.Interactions.xml" />
+    <file target="lib\uap10.0\Microsoft.Xaml.Interactions.pdb"                       src="..\out\BehaviorsSDKNative\bin\Win32\Release\Microsoft.Xaml.Interactions\Microsoft.Xaml.Interactions_stripped.pdb" />
 
-    <file target="lib\uap10.0\Design\Microsoft.Xaml.Interactivity.Design.dll"   src="..\out\BehaviorsSDKNative\bin\AnyCPU\Release\Microsoft.Xaml.Interactivity.Design.dll" />
-    <file target="lib\uap10.0\Design\Microsoft.Xaml.Interactivity.Design.pdb"   src="..\out\BehaviorsSDKNative\bin\AnyCPU\Release\Microsoft.Xaml.Interactivity.Design.pdb" />
-    <file target="lib\uap10.0\Design\Microsoft.Xaml.Interactions.Design.dll"    src="..\out\BehaviorsSDKNative\bin\AnyCPU\Release\Microsoft.Xaml.Interactions.Design.dll" />
-    <file target="lib\uap10.0\Design\Microsoft.Xaml.Interactions.Design.pdb"    src="..\out\BehaviorsSDKNative\bin\AnyCPU\Release\Microsoft.Xaml.Interactions.Design.pdb" />
+    <file target="lib\uap10.0\Design\Microsoft.Xaml.Interactivity.Design.dll"        src="..\out\BehaviorsSDKNative\bin\AnyCPU\Release\Microsoft.Xaml.Interactivity.Design.dll" />
+    <file target="lib\uap10.0\Design\Microsoft.Xaml.Interactivity.Design.pdb"        src="..\out\BehaviorsSDKNative\bin\AnyCPU\Release\Microsoft.Xaml.Interactivity.Design.pdb" />
+    <file target="lib\uap10.0\Design\Microsoft.Xaml.Interactions.Design.dll"         src="..\out\BehaviorsSDKNative\bin\AnyCPU\Release\Microsoft.Xaml.Interactions.Design.dll" />
+    <file target="lib\uap10.0\Design\Microsoft.Xaml.Interactions.Design.pdb"         src="..\out\BehaviorsSDKNative\bin\AnyCPU\Release\Microsoft.Xaml.Interactions.Design.pdb" />
 
-    <file target="lib\uap10.0\en\Microsoft.Xaml.Interactivity.xml"              src="..\out\BehaviorsSDKNative\bin\Win32\Release\Microsoft.Xaml.Interactivity\Microsoft.Xaml.Interactivity.xml" />
-    <file target="lib\uap10.0\en\Microsoft.Xaml.Interactions.xml"               src="..\out\BehaviorsSDKNative\bin\Win32\Release\Microsoft.Xaml.Interactions\Microsoft.Xaml.Interactions.xml" />
+    <file target="lib\uap10.0\Design\Microsoft.Xaml.Interactivity.DesignTools.dll"   src="..\out\BehaviorsSDKNative\bin\AnyCPU\Release\Microsoft.Xaml.Interactivity.DesignTools.dll" />
+    <file target="lib\uap10.0\Design\Microsoft.Xaml.Interactivity.DesignTools.pdb"   src="..\out\BehaviorsSDKNative\bin\AnyCPU\Release\Microsoft.Xaml.Interactivity.DesignTools.pdb" />
+    <file target="lib\uap10.0\Design\Microsoft.Xaml.Interactions.DesignTools.dll"    src="..\out\BehaviorsSDKNative\bin\AnyCPU\Release\Microsoft.Xaml.Interactions.DesignTools.dll" />
+    <file target="lib\uap10.0\Design\Microsoft.Xaml.Interactions.DesignTools.pdb"    src="..\out\BehaviorsSDKNative\bin\AnyCPU\Release\Microsoft.Xaml.Interactions.DesignTools.pdb" />
 
-    <file target="build\native\Microsoft.Xaml.Behaviors.Uwp.Native.targets"     src="Microsoft.Xaml.Behaviors.Uwp.Native.targets" />
+    <file target="lib\uap10.0\en\Microsoft.Xaml.Interactivity.xml"                   src="..\out\BehaviorsSDKNative\bin\Win32\Release\Microsoft.Xaml.Interactivity\Microsoft.Xaml.Interactivity.xml" />
+    <file target="lib\uap10.0\en\Microsoft.Xaml.Interactions.xml"                    src="..\out\BehaviorsSDKNative\bin\Win32\Release\Microsoft.Xaml.Interactions\Microsoft.Xaml.Interactions.xml" />
 
-    <file target="runtimes\win10-x86\native\Microsoft.Xaml.Interactivity.dll"   src="..\out\BehaviorsSDKNative\bin\Win32\Release\Microsoft.Xaml.Interactivity\Microsoft.Xaml.Interactivity.dll" />
-    <file target="runtimes\win10-x86\native\Microsoft.Xaml.Interactivity.pdb"   src="..\out\BehaviorsSDKNative\bin\Win32\Release\Microsoft.Xaml.Interactivity\Microsoft.Xaml.Interactivity.pdb" />
-    <file target="runtimes\win10-x86\native\Microsoft.Xaml.Interactivity.pri"   src="..\out\BehaviorsSDKNative\bin\Win32\Release\Microsoft.Xaml.Interactivity\Microsoft.Xaml.Interactivity.pri" />
-    <file target="runtimes\win10-x86\native\Microsoft.Xaml.Interactions.dll"    src="..\out\BehaviorsSDKNative\bin\Win32\Release\Microsoft.Xaml.Interactions\Microsoft.Xaml.Interactions.dll" />
-    <file target="runtimes\win10-x86\native\Microsoft.Xaml.Interactions.pdb"    src="..\out\BehaviorsSDKNative\bin\Win32\Release\Microsoft.Xaml.Interactions\Microsoft.Xaml.Interactions.pdb" />
-    <file target="runtimes\win10-x86\native\Microsoft.Xaml.Interactions.pri"    src="..\out\BehaviorsSDKNative\bin\Win32\Release\Microsoft.Xaml.Interactions\Microsoft.Xaml.Interactions.pri" />
+    <file target="build\native\Microsoft.Xaml.Behaviors.Uwp.Native.targets"          src="Microsoft.Xaml.Behaviors.Uwp.Native.targets" />
 
-    <file target="runtimes\win10-x64\native\Microsoft.Xaml.Interactivity.dll"   src="..\out\BehaviorsSDKNative\bin\x64\Release\Microsoft.Xaml.Interactivity\Microsoft.Xaml.Interactivity.dll" />
-    <file target="runtimes\win10-x64\native\Microsoft.Xaml.Interactivity.pdb"   src="..\out\BehaviorsSDKNative\bin\x64\Release\Microsoft.Xaml.Interactivity\Microsoft.Xaml.Interactivity.pdb" />
-    <file target="runtimes\win10-x64\native\Microsoft.Xaml.Interactivity.pri"   src="..\out\BehaviorsSDKNative\bin\x64\Release\Microsoft.Xaml.Interactivity\Microsoft.Xaml.Interactivity.pri" />
-    <file target="runtimes\win10-x64\native\Microsoft.Xaml.Interactions.dll"    src="..\out\BehaviorsSDKNative\bin\x64\Release\Microsoft.Xaml.Interactions\Microsoft.Xaml.Interactions.dll" />
-    <file target="runtimes\win10-x64\native\Microsoft.Xaml.Interactions.pdb"    src="..\out\BehaviorsSDKNative\bin\x64\Release\Microsoft.Xaml.Interactions\Microsoft.Xaml.Interactions.pdb" />
-    <file target="runtimes\win10-x64\native\Microsoft.Xaml.Interactions.pri"    src="..\out\BehaviorsSDKNative\bin\x64\Release\Microsoft.Xaml.Interactions\Microsoft.Xaml.Interactions.pri" />
+    <file target="runtimes\win10-x86\native\Microsoft.Xaml.Interactivity.dll"        src="..\out\BehaviorsSDKNative\bin\Win32\Release\Microsoft.Xaml.Interactivity\Microsoft.Xaml.Interactivity.dll" />
+    <file target="runtimes\win10-x86\native\Microsoft.Xaml.Interactivity.pdb"        src="..\out\BehaviorsSDKNative\bin\Win32\Release\Microsoft.Xaml.Interactivity\Microsoft.Xaml.Interactivity_stripped.pdb" />
+    <file target="runtimes\win10-x86\native\Microsoft.Xaml.Interactivity.pri"        src="..\out\BehaviorsSDKNative\bin\Win32\Release\Microsoft.Xaml.Interactivity\Microsoft.Xaml.Interactivity.pri" />
+    <file target="runtimes\win10-x86\native\Microsoft.Xaml.Interactions.dll"         src="..\out\BehaviorsSDKNative\bin\Win32\Release\Microsoft.Xaml.Interactions\Microsoft.Xaml.Interactions.dll" />
+    <file target="runtimes\win10-x86\native\Microsoft.Xaml.Interactions.pdb"         src="..\out\BehaviorsSDKNative\bin\Win32\Release\Microsoft.Xaml.Interactions\Microsoft.Xaml.Interactions_stripped.pdb" />
+    <file target="runtimes\win10-x86\native\Microsoft.Xaml.Interactions.pri"         src="..\out\BehaviorsSDKNative\bin\Win32\Release\Microsoft.Xaml.Interactions\Microsoft.Xaml.Interactions.pri" />
 
-    <file target="runtimes\win10-arm\native\Microsoft.Xaml.Interactivity.dll"   src="..\out\BehaviorsSDKNative\bin\ARM\Release\Microsoft.Xaml.Interactivity\Microsoft.Xaml.Interactivity.dll" />
-    <file target="runtimes\win10-arm\native\Microsoft.Xaml.Interactivity.pdb"   src="..\out\BehaviorsSDKNative\bin\ARM\Release\Microsoft.Xaml.Interactivity\Microsoft.Xaml.Interactivity.pdb" />
-    <file target="runtimes\win10-arm\native\Microsoft.Xaml.Interactivity.pri"   src="..\out\BehaviorsSDKNative\bin\ARM\Release\Microsoft.Xaml.Interactivity\Microsoft.Xaml.Interactivity.pri" />
-    <file target="runtimes\win10-arm\native\Microsoft.Xaml.Interactions.dll"    src="..\out\BehaviorsSDKNative\bin\ARM\Release\Microsoft.Xaml.Interactions\Microsoft.Xaml.Interactions.dll" />
-    <file target="runtimes\win10-arm\native\Microsoft.Xaml.Interactions.pdb"    src="..\out\BehaviorsSDKNative\bin\ARM\Release\Microsoft.Xaml.Interactions\Microsoft.Xaml.Interactions.pdb" />
-    <file target="runtimes\win10-arm\native\Microsoft.Xaml.Interactions.pri"    src="..\out\BehaviorsSDKNative\bin\ARM\Release\Microsoft.Xaml.Interactions\Microsoft.Xaml.Interactions.pri" />
+    <file target="runtimes\win10-x64\native\Microsoft.Xaml.Interactivity.dll"        src="..\out\BehaviorsSDKNative\bin\x64\Release\Microsoft.Xaml.Interactivity\Microsoft.Xaml.Interactivity.dll" />
+    <file target="runtimes\win10-x64\native\Microsoft.Xaml.Interactivity.pdb"        src="..\out\BehaviorsSDKNative\bin\x64\Release\Microsoft.Xaml.Interactivity\Microsoft.Xaml.Interactivity_stripped.pdb" />
+    <file target="runtimes\win10-x64\native\Microsoft.Xaml.Interactivity.pri"        src="..\out\BehaviorsSDKNative\bin\x64\Release\Microsoft.Xaml.Interactivity\Microsoft.Xaml.Interactivity.pri" />
+    <file target="runtimes\win10-x64\native\Microsoft.Xaml.Interactions.dll"         src="..\out\BehaviorsSDKNative\bin\x64\Release\Microsoft.Xaml.Interactions\Microsoft.Xaml.Interactions.dll" />
+    <file target="runtimes\win10-x64\native\Microsoft.Xaml.Interactions.pdb"         src="..\out\BehaviorsSDKNative\bin\x64\Release\Microsoft.Xaml.Interactions\Microsoft.Xaml.Interactions_stripped.pdb" />
+    <file target="runtimes\win10-x64\native\Microsoft.Xaml.Interactions.pri"         src="..\out\BehaviorsSDKNative\bin\x64\Release\Microsoft.Xaml.Interactions\Microsoft.Xaml.Interactions.pri" />
 
-    <file target="src\BehaviorsSDKNative\Microsoft.Xaml.Interactions"           src="..\src\BehaviorsSDKNative\Microsoft.Xaml.Interactions\**\*.cpp" />
-    <file target="src\BehaviorsSDKNative\Microsoft.Xaml.Interactions"           src="..\src\BehaviorsSDKNative\Microsoft.Xaml.Interactions\**\*.h" />
-    <file target="src\BehaviorsSDKNative\Microsoft.Xaml.Interactivity"          src="..\src\BehaviorsSDKNative\Microsoft.Xaml.Interactivity\**\*.cpp" />
-    <file target="src\BehaviorsSDKNative\Microsoft.Xaml.Interactivity"          src="..\src\BehaviorsSDKNative\Microsoft.Xaml.Interactivity\**\*.h" />
+    <file target="runtimes\win10-arm\native\Microsoft.Xaml.Interactivity.dll"        src="..\out\BehaviorsSDKNative\bin\ARM\Release\Microsoft.Xaml.Interactivity\Microsoft.Xaml.Interactivity.dll" />
+    <file target="runtimes\win10-arm\native\Microsoft.Xaml.Interactivity.pdb"        src="..\out\BehaviorsSDKNative\bin\ARM\Release\Microsoft.Xaml.Interactivity\Microsoft.Xaml.Interactivity_stripped.pdb" />
+    <file target="runtimes\win10-arm\native\Microsoft.Xaml.Interactivity.pri"        src="..\out\BehaviorsSDKNative\bin\ARM\Release\Microsoft.Xaml.Interactivity\Microsoft.Xaml.Interactivity.pri" />
+    <file target="runtimes\win10-arm\native\Microsoft.Xaml.Interactions.dll"         src="..\out\BehaviorsSDKNative\bin\ARM\Release\Microsoft.Xaml.Interactions\Microsoft.Xaml.Interactions.dll" />
+    <file target="runtimes\win10-arm\native\Microsoft.Xaml.Interactions.pdb"         src="..\out\BehaviorsSDKNative\bin\ARM\Release\Microsoft.Xaml.Interactions\Microsoft.Xaml.Interactions_stripped.pdb" />
+    <file target="runtimes\win10-arm\native\Microsoft.Xaml.Interactions.pri"         src="..\out\BehaviorsSDKNative\bin\ARM\Release\Microsoft.Xaml.Interactions\Microsoft.Xaml.Interactions.pri" />
 
-    <file target="src\BehaviorsSDKNative\Microsoft.Xaml.Interactions.Design"    src="..\src\BehaviorsSDKNative\Microsoft.Xaml.Interactions.Design\**\*.cs" />
-    <file target="src\BehaviorsSDKNative\Microsoft.Xaml.Interactivity.Design"   src="..\src\BehaviorsSDKNative\Microsoft.Xaml.Interactivity.Design\**\*.cs" />
+    <file target="runtimes\win10-arm64\native\Microsoft.Xaml.Interactivity.dll"      src="..\out\BehaviorsSDKNative\bin\ARM64\Release\Microsoft.Xaml.Interactivity\Microsoft.Xaml.Interactivity.dll" />
+    <file target="runtimes\win10-arm64\native\Microsoft.Xaml.Interactivity.pdb"      src="..\out\BehaviorsSDKNative\bin\ARM64\Release\Microsoft.Xaml.Interactivity\Microsoft.Xaml.Interactivity_stripped.pdb" />
+    <file target="runtimes\win10-arm64\native\Microsoft.Xaml.Interactivity.pri"      src="..\out\BehaviorsSDKNative\bin\ARM64\Release\Microsoft.Xaml.Interactivity\Microsoft.Xaml.Interactivity.pri" />
+    <file target="runtimes\win10-arm64\native\Microsoft.Xaml.Interactions.dll"       src="..\out\BehaviorsSDKNative\bin\ARM64\Release\Microsoft.Xaml.Interactions\Microsoft.Xaml.Interactions.dll" />
+    <file target="runtimes\win10-arm64\native\Microsoft.Xaml.Interactions.pdb"       src="..\out\BehaviorsSDKNative\bin\ARM64\Release\Microsoft.Xaml.Interactions\Microsoft.Xaml.Interactions_stripped.pdb" />
+    <file target="runtimes\win10-arm64\native\Microsoft.Xaml.Interactions.pri"       src="..\out\BehaviorsSDKNative\bin\ARM64\Release\Microsoft.Xaml.Interactions\Microsoft.Xaml.Interactions.pri" />
+
+    <file target="src\BehaviorsSDKNative\Microsoft.Xaml.Interactions"                src="..\src\BehaviorsSDKNative\Microsoft.Xaml.Interactions\**\*.cpp" />
+    <file target="src\BehaviorsSDKNative\Microsoft.Xaml.Interactions"                src="..\src\BehaviorsSDKNative\Microsoft.Xaml.Interactions\**\*.h" />
+    <file target="src\BehaviorsSDKNative\Microsoft.Xaml.Interactivity"               src="..\src\BehaviorsSDKNative\Microsoft.Xaml.Interactivity\**\*.cpp" />
+    <file target="src\BehaviorsSDKNative\Microsoft.Xaml.Interactivity"               src="..\src\BehaviorsSDKNative\Microsoft.Xaml.Interactivity\**\*.h" />
+
+    <file target="src\BehaviorsSDKNative\Microsoft.Xaml.Interactions.Design"         src="..\src\BehaviorsSDKNative\Microsoft.Xaml.Interactions.Design\**\*.cs" />
+    <file target="src\BehaviorsSDKNative\Microsoft.Xaml.Interactivity.Design"        src="..\src\BehaviorsSDKNative\Microsoft.Xaml.Interactivity.Design\**\*.cs" />
+    <file target="src\BehaviorsSDKNative\Microsoft.Xaml.Interactions.DesignTools"    src="..\src\BehaviorsSDKNative\Microsoft.Xaml.Interactions.DesignTools\**\*.cs" />
+    <file target="src\BehaviorsSDKNative\Microsoft.Xaml.Interactivity.DesignTools"   src="..\src\BehaviorsSDKNative\Microsoft.Xaml.Interactivity.DesignTools\**\*.cs" />
   </files>
 </package>

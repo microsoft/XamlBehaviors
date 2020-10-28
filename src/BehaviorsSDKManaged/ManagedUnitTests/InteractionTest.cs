@@ -1,16 +1,20 @@
-﻿using System.Collections.Generic;
+﻿// Copyright (c) Microsoft. All rights reserved. 
+// Licensed under the MIT license. See LICENSE file in the project root for full license information. 
+
+using System.Collections.Generic;
 using System.Linq;
-using Microsoft.VisualStudio.TestPlatform.UnitTestFramework;
+
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Microsoft.VisualStudio.TestTools.UnitTesting.AppContainer;
 using Microsoft.Xaml.Interactivity;
 using Windows.UI.Xaml.Controls;
-using AppContainerUITestMethod = Microsoft.VisualStudio.TestPlatform.UnitTestFramework.AppContainer.UITestMethodAttribute;
 
 namespace ManagedUnitTests
 {
     [TestClass]
     public class InteractionTest
     {
-        [AppContainerUITestMethod]
+        [UITestMethod]
         public void SetBehaviors_MultipleBehaviors_AllAttached()
         {
             BehaviorCollection behaviorCollection = new BehaviorCollection();
@@ -29,7 +33,7 @@ namespace ManagedUnitTests
             }
         }
 
-        [AppContainerUITestMethod]
+        [UITestMethod]
         public void SetBehaviors_MultipleSets_DoesNotReattach()
         {
             BehaviorCollection behaviorCollection = new BehaviorCollection() { new StubBehavior() };
@@ -44,7 +48,7 @@ namespace ManagedUnitTests
             }
         }
 
-        [AppContainerUITestMethod]
+        [UITestMethod]
         public void SetBehaviors_CollectionThenNull_DeatchCollection()
         {
             BehaviorCollection behaviorCollection = new BehaviorCollection() { new StubBehavior() };
@@ -60,7 +64,7 @@ namespace ManagedUnitTests
             }
         }
 
-        [AppContainerUITestMethod]
+        [UITestMethod]
         public void SetBehaviors_NullThenNull_NoOp()
         {
             // As long as this doesn't crash/assert, we're good.
@@ -71,7 +75,7 @@ namespace ManagedUnitTests
             Interaction.SetBehaviors(button, null);
         }
 
-        [AppContainerUITestMethod]
+        [UITestMethod]
 
         public void SetBehaviors_ManualDetachThenNull_DoesNotDoubleDetach()
         {
@@ -97,7 +101,7 @@ namespace ManagedUnitTests
             }
         }
 
-        [AppContainerUITestMethod]
+        [UITestMethod]
         public void ExecuteActions_NullParameters_ReturnsEmptyEnumerable()
         {
             // Mostly just want to test that this doesn't throw any exceptions.
@@ -107,7 +111,7 @@ namespace ManagedUnitTests
             Assert.AreEqual(0, result.Count(), "Calling ExecuteActions with a null ActionCollection should return an empty enumerable.");
         }
 
-        [AppContainerUITestMethod]
+        [UITestMethod]
         public void ExecuteActions_MultipleActions_AllActionsExecuted()
         {
             ActionCollection actions = new ActionCollection();
@@ -128,7 +132,7 @@ namespace ManagedUnitTests
             }
         }
 
-        [AppContainerUITestMethod]
+        [UITestMethod]
         public void ExecuteActions_ActionsWithResults_ResultsInActionOrder()
         {
             string[] expectedReturnValues = { "A", "B", "C" };

@@ -137,5 +137,14 @@ namespace Microsoft.Xaml.Interactions.Media
 
 			return true;
 		}
+
+		private static void OnStoryboardChanged(DependencyObject sender, DependencyPropertyChangedEventArgs args)
+		{
+			ControlStoryboardAction action = sender as ControlStoryboardAction;
+			if (action != null)
+			{
+        SetIsPaused(action, false);
+			}
+		}
 	}
 }

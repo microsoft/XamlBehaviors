@@ -5,13 +5,11 @@ namespace Microsoft.Xaml.Interactions.Core
     using System;
     using System.Globalization;
     using Windows.UI.Xaml;
-    using Windows.UI.Xaml.Markup;
     using Interactivity;
 
     /// <summary>
     /// A behavior that performs actions when the bound data meets a specified condition.
     /// </summary>
-    [ContentPropertyAttribute(Name = "Actions")]
     public sealed class DataTriggerBehavior : Trigger
     {
         /// <summary>

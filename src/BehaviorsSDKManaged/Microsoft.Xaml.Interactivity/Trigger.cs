@@ -3,12 +3,14 @@
 
 using System;
 using Windows.UI.Xaml;
+using Windows.UI.Xaml.Markup;
 
 namespace Microsoft.Xaml.Interactivity
 {
     /// <summary>
     /// A base class for behaviors, implementing the basic plumbing of ITrigger
     /// </summary>
+    [ContentPropertyAttribute(Name = "Actions")]
     public abstract class Trigger : Behavior, ITrigger
     {
         /// <summary>

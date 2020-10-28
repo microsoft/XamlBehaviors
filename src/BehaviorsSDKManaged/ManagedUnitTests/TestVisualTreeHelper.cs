@@ -10,11 +10,11 @@ namespace ManagedUnitTests
     /// </summary>
     internal class TestVisualTreeHelper : IVisualTreeHelper
     {
-        private Dictionary<DependencyObject, DependencyObject> parents = new Dictionary<DependencyObject, DependencyObject>();
+        private Dictionary<DependencyObject, DependencyObject> _parents = new Dictionary<DependencyObject, DependencyObject>();
 
         public void AddChild(DependencyObject parent, DependencyObject child)
         {
-            this.parents[child] = parent;
+            this._parents[child] = parent;
         }
 
         #region IVisualTreeHelper implementation
@@ -22,7 +22,7 @@ namespace ManagedUnitTests
         public DependencyObject GetParent(DependencyObject child)
         {
             DependencyObject parent;
-            this.parents.TryGetValue(child, out parent);
+            this._parents.TryGetValue(child, out parent);
             return parent;
         }
 
