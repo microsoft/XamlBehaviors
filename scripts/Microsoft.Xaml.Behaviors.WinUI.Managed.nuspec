@@ -15,7 +15,7 @@
         <tags>Behavior Action Behaviors Actions Blend Managed C# Interaction Interactivity Interactions WinUI</tags>
         <dependencies>
           <group targetFramework="net5.0-windows10.0.18362.0">
-            <dependency id="Microsoft.WinUI" version="3.0.0-development.201016.0-CI" />
+            <dependency id="Microsoft.WinUI" version="3.0.0-preview3.201113.0" />
           </group>
         </dependencies>
     </metadata>
