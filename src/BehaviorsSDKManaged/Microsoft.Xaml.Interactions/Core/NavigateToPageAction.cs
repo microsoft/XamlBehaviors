@@ -2,6 +2,9 @@
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 namespace Microsoft.Xaml.Interactions.Core
 {
+    using System;
+    using System.Linq;
+
     using Microsoft.Xaml.Interactions.Utility;
     using Microsoft.Xaml.Interactivity;
     using Windows.UI.Xaml;
@@ -36,7 +39,7 @@ namespace Microsoft.Xaml.Interactions.Core
             new PropertyMetadata(null));
 
         /// <summary>
-        /// Initializes a new instance of the NavigateToPageAction class. 
+        /// Initializes a new instance of the NavigateToPageAction class.
         /// </summary>
         public NavigateToPageAction()
             : this(new UwpVisualTreeHelper())
@@ -44,7 +47,7 @@ namespace Microsoft.Xaml.Interactions.Core
         }
 
         /// <summary>
-        /// Initializes a new instance of the NavigateToPageAction class. 
+        /// Initializes a new instance of the NavigateToPageAction class.
         /// </summary>
         /// <param name="visualTreeHelper">
         /// IVisualTreeHelper implementation to use when searching the tree for an
@@ -98,6 +101,8 @@ namespace Microsoft.Xaml.Interactions.Core
                 return false;
             }
 
+            // Temporary work around for Uno until it implements IXamlMetadataProvider
+#if !HAS_UNO
             IXamlMetadataProvider metadataProvider = Application.Current as IXamlMetadataProvider;
             if (metadataProvider == null)
             {
@@ -112,6 +117,7 @@ namespace Microsoft.Xaml.Interactions.Core
             {
                 return false;
             }
+#endif
 
             INavigate navigateElement = Window.Current.Content as INavigate;
             DependencyObject senderObject = sender as DependencyObject;
@@ -134,13 +140,25 @@ namespace Microsoft.Xaml.Interactions.Core
 
             Frame frame = navigateElement as Frame;
 
+            // Temporary work around for Uno until it implements IXamlMetadataProvider
+#if !HAS_UNO
+            var pageType = xamlType.UnderlyingType;
+#else
+            var pageType = AppDomain.CurrentDomain.GetAssemblies()
+                .Select(a => a.GetType(this.TargetPage, false))
+                .FirstOrDefault(t => t != null);
+            if (pageType == null)
+            {
+                return false;
+            }
+#endif
             if (frame != null)
             {
-                return frame.Navigate(xamlType.UnderlyingType, this.Parameter ?? parameter);
+                return frame.Navigate(pageType, this.Parameter ?? parameter);
             }
             else
             {
-                return navigateElement.Navigate(xamlType.UnderlyingType);
+                return navigateElement.Navigate(pageType);
             }
         }
     }
