@@ -260,7 +260,16 @@ namespace Microsoft.Xaml.Interactions.Core
                 return false;
             }
 
-            UIElement rootVisual = Window.Current.Content;
+            UIElement rootVisual = default;
+            if (element.XamlRoot != null)
+            {
+                rootVisual = element.XamlRoot.Content;
+            }
+            else if (Window.Current != null)
+            {
+                rootVisual = Window.Current.Content;
+            }
+
             DependencyObject parent = element.Parent;
             if (parent == null)
             {

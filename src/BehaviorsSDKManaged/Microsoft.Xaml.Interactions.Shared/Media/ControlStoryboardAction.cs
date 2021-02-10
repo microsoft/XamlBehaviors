@@ -15,10 +15,16 @@ using Windows.UI.Xaml.Media.Animation;
 
 namespace Microsoft.Xaml.Interactions.Media
 {
-	/// <summary>
-	/// An action that will change the state of the specified <seealso cref="Windows.UI.Xaml.Media.Animation.Storyboard"/> when executed.
-	/// </summary>
-	public sealed class ControlStoryboardAction : DependencyObject, IAction
+#if WinUI
+    /// <summary>
+    /// An action that will change the state of the specified <seealso cref="Microsoft.UI.Xaml.Media.Animation.Storyboard"/> when executed.
+    /// </summary>
+#else
+    /// <summary>
+    /// An action that will change the state of the specified <seealso cref="Windows.UI.Xaml.Media.Animation.Storyboard"/> when executed.
+    /// </summary>
+#endif
+    public sealed class ControlStoryboardAction : DependencyObject, IAction
 	{
 		/// <summary>
 		/// Identifies the <seealso cref="ControlStoryboardOption"/> dependency property.
@@ -42,10 +48,16 @@ namespace Microsoft.Xaml.Interactions.Media
 
 		private bool _isPaused;
 
-		/// <summary>
-		/// Gets or sets the action to execute on the <see cref="Windows.UI.Xaml.Media.Animation.Storyboard"/>. This is a dependency property.
-		/// </summary>
-		public ControlStoryboardOption ControlStoryboardOption
+#if WinUI
+        /// <summary>
+        /// Gets or sets the action to execute on the <see cref="Microsoft.UI.Xaml.Media.Animation.Storyboard"/>. This is a dependency property.
+        /// </summary>
+#else
+        /// <summary>
+        /// Gets or sets the action to execute on the <see cref="Windows.UI.Xaml.Media.Animation.Storyboard"/>. This is a dependency property.
+        /// </summary>
+#endif
+        public ControlStoryboardOption ControlStoryboardOption
 		{
 			get
 			{
@@ -57,10 +69,16 @@ namespace Microsoft.Xaml.Interactions.Media
 			}
 		}
 
-		/// <summary>
-		/// Gets or sets the targeted <see cref="Windows.UI.Xaml.Media.Animation.Storyboard"/>. This is a dependency property.
-		/// </summary>
-		public Storyboard Storyboard
+#if WinUI
+        /// <summary>
+        /// Gets or sets the targeted <see cref="Microsoft.UI.Xaml.Media.Animation.Storyboard"/>. This is a dependency property.
+        /// </summary>
+#else
+        /// <summary>
+        /// Gets or sets the targeted <see cref="Windows.UI.Xaml.Media.Animation.Storyboard"/>. This is a dependency property.
+        /// </summary>
+#endif
+        public Storyboard Storyboard
 		{
 			get
 			{
@@ -75,7 +93,7 @@ namespace Microsoft.Xaml.Interactions.Media
 		/// <summary>
 		/// Executes the action.
 		/// </summary>
-		/// <param name="sender">The <see cref="System.Object"/> that is passed to the action by the behavior. Generally this is <seealso cref="Microsoft.Xaml.Interactivity.IBehavior.AssociatedObject"/> or a target object.</param>
+		/// <param name="sender">The <see cref="object"/> that is passed to the action by the behavior. Generally this is <seealso cref="Microsoft.Xaml.Interactivity.IBehavior.AssociatedObject"/> or a target object.</param>
 		/// <param name="parameter">The value of this parameter is determined by the caller.</param>
 		/// <returns>True if the specified operation is invoked successfully; else false.</returns>
 		public object Execute(object sender, object parameter)

@@ -178,6 +178,7 @@ namespace Microsoft.Xaml.Interactivity
             return behavior;
         }
 
+#if DEBUG
         [Conditional("DEBUG")]
         private void VerifyOldCollectionIntegrity()
         {
@@ -196,5 +197,6 @@ namespace Microsoft.Xaml.Interactivity
 
             Debug.Assert(isValid, "Referential integrity of the collection has been compromised.");
         }
+#endif
     }
 }

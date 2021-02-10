@@ -22,8 +22,8 @@ using Windows.UI.Xaml.Media;
 namespace Microsoft.Xaml.Interactions.Core
 {
     /// <summary>
-    /// A behavior that allows incremental updating of <seealso cref="Windows.UI.Xaml.Controls.ListView"/> and <seealso cref="Windows.UI.Xaml.Controls.GridView"/> contents to support faster updating.
-    /// By attaching this behavior to elements in the <seealso cref="Windows.UI.Xaml.Controls.ItemsControl.ItemTemplate"/> used by these views, some of the updates can be deferred until there is render time available, resulting in a smoother experience.
+    /// A behavior that allows incremental updating of <seealso cref="ListView"/> and <seealso cref="GridView"/> contents to support faster updating.
+    /// By attaching this behavior to elements in the <seealso cref="ItemsControl.ItemTemplate"/> used by these views, some of the updates can be deferred until there is render time available, resulting in a smoother experience.
     /// </summary>
     public sealed class IncrementalUpdateBehavior : Behavior<FrameworkElement>
     {

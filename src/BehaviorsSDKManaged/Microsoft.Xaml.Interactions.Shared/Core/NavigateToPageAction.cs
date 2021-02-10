@@ -19,7 +19,7 @@ using Windows.UI.Xaml.Markup;
 namespace Microsoft.Xaml.Interactions.Core
 {
     /// <summary>
-    /// An action that switches the current visual to the specified <see cref="Windows.UI.Xaml.Controls.Page"/>.
+    /// An action that switches the current visual to the specified <see cref="Page"/>.
     /// </summary>
     public sealed class NavigateToPageAction : DependencyObject, IAction
     {
@@ -66,7 +66,7 @@ namespace Microsoft.Xaml.Interactions.Core
         }
 
         /// <summary>
-        /// Gets or sets the fully qualified name of the <see cref="Windows.UI.Xaml.Controls.Page"/> to navigate to. This is a dependency property.
+        /// Gets or sets the fully qualified name of the <see cref="Page"/> to navigate to. This is a dependency property.
         /// </summary>
         public string TargetPage
         {
@@ -81,7 +81,7 @@ namespace Microsoft.Xaml.Interactions.Core
         }
 
         /// <summary>
-        /// Gets or sets the parameter which will be passed to the <see cref="Windows.UI.Xaml.Controls.Frame.Navigate(System.Type,object)"/> method.
+        /// Gets or sets the parameter which will be passed to the <see cref="Frame.Navigate(global::System.Type,object)"/> method.
         /// </summary>
         public object Parameter
         {
@@ -98,7 +98,7 @@ namespace Microsoft.Xaml.Interactions.Core
         /// <summary>
         /// Executes the action.
         /// </summary>
-        /// <param name="sender">The <see cref="System.Object"/> that is passed to the action by the behavior. Generally this is <seealso cref="Microsoft.Xaml.Interactivity.IBehavior.AssociatedObject"/> or a target object.</param>
+        /// <param name="sender">The <see cref="object"/> that is passed to the action by the behavior. Generally this is <seealso cref="Microsoft.Xaml.Interactivity.IBehavior.AssociatedObject"/> or a target object.</param>
         /// <param name="parameter">The value of this parameter is determined by the caller.</param>
         /// <returns>True if the navigation to the specified page is successful; else false.</returns>
         public object Execute(object sender, object parameter)
@@ -123,7 +123,16 @@ namespace Microsoft.Xaml.Interactions.Core
                 return false;
             }
 
-            INavigate navigateElement = Window.Current.Content as INavigate;
+            INavigate navigateElement;
+            if (sender is UIElement element && element.XamlRoot != null)
+            {
+                navigateElement = element.XamlRoot.Content as INavigate;
+            }
+            else
+            {
+                navigateElement = Window.Current?.Content as INavigate;
+            }
+
             DependencyObject senderObject = sender as DependencyObject;
 
             // If the sender wasn't an INavigate, then keep looking up the tree from the

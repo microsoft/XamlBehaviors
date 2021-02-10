@@ -1,21 +1,15 @@
 ﻿// Copyright (c) Microsoft. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
+// TODO: WinUI3 preview4 removed MediaElement
+#if !WinUI
 using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
-
 using Microsoft.Xaml.Interactivity;
-
-#if WinUI
-using Microsoft.UI.Xaml;
-using Microsoft.UI.Xaml.Controls;
-using Microsoft.UI.Xaml.Controls.Primitives;
-#else
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
-#endif
 
 namespace Microsoft.Xaml.Interactions.Media
 {
@@ -52,14 +46,14 @@ namespace Microsoft.Xaml.Interactions.Media
 
 		private Popup _popup;
 
-		/// <summary>
-		/// Gets or sets the location of the sound file. This is used to set the source property of a <see cref="Windows.UI.Xaml.Controls.MediaElement"/>. This is a dependency property.
-		/// </summary>
-		/// <remarks>
-		/// The sound can be any file format supported by <see cref="Windows.UI.Xaml.Controls.MediaElement"/>. In the case of a video, it will play only the
-		/// audio portion.
-		/// </remarks>
-		public string Source
+        /// <summary>
+        /// Gets or sets the location of the sound file. This is used to set the source property of a <see cref="MediaElement"/>. This is a dependency property.
+        /// </summary>
+        /// <remarks>
+        /// The sound can be any file format supported by <see cref="MediaElement"/>. In the case of a video, it will play only the
+        /// audio portion.
+        /// </remarks>
+        public string Source
 		{
 			get
 			{
@@ -71,13 +65,13 @@ namespace Microsoft.Xaml.Interactions.Media
 			}
 		}
 
-		/// <summary>
-		/// Gets or set the volume of the sound. This is used to set the <see cref="Windows.UI.Xaml.Controls.MediaElement.Volume"/> property of the <see cref="Windows.UI.Xaml.Controls.MediaElement"/>. This is a dependency property.
-		/// </summary>
-		/// <remarks>
-		/// By default this is set to 0.5.
-		/// </remarks>
-		public double Volume
+        /// <summary>
+        /// Gets or set the volume of the sound. This is used to set the <see cref="MediaElement.Volume"/> property of the <see cref="MediaElement"/>. This is a dependency property.
+        /// </summary>
+        /// <remarks>
+        /// By default this is set to 0.5.
+        /// </remarks>
+        public double Volume
 		{
 			get
 			{
@@ -89,13 +83,13 @@ namespace Microsoft.Xaml.Interactions.Media
 			}
 		}
 
-		/// <summary>
-		/// Executes the action.
-		/// </summary>
-		/// <param name="sender">The <see cref="System.Object"/> that is passed to the action by the behavior. Generally this is <seealso cref="Microsoft.Xaml.Interactivity.IBehavior.AssociatedObject"/> or a target object.</param>
-		/// <param name="parameter">The value of this parameter is determined by the caller.</param>
-		/// <returns>True if <see cref="Windows.UI.Xaml.Controls.MediaElement.Source"/> is set successfully; else false.</returns>
-		public object Execute(object sender, object parameter)
+        /// <summary>
+        /// Executes the action.
+        /// </summary>
+        /// <param name="sender">The <see cref="object"/> that is passed to the action by the behavior. Generally this is <seealso cref="IBehavior.AssociatedObject"/> or a target object.</param>
+        /// <param name="parameter">The value of this parameter is determined by the caller.</param>
+        /// <returns>True if <see cref="MediaElement.Source"/> is set successfully; else false.</returns>
+        public object Execute(object sender, object parameter)
 		{
 			if (string.IsNullOrEmpty(this.Source))
 			{
@@ -125,7 +119,7 @@ namespace Microsoft.Xaml.Interactions.Media
 			mediaElement.MediaEnded += this.MediaElement_MediaEnded;
 			mediaElement.MediaFailed += this.MediaElement_MediaFailed;
 
-			this._popup.IsOpen = true;
+            this._popup.IsOpen = true;
 			return true;
 		}
 
@@ -150,3 +144,4 @@ namespace Microsoft.Xaml.Interactions.Media
 		}
 	}
 }
+#endif

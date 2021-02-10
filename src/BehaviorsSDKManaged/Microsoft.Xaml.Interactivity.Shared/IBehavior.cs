@@ -15,7 +15,7 @@ namespace Microsoft.Xaml.Interactivity
     public interface IBehavior
     {
         /// <summary>
-        /// Gets the <see cref="Windows.UI.Xaml.DependencyObject"/> to which the <seealso cref="IBehavior"/> is attached.
+        /// Gets the <see cref="DependencyObject"/> to which the <seealso cref="IBehavior"/> is attached.
         /// </summary>
         DependencyObject AssociatedObject
         {
@@ -25,7 +25,7 @@ namespace Microsoft.Xaml.Interactivity
         /// <summary>
         /// Attaches to the specified object.
         /// </summary>
-        /// <param name="associatedObject">The <see cref="Windows.UI.Xaml.DependencyObject"/> to which the <seealso cref="IBehavior"/> will be attached.</param>
+        /// <param name="associatedObject">The <see cref="DependencyObject"/> to which the <seealso cref="IBehavior"/> will be attached.</param>
         void Attach(DependencyObject associatedObject);
 
         /// <summary>
