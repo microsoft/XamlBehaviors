@@ -5,7 +5,7 @@
     <TargetPlatformVersion>10.0.18362.0</TargetPlatformVersion>
     <RootNamespace>Microsoft.Xaml.Interactions</RootNamespace>
     <Platforms>AnyCPU;x86;x64</Platforms>
-    <TargetPlatformMinVersion>10.0.17134.0</TargetPlatformMinVersion>
+    <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
     <SupportedOSPlatformVersion>$(TargetPlatformMinVersion)</SupportedOSPlatformVersion>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
   </PropertyGroup>
@@ -122,9 +122,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.WinUI">
-      <Version>3.0.0-preview4.210210.4</Version>
-    </PackageReference>
+    <PackageReference Include="Microsoft.ProjectReunion" Version="0.5.0-prerelease" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Microsoft.Xaml.Interactivity.WinUI\Microsoft.Xaml.Interactivity.WinUI.csproj">
