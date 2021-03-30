@@ -34,6 +34,31 @@ namespace Microsoft.Xaml.Interactivity
             private set;
         }
 
+
+#if HAS_UNO
+        private WeakReference _associatedObjectWeak;
+
+        internal DependencyObject AssociatedObjectWeak {
+            get => _associatedObjectWeak?.Target as DependencyObject;
+            set {
+                if (value != null)
+                {
+                    _associatedObjectWeak = new WeakReference(value);
+                }
+                else
+                {
+                    _associatedObjectWeak = null;
+                }
+
+                foreach (DependencyObject item in this)
+                {
+                    IBehavior2 behavior = (IBehavior2)item;
+                    behavior.AssociatedObjectWeak = value;
+                }
+            }
+        }
+#endif
+
         /// <summary>
         /// Attaches the collection of behaviors to the specified <see cref="Windows.UI.Xaml.DependencyObject"/>.
         /// </summary>
@@ -167,6 +192,13 @@ namespace Microsoft.Xaml.Interactivity
             {
                 behavior.Attach(this.AssociatedObject);
             }
+
+#if HAS_UNO
+            if(item is IBehavior2 behavior2)
+            {
+                behavior2.AssociatedObjectWeak = AssociatedObjectWeak;
+            }
+#endif
 
             return behavior;
         }

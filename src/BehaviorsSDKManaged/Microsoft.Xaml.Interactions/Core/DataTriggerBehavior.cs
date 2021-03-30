@@ -199,17 +199,23 @@ namespace Microsoft.Xaml.Interactions.Core
         private static void OnValueChanged(DependencyObject dependencyObject, DependencyPropertyChangedEventArgs args)
         {
             DataTriggerBehavior dataTriggerBehavior = (DataTriggerBehavior)dependencyObject;
-            if (dataTriggerBehavior.AssociatedObject == null)
+            var behavior2 = dependencyObject as IBehavior2;
+
+            if (dataTriggerBehavior.AssociatedObject == null && behavior2?.AssociatedObjectWeak == null)
             {
                 return;
             }
+
+            // UNO TODO: https://github.com/unoplatform/uno/issues/3519
+            // The AssociatedObject is set too late, missing binding updates
+            var associatedObject = dataTriggerBehavior.AssociatedObject ?? behavior2?.AssociatedObjectWeak;
 
             DataBindingHelper.RefreshDataBindingsOnActions(dataTriggerBehavior.Actions);
 
             // Some value has changed--either the binding value, reference value, or the comparison condition. Re-evaluate the equation.
             if (DataTriggerBehavior.Compare(dataTriggerBehavior.Binding, dataTriggerBehavior.ComparisonCondition, dataTriggerBehavior.Value))
             {
-                Interaction.ExecuteActions(dataTriggerBehavior.AssociatedObject, dataTriggerBehavior.Actions, args);
+                Interaction.ExecuteActions(associatedObject, dataTriggerBehavior.Actions, args);
             }
         }
     }
