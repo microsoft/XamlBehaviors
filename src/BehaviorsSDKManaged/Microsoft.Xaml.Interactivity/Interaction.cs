@@ -49,6 +49,10 @@ namespace Microsoft.Xaml.Interactivity
 
                 if (frameworkElement != null)
                 {
+#if HAS_UNO
+                    behaviorCollection.AssociatedObjectWeak = frameworkElement;
+#endif
+
                     frameworkElement.Loaded -= FrameworkElement_Loaded;
                     frameworkElement.Loaded += FrameworkElement_Loaded;
                     frameworkElement.Unloaded -= FrameworkElement_Unloaded;
