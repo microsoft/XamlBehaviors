@@ -1,0 +1,9 @@
+<Project>
+	<PropertyGroup>
+		<UseWinUI Condition="'$(UseWinUI)'==''">False</UseWinUI>
+		<!--<UseWinUI>true</UseWinUI>-->
+	</PropertyGroup>
+	<ItemGroup>
+		<UnoSourceGeneratorAdditionalProperty Include="UseWinUI" />
+	</ItemGroup>
+</Project>

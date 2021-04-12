@@ -8,6 +8,11 @@ jobs:
     vmImage: 'windows-2019'
 
   steps:
+  # Restore nuget.org to the list of existing sources, .NET 6 Pre 2 may somehow remove it
+  - powershell: |
+      dotnet nuget add source https://api.nuget.org/v3/index.json -n nuget.org | Out-Null
+      $global:LASTEXITCODE = 0
+    displayName: Adjust nuget.org source 
 
   - task: GitVersion@5
     inputs:
@@ -15,6 +20,21 @@ jobs:
       configFilePath: gitversion.yml
 
   - task: MSBuild@1
+    displayName: Build WinUI package
+    inputs:
+      solution: src/BehaviorsSDKManaged/BehaviorsSDKManaged.sln
+      msbuildLocationMethod: version
+      msbuildVersion: latest
+      msbuildArchitecture: x86
+      msbuildArguments: /r /p:Configuration=Release /p:UseWinUI=true "/p:PackageOutputPath=$(build.artifactstagingdirectory)\nuget" "/p:PackageVersion=%GITVERSION_FullSemVer%" "/p:InformationalVersion=%GITVERSION_InformationalVersion%" /detailedsummary /bl:$(build.artifactstagingdirectory)\build-lib-winui.binlog
+      clean: false
+      maximumCpuCount: true
+      restoreNugetPackages: false
+      logProjectEvents: false
+      createLogFile: false
+
+  - task: MSBuild@1
+    displayName: Build UWP package
     inputs:
       solution: src/BehaviorsSDKManaged/BehaviorsSDKManaged.sln
       msbuildLocationMethod: version
@@ -28,6 +48,7 @@ jobs:
       createLogFile: false
 
   - task: MSBuild@1
+    displayName: Build UWP Sample App
     inputs:
       solution: samples/CS/XAMLBehaviorsSample.sln
       msbuildLocationMethod: version

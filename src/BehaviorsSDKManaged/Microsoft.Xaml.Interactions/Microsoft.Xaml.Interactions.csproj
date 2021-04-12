@@ -1,7 +1,6 @@
 ﻿<Project Sdk="MSBuild.Sdk.Extras" ToolsVersion="15.0">
 	<PropertyGroup>
-		<TargetFrameworks>MonoAndroid90;xamarinmac20;xamarinios10;uap10.0;netstandard2.0</TargetFrameworks>
-		<TargetFrameworksCI>MonoAndroid90;xamarinmac20;xamarinios10;net46;uap10.0;netstandard2.0</TargetFrameworksCI>
+		<TargetFrameworks>MonoAndroid10.0;xamarinmac20;xamarinios10;netstandard2.0</TargetFrameworks>
 	</PropertyGroup>
 
 	<PropertyGroup>
@@ -11,22 +10,46 @@
 		
 		<OutputPath>..\..\..\out\$(SolutionName)\bin\$(Platform)\$(Configuration)\</OutputPath>
 
-		<DefineConstants>NETFX_CORE;WINDOWS_UWP</DefineConstants>
-		<PackageId>Uno.Microsoft.Xaml.Behaviors.Uwp.Managed</PackageId>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 		
 		<!--https://github.com/xamarin/AndroidSupportComponents/issues/176-->
 		<XamarinAndroidSupportSkipVerifyVersions>true</XamarinAndroidSupportSkipVerifyVersions>
 	</PropertyGroup>
-	
-  <PropertyGroup Label="MultilingualAppToolkit">
+
+	<Choose>
+		<When Condition="'$(UseWinUI)'=='True'">
+			<PropertyGroup>
+				<DefineConstants>HAS_WINUI</DefineConstants>
+				<PackageId>Uno.Microsoft.Xaml.Behaviors.Uwp.Managed.WinUI</PackageId>
+				<TargetFrameworks>$(TargetFrameworks);net5.0-windows10.0.18362.0</TargetFrameworks>
+			</PropertyGroup>
+			<ItemGroup>
+				<PackageReference Condition="'$(TargetFramework)'!='net5.0-windows10.0.18362.0'"
+													Include="Uno.WinUI"
+													Version="3.4.0" />
+				<PackageReference Include="Microsoft.ProjectReunion.WinUI"
+													Version="0.5.0" />
+			</ItemGroup>
+		</When>
+		<Otherwise>
+			<PropertyGroup>
+				<DefineConstants>NETFX_CORE;WINDOWS_UWP</DefineConstants>
+				<PackageId>Uno.Microsoft.Xaml.Behaviors.Uwp.Managed</PackageId>
+				<TargetFrameworks>$(TargetFrameworks);uap10.0</TargetFrameworks>
+			</PropertyGroup>
+			<ItemGroup>
+				<PackageReference Include="Uno.UI"
+													Version="3.4.0" />
+			</ItemGroup>
+		</Otherwise>
+	</Choose>
+
+
+	<PropertyGroup Label="MultilingualAppToolkit">
     <MultilingualAppToolkitVersion>4.0</MultilingualAppToolkitVersion>
     <MultilingualFallbackLanguage>en-US</MultilingualFallbackLanguage>
   </PropertyGroup>
 
-	<ItemGroup>
-		<PackageReference Include="Uno.UI" Version="3.0.11" />
-	</ItemGroup>
 
 	<ItemGroup>
 		<Compile Include="..\Version\Version.cs" />
