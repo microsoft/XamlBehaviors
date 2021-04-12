@@ -19,27 +19,23 @@
 	<Choose>
 		<When Condition="'$(UseWinUI)'=='True'">
 			<PropertyGroup>
-				<DefineConstants>HAS_WINUI</DefineConstants>
+				<DefineConstants>WinUI</DefineConstants>
 				<PackageId>Uno.Microsoft.Xaml.Behaviors.Uwp.Managed.WinUI</PackageId>
 				<TargetFrameworks>$(TargetFrameworks);net5.0-windows10.0.18362.0</TargetFrameworks>
 			</PropertyGroup>
 			<ItemGroup>
-				<PackageReference Condition="'$(TargetFramework)'!='net5.0-windows10.0.18362.0'"
-													Include="Uno.WinUI"
-													Version="3.4.0" />
-				<PackageReference Include="Microsoft.ProjectReunion.WinUI"
-													Version="0.5.0" />
+				<PackageReference Condition="'$(TargetFramework)'!='net5.0-windows10.0.18362.0'" Include="Uno.WinUI" Version="3.2.0" />
+				<PackageReference Include="Microsoft.ProjectReunion.WinUI" Version="0.5.0" />
 			</ItemGroup>
 		</When>
 		<Otherwise>
 			<PropertyGroup>
 				<DefineConstants>NETFX_CORE;WINDOWS_UWP</DefineConstants>
 				<PackageId>Uno.Microsoft.Xaml.Behaviors.Uwp.Managed</PackageId>
-				<TargetFrameworks>$(TargetFrameworks);uap10.0</TargetFrameworks>
+				<TargetFrameworks>$(TargetFrameworks);uap10.0.18362</TargetFrameworks>
 			</PropertyGroup>
 			<ItemGroup>
-				<PackageReference Include="Uno.UI"
-													Version="3.4.0" />
+				<PackageReference Include="Uno.UI" Version="3.2.0" />
 			</ItemGroup>
 		</Otherwise>
 	</Choose>
@@ -92,6 +88,8 @@
     <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactions.zh-TW.xlf" />
     <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactions.uk-UA.xlf" />
   </ItemGroup>
+	
+  <Import Project="..\Microsoft.Xaml.Interactions.Shared\Microsoft.Xaml.Interactions.Shared.projitems" Label="Shared" />
   
   <Import Project="..\..\..\scripts\Microsoft.Xaml.Behaviors.Signing.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\Microsoft.Multilingual.PriResources.targets" Label="MultilingualAppToolkit" Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\Microsoft.Multilingual.PriResources.targets')" />
