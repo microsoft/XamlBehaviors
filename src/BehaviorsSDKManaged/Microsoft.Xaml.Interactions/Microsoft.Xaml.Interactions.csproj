@@ -20,7 +20,7 @@
 		<When Condition="'$(UseWinUI)'=='True'">
 			<PropertyGroup>
 				<DefineConstants>WinUI</DefineConstants>
-				<PackageId>Uno.Microsoft.Xaml.Behaviors.Uwp.Managed.WinUI</PackageId>
+				<PackageId>Uno.Microsoft.Xaml.Behaviors.WinUI.Managed</PackageId>
 				<TargetFrameworks>$(TargetFrameworks);net5.0-windows10.0.18362.0</TargetFrameworks>
 			</PropertyGroup>
 			<ItemGroup>
