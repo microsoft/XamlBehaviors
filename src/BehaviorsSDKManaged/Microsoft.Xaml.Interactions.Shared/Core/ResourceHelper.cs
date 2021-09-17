@@ -7,9 +7,15 @@ namespace Microsoft.Xaml.Interactions.Core
 
     internal static class ResourceHelper
     {
+#if NET5_0
+        private static ResourceLoader strings = new ResourceLoader(ResourceLoader.GetDefaultResourceFilePath(), "Microsoft.Xaml.Interactions/Strings");
+#endif
+
         public static string GetString(string resourceName)
         {
-            ResourceLoader strings = ResourceLoader.GetForCurrentView("Microsoft.Xaml.Interactions/Strings");
+#if !NET5_0 
+            var strings = ResourceLoader.GetForCurrentView("Microsoft.Xaml.Interactions/Strings");
+#endif
             return strings.GetString(resourceName);
         }
 

@@ -91,7 +91,7 @@ namespace Microsoft.Xaml.Interactivity
         {
             List<object> results = new List<object>();
 
-            if (actions == null || Windows.ApplicationModel.DesignMode.DesignModeEnabled)
+            if (actions == null || global::Windows.ApplicationModel.DesignMode.DesignModeEnabled)
             {
                 return results;
             }

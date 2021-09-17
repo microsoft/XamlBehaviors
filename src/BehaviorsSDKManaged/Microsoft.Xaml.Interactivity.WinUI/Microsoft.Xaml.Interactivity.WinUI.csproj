@@ -118,7 +118,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.ProjectReunion" Version="0.8.0" />
+    <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.0.0-preview1" />
   </ItemGroup>
   <ItemGroup>
     <PRIResource Include="..\Microsoft.Xaml.Interactivity\Resources\de-DE\Strings.resw">

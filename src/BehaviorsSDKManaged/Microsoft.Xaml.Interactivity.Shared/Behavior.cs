@@ -30,7 +30,7 @@ namespace Microsoft.Xaml.Interactivity
         /// <exception cref="global::System.ArgumentNullException"><paramref name="associatedObject"/> is null.</exception>
         public void Attach(DependencyObject associatedObject)
         {
-            if (associatedObject == this.AssociatedObject || Windows.ApplicationModel.DesignMode.DesignModeEnabled)
+            if (associatedObject == this.AssociatedObject || global::Windows.ApplicationModel.DesignMode.DesignModeEnabled)
             {
                 return;
             }

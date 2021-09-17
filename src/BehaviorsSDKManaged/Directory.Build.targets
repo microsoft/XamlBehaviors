@@ -1,0 +1,8 @@
+<Project>
+  <!-- Workaround for https://github.com/microsoft/WindowsAppSDK/issues/1217 -->
+  <Target Name="FixBinPlaceBootstrapDll" BeforeTargets="BinPlaceBootstrapDll">
+    <PropertyGroup>
+      <_WindowsAppSDKFoundationPlatform>x86</_WindowsAppSDKFoundationPlatform>
+    </PropertyGroup>
+  </Target>
+</Project>

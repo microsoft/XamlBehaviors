@@ -15,7 +15,7 @@
         <tags>Behavior Action Behaviors Actions Blend Managed C# Interaction Interactivity Interactions WinUI</tags>
         <dependencies>
           <group targetFramework="net5.0-windows10.0.18362.0">
-            <dependency id="Microsoft.ProjectReunion" version="0.8.0" />
+            <dependency id="Microsoft.WindowsAppSDK" version="1.0.0-preview1" />
           </group>
         </dependencies>
     </metadata>
