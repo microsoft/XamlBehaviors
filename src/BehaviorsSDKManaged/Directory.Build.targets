@@ -1,8 +1,9 @@
 <Project>
   <!-- Workaround for https://github.com/microsoft/WindowsAppSDK/issues/1217 -->
-  <Target Name="FixBinPlaceBootstrapDll" BeforeTargets="BinPlaceBootstrapDll">
-    <PropertyGroup>
-      <_WindowsAppSDKFoundationPlatform>x86</_WindowsAppSDKFoundationPlatform>
-    </PropertyGroup>
+  <Target Name="FixReferenceCopyLocalPaths" BeforeTargets="ResolvePackageAssets">
+    <ItemGroup>
+      <ReferenceCopyLocalPaths Remove="$(PkgMicrosoft_WindowsAppSDK)\build\..\runtimes\lib\native\\Microsoft.WindowsAppRuntime.Bootstrap.dll"/>
+      <ReferenceCopyLocalPaths Remove="$(PkgMicrosoft_WindowsAppSDK)\build\..\runtimes\lib\native\AnyCPU\Microsoft.WindowsAppRuntime.Bootstrap.dll"/>
+    </ItemGroup>
   </Target>
 </Project>
