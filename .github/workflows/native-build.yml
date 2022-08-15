@@ -11,7 +11,7 @@ jobs:
     runs-on: windows-latest
     steps:
     - uses: actions/checkout@v2
-    - uses: nuget/setup-nuget@v1.0.2
+    - uses: nuget/setup-nuget@v1.0.6
     - name: Restore
       run: nuget restore src/BehaviorsSDKNative/BehaviorsSDKNative.sln
     - uses: microsoft/setup-msbuild@v1.0.1
