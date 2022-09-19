@@ -71,6 +71,11 @@ The [documentation](https://github.com/Microsoft/XamlBehaviors/wiki) explains ho
 - Run `msbuild /t:Pack src/BehaviorsSDKManaged/Microsoft.Xaml.Interactions.Design/Microsoft.Xaml.Interactions.Design.csproj`
   - *(Optional)* Add `/p:TimestampPackage=true` to include the timestamp in the NuGet package version
 
+For WinUI:
+
+- Run `msbuild /t:Pack src\BehaviorsSDKManaged\Microsoft.Xaml.Interactivity.WinUI\Microsoft.Xaml.Interactivity.WinUI.csproj`
+  - *(Optional)* Add /p:TimestampPackage=true to include the timestamp in the NuGet package version
+
 #### Build and Create Native XAML Behaviors NuGet
 
 - Open the "BehaviorsSDKNative.sln" solution in Visual Studio
