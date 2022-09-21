@@ -74,7 +74,7 @@ The [documentation](https://github.com/Microsoft/XamlBehaviors/wiki) explains ho
 For WinUI:
 
 - Run `msbuild /t:Pack src\BehaviorsSDKManaged\Microsoft.Xaml.Interactivity.WinUI\Microsoft.Xaml.Interactivity.WinUI.csproj`
-  - *(Optional)* Add /p:TimestampPackage=true to include the timestamp in the NuGet package version
+  - *(Optional)* Add `/p:TimestampPackage=true` to include the timestamp in the NuGet package version
 
 #### Build and Create Native XAML Behaviors NuGet
 
