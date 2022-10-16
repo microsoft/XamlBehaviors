@@ -7,6 +7,7 @@ namespace Microsoft.Xaml.Interactions.Core
     using Windows.UI.Xaml.Controls;
     using Windows.UI.Xaml.Markup;
     using Interactivity;
+    using System.Reflection;
 
     /// <summary>
     /// A helper class that enables converting values specified in markup (strings) to their object representation.
@@ -62,6 +63,15 @@ namespace Microsoft.Xaml.Interactions.Core
             }
 
             return null;
+        }
+        public static Object Convert(string value, Type destinationType)
+        {
+            var typeInfo = destinationType.GetTypeInfo();
+
+            if (typeInfo.IsEnum)
+                return Enum.Parse(destinationType, value);
+
+            return Convert(value, destinationType.FullName);
         }
 
         private static String GetScope(string name)
