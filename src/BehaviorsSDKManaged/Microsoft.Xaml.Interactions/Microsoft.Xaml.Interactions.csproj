@@ -136,6 +136,7 @@
     <Compile Include="Core\GoToStateAction.cs" />
     <Compile Include="Core\IncrementalUpdateBehavior.cs" />
     <Compile Include="Core\InvokeCommandAction.cs" />
+    <Compile Include="Core\ItemClickBehavior.cs" />
     <Compile Include="Core\NavigateToPageAction.cs" />
     <Compile Include="Core\ResourceHelper.cs" />
     <Compile Include="Core\TypeConverterHelper.cs" />
