@@ -216,6 +216,7 @@ GeneratedArtifacts/
 _Pvt_Extensions/
 ModelManifest.xml
 **/MigrationBackup
+/src/BehaviorsSDKManaged/NuGet.config
 
 # VS Generated files
 /**/Generated Files

@@ -15,7 +15,7 @@
       <Authenticode>Microsoft400</Authenticode>
       <StrongName>StrongName</StrongName>
     </FilesToSign>
-    <FilesToSign Include="$(OutputPath)$(AssemblyName).winmd" Condition="(!($(AssemblyName.Contains('.Design')) OR $(AssemblyName.Contains('.DesignTools')))) AND Exists('$(OutputPath)$(AssemblyName).winmd')">
+    <FilesToSign Include="$(OutputPath)$(AssemblyName).winmd" Condition="Exists('$(OutputPath)$(AssemblyName).winmd')">
       <Authenticode>Microsoft400</Authenticode>
       <StrongName>StrongName</StrongName>
     </FilesToSign>

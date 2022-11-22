@@ -12,7 +12,7 @@
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetPlatformVersion>10.0.19041.0</TargetPlatformVersion>
-    <TargetPlatformMinVersion>10.0.10240.0</TargetPlatformMinVersion>
+    <TargetPlatformMinVersion>10.0.16299.0</TargetPlatformMinVersion>
     <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -27,7 +27,7 @@
     <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>..\..\..\out\BehaviorsSDKManaged\bin\AnyCPU\Debug\Microsoft.Xaml.Interactivity.XML</DocumentationFile>
+    <DocumentationFile>..\..\..\out\BehaviorsSDKManaged\bin\AnyCPU\Debug\Microsoft.Xaml.Interactivity.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -36,7 +36,7 @@
     <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>..\..\..\out\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactivity.XML</DocumentationFile>
+    <DocumentationFile>..\..\..\out\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactivity.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
     <PlatformTarget>ARM</PlatformTarget>
@@ -129,24 +129,8 @@
     <PRIResource Include="Resources\uk-UA\Strings.resw" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ActionCollection.cs" />
-    <Compile Include="Behavior.cs" />
-    <Compile Include="BehaviorCollection.cs" />
-    <Compile Include="BehaviorOfT.cs" />
-    <Compile Include="CustomPropertyValueEditorAttribute.cs" />
-    <Compile Include="DefaultEventAttribute.cs" />
-    <Compile Include="GlobalSuppressions.cs" />
-    <Compile Include="IAction.cs" />
-    <Compile Include="IBehavior.cs" />
-    <Compile Include="Interaction.cs" />
-    <Compile Include="ITrigger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="..\Version\Version.cs" />
-    <Compile Include="ResourceHelper.cs" />
-    <Compile Include="Trigger.cs" />
-    <Compile Include="TriggerOfT.cs" />
-    <Compile Include="TypeConstraintAttribute.cs" />
-    <Compile Include="VisualStateUtilities.cs" />
     <EmbeddedResource Include="Properties\Microsoft.Xaml.Interactivity.rd.xml" />
   </ItemGroup>
   <ItemGroup>
@@ -172,6 +156,7 @@
       <Version>0.4.1</Version>
     </PackageReference>
   </ItemGroup>
+  <Import Project="..\Microsoft.Xaml.Interactivity.Shared\Microsoft.Xaml.Interactivity.Shared.projitems" Label="Shared" />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

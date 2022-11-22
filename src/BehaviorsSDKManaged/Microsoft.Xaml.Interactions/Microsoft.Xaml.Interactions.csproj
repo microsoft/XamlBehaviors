@@ -12,7 +12,7 @@
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetPlatformVersion>10.0.19041.0</TargetPlatformVersion>
-    <TargetPlatformMinVersion>10.0.10240.0</TargetPlatformMinVersion>
+    <TargetPlatformMinVersion>10.0.16299.0</TargetPlatformMinVersion>
     <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -27,7 +27,9 @@
     <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>..\..\..\out\BehaviorsSDKManaged\bin\AnyCPU\Debug\Microsoft.Xaml.Interactions.XML</DocumentationFile>
+    <DocumentationFile>
+    </DocumentationFile>
+    <GenerateLibraryLayout>true</GenerateLibraryLayout>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -127,26 +129,8 @@
     <PRIResource Include="Resources\uk-UA\Strings.resw" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Core\CallMethodAction.cs" />
-    <Compile Include="Core\ChangePropertyAction.cs" />
-    <Compile Include="Core\ComparisonConditionType.cs" />
-    <Compile Include="Core\DataBindingHelper.cs" />
-    <Compile Include="Core\DataTriggerBehavior.cs" />
-    <Compile Include="Core\EventTriggerBehavior.cs" />
-    <Compile Include="Core\GoToStateAction.cs" />
-    <Compile Include="Core\IncrementalUpdateBehavior.cs" />
-    <Compile Include="Core\InvokeCommandAction.cs" />
-    <Compile Include="Core\NavigateToPageAction.cs" />
-    <Compile Include="Core\ResourceHelper.cs" />
-    <Compile Include="Core\TypeConverterHelper.cs" />
-    <Compile Include="GlobalSuppressions.cs" />
-    <Compile Include="Media\ControlStoryboardAction.cs" />
-    <Compile Include="Media\ControlStoryboardOption.cs" />
-    <Compile Include="Media\PlaySoundAction.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="..\Version\Version.cs" />
-    <Compile Include="Utility\IVisualTreeHelper.cs" />
-    <Compile Include="Utility\UwpVisualTreeHelper.cs" />
     <EmbeddedResource Include="Properties\Microsoft.Xaml.Interactions.rd.xml" />
   </ItemGroup>
   <ItemGroup>
@@ -176,6 +160,7 @@
       <Version>0.4.1</Version>
     </PackageReference>
   </ItemGroup>
+  <Import Project="..\Microsoft.Xaml.Interactions.Shared\Microsoft.Xaml.Interactions.Shared.projitems" Label="Shared" />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

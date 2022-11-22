@@ -308,6 +308,11 @@ namespace ManagedUnitTests
     {
         public event EventHandler CanExecuteChanged;
 
+        protected virtual void OnCanExecuteChanged(EventArgs e)
+        {
+            CanExecuteChanged?.Invoke(this, e);
+        }
+
         public int ExecutionCount
         {
             get;
