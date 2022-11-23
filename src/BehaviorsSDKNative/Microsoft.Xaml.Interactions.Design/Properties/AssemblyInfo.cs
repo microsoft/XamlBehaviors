@@ -12,7 +12,7 @@ using Microsoft.Xaml.Interactivity.Design;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("Microsoft.Xaml.Interactivity.Design")]
-[assembly: AssemblyCopyright("Copyright © Microsoft 2015-2020")]
+[assembly: AssemblyCopyright("Copyright © Microsoft 2015-2022")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

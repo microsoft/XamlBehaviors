@@ -10,7 +10,7 @@ using System.Windows;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Microsoft")]
 [assembly: AssemblyProduct("Microsoft.Xaml.Interactivity.Design")]
-[assembly: AssemblyCopyright("Copyright © Microsoft 2015-2020")]
+[assembly: AssemblyCopyright("Copyright © Microsoft 2015-2022")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
