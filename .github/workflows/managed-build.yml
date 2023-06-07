@@ -1,19 +1,22 @@
 name: Build Managed
 
 on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+push:
+branches: [ master ]
+pull_request:
+branches: [ master ]
 
 jobs:
-  managed-build:
-    runs-on: windows-latest
-    steps:
-    - uses: actions/checkout@v2
-    - uses: nuget/setup-nuget@v1.0.6
-    - name: Restore
-      run: nuget restore src/BehaviorsSDKManaged/BehaviorsSDKManaged.sln
-    - uses: microsoft/setup-msbuild@v1.0.2
-    - name: Build
-      run: msbuild src/BehaviorsSDKManaged/BehaviorsSDKManaged.sln /p:Configuration=Release
+managed-build:
+runs-on: windows-latest
+steps:
+- name: Checkout Repository
+uses: actions/checkout@v2
+- name: Setup NuGet
+uses: nuget/setup-nuget@v1.0.6
+- name: Restore NuGet Packages
+run: nuget restore src/BehaviorsSDKManaged/BehaviorsSDKManaged.sln
+- name: Setup MSBuild
+uses: microsoft/setup-msbuild@v1.0.2
+- name: Build Solution
+run: msbuild src/BehaviorsSDKManaged/BehaviorsSDKManaged.sln /p:Configuration=Release
