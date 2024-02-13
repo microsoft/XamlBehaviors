@@ -1,0 +1,117 @@
+# This Yaml Document has been converted by ESAI Yaml Pipeline Conversion Tool.
+name: $(Date:yyyyMMdd).$(Rev:r)
+variables:
+- name: Codeql.Enabled
+  value: true
+- name: Net5.Sdk.Feed
+  value: https://dotnetcli.blob.core.windows.net/dotnet
+- name: PublishNuGetOrg
+  value: false
+- name: SignType
+  ${{ if eq(variables['Build.OfficialRelease'], 'true') }}:
+    value: real
+  ${{ else }}:
+    value: test
+- name: TeamName
+  value: vscx-tools-authoring
+- name: TimestampPackage
+  value: true
+trigger:
+  branches:
+    include:
+    - refs/heads/main
+resources:
+  repositories:
+  - repository: MicroBuildTemplate
+    type: git
+    name: 1ESPipelineTemplates/MicroBuildTemplate
+    ref: refs/tags/release
+extends:
+  template: azure-pipelines/MicroBuild.1ES.Official.yml@MicroBuildTemplate
+  parameters:
+    pool:
+      name: VSEngSS-MicroBuild2022-1ES
+    sdl:
+      sourceAnalysisPool:
+        name: AzurePipelines-EO
+        image: 1ESPT-Windows2022
+        os: windows
+    customBuildTags:
+    - ES365AIMigrationTooling
+    stages:
+    - stage: stage
+      jobs:
+      - job: Job_1
+        displayName: 'Build'
+        timeoutInMinutes: 120
+        pool:
+          name: VSEngSS-MicroBuild2022-1ES
+        templateContext:
+          mb:
+            signing:
+              enabled: true
+              signType: $(SignType)
+            sbom:
+              enabled: true
+        steps:
+        - checkout: self
+          clean: true
+          fetchTags: false
+        - task: DeleteFiles@1
+          displayName: Delete files from out directory
+          inputs:
+            SourceFolder: out
+            Contents: '**\'
+        - task: UseDotNet@2
+          displayName: Use .NET Core sdk 5.0.403
+          inputs:
+            version: 5.0.403
+            performMultiLevelLookup: true
+        - task: NuGetToolInstaller@1
+          displayName: Use NuGet 5.11.0
+          inputs:
+            versionSpec: 5.11.0
+        - task: NuGetAuthenticate@0
+          displayName: NuGet Authenticate
+          inputs:
+            nuGetServiceConnections: Net Core Custom connection
+            forceReinstallCredentialProvider: true
+        - task: NuGetCommand@2
+          displayName: NuGet restore copy
+          inputs:
+            solution: src\BehaviorsSDKManaged\BehaviorsSDKManaged.sln
+            selectOrConfig: config
+            externalEndpoints: Net Core Custom connection
+        - task: MicroBuildSigningPlugin@4
+          inputs:
+            signType: '$(SignType)'
+            feedSource: 'https://devdiv.pkgs.visualstudio.com/DefaultCollection/_packaging/MicroBuildToolset/nuget/v3/index.json'
+          env:
+            TeamName: '$(TeamName)'
+        - task: VSBuild@1
+          displayName: Build BehaviorsSDKManaged.sln
+          inputs:
+            solution: src\BehaviorsSDKManaged\BehaviorsSDKManaged.sln
+            platform: Any CPU
+            configuration: Release
+        - task: VSBuild@1
+          displayName: Build WinUI Managed NuGet package
+          inputs:
+            solution: src\BehaviorsSDKManaged\Microsoft.Xaml.Interactivity.WinUI\Microsoft.Xaml.Interactivity.WinUI.csproj
+            msbuildArgs: /t:Pack /p:PackageOutputPath="$(Build.SourcesDirectory)out"
+            configuration: Release
+        - task: CopyFiles@2
+          displayName: 'Copy Symbols to: $(Pipeline.Workspace)\Symbols'
+          inputs:
+            SourceFolder: out\
+            Contents: '**\bin\**\*.pdb'
+            TargetFolder: $(Pipeline.Workspace)\Symbols
+        - task: MicroBuildArchiveSymbols@4
+          displayName: Archive Symbols
+          condition: and(succeeded(), eq(variables['Build.OfficialRelease'], 'true'))
+          inputs:
+            SymbolsFeatureName: XamlBehaviors
+            SymbolsProject: VS
+            SymbolsAgentPath: $(Pipeline.Workspace)\Symbols
+            ConnectedServiceName: Symbols Upload (DevDiv)
+            SubmitToInternet: false
