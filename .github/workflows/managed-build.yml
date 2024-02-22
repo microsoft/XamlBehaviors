@@ -10,14 +10,24 @@ jobs:
   managed-build:
     runs-on: windows-latest
     steps:
-    - uses: actions/checkout@v2
-    - uses: nuget/setup-nuget@v1.0.6
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Setup/Install NuGet
+      uses: nuget/setup-nuget@v2
+      with:
+        nuget-version: '5.11.0'
+
     - name: Setup/Install the .NET 6 SDK
       uses: actions/setup-dotnet@v3
       with:
-        dotnet-version: 6.x
-    - name: Restore
-      run: nuget restore src/BehaviorsSDKManaged/BehaviorsSDKManaged.sln
-    - uses: microsoft/setup-msbuild@v1.0.2
+        dotnet-version: 5.0.403
+
+    - name: Setup MSBuild
+      uses: microsoft/setup-msbuild@v1.3.1
+
+    - name: NuGet Restore
+      run: nuget restore src\BehaviorsSDKManaged\BehaviorsSDKManaged.sln
+
     - name: Build
-      run: msbuild src/BehaviorsSDKManaged/BehaviorsSDKManaged.sln /p:Configuration=Release
+      run: msbuild src\BehaviorsSDKManaged\BehaviorsSDKManaged.sln /p:Configuration=Release
