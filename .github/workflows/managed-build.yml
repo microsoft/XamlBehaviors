@@ -10,15 +10,10 @@ jobs:
   managed-build:
     runs-on: windows-latest
     steps:
-    - name: Checkout repository
+    - name: Checkout XamlBehaviors.git 
       uses: actions/checkout@v3
 
-    - name: Setup/Install NuGet
-      uses: nuget/setup-nuget@v2
-      with:
-        nuget-version: '5.11.0'
-
-    - name: Setup/Install the .NET 6 SDK
+    - name: Install the .NET 5.0.403 SDK
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: 5.0.403
@@ -26,8 +21,13 @@ jobs:
     - name: Setup MSBuild
       uses: microsoft/setup-msbuild@v1.3.1
 
-    - name: NuGet Restore
+    - name: Setup/Install NuGet 5.11.0
+      uses: nuget/setup-nuget@v2
+      with:
+        nuget-version: '5.11.0'
+
+    - name: NuGet Restore BehaviorsSDKManaged.sln
       run: nuget restore src\BehaviorsSDKManaged\BehaviorsSDKManaged.sln
 
-    - name: Build
+    - name: Build BehaviorsSDKManaged.sln
       run: msbuild src\BehaviorsSDKManaged\BehaviorsSDKManaged.sln /p:Configuration=Release
