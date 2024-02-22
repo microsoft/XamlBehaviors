@@ -3,8 +3,6 @@ name: $(Date:yyyyMMdd).$(Rev:r)
 variables:
 - name: Codeql.Enabled
   value: true
-- name: Net5.Sdk.Feed
-  value: https://dotnetcli.blob.core.windows.net/dotnet
 - name: PublishNuGetOrg
   value: false
 - name: SignType
