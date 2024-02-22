@@ -12,6 +12,10 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - uses: nuget/setup-nuget@v1.0.6
+    - name: Setup/Install the .NET 6 SDK
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: 6.x
     - name: Restore
       run: nuget restore src/BehaviorsSDKManaged/BehaviorsSDKManaged.sln
     - uses: microsoft/setup-msbuild@v1.0.2
