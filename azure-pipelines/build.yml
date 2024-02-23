@@ -76,7 +76,6 @@ extends:
           inputs:
             solution: src\BehaviorsSDKManaged\BehaviorsSDKManaged.sln
             selectOrConfig: config
-            externalEndpoints: Net Core Custom connection
         - task: MicroBuildSigningPlugin@4
           inputs:
             signType: '$(SignType)'
