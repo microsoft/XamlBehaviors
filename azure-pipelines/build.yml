@@ -88,6 +88,7 @@ extends:
             solution: src\BehaviorsSDKManaged\BehaviorsSDKManaged.sln
             platform: Any CPU
             configuration: Release
+            clean: true
         - task: VSBuild@1
           displayName: Build WinUI Managed NuGet package
           inputs:
