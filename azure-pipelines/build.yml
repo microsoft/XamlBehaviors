@@ -3,6 +3,8 @@ name: $(Date:yyyyMMdd).$(Rev:r)
 variables:
 - name: Codeql.Enabled
   value: true
+- name: Codeql.Language
+  value: csharp
 - name: PublishNuGetOrg
   value: false
 - name: SignType
