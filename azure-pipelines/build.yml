@@ -16,6 +16,13 @@ variables:
   value: vscx-tools-authoring
 - name: TimestampPackage
   value: true
+schedules:
+- cron: '0 0 1 * 0'
+  displayName: Monthly CodeQL Build
+  branches:
+    include:
+    - main
+  always: true
 trigger:
   branches:
     include:
