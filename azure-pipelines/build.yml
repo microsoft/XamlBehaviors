@@ -48,7 +48,7 @@ extends:
     stages:
     - stage: stage
       jobs:
-      - job: Job_1
+      - job: Build
         displayName: 'Build'
         timeoutInMinutes: 120
         pool:
