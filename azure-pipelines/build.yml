@@ -110,12 +110,11 @@ extends:
             SourceFolder: out\
             Contents: '**\bin\**\*.pdb'
             TargetFolder: $(Pipeline.Workspace)\Symbols
-        - task: MicroBuildArchiveSymbols@4
+        - task: MicroBuildArchiveSymbols@5
           displayName: Archive Symbols
           condition: and(succeeded(), eq(variables['Build.OfficialRelease'], 'true'))
           inputs:
             SymbolsFeatureName: XamlBehaviors
             SymbolsProject: VS
             SymbolsAgentPath: $(Pipeline.Workspace)\Symbols
-            ConnectedServiceName: Symbols Upload (DevDiv)
             SubmitToInternet: false
