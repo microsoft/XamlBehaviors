@@ -17,8 +17,8 @@ variables:
 - name: TimestampPackage
   value: true
 schedules:
-- cron: '0 0 1 * 0'
-  displayName: Monthly CodeQL Build
+- cron: '0 0 * * 0'
+  displayName: Weekly CodeQL Build (Sunday @ Midnight)
   branches:
     include:
     - main
