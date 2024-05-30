@@ -1,12 +1,19 @@
 # This Yaml Document has been converted by ESAI Yaml Pipeline Conversion Tool.
 name: $(Date:yyyyMMdd).$(Rev:r)
+parameters:
+- name: OfficialRelease
+  displayName: "Build and publish an official release"
+  type: boolean
+  default: false
 variables:
+- name: Build.OfficialRelease
+  value: ${{ parameters.OfficialRelease }}
 - name: Codeql.Enabled
   value: true
 - name: Codeql.Language
   value: csharp
 - name: PublishNuGetOrg
-  value: false
+  value: ${{ parameters.OfficialRelease }}
 - name: SignType
   ${{ if eq(variables['Build.OfficialRelease'], 'true') }}:
     value: real
@@ -16,13 +23,6 @@ variables:
   value: vscx-tools-authoring
 - name: TimestampPackage
   value: true
-schedules:
-- cron: '0 0 1 * 0'
-  displayName: Monthly CodeQL Build
-  branches:
-    include:
-    - main
-  always: true
 trigger:
   branches:
     include:
