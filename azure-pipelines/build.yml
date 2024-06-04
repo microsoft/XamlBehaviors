@@ -12,8 +12,6 @@ variables:
   value: true
 - name: Codeql.Language
   value: csharp
-- name: PublishNuGetOrg
-  value: ${{ parameters.OfficialRelease }}
 - name: SignType
   ${{ if eq(variables['Build.OfficialRelease'], 'true') }}:
     value: real
@@ -60,12 +58,20 @@ extends:
               signType: $(SignType)
             sbom:
               enabled: true
+          outputs:
+          - output: nuget
+            displayName: 'NuGet push to NuGet.org'
+            condition: and(succeeded(), eq(variables['Build.OfficialRelease'], 'true'))
+            packageParentPath: '$(Build.ArtifactStagingDirectory)\Packages'
+            packagesToPush: $(Build.ArtifactStagingDirectory)\Packages\*.nupkg;!$(Build.ArtifactStagingDirectory)\Packages\*.symbols.nupkg
+            nuGetFeedType: external
+            publishFeedCredentials: XamlBehaviors-NuGet.org
         steps:
         - checkout: self
           clean: true
           fetchTags: false
         - task: DeleteFiles@1
-          displayName: Delete files from out directory
+          displayName: Delete output files
           inputs:
             SourceFolder: out
             Contents: '**\'
@@ -75,13 +81,13 @@ extends:
             version: 5.0.403
             performMultiLevelLookup: true
         - task: NuGetToolInstaller@1
-          displayName: Use NuGet 5.11.0
+          displayName: Use NuGet 6.x
           inputs:
-            versionSpec: 5.11.0
+            versionSpec: 6.x
         - task: NuGetAuthenticate@1
           displayName: NuGet Authenticate
         - task: NuGetCommand@2
-          displayName: NuGet restore copy
+          displayName: NuGet restore
           inputs:
             solution: src\BehaviorsSDKManaged\BehaviorsSDKManaged.sln
             selectOrConfig: config
@@ -107,7 +113,7 @@ extends:
         - task: CopyFiles@2
           displayName: 'Copy Symbols to: $(Pipeline.Workspace)\Symbols'
           inputs:
-            SourceFolder: out\
+            SourceFolder: $(Build.SourcesDirectory)out
             Contents: '**\bin\**\*.pdb'
             TargetFolder: $(Pipeline.Workspace)\Symbols
         - task: MicroBuildArchiveSymbols@5
@@ -118,3 +124,12 @@ extends:
             SymbolsProject: VS
             SymbolsAgentPath: $(Pipeline.Workspace)\Symbols
             SubmitToInternet: false
+        - task: CopyFiles@2
+          displayName: 'Copy NuGet Packages to: $(Build.ArtifactStagingDirectory)\Packages'
+          inputs:
+            SourceFolder: $(Build.SourcesDirectory)out
+            Contents: '**\*.nupkg'
+            TargetFolder: $(Build.ArtifactStagingDirectory)\Packages
+            OverWrite: true
+            flattenFolders: true
+          continueOnError: true
