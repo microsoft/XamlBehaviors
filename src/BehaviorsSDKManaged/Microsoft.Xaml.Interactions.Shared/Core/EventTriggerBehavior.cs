@@ -21,7 +21,7 @@ namespace Microsoft.Xaml.Interactions.Core
     /// <summary>
     /// A behavior that listens for a specified event on its source and executes its actions when that event is fired.
     /// </summary>
-#if NET5_0_OR_GREATER
+#if NET8_0_OR_GREATER
     [RequiresUnreferencedCode("This behavior is not trim-safe.")]
 #endif
     public sealed class EventTriggerBehavior : Trigger
