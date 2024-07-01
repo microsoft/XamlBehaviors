@@ -21,6 +21,9 @@ namespace Microsoft.Xaml.Interactions.Core
     /// <summary>
     /// A behavior that listens for a specified event on its source and executes its actions when that event is fired.
     /// </summary>
+#if NET5_0_OR_GREATER
+    [RequiresUnreferencedCode("This behavior is not trim-safe.")]
+#endif
     public sealed class EventTriggerBehavior : Trigger
     {
         /// <summary>
@@ -181,7 +184,7 @@ namespace Microsoft.Xaml.Interactions.Core
             else if (!this._isLoadedEventRegistered)
             {
                 FrameworkElement element = this._resolvedSource as FrameworkElement;
-                if (element != null && !EventTriggerBehavior.IsElementLoaded(element))
+                if (element != null && !EventTriggerBehaviorHelpers.IsElementLoaded(element))
                 {
                     this._isLoadedEventRegistered = true;
                     element.Loaded += this.OnEvent;
@@ -253,7 +256,29 @@ namespace Microsoft.Xaml.Interactions.Core
             behavior.RegisterEvent(newEventName);
         }
 
-        internal static bool IsElementLoaded(FrameworkElement element)
+        private static bool IsWindowsRuntimeEvent(EventInfo eventInfo)
+        {
+            return eventInfo != null &&
+                EventTriggerBehavior.IsWindowsRuntimeType(eventInfo.EventHandlerType) &&
+                EventTriggerBehavior.IsWindowsRuntimeType(eventInfo.DeclaringType);
+        }
+
+        private static bool IsWindowsRuntimeType(Type type)
+        {
+            if (type != null)
+            {
+                return type.AssemblyQualifiedName.EndsWith("ContentType=WindowsRuntime", StringComparison.Ordinal);
+            }
+
+            return false;
+        }
+    }
+
+    internal static class EventTriggerBehaviorHelpers
+    {
+        // This method has to be outside of 'EventTriggerBehavior', because it's actually trim-safe.
+        // We want to allow other callers inside the library use this without getting trim warnings.
+        public static bool IsElementLoaded(FrameworkElement element)
         {
             if (element == null)
             {
@@ -279,23 +304,6 @@ namespace Microsoft.Xaml.Interactions.Core
             }
 
             return (parent != null || (rootVisual != null && element == rootVisual));
-        }
-
-        private static bool IsWindowsRuntimeEvent(EventInfo eventInfo)
-        {
-            return eventInfo != null &&
-                EventTriggerBehavior.IsWindowsRuntimeType(eventInfo.EventHandlerType) &&
-                EventTriggerBehavior.IsWindowsRuntimeType(eventInfo.DeclaringType);
-        }
-
-        private static bool IsWindowsRuntimeType(Type type)
-        {
-            if (type != null)
-            {
-                return type.AssemblyQualifiedName.EndsWith("ContentType=WindowsRuntime", StringComparison.Ordinal);
-            }
-
-            return false;
         }
     }
 }
