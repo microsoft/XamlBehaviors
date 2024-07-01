@@ -127,7 +127,7 @@ namespace Microsoft.Xaml.Interactions.Core
             }
 
             FrameworkElement element = sender as FrameworkElement;
-            if (element == null || !EventTriggerBehavior.IsElementLoaded(element))
+            if (element == null || !EventTriggerBehaviorHelpers.IsElementLoaded(element))
             {
                 return false;
             }

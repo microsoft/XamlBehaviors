@@ -187,7 +187,7 @@ namespace Microsoft.Xaml.Interactivity
             {
                 for (int i = 0; i < this.Count; i++)
                 {
-                    if (this[i] != this._oldCollection[i])
+                    if (!ReferenceEquals(this[i], this._oldCollection[i]))
                     {
                         isValid = false;
                         break;
