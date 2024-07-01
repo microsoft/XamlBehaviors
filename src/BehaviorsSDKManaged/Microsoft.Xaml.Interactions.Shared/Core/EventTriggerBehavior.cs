@@ -256,6 +256,7 @@ namespace Microsoft.Xaml.Interactions.Core
             behavior.RegisterEvent(newEventName);
         }
 
+#if !WinUI
         private static bool IsWindowsRuntimeEvent(EventInfo eventInfo)
         {
             return eventInfo != null &&
@@ -267,11 +268,14 @@ namespace Microsoft.Xaml.Interactions.Core
         {
             if (type != null)
             {
+                // This will only work when using built-in WinRT interop, ie. where .winmd files are directly
+                // referenced instead of generated projections. That is, this would not work on modern .NET.
                 return type.AssemblyQualifiedName.EndsWith("ContentType=WindowsRuntime", StringComparison.Ordinal);
             }
 
             return false;
         }
+#endif
     }
 
     internal static class EventTriggerBehaviorHelpers
