@@ -18,6 +18,9 @@ namespace Microsoft.Xaml.Interactions.Core
     /// <summary>
     /// A behavior that performs actions when the bound data meets a specified condition.
     /// </summary>
+#if NET8_0_OR_GREATER
+    [RequiresUnreferencedCode("This behavior is not trim-safe.")]
+#endif
     public sealed class DataTriggerBehavior : Trigger
     {
         /// <summary>
