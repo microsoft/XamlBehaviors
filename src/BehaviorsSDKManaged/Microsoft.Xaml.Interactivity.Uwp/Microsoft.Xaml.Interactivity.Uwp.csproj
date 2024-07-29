@@ -13,6 +13,10 @@
     <SupportedOSPlatformVersion>$(TargetPlatformMinVersion)</SupportedOSPlatformVersion>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <IsAotCompatible>true</IsAotCompatible>
+	
+	<!-- Temporary workaround, will be fixed in VS 17.12 P1 -->
+    <AddMicrosoftVCLibsSDKReference>false</AddMicrosoftVCLibsSDKReference>
+	<AddMicrosoftUniversalCRTDebugSDKReference>false</AddMicrosoftUniversalCRTDebugSDKReference>
   </PropertyGroup>
   <PropertyGroup>
     <OutputPath>..\..\..\out\Uwp\$(SolutionName)\bin\$(Platform)\$(Configuration)\</OutputPath>
@@ -198,6 +202,7 @@
     <DocumentationFile>..\..\..\out\Uwp\BehaviorsSDKManaged\bin\$(Platform)\Release\Microsoft.Xaml.Interactivity.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup>
+	<DefineConstants>$(DefineConstants);MODERN_WINDOWS_UWP</DefineConstants>
     <AssemblyName>Microsoft.Xaml.Interactivity</AssemblyName>
   </PropertyGroup>
 </Project>
