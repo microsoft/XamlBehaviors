@@ -56,7 +56,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Uwp", "Uwp", "{67B23F04-942
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.Xaml.Interactivity.Uwp", "Microsoft.Xaml.Interactivity.Uwp\Microsoft.Xaml.Interactivity.Uwp.csproj", "{E6A328C8-2D9A-459A-86EE-F1C50CC6DADD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Xaml.Interactions.Uwp", "Microsoft.Xaml.Interactions.Uwp\Microsoft.Xaml.Interactions.Uwp.csproj", "{B1C5E139-C8DF-46B5-9ABC-4515BDECAFA3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.Xaml.Interactions.Uwp", "Microsoft.Xaml.Interactions.Uwp\Microsoft.Xaml.Interactions.Uwp.csproj", "{B1C5E139-C8DF-46B5-9ABC-4515BDECAFA3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -283,5 +283,6 @@ Global
 		Microsoft.Xaml.Interactivity.Shared\Microsoft.Xaml.Interactivity.Shared.projitems*{7119f232-7bef-42f9-9ba1-52654adc98b6}*SharedItemsImports = 5
 		Microsoft.Xaml.Interactivity.Shared\Microsoft.Xaml.Interactivity.Shared.projitems*{7ffc1385-c3e1-487c-9a81-de48dd63ecb9}*SharedItemsImports = 4
 		Microsoft.Xaml.Interactions.Shared\Microsoft.Xaml.Interactions.Shared.projitems*{a338a7f2-9010-477b-8a6e-6c2b2495c33c}*SharedItemsImports = 4
+		Microsoft.Xaml.Interactivity.Shared\Microsoft.Xaml.Interactivity.Shared.projitems*{e6a328c8-2d9a-459a-86ee-f1c50cc6dadd}*SharedItemsImports = 5
 	EndGlobalSection
 EndGlobal
