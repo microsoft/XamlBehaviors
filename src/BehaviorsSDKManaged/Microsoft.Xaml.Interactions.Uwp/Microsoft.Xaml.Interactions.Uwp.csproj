@@ -1,9 +1,213 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<OutputType>Library</OutputType>
+		<TargetFramework>net8.0-windows10.0.22621.0</TargetFramework>
+		<TargetPlatformVersion>10.0.22621.0</TargetPlatformVersion>
+		<WindowsSdkPackageVersion>10.0.22621.37-preview</WindowsSdkPackageVersion>
+		<UseUwp>true</UseUwp>
+		<UseUwpTools>true</UseUwpTools>
+		<RootNamespace>Microsoft.Xaml.Interactions</RootNamespace>
+		<Platforms>AnyCPU;x86;x64;arm64</Platforms>
+		<RuntimeIdentifiers>win-x86;win-x64;win-arm64</RuntimeIdentifiers>
+		<TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
+		<SupportedOSPlatformVersion>$(TargetPlatformMinVersion)</SupportedOSPlatformVersion>
+		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+		<IsAotCompatible>true</IsAotCompatible>
 
-  <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
-
+		<!-- Temporary workaround, will be fixed in VS 17.12 P1 -->
+		<AddMicrosoftVCLibsSDKReference>false</AddMicrosoftVCLibsSDKReference>
+		<AddMicrosoftUniversalCRTDebugSDKReference>false</AddMicrosoftUniversalCRTDebugSDKReference>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+		<PlatformTarget>AnyCPU</PlatformTarget>
+		<DebugSymbols>true</DebugSymbols>
+		<DebugType>full</DebugType>
+		<Optimize>false</Optimize>
+		<OutputPath>..\..\..\out\Uwp\BehaviorsSDKManaged\bin\AnyCPU\Debug\</OutputPath>
+		<DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+		<ErrorReport>prompt</ErrorReport>
+		<WarningLevel>4</WarningLevel>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+		<PlatformTarget>AnyCPU</PlatformTarget>
+		<DebugType>pdbonly</DebugType>
+		<Optimize>true</Optimize>
+		<OutputPath>..\..\..\out\Uwp\BehaviorsSDKManaged\bin\AnyCPU\Release\</OutputPath>
+		<DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+		<ErrorReport>prompt</ErrorReport>
+		<WarningLevel>4</WarningLevel>
+		<DocumentationFile>..\..\..\out\Uwp\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactions.xml</DocumentationFile>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+		<PlatformTarget>x86</PlatformTarget>
+		<DebugSymbols>true</DebugSymbols>
+		<OutputPath>..\..\..\out\Uwp\BehaviorsSDKManaged\bin\x86\Debug\</OutputPath>
+		<DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+		<NoWarn>;2008</NoWarn>
+		<DebugType>full</DebugType>
+		<UseVSHostingProcess>false</UseVSHostingProcess>
+		<ErrorReport>prompt</ErrorReport>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+		<PlatformTarget>x86</PlatformTarget>
+		<OutputPath>..\..\..\out\Uwp\BehaviorsSDKManaged\bin\x86\Release\</OutputPath>
+		<DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+		<Optimize>true</Optimize>
+		<NoWarn>;2008</NoWarn>
+		<DebugType>pdbonly</DebugType>
+		<UseVSHostingProcess>false</UseVSHostingProcess>
+		<ErrorReport>prompt</ErrorReport>
+		<DocumentationFile>..\..\..\out\Uwp\BehaviorsSDKManaged\bin\x86\Release\Microsoft.Xaml.Interactions.xml</DocumentationFile>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+		<PlatformTarget>ARM</PlatformTarget>
+		<DebugSymbols>true</DebugSymbols>
+		<OutputPath>..\..\..\out\Uwp\BehaviorsSDKManaged\bin\ARM\Debug\</OutputPath>
+		<DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+		<NoWarn>;2008</NoWarn>
+		<DebugType>full</DebugType>
+		<UseVSHostingProcess>false</UseVSHostingProcess>
+		<ErrorReport>prompt</ErrorReport>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+		<PlatformTarget>ARM</PlatformTarget>
+		<OutputPath>..\..\..\out\Uwp\BehaviorsSDKManaged\bin\ARM\Release\</OutputPath>
+		<DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+		<Optimize>true</Optimize>
+		<NoWarn>;2008</NoWarn>
+		<DebugType>pdbonly</DebugType>
+		<UseVSHostingProcess>false</UseVSHostingProcess>
+		<ErrorReport>prompt</ErrorReport>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM64'">
+		<PlatformTarget>ARM64</PlatformTarget>
+		<DebugSymbols>true</DebugSymbols>
+		<OutputPath>..\..\..\out\Uwp\BehaviorsSDKManaged\bin\ARM64\Debug\</OutputPath>
+		<DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+		<NoWarn>;2008</NoWarn>
+		<DebugType>full</DebugType>
+		<UseVSHostingProcess>false</UseVSHostingProcess>
+		<ErrorReport>prompt</ErrorReport>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM64'">
+		<PlatformTarget>ARM64</PlatformTarget>
+		<OutputPath>..\..\..\out\Uwp\BehaviorsSDKManaged\bin\ARM\Release\</OutputPath>
+		<DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+		<Optimize>true</Optimize>
+		<NoWarn>;2008</NoWarn>
+		<DebugType>pdbonly</DebugType>
+		<UseVSHostingProcess>false</UseVSHostingProcess>
+		<ErrorReport>prompt</ErrorReport>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+		<PlatformTarget>x64</PlatformTarget>
+		<DebugSymbols>true</DebugSymbols>
+		<OutputPath>..\..\..\out\Uwp\BehaviorsSDKManaged\bin\x64\Debug\</OutputPath>
+		<DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+		<NoWarn>;2008</NoWarn>
+		<DebugType>full</DebugType>
+		<UseVSHostingProcess>false</UseVSHostingProcess>
+		<ErrorReport>prompt</ErrorReport>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+		<PlatformTarget>x64</PlatformTarget>
+		<OutputPath>..\..\..\out\Uwp\BehaviorsSDKManaged\bin\x64\Release\</OutputPath>
+		<DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+		<Optimize>true</Optimize>
+		<NoWarn>;2008</NoWarn>
+		<DebugType>pdbonly</DebugType>
+		<UseVSHostingProcess>false</UseVSHostingProcess>
+		<ErrorReport>prompt</ErrorReport>
+		<DocumentationFile>..\..\..\out\Uwp\BehaviorsSDKManaged\bin\x64\Release\Microsoft.Xaml.Interactions.xml</DocumentationFile>
+	</PropertyGroup>
+	<PropertyGroup>
+		<RestoreProjectStyle>PackageReference</RestoreProjectStyle>
+	</PropertyGroup>
+	<ItemGroup>
+	  <Compile Include="..\Microsoft.Xaml.Interactions.WinUI\Properties\AssemblyInfo.cs" Link="Properties\AssemblyInfo.cs" />
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Microsoft.VisualStudioEng.MicroBuild.Core" Version="1.0.0">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\Microsoft.Xaml.Interactivity.Uwp\Microsoft.Xaml.Interactivity.Uwp.csproj">
+			<Project>{b1c5e139-c8df-46b5-9abc-4515bdecafa3}</Project>
+			<Name>Microsoft.Xaml.Interactivity.Uwp</Name>
+		</ProjectReference>
+	</ItemGroup>
+	<ItemGroup>
+		<PRIResource Include="..\Microsoft.Xaml.Interactions\Resources\de-DE\Strings.resw">
+			<Link>Resources\de-DE\Strings.resw</Link>
+		</PRIResource>
+	</ItemGroup>
+	<ItemGroup>
+		<PRIResource Include="..\Microsoft.Xaml.Interactions\Resources\en-us\Strings.resw">
+			<Link>Resources\en-US\Strings.resw</Link>
+		</PRIResource>
+	</ItemGroup>
+	<ItemGroup>
+		<PRIResource Include="..\Microsoft.Xaml.Interactions\Resources\es-ES\Strings.resw">
+			<Link>Resources\es-ES\Strings.resw</Link>
+		</PRIResource>
+	</ItemGroup>
+	<ItemGroup>
+		<PRIResource Include="..\Microsoft.Xaml.Interactions\Resources\fr-FR\Strings.resw">
+			<Link>Resources\fr-FR\Strings.resw</Link>
+		</PRIResource>
+	</ItemGroup>
+	<ItemGroup>
+		<PRIResource Include="..\Microsoft.Xaml.Interactions\Resources\it-IT\Strings.resw">
+			<Link>Resources\it-IT\Strings.resw</Link>
+		</PRIResource>
+	</ItemGroup>
+	<ItemGroup>
+		<PRIResource Include="..\Microsoft.Xaml.Interactions\Resources\ja-JP\Strings.resw">
+			<Link>Resources\ja-JP\Strings.resw</Link>
+		</PRIResource>
+	</ItemGroup>
+	<ItemGroup>
+		<PRIResource Include="..\Microsoft.Xaml.Interactions\Resources\ko-KR\Strings.resw">
+			<Link>Resources\ko-KR\Strings.resw</Link>
+		</PRIResource>
+	</ItemGroup>
+	<ItemGroup>
+		<PRIResource Include="..\Microsoft.Xaml.Interactions\Resources\pt-BR\Strings.resw">
+			<Link>Resources\pt-BR\Strings.resw</Link>
+		</PRIResource>
+	</ItemGroup>
+	<ItemGroup>
+		<PRIResource Include="..\Microsoft.Xaml.Interactions\Resources\ru-RU\Strings.resw">
+			<Link>Resources\ru-RU\Strings.resw</Link>
+		</PRIResource>
+	</ItemGroup>
+	<ItemGroup>
+		<PRIResource Include="..\Microsoft.Xaml.Interactions\Resources\uk-UA\Strings.resw">
+			<Link>Resources\uk-UA\Strings.resw</Link>
+		</PRIResource>
+	</ItemGroup>
+	<ItemGroup>
+		<PRIResource Include="..\Microsoft.Xaml.Interactions\Resources\zh-CN\Strings.resw">
+			<Link>Resources\zh-CN\Strings.resw</Link>
+		</PRIResource>
+	</ItemGroup>
+	<ItemGroup>
+		<PRIResource Include="..\Microsoft.Xaml.Interactions\Resources\zh-TW\Strings.resw">
+			<Link>Resources\zh-TW\Strings.resw</Link>
+		</PRIResource>
+	</ItemGroup>
+	<Import Project="..\Microsoft.Xaml.Interactions.Shared\Microsoft.Xaml.Interactions.Shared.projitems" Label="Shared" />
+	<PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
+		<VisualStudioVersion>14.0</VisualStudioVersion>
+	</PropertyGroup>
+	<Import Project="..\..\..\scripts\Microsoft.Xaml.Behaviors.Signing.targets" />
+	<PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+		<DocumentationFile>..\..\..\out\Uwp\BehaviorsSDKManaged\bin\$(Platform)\Release\Microsoft.Xaml.Interactions.xml</DocumentationFile>
+	</PropertyGroup>
+	<PropertyGroup>
+		<DefineConstants>$(DefineConstants);MODERN_WINDOWS_UWP</DefineConstants>
+		<AssemblyName>Microsoft.Xaml.Interactions</AssemblyName>
+	</PropertyGroup>
 </Project>

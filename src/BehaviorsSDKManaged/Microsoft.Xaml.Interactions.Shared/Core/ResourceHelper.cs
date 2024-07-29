@@ -7,13 +7,13 @@ namespace Microsoft.Xaml.Interactions.Core
 
     internal static class ResourceHelper
     {
-#if NET8_0_OR_GREATER
+#if NET8_0_OR_GREATER && !MODERN_WINDOWS_UWP
         private static ResourceLoader strings = new ResourceLoader(ResourceLoader.GetDefaultResourceFilePath(), "Microsoft.Xaml.Interactions/Strings");
 #endif
 
         public static string GetString(string resourceName)
         {
-#if !NET8_0_OR_GREATER 
+#if !NET8_0_OR_GREATER || MODERN_WINDOWS_UWP
             var strings = ResourceLoader.GetForCurrentView("Microsoft.Xaml.Interactions/Strings");
 #endif
             return strings.GetString(resourceName);

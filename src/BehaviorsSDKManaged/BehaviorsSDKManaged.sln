@@ -283,6 +283,7 @@ Global
 		Microsoft.Xaml.Interactivity.Shared\Microsoft.Xaml.Interactivity.Shared.projitems*{7119f232-7bef-42f9-9ba1-52654adc98b6}*SharedItemsImports = 5
 		Microsoft.Xaml.Interactivity.Shared\Microsoft.Xaml.Interactivity.Shared.projitems*{7ffc1385-c3e1-487c-9a81-de48dd63ecb9}*SharedItemsImports = 4
 		Microsoft.Xaml.Interactions.Shared\Microsoft.Xaml.Interactions.Shared.projitems*{a338a7f2-9010-477b-8a6e-6c2b2495c33c}*SharedItemsImports = 4
+		Microsoft.Xaml.Interactions.Shared\Microsoft.Xaml.Interactions.Shared.projitems*{b1c5e139-c8df-46b5-9abc-4515bdecafa3}*SharedItemsImports = 5
 		Microsoft.Xaml.Interactivity.Shared\Microsoft.Xaml.Interactivity.Shared.projitems*{e6a328c8-2d9a-459a-86ee-f1c50cc6dadd}*SharedItemsImports = 5
 	EndGlobalSection
 EndGlobal
