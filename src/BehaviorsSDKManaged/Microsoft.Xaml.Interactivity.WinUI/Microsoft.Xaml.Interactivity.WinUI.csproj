@@ -2,6 +2,7 @@
   <PropertyGroup>
     <OutputType>Library</OutputType>
     <TargetFramework>net8.0-windows10.0.17763.0</TargetFramework>
+    <WindowsSdkPackageVersion>10.0.17763.41</WindowsSdkPackageVersion>
     <TargetPlatformVersion>10.0.17763.0</TargetPlatformVersion>
     <RootNamespace>Microsoft.Xaml.Interactivity</RootNamespace>
     <Platforms>AnyCPU;x86;x64;arm64</Platforms>
@@ -10,6 +11,10 @@
     <SupportedOSPlatformVersion>$(TargetPlatformMinVersion)</SupportedOSPlatformVersion>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <IsAotCompatible>true</IsAotCompatible>
+    <DisableRuntimeMarshalling>true</DisableRuntimeMarshalling>
+
+    <!-- Temporary workaround for a WebView2 bug -->
+    <WebView2EnableCsWinRTProjectionExcludeCoreRef>true</WebView2EnableCsWinRTProjectionExcludeCoreRef>
   </PropertyGroup>
   <PropertyGroup>
     <OutputPath>..\..\..\out\WinUI\$(SolutionName)\bin\$(Platform)\$(Configuration)\</OutputPath>
@@ -101,7 +106,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.5.240607001" />
+    <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.6.240807006-preview1" />
   </ItemGroup>
   <ItemGroup>
     <PRIResource Include="..\Microsoft.Xaml.Interactivity\Resources\de-DE\Strings.resw">
