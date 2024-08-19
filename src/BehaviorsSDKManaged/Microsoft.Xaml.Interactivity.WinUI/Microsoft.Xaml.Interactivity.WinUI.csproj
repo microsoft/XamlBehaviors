@@ -12,6 +12,7 @@
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <IsAotCompatible>true</IsAotCompatible>
     <DisableRuntimeMarshalling>true</DisableRuntimeMarshalling>
+    <CsWinRTAotWarningLevel>2</CsWinRTAotWarningLevel>
 
     <!-- Temporary workaround for a WebView2 bug -->
     <WebView2EnableCsWinRTProjectionExcludeCoreRef>true</WebView2EnableCsWinRTProjectionExcludeCoreRef>
@@ -106,6 +107,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.Windows.CsWinRT" Version="2.1.1" PrivateAssets="all" />
     <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.6.240807006-preview1" />
   </ItemGroup>
   <ItemGroup>
