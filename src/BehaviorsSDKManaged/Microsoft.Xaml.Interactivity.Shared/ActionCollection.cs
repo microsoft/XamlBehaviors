@@ -15,7 +15,7 @@ namespace Microsoft.Xaml.Interactivity
     /// <summary>
     /// Represents a collection of IActions.
     /// </summary>
-    public sealed class ActionCollection : DependencyObjectCollection
+    public sealed partial class ActionCollection : DependencyObjectCollection
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ActionCollection"/> class.
