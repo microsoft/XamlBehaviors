@@ -12,6 +12,7 @@
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <IsAotCompatible>true</IsAotCompatible>
     <DisableRuntimeMarshalling>true</DisableRuntimeMarshalling>
+    <CsWinRTGenerateProjection>false</CsWinRTGenerateProjection>
     <CsWinRTAotWarningLevel>2</CsWinRTAotWarningLevel>
 
     <!-- Temporary workaround for a WebView2 bug -->
