@@ -13,18 +13,18 @@ jobs:
     - name: Checkout XamlBehaviors.git 
       uses: actions/checkout@v3
 
-    - name: Install the .NET 5.0.403 SDK
+    - name: Install the .NET 8.0.400 SDK
       uses: actions/setup-dotnet@v3
       with:
-        dotnet-version: 5.0.403
+        dotnet-version: 8.0.400
 
     - name: Setup MSBuild
-      uses: microsoft/setup-msbuild@v1.3.1
+      uses: microsoft/setup-msbuild@v2
 
-    - name: Setup/Install NuGet 5.11.0
+    - name: Setup/Install NuGet 6.11.0
       uses: nuget/setup-nuget@v2
       with:
-        nuget-version: '5.11.0'
+        nuget-version: '6.11.0'
 
     - name: NuGet Restore BehaviorsSDKManaged.sln
       run: nuget restore src\BehaviorsSDKManaged\BehaviorsSDKManaged.sln

@@ -76,9 +76,9 @@ extends:
             SourceFolder: out
             Contents: '**\'
         - task: UseDotNet@2
-          displayName: Use .NET Core sdk 5.0.403
+          displayName: Use .NET Core sdk 8.0.400
           inputs:
-            version: 5.0.403
+            version: 8.0.400
             performMultiLevelLookup: true
         - task: NuGetToolInstaller@1
           displayName: Use NuGet 6.x
