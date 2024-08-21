@@ -189,7 +189,6 @@
     <PackageOutputPath>..\..\..\out\NuGetPackages</PackageOutputPath>
   </PropertyGroup>
   <Import Project="..\Version\NuGetPackageVersion.props" />
-  <Import Project="..\packages\NuGet.Build.Tasks.Pack.5.7.0\build\NuGet.Build.Tasks.Pack.targets" Condition="Exists('..\packages\NuGet.Build.Tasks.Pack.5.7.0\build\NuGet.Build.Tasks.Pack.targets')" />
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <DocumentationFile>..\..\..\out\WinUI\BehaviorsSDKManaged\bin\$(Platform)\Release\Microsoft.Xaml.Interactivity.xml</DocumentationFile>
   </PropertyGroup>
