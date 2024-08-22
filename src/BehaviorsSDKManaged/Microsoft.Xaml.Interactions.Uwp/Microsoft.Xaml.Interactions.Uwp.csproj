@@ -2,22 +2,21 @@
     <PropertyGroup>
         <OutputType>Library</OutputType>
         <TargetFramework>net8.0-windows10.0.22621.0</TargetFramework>
+        <WindowsSdkPackageVersion>10.0.22621.39</WindowsSdkPackageVersion>
         <TargetPlatformVersion>10.0.22621.0</TargetPlatformVersion>
         <TargetPlatformMinVersion>10.0.18362.0</TargetPlatformMinVersion>
-        <WindowsSdkPackageVersion>10.0.22621.39</WindowsSdkPackageVersion>
-        <UseUwp>true</UseUwp>
-        <UseUwpTools>true</UseUwpTools>
         <RootNamespace>Microsoft.Xaml.Interactions</RootNamespace>
+        <UseUwp>true</UseUwp>
+        <UseUwpTools>true</UseUwpTools>        
         <DefaultLanguage>en-US</DefaultLanguage>
         <Platforms>AnyCPU;x86;x64;arm64</Platforms>
         <RuntimeIdentifiers>win-x86;win-x64;win-arm64</RuntimeIdentifiers>
         <SupportedOSPlatformVersion>$(TargetPlatformMinVersion)</SupportedOSPlatformVersion>
         <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
         <IsAotCompatible>true</IsAotCompatible>
-
-        <!-- Temporary workaround, will be fixed in VS 17.12 P1 -->
-        <AddMicrosoftVCLibsSDKReference>false</AddMicrosoftVCLibsSDKReference>
-        <AddMicrosoftUniversalCRTDebugSDKReference>false</AddMicrosoftUniversalCRTDebugSDKReference>
+        <DisableRuntimeMarshalling>true</DisableRuntimeMarshalling>
+        <CsWinRTGenerateProjection>false</CsWinRTGenerateProjection>
+        <CsWinRTAotWarningLevel>2</CsWinRTAotWarningLevel>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
         <PlatformTarget>AnyCPU</PlatformTarget>
@@ -59,26 +58,6 @@
         <UseVSHostingProcess>false</UseVSHostingProcess>
         <ErrorReport>prompt</ErrorReport>
         <DocumentationFile>..\..\..\out\Uwp\BehaviorsSDKManaged\bin\x86\Release\Microsoft.Xaml.Interactions.xml</DocumentationFile>
-    </PropertyGroup>
-    <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
-        <PlatformTarget>ARM</PlatformTarget>
-        <DebugSymbols>true</DebugSymbols>
-        <OutputPath>..\..\..\out\Uwp\BehaviorsSDKManaged\bin\ARM\Debug\</OutputPath>
-        <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
-        <NoWarn>;2008</NoWarn>
-        <DebugType>full</DebugType>
-        <UseVSHostingProcess>false</UseVSHostingProcess>
-        <ErrorReport>prompt</ErrorReport>
-    </PropertyGroup>
-    <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
-        <PlatformTarget>ARM</PlatformTarget>
-        <OutputPath>..\..\..\out\Uwp\BehaviorsSDKManaged\bin\ARM\Release\</OutputPath>
-        <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
-        <Optimize>true</Optimize>
-        <NoWarn>;2008</NoWarn>
-        <DebugType>pdbonly</DebugType>
-        <UseVSHostingProcess>false</UseVSHostingProcess>
-        <ErrorReport>prompt</ErrorReport>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM64'">
         <PlatformTarget>ARM64</PlatformTarget>
@@ -132,6 +111,7 @@
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
+        <PackageReference Include="Microsoft.Windows.CsWinRT" Version="2.1.1" PrivateAssets="all" />
     </ItemGroup>
     <ItemGroup>
         <ProjectReference Include="..\Microsoft.Xaml.Interactivity.Uwp\Microsoft.Xaml.Interactivity.Uwp.csproj">
