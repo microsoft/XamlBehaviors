@@ -41,6 +41,8 @@ extends:
         name: AzurePipelines-EO
         image: 1ESPT-Windows2022
         os: windows
+      autobaseline:
+        enableForGitHub: false
     customBuildTags:
     - ES365AIMigrationTooling
     stages:
