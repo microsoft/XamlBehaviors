@@ -10,8 +10,6 @@ variables:
   value: ${{ parameters.OfficialRelease }}
 - name: Codeql.Enabled
   value: true
-- name: Codeql.Language
-  value: csharp
 - name: SignType
   ${{ if eq(variables['Build.OfficialRelease'], 'true') }}:
     value: real
