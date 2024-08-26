@@ -87,7 +87,7 @@ extends:
         - task: NuGetAuthenticate@1
           displayName: NuGet Authenticate
         - task: NuGetCommand@2
-          displayName: NuGet restore
+          displayName: Restore BehaviorsSDKManaged.sln
           inputs:
             solution: src\BehaviorsSDKManaged\BehaviorsSDKManaged.sln
             selectOrConfig: config
@@ -133,3 +133,15 @@ extends:
             OverWrite: true
             flattenFolders: true
           continueOnError: true
+        - task: NuGetCommand@2
+          displayName: Restore BehaviorsSDKNative.sln
+          inputs:
+            solution: src\BehaviorsSDKNative\BehaviorsSDKNative.sln
+            selectOrConfig: config
+        - task: VSBuild@1
+          displayName: Build BehaviorsSDKNative.sln
+          inputs:
+            solution: src\BehaviorsSDKNative\BehaviorsSDKNative.sln
+            platform: Any CPU
+            configuration: Release
+            clean: true
