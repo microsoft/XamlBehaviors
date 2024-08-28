@@ -23,7 +23,9 @@ trigger:
   branches:
     include:
     - refs/heads/main
-  pr:
+pr:
+  branches:
+    include:
     - main
 resources:
   repositories:
