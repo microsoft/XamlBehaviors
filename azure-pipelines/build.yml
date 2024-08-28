@@ -23,6 +23,8 @@ trigger:
   branches:
     include:
     - refs/heads/main
+  pr:
+    - main
 resources:
   repositories:
   - repository: MicroBuildTemplate
