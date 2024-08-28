@@ -212,6 +212,7 @@ namespace Microsoft.Xaml.Interactions.Core
 #else
                 if (this._isWindowsRuntimeEvent)
                 {
+                    this._removeEventHandlerMethod = token => info.RemoveMethod.Invoke(this._resolvedSource, new object[] { token });
                     WindowsRuntimeMarshal.RemoveEventHandler(this._removeEventHandlerMethod, this._eventHandler);
                 }
                 else
