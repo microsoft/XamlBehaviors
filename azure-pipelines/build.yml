@@ -95,7 +95,7 @@ extends:
         - task: NuGetAuthenticate@1
           displayName: NuGet Authenticate
         - task: NuGetCommand@2
-          displayName: NuGet restore
+          displayName: Restore BehaviorsSDKManaged.sln
           inputs:
             solution: src\BehaviorsSDKManaged\BehaviorsSDKManaged.sln
             selectOrConfig: config
@@ -118,6 +118,18 @@ extends:
             solution: src\BehaviorsSDKManaged\Microsoft.Xaml.Interactivity.WinUI\Microsoft.Xaml.Interactivity.WinUI.csproj
             msbuildArgs: /t:Pack /p:SignType=$(SignType) /p:TimestampPackage=$(TimestampPackage) /p:PackageOutputPath="$(Build.SourcesDirectory)out"
             configuration: Release
+        - task: NuGetCommand@2
+          displayName: Restore BehaviorsSDKNative.sln
+          inputs:
+            solution: src\BehaviorsSDKNative\BehaviorsSDKNative.sln
+            selectOrConfig: config
+        - task: VSBuild@1
+          displayName: Build BehaviorsSDKNative.sln
+          inputs:
+            solution: src\BehaviorsSDKNative\BehaviorsSDKNative.sln
+            platform: Any CPU
+            configuration: Release
+            clean: true
         - task: CopyFiles@2
           displayName: 'Copy Symbols to: $(Pipeline.Workspace)\Symbols'
           inputs:
