@@ -31,3 +31,6 @@ jobs:
 
     - name: Build BehaviorsSDKManaged.sln
       run: msbuild src\BehaviorsSDKManaged\BehaviorsSDKManaged.sln /p:Configuration=Release
+
+    - name: Run Tests
+      run: dotnet test src\BehaviorsSDKManaged\ManagedUnitTests\ManagedUnitTests.csproj
