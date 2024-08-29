@@ -11,7 +11,7 @@ variables:
 - name: Codeql.Enabled
   value: true
 - name: Codeql.Language
-  value: csharp,powershell
+  value: csharp,powershell,cpp
 - name: Codeql.ExcludePathPatterns
   value: 'src/BehaviorsSDKNative'
 - name: SignType
