@@ -10,6 +10,8 @@ variables:
   value: ${{ parameters.OfficialRelease }}
 - name: Codeql.Enabled
   value: true
+- name: Codeql.Cadence
+  value: 24
 - name: Codeql.Language
   value: csharp,powershell,cpp
 - name: Codeql.ExcludePathPatterns
@@ -27,10 +29,6 @@ trigger:
   branches:
     include:
     - refs/heads/main
-pr:
-  branches:
-    include:
-    - main
 resources:
   repositories:
   - repository: MicroBuildTemplate
