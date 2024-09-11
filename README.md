@@ -1,19 +1,18 @@
 # XAML Behaviors
 
-XAML Behaviors is an easy-to-use means of adding common and reusable interactivity to your Windows UWP applications with minimal code. It is available for both native and managed applications. Use of XAML Behaviors is governed by the MIT License
+XAML Behaviors is an easy-to-use means of adding common and reusable interactivity to your Windows UWP applications with minimal code. It is available for managed applications only. Use of XAML Behaviors is governed by the MIT License
 
 ## Build Status
 
 | Platform | Status |
 | -------- | ------ |
 | Managed | ![Build Managed](https://github.com/microsoft/XamlBehaviors/workflows/Build%20Managed/badge.svg) |
-| Native | ![Build Native](https://github.com/microsoft/XamlBehaviors/workflows/Build%20Native/badge.svg) |
 
 ## Getting Started
 
 ### Where to get it
 
-- NuGet package for [Native](https://www.nuget.org/packages/Microsoft.Xaml.Behaviors.Uwp.Native/) and [Managed](https://www.nuget.org/packages/Microsoft.Xaml.Behaviors.Uwp.Managed/)
+- NuGet package for [Managed](https://www.nuget.org/packages/Microsoft.Xaml.Behaviors.Uwp.Managed/)
 - [Source Code](https://github.com/Microsoft/XamlBehaviors)
 
 ### Resources
@@ -74,11 +73,4 @@ The [documentation](https://github.com/Microsoft/XamlBehaviors/wiki) explains ho
 For WinUI:
 
 - Run `msbuild /t:Pack src\BehaviorsSDKManaged\Microsoft.Xaml.Interactivity.WinUI\Microsoft.Xaml.Interactivity.WinUI.csproj`
-  - *(Optional)* Add `/p:TimestampPackage=true` to include the timestamp in the NuGet package version
-
-#### Build and Create Native XAML Behaviors NuGet
-
-- Open the "BehaviorsSDKNative.sln" solution in Visual Studio
-- [Batch Build](https://msdn.microsoft.com/en-us/library/169az28z(v=vs.90).aspx) for x86, x64, and ARM in Release
-- Run `msbuild /t:Pack src/BehaviorsSDKNative/Microsoft.Xaml.Interactions.Design/Microsoft.Xaml.Interactions.Design.csproj`
   - *(Optional)* Add `/p:TimestampPackage=true` to include the timestamp in the NuGet package version
