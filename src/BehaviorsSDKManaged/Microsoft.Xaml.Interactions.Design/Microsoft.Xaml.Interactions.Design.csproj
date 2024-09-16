@@ -126,6 +126,9 @@
       This target can be remove if we figure out how to just import the "pack" targets correctly.
     -->
   <Target Name="Pack">
-    <Exec Command="nuget pack ..\..\..\scripts\Microsoft.Xaml.Behaviors.Uwp.Managed.nuspec -outputDirectory ..\..\..\out\NuGetPackages -version $(PackageVersion)" />
+    <PropertyGroup>
+      <PackageOutputPath>..\..\..\out\NuGetPackages</PackageOutputPath>
+    </PropertyGroup>
+    <Exec Command="nuget pack ..\..\..\scripts\Microsoft.Xaml.Behaviors.Uwp.Managed.nuspec -outputDirectory $(PackageOutputPath) -version $(PackageVersion)" />
   </Target>
 </Project>
