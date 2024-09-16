@@ -110,18 +110,18 @@ extends:
           displayName: Build UWP Managed NuGet package
           inputs:
             solution: src\BehaviorsSDKManaged\Microsoft.Xaml.Interactions.Design\Microsoft.Xaml.Interactions.Design.csproj
-            msbuildArgs: /t:Pack /p:SignType=$(SignType) /p:TimestampPackage=$(TimestampPackage) /p:PackageOutputPath="$(Build.SourcesDirectory)out"
+            msbuildArgs: /t:Pack /p:SignType=$(SignType) /p:TimestampPackage=$(TimestampPackage) /p:PackageOutputPath="$(Build.SourcesDirectory)\out"
             configuration: Release
         - task: VSBuild@1
           displayName: Build WinUI Managed NuGet package
           inputs:
             solution: src\BehaviorsSDKManaged\Microsoft.Xaml.Interactivity.WinUI\Microsoft.Xaml.Interactivity.WinUI.csproj
-            msbuildArgs: /t:Pack /p:SignType=$(SignType) /p:TimestampPackage=$(TimestampPackage) /p:PackageOutputPath="$(Build.SourcesDirectory)out"
+            msbuildArgs: /t:Pack /p:SignType=$(SignType) /p:TimestampPackage=$(TimestampPackage) /p:PackageOutputPath="$(Build.SourcesDirectory)\out"
             configuration: Release
         - task: CopyFiles@2
           displayName: 'Copy Symbols to: $(Pipeline.Workspace)\Symbols'
           inputs:
-            SourceFolder: $(Build.SourcesDirectory)out
+            SourceFolder: $(Build.SourcesDirectory)\out
             Contents: '**\bin\**\*.pdb'
             TargetFolder: $(Pipeline.Workspace)\Symbols
         - task: MicroBuildArchiveSymbols@5
@@ -135,7 +135,7 @@ extends:
         - task: CopyFiles@2
           displayName: 'Copy NuGet Packages to: $(Build.ArtifactStagingDirectory)\Packages'
           inputs:
-            SourceFolder: $(Build.SourcesDirectory)out
+            SourceFolder: $(Build.SourcesDirectory)\out
             Contents: '**\*.nupkg'
             TargetFolder: $(Build.ArtifactStagingDirectory)\Packages
             OverWrite: true
