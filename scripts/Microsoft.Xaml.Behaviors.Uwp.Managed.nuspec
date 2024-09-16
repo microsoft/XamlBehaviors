@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0"?>
-<package >
+<package>
     <metadata>
         <id>Microsoft.Xaml.Behaviors.Uwp.Managed</id>
         <version>$version$</version><!--Overridden using -Version switch in nuget pack command-->
