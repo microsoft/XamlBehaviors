@@ -61,6 +61,14 @@ extends:
             sbom:
               enabled: true
           outputs:
+          - output: pipelineArtifact
+            displayName: 'Publish Symbol Artifacts'
+            targetPath: $(Build.ArtifactStagingDirectory)\Symbols
+            artifactName: Symbols
+          - output: pipelineArtifact
+            displayName: 'Publish Package Artifacts'
+            targetPath: $(Build.ArtifactStagingDirectory)\Packages
+            artifactName: Packages
           - output: nuget
             displayName: 'NuGet push to NuGet.org'
             condition: and(succeeded(), eq(variables['Build.OfficialRelease'], 'true'))
