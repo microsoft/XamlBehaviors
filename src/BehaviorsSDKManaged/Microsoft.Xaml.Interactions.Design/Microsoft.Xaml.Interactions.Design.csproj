@@ -127,7 +127,7 @@
     -->
   <Target Name="Pack">
     <PropertyGroup>
-      <PackageOutputPath>..\..\..\out\NuGetPackages</PackageOutputPath>
+      <PackageOutputPath Condition=" '$(PackageOutputPath)' == '' ">..\..\..\out\NuGetPackages</PackageOutputPath>
     </PropertyGroup>
     <Exec Command="nuget pack ..\..\..\scripts\Microsoft.Xaml.Behaviors.Uwp.Managed.nuspec -outputDirectory $(PackageOutputPath) -version $(PackageVersion)" />
   </Target>

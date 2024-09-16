@@ -186,7 +186,7 @@
     <PackageProjectUrl>http://go.microsoft.com/fwlink/?LinkID=651678</PackageProjectUrl>
     <PackageIconUrl>http://go.microsoft.com/fwlink/?LinkID=708511</PackageIconUrl>
     <NuspecFile>..\..\..\scripts\Microsoft.Xaml.Behaviors.WinUI.Managed.nuspec</NuspecFile>
-    <PackageOutputPath>..\..\..\out\NuGetPackages</PackageOutputPath>
+    <PackageOutputPath Condition=" '$(PackageOutputPath)' == '' ">..\..\..\out\NuGetPackages</PackageOutputPath>
   </PropertyGroup>
   <Import Project="..\Version\NuGetPackageVersion.props" />
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
