@@ -62,10 +62,6 @@ extends:
               enabled: true
           outputs:
           - output: pipelineArtifact
-            displayName: 'Publish Symbol Artifacts'
-            targetPath: $(Build.ArtifactStagingDirectory)\Symbols
-            artifactName: Symbols
-          - output: pipelineArtifact
             displayName: 'Publish Package Artifacts'
             targetPath: $(Build.ArtifactStagingDirectory)\Packages
             artifactName: Packages
