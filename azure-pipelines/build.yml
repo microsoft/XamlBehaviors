@@ -107,6 +107,7 @@ extends:
           displayName: Build BehaviorsSDKManaged.sln
           inputs:
             solution: src\BehaviorsSDKManaged\BehaviorsSDKManaged.sln
+            msbuildArgs: /p:ContinuousIntegrationBuild=true
             platform: Any CPU
             configuration: Release
             clean: true
