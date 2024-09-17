@@ -15,6 +15,7 @@
     <CsWinRTGenerateProjection>false</CsWinRTGenerateProjection>
     <CsWinRTAotWarningLevel>2</CsWinRTAotWarningLevel>
     <EnableXamlCompilerTargetsForUwpApps>false</EnableXamlCompilerTargetsForUwpApps>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
