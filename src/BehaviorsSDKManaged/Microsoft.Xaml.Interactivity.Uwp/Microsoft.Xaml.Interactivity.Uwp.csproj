@@ -1,12 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>Library</OutputType>
-    <TargetFramework>net8.0-windows10.0.26100.0</TargetFramework>
-    <WindowsSdkPackageVersion>10.0.26100.54</WindowsSdkPackageVersion>
+    <TargetFramework>net8.0-windows10.0.18362.0</TargetFramework>
+    <WindowsSdkPackageVersion>10.0.18362.54</WindowsSdkPackageVersion>
     <TargetPlatformMinVersion>10.0.18362.0</TargetPlatformMinVersion>
     <RootNamespace>Microsoft.Xaml.Interactivity</RootNamespace>
     <UseUwp>true</UseUwp>
-    <UseUwpTools>true</UseUwpTools>    
     <DefaultLanguage>en-US</DefaultLanguage>
     <Platforms>AnyCPU;x86;x64;arm64</Platforms>
     <RuntimeIdentifiers>win-x86;win-x64;win-arm64</RuntimeIdentifiers>
@@ -15,6 +14,7 @@
     <DisableRuntimeMarshalling>true</DisableRuntimeMarshalling>
     <CsWinRTGenerateProjection>false</CsWinRTGenerateProjection>
     <CsWinRTAotWarningLevel>2</CsWinRTAotWarningLevel>
+    <EnableXamlCompilerTargetsForUwpApps>false</EnableXamlCompilerTargetsForUwpApps>
   </PropertyGroup>
   <PropertyGroup>
     <OutputPath>..\..\..\out\Uwp\$(SolutionName)\bin\$(Platform)\$(Configuration)\</OutputPath>
@@ -106,8 +106,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.Windows.CsWinRT" Version="2.1.3" PrivateAssets="all" />
-    <PackageReference Include="Microsoft.Windows.SDK.CPP" Version="10.0.26100.2161" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.Windows.CsWinRT" Version="2.1.6" PrivateAssets="all" />
   </ItemGroup>
   <ItemGroup>
     <PRIResource Include="..\Microsoft.Xaml.Interactivity\Resources\de-DE\Strings.resw">
