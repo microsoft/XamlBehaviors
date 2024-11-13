@@ -13,6 +13,8 @@ using Microsoft.UI.Xaml.Media;
 #else
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Media;
+#endif
+#if WINDOWS_UWP && !NET8_0_OR_GREATER
 using System.Runtime.InteropServices.WindowsRuntime;
 #endif
 
@@ -49,7 +51,7 @@ namespace Microsoft.Xaml.Interactions.Core
         private object _resolvedSource;
         private Delegate _eventHandler;
         private bool _isLoadedEventRegistered;
-#if !WinUI
+#if !NET8_0_OR_GREATER
         private bool _isWindowsRuntimeEvent;
         private Func<Delegate, EventRegistrationToken> _addEventHandlerMethod;
         private Action<EventRegistrationToken> _removeEventHandlerMethod;
@@ -164,7 +166,7 @@ namespace Microsoft.Xaml.Interactions.Core
                 MethodInfo methodInfo = typeof(EventTriggerBehavior).GetTypeInfo().GetDeclaredMethod("OnEvent");
                 this._eventHandler = methodInfo.CreateDelegate(info.EventHandlerType, this);
 
-#if WinUI
+#if NET8_0_OR_GREATER
                 info.AddEventHandler(this._resolvedSource, this._eventHandler);
 #else
                 this._isWindowsRuntimeEvent = EventTriggerBehavior.IsWindowsRuntimeEvent(info);
@@ -207,7 +209,7 @@ namespace Microsoft.Xaml.Interactions.Core
                 }
 
                 EventInfo info = this._resolvedSource.GetType().GetRuntimeEvent(eventName);
-#if WinUI
+#if NET8_0_OR_GREATER
                 info.RemoveEventHandler(this._resolvedSource, this._eventHandler);
 #else
                 if (this._isWindowsRuntimeEvent)
@@ -256,7 +258,7 @@ namespace Microsoft.Xaml.Interactions.Core
             behavior.RegisterEvent(newEventName);
         }
 
-#if !WinUI
+#if !NET8_0_OR_GREATER
         private static bool IsWindowsRuntimeEvent(EventInfo eventInfo)
         {
             return eventInfo != null &&

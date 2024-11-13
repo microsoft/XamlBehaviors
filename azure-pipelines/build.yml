@@ -82,9 +82,9 @@ extends:
             SourceFolder: out
             Contents: '**\'
         - task: UseDotNet@2
-          displayName: Use .NET Core sdk 8.0.400
+          displayName: Use .NET SDK 9.0.100
           inputs:
-            version: 8.0.400
+            version: 9.0.100
             performMultiLevelLookup: true
         - task: NuGetToolInstaller@1
           displayName: Use NuGet 6.x

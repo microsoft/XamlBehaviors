@@ -54,7 +54,7 @@ The [documentation](https://github.com/Microsoft/XamlBehaviors/wiki) explains ho
 
 #### What You Need
 
-- [Visual Studio 2017 w/ Universal Windows Tools](https://visualstudio.microsoft.com/vs/features/universal-windows-platform/)
+- [Visual Studio 2022 17.12+ w/ Universal Windows Tools](https://visualstudio.microsoft.com/vs/features/universal-windows-platform/)
 - [Multilingual App Toolkit](https://developer.microsoft.com/en-us/windows/develop/multilingual-app-toolkit)
 
 #### Clone the Repository

@@ -11,12 +11,12 @@ jobs:
     runs-on: windows-latest
     steps:
     - name: Checkout XamlBehaviors.git 
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
-    - name: Install the .NET 8.0.400 SDK
-      uses: actions/setup-dotnet@v3
+    - name: Install the .NET 9.0.100 SDK
+      uses: actions/setup-dotnet@v4
       with:
-        dotnet-version: 8.0.400
+        dotnet-version: 9.0.100
 
     - name: Setup MSBuild
       uses: microsoft/setup-msbuild@v2
