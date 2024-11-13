@@ -96,6 +96,9 @@
     <DocumentationFile>..\..\..\out\Uwp\BehaviorsSDKManaged\bin\x64\Release\Microsoft.Xaml.Interactivity.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup>
+    <NoWarn>$(NoWarn);NETSDK1219</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <ItemGroup>
