@@ -30,4 +30,11 @@ jobs:
       run: nuget restore src\BehaviorsSDKManaged\BehaviorsSDKManaged.sln
 
     - name: Build BehaviorsSDKManaged.sln
-      run: msbuild src\BehaviorsSDKManaged\BehaviorsSDKManaged.sln /p:Configuration=Release
+      run: msbuild src\BehaviorsSDKManaged\BehaviorsSDKManaged.sln /p:Configuration=Release -v:diag /bl
+    
+    - name: Upload MSBuild binary log
+      uses: actions/upload-artifact@v4
+      with:
+        name: msbuild_binlog_Release_x64
+        path: msbuild.binlog
+        if-no-files-found: error
