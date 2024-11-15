@@ -4,21 +4,20 @@
 using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
+using Windows.Media.Playback;
+using Windows.Media.Core;
 
 #if WinUI
 using Microsoft.UI.Dispatching;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
-using MediaElement = Microsoft.UI.Xaml.Controls.MediaPlayerElement;
+using MediaPlayerElement = Microsoft.UI.Xaml.Controls.MediaPlayerElement;
 using Microsoft.UI.Xaml.Controls.Primitives;
-
-using Windows.Media.Core;
-using Windows.Media.Playback;
 #else
 using Windows.System;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using MediaElement = Windows.UI.Xaml.Controls.MediaElement;
+using MediaPlayerElement = Windows.UI.Xaml.Controls.MediaPlayerElement;
 using Windows.UI.Xaml.Controls.Primitives;
 #endif
 
@@ -60,10 +59,10 @@ namespace Microsoft.Xaml.Interactivity
 		private Popup _popup;
 
         /// <summary>
-        /// Gets or sets the location of the sound file. This is used to set the source property of a <see cref="MediaElement"/>. This is a dependency property.
+        /// Gets or sets the location of the sound file. This is used to set the source property of a <see cref="MediaPlayerElement"/>. This is a dependency property.
         /// </summary>
         /// <remarks>
-        /// The sound can be any file format supported by <see cref="MediaElement"/>. In the case of a video, it will play only the
+        /// The sound can be any file format supported by <see cref="MediaPlayerElement"/>. In the case of a video, it will play only the
         /// audio portion.
         /// </remarks>
         public string Source
@@ -79,7 +78,7 @@ namespace Microsoft.Xaml.Interactivity
 		}
 
         /// <summary>
-        /// Gets or set the volume of the sound. This is used to set the <see cref="MediaElement.Volume"/> property of the <see cref="MediaElement"/>. This is a dependency property.
+        /// Gets or set the volume of the sound. This is used to set the <see cref="MediaPlayer.Volume"/> property of the <see cref="MediaPlayerElement"/>. This is a dependency property.
         /// </summary>
         /// <remarks>
         /// By default this is set to 0.5.
@@ -101,7 +100,7 @@ namespace Microsoft.Xaml.Interactivity
         /// </summary>
         /// <param name="sender">The <see cref="object"/> that is passed to the action by the behavior. Generally this is <seealso cref="IBehavior.AssociatedObject"/> or a target object.</param>
         /// <param name="parameter">The value of this parameter is determined by the caller.</param>
-        /// <returns>True if <see cref="MediaElement.Source"/> is set successfully; else false.</returns>
+        /// <returns>True if <see cref="MediaPlayerElement.Source"/> is set successfully; else false.</returns>
         public object Execute(object sender, object parameter)
 		{
 			if (string.IsNullOrEmpty(this.Source))
@@ -126,44 +125,29 @@ namespace Microsoft.Xaml.Interactivity
                 _popup.XamlRoot = element.XamlRoot;
             }
 
-            MediaElement mediaElement = new MediaElement();
+            MediaPlayerElement mediaElement = new MediaPlayerElement();
 			_popup.Child = mediaElement;
 
 			// It is legal (although not advisable) to provide a video file. By setting visibility to collapsed, only the sound track should play.
 			mediaElement.Visibility = Visibility.Collapsed;
-#if WinUI
+
             mediaElement.Source = MediaSource.CreateFromUri(sourceUri);
             mediaElement.AutoPlay = true;
             mediaElement.MediaPlayer.Volume = this.Volume;
             mediaElement.MediaPlayer.MediaEnded += this.MediaElement_MediaEnded;
             mediaElement.MediaPlayer.MediaFailed += this.MediaPlayer_MediaFailed;
-#else
-            mediaElement.Source = sourceUri;
-            mediaElement.Volume = this.Volume;
-
-			mediaElement.MediaEnded += this.MediaElement_MediaEnded;
-			mediaElement.MediaFailed += this.MediaElement_MediaFailed;
-#endif
 
             this._popup.IsOpen = true;
 			return true;
 		}
 
-#if WinUI
         private void MediaPlayer_MediaFailed(MediaPlayer sender, MediaPlayerFailedEventArgs args)
-#else
-        private void MediaElement_MediaFailed(object sender, ExceptionRoutedEventArgs e)
-#endif
 		{
             // TODO: We should probably have some system/properties to report/bubble errors here
             ClosePopup();
 		}
 
-#if WinUI
         private void MediaElement_MediaEnded(MediaPlayer sender, object args)
-#else
-        private void MediaElement_MediaEnded(object sender, RoutedEventArgs e)
-#endif
         {
             ClosePopup();
 		}
