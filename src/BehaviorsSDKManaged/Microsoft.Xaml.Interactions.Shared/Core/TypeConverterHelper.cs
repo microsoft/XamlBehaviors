@@ -12,7 +12,7 @@ using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Markup;
 #endif
 
-namespace Microsoft.Xaml.Interactions.Core
+namespace Microsoft.Xaml.Interactivity
 {
     /// <summary>
     /// A helper class that enables converting values specified in markup (strings) to their object representation.

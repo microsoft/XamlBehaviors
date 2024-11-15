@@ -3,8 +3,6 @@
 
 using System.Diagnostics.CodeAnalysis;
 
-using Microsoft.Xaml.Interactivity;
-
 #if WinUI
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Media.Animation;
@@ -13,7 +11,7 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Media.Animation;
 #endif
 
-namespace Microsoft.Xaml.Interactions.Media
+namespace Microsoft.Xaml.Interactivity
 {
 #if WinUI
     /// <summary>

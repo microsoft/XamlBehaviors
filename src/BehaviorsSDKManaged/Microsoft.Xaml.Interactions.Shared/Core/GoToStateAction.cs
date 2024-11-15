@@ -5,8 +5,6 @@ using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 
-using Microsoft.Xaml.Interactivity;
-
 #if WinUI
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
@@ -15,7 +13,7 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 #endif
 
-namespace Microsoft.Xaml.Interactions.Core
+namespace Microsoft.Xaml.Interactivity
 {
     /// <summary>
     /// An action that will transition a <see cref="FrameworkElement"/> to a specified <seealso cref="VisualState"/> when executed.

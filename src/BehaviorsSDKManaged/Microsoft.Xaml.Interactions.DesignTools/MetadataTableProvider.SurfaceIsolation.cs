@@ -22,8 +22,8 @@ namespace Microsoft.Xaml.Interactions.Design
         /// </summary>
         private static class Targets
         {
-            private const string coreNS = "Microsoft.Xaml.Interactions.Core.";
-            private const string mediaNS = "Microsoft.Xaml.Interactions.Media.";
+            private const string coreNS = "Microsoft.Xaml.Interactivity.";
+            private const string mediaNS = "Microsoft.Xaml.Interactivity.";
 
             internal const string CallMethodAction          = coreNS  + "CallMethodAction";
             internal const string ChangePropertyAction      = coreNS  + "ChangePropertyAction";

@@ -5,8 +5,6 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 
-using Microsoft.Xaml.Interactivity;
-
 #if WinUI
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
@@ -19,7 +17,7 @@ using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Media;
 #endif
 
-namespace Microsoft.Xaml.Interactions.Core
+namespace Microsoft.Xaml.Interactivity
 {
     /// <summary>
     /// A behavior that allows incremental updating of <seealso cref="ListView"/> and <seealso cref="GridView"/> contents to support faster updating.

@@ -6,7 +6,7 @@ using Windows.UI.Xaml.Media.Animation;
 
 // Copyright (c) Microsoft. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
-namespace Microsoft.Xaml.Interactions.Media
+namespace Microsoft.Xaml.Interactivity
 {
     /// <summary>
     /// Represents operations that can be applied to <seealso cref="Storyboard"/>.

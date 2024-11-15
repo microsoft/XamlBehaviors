@@ -3,7 +3,7 @@
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Microsoft.VisualStudio.TestTools.UnitTesting.AppContainer;
-using Microsoft.Xaml.Interactions.Core;
+using Microsoft.Xaml.Interactivity;
 using Windows.UI.Xaml;
 
 namespace ManagedUnitTests

@@ -5,8 +5,6 @@ using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
 
-using Microsoft.Xaml.Interactivity;
-
 #if WinUI
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Media;
@@ -18,7 +16,7 @@ using Windows.UI.Xaml.Media;
 using System.Runtime.InteropServices.WindowsRuntime;
 #endif
 
-namespace Microsoft.Xaml.Interactions.Core
+namespace Microsoft.Xaml.Interactivity
 {
     /// <summary>
     /// A behavior that listens for a specified event on its source and executes its actions when that event is fired.

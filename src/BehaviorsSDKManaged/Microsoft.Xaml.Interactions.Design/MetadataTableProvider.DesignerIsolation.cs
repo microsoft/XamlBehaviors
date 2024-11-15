@@ -2,8 +2,7 @@
 // Licensed under the MIT license. See LICENSE file in the project root for full license information. 
 
 using System;
-using Microsoft.Xaml.Interactions.Core;
-using Microsoft.Xaml.Interactions.Media;
+using Microsoft.Xaml.Interactivity;
 
 namespace Microsoft.Xaml.Interactions.Design
 {

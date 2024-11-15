@@ -3,7 +3,6 @@
 
 using System.Diagnostics.CodeAnalysis;
 
-using Microsoft.Xaml.Interactivity;
 using Microsoft.Xaml.Interactions.Utility;
 
 #if WinUI
@@ -16,7 +15,7 @@ using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Markup;
 #endif
 
-namespace Microsoft.Xaml.Interactions.Core
+namespace Microsoft.Xaml.Interactivity
 {
     /// <summary>
     /// An action that switches the current visual to the specified <see cref="Page"/>.

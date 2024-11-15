@@ -11,7 +11,7 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
 
-namespace Microsoft.Xaml.Interactions.Media
+namespace Microsoft.Xaml.Interactivity
 {
 	/// <summary>
 	/// An action that will play a sound to completion.
