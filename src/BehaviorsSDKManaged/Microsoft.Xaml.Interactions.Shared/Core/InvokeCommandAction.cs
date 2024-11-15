@@ -3,7 +3,6 @@
 
 using System.Diagnostics.CodeAnalysis;
 
-using Microsoft.Xaml.Interactivity;
 using System.Windows.Input;
 
 #if WinUI
@@ -14,7 +13,7 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Data;
 #endif
 
-namespace Microsoft.Xaml.Interactions.Core
+namespace Microsoft.Xaml.Interactivity
 {
     /// <summary>
     /// Executes a specified <see cref="global::System.Windows.Input.ICommand"/> when invoked. 

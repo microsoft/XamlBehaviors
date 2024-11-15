@@ -6,15 +6,13 @@ using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Reflection;
 
-using Microsoft.Xaml.Interactivity;
-
 #if WinUI
 using Microsoft.UI.Xaml;
 #else
 using Windows.UI.Xaml;
 #endif
 
-namespace Microsoft.Xaml.Interactions.Core
+namespace Microsoft.Xaml.Interactivity
 {
     /// <summary>
     /// An action that will change a specified property to a specified value when invoked.
