@@ -1,15 +1,26 @@
 ﻿// Copyright (c) Microsoft. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-// TODO: WinUI3 preview4 removed MediaElement
-#if !WinUI
 using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
-using Microsoft.Xaml.Interactivity;
+
+#if WinUI
+using Microsoft.UI.Dispatching;
+using Microsoft.UI.Xaml;
+using Microsoft.UI.Xaml.Controls;
+using MediaElement = Microsoft.UI.Xaml.Controls.MediaPlayerElement;
+using Microsoft.UI.Xaml.Controls.Primitives;
+
+using Windows.Media.Core;
+using Windows.Media.Playback;
+#else
+using Windows.System;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+using MediaElement = Windows.UI.Xaml.Controls.MediaElement;
 using Windows.UI.Xaml.Controls.Primitives;
+#endif
 
 namespace Microsoft.Xaml.Interactivity
 {
@@ -21,7 +32,9 @@ namespace Microsoft.Xaml.Interactivity
 	/// to create a music player or game, it may not meet your needs.
 	/// </remarks>
 	public sealed class PlaySoundAction : DependencyObject, IAction
-	{
+	{        
+        private readonly DispatcherQueue _queue = DispatcherQueue.GetForCurrentThread();
+
 		private const string MsAppXSchemeFormatString = "ms-appx:///{0}";
 
 		/// <summary>
@@ -29,7 +42,7 @@ namespace Microsoft.Xaml.Interactivity
 		/// </summary>
 		[SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes")]
 		public static readonly DependencyProperty SourceProperty = DependencyProperty.Register(
-			"Source",
+			nameof(Source),
 			typeof(string),
 			typeof(PlaySoundAction),
 			new PropertyMetadata(null));
@@ -39,7 +52,7 @@ namespace Microsoft.Xaml.Interactivity
 		/// </summary>
 		[SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes")]
 		public static readonly DependencyProperty VolumeProperty = DependencyProperty.Register(
-			"Volume",
+			nameof(Volume),
 			typeof(double),
 			typeof(PlaySoundAction),
 			new PropertyMetadata(0.5));
@@ -57,11 +70,11 @@ namespace Microsoft.Xaml.Interactivity
 		{
 			get
 			{
-				return (string)this.GetValue(PlaySoundAction.SourceProperty);
+				return (string)this.GetValue(SourceProperty);
 			}
 			set
 			{
-				this.SetValue(PlaySoundAction.SourceProperty, value);
+				this.SetValue(SourceProperty, value);
 			}
 		}
 
@@ -75,11 +88,11 @@ namespace Microsoft.Xaml.Interactivity
 		{
 			get
 			{
-				return (double)this.GetValue(PlaySoundAction.VolumeProperty);
+				return (double)this.GetValue(VolumeProperty);
 			}
 			set
 			{
-				this.SetValue(PlaySoundAction.VolumeProperty, value);
+				this.SetValue(VolumeProperty, value);
 			}
 		}
 
@@ -100,48 +113,82 @@ namespace Microsoft.Xaml.Interactivity
 			if (!Uri.TryCreate(this.Source, UriKind.Absolute, out sourceUri))
 			{
 				// Impose ms-appx:// scheme if user has specified a relative URI
-				string absoluteSource = string.Format(CultureInfo.InvariantCulture, PlaySoundAction.MsAppXSchemeFormatString, this.Source);
+				string absoluteSource = string.Format(CultureInfo.InvariantCulture, MsAppXSchemeFormatString, this.Source);
 				if (!Uri.TryCreate(absoluteSource, UriKind.Absolute, out sourceUri))
 				{
 					return false;
 				}
 			}
 
-			this._popup = new Popup();
-			MediaElement mediaElement = new MediaElement();
+			_popup = new Popup();
+            if (sender is UIElement element && element.XamlRoot != null)
+            {
+                _popup.XamlRoot = element.XamlRoot;
+            }
+
+            MediaElement mediaElement = new MediaElement();
 			_popup.Child = mediaElement;
 
 			// It is legal (although not advisable) to provide a video file. By setting visibility to collapsed, only the sound track should play.
 			mediaElement.Visibility = Visibility.Collapsed;
-			mediaElement.Source = sourceUri;
-			mediaElement.Volume = this.Volume;
+#if WinUI
+            mediaElement.Source = MediaSource.CreateFromUri(sourceUri);
+            mediaElement.AutoPlay = true;
+            mediaElement.MediaPlayer.Volume = this.Volume;
+            mediaElement.MediaPlayer.MediaEnded += this.MediaElement_MediaEnded;
+            mediaElement.MediaPlayer.MediaFailed += this.MediaPlayer_MediaFailed;
+#else
+            mediaElement.Source = sourceUri;
+            mediaElement.Volume = this.Volume;
 
 			mediaElement.MediaEnded += this.MediaElement_MediaEnded;
 			mediaElement.MediaFailed += this.MediaElement_MediaFailed;
+#endif
 
             this._popup.IsOpen = true;
 			return true;
 		}
 
-		private void MediaElement_MediaFailed(object sender, ExceptionRoutedEventArgs e)
+#if WinUI
+        private void MediaPlayer_MediaFailed(MediaPlayer sender, MediaPlayerFailedEventArgs args)
+#else
+        private void MediaElement_MediaFailed(object sender, ExceptionRoutedEventArgs e)
+#endif
 		{
-			if (this._popup != null)
-			{
-				this._popup.IsOpen = false;
-				this._popup.Child = null;
-				this._popup = null;
-			}
+            // TODO: We should probably have some system/properties to report/bubble errors here
+            ClosePopup();
 		}
 
-		private void MediaElement_MediaEnded(object sender, RoutedEventArgs e)
-		{
-			if (this._popup != null)
-			{
-				this._popup.IsOpen = false;
-				this._popup.Child = null;
-				this._popup = null;
-			}
+#if WinUI
+        private void MediaElement_MediaEnded(MediaPlayer sender, object args)
+#else
+        private void MediaElement_MediaEnded(object sender, RoutedEventArgs e)
+#endif
+        {
+            ClosePopup();
 		}
+
+        private void ClosePopup()
+        {
+            void closePopupImpl()
+            {
+                if (this._popup != null)
+                {
+                    this._popup.IsOpen = false;
+                    this._popup.Child = null;
+                    this._popup = null;
+                }
+            }
+
+            if (_queue.HasThreadAccess)
+            {
+                closePopupImpl();
+            }
+            else
+            {
+                // In WinUI3 the Media events are called on a background thread, so ensure we're on the UI thread to modify our popup container.
+                _queue.TryEnqueue(DispatcherQueuePriority.Normal, closePopupImpl);
+            }            
+        }        
 	}
 }
-#endif
