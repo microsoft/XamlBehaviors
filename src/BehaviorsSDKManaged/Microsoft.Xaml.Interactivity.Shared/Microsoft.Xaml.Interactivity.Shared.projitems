@@ -13,6 +13,18 @@
     <Compile Include="$(MSBuildThisFileDirectory)Behavior.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)BehaviorCollection.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)BehaviorOfT.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\CallMethodAction.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\ChangePropertyAction.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\ComparisonConditionType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\DataBindingHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\DataTriggerBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\EventTriggerBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\GoToStateAction.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\IncrementalUpdateBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\InvokeCommandAction.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\NavigateToPageAction.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\ResourceHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\TypeConverterHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)CustomPropertyValueEditorAttribute.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DefaultEventAttribute.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GlobalSuppressions.cs" />
@@ -20,10 +32,15 @@
     <Compile Include="$(MSBuildThisFileDirectory)IBehavior.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interaction.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ITrigger.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Media\ControlStoryboardAction.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Media\ControlStoryboardOption.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Media\PlaySoundAction.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ResourceHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Trigger.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)TriggerOfT.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)TypeConstraintAttribute.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utility\IVisualTreeHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utility\UwpVisualTreeHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)VisualStateUtilities.cs" />
   </ItemGroup>
 </Project>
