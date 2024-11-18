@@ -33,15 +33,15 @@ XAML Behaviors is an easy-to-use means of adding common and reusable interactivi
 For an example of using Behaviors in an application, here is a snippet of XAML:
 
 ```xml
-<Button xmlns:Core="using:Microsoft.Xaml.Interactions.Core" xmlns:Interactivity="using:Microsoft.Xaml.Interactivity">
+<Button xmlns:Interactivity="using:Microsoft.Xaml.Interactivity">
     <Interactivity:Interaction.Behaviors>
-        <Core:EventTriggerBehavior EventName="Click">
-            <Core:ChangePropertyAction PropertyName="Background">
-                <Core:ChangePropertyAction.Value>
+        <Interactivity:EventTriggerBehavior EventName="Click">
+            <Interactivity:ChangePropertyAction PropertyName="Background">
+                <Interactivity:ChangePropertyAction.Value>
                     <SolidColorBrush Color="Red"/>
-                </Core:ChangePropertyAction.Value>
-            </Core:ChangePropertyAction>
-        </Core:EventTriggerBehavior>
+                </Interactivity:ChangePropertyAction.Value>
+            </Interactivity:ChangePropertyAction>
+        </Interactivity:EventTriggerBehavior>
     </Interactivity:Interaction.Behaviors>
 </Button>
 ```
@@ -68,7 +68,7 @@ The [documentation](https://github.com/Microsoft/XamlBehaviors/wiki) explains ho
 - Change Build Configuration to Release
 - Build [Ctrl + B]
 - Ensure that [nuget.exe](https://learn.microsoft.com/en-us/nuget/install-nuget-client-tools?tabs=windows) is available in PATH
-- Run `msbuild /t:pack src\BehaviorsSDKManaged\Microsoft.Xaml.Interactions.Design\Microsoft.Xaml.Interactions.Design.csproj`
+- Run `msbuild /t:pack src\BehaviorsSDKManaged\Microsoft.Xaml.Interactivity.Design\Microsoft.Xaml.Interactivity.Design.csproj`
   - *(Optional)* Add `/p:TimestampPackage=true` to include the timestamp in the NuGet package version
 
 For WinUI:
