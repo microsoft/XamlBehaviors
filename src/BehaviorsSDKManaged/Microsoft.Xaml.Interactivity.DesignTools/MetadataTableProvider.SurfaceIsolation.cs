@@ -22,21 +22,20 @@ namespace Microsoft.Xaml.Interactivity.Design
         /// </summary>
         private static class Targets
         {
-            private const string coreNS = "Microsoft.Xaml.Interactivity.";
-            private const string mediaNS = "Microsoft.Xaml.Interactivity.";
+            private const string rootNamespace = "Microsoft.Xaml.Interactivity.";
 
-            internal const string CallMethodAction          = coreNS  + "CallMethodAction";
-            internal const string ChangePropertyAction      = coreNS  + "ChangePropertyAction";
-            internal const string ControlStoryboardAction   = mediaNS + "ControlStoryboardAction";
-            internal const string DataTriggerBehavior       = coreNS  + "DataTriggerBehavior";
-            internal const string IncrementalUpdateBehavior = coreNS  + "IncrementalUpdateBehavior";
-            internal const string EventTriggerBehavior      = coreNS  + "EventTriggerBehavior";
-            internal const string GoToStateAction           = coreNS  + "GoToStateAction";
-            internal const string InvokeCommandAction       = coreNS  + "InvokeCommandAction";
-            internal const string NavigateToPageAction      = coreNS  + "NavigateToPageAction";
-            internal const string PlaySoundAction           = mediaNS + "PlaySoundAction";
-            internal const string ActionCollection          = coreNS + "ActionCollection";
-            internal const string BehaviorCollection        = coreNS + "BehaviorCollection";
+            internal const string CallMethodAction          = rootNamespace + "CallMethodAction";
+            internal const string ChangePropertyAction      = rootNamespace + "ChangePropertyAction";
+            internal const string ControlStoryboardAction   = rootNamespace + "ControlStoryboardAction";
+            internal const string DataTriggerBehavior       = rootNamespace + "DataTriggerBehavior";
+            internal const string IncrementalUpdateBehavior = rootNamespace + "IncrementalUpdateBehavior";
+            internal const string EventTriggerBehavior      = rootNamespace + "EventTriggerBehavior";
+            internal const string GoToStateAction           = rootNamespace + "GoToStateAction";
+            internal const string InvokeCommandAction       = rootNamespace + "InvokeCommandAction";
+            internal const string NavigateToPageAction      = rootNamespace + "NavigateToPageAction";
+            internal const string PlaySoundAction           = rootNamespace + "PlaySoundAction";
+            internal const string ActionCollection          = rootNamespace + "ActionCollection";
+            internal const string BehaviorCollection        = rootNamespace + "BehaviorCollection";
         }
     }
 }
