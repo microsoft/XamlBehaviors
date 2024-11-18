@@ -70,6 +70,15 @@ namespace Microsoft.Xaml.Interactions.Design.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Actions.
+        /// </summary>
+        internal static string Category_Name_Actions {
+            get {
+                return ResourceManager.GetString("Category_Name_Actions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Calls a method on a specified object when invoked..
         /// </summary>
         internal static string Description_CallMethodAction {

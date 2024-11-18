@@ -49,6 +49,8 @@ namespace Microsoft.Xaml.Interactions.Design
             internal static readonly Type NavigateToPageAction = typeof(NavigateToPageAction);
             internal static readonly Type PlaySoundAction = typeof(PlaySoundAction);
             internal static readonly Type CallMethodAction = typeof(CallMethodAction);
+            internal static readonly Type ActionCollection = typeof(ActionCollection);
+            internal static readonly Type BehaviorCollection = typeof(BehaviorCollection);
         }
     }
 }

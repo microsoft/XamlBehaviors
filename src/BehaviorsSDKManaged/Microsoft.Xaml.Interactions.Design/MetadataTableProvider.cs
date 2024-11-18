@@ -5,10 +5,12 @@ using System.ComponentModel;
 using Microsoft.Xaml.Interactions.Design.Properties;
 
 #if SurfaceIsolation
+using Microsoft.VisualStudio.DesignTools.Extensibility;
 using Microsoft.VisualStudio.DesignTools.Extensibility.Metadata;
 using Microsoft.VisualStudio.DesignTools.Extensibility.PropertyEditing;
 using Editors = Microsoft.VisualStudio.DesignTools.Extensibility.PropertyEditing.Editors;
 #else
+using Microsoft.Windows.Design;
 using Microsoft.Windows.Design.Metadata;
 using Microsoft.Windows.Design.PropertyEditing;
 using Editors = Microsoft.Windows.Design.PropertyEditing.Editors;
@@ -210,6 +212,11 @@ namespace Microsoft.Xaml.Interactions.Design
                     new PropertyOrderAttribute(order = PropertyOrder.CreateAfter(order)),
                     new DescriptionAttribute(Resources.Description_CallMethodAction_MethodName),
                     new CategoryAttribute(Resources.Category_Common_Properties));
+                #endregion
+
+                #region Collections
+                AddAttributes(Targets.ActionCollection, new CategoryAttribute(Resources.Category_Name_Actions));
+                AddAttributes(Targets.BehaviorCollection, new ToolboxBrowsableAttribute(false));
                 #endregion
 
                 return _attributeTableBuilder.CreateTable();

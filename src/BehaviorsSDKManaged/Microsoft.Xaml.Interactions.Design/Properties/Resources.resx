@@ -231,4 +231,8 @@
   <data name="Description_PlaySoundAction_Volume" xml:space="preserve">
     <value>Gets or set the volume of the sound.</value>
   </data>
+  <data name="Category_Name_Actions" xml:space="preserve">
+    <value>Actions</value>
+    <comment>The name in the property inspector for the category that shows Windows XAML ActionCollections.</comment>
+  </data>
 </root>

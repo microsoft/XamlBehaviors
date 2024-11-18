@@ -35,6 +35,8 @@ namespace Microsoft.Xaml.Interactions.Design
             internal const string InvokeCommandAction       = coreNS  + "InvokeCommandAction";
             internal const string NavigateToPageAction      = coreNS  + "NavigateToPageAction";
             internal const string PlaySoundAction           = mediaNS + "PlaySoundAction";
+            internal const string ActionCollection          = coreNS + "ActionCollection";
+            internal const string BehaviorCollection        = coreNS + "BehaviorCollection";
         }
     }
 }
