@@ -35,7 +35,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Media\ControlStoryboardAction.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Media\ControlStoryboardOption.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Media\PlaySoundAction.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ResourceHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Trigger.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)TriggerOfT.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)TypeConstraintAttribute.cs" />
