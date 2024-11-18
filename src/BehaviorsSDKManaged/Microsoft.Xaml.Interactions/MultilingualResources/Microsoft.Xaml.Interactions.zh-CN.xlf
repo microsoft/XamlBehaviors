@@ -60,6 +60,22 @@
           <target state="final">{0} 类型的 Value 属性无法用于运算符 {1}。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">{1} is the type of the DataTriggerBehavior.Value property specified by the user. {1} is one of the ComparisonConditionType enum values.</note>
         </trans-unit>
+        <trans-unit id="DuplicateBehaviorInCollectionExceptionMessage" translate="yes" xml:space="preserve">
+          <source>Cannot add an instance of a behavior to a BehaviorCollection more than once.</source>
+          <target state="final">不能多次将行为的实例添加到 BehaviorCollection。</target>
+        </trans-unit>
+        <trans-unit id="NonActionAddedToActionCollectionExceptionMessage" translate="yes" xml:space="preserve">
+          <source>Only IAction types are supported in an ActionCollection.</source>
+          <target state="final">在 ActionCollection 中只支持 IAction 类型。</target>
+        </trans-unit>
+        <trans-unit id="NonBehaviorAddedToBehaviorCollectionExceptionMessage" translate="yes" xml:space="preserve">
+          <source>Only IBehavior types are supported in a BehaviorCollection.</source>
+          <target state="final">在 BehaviorCollection 中只支持 IBehavior 类型。</target>
+        </trans-unit>
+        <trans-unit id="InvalidAssociatedObjectExceptionMessage" translate="yes" xml:space="preserve">
+          <source>AssociatedObject is of type {0} but should be of type {1}.</source>
+          <target state="new">AssociatedObject is of type {0} but should be of type {1}.</target>
+        </trans-unit>
       </group>
     </body>
   </file>

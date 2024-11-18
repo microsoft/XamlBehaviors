@@ -49,13 +49,20 @@
     <comment>{0} is the type of the DataTriggerBehavior.Binding property specified by the user. {1} is one of the ComparisonConditionType enum values.</comment>
   </data>
   <data name="InvalidOperands" xml:space="preserve">
-    <value>A propriedade Binding do tipo {0} e a propriedade Value do tipo {1} não podem ser usadas com o operador {2}.
-
-</value>
+    <value>A propriedade Binding do tipo {0} e a propriedade Value do tipo {1} não podem ser usadas com o operador {2}.</value>
     <comment>{0} is the type of the DataTriggerBehavior.Binding property specified by the user. {1} is the type of the DataTriggerBehavior.Value property specified by the user. {2} is one of the ComparisonConditionType enum values.</comment>
   </data>
   <data name="InvalidRightOperand" xml:space="preserve">
     <value>A propriedade de valor do tipo {0} não pode ser usada com o operador {1}.</value>
     <comment>{1} is the type of the DataTriggerBehavior.Value property specified by the user. {1} is one of the ComparisonConditionType enum values.</comment>
+  </data>
+  <data name="DuplicateBehaviorInCollectionExceptionMessage" xml:space="preserve">
+    <value>Não é possível adicionar uma instância de um behavior à um BehaviorCollection mais de uma vez.</value>
+  </data>
+  <data name="NonActionAddedToActionCollectionExceptionMessage" xml:space="preserve">
+    <value>Somente tipos de IAction são suportados em um ActionCollection.</value>
+  </data>
+  <data name="NonBehaviorAddedToBehaviorCollectionExceptionMessage" xml:space="preserve">
+    <value>Somente tipos de IBehavior são suportados em um BehaviorCollection.</value>
   </data>
 </root>

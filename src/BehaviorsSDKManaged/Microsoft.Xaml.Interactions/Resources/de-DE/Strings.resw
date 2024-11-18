@@ -55,4 +55,13 @@
     <value>Die Werteigenschaft vom Typ {0} kann nicht mit dem Operator {1} verwendet werden.</value>
     <comment>{1} is the type of the DataTriggerBehavior.Value property specified by the user. {1} is one of the ComparisonConditionType enum values.</comment>
   </data>
+  <data name="DuplicateBehaviorInCollectionExceptionMessage" xml:space="preserve">
+    <value>Eine Instanz eines Verhaltens kann einer BehaviorCollection höchstens einmal hinzugefügt werden.</value>
+  </data>
+  <data name="NonActionAddedToActionCollectionExceptionMessage" xml:space="preserve">
+    <value>Nur IAction-Typen werden in einer ActionCollection unterstützt.</value>
+  </data>
+  <data name="NonBehaviorAddedToBehaviorCollectionExceptionMessage" xml:space="preserve">
+    <value>Nur IBehavior-Typen werden in einer BehaviorCollection unterstützt.</value>
+  </data>
 </root>

@@ -60,6 +60,22 @@
           <target state="final">型 {0} の Value プロパティは、演算子 {1} と共に使用できません。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">{1} is the type of the DataTriggerBehavior.Value property specified by the user. {1} is one of the ComparisonConditionType enum values.</note>
         </trans-unit>
+        <trans-unit id="DuplicateBehaviorInCollectionExceptionMessage" translate="yes" xml:space="preserve">
+          <source>Cannot add an instance of a behavior to a BehaviorCollection more than once.</source>
+          <target state="final">ビヘイビアーのインスタンスを BehaviorCollection に複数回追加することはできません。</target>
+        </trans-unit>
+        <trans-unit id="NonActionAddedToActionCollectionExceptionMessage" translate="yes" xml:space="preserve">
+          <source>Only IAction types are supported in an ActionCollection.</source>
+          <target state="final">ActionCollection では IAction 型のみサポートされます。</target>
+        </trans-unit>
+        <trans-unit id="NonBehaviorAddedToBehaviorCollectionExceptionMessage" translate="yes" xml:space="preserve">
+          <source>Only IBehavior types are supported in a BehaviorCollection.</source>
+          <target state="final">BehaviorCollection では IBehavior 型のみサポートされます。</target>
+        </trans-unit>
+        <trans-unit id="InvalidAssociatedObjectExceptionMessage" translate="yes" xml:space="preserve">
+          <source>AssociatedObject is of type {0} but should be of type {1}.</source>
+          <target state="new">AssociatedObject is of type {0} but should be of type {1}.</target>
+        </trans-unit>
       </group>
     </body>
   </file>

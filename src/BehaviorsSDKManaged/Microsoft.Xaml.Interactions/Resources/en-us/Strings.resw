@@ -124,6 +124,18 @@
   <data name="CannotAttachBehaviorMultipleTimesExceptionMessage" xml:space="preserve">
     <value>An instance of a behavior cannot be attached to more than one object at a time.</value>
   </data>
+  <data name="DuplicateBehaviorInCollectionExceptionMessage" xml:space="preserve">
+    <value>Cannot add an instance of a behavior to a BehaviorCollection more than once.</value>
+  </data>
+  <data name="InvalidAssociatedObjectExceptionMessage" xml:space="preserve">
+    <value>AssociatedObject is of type {0} but should be of type {1}.</value>
+  </data>
+  <data name="NonActionAddedToActionCollectionExceptionMessage" xml:space="preserve">
+    <value>Only IAction types are supported in an ActionCollection.</value>
+  </data>
+  <data name="NonBehaviorAddedToBehaviorCollectionExceptionMessage" xml:space="preserve">
+    <value>Only IBehavior types are supported in a BehaviorCollection.</value>
+  </data>
   <data name="CannotFindEventNameExceptionMessage" xml:space="preserve">
     <value>Cannot find an event named {0} on type {1}.</value>
     <comment>{0} is the EventName property value specified by the user. {1} is the Type we are trying to find an event on.</comment>

@@ -60,6 +60,22 @@
           <target state="final">La propriété de valeur de type {0} ne peut pas être utilisée avec l'opérateur {1}.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">{1} is the type of the DataTriggerBehavior.Value property specified by the user. {1} is one of the ComparisonConditionType enum values.</note>
         </trans-unit>
+        <trans-unit id="DuplicateBehaviorInCollectionExceptionMessage" translate="yes" xml:space="preserve">
+          <source>Cannot add an instance of a behavior to a BehaviorCollection more than once.</source>
+          <target state="final">Impossible d'ajouter à plusieurs reprises une instance de Behavior à une BehaviorCollection.</target>
+        </trans-unit>
+        <trans-unit id="NonActionAddedToActionCollectionExceptionMessage" translate="yes" xml:space="preserve">
+          <source>Only IAction types are supported in an ActionCollection.</source>
+          <target state="final">Seuls les types IAction sont pris en charge dans une ActionCollection.</target>
+        </trans-unit>
+        <trans-unit id="NonBehaviorAddedToBehaviorCollectionExceptionMessage" translate="yes" xml:space="preserve">
+          <source>Only IBehavior types are supported in a BehaviorCollection.</source>
+          <target state="final">Seuls les types IBehavior sont pris en charge dans une BehaviorCollection.</target>
+        </trans-unit>
+        <trans-unit id="InvalidAssociatedObjectExceptionMessage" translate="yes" xml:space="preserve">
+          <source>AssociatedObject is of type {0} but should be of type {1}.</source>
+          <target state="new">AssociatedObject is of type {0} but should be of type {1}.</target>
+        </trans-unit>
       </group>
     </body>
   </file>

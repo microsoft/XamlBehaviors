@@ -55,4 +55,13 @@
     <value>{0} 형식의 Value 속성을 {1} 연산자와 함께 사용할 수 없습니다.</value>
     <comment>{1} is the type of the DataTriggerBehavior.Value property specified by the user. {1} is one of the ComparisonConditionType enum values.</comment>
   </data>
+  <data name="DuplicateBehaviorInCollectionExceptionMessage" xml:space="preserve">
+    <value>동작의 인스턴스 하나를 BehaviorCollection에 두 번 이상 추가할 수 없습니다.</value>
+  </data>
+  <data name="NonActionAddedToActionCollectionExceptionMessage" xml:space="preserve">
+    <value>ActionCollection에서 IAction 형식만 지원됩니다.</value>
+  </data>
+  <data name="NonBehaviorAddedToBehaviorCollectionExceptionMessage" xml:space="preserve">
+    <value>BehaviorCollection에서 IBehavior 형식만 지원됩니다.</value>
+  </data>
 </root>
