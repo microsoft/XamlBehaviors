@@ -47,8 +47,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Platforms", "Platforms", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Uwp", "Uwp", "{67B23F04-942D-43D5-B501-8540BF0923B6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.Xaml.Interactivity.Uwp", "Microsoft.Xaml.Interactivity.Uwp\Microsoft.Xaml.Interactivity.Uwp.csproj", "{E6A328C8-2D9A-459A-86EE-F1C50CC6DADD}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.Xaml.Interactions.Uwp", "Microsoft.Xaml.Interactions.Uwp\Microsoft.Xaml.Interactions.Uwp.csproj", "{B1C5E139-C8DF-46B5-9ABC-4515BDECAFA3}"
 EndProject
 Global
@@ -190,22 +188,6 @@ Global
 		{7119F232-7BEF-42F9-9BA1-52654ADC98B6}.Release|x64.Build.0 = Release|x64
 		{7119F232-7BEF-42F9-9BA1-52654ADC98B6}.Release|x86.ActiveCfg = Release|x86
 		{7119F232-7BEF-42F9-9BA1-52654ADC98B6}.Release|x86.Build.0 = Release|x86
-		{E6A328C8-2D9A-459A-86EE-F1C50CC6DADD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E6A328C8-2D9A-459A-86EE-F1C50CC6DADD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E6A328C8-2D9A-459A-86EE-F1C50CC6DADD}.Debug|ARM64.ActiveCfg = Debug|Any CPU
-		{E6A328C8-2D9A-459A-86EE-F1C50CC6DADD}.Debug|ARM64.Build.0 = Debug|Any CPU
-		{E6A328C8-2D9A-459A-86EE-F1C50CC6DADD}.Debug|x64.ActiveCfg = Debug|x64
-		{E6A328C8-2D9A-459A-86EE-F1C50CC6DADD}.Debug|x64.Build.0 = Debug|x64
-		{E6A328C8-2D9A-459A-86EE-F1C50CC6DADD}.Debug|x86.ActiveCfg = Debug|x86
-		{E6A328C8-2D9A-459A-86EE-F1C50CC6DADD}.Debug|x86.Build.0 = Debug|x86
-		{E6A328C8-2D9A-459A-86EE-F1C50CC6DADD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E6A328C8-2D9A-459A-86EE-F1C50CC6DADD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E6A328C8-2D9A-459A-86EE-F1C50CC6DADD}.Release|ARM64.ActiveCfg = Release|Any CPU
-		{E6A328C8-2D9A-459A-86EE-F1C50CC6DADD}.Release|ARM64.Build.0 = Release|Any CPU
-		{E6A328C8-2D9A-459A-86EE-F1C50CC6DADD}.Release|x64.ActiveCfg = Release|x64
-		{E6A328C8-2D9A-459A-86EE-F1C50CC6DADD}.Release|x64.Build.0 = Release|x64
-		{E6A328C8-2D9A-459A-86EE-F1C50CC6DADD}.Release|x86.ActiveCfg = Release|x86
-		{E6A328C8-2D9A-459A-86EE-F1C50CC6DADD}.Release|x86.Build.0 = Release|x86
 		{B1C5E139-C8DF-46B5-9ABC-4515BDECAFA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B1C5E139-C8DF-46B5-9ABC-4515BDECAFA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B1C5E139-C8DF-46B5-9ABC-4515BDECAFA3}.Debug|ARM64.ActiveCfg = Debug|Any CPU
@@ -238,7 +220,6 @@ Global
 		{7119F232-7BEF-42F9-9BA1-52654ADC98B6} = {0A3F92B2-BCF6-4456-8C6B-76A7D85F2276}
 		{67E69A39-4F60-4F46-98D3-13C8DE05F0E4} = {6DC88A28-BB73-411D-A94C-D1D2637289C8}
 		{67B23F04-942D-43D5-B501-8540BF0923B6} = {6DC88A28-BB73-411D-A94C-D1D2637289C8}
-		{E6A328C8-2D9A-459A-86EE-F1C50CC6DADD} = {67B23F04-942D-43D5-B501-8540BF0923B6}
 		{B1C5E139-C8DF-46B5-9ABC-4515BDECAFA3} = {67B23F04-942D-43D5-B501-8540BF0923B6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
@@ -248,6 +229,6 @@ Global
 		Microsoft.Xaml.Interactivity.Shared\Microsoft.Xaml.Interactivity.Shared.projitems*{52e3ed43-3013-4155-ad87-6df52a265d59}*SharedItemsImports = 13
 		Microsoft.Xaml.Interactivity.Shared\Microsoft.Xaml.Interactivity.Shared.projitems*{7119f232-7bef-42f9-9ba1-52654adc98b6}*SharedItemsImports = 5
 		Microsoft.Xaml.Interactivity.Shared\Microsoft.Xaml.Interactivity.Shared.projitems*{a338a7f2-9010-477b-8a6e-6c2b2495c33c}*SharedItemsImports = 4
-		Microsoft.Xaml.Interactivity.Shared\Microsoft.Xaml.Interactivity.Shared.projitems*{e6a328c8-2d9a-459a-86ee-f1c50cc6dadd}*SharedItemsImports = 5
+		Microsoft.Xaml.Interactivity.Shared\Microsoft.Xaml.Interactivity.Shared.projitems*{b1c5e139-c8df-46b5-9abc-4515bdecafa3}*SharedItemsImports = 5
 	EndGlobalSection
 EndGlobal
