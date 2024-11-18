@@ -113,10 +113,6 @@
       <Project>{a338a7f2-9010-477b-8a6e-6c2b2495c33c}</Project>
       <Name>Microsoft.Xaml.Interactions</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Microsoft.Xaml.Interactivity\Microsoft.Xaml.Interactivity.csproj">
-      <Project>{7ffc1385-c3e1-487c-9a81-de48dd63ecb9}</Project>
-      <Name>Microsoft.Xaml.Interactivity</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />

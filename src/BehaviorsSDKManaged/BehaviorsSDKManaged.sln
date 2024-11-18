@@ -3,14 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35027.167
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Xaml.Interactivity", "Microsoft.Xaml.Interactivity\Microsoft.Xaml.Interactivity.csproj", "{7FFC1385-C3E1-487C-9A81-DE48DD63ECB9}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Xaml.Interactions", "Microsoft.Xaml.Interactions\Microsoft.Xaml.Interactions.csproj", "{A338A7F2-9010-477B-8A6E-6C2B2495C33C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Xaml.Interactivity.Design", "Microsoft.Xaml.Interactivity.Design\Microsoft.Xaml.Interactivity.Design.csproj", "{76BF4E75-B1E7-4BFA-AE67-BAF6800DAC78}"
-	ProjectSection(ProjectDependencies) = postProject
-		{7FFC1385-C3E1-487C-9A81-DE48DD63ECB9} = {7FFC1385-C3E1-487C-9A81-DE48DD63ECB9}
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Xaml.Interactions.Design", "Microsoft.Xaml.Interactions.Design\Microsoft.Xaml.Interactions.Design.csproj", "{A3161818-5AA8-4A7C-A6CD-B19EDA5F3AE1}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -68,22 +63,6 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{7FFC1385-C3E1-487C-9A81-DE48DD63ECB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7FFC1385-C3E1-487C-9A81-DE48DD63ECB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7FFC1385-C3E1-487C-9A81-DE48DD63ECB9}.Debug|ARM64.ActiveCfg = Debug|Any CPU
-		{7FFC1385-C3E1-487C-9A81-DE48DD63ECB9}.Debug|ARM64.Build.0 = Debug|Any CPU
-		{7FFC1385-C3E1-487C-9A81-DE48DD63ECB9}.Debug|x64.ActiveCfg = Debug|x64
-		{7FFC1385-C3E1-487C-9A81-DE48DD63ECB9}.Debug|x64.Build.0 = Debug|x64
-		{7FFC1385-C3E1-487C-9A81-DE48DD63ECB9}.Debug|x86.ActiveCfg = Debug|x86
-		{7FFC1385-C3E1-487C-9A81-DE48DD63ECB9}.Debug|x86.Build.0 = Debug|x86
-		{7FFC1385-C3E1-487C-9A81-DE48DD63ECB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7FFC1385-C3E1-487C-9A81-DE48DD63ECB9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7FFC1385-C3E1-487C-9A81-DE48DD63ECB9}.Release|ARM64.ActiveCfg = Release|Any CPU
-		{7FFC1385-C3E1-487C-9A81-DE48DD63ECB9}.Release|ARM64.Build.0 = Release|Any CPU
-		{7FFC1385-C3E1-487C-9A81-DE48DD63ECB9}.Release|x64.ActiveCfg = Release|x64
-		{7FFC1385-C3E1-487C-9A81-DE48DD63ECB9}.Release|x64.Build.0 = Release|x64
-		{7FFC1385-C3E1-487C-9A81-DE48DD63ECB9}.Release|x86.ActiveCfg = Release|x86
-		{7FFC1385-C3E1-487C-9A81-DE48DD63ECB9}.Release|x86.Build.0 = Release|x86
 		{A338A7F2-9010-477B-8A6E-6C2B2495C33C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A338A7F2-9010-477B-8A6E-6C2B2495C33C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A338A7F2-9010-477B-8A6E-6C2B2495C33C}.Debug|ARM64.ActiveCfg = Debug|Any CPU
@@ -248,7 +227,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{7FFC1385-C3E1-487C-9A81-DE48DD63ECB9} = {67E69A39-4F60-4F46-98D3-13C8DE05F0E4}
 		{A338A7F2-9010-477B-8A6E-6C2B2495C33C} = {67E69A39-4F60-4F46-98D3-13C8DE05F0E4}
 		{76BF4E75-B1E7-4BFA-AE67-BAF6800DAC78} = {7357FD9F-3B32-4ED5-B2FF-1678DD16E5B8}
 		{A3161818-5AA8-4A7C-A6CD-B19EDA5F3AE1} = {7357FD9F-3B32-4ED5-B2FF-1678DD16E5B8}
@@ -269,7 +247,7 @@ Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		Microsoft.Xaml.Interactivity.Shared\Microsoft.Xaml.Interactivity.Shared.projitems*{52e3ed43-3013-4155-ad87-6df52a265d59}*SharedItemsImports = 13
 		Microsoft.Xaml.Interactivity.Shared\Microsoft.Xaml.Interactivity.Shared.projitems*{7119f232-7bef-42f9-9ba1-52654adc98b6}*SharedItemsImports = 5
-		Microsoft.Xaml.Interactivity.Shared\Microsoft.Xaml.Interactivity.Shared.projitems*{7ffc1385-c3e1-487c-9a81-de48dd63ecb9}*SharedItemsImports = 4
+		Microsoft.Xaml.Interactivity.Shared\Microsoft.Xaml.Interactivity.Shared.projitems*{a338a7f2-9010-477b-8a6e-6c2b2495c33c}*SharedItemsImports = 4
 		Microsoft.Xaml.Interactivity.Shared\Microsoft.Xaml.Interactivity.Shared.projitems*{e6a328c8-2d9a-459a-86ee-f1c50cc6dadd}*SharedItemsImports = 5
 	EndGlobalSection
 EndGlobal

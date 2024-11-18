@@ -17,7 +17,7 @@
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <AppxBundlePlatforms>x86|x64</AppxBundlePlatforms>
-    <RuntimeIdentifiers>win10-x64;win10-x64-aot;win10-x86;win10-x86-aot</RuntimeIdentifiers>
+    <RuntimeIdentifiers>win10-x86;win10-x86-aot;win10-x64;win10-x64-aot</RuntimeIdentifiers>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -28,8 +28,7 @@
     <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>
-    </DocumentationFile>
+    <DocumentationFile>..\..\..\out\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactions.xml</DocumentationFile>
     <GenerateLibraryLayout>true</GenerateLibraryLayout>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -39,7 +38,7 @@
     <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>..\..\..\out\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactions.XML</DocumentationFile>
+    <DocumentationFile>..\..\..\out\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactions.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
     <PlatformTarget>x64</PlatformTarget>
@@ -113,12 +112,6 @@
     <EmbeddedResource Include="Properties\Microsoft.Xaml.Interactions.rd.xml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Microsoft.Xaml.Interactivity\Microsoft.Xaml.Interactivity.csproj">
-      <Project>{7ffc1385-c3e1-487c-9a81-de48dd63ecb9}</Project>
-      <Name>Microsoft.Xaml.Interactivity</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactions.de-DE.xlf" />
     <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactions.es-ES.xlf" />
     <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactions.fr-FR.xlf" />
@@ -141,6 +134,7 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
   </ItemGroup>
+  <Import Project="..\Microsoft.Xaml.Interactivity.Shared\Microsoft.Xaml.Interactivity.Shared.projitems" Label="Shared" />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

@@ -51,10 +51,6 @@
     <IntermediateOutputPath>..\..\..\out\$(SolutionName)\obj\$(Platform)\$(Configuration)\</IntermediateOutputPath>
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Microsoft.Xaml.Interactivity\Microsoft.Xaml.Interactivity.csproj">
-      <Name>Microsoft.Xaml.Interactivity</Name>
-      <Project>{7ffc1385-c3e1-487C-9a81-de48dd63ecb9}</Project>
-    </ProjectReference>
     <Reference Include="Microsoft.Windows.Design.Extensibility, Version=4.3.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=x86" />
     <Reference Include="Microsoft.Windows.Design.Interaction, Version=4.3.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=x86" />
     <Reference Include="System" />
