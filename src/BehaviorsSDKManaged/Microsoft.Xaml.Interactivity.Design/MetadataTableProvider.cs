@@ -2,7 +2,7 @@
 // Licensed under the MIT license. See LICENSE file in the project root for full license information. 
 
 using System.ComponentModel;
-using Microsoft.Xaml.Interactions.Design.Properties;
+using Microsoft.Xaml.Interactivity.Design.Properties;
 
 #if SurfaceIsolation
 using Microsoft.VisualStudio.DesignTools.Extensibility;
@@ -16,11 +16,11 @@ using Microsoft.Windows.Design.PropertyEditing;
 using Editors = Microsoft.Windows.Design.PropertyEditing.Editors;
 #endif
 
-[assembly: ProvideMetadata(typeof(Microsoft.Xaml.Interactions.Design.MetadataTableProvider))]
+[assembly: ProvideMetadata(typeof(Microsoft.Xaml.Interactivity.Design.MetadataTableProvider))]
 
 // Please note that both the .Design and .DesignTools project
-// use the same namespace: Microsoft.Xaml.Interactions.Design
-namespace Microsoft.Xaml.Interactions.Design
+// use the same namespace: Microsoft.Xaml.Interactivity.Design
+namespace Microsoft.Xaml.Interactivity.Design
 {
     partial class MetadataTableProvider : IProvideAttributeTable
     {

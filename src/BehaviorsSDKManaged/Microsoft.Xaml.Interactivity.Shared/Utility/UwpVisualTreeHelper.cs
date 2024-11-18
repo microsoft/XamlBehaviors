@@ -9,7 +9,7 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Media;
 #endif
 
-namespace Microsoft.Xaml.Interactions.Utility
+namespace Microsoft.Xaml.Interactivity.Utility
 {
     /// <summary>
     /// IVisualTreeHelper implementation that calls the real VisualTreeHelper.

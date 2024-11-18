@@ -1,11 +1,11 @@
 ﻿using System.Reflection;
 using System.Runtime.InteropServices;
 
-[assembly: AssemblyTitle("Microsoft.Xaml.Interactions.DesignTools")]
+[assembly: AssemblyTitle("Microsoft.Xaml.Interactivity.DesignTools")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Microsoft.Xaml.Interactions.DesignTools")]
+[assembly: AssemblyProduct("Microsoft.Xaml.Interactivity.DesignTools")]
 [assembly: AssemblyCopyright("Copyright © Microsoft 2015-2022")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
