@@ -4,7 +4,7 @@
     <TargetFramework>net8.0-windows10.0.17763.0</TargetFramework>
     <WindowsSdkPackageVersion>10.0.17763.53</WindowsSdkPackageVersion>
     <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
-    <RootNamespace>Microsoft.Xaml.Interactions</RootNamespace>
+    <RootNamespace>Microsoft.Xaml.Interactivity</RootNamespace>
     <Platforms>AnyCPU;x86;x64;arm64</Platforms>
     <RuntimeIdentifiers>win-x86;win-x64;win-arm64</RuntimeIdentifiers>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
@@ -37,7 +37,7 @@
     <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>..\..\..\out\WinUI\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactions.xml</DocumentationFile>
+    <DocumentationFile>..\..\..\out\WinUI\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactivity.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <PlatformTarget>x86</PlatformTarget>
@@ -97,9 +97,6 @@
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Properties\Microsoft.Xaml.Interactions.rd.xml" />
-  </ItemGroup>
-  <ItemGroup>
     <PackageReference Include="Microsoft.VisualStudioEng.MicroBuild.Core" Version="1.0.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -108,62 +105,62 @@
     <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.6.241106002" />
   </ItemGroup>
   <ItemGroup>
-    <PRIResource Include="..\Microsoft.Xaml.Interactions\Resources\de-DE\Strings.resw">
+    <PRIResource Include="..\Microsoft.Xaml.Interactivity\Resources\de-DE\Strings.resw">
       <Link>Resources\de-DE\Strings.resw</Link>
     </PRIResource>
   </ItemGroup>
   <ItemGroup>
-    <PRIResource Include="..\Microsoft.Xaml.Interactions\Resources\en-us\Strings.resw">
+    <PRIResource Include="..\Microsoft.Xaml.Interactivity\Resources\en-us\Strings.resw">
       <Link>Resources\en-US\Strings.resw</Link>
     </PRIResource>
   </ItemGroup>
   <ItemGroup>
-    <PRIResource Include="..\Microsoft.Xaml.Interactions\Resources\es-ES\Strings.resw">
+    <PRIResource Include="..\Microsoft.Xaml.Interactivity\Resources\es-ES\Strings.resw">
       <Link>Resources\es-ES\Strings.resw</Link>
     </PRIResource>
   </ItemGroup>
   <ItemGroup>
-    <PRIResource Include="..\Microsoft.Xaml.Interactions\Resources\fr-FR\Strings.resw">
+    <PRIResource Include="..\Microsoft.Xaml.Interactivity\Resources\fr-FR\Strings.resw">
       <Link>Resources\fr-FR\Strings.resw</Link>
     </PRIResource>
   </ItemGroup>
   <ItemGroup>
-    <PRIResource Include="..\Microsoft.Xaml.Interactions\Resources\it-IT\Strings.resw">
+    <PRIResource Include="..\Microsoft.Xaml.Interactivity\Resources\it-IT\Strings.resw">
       <Link>Resources\it-IT\Strings.resw</Link>
     </PRIResource>
   </ItemGroup>
   <ItemGroup>
-    <PRIResource Include="..\Microsoft.Xaml.Interactions\Resources\ja-JP\Strings.resw">
+    <PRIResource Include="..\Microsoft.Xaml.Interactivity\Resources\ja-JP\Strings.resw">
       <Link>Resources\ja-JP\Strings.resw</Link>
     </PRIResource>
   </ItemGroup>
   <ItemGroup>
-    <PRIResource Include="..\Microsoft.Xaml.Interactions\Resources\ko-KR\Strings.resw">
+    <PRIResource Include="..\Microsoft.Xaml.Interactivity\Resources\ko-KR\Strings.resw">
       <Link>Resources\ko-KR\Strings.resw</Link>
     </PRIResource>
   </ItemGroup>
   <ItemGroup>
-    <PRIResource Include="..\Microsoft.Xaml.Interactions\Resources\pt-BR\Strings.resw">
+    <PRIResource Include="..\Microsoft.Xaml.Interactivity\Resources\pt-BR\Strings.resw">
       <Link>Resources\pt-BR\Strings.resw</Link>
     </PRIResource>
   </ItemGroup>
   <ItemGroup>
-    <PRIResource Include="..\Microsoft.Xaml.Interactions\Resources\ru-RU\Strings.resw">
+    <PRIResource Include="..\Microsoft.Xaml.Interactivity\Resources\ru-RU\Strings.resw">
       <Link>Resources\ru-RU\Strings.resw</Link>
     </PRIResource>
   </ItemGroup>
   <ItemGroup>
-    <PRIResource Include="..\Microsoft.Xaml.Interactions\Resources\uk-UA\Strings.resw">
+    <PRIResource Include="..\Microsoft.Xaml.Interactivity\Resources\uk-UA\Strings.resw">
       <Link>Resources\uk-UA\Strings.resw</Link>
     </PRIResource>
   </ItemGroup>
   <ItemGroup>
-    <PRIResource Include="..\Microsoft.Xaml.Interactions\Resources\zh-CN\Strings.resw">
+    <PRIResource Include="..\Microsoft.Xaml.Interactivity\Resources\zh-CN\Strings.resw">
       <Link>Resources\zh-CN\Strings.resw</Link>
     </PRIResource>
   </ItemGroup>
   <ItemGroup>
-    <PRIResource Include="..\Microsoft.Xaml.Interactions\Resources\zh-TW\Strings.resw">
+    <PRIResource Include="..\Microsoft.Xaml.Interactivity\Resources\zh-TW\Strings.resw">
       <Link>Resources\zh-TW\Strings.resw</Link>
     </PRIResource>
   </ItemGroup>
@@ -173,10 +170,10 @@
   <Import Project="..\Microsoft.Xaml.Interactivity.Shared\Microsoft.Xaml.Interactivity.Shared.projitems" Label="Shared" />
   <Import Project="..\..\..\scripts\Microsoft.Xaml.Behaviors.Signing.targets" />
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
-    <DocumentationFile>..\..\..\out\WinUI\BehaviorsSDKManaged\bin\$(Platform)\Release\Microsoft.Xaml.Interactions.xml</DocumentationFile>
+    <DocumentationFile>..\..\..\out\WinUI\BehaviorsSDKManaged\bin\$(Platform)\Release\Microsoft.Xaml.Interactivity.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup>
     <DefineConstants>$(DefineConstants);WinUI</DefineConstants>
-    <AssemblyName>Microsoft.Xaml.Interactions</AssemblyName>
+    <AssemblyName>Microsoft.Xaml.Interactivity</AssemblyName>
   </PropertyGroup>
 </Project>

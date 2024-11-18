@@ -1,80 +1,80 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
-  <file datatype="xml" source-language="en-US" target-language="ko-KR" original="MICROSOFT.XAML.INTERACTIONS/RESOURCES/EN-US/STRINGS.RESW" tool-id="MultilingualAppToolkit" product-name="n/a" product-version="n/a" build-num="n/a">
+  <file datatype="xml" source-language="en-US" target-language="ru-RU" original="MICROSOFT.XAML.INTERACTIONS/RESOURCES/EN-US/STRINGS.RESW" tool-id="MultilingualAppToolkit" product-name="n/a" product-version="n/a" build-num="n/a">
     <header>
       <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="4.0.1466.0" tool-company="Microsoft" />
     </header>
     <body>
-      <group id="MICROSOFT.XAML.INTERACTIONS/RESOURCES/EN-US/STRINGS.RESW" datatype="resx">
+      <group id="MICROSOFT.XAML.INTERACTIVITY/RESOURCES/EN-US/STRINGS.RESW">
         <trans-unit id="CallMethodActionValidMethodNotFoundExceptionMessage" translate="yes" xml:space="preserve">
           <source>Cannot find method named {0} on object of type {1} that matches the expected signature.</source>
-          <target state="final">{1} 형식의 개체에서 예상 시그니처와 일치하는 이름이 {0}인 메서드를 찾을 수 없습니다.</target>
+          <target state="new">Cannot find method named {0} on object of type {1} that matches the expected signature.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">{0} is the name of the method that could not be found. {1} is the name of the type that was searched for the method.</note>
         </trans-unit>
         <trans-unit id="CannotAttachBehaviorMultipleTimesExceptionMessage" translate="yes" xml:space="preserve">
           <source>An instance of a behavior cannot be attached to more than one object at a time.</source>
-          <target state="final">동작의 인스턴스 하나를 한 번에 둘 이상의 개체에 연결할 수 없습니다.</target>
-        </trans-unit>
-        <trans-unit id="CannotFindEventNameExceptionMessage" translate="yes" xml:space="preserve">
-          <source>Cannot find an event named {0} on type {1}.</source>
-          <target state="final">이름이 {0}인 형식 {1}의 이벤트를 찾을 수 없습니다.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">{0} is the EventName property value specified by the user. {1} is the Type we are trying to find an event on.</note>
-        </trans-unit>
-        <trans-unit id="ChangePropertyActionCannotFindPropertyNameExceptionMessage" translate="yes" xml:space="preserve">
-          <source>Cannot find a property named {0} on type {1}.</source>
-          <target state="final">이름이 {0}인 형식 {1}의 속성을 찾을 수 없습니다.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">{0} is the PropertyName property value specified by the user. {1} is the Type we are trying to find a property on.</note>
-        </trans-unit>
-        <trans-unit id="ChangePropertyActionCannotSetValueExceptionMessage" translate="yes" xml:space="preserve">
-          <source>Cannot assign value of type {0} to property {1} of type {2}. The {1} property can be assigned only values of type {2}.</source>
-          <target state="final">{0} 형식의 값을 {2} 형식의 속성 {1}에 할당할 수 없습니다. {1} 속성에는 {2} 형식의 값만 할당할 수 있습니다.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">{0} is the type name of the illegal value, or "null" if value is null. {1} is the name of the property. {2} is the type of the property.</note>
-        </trans-unit>
-        <trans-unit id="ChangePropertyActionPropertyIsReadOnlyExceptionMessage" translate="yes" xml:space="preserve">
-          <source>Property {0} defined by type {1} does not expose a set method and therefore cannot be modified.</source>
-          <target state="final">{1} 형식으로 정의된 {0} 속성이 set 메서드를 노출하지 않으므로 수정할 수 없습니다.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">{0} is the name of the property. {1} is the name of the type that defines the property.</note>
-        </trans-unit>
-        <trans-unit id="EventNotSupportedExceptionMessage" translate="yes" xml:space="preserve">
-          <source>Event {0} is not supported. Consider implementing a custom IBehavior to respond to this event.</source>
-          <target state="final">{0} 이벤트가 지원되지 않습니다. 이 이벤트에 응답하도록 사용자 지정 IBehavior를 구현해 보십시오.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">{0} is the name of an event.</note>
-        </trans-unit>
-        <trans-unit id="GoToStateActionTargetHasNoStateGroups" translate="yes" xml:space="preserve">
-          <source>Target {0} does not define any VisualStateGroups.</source>
-          <target state="final">대상 {0}이(가) VisualStateGroups를 정의하지 않습니다.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">{0} is an element name and could be an empty string.</note>
-        </trans-unit>
-        <trans-unit id="InvalidLeftOperand" translate="yes" xml:space="preserve">
-          <source>Binding property of type {0} cannot be used with operator {1}.</source>
-          <target state="final">{0} 형식의 Binding 속성을 {1} 연산자와 함께 사용할 수 없습니다.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">{0} is the type of the DataTriggerBehavior.Binding property specified by the user. {1} is one of the ComparisonConditionType enum values.</note>
-        </trans-unit>
-        <trans-unit id="InvalidOperands" translate="yes" xml:space="preserve">
-          <source>Binding property of type {0} and Value property of type {1} cannot be used with operator {2}.</source>
-          <target state="final">{0} 형식의 Binding 속성과 {1} 형식의 Value 속성을 {2} 연산자와 함께 사용할 수 없습니다.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">{0} is the type of the DataTriggerBehavior.Binding property specified by the user. {1} is the type of the DataTriggerBehavior.Value property specified by the user. {2} is one of the ComparisonConditionType enum values.</note>
-        </trans-unit>
-        <trans-unit id="InvalidRightOperand" translate="yes" xml:space="preserve">
-          <source>Value property of type {0} cannot be used with operator {1}.</source>
-          <target state="final">{0} 형식의 Value 속성을 {1} 연산자와 함께 사용할 수 없습니다.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">{1} is the type of the DataTriggerBehavior.Value property specified by the user. {1} is one of the ComparisonConditionType enum values.</note>
+          <target state="new">An instance of a behavior cannot be attached to more than one object at a time.</target>
         </trans-unit>
         <trans-unit id="DuplicateBehaviorInCollectionExceptionMessage" translate="yes" xml:space="preserve">
           <source>Cannot add an instance of a behavior to a BehaviorCollection more than once.</source>
-          <target state="final">동작의 인스턴스 하나를 BehaviorCollection에 두 번 이상 추가할 수 없습니다.</target>
-        </trans-unit>
-        <trans-unit id="NonActionAddedToActionCollectionExceptionMessage" translate="yes" xml:space="preserve">
-          <source>Only IAction types are supported in an ActionCollection.</source>
-          <target state="final">ActionCollection에서 IAction 형식만 지원됩니다.</target>
-        </trans-unit>
-        <trans-unit id="NonBehaviorAddedToBehaviorCollectionExceptionMessage" translate="yes" xml:space="preserve">
-          <source>Only IBehavior types are supported in a BehaviorCollection.</source>
-          <target state="final">BehaviorCollection에서 IBehavior 형식만 지원됩니다.</target>
+          <target state="new">Cannot add an instance of a behavior to a BehaviorCollection more than once.</target>
         </trans-unit>
         <trans-unit id="InvalidAssociatedObjectExceptionMessage" translate="yes" xml:space="preserve">
           <source>AssociatedObject is of type {0} but should be of type {1}.</source>
           <target state="new">AssociatedObject is of type {0} but should be of type {1}.</target>
+        </trans-unit>
+        <trans-unit id="NonActionAddedToActionCollectionExceptionMessage" translate="yes" xml:space="preserve">
+          <source>Only IAction types are supported in an ActionCollection.</source>
+          <target state="new">Only IAction types are supported in an ActionCollection.</target>
+        </trans-unit>
+        <trans-unit id="NonBehaviorAddedToBehaviorCollectionExceptionMessage" translate="yes" xml:space="preserve">
+          <source>Only IBehavior types are supported in a BehaviorCollection.</source>
+          <target state="new">Only IBehavior types are supported in a BehaviorCollection.</target>
+        </trans-unit>
+        <trans-unit id="CannotFindEventNameExceptionMessage" translate="yes" xml:space="preserve">
+          <source>Cannot find an event named {0} on type {1}.</source>
+          <target state="new">Cannot find an event named {0} on type {1}.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">{0} is the EventName property value specified by the user. {1} is the Type we are trying to find an event on.</note>
+        </trans-unit>
+        <trans-unit id="ChangePropertyActionCannotFindPropertyNameExceptionMessage" translate="yes" xml:space="preserve">
+          <source>Cannot find a property named {0} on type {1}.</source>
+          <target state="new">Cannot find a property named {0} on type {1}.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">{0} is the PropertyName property value specified by the user. {1} is the Type we are trying to find a property on.</note>
+        </trans-unit>
+        <trans-unit id="ChangePropertyActionCannotSetValueExceptionMessage" translate="yes" xml:space="preserve">
+          <source>Cannot assign value of type {0} to property {1} of type {2}. The {1} property can be assigned only values of type {2}.</source>
+          <target state="new">Cannot assign value of type {0} to property {1} of type {2}. The {1} property can be assigned only values of type {2}.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">{0} is the type name of the illegal value, or "null" if value is null. {1} is the name of the property. {2} is the type of the property.</note>
+        </trans-unit>
+        <trans-unit id="ChangePropertyActionPropertyIsReadOnlyExceptionMessage" translate="yes" xml:space="preserve">
+          <source>Property {0} defined by type {1} does not expose a set method and therefore cannot be modified.</source>
+          <target state="new">Property {0} defined by type {1} does not expose a set method and therefore cannot be modified.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">{0} is the name of the property. {1} is the name of the type that defines the property.</note>
+        </trans-unit>
+        <trans-unit id="EventNotSupportedExceptionMessage" translate="yes" xml:space="preserve">
+          <source>Event {0} is not supported. Consider implementing a custom IBehavior to respond to this event.</source>
+          <target state="new">Event {0} is not supported. Consider implementing a custom IBehavior to respond to this event.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">{0} is the name of an event.</note>
+        </trans-unit>
+        <trans-unit id="GoToStateActionTargetHasNoStateGroups" translate="yes" xml:space="preserve">
+          <source>Target {0} does not define any VisualStateGroups.</source>
+          <target state="new">Target {0} does not define any VisualStateGroups.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">{0} is an element name and could be an empty string.</note>
+        </trans-unit>
+        <trans-unit id="InvalidLeftOperand" translate="yes" xml:space="preserve">
+          <source>Binding property of type {0} cannot be used with operator {1}.</source>
+          <target state="new">Binding property of type {0} cannot be used with operator {1}.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">{0} is the type of the DataTriggerBehavior.Binding property specified by the user. {1} is one of the ComparisonConditionType enum values.</note>
+        </trans-unit>
+        <trans-unit id="InvalidOperands" translate="yes" xml:space="preserve">
+          <source>Binding property of type {0} and Value property of type {1} cannot be used with operator {2}.</source>
+          <target state="new">Binding property of type {0} and Value property of type {1} cannot be used with operator {2}.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">{0} is the type of the DataTriggerBehavior.Binding property specified by the user. {1} is the type of the DataTriggerBehavior.Value property specified by the user. {2} is one of the ComparisonConditionType enum values.</note>
+        </trans-unit>
+        <trans-unit id="InvalidRightOperand" translate="yes" xml:space="preserve">
+          <source>Value property of type {0} cannot be used with operator {1}.</source>
+          <target state="new">Value property of type {0} cannot be used with operator {1}.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">{1} is the type of the DataTriggerBehavior.Value property specified by the user. {1} is one of the ComparisonConditionType enum values.</note>
         </trans-unit>
       </group>
     </body>

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35027.167
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Xaml.Interactions", "Microsoft.Xaml.Interactions\Microsoft.Xaml.Interactions.csproj", "{A338A7F2-9010-477B-8A6E-6C2B2495C33C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Xaml.Interactivity", "Microsoft.Xaml.Interactivity\Microsoft.Xaml.Interactivity.csproj", "{A338A7F2-9010-477B-8A6E-6C2B2495C33C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Xaml.Interactions.Design", "Microsoft.Xaml.Interactions.Design\Microsoft.Xaml.Interactions.Design.csproj", "{A3161818-5AA8-4A7C-A6CD-B19EDA5F3AE1}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -25,7 +25,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Xaml.Interactions.DesignTools", "Microsoft.Xaml.Interactions.DesignTools\Microsoft.Xaml.Interactions.DesignTools.csproj", "{B6F7C183-33A0-4942-B680-97BEA6011890}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.Xaml.Interactions.WinUI", "Microsoft.Xaml.Interactions.WinUI\Microsoft.Xaml.Interactions.WinUI.csproj", "{53214A0E-68BB-4891-B3C4-55E0FA108661}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.Xaml.Interactivity.WinUI", "Microsoft.Xaml.Interactivity.WinUI\Microsoft.Xaml.Interactivity.WinUI.csproj", "{53214A0E-68BB-4891-B3C4-55E0FA108661}"
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Microsoft.Xaml.Interactivity.Shared", "Microsoft.Xaml.Interactivity.Shared\Microsoft.Xaml.Interactivity.Shared.shproj", "{52E3ED43-3013-4155-AD87-6DF52A265D59}"
 EndProject
@@ -35,7 +35,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Testing", "Testing", "{C5E2
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Platforms", "Platforms", "{6DC88A28-BB73-411D-A94C-D1D2637289C8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.Xaml.Interactions.Uwp", "Microsoft.Xaml.Interactions.Uwp\Microsoft.Xaml.Interactions.Uwp.csproj", "{B1C5E139-C8DF-46B5-9ABC-4515BDECAFA3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.Xaml.Interactivity.Uwp", "Microsoft.Xaml.Interactivity.Uwp\Microsoft.Xaml.Interactivity.Uwp.csproj", "{B1C5E139-C8DF-46B5-9ABC-4515BDECAFA3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
