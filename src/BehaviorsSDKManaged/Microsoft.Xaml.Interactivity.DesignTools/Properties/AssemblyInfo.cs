@@ -4,9 +4,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("Microsoft.Xaml.Interactivity.DesignTools")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Microsoft")]
 [assembly: AssemblyProduct("Microsoft.Xaml.Interactivity.DesignTools")]
-[assembly: AssemblyCopyright("Copyright © Microsoft 2015-2022")]
+[assembly: AssemblyCopyright("Copyright © Microsoft 2015-2024")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

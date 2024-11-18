@@ -8,9 +8,9 @@ using System.Windows;
 [assembly: AssemblyTitle("Microsoft.Xaml.Interactivity.Design")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Microsoft")]
 [assembly: AssemblyProduct("Microsoft.Xaml.Interactivity.Design")]
-[assembly: AssemblyCopyright("Copyright © Microsoft 2015-2022")]
+[assembly: AssemblyCopyright("Copyright © Microsoft 2015-2024")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
