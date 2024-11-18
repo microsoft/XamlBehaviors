@@ -3,7 +3,7 @@
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Microsoft.VisualStudio.TestTools.UnitTesting.AppContainer;
-using Microsoft.Xaml.Interactions.Media;
+using Microsoft.Xaml.Interactivity;
 
 namespace ManagedUnitTests
 {

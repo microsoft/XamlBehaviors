@@ -8,8 +8,6 @@ using System.Diagnostics.CodeAnalysis;
 #endif
 using System.Reflection;
 
-using Microsoft.Xaml.Interactivity;
-
 #if WinUI
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Data;
@@ -18,7 +16,7 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Data;
 #endif
 
-namespace Microsoft.Xaml.Interactions.Core
+namespace Microsoft.Xaml.Interactivity
 {
     internal static class DataBindingHelper
     {

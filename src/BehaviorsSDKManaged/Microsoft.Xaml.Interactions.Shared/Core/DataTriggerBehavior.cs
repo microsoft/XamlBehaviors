@@ -5,15 +5,13 @@ using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 
-using Microsoft.Xaml.Interactivity;
-
 #if WinUI
 using Microsoft.UI.Xaml;
 #else
 using Windows.UI.Xaml;
 #endif
 
-namespace Microsoft.Xaml.Interactions.Core
+namespace Microsoft.Xaml.Interactivity
 {
     /// <summary>
     /// A behavior that performs actions when the bound data meets a specified condition.
