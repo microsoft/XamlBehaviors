@@ -13,9 +13,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyCompany("Microsoft")]
 [assembly: AssemblyProduct("Microsoft.Xaml.Interactivity")]
 [assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCopyright("Copyright © Microsoft 2015-2024")]
 #endif
 [assembly: AssemblyDescription("")]
-[assembly: AssemblyCopyright("Copyright © Microsoft 2015-2024")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

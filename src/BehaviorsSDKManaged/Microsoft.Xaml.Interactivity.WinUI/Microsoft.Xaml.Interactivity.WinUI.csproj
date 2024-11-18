@@ -169,6 +169,18 @@
   </PropertyGroup>
   <Import Project="..\Microsoft.Xaml.Interactivity.Shared\Microsoft.Xaml.Interactivity.Shared.projitems" Label="Shared" />
   <Import Project="..\..\..\scripts\Microsoft.Xaml.Behaviors.Signing.targets" />
+  <PropertyGroup>
+    <PackageId>Microsoft.Xaml.Behaviors.WinUI.Managed</PackageId>
+    <Title>Microsoft.Xaml.Behaviors.WinUI.Managed</Title>
+    <Authors>Microsoft</Authors>
+    <Copyright>© Microsoft Corporation. All rights reserved.</Copyright>
+    <PackageTags>Behavior Action Behaviors Actions Blend Managed C# Interaction Interactivity Interactions</PackageTags>
+    <PackageLicenseUrl>http://go.microsoft.com/fwlink/?LinkID=708401</PackageLicenseUrl>
+    <PackageProjectUrl>http://go.microsoft.com/fwlink/?LinkID=651678</PackageProjectUrl>
+    <PackageIconUrl>http://go.microsoft.com/fwlink/?LinkID=708511</PackageIconUrl>
+    <NuspecFile>..\..\..\scripts\Microsoft.Xaml.Behaviors.WinUI.Managed.nuspec</NuspecFile>
+    <PackageOutputPath Condition=" '$(PackageOutputPath)' == '' ">..\..\..\out\NuGetPackages</PackageOutputPath>
+  </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <DocumentationFile>..\..\..\out\WinUI\BehaviorsSDKManaged\bin\$(Platform)\Release\Microsoft.Xaml.Interactivity.xml</DocumentationFile>
   </PropertyGroup>

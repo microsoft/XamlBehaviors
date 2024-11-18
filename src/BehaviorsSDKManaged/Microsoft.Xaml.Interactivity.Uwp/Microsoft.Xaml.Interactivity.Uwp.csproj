@@ -170,6 +170,11 @@
   </PropertyGroup>
   <Import Project="..\Microsoft.Xaml.Interactivity.Shared\Microsoft.Xaml.Interactivity.Shared.projitems" Label="Shared" />
   <Import Project="..\..\..\scripts\Microsoft.Xaml.Behaviors.Signing.targets" />
+  <PropertyGroup>
+
+    <!-- We only add this here as it produces the matching assembly attribute, the other properties are in the .nuspec -->
+    <Copyright>© Microsoft Corporation. All rights reserved.</Copyright>
+  </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <DocumentationFile>..\..\..\out\Uwp\BehaviorsSDKManaged\bin\$(Platform)\Release\Microsoft.Xaml.Interactivity.xml</DocumentationFile>
   </PropertyGroup>
