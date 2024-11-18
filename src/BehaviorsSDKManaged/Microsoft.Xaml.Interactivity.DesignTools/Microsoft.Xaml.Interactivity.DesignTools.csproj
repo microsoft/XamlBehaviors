@@ -7,8 +7,8 @@
     <ProjectGuid>{B6F7C183-33A0-4942-B680-97BEA6011890}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Microsoft.Xaml.Interactions.DesignTools</RootNamespace>
-    <AssemblyName>Microsoft.Xaml.Interactions.DesignTools</AssemblyName>
+    <RootNamespace>Microsoft.Xaml.Interactivity.DesignTools</RootNamespace>
+    <AssemblyName>Microsoft.Xaml.Interactivity.DesignTools</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -54,10 +54,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\Microsoft.Xaml.Interactions.Design\MetadataTableProvider.cs">
+    <Compile Include="..\Microsoft.Xaml.Interactivity.Design\MetadataTableProvider.cs">
       <Link>MetadataTableProvider.cs</Link>
     </Compile>
-    <Compile Include="..\Microsoft.Xaml.Interactions.Design\Properties\DesignTools.Resources.Designer.cs">
+    <Compile Include="..\Microsoft.Xaml.Interactivity.Design\Properties\DesignTools.Resources.Designer.cs">
       <Link>Properties\DesignTools.Resources.Designer.cs</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -70,10 +70,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="..\Microsoft.Xaml.Interactions.Design\Properties\Resources.resx">
+    <EmbeddedResource Include="..\Microsoft.Xaml.Interactivity.Design\Properties\Resources.resx">
       <Link>Properties\Resources.resx</Link>
       <Generator>ResXFileCodeGenerator</Generator>
-      <CustomToolNamespace>Microsoft.Xaml.Interactions.Design.Properties</CustomToolNamespace>
+      <CustomToolNamespace>Microsoft.Xaml.Interactivity.Design.Properties</CustomToolNamespace>
       <SubType>Designer</SubType>
       <LastGenOutput>DesignTools.Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>

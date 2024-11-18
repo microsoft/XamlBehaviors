@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <!-- Note: We can't use PackageReference for Microsoft.VisualStudioEng.MicroBuild.Core because Microsoft.Xaml.Interactions targets UAP which is not compatible with net4.8 -->
+  <!-- Note: We can't use PackageReference for Microsoft.VisualStudioEng.MicroBuild.Core because Microsoft.Xaml.Interactivity targets UAP which is not compatible with net4.8 -->
   <Import Project="..\packages\Microsoft.VisualStudioEng.MicroBuild.Core.1.0.0\build\Microsoft.VisualStudioEng.MicroBuild.Core.props" Condition="Exists('..\packages\Microsoft.VisualStudioEng.MicroBuild.Core.1.0.0\build\Microsoft.VisualStudioEng.MicroBuild.Core.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -9,8 +9,8 @@
     <ProjectGuid>{A3161818-5AA8-4A7C-A6CD-B19EDA5F3AE1}</ProjectGuid>
     <OutputType>library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Microsoft.Xaml.Interactions.Design</RootNamespace>
-    <AssemblyName>Microsoft.Xaml.Interactions.Design</AssemblyName>
+    <RootNamespace>Microsoft.Xaml.Interactivity.Design</RootNamespace>
+    <AssemblyName>Microsoft.Xaml.Interactivity.Design</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -52,7 +52,7 @@
     <IntermediateOutputPath>..\..\..\out\$(SolutionName)\obj\$(Platform)\$(Configuration)\</IntermediateOutputPath>
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Microsoft.Xaml.Interactions\Microsoft.Xaml.Interactivity.csproj">
+    <ProjectReference Include="..\Microsoft.Xaml.Interactivity\Microsoft.Xaml.Interactivity.csproj">
       <Name>Microsoft.Xaml.Interactivity</Name>
       <Project>{a338a7f2-9010-477b-8a6e-6c2b2495c33c}</Project>
     </ProjectReference>
@@ -107,7 +107,7 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <CustomToolNamespace>Microsoft.Xaml.Interactions.Design.Properties</CustomToolNamespace>
+      <CustomToolNamespace>Microsoft.Xaml.Interactivity.Design.Properties</CustomToolNamespace>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
