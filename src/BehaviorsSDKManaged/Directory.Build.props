@@ -12,13 +12,9 @@
     <SolutionDir Condition="'$(SolutionDir)' == ''">$(BehaviorsSDKManagedSolutionPath)</SolutionDir>
   </PropertyGroup>
 
-  <!--
-    Set the C# version to 12, enable nullability annotations and unsafe blocks.
-    Note that the <Nullable> tag will only work when used in SDK-style projects.
-    In other project types, it is just ignored, and invidual files need #nullable enable.
-  -->
+  <!-- Set the C# version and other common properties -->
   <PropertyGroup Condition="$(MSBuildProjectFile.EndsWith('.csproj'))">
-    <LangVersion>13.0</LangVersion>
+    <LangVersion>12.0</LangVersion>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
 
     <!--
