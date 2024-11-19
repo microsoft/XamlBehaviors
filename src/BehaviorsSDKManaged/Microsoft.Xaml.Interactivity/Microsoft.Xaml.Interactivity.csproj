@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{7FFC1385-C3E1-487C-9A81-DE48DD63ECB9}</ProjectGuid>
+    <ProjectGuid>{A338A7F2-9010-477B-8A6E-6C2B2495C33C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Microsoft.Xaml.Interactivity</RootNamespace>
@@ -28,7 +28,8 @@
     <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>..\..\..\out\BehaviorsSDKManaged\bin\AnyCPU\Debug\Microsoft.Xaml.Interactivity.xml</DocumentationFile>
+    <DocumentationFile></DocumentationFile>
+    <GenerateLibraryLayout>true</GenerateLibraryLayout>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -101,14 +102,11 @@
     <PRIResource Include="Resources\fr-FR\Strings.resw" />
     <PRIResource Include="Resources\es-ES\Strings.resw" />
     <PRIResource Include="Resources\de-DE\Strings.resw" />
-    <PRIResource Include="Resources\pt-BR\Strings.resw">
-      <SubType>Designer</SubType>
-    </PRIResource>
+    <PRIResource Include="Resources\pt-BR\Strings.resw" />
     <PRIResource Include="Resources\en-us\Strings.resw" />
     <PRIResource Include="Resources\uk-UA\Strings.resw" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="..\Version\Version.cs" />
     <EmbeddedResource Include="Properties\Microsoft.Xaml.Interactivity.rd.xml" />
   </ItemGroup>
@@ -119,9 +117,7 @@
     <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactivity.it-IT.xlf" />
     <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactivity.ja-JP.xlf" />
     <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactivity.ko-KR.xlf" />
-    <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactivity.pt-BR.xlf">
-      <SubType>Designer</SubType>
-    </XliffResource>
+    <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactivity.pt-BR.xlf" />
     <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactivity.ru-RU.xlf" />
     <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactivity.zh-CN.xlf" />
     <XliffResource Include="MultilingualResources\Microsoft.Xaml.Interactivity.zh-TW.xlf" />

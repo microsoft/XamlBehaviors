@@ -7,7 +7,7 @@ using Microsoft.UI.Xaml;
 using Windows.UI.Xaml;
 #endif
 
-namespace Microsoft.Xaml.Interactions.Utility
+namespace Microsoft.Xaml.Interactivity.Utility
 {
     /// <summary>
     /// Abstraction layer over the UWP's VisualTreeHelper class so we can 

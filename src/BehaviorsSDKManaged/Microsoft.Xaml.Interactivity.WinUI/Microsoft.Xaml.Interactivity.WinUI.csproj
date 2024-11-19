@@ -56,7 +56,6 @@
     <DebugType>pdbonly</DebugType>
     <UseVSHostingProcess>false</UseVSHostingProcess>
     <ErrorReport>prompt</ErrorReport>
-    <DocumentationFile>..\..\..\out\WinUI\BehaviorsSDKManaged\bin\x86\Release\Microsoft.Xaml.Interactivity.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM64'">
     <PlatformTarget>ARM64</PlatformTarget>
@@ -75,7 +74,6 @@
     <DebugType>pdbonly</DebugType>
     <UseVSHostingProcess>false</UseVSHostingProcess>
     <ErrorReport>prompt</ErrorReport>
-    <DocumentationFile>..\..\..\out\WinUI\BehaviorsSDKManaged\bin\ARM64\Release\Microsoft.Xaml.Interactivity.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
     <PlatformTarget>x64</PlatformTarget>
@@ -94,14 +92,10 @@
     <DebugType>pdbonly</DebugType>
     <UseVSHostingProcess>false</UseVSHostingProcess>
     <ErrorReport>prompt</ErrorReport>
-    <DocumentationFile>..\..\..\out\WinUI\BehaviorsSDKManaged\bin\x64\Release\Microsoft.Xaml.Interactivity.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup>
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Properties\Microsoft.Xaml.Interactivity.rd.xml" />
-  </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.VisualStudioEng.MicroBuild.Core" Version="1.0.0">
       <PrivateAssets>all</PrivateAssets>
@@ -117,7 +111,7 @@
   </ItemGroup>
   <ItemGroup>
     <PRIResource Include="..\Microsoft.Xaml.Interactivity\Resources\en-us\Strings.resw">
-      <Link>Resources\en-us\Strings.resw</Link>
+      <Link>Resources\en-US\Strings.resw</Link>
     </PRIResource>
   </ItemGroup>
   <ItemGroup>
@@ -170,10 +164,10 @@
       <Link>Resources\zh-TW\Strings.resw</Link>
     </PRIResource>
   </ItemGroup>
-  <Import Project="..\Microsoft.Xaml.Interactivity.Shared\Microsoft.Xaml.Interactivity.Shared.projitems" Label="Shared" />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
+  <Import Project="..\Microsoft.Xaml.Interactivity.Shared\Microsoft.Xaml.Interactivity.Shared.projitems" Label="Shared" />
   <Import Project="..\..\..\scripts\Microsoft.Xaml.Behaviors.Signing.targets" />
   <PropertyGroup>
     <PackageId>Microsoft.Xaml.Behaviors.WinUI.Managed</PackageId>
@@ -187,11 +181,10 @@
     <NuspecFile>..\..\..\scripts\Microsoft.Xaml.Behaviors.WinUI.Managed.nuspec</NuspecFile>
     <PackageOutputPath Condition=" '$(PackageOutputPath)' == '' ">..\..\..\out\NuGetPackages</PackageOutputPath>
   </PropertyGroup>
-  <Import Project="..\Version\NuGetPackageVersion.props" />
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <DocumentationFile>..\..\..\out\WinUI\BehaviorsSDKManaged\bin\$(Platform)\Release\Microsoft.Xaml.Interactivity.xml</DocumentationFile>
   </PropertyGroup>
-    <PropertyGroup>
+  <PropertyGroup>
     <DefineConstants>$(DefineConstants);WinUI</DefineConstants>
     <AssemblyName>Microsoft.Xaml.Interactivity</AssemblyName>
   </PropertyGroup>

@@ -26,31 +26,21 @@
         <file target="lib\net8.0-windows10.0.17763.0\Microsoft.Xaml.Interactivity.pdb"                     src="..\out\WinUI\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactivity.pdb" />
         <file target="lib\net8.0-windows10.0.17763.0\Microsoft.Xaml.Interactivity.xml"                     src="..\out\WinUI\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactivity.xml" />
         <file target="lib\net8.0-windows10.0.17763.0\Microsoft.Xaml.Interactivity.pri"                     src="..\out\WinUI\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactivity.pri" />
-        <file target="lib\net8.0-windows10.0.17763.0\Microsoft.Xaml.Interactions.dll"                      src="..\out\WinUI\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactions.dll" />
-        <file target="lib\net8.0-windows10.0.17763.0\Microsoft.Xaml.Interactions.pdb"                      src="..\out\WinUI\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactions.pdb" />
-        <file target="lib\net8.0-windows10.0.17763.0\Microsoft.Xaml.Interactions.xml"                      src="..\out\WinUI\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactions.xml" />
-        <file target="lib\net8.0-windows10.0.17763.0\Microsoft.Xaml.Interactions.pri"                      src="..\out\WinUI\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactions.pri" />
 
         <!--
         <file target="lib\net8.0-windows10.0.17763.0\Design\Microsoft.Xaml.Interactivity.Design.dll"       src="..\out\WinUI\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactivity.Design.dll" />
         <file target="lib\net8.0-windows10.0.17763.0\Design\Microsoft.Xaml.Interactivity.Design.pdb"       src="..\out\WinUI\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactivity.Design.pdb" />
-        <file target="lib\net8.0-windows10.0.17763.0\Design\Microsoft.Xaml.Interactions.Design.dll"        src="..\out\WinUI\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactions.Design.dll" />
-        <file target="lib\net8.0-windows10.0.17763.0\Design\Microsoft.Xaml.Interactions.Design.pdb"        src="..\out\WinUI\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactions.Design.pdb" />
         -->
       
         <file target="lib\net8.0-windows10.0.17763.0\Design\Microsoft.Xaml.Interactivity.DesignTools.dll"   src="..\out\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactivity.DesignTools.dll" />
         <file target="lib\net8.0-windows10.0.17763.0\Design\Microsoft.Xaml.Interactivity.DesignTools.pdb"   src="..\out\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactivity.DesignTools.pdb" />
-        <file target="lib\net8.0-windows10.0.17763.0\Design\Microsoft.Xaml.Interactions.DesignTools.dll"    src="..\out\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactions.DesignTools.dll" />
-        <file target="lib\net8.0-windows10.0.17763.0\Design\Microsoft.Xaml.Interactions.DesignTools.pdb"    src="..\out\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactions.DesignTools.pdb" />
 
-        <file target="src\BehaviorsSDKManaged\Microsoft.Xaml.Interactions.WinUI"              src="..\src\BehaviorsSDKManaged\Microsoft.Xaml.Interactions.Shared\**\*.cs" />
         <file target="src\BehaviorsSDKManaged\Microsoft.Xaml.Interactivity.WinUI"             src="..\src\BehaviorsSDKManaged\Microsoft.Xaml.Interactivity.Shared\**\*.cs" />
+
         <!--
-        <file target="src\BehaviorsSDKManaged\Microsoft.Xaml.Interactions.Design"       src="..\src\BehaviorsSDKManaged\Microsoft.Xaml.Interactions.Design\**\*.cs" />  
         <file target="src\BehaviorsSDKManaged\Microsoft.Xaml.Interactivity.Design"      src="..\src\BehaviorsSDKManaged\Microsoft.Xaml.Interactivity.Design\**\*.cs" />
         -->
 
-        <file target="src\BehaviorsSDKManaged\Microsoft.Xaml.Interactions.DesignTools"       src="..\src\BehaviorsSDKManaged\Microsoft.Xaml.Interactions.DesignTools\**\*.cs" />
         <file target="src\BehaviorsSDKManaged\Microsoft.Xaml.Interactivity.DesignTools"      src="..\src\BehaviorsSDKManaged\Microsoft.Xaml.Interactivity.DesignTools\**\*.cs" />
     </files>
 

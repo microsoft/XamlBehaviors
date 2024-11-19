@@ -1,8 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>Library</OutputType>
-    <TargetFramework>net8.0-windows10.0.18362.0</TargetFramework>
-    <WindowsSdkPackageVersion>10.0.18362.54</WindowsSdkPackageVersion>
+    <TargetFramework>net8.0-windows10.0.19041.0</TargetFramework>
+    <WindowsSdkPackageVersion>10.0.19041.54</WindowsSdkPackageVersion>
     <TargetPlatformMinVersion>10.0.18362.0</TargetPlatformMinVersion>
     <RootNamespace>Microsoft.Xaml.Interactivity</RootNamespace>
     <UseUwp>true</UseUwp>
@@ -37,7 +37,6 @@
     <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>..\..\..\out\Uwp\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactivity.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <PlatformTarget>x86</PlatformTarget>
@@ -56,7 +55,6 @@
     <DebugType>pdbonly</DebugType>
     <UseVSHostingProcess>false</UseVSHostingProcess>
     <ErrorReport>prompt</ErrorReport>
-    <DocumentationFile>..\..\..\out\Uwp\BehaviorsSDKManaged\bin\x86\Release\Microsoft.Xaml.Interactivity.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM64'">
     <PlatformTarget>ARM64</PlatformTarget>
@@ -75,7 +73,6 @@
     <DebugType>pdbonly</DebugType>
     <UseVSHostingProcess>false</UseVSHostingProcess>
     <ErrorReport>prompt</ErrorReport>
-    <DocumentationFile>..\..\..\out\Uwp\BehaviorsSDKManaged\bin\ARM64\Release\Microsoft.Xaml.Interactivity.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
     <PlatformTarget>x64</PlatformTarget>
@@ -94,7 +91,6 @@
     <DebugType>pdbonly</DebugType>
     <UseVSHostingProcess>false</UseVSHostingProcess>
     <ErrorReport>prompt</ErrorReport>
-    <DocumentationFile>..\..\..\out\Uwp\BehaviorsSDKManaged\bin\x64\Release\Microsoft.Xaml.Interactivity.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup>
     <NoWarn>$(NoWarn);NETSDK1219</NoWarn>
@@ -102,9 +98,6 @@
   <PropertyGroup>
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
-  <ItemGroup>
-    <Compile Include="..\Microsoft.Xaml.Interactivity.WinUI\Properties\AssemblyInfo.cs" Link="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.VisualStudioEng.MicroBuild.Core" Version="1.0.0">
       <PrivateAssets>all</PrivateAssets>
@@ -119,7 +112,7 @@
   </ItemGroup>
   <ItemGroup>
     <PRIResource Include="..\Microsoft.Xaml.Interactivity\Resources\en-us\Strings.resw">
-      <Link>Resources\en-us\Strings.resw</Link>
+      <Link>Resources\en-US\Strings.resw</Link>
     </PRIResource>
   </ItemGroup>
   <ItemGroup>
@@ -172,15 +165,16 @@
       <Link>Resources\zh-TW\Strings.resw</Link>
     </PRIResource>
   </ItemGroup>
-  <Import Project="..\Microsoft.Xaml.Interactivity.Shared\Microsoft.Xaml.Interactivity.Shared.projitems" Label="Shared" />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
+  <Import Project="..\Microsoft.Xaml.Interactivity.Shared\Microsoft.Xaml.Interactivity.Shared.projitems" Label="Shared" />
   <Import Project="..\..\..\scripts\Microsoft.Xaml.Behaviors.Signing.targets" />
   <PropertyGroup>
-    <!-- NuGet info is not needed, this project is packed in the same package as legacy UWP -->
+
+    <!-- We only add this here as it produces the matching assembly attribute, the other properties are in the .nuspec -->
+    <Copyright>© Microsoft Corporation. All rights reserved.</Copyright>
   </PropertyGroup>
-  <Import Project="..\Version\NuGetPackageVersion.props" />
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <DocumentationFile>..\..\..\out\Uwp\BehaviorsSDKManaged\bin\$(Platform)\Release\Microsoft.Xaml.Interactivity.xml</DocumentationFile>
   </PropertyGroup>

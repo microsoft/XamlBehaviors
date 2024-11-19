@@ -8,12 +8,14 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Microsoft.Xaml.Interactions")]
-[assembly: AssemblyDescription("")]
+#if !NET8_0_OR_GREATER
+[assembly: AssemblyTitle("Microsoft.Xaml.Interactivity")]
+[assembly: AssemblyCompany("Microsoft")]
+[assembly: AssemblyProduct("Microsoft.Xaml.Interactivity")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Microsoft.Xaml.Interactions")]
-[assembly: AssemblyCopyright("Copyright © Microsoft 2015-2022")]
+[assembly: AssemblyCopyright("Copyright © Microsoft 2015-2024")]
+#endif
+[assembly: AssemblyDescription("")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

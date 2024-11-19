@@ -3,7 +3,7 @@
 
 using System.Diagnostics.CodeAnalysis;
 
-using Microsoft.Xaml.Interactions.Utility;
+using Microsoft.Xaml.Interactivity.Utility;
 
 #if WinUI
 using Microsoft.UI.Xaml;

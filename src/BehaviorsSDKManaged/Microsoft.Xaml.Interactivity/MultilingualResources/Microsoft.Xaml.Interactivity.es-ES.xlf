@@ -6,9 +6,59 @@
     </header>
     <body>
       <group id="MICROSOFT.XAML.INTERACTIVITY/RESOURCES/EN-US/STRINGS.RESW" datatype="resx">
+        <trans-unit id="CallMethodActionValidMethodNotFoundExceptionMessage" translate="yes" xml:space="preserve">
+          <source>Cannot find method named {0} on object of type {1} that matches the expected signature.</source>
+          <target state="final">No se puede encontrar el método denominado {0} en el objeto de tipo {1} que coincida con la signatura esperada.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">{0} is the name of the method that could not be found. {1} is the name of the type that was searched for the method.</note>
+        </trans-unit>
         <trans-unit id="CannotAttachBehaviorMultipleTimesExceptionMessage" translate="yes" xml:space="preserve">
           <source>An instance of a behavior cannot be attached to more than one object at a time.</source>
           <target state="final">No se puede adjuntar una instancia de Behavior a más de un objeto simultáneamente.</target>
+        </trans-unit>
+        <trans-unit id="CannotFindEventNameExceptionMessage" translate="yes" xml:space="preserve">
+          <source>Cannot find an event named {0} on type {1}.</source>
+          <target state="final">No se puede encontrar un evento con el nombre {0} en el tipo {1}.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">{0} is the EventName property value specified by the user. {1} is the Type we are trying to find an event on.</note>
+        </trans-unit>
+        <trans-unit id="ChangePropertyActionCannotFindPropertyNameExceptionMessage" translate="yes" xml:space="preserve">
+          <source>Cannot find a property named {0} on type {1}.</source>
+          <target state="final">No se puede encontrar una propiedad con el nombre {0} en el tipo {1}.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">{0} is the PropertyName property value specified by the user. {1} is the Type we are trying to find a property on.</note>
+        </trans-unit>
+        <trans-unit id="ChangePropertyActionCannotSetValueExceptionMessage" translate="yes" xml:space="preserve">
+          <source>Cannot assign value of type {0} to property {1} of type {2}. The {1} property can be assigned only values of type {2}.</source>
+          <target state="final">No se puede asignar un valor del tipo {0} a la propiedad {1} del tipo {2}. A la propiedad {1} solo se le pueden asignar valores del tipo {2}.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">{0} is the type name of the illegal value, or "null" if value is null. {1} is the name of the property. {2} is the type of the property.</note>
+        </trans-unit>
+        <trans-unit id="ChangePropertyActionPropertyIsReadOnlyExceptionMessage" translate="yes" xml:space="preserve">
+          <source>Property {0} defined by type {1} does not expose a set method and therefore cannot be modified.</source>
+          <target state="final">La propiedad {0} definida por el tipo {1} no expone un método establecido y, por lo tanto, no se puede modificar.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">{0} is the name of the property. {1} is the name of the type that defines the property.</note>
+        </trans-unit>
+        <trans-unit id="EventNotSupportedExceptionMessage" translate="yes" xml:space="preserve">
+          <source>Event {0} is not supported. Consider implementing a custom IBehavior to respond to this event.</source>
+          <target state="final">No se admite el evento {0}. Considere implementar un IBehavior personalizado para responder a este evento.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">{0} is the name of an event.</note>
+        </trans-unit>
+        <trans-unit id="GoToStateActionTargetHasNoStateGroups" translate="yes" xml:space="preserve">
+          <source>Target {0} does not define any VisualStateGroups.</source>
+          <target state="final">El destino {0} no define ningún objeto VisualStateGroup.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">{0} is an element name and could be an empty string.</note>
+        </trans-unit>
+        <trans-unit id="InvalidLeftOperand" translate="yes" xml:space="preserve">
+          <source>Binding property of type {0} cannot be used with operator {1}.</source>
+          <target state="final">La propiedad Binding del tipo {0} no se puede usar con el operador {1}.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">{0} is the type of the DataTriggerBehavior.Binding property specified by the user. {1} is one of the ComparisonConditionType enum values.</note>
+        </trans-unit>
+        <trans-unit id="InvalidOperands" translate="yes" xml:space="preserve">
+          <source>Binding property of type {0} and Value property of type {1} cannot be used with operator {2}.</source>
+          <target state="final">La propiedad Binding del tipo {0} y la propiedad Value del tipo {1} no se pueden usar con el operador {2}.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">{0} is the type of the DataTriggerBehavior.Binding property specified by the user. {1} is the type of the DataTriggerBehavior.Value property specified by the user. {2} is one of the ComparisonConditionType enum values.</note>
+        </trans-unit>
+        <trans-unit id="InvalidRightOperand" translate="yes" xml:space="preserve">
+          <source>Value property of type {0} cannot be used with operator {1}.</source>
+          <target state="final">La propiedad Value del tipo {0} no se puede usar con el operador {1}.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">{1} is the type of the DataTriggerBehavior.Value property specified by the user. {1} is one of the ComparisonConditionType enum values.</note>
         </trans-unit>
         <trans-unit id="DuplicateBehaviorInCollectionExceptionMessage" translate="yes" xml:space="preserve">
           <source>Cannot add an instance of a behavior to a BehaviorCollection more than once.</source>

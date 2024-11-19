@@ -109,12 +109,8 @@
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Microsoft.Xaml.Interactions\Microsoft.Xaml.Interactions.csproj">
-      <Project>{a338a7f2-9010-477b-8a6e-6c2b2495c33c}</Project>
-      <Name>Microsoft.Xaml.Interactions</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Microsoft.Xaml.Interactivity\Microsoft.Xaml.Interactivity.csproj">
-      <Project>{7ffc1385-c3e1-487c-9a81-de48dd63ecb9}</Project>
+      <Project>{a338a7f2-9010-477b-8a6e-6c2b2495c33c}</Project>
       <Name>Microsoft.Xaml.Interactivity</Name>
     </ProjectReference>
   </ItemGroup>

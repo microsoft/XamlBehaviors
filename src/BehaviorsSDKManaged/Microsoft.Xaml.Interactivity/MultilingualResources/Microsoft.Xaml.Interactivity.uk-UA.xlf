@@ -6,9 +6,59 @@
     </header>
     <body>
       <group id="MICROSOFT.XAML.INTERACTIVITY/RESOURCES/EN-US/STRINGS.RESW" datatype="resx">
+        <trans-unit id="CallMethodActionValidMethodNotFoundExceptionMessage" translate="yes" xml:space="preserve">
+          <source>Cannot find method named {0} on object of type {1} that matches the expected signature.</source>
+          <target state="final">Неможливо знайти метод з ім'ям {0} в об'єкті типу {1}, який відповідав би очікуваному підпису.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">{0} is the name of the method that could not be found. {1} is the name of the type that was searched for the method.</note>
+        </trans-unit>
         <trans-unit id="CannotAttachBehaviorMultipleTimesExceptionMessage" translate="yes" xml:space="preserve">
           <source>An instance of a behavior cannot be attached to more than one object at a time.</source>
           <target state="final">Неможливо прикріпити екземпляр поведінки до декількох об'єктів одночасно.</target>
+        </trans-unit>
+        <trans-unit id="CannotFindEventNameExceptionMessage" translate="yes" xml:space="preserve">
+          <source>Cannot find an event named {0} on type {1}.</source>
+          <target state="final">Неможливо знайти подію з ім'ям {0} в типі {1}.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">{0} is the EventName property value specified by the user. {1} is the Type we are trying to find an event on.</note>
+        </trans-unit>
+        <trans-unit id="ChangePropertyActionCannotFindPropertyNameExceptionMessage" translate="yes" xml:space="preserve">
+          <source>Cannot find a property named {0} on type {1}.</source>
+          <target state="final">Неможливо знайти властивість з ім'ям {0} в типі {1}.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">{0} is the PropertyName property value specified by the user. {1} is the Type we are trying to find a property on.</note>
+        </trans-unit>
+        <trans-unit id="ChangePropertyActionCannotSetValueExceptionMessage" translate="yes" xml:space="preserve">
+          <source>Cannot assign value of type {0} to property {1} of type {2}. The {1} property can be assigned only values of type {2}.</source>
+          <target state="final">Неможливо призначити значення типу {0} властивості {1} типу {2}. Властивості {1} можна призначити тільки значення типу {2}.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">{0} is the type name of the illegal value, or "null" if value is null. {1} is the name of the property. {2} is the type of the property.</note>
+        </trans-unit>
+        <trans-unit id="ChangePropertyActionPropertyIsReadOnlyExceptionMessage" translate="yes" xml:space="preserve">
+          <source>Property {0} defined by type {1} does not expose a set method and therefore cannot be modified.</source>
+          <target state="final">Властивість {0}, яке визначається типом {1}, не надає заданий метод і, отже, не може бути змінено.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">{0} is the name of the property. {1} is the name of the type that defines the property.</note>
+        </trans-unit>
+        <trans-unit id="EventNotSupportedExceptionMessage" translate="yes" xml:space="preserve">
+          <source>Event {0} is not supported. Consider implementing a custom IBehavior to respond to this event.</source>
+          <target state="final">Подія {0} не підтримується. Для відгуку на дану подію рекомендується реалізувати користувальницьку поведінку IBehavior.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">{0} is the name of an event.</note>
+        </trans-unit>
+        <trans-unit id="GoToStateActionTargetHasNoStateGroups" translate="yes" xml:space="preserve">
+          <source>Target {0} does not define any VisualStateGroups.</source>
+          <target state="final">Цільовий об'єкт {0} не визначає ніяких груп VisualStateGroups.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">{0} is an element name and could be an empty string.</note>
+        </trans-unit>
+        <trans-unit id="InvalidLeftOperand" translate="yes" xml:space="preserve">
+          <source>Binding property of type {0} cannot be used with operator {1}.</source>
+          <target state="final">Властивість прив'язки типу {0} неможливо використовувати з оператором {1}.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">{0} is the type of the DataTriggerBehavior.Binding property specified by the user. {1} is one of the ComparisonConditionType enum values.</note>
+        </trans-unit>
+        <trans-unit id="InvalidOperands" translate="yes" xml:space="preserve">
+          <source>Binding property of type {0} and Value property of type {1} cannot be used with operator {2}.</source>
+          <target state="final">Властивість прив'язки типу {0} і властивість значення типу {1} неможливо використовувати з оператором {2}.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">{0} is the type of the DataTriggerBehavior.Binding property specified by the user. {1} is the type of the DataTriggerBehavior.Value property specified by the user. {2} is one of the ComparisonConditionType enum values.</note>
+        </trans-unit>
+        <trans-unit id="InvalidRightOperand" translate="yes" xml:space="preserve">
+          <source>Value property of type {0} cannot be used with operator {1}.</source>
+          <target state="final">Властивість значення типу {0} неможливо використовувати з оператором {1}.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">{1} is the type of the DataTriggerBehavior.Value property specified by the user. {1} is one of the ComparisonConditionType enum values.</note>
         </trans-unit>
         <trans-unit id="DuplicateBehaviorInCollectionExceptionMessage" translate="yes" xml:space="preserve">
           <source>Cannot add an instance of a behavior to a BehaviorCollection more than once.</source>

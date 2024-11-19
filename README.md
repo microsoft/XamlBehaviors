@@ -33,15 +33,15 @@ XAML Behaviors is an easy-to-use means of adding common and reusable interactivi
 For an example of using Behaviors in an application, here is a snippet of XAML:
 
 ```xml
-<Button xmlns:Core="using:Microsoft.Xaml.Interactions.Core" xmlns:Interactivity="using:Microsoft.Xaml.Interactivity">
+<Button xmlns:Interactivity="using:Microsoft.Xaml.Interactivity">
     <Interactivity:Interaction.Behaviors>
-        <Core:EventTriggerBehavior EventName="Click">
-            <Core:ChangePropertyAction PropertyName="Background">
-                <Core:ChangePropertyAction.Value>
+        <Interactivity:EventTriggerBehavior EventName="Click">
+            <Interactivity:ChangePropertyAction PropertyName="Background">
+                <Interactivity:ChangePropertyAction.Value>
                     <SolidColorBrush Color="Red"/>
-                </Core:ChangePropertyAction.Value>
-            </Core:ChangePropertyAction>
-        </Core:EventTriggerBehavior>
+                </Interactivity:ChangePropertyAction.Value>
+            </Interactivity:ChangePropertyAction>
+        </Interactivity:EventTriggerBehavior>
     </Interactivity:Interaction.Behaviors>
 </Button>
 ```
@@ -64,14 +64,17 @@ The [documentation](https://github.com/Microsoft/XamlBehaviors/wiki) explains ho
 
 #### Build and Create Managed XAML Behaviors NuGet
 
-- Open the "BehaviorsSDKManaged.sln" solution in Visual Studio
-- Change Build Configuration to Release
-- Build [Ctrl + B]
 - Ensure that [nuget.exe](https://learn.microsoft.com/en-us/nuget/install-nuget-client-tools?tabs=windows) is available in PATH
-- Run `msbuild /t:pack src\BehaviorsSDKManaged\Microsoft.Xaml.Interactions.Design\Microsoft.Xaml.Interactions.Design.csproj`
+- If you're using Visual Studio
+  - Open the "BehaviorsSDKManaged.sln" solution in Visual Studio
+  - Change Build Configuration to Release
+  - Build solution with right click > Build, or by clicking F6
+- If you're building from CLI (Visual Studio Developer Command prompt):
+  - Run `msbuild /restore -t:build src\BehaviorsSDKManaged\BehaviorsSDKManaged.sln /p:Configuration=Release`
+- Run `msbuild /t:pack src\BehaviorsSDKManaged\Microsoft.Xaml.Interactivity.Design\Microsoft.Xaml.Interactivity.Design.csproj`
   - *(Optional)* Add `/p:TimestampPackage=true` to include the timestamp in the NuGet package version
 
 For WinUI:
 
-- Run `msbuild /t:Pack src\BehaviorsSDKManaged\Microsoft.Xaml.Interactivity.WinUI\Microsoft.Xaml.Interactivity.WinUI.csproj`
+- Run `msbuild /t:Pack src\BehaviorsSDKManaged\Microsoft.Xaml.Interactivity.WinUI\Microsoft.Xaml.Interactivity.WinUI.csproj /p:Configuration=Release`
   - *(Optional)* Add `/p:TimestampPackage=true` to include the timestamp in the NuGet package version

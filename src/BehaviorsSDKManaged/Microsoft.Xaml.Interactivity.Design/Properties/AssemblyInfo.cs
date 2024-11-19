@@ -10,7 +10,7 @@ using System.Windows;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Microsoft")]
 [assembly: AssemblyProduct("Microsoft.Xaml.Interactivity.Design")]
-[assembly: AssemblyCopyright("Copyright © Microsoft 2015-2022")]
+[assembly: AssemblyCopyright("Copyright © Microsoft 2015-2024")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -37,4 +37,3 @@ using System.Windows;
                                       //(used if a resource is not found in the page, 
                                       // app, or any theme specific resource dictionaries)
 )]
-

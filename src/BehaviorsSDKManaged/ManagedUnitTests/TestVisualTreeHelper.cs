@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Microsoft.Xaml.Interactions.Utility;
+using Microsoft.Xaml.Interactivity.Utility;
 using Windows.UI.Xaml;
 
 namespace ManagedUnitTests
