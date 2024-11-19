@@ -3,54 +3,53 @@
 
 using System;
 
-namespace Microsoft.Xaml.Interactivity
+namespace Microsoft.Xaml.Interactivity;
+
+/// <summary>
+/// Enumerates possible values for reusable property value editors.
+/// </summary>
+public enum CustomPropertyValueEditor
 {
 	/// <summary>
-	/// Enumerates possible values for reusable property value editors.
+	/// Uses the storyboard picker, if supported, to edit this property at design time.
 	/// </summary>
-	public enum CustomPropertyValueEditor
+	Storyboard,
+	/// <summary>
+	/// Uses the state picker, if supported, to edit this property at design time.
+	/// </summary>
+	StateName,
+	/// <summary>
+	/// Uses the element-binding picker, if supported, to edit this property at design time.
+	/// </summary>
+	ElementBinding,
+	/// <summary>
+	/// Uses the property-binding picker, if supported, to edit this property at design time.
+	/// </summary>
+	PropertyBinding,
+}
+
+/// <summary>
+/// Associates the given editor type with the property to which the <see cref="CustomPropertyValueEditor"/> is applied.
+/// </summary>
+/// <remarks>Use this attribute to get improved design-time editing for properties that denote element (by name), storyboards, or states (by name).</remarks>
+[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
+public sealed class CustomPropertyValueEditorAttribute : Attribute
+{
+	/// <summary>
+	/// Initializes a new instance of the <see cref="CustomPropertyValueEditorAttribute"/> class.
+	/// </summary>
+	/// <param name="customPropertyValueEditor">The custom property value editor.</param>
+	public CustomPropertyValueEditorAttribute(CustomPropertyValueEditor customPropertyValueEditor)
 	{
-		/// <summary>
-		/// Uses the storyboard picker, if supported, to edit this property at design time.
-		/// </summary>
-		Storyboard,
-		/// <summary>
-		/// Uses the state picker, if supported, to edit this property at design time.
-		/// </summary>
-		StateName,
-		/// <summary>
-		/// Uses the element-binding picker, if supported, to edit this property at design time.
-		/// </summary>
-		ElementBinding,
-		/// <summary>
-		/// Uses the property-binding picker, if supported, to edit this property at design time.
-		/// </summary>
-		PropertyBinding,
+		this.CustomPropertyValueEditor = customPropertyValueEditor;
 	}
 
 	/// <summary>
-	/// Associates the given editor type with the property to which the <see cref="CustomPropertyValueEditor"/> is applied.
+	/// Gets the custom property value editor.
 	/// </summary>
-	/// <remarks>Use this attribute to get improved design-time editing for properties that denote element (by name), storyboards, or states (by name).</remarks>
-	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public sealed class CustomPropertyValueEditorAttribute : Attribute
+	public CustomPropertyValueEditor CustomPropertyValueEditor
 	{
-		/// <summary>
-		/// Initializes a new instance of the <see cref="CustomPropertyValueEditorAttribute"/> class.
-		/// </summary>
-		/// <param name="customPropertyValueEditor">The custom property value editor.</param>
-		public CustomPropertyValueEditorAttribute(CustomPropertyValueEditor customPropertyValueEditor)
-		{
-			this.CustomPropertyValueEditor = customPropertyValueEditor;
-		}
-
-		/// <summary>
-		/// Gets the custom property value editor.
-		/// </summary>
-		public CustomPropertyValueEditor CustomPropertyValueEditor
-		{
-			get;
-			private set;
-		}
+		get;
+		private set;
 	}
 }

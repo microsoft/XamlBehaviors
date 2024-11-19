@@ -7,414 +7,413 @@ using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Navigation;
 
-namespace ManagedUnitTests
+namespace ManagedUnitTests;
+
+public class StubBehavior : DependencyObject, IBehavior
 {
-    public class StubBehavior : DependencyObject, IBehavior
+    public int AttachCount
     {
-        public int AttachCount
-        {
-            get;
-            private set;
-        }
+        get;
+        private set;
+    }
 
-        public int DetachCount
-        {
-            get;
-            private set;
-        }
+    public int DetachCount
+    {
+        get;
+        private set;
+    }
 
-        public ActionCollection Actions
-        {
-            get;
-            private set;
-        }
+    public ActionCollection Actions
+    {
+        get;
+        private set;
+    }
 
-        public StubBehavior()
-        {
-            this.Actions = new ActionCollection();
-        }
+    public StubBehavior()
+    {
+        this.Actions = new ActionCollection();
+    }
 
-        public DependencyObject AssociatedObject
-        {
-            get;
-            private set;
-        }
+    public DependencyObject AssociatedObject
+    {
+        get;
+        private set;
+    }
 
-        public void Attach(DependencyObject dependencyObject)
-        {
-            this.AssociatedObject = dependencyObject;
-            this.AttachCount++;
-        }
+    public void Attach(DependencyObject dependencyObject)
+    {
+        this.AssociatedObject = dependencyObject;
+        this.AttachCount++;
+    }
 
-        public void Detach()
-        {
-            this.AssociatedObject = null;
-            this.DetachCount++;
-        }
+    public void Detach()
+    {
+        this.AssociatedObject = null;
+        this.DetachCount++;
+    }
 
-        public IEnumerable<object> Execute(object sender, object parameter)
+    public IEnumerable<object> Execute(object sender, object parameter)
+    {
+        return Interaction.ExecuteActions(sender, this.Actions, parameter);
+    }
+}
+
+public class StubAction : DependencyObject, IAction
+{
+    private readonly object _returnValue;
+
+    public StubAction()
+    {
+        this._returnValue = null;
+    }
+
+    public StubAction(object returnValue)
+    {
+        this._returnValue = returnValue;
+    }
+
+    public object Sender
+    {
+        get;
+        private set;
+    }
+
+    public object Parameter
+    {
+        get;
+        private set;
+    }
+
+    public int ExecuteCount
+    {
+        get;
+        private set;
+    }
+
+    public object Execute(object sender, object parameter)
+    {
+        this.ExecuteCount++;
+        this.Sender = sender;
+        this.Parameter = parameter;
+        return this._returnValue;
+    }
+}
+
+public class EventObjectStub : DependencyObject
+{
+    public string Name;
+
+    public delegate void IntEventHandler(int i);
+
+    public event EventHandler StubEvent;
+    public event EventHandler StubEvent2;
+    public event IntEventHandler IntEvent;
+    public event EventHandler Click;
+
+    public EventObjectStub(string name = null)
+    {
+        this.Name = name;
+    }
+
+    public void FireStubEvent()
+    {
+        if (this.StubEvent != null)
         {
-            return Interaction.ExecuteActions(sender, this.Actions, parameter);
+            this.StubEvent.Invoke(this, new EventArgs());
         }
     }
 
-    public class StubAction : DependencyObject, IAction
+    public void FireClickEvent()
     {
-        private readonly object _returnValue;
-
-        public StubAction()
+        if (this.Click != null)
         {
-            this._returnValue = null;
-        }
-
-        public StubAction(object returnValue)
-        {
-            this._returnValue = returnValue;
-        }
-
-        public object Sender
-        {
-            get;
-            private set;
-        }
-
-        public object Parameter
-        {
-            get;
-            private set;
-        }
-
-        public int ExecuteCount
-        {
-            get;
-            private set;
-        }
-
-        public object Execute(object sender, object parameter)
-        {
-            this.ExecuteCount++;
-            this.Sender = sender;
-            this.Parameter = parameter;
-            return this._returnValue;
+            this.Click.Invoke(this, new EventArgs());
         }
     }
 
-    public class EventObjectStub : DependencyObject
+    public void FireStubEvent2()
     {
-        public string Name;
-
-        public delegate void IntEventHandler(int i);
-
-        public event EventHandler StubEvent;
-        public event EventHandler StubEvent2;
-        public event IntEventHandler IntEvent;
-        public event EventHandler Click;
-
-        public EventObjectStub(string name = null)
+        if (this.StubEvent2 != null)
         {
-            this.Name = name;
-        }
-
-        public void FireStubEvent()
-        {
-            if (this.StubEvent != null)
-            {
-                this.StubEvent.Invoke(this, new EventArgs());
-            }
-        }
-
-        public void FireClickEvent()
-        {
-            if (this.Click != null)
-            {
-                this.Click.Invoke(this, new EventArgs());
-            }
-        }
-
-        public void FireStubEvent2()
-        {
-            if (this.StubEvent2 != null)
-            {
-                this.StubEvent2(this, new EventArgs());
-            }
-        }
-
-        public void FireIntEvent()
-        {
-            if (this.IntEvent != null)
-            {
-                this.IntEvent(0);
-            }
+            this.StubEvent2(this, new EventArgs());
         }
     }
 
-    public class ClrEventClassStub
+    public void FireIntEvent()
     {
-        public event EventHandler Event;
-        public static readonly string EventName = "Event";
-
-        public void Fire()
+        if (this.IntEvent != null)
         {
-            if (this.Event != null)
-            {
-                this.Event(this, EventArgs.Empty);
-            }
+            this.IntEvent(0);
         }
     }
+}
 
-    public class ChangePropertyActionTargetStub
+public class ClrEventClassStub
+{
+    public event EventHandler Event;
+    public static readonly string EventName = "Event";
+
+    public void Fire()
     {
-        public const string DoublePropertyName = "DoubleProperty";
-        public const string StringPropertyName = "StringProperty";
-        public const string ObjectPropertyName = "ObjectProperty";
-        public const string AdditivePropertyName = "AdditiveProperty";
-        public const string WriteOnlyPropertyName = "WriteOnlyProperty";
-
-        public double DoubleProperty
+        if (this.Event != null)
         {
-            get;
-            set;
-        }
-
-        public string StringProperty
-        {
-            get;
-            set;
-        }
-
-        public object ObjectProperty
-        {
-            get;
-            set;
-        }
-
-        public object WriteOnlyProperty
-        {
-            set
-            {
-            }
+            this.Event(this, EventArgs.Empty);
         }
     }
+}
 
-    public class NavigateToPageActionTargetStub : Frame
+public class ChangePropertyActionTargetStub
+{
+    public const string DoublePropertyName = "DoubleProperty";
+    public const string StringPropertyName = "StringProperty";
+    public const string ObjectPropertyName = "ObjectProperty";
+    public const string AdditivePropertyName = "AdditiveProperty";
+    public const string WriteOnlyPropertyName = "WriteOnlyProperty";
+
+    public double DoubleProperty
     {
-        public bool HasNavigated
-        {
-            get;
-            private set;
-        }
-
-        public object LastParameter
-        {
-            get;
-            private set;
-        }
-
-        public new bool Navigate(Type sourcePageType)
-        {
-            this.HasNavigated = true;
-            return true;
-        }
-
-        public new bool Navigate(Type sourcePageType, object parameter)
-        {
-            this.HasNavigated = true;
-            this.LastParameter = parameter;
-
-            return true;
-        }
+        get;
+        set;
     }
 
-    public class MethodObjectStub : DependencyObject
+    public string StringProperty
     {
-        public string LastMethodCalled
-        {
-            get;
-            private set;
-        }
-
-        public MethodObjectStub()
-        {
-            this.LastMethodCalled = "None";
-        }
-
-        public void UniqueMethodWithNoParameters()
-        {
-            this.LastMethodCalled = "UniqueMethodWithNoParameters";
-        }
-
-        public void DuplicatedMethod()
-        {
-            this.LastMethodCalled = "DuplicatedMethodWithNoParameters";
-        }
-
-        public void DuplicatedMethod(object sender, EventArgs args)
-        {
-            this.LastMethodCalled = "DuplicatedMethodWithEventHandlerSignature";
-        }
-
-        public void DuplicatedMethod(object sender, StubEventArgs args)
-        {
-            this.LastMethodCalled = "DuplicatedMethodWithStubEventArgsSignature";
-        }
-
-        private void AnotherDuplicateMethod()
-        {
-            this.LastMethodCalled = "HiddenAnotherDuplicateMethod";
-        }
-
-        public void AnotherDuplicateMethod(object sender, object args)
-        {
-            this.LastMethodCalled = "AnotherDuplicateMethod";
-        }
-
-        public void AnotherDuplicateMethod(object sender, int args)
-        {
-            this.LastMethodCalled = "AnotherDuplicateMethodWithValueType";
-        }
-
-        public void IndistinguishableWithNullMethod(object sender, Nullable<bool> args)
-        {
-            this.LastMethodCalled = "NullableIndistinguishableWithNullMethod";
-        }
-
-        public void IndistinguishableWithNullMethod(object sender, Button args)
-        {
-            this.LastMethodCalled = "ButtonIndistinguishableWithNullMethod";
-        }
-
-        public void IndistinguishableWithNullMethod(object sender, bool args)
-        {
-            this.LastMethodCalled = "BoolIndistinguishableWithNullMethod";
-        }
-
-        public int IncompatibleReturnType()
-        {
-            this.LastMethodCalled = "IncompatibleReturnType";
-            return 0;
-        }
-
-        public void IncompatibleParameters(double d)
-        {
-            this.LastMethodCalled = "IncompatibleParameters";
-        }
+        get;
+        set;
     }
 
-    public class StubEventArgs : EventArgs
+    public object ObjectProperty
     {
+        get;
+        set;
     }
 
-    public class StubCommand : ICommand
+    public object WriteOnlyProperty
     {
-        public event EventHandler CanExecuteChanged;
-
-        protected virtual void OnCanExecuteChanged(EventArgs e)
+        set
         {
-            CanExecuteChanged?.Invoke(this, e);
-        }
-
-        public int ExecutionCount
-        {
-            get;
-            private set;
-        }
-
-        public object LastParameter
-        {
-            get;
-            private set;
-        }
-
-        public bool CanExecute(object parameter)
-        {
-            return true;
-        }
-
-        public void Execute(object parameter)
-        {
-            this.ExecutionCount++;
-            string stringParam = parameter as string;
-            this.LastParameter = parameter;
         }
     }
+}
 
-    public class BoolToTestParameterConverter : IValueConverter
+public class NavigateToPageActionTargetStub : Frame
+{
+    public bool HasNavigated
     {
-        public object Convert(object value, Type targetType, object parameter, string language)
-        {
-            bool boolValue;
-            bool boolParameter;
-            if (value == null ||
-                !bool.TryParse(value.ToString(), out boolValue) ||
-                !bool.TryParse(parameter.ToString(), out boolParameter))
-            {
-                return null;
-            }
-
-            string convertedValue = boolValue && boolParameter ? "TrueParameter" : "FalseParameter";
-            return convertedValue + language;
-        }
-
-        public object ConvertBack(object value, Type targetType, object parameter, string language)
-        {
-            throw new NotImplementedException();
-        }
+        get;
+        private set;
     }
 
-    public class StubFrame : Frame
+    public object LastParameter
     {
-        public bool NavigatedTo
-        {
-            get;
-            private set;
-        }
-
-        public object Parameter
-        {
-            get;
-            private set;
-        }
-
-        public StubFrame()
-        {
-            this.Navigated += this.OnNavigated;
-        }
-
-        private void OnNavigated(object sender, NavigationEventArgs e)
-        {
-            this.NavigatedTo = true;
-            this.Parameter = e.Parameter;
-        }
+        get;
+        private set;
     }
 
-    public class StubPage : Page
+    public new bool Navigate(Type sourcePageType)
     {
+        this.HasNavigated = true;
+        return true;
     }
 
-    public class NavigableStub : DependencyObject, INavigate
+    public new bool Navigate(Type sourcePageType, object parameter)
     {
-        public string NavigatedTypeFullName
-        {
-            get;
-            private set;
-        }
+        this.HasNavigated = true;
+        this.LastParameter = parameter;
 
-        public bool Navigate(Type sourcePageType)
-        {
-            this.NavigatedTypeFullName = sourcePageType.FullName;
-            return true;
-        }
+        return true;
+    }
+}
+
+public class MethodObjectStub : DependencyObject
+{
+    public string LastMethodCalled
+    {
+        get;
+        private set;
     }
 
-    public static class BehaviorTestHelper
+    public MethodObjectStub()
     {
-        public static T CreateNamedElement<T>(string name) where T : FrameworkElement, new()
+        this.LastMethodCalled = "None";
+    }
+
+    public void UniqueMethodWithNoParameters()
+    {
+        this.LastMethodCalled = "UniqueMethodWithNoParameters";
+    }
+
+    public void DuplicatedMethod()
+    {
+        this.LastMethodCalled = "DuplicatedMethodWithNoParameters";
+    }
+
+    public void DuplicatedMethod(object sender, EventArgs args)
+    {
+        this.LastMethodCalled = "DuplicatedMethodWithEventHandlerSignature";
+    }
+
+    public void DuplicatedMethod(object sender, StubEventArgs args)
+    {
+        this.LastMethodCalled = "DuplicatedMethodWithStubEventArgsSignature";
+    }
+
+    private void AnotherDuplicateMethod()
+    {
+        this.LastMethodCalled = "HiddenAnotherDuplicateMethod";
+    }
+
+    public void AnotherDuplicateMethod(object sender, object args)
+    {
+        this.LastMethodCalled = "AnotherDuplicateMethod";
+    }
+
+    public void AnotherDuplicateMethod(object sender, int args)
+    {
+        this.LastMethodCalled = "AnotherDuplicateMethodWithValueType";
+    }
+
+    public void IndistinguishableWithNullMethod(object sender, Nullable<bool> args)
+    {
+        this.LastMethodCalled = "NullableIndistinguishableWithNullMethod";
+    }
+
+    public void IndistinguishableWithNullMethod(object sender, Button args)
+    {
+        this.LastMethodCalled = "ButtonIndistinguishableWithNullMethod";
+    }
+
+    public void IndistinguishableWithNullMethod(object sender, bool args)
+    {
+        this.LastMethodCalled = "BoolIndistinguishableWithNullMethod";
+    }
+
+    public int IncompatibleReturnType()
+    {
+        this.LastMethodCalled = "IncompatibleReturnType";
+        return 0;
+    }
+
+    public void IncompatibleParameters(double d)
+    {
+        this.LastMethodCalled = "IncompatibleParameters";
+    }
+}
+
+public class StubEventArgs : EventArgs
+{
+}
+
+public class StubCommand : ICommand
+{
+    public event EventHandler CanExecuteChanged;
+
+    protected virtual void OnCanExecuteChanged(EventArgs e)
+    {
+        CanExecuteChanged?.Invoke(this, e);
+    }
+
+    public int ExecutionCount
+    {
+        get;
+        private set;
+    }
+
+    public object LastParameter
+    {
+        get;
+        private set;
+    }
+
+    public bool CanExecute(object parameter)
+    {
+        return true;
+    }
+
+    public void Execute(object parameter)
+    {
+        this.ExecutionCount++;
+        string stringParam = parameter as string;
+        this.LastParameter = parameter;
+    }
+}
+
+public class BoolToTestParameterConverter : IValueConverter
+{
+    public object Convert(object value, Type targetType, object parameter, string language)
+    {
+        bool boolValue;
+        bool boolParameter;
+        if (value == null ||
+            !bool.TryParse(value.ToString(), out boolValue) ||
+            !bool.TryParse(parameter.ToString(), out boolParameter))
         {
-            T frameworkElement = new T()
-            {
-                Name = name
-            };
-            return frameworkElement;
+            return null;
         }
+
+        string convertedValue = boolValue && boolParameter ? "TrueParameter" : "FalseParameter";
+        return convertedValue + language;
+    }
+
+    public object ConvertBack(object value, Type targetType, object parameter, string language)
+    {
+        throw new NotImplementedException();
+    }
+}
+
+public class StubFrame : Frame
+{
+    public bool NavigatedTo
+    {
+        get;
+        private set;
+    }
+
+    public object Parameter
+    {
+        get;
+        private set;
+    }
+
+    public StubFrame()
+    {
+        this.Navigated += this.OnNavigated;
+    }
+
+    private void OnNavigated(object sender, NavigationEventArgs e)
+    {
+        this.NavigatedTo = true;
+        this.Parameter = e.Parameter;
+    }
+}
+
+public class StubPage : Page
+{
+}
+
+public class NavigableStub : DependencyObject, INavigate
+{
+    public string NavigatedTypeFullName
+    {
+        get;
+        private set;
+    }
+
+    public bool Navigate(Type sourcePageType)
+    {
+        this.NavigatedTypeFullName = sourcePageType.FullName;
+        return true;
+    }
+}
+
+public static class BehaviorTestHelper
+{
+    public static T CreateNamedElement<T>(string name) where T : FrameworkElement, new()
+    {
+        T frameworkElement = new T()
+        {
+            Name = name
+        };
+        return frameworkElement;
     }
 }

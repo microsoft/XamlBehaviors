@@ -1,101 +1,101 @@
 ﻿// Copyright (c) Microsoft. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
-namespace Microsoft.Xaml.Interactivity
+
+namespace Microsoft.Xaml.Interactivity;
+
+using Windows.ApplicationModel.Resources;
+
+internal static class ResourceHelper
 {
-    using Windows.ApplicationModel.Resources;
-
-    internal static class ResourceHelper
-    {
 #if NET8_0_OR_GREATER && !MODERN_WINDOWS_UWP
-        private static ResourceLoader strings = new ResourceLoader(ResourceLoader.GetDefaultResourceFilePath(), "Microsoft.Xaml.Interactivity/Strings");
+    private static ResourceLoader strings = new ResourceLoader(ResourceLoader.GetDefaultResourceFilePath(), "Microsoft.Xaml.Interactivity/Strings");
 #endif
 
-        public static string GetString(string resourceName)
-        {
+    public static string GetString(string resourceName)
+    {
 #if !NET8_0_OR_GREATER || MODERN_WINDOWS_UWP
-            ResourceLoader strings = ResourceLoader.GetForCurrentView("Microsoft.Xaml.Interactivity/Strings");
+        ResourceLoader strings = ResourceLoader.GetForCurrentView("Microsoft.Xaml.Interactivity/Strings");
 #endif
-            return strings.GetString(resourceName);
-        }
+        return strings.GetString(resourceName);
+    }
 
-        public static string CallMethodActionValidMethodNotFoundExceptionMessage
+    public static string CallMethodActionValidMethodNotFoundExceptionMessage
+    {
+        get
         {
-            get
-            {
-                return ResourceHelper.GetString("CallMethodActionValidMethodNotFoundExceptionMessage");
-            }
+            return ResourceHelper.GetString("CallMethodActionValidMethodNotFoundExceptionMessage");
         }
+    }
 
-        public static string ChangePropertyActionCannotFindPropertyNameExceptionMessage
+    public static string ChangePropertyActionCannotFindPropertyNameExceptionMessage
+    {
+        get
         {
-            get
-            {
-                return ResourceHelper.GetString("ChangePropertyActionCannotFindPropertyNameExceptionMessage");
-            }
+            return ResourceHelper.GetString("ChangePropertyActionCannotFindPropertyNameExceptionMessage");
         }
+    }
 
-        public static string ChangePropertyActionCannotSetValueExceptionMessage
+    public static string ChangePropertyActionCannotSetValueExceptionMessage
+    {
+        get
         {
-            get
-            {
-                return ResourceHelper.GetString("ChangePropertyActionCannotSetValueExceptionMessage");
-            }
+            return ResourceHelper.GetString("ChangePropertyActionCannotSetValueExceptionMessage");
         }
+    }
 
-        public static string ChangePropertyActionPropertyIsReadOnlyExceptionMessage
+    public static string ChangePropertyActionPropertyIsReadOnlyExceptionMessage
+    {
+        get
         {
-            get
-            {
-                return ResourceHelper.GetString("ChangePropertyActionPropertyIsReadOnlyExceptionMessage");
-            }
+            return ResourceHelper.GetString("ChangePropertyActionPropertyIsReadOnlyExceptionMessage");
         }
+    }
 
-        public static string GoToStateActionTargetHasNoStateGroups
+    public static string GoToStateActionTargetHasNoStateGroups
+    {
+        get
         {
-            get
-            {
-                return ResourceHelper.GetString("GoToStateActionTargetHasNoStateGroups");
-            }
+            return ResourceHelper.GetString("GoToStateActionTargetHasNoStateGroups");
         }
+    }
 
-        public static string CannotAttachBehaviorMultipleTimesExceptionMessage
+    public static string CannotAttachBehaviorMultipleTimesExceptionMessage
+    {
+        get
         {
-            get
-            {
-                return ResourceHelper.GetString("CannotAttachBehaviorMultipleTimesExceptionMessage");
-            }
+            return ResourceHelper.GetString("CannotAttachBehaviorMultipleTimesExceptionMessage");
         }
+    }
 
-        public static string CannotFindEventNameExceptionMessage
+    public static string CannotFindEventNameExceptionMessage
+    {
+        get
         {
-            get
-            {
-                return ResourceHelper.GetString("CannotFindEventNameExceptionMessage");
-            }
+            return ResourceHelper.GetString("CannotFindEventNameExceptionMessage");
         }
+    }
 
-        public static string InvalidLeftOperand
+    public static string InvalidLeftOperand
+    {
+        get
         {
-            get
-            {
-                return ResourceHelper.GetString("InvalidLeftOperand");
-            }
+            return ResourceHelper.GetString("InvalidLeftOperand");
         }
+    }
 
-        public static string InvalidRightOperand
+    public static string InvalidRightOperand
+    {
+        get
         {
-            get
-            {
-                return ResourceHelper.GetString("InvalidRightOperand");
-            }
+            return ResourceHelper.GetString("InvalidRightOperand");
         }
+    }
 
-        public static string InvalidOperands
+    public static string InvalidOperands
+    {
+        get
         {
-            get
-            {
-                return ResourceHelper.GetString("InvalidOperands");
-            }
+            return ResourceHelper.GetString("InvalidOperands");
         }
     }
 }

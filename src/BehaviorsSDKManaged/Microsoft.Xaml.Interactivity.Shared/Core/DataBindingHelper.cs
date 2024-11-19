@@ -16,76 +16,75 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Data;
 #endif
 
-namespace Microsoft.Xaml.Interactivity
-{
-    internal static class DataBindingHelper
-    {
-        private static readonly Dictionary<Type, List<DependencyProperty>> DependenciesPropertyCache = new Dictionary<Type, List<DependencyProperty>>();
+namespace Microsoft.Xaml.Interactivity;
 
-        /// <summary>
-        /// Ensures that all binding expression on actions are up to date.
-        /// </summary>
-        /// <remarks>
-        /// DataTriggerBehavior fires during data binding phase. Since the ActionCollection is a child of the behavior,
-        /// bindings on the action  may not be up-to-date. This routine is called before the action
-        /// is executed in order to guarantee that all bindings are refreshed with the most current data.
-        /// </remarks>
+internal static class DataBindingHelper
+{
+    private static readonly Dictionary<Type, List<DependencyProperty>> DependenciesPropertyCache = new Dictionary<Type, List<DependencyProperty>>();
+
+    /// <summary>
+    /// Ensures that all binding expression on actions are up to date.
+    /// </summary>
+    /// <remarks>
+    /// DataTriggerBehavior fires during data binding phase. Since the ActionCollection is a child of the behavior,
+    /// bindings on the action  may not be up-to-date. This routine is called before the action
+    /// is executed in order to guarantee that all bindings are refreshed with the most current data.
+    /// </remarks>
 #if NET8_0_OR_GREATER
-        [RequiresUnreferencedCode("This method accesses all fields of input action objects.")]
+    [RequiresUnreferencedCode("This method accesses all fields of input action objects.")]
 #endif
-        public static void RefreshDataBindingsOnActions(ActionCollection actions)
+    public static void RefreshDataBindingsOnActions(ActionCollection actions)
+    {
+        foreach (DependencyObject action in actions)
         {
-            foreach (DependencyObject action in actions)
+            foreach (DependencyProperty property in DataBindingHelper.GetDependencyProperties(action.GetType()))
             {
-                foreach (DependencyProperty property in DataBindingHelper.GetDependencyProperties(action.GetType()))
-                {
-                    DataBindingHelper.RefreshBinding(action, property);
-                }
+                DataBindingHelper.RefreshBinding(action, property);
             }
         }
+    }
 
-        private static IEnumerable<DependencyProperty> GetDependencyProperties(
+    private static IEnumerable<DependencyProperty> GetDependencyProperties(
 #if NET8_0_OR_GREATER
-            [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)]
+        [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)]
 #endif
-            Type type)
+        Type type)
+    {
+        List<DependencyProperty> propertyList = null;
+
+        if (!DataBindingHelper.DependenciesPropertyCache.TryGetValue(type, out propertyList))
         {
-            List<DependencyProperty> propertyList = null;
+            propertyList = new List<DependencyProperty>();
 
-            if (!DataBindingHelper.DependenciesPropertyCache.TryGetValue(type, out propertyList))
+            while (type != null && type != typeof(DependencyObject))
             {
-                propertyList = new List<DependencyProperty>();
-
-                while (type != null && type != typeof(DependencyObject))
+                foreach (FieldInfo fieldInfo in type.GetRuntimeFields())
                 {
-                    foreach (FieldInfo fieldInfo in type.GetRuntimeFields())
+                    if (fieldInfo.IsPublic && fieldInfo.FieldType == typeof(DependencyProperty))
                     {
-                        if (fieldInfo.IsPublic && fieldInfo.FieldType == typeof(DependencyProperty))
+                        DependencyProperty property = fieldInfo.GetValue(null) as DependencyProperty;
+                        if (property != null)
                         {
-                            DependencyProperty property = fieldInfo.GetValue(null) as DependencyProperty;
-                            if (property != null)
-                            {
-                                propertyList.Add(property);
-                            }
+                            propertyList.Add(property);
                         }
                     }
-
-                    type = type.GetTypeInfo().BaseType;
                 }
 
-                DataBindingHelper.DependenciesPropertyCache[type] = propertyList;
+                type = type.GetTypeInfo().BaseType;
             }
 
-            return propertyList;
+            DataBindingHelper.DependenciesPropertyCache[type] = propertyList;
         }
 
-        private static void RefreshBinding(DependencyObject target, DependencyProperty property)
+        return propertyList;
+    }
+
+    private static void RefreshBinding(DependencyObject target, DependencyProperty property)
+    {
+        BindingExpression binding = target.ReadLocalValue(property) as BindingExpression;
+        if (binding != null && binding.ParentBinding != null)
         {
-            BindingExpression binding = target.ReadLocalValue(property) as BindingExpression;
-            if (binding != null && binding.ParentBinding != null)
-            {
-                BindingOperations.SetBinding(target, property, binding.ParentBinding);
-            }
+            BindingOperations.SetBinding(target, property, binding.ParentBinding);
         }
     }
 }

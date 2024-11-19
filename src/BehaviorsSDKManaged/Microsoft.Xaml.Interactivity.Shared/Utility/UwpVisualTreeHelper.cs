@@ -9,20 +9,19 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Media;
 #endif
 
-namespace Microsoft.Xaml.Interactivity.Utility
+namespace Microsoft.Xaml.Interactivity.Utility;
+
+/// <summary>
+/// IVisualTreeHelper implementation that calls the real VisualTreeHelper.
+/// </summary>
+internal class UwpVisualTreeHelper : IVisualTreeHelper
 {
-    /// <summary>
-    /// IVisualTreeHelper implementation that calls the real VisualTreeHelper.
-    /// </summary>
-    internal class UwpVisualTreeHelper : IVisualTreeHelper
+    #region IVisualTreeHelper implementation
+
+    public DependencyObject GetParent(DependencyObject reference)
     {
-        #region IVisualTreeHelper implementation
-
-        public DependencyObject GetParent(DependencyObject reference)
-        {
-            return VisualTreeHelper.GetParent(reference);
-        }
-
-        #endregion
+        return VisualTreeHelper.GetParent(reference);
     }
+
+    #endregion
 }
