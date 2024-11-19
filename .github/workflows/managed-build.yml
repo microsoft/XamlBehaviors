@@ -38,3 +38,35 @@ jobs:
         name: msbuild_binlog_Release_x64
         path: msbuild.binlog
         if-no-files-found: error
+
+  samples-build:
+    runs-on: windows-latest
+    steps:
+    - name: Checkout XamlBehaviors.git 
+      uses: actions/checkout@v4
+
+    - name: Install the .NET 9.0.100 SDK
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 9.0.100
+
+    - name: Setup MSBuild
+      uses: microsoft/setup-msbuild@v2
+
+    - name: Setup/Install NuGet 6.11.0
+      uses: nuget/setup-nuget@v2
+      with:
+        nuget-version: '6.11.0'
+
+    - name: NuGet Restore BehaviorsSDKManaged.sln
+      run: nuget restore samples\CS\XAMLBehaviorsSample.sln
+      
+    - name: Build BehaviorsSDKManaged.sln
+      run: msbuild samples\CS\XAMLBehaviorsSample.sln /p:Configuration=Release -v:diag /bl
+    
+    - name: Upload MSBuild binary log
+      uses: actions/upload-artifact@v4
+      with:
+        name: msbuild_samples_binlog_Release_x64
+        path: msbuild.binlog
+        if-no-files-found: error
