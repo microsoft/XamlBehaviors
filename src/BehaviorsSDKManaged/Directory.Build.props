@@ -1,0 +1,41 @@
+<Project>
+
+  <!--
+    Set the $(SolutionDir) property if needed. This is referenced in other projects as well.
+    This property is only set automatically by MSBuild when building from the IDE. For more info, see:
+    https://docs.microsoft.com/en-us/cpp/build/reference/common-macros-for-build-commands-and-properties#list-of-common-macros.
+    To work around this and enable individual projects to build correctly, it is defined manually if needed.
+    That is, if empty, the solution path is computed by moving upwards until the solution file is found.
+  -->
+  <PropertyGroup Label="Globals">
+    <BehaviorsSDKManagedSolutionPath>$([MSBuild]::EnsureTrailingSlash($([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildThisFileDirectory), BehaviorsSDKManaged.sln))))</BehaviorsSDKManagedSolutionPath>
+    <SolutionDir Condition="'$(SolutionDir)' == ''">$(BehaviorsSDKManagedSolutionPath)</SolutionDir>
+  </PropertyGroup>
+
+  <!--
+    Set the C# version to 12, enable nullability annotations and unsafe blocks.
+    Note that the <Nullable> tag will only work when used in SDK-style projects.
+    In other project types, it is just ignored, and invidual files need #nullable enable.
+  -->
+  <PropertyGroup Condition="$(MSBuildProjectFile.EndsWith('.csproj'))">
+    <LangVersion>13.0</LangVersion>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+
+    <!--
+      Enable the compiler strict mode (see https://www.meziantou.net/csharp-compiler-strict-mode.htm).
+      This (poorly documented) mode enables additional warnings for incorrect usages of some features.
+      For instance, this will warn when using the == operator to compare a struct with a null literal.
+    -->
+    <Features>strict</Features>
+
+    <!--
+      Generate documentation files. In theory this should only be abled for published, non source generator projects.
+      However, this is always enabled to work around https://github.com/dotnet/roslyn/issues/41640. Until that's fixed,
+      source generators will also produce an .xml file with their documentation. Note that this doesn't really impact
+      NuGet packages, since the analyzer binaries are packed manually after build, so the .xml files aren't included.
+      When this workaround is no longer needed, the same property should also removed for the \samples directory.
+      Once that issue is fixed, this should be moved down to the src\ specific .props file again, and otherwise disabled.
+    -->
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+</Project>
