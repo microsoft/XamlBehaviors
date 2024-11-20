@@ -58,10 +58,10 @@ jobs:
       with:
         nuget-version: '6.11.0'
 
-    - name: NuGet Restore BehaviorsSDKManaged.sln
+    - name: NuGet Restore XAMLBehaviorsSample.sln
       run: nuget restore samples\CS\XAMLBehaviorsSample.sln
       
-    - name: Build BehaviorsSDKManaged.sln
+    - name: Build XAMLBehaviorsSample.sln
       run: msbuild samples\CS\XAMLBehaviorsSample.sln /p:Configuration=Release -v:diag /bl
     
     - name: Upload MSBuild binary log
