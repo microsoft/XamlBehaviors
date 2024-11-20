@@ -4,8 +4,7 @@
     xmlns:local="using:XAMLBehaviorsSample"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:Interactivity="using:Microsoft.Xaml.Interactivity" xmlns:Interactions="using:Microsoft.Xaml.Interactions.Core"
-    xmlns:Core="using:Microsoft.Xaml.Interactions.Core" xmlns:Media="using:Microsoft.Xaml.Interactions.Media"
+    xmlns:Interactivity="using:Microsoft.Xaml.Interactivity"
     x:Class="XAMLBehaviorsSample.ControlStoryboardControl"
     mc:Ignorable="d"
     d:DesignHeight="600"
@@ -49,8 +48,8 @@
                     <RichTextBlock TextWrapping="WrapWholeWords" Margin="10,20,0,0" FontSize="15" Foreground="{StaticResource PinkBrush}" xml:space="preserve" IsTextSelectionEnabled="True">
                     <Paragraph>&lt;Button x:Name="button">
     &lt;Interactivity:Interaction.Behaviors>
-        &lt;Interactions:EventTriggerBehavior EventName="Click">
-            &lt;Media:ControlStoryboardAction Storyboard="{StaticResource StoryboardSample}" ControlStoryboardOption="TogglePlayPause"/>
+        &lt;Interactivity:EventTriggerBehavior EventName="Click">
+            &lt;Interactivity:ControlStoryboardAction Storyboard="{StaticResource StoryboardSample}" ControlStoryboardOption="TogglePlayPause"/>
         &lt;/Interactions:EventTriggerBehavior>
     &lt;/Interactivity:Interaction.Behaviors>
 &lt;/Button></Paragraph>
@@ -71,9 +70,9 @@
 
                 <Button x:Name="button" Content="Click Me" HorizontalAlignment="Stretch" Grid.Row="1" VerticalAlignment="Stretch" Margin="0,10,0,10" d:LayoutOverrides="Width, Height" FontSize="20" Foreground="{StaticResource PaleGreyBrush}" Background="{StaticResource DarkGreyBrush}" Style="{StaticResource ActionsButton}" BorderBrush="{StaticResource HighlightBrush}">
                     <Interactivity:Interaction.Behaviors>
-                        <Interactions:EventTriggerBehavior EventName="Click">
-                            <Media:ControlStoryboardAction Storyboard="{StaticResource StoryboardSample}" ControlStoryboardOption="TogglePlayPause"/>
-                        </Interactions:EventTriggerBehavior>
+                        <Interactivity:EventTriggerBehavior EventName="Click">
+                            <Interactivity:ControlStoryboardAction Storyboard="{StaticResource StoryboardSample}" ControlStoryboardOption="TogglePlayPause"/>
+                        </Interactivity:EventTriggerBehavior>
                     </Interactivity:Interaction.Behaviors>
                 </Button>
             </Grid>
