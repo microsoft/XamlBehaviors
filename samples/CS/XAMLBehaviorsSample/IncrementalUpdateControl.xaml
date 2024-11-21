@@ -5,7 +5,7 @@
     xmlns:local="using:XAMLBehaviorsSample"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:Interactivity="using:Microsoft.Xaml.Interactivity" xmlns:Interactions="using:Microsoft.Xaml.Interactions.Core"
+    xmlns:Interactivity="using:Microsoft.Xaml.Interactivity"
     mc:Ignorable="d"
     d:DesignHeight="600"
     d:DesignWidth="800">
@@ -15,12 +15,12 @@
             <StackPanel Height="125" Width="125" Margin="20" Background="{StaticResource HighlightBrush}" >
                 <Rectangle Height="100" Width="125" Fill="{StaticResource RoyalBlueBrush}">
                     <Interactivity:Interaction.Behaviors>
-                        <Interactions:IncrementalUpdateBehavior Phase="2"/>
+                        <Interactivity:IncrementalUpdateBehavior Phase="2"/>
                     </Interactivity:Interaction.Behaviors>
                 </Rectangle>
                 <TextBlock Text="{Binding Count}" FontSize="16" VerticalAlignment="Center" Foreground="{StaticResource PaleGreyBrush}" Margin="5,0,0,0" >
                     <Interactivity:Interaction.Behaviors>
-                        <Interactions:IncrementalUpdateBehavior Phase="1"/>
+                        <Interactivity:IncrementalUpdateBehavior Phase="1"/>
                     </Interactivity:Interaction.Behaviors>
                 </TextBlock>
             </StackPanel>
@@ -57,12 +57,12 @@
     &lt;StackPanel>
         &lt;Rectangle>
             &lt;Interactivity:Interaction.Behaviors>
-                &lt;Interactions:IncrementalUpdateBehavior Phase="2"/>
+                &lt;Interactivity:IncrementalUpdateBehavior Phase="2"/>
             &lt;/Interactivity:Interaction.Behaviors>
         &lt;/Rectangle>
         &lt;TextBlock Text="{Binding Count}">
             &lt;Interactivity:Interaction.Behaviors>
-                &lt;Interactions:IncrementalUpdateBehavior Phase="1"/>
+                &lt;Interactivity:IncrementalUpdateBehavior Phase="1"/>
             &lt;/Interactivity:Interaction.Behaviors>
         &lt;/TextBlock>
     &lt;/StackPanel>

@@ -4,7 +4,7 @@
     xmlns:local="using:XAMLBehaviorsSample"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:Interactivity="using:Microsoft.Xaml.Interactivity" xmlns:Interactions="using:Microsoft.Xaml.Interactions.Core" xmlns:Media="using:Microsoft.Xaml.Interactions.Media"
+    xmlns:Interactivity="using:Microsoft.Xaml.Interactivity"
     x:Class="XAMLBehaviorsSample.PlaySoundControl"
     mc:Ignorable="d"
     d:DesignHeight="600"
@@ -36,8 +36,8 @@
                     <RichTextBlock TextWrapping="WrapWholeWords" Margin="10,20,0,0" FontSize="15" Foreground="{StaticResource PinkBrush}" xml:space="preserve" IsTextSelectionEnabled="True">
                     <Paragraph>&lt;Button x:Name="button1">
     &lt;Interactivity:Interaction.Behaviors>
-        &lt;Interactions:EventTriggerBehavior EventName="Click" SourceObject="{Binding ElementName=button1}">
-            &lt;Media:PlaySoundAction Source="Assets/Ding.mp3" Volume="1"/>
+        &lt;Interactivity:EventTriggerBehavior EventName="Click" SourceObject="{Binding ElementName=button1}">
+            &lt;Interactivity:PlaySoundAction Source="Assets/Ding.mp3" Volume="1"/>
         &lt;/Interactions:EventTriggerBehavior>
     &lt;/Interactivity:Interaction.Behaviors>
 &lt;/Button></Paragraph>
@@ -53,23 +53,23 @@
                 </Grid.RowDefinitions>
                 <Button x:Name="button1" Content="Play Sound 1" HorizontalAlignment="Stretch" Grid.Row="0" VerticalAlignment="Stretch" Margin="0,0,0,10" d:LayoutOverrides="Width, Height" FontSize="20" Foreground="{StaticResource PaleGreyBrush}" Background="{StaticResource DarkGreyBrush}" Style="{StaticResource ActionsButton}" BorderBrush="{StaticResource HighlightBrush}">
                     <Interactivity:Interaction.Behaviors>
-                        <Interactions:EventTriggerBehavior EventName="Click" SourceObject="{Binding ElementName=button1}">
-                            <Media:PlaySoundAction Source="Assets/Ding.mp3" Volume="1"/>
-                        </Interactions:EventTriggerBehavior>
+                        <Interactivity:EventTriggerBehavior EventName="Click" SourceObject="{Binding ElementName=button1}">
+                            <Interactivity:PlaySoundAction Source="Assets/Ding.mp3" Volume="1"/>
+                        </Interactivity:EventTriggerBehavior>
                     </Interactivity:Interaction.Behaviors>
                 </Button>
                 <Button x:Name="button2" Content="Play Sound 2" HorizontalAlignment="Stretch" Grid.Row="1" VerticalAlignment="Stretch" Margin="0,0,0,10" d:LayoutOverrides="Width, Height" FontSize="20" Foreground="{StaticResource PaleGreyBrush}" Background="{StaticResource DarkGreyBrush}" Style="{StaticResource ActionsButton}" BorderBrush="{StaticResource HighlightBrush}">
                     <Interactivity:Interaction.Behaviors>
-                        <Interactions:EventTriggerBehavior EventName="Click" SourceObject="{Binding ElementName=button2}">
-                            <Media:PlaySoundAction Source="Assets/Cheer.mp3" Volume="1"/>
-                        </Interactions:EventTriggerBehavior>
+                        <Interactivity:EventTriggerBehavior EventName="Click" SourceObject="{Binding ElementName=button2}">
+                            <Interactivity:PlaySoundAction Source="Assets/Cheer.mp3" Volume="1"/>
+                        </Interactivity:EventTriggerBehavior>
                     </Interactivity:Interaction.Behaviors>
                 </Button>
                 <Button x:Name="button3" Content="Play Sound 3" HorizontalAlignment="Stretch" Grid.Row="2" VerticalAlignment="Stretch" Margin="0,0,0,0" d:LayoutOverrides="Width, Height" FontSize="20" Foreground="{StaticResource PaleGreyBrush}" Background="{StaticResource DarkGreyBrush}" Style="{StaticResource ActionsButton}" BorderBrush="{StaticResource HighlightBrush}">
                     <Interactivity:Interaction.Behaviors>
-                        <Interactions:EventTriggerBehavior EventName="Click" SourceObject="{Binding ElementName=button3}">
-                            <Media:PlaySoundAction Source="Assets/Whistle.mp3" Volume="1"/>
-                        </Interactions:EventTriggerBehavior>
+                        <Interactivity:EventTriggerBehavior EventName="Click" SourceObject="{Binding ElementName=button3}">
+                            <Interactivity:PlaySoundAction Source="Assets/Whistle.mp3" Volume="1"/>
+                        </Interactivity:EventTriggerBehavior>
                     </Interactivity:Interaction.Behaviors>
                 </Button>
             </Grid>

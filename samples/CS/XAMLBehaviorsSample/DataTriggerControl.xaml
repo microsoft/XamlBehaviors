@@ -4,7 +4,7 @@
     xmlns:local="using:XAMLBehaviorsSample"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:Interactivity="using:Microsoft.Xaml.Interactivity" xmlns:Interactions="using:Microsoft.Xaml.Interactions.Core"
+    xmlns:Interactivity="using:Microsoft.Xaml.Interactivity"
     x:Class="XAMLBehaviorsSample.DataTriggerControl"
     mc:Ignorable="d"
     d:DesignHeight="600"
@@ -37,11 +37,11 @@
                 <RichTextBlock TextWrapping="WrapWholeWords" Margin="10,20,0,0" FontSize="15" Foreground="{StaticResource RoyalBlueBrush}" xml:space="preserve" IsTextSelectionEnabled="True">
                     <Paragraph>&lt;Rectangle x:Name="DataTriggerRectangle"&gt;
     &lt;Interactivity:Interaction.Behaviors&gt;
-        &lt;Interactions:DataTriggerBehavior Binding="{Binding Value, ElementName=slider}" ComparisonCondition="GreaterThan" Value="50"&gt;
-            &lt;Interactions:ChangePropertyAction TargetObject="{Binding ElementName=DataTriggerRectangle}" PropertyName="Fill" Value="{StaticResource PaleYellowBrush}"/&gt;
+        &lt;Interactivity:DataTriggerBehavior Binding="{Binding Value, ElementName=slider}" ComparisonCondition="GreaterThan" Value="50"&gt;
+            &lt;Interactivity:ChangePropertyAction TargetObject="{Binding ElementName=DataTriggerRectangle}" PropertyName="Fill" Value="{StaticResource PaleYellowBrush}"/&gt;
         &lt;/Interactions:DataTriggerBehavior&gt;
-        &lt;Interactions:DataTriggerBehavior Binding="{Binding Value, ElementName=slider}" ComparisonCondition="LessThanOrEqual" Value="50"&gt;
-            &lt;Interactions:ChangePropertyAction TargetObject="{Binding ElementName=DataTriggerRectangle}" PropertyName="Fill" Value="{StaticResource RoyalBlueBrush}"/&gt;
+        &lt;Interactivity:DataTriggerBehavior Binding="{Binding Value, ElementName=slider}" ComparisonCondition="LessThanOrEqual" Value="50"&gt;
+            &lt;Interactivity:ChangePropertyAction TargetObject="{Binding ElementName=DataTriggerRectangle}" PropertyName="Fill" Value="{StaticResource RoyalBlueBrush}"/&gt;
         &lt;/Interactions:DataTriggerBehavior&gt;
     &lt;/Interactivity:Interaction.Behaviors&gt;
 &lt;/Rectangle&gt;</Paragraph>
@@ -55,12 +55,12 @@
                 </Grid.RowDefinitions>
                 <Rectangle x:Name="DataTriggerRectangle" Grid.Row="0" Fill="{StaticResource RoyalBlueBrush}" Stroke="{StaticResource HighlightBrush}" StrokeThickness="5">
                     <Interactivity:Interaction.Behaviors>
-                        <Interactions:DataTriggerBehavior Binding="{Binding Value, ElementName=slider}" ComparisonCondition="GreaterThan" Value="50">
-                            <Interactions:ChangePropertyAction TargetObject="{Binding ElementName=DataTriggerRectangle}" PropertyName="Fill" Value="{StaticResource PaleYellowBrush}"/>
-                        </Interactions:DataTriggerBehavior>
-                        <Interactions:DataTriggerBehavior Binding="{Binding Value, ElementName=slider}" ComparisonCondition="LessThanOrEqual" Value="50">
-                            <Interactions:ChangePropertyAction TargetObject="{Binding ElementName=DataTriggerRectangle}" PropertyName="Fill" Value="{StaticResource RoyalBlueBrush}"/>
-                        </Interactions:DataTriggerBehavior>
+                        <Interactivity:DataTriggerBehavior Binding="{Binding Value, ElementName=slider}" ComparisonCondition="GreaterThan" Value="50">
+                            <Interactivity:ChangePropertyAction TargetObject="{Binding ElementName=DataTriggerRectangle}" PropertyName="Fill" Value="{StaticResource PaleYellowBrush}"/>
+                        </Interactivity:DataTriggerBehavior>
+                        <Interactivity:DataTriggerBehavior Binding="{Binding Value, ElementName=slider}" ComparisonCondition="LessThanOrEqual" Value="50">
+                            <Interactivity:ChangePropertyAction TargetObject="{Binding ElementName=DataTriggerRectangle}" PropertyName="Fill" Value="{StaticResource RoyalBlueBrush}"/>
+                        </Interactivity:DataTriggerBehavior>
                     </Interactivity:Interaction.Behaviors>
                 </Rectangle>
                 <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">

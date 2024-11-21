@@ -5,7 +5,7 @@
     xmlns:local="using:XAMLBehaviorsSample"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:Interactivity="using:Microsoft.Xaml.Interactivity" xmlns:Interactions="using:Microsoft.Xaml.Interactions.Core"
+    xmlns:Interactivity="using:Microsoft.Xaml.Interactivity"
     mc:Ignorable="d"
     d:DesignHeight="600"
     d:DesignWidth="800">
@@ -37,11 +37,11 @@
                     <RichTextBlock TextWrapping="WrapWholeWords" Margin="10,20,0,0" FontSize="15" Foreground="{StaticResource PinkBrush}" xml:space="preserve" IsTextSelectionEnabled="True">
                     <Paragraph>&lt;CheckBox x:Name="checkBox">
     &lt;Interactivity:Interaction.Behaviors>
-        &lt;Interactions:DataTriggerBehavior Binding="{Binding IsChecked, ElementName=checkBox}" Value="True">
-            &lt;Interactions:GoToStateAction StateName="Disabled" TargetObject="{Binding ElementName=sampleStateButton}"/>
+        &lt;Interactivity:DataTriggerBehavior Binding="{Binding IsChecked, ElementName=checkBox}" Value="True">
+            &lt;Interactivity:GoToStateAction StateName="Disabled" TargetObject="{Binding ElementName=sampleStateButton}"/>
         &lt;/Interactions:DataTriggerBehavior>
-        &lt;Interactions:DataTriggerBehavior Binding="{Binding IsChecked, ElementName=checkBox}" Value="False">
-            &lt;Interactions:GoToStateAction StateName="Normal" TargetObject="{Binding ElementName=sampleStateButton}"/>
+        &lt;Interactivity:DataTriggerBehavior Binding="{Binding IsChecked, ElementName=checkBox}" Value="False">
+            &lt;Interactivity:GoToStateAction StateName="Normal" TargetObject="{Binding ElementName=sampleStateButton}"/>
         &lt;/Interactions:DataTriggerBehavior>
     &lt;/Interactivity:Interaction.Behaviors>
 &lt;/CheckBox></Paragraph>
@@ -324,12 +324,12 @@
                         </Style>
                     </CheckBox.Resources>
                     <Interactivity:Interaction.Behaviors>
-                        <Interactions:DataTriggerBehavior Binding="{Binding IsChecked, ElementName=checkBox}" Value="True">
-                            <Interactions:GoToStateAction StateName="Disabled" TargetObject="{Binding ElementName=sampleStateButton}"/>
-                        </Interactions:DataTriggerBehavior>
-                        <Interactions:DataTriggerBehavior Binding="{Binding IsChecked, ElementName=checkBox}" Value="False">
-                            <Interactions:GoToStateAction StateName="Normal" TargetObject="{Binding ElementName=sampleStateButton}"/>
-                        </Interactions:DataTriggerBehavior>
+                        <Interactivity:DataTriggerBehavior Binding="{Binding IsChecked, ElementName=checkBox}" Value="True">
+                            <Interactivity:GoToStateAction StateName="Disabled" TargetObject="{Binding ElementName=sampleStateButton}"/>
+                        </Interactivity:DataTriggerBehavior>
+                        <Interactivity:DataTriggerBehavior Binding="{Binding IsChecked, ElementName=checkBox}" Value="False">
+                            <Interactivity:GoToStateAction StateName="Normal" TargetObject="{Binding ElementName=sampleStateButton}"/>
+                        </Interactivity:DataTriggerBehavior>
                     </Interactivity:Interaction.Behaviors>
                     <CheckBox.Style>
                         <StaticResource ResourceKey="CheckBoxStyle"/>

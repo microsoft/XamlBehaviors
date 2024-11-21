@@ -4,7 +4,7 @@
     xmlns:local="using:XAMLBehaviorsSample"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:Interactivity="using:Microsoft.Xaml.Interactivity" xmlns:Interactions="using:Microsoft.Xaml.Interactions.Core"
+    xmlns:Interactivity="using:Microsoft.Xaml.Interactivity"
     x:Class="XAMLBehaviorsSample.InvokeCommandControl"
     mc:Ignorable="d"
     d:DesignHeight="600"
@@ -38,8 +38,8 @@
                     <RichTextBlock TextWrapping="WrapWholeWords" Margin="0,20,0,0" FontSize="15" Foreground="{StaticResource PinkBrush}" xml:space="preserve" IsTextSelectionEnabled="True">
 					<Paragraph>&lt;Button x:Name="button1">
     &lt;Interactivity:Interaction.Behaviors>
-        &lt;Interactions:EventTriggerBehavior EventName="Click" SourceObject="{Binding ElementName=button1}">
-            &lt;Interactions:InvokeCommandAction Command="{Binding UpdateCountCommand}"/>
+        &lt;Interactivity:EventTriggerBehavior EventName="Click" SourceObject="{Binding ElementName=button1}">
+            &lt;Interactivity:InvokeCommandAction Command="{Binding UpdateCountCommand}"/>
         &lt;/Interactions:EventTriggerBehavior>
     &lt;/Interactivity:Interaction.Behaviors>
 &lt;/Button></Paragraph>
@@ -66,25 +66,25 @@
 
                     <Button x:Name="button1" Content="Increment" Grid.Column="0" Margin="0,0,5,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource ActionsButton}"  d:LayoutOverrides="Width, Height" Background="{StaticResource DarkGreyBrush}" BorderBrush="{StaticResource HighlightBrush}">
                         <Interactivity:Interaction.Behaviors>
-                            <Interactions:EventTriggerBehavior EventName="Click" SourceObject="{Binding ElementName=button1}">
-                                <Interactions:InvokeCommandAction Command="{Binding UpdateCountCommand}"/>
-                            </Interactions:EventTriggerBehavior>
+                            <Interactivity:EventTriggerBehavior EventName="Click" SourceObject="{Binding ElementName=button1}">
+                                <Interactivity:InvokeCommandAction Command="{Binding UpdateCountCommand}"/>
+                            </Interactivity:EventTriggerBehavior>
                         </Interactivity:Interaction.Behaviors>
                     </Button>
 
                     <Button x:Name="button2" Content="Grey" Grid.Column="1" Margin="5,0,5,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource ActionsButton}"  d:LayoutOverrides="Width, Height" Background="{StaticResource DarkGreyBrush}" BorderBrush="{StaticResource HighlightBrush}">
                         <Interactivity:Interaction.Behaviors>
-                            <Interactions:EventTriggerBehavior EventName="Click" SourceObject="{Binding ElementName=button2}">
-                                <Interactions:InvokeCommandAction Command="{Binding UpdateGreyCommand}"/>
-                            </Interactions:EventTriggerBehavior>
+                            <Interactivity:EventTriggerBehavior EventName="Click" SourceObject="{Binding ElementName=button2}">
+                                <Interactivity:InvokeCommandAction Command="{Binding UpdateGreyCommand}"/>
+                            </Interactivity:EventTriggerBehavior>
                         </Interactivity:Interaction.Behaviors>
                     </Button>
 
                     <Button x:Name="button3" Content="Pink" Grid.Column="2" Margin="5,0,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource ActionsButton}"  d:LayoutOverrides="Width, Height" Background="{StaticResource DarkGreyBrush}" BorderBrush="{StaticResource HighlightBrush}">
                         <Interactivity:Interaction.Behaviors>
-                            <Interactions:EventTriggerBehavior EventName="Click" SourceObject="{Binding ElementName=button3}">
-                                <Interactions:InvokeCommandAction Command="{Binding UpdatePinkCommand}"/>
-                            </Interactions:EventTriggerBehavior>
+                            <Interactivity:EventTriggerBehavior EventName="Click" SourceObject="{Binding ElementName=button3}">
+                                <Interactivity:InvokeCommandAction Command="{Binding UpdatePinkCommand}"/>
+                            </Interactivity:EventTriggerBehavior>
                         </Interactivity:Interaction.Behaviors>
                     </Button>
                 </Grid>

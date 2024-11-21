@@ -4,7 +4,7 @@
     xmlns:local="using:XAMLBehaviorsSample"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:Interactivity="using:Microsoft.Xaml.Interactivity" xmlns:Interactions="using:Microsoft.Xaml.Interactions.Core"
+    xmlns:Interactivity="using:Microsoft.Xaml.Interactivity"
     x:Class="XAMLBehaviorsSample.NavigatePageSample"
     mc:Ignorable="d">
 
@@ -40,9 +40,9 @@
                 
                 <Button x:Name="button" Content="Go Back" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource ActionsButton}" BorderBrush="{StaticResource HighlightBrush}" Background="{StaticResource PinkBrush}" FontSize="40" Foreground="{StaticResource PaleGreyBrush}" >
                     <Interactivity:Interaction.Behaviors>
-                        <Interactions:EventTriggerBehavior EventName="Click" SourceObject="{Binding ElementName=button}">
-                            <Interactions:NavigateToPageAction TargetPage="XAMLBehaviorsSample.MainPage"/>
-                        </Interactions:EventTriggerBehavior>
+                        <Interactivity:EventTriggerBehavior EventName="Click" SourceObject="{Binding ElementName=button}">
+                            <Interactivity:NavigateToPageAction TargetPage="XAMLBehaviorsSample.MainPage"/>
+                        </Interactivity:EventTriggerBehavior>
                     </Interactivity:Interaction.Behaviors>
                 </Button>
             </Grid>
