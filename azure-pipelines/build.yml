@@ -48,6 +48,10 @@ extends:
     stages:
     - stage: stage
       jobs:
+      - name: Install WinGet
+        uses: Cyberboss/install-winget@v1
+      - run: winget upgrade --id Microsoft.VisualStudio.2022.Enterprise
+        continue-on-error: false
       - job: Build
         displayName: 'Build'
         timeoutInMinutes: 120

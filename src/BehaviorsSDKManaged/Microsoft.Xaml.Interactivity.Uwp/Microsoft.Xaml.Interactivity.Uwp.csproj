@@ -6,12 +6,6 @@
     <TargetPlatformMinVersion>10.0.18362.0</TargetPlatformMinVersion>
     <RootNamespace>Microsoft.Xaml.Interactivity</RootNamespace>
     <UseUwp>true</UseUwp>
-
-    <!--
-      Temporary workaround to enable building on Visual Studio 17.11,
-      this can be removed on 17.12 as it will be set automatically.
-    -->
-    <UseUwpTools>true</UseUwpTools>
     <DefaultLanguage>en-US</DefaultLanguage>
     <Platforms>AnyCPU;x86;x64;arm64</Platforms>
     <RuntimeIdentifiers>win-x86;win-x64;win-arm64</RuntimeIdentifiers>
