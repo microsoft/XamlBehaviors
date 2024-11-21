@@ -15,137 +15,136 @@ using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media;
 #endif
 
-namespace Microsoft.Xaml.Interactivity
+namespace Microsoft.Xaml.Interactivity;
+
+/// <summary>
+/// Provides various standard operations for working with <seealso cref="VisualStateManager"/>.
+/// </summary>
+public static class VisualStateUtilities
 {
     /// <summary>
-    /// Provides various standard operations for working with <seealso cref="VisualStateManager"/>.
+    /// Transitions the control between two states.
     /// </summary>
-    public static class VisualStateUtilities
+    /// <param name="control">The <see cref="Control"/> to transition between states.</param>
+    /// <param name="stateName">The state to transition to.</param>
+    /// <param name="useTransitions">True to use a <see cref="VisualTransition"/> to transition between states; otherwise, false.</param>
+    /// <returns>True if the <paramref name="control"/> is successfully transitioned to the new state; otherwise, false.</returns>
+    /// <exception cref="global::System.ArgumentNullException"><paramref name="control"/> or <paramref name="stateName"/> is null.</exception>
+    public static bool GoToState(Control control, string stateName, bool useTransitions)
     {
-        /// <summary>
-        /// Transitions the control between two states.
-        /// </summary>
-        /// <param name="control">The <see cref="Control"/> to transition between states.</param>
-        /// <param name="stateName">The state to transition to.</param>
-        /// <param name="useTransitions">True to use a <see cref="VisualTransition"/> to transition between states; otherwise, false.</param>
-        /// <returns>True if the <paramref name="control"/> is successfully transitioned to the new state; otherwise, false.</returns>
-        /// <exception cref="global::System.ArgumentNullException"><paramref name="control"/> or <paramref name="stateName"/> is null.</exception>
-        public static bool GoToState(Control control, string stateName, bool useTransitions)
+        if (control == null)
         {
-            if (control == null)
-            {
-                throw new ArgumentNullException(nameof(control));
-            }
-
-            if (string.IsNullOrEmpty(stateName))
-            {
-                throw new ArgumentNullException(nameof(stateName));
-            }
-
-            control.ApplyTemplate();
-            return VisualStateManager.GoToState(control, stateName, useTransitions);
+            throw new ArgumentNullException(nameof(control));
         }
 
-        /// <summary>
-        /// Gets the value of the VisualStateManager.VisualStateGroups attached property.
-        /// </summary>
-        /// <param name="element">The <see cref="FrameworkElement"/> from which to get the VisualStateManager.VisualStateGroups.</param>
-        /// <returns>The list of VisualStateGroups in the given element.</returns>
-        /// <exception cref="global::System.ArgumentNullException"><paramref name="element"/> is null.</exception>
-        public static IList<VisualStateGroup> GetVisualStateGroups(FrameworkElement element)
+        if (string.IsNullOrEmpty(stateName))
         {
-            if (element == null)
-            {
-                throw new ArgumentNullException(nameof(element));
-            }
+            throw new ArgumentNullException(nameof(stateName));
+        }
 
-            IList<VisualStateGroup> visualStateGroups = VisualStateManager.GetVisualStateGroups(element);
+        control.ApplyTemplate();
+        return VisualStateManager.GoToState(control, stateName, useTransitions);
+    }
 
-            if (visualStateGroups == null || visualStateGroups.Count == 0)
+    /// <summary>
+    /// Gets the value of the VisualStateManager.VisualStateGroups attached property.
+    /// </summary>
+    /// <param name="element">The <see cref="FrameworkElement"/> from which to get the VisualStateManager.VisualStateGroups.</param>
+    /// <returns>The list of VisualStateGroups in the given element.</returns>
+    /// <exception cref="global::System.ArgumentNullException"><paramref name="element"/> is null.</exception>
+    public static IList<VisualStateGroup> GetVisualStateGroups(FrameworkElement element)
+    {
+        if (element == null)
+        {
+            throw new ArgumentNullException(nameof(element));
+        }
+
+        IList<VisualStateGroup> visualStateGroups = VisualStateManager.GetVisualStateGroups(element);
+
+        if (visualStateGroups == null || visualStateGroups.Count == 0)
+        {
+            int childrenCount = VisualTreeHelper.GetChildrenCount(element);
+            if (childrenCount > 0)
             {
-                int childrenCount = VisualTreeHelper.GetChildrenCount(element);
-                if (childrenCount > 0)
+                FrameworkElement childElement = VisualTreeHelper.GetChild(element, 0) as FrameworkElement;
+                if (childElement != null)
                 {
-                    FrameworkElement childElement = VisualTreeHelper.GetChild(element, 0) as FrameworkElement;
-                    if (childElement != null)
-                    {
-                        visualStateGroups = VisualStateManager.GetVisualStateGroups(childElement);
-                    }
+                    visualStateGroups = VisualStateManager.GetVisualStateGroups(childElement);
                 }
             }
-
-            return visualStateGroups;
         }
 
-        /// <summary>
-        /// Find the nearest parent which contains visual states.
-        /// </summary>
-        /// <param name="element">The <see cref="FrameworkElement"/> from which to find the nearest stateful control.</param>
-        /// <returns>The nearest <see cref="Control"/> that contains visual states; else null.</returns>
-        /// <exception cref="global::System.ArgumentNullException"><paramref name="element"/> is null.</exception>
-        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", MessageId = "Stateful")]
-        public static Control FindNearestStatefulControl(FrameworkElement element)
+        return visualStateGroups;
+    }
+
+    /// <summary>
+    /// Find the nearest parent which contains visual states.
+    /// </summary>
+    /// <param name="element">The <see cref="FrameworkElement"/> from which to find the nearest stateful control.</param>
+    /// <returns>The nearest <see cref="Control"/> that contains visual states; else null.</returns>
+    /// <exception cref="global::System.ArgumentNullException"><paramref name="element"/> is null.</exception>
+    [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", MessageId = "Stateful")]
+    public static Control FindNearestStatefulControl(FrameworkElement element)
+    {
+        if (element == null)
         {
-            if (element == null)
-            {
-                throw new ArgumentNullException(nameof(element));
-            }
-
-            // Try to find an element which is the immediate child of a UserControl, ControlTemplate or other such "boundary" element
-            FrameworkElement parent = element.Parent as FrameworkElement;
-
-            // bubble up looking for a place to stop
-            while (!VisualStateUtilities.HasVisualStateGroupsDefined(element) && VisualStateUtilities.ShouldContinueTreeWalk(parent))
-            {
-                element = parent;
-                parent = parent.Parent as FrameworkElement;
-            }
-
-            if (VisualStateUtilities.HasVisualStateGroupsDefined(element))
-            {
-                // Once we've found such an element, use the VisualTreeHelper to get it's parent. For most elements the two are the 
-                // same, but for children of a ControlElement this will give the control that contains the template.
-                Control templatedParent = VisualTreeHelper.GetParent(element) as Control;
-
-                if (templatedParent != null)
-                {
-                    return templatedParent;
-                }
-                else
-                {
-                    return element as Control;
-                }
-            }
-
-            return null;
+            throw new ArgumentNullException(nameof(element));
         }
 
-        private static bool HasVisualStateGroupsDefined(FrameworkElement element)
+        // Try to find an element which is the immediate child of a UserControl, ControlTemplate or other such "boundary" element
+        FrameworkElement parent = element.Parent as FrameworkElement;
+
+        // bubble up looking for a place to stop
+        while (!VisualStateUtilities.HasVisualStateGroupsDefined(element) && VisualStateUtilities.ShouldContinueTreeWalk(parent))
         {
-            return element != null && VisualStateManager.GetVisualStateGroups(element).Count != 0;
+            element = parent;
+            parent = parent.Parent as FrameworkElement;
         }
 
-        private static bool ShouldContinueTreeWalk(FrameworkElement element)
+        if (VisualStateUtilities.HasVisualStateGroupsDefined(element))
         {
-            if (element == null)
+            // Once we've found such an element, use the VisualTreeHelper to get it's parent. For most elements the two are the 
+            // same, but for children of a ControlElement this will give the control that contains the template.
+            Control templatedParent = VisualTreeHelper.GetParent(element) as Control;
+
+            if (templatedParent != null)
+            {
+                return templatedParent;
+            }
+            else
+            {
+                return element as Control;
+            }
+        }
+
+        return null;
+    }
+
+    private static bool HasVisualStateGroupsDefined(FrameworkElement element)
+    {
+        return element != null && VisualStateManager.GetVisualStateGroups(element).Count != 0;
+    }
+
+    private static bool ShouldContinueTreeWalk(FrameworkElement element)
+    {
+        if (element == null)
+        {
+            return false;
+        }
+        else if (element is UserControl)
+        {
+            return false;
+        }
+        else if (element.Parent == null)
+        {
+            // Stop if parent's parent is null AND parent isn't the template root of a ControlTemplate or DataTemplate.
+            FrameworkElement templatedParent = VisualTreeHelper.GetParent(element) as FrameworkElement;
+            if (templatedParent == null || (!(templatedParent is Control) && !(templatedParent is ContentPresenter)))
             {
                 return false;
             }
-            else if (element is UserControl)
-            {
-                return false;
-            }
-            else if (element.Parent == null)
-            {
-                // Stop if parent's parent is null AND parent isn't the template root of a ControlTemplate or DataTemplate.
-                FrameworkElement templatedParent = VisualTreeHelper.GetParent(element) as FrameworkElement;
-                if (templatedParent == null || (!(templatedParent is Control) && !(templatedParent is ContentPresenter)))
-                {
-                    return false;
-                }
-            }
-
-            return true;
         }
+
+        return true;
     }
 }

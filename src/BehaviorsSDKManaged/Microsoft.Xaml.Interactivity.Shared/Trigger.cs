@@ -12,40 +12,39 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Markup;
 #endif
 
-namespace Microsoft.Xaml.Interactivity
+namespace Microsoft.Xaml.Interactivity;
+
+/// <summary>
+/// A base class for behaviors, implementing the basic plumbing of ITrigger
+/// </summary>
+[ContentPropertyAttribute(Name = "Actions")]
+public abstract class Trigger : Behavior, ITrigger
 {
     /// <summary>
-    /// A base class for behaviors, implementing the basic plumbing of ITrigger
+    /// Identifies the <seealso cref="Actions"/> dependency property.
     /// </summary>
-    [ContentPropertyAttribute(Name = "Actions")]
-    public abstract class Trigger : Behavior, ITrigger
+    [SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes")]
+    public static readonly DependencyProperty ActionsProperty = DependencyProperty.Register(
+        "Actions",
+        typeof(ActionCollection),
+        typeof(Trigger),
+        new PropertyMetadata(null));
+
+    /// <summary>
+    /// Gets the collection of actions associated with the behavior. This is a dependency property.
+    /// </summary>
+    public ActionCollection Actions
     {
-        /// <summary>
-        /// Identifies the <seealso cref="Actions"/> dependency property.
-        /// </summary>
-        [SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes")]
-        public static readonly DependencyProperty ActionsProperty = DependencyProperty.Register(
-            "Actions",
-            typeof(ActionCollection),
-            typeof(Trigger),
-            new PropertyMetadata(null));
-
-        /// <summary>
-        /// Gets the collection of actions associated with the behavior. This is a dependency property.
-        /// </summary>
-        public ActionCollection Actions
+        get
         {
-            get
+            ActionCollection actionCollection = (ActionCollection)this.GetValue(Trigger.ActionsProperty);
+            if (actionCollection == null)
             {
-                ActionCollection actionCollection = (ActionCollection)this.GetValue(Trigger.ActionsProperty);
-                if (actionCollection == null)
-                {
-                    actionCollection = new ActionCollection();
-                    this.SetValue(Trigger.ActionsProperty, actionCollection);
-                }
-
-                return actionCollection;
+                actionCollection = new ActionCollection();
+                this.SetValue(Trigger.ActionsProperty, actionCollection);
             }
+
+            return actionCollection;
         }
     }
 }

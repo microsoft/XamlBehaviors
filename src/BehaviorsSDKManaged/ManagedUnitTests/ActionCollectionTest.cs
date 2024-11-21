@@ -5,45 +5,44 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Microsoft.VisualStudio.TestTools.UnitTesting.AppContainer;
 using Microsoft.Xaml.Interactivity;
 
-namespace ManagedUnitTests
+namespace ManagedUnitTests;
+
+[TestClass]
+public class ActionCollectionTest
 {
-    [TestClass]
-    public class ActionCollectionTest
+    [UITestMethod]
+    public void Constructor_DefaultConstructor_SetsVolumeCorrectly()
     {
-        [UITestMethod]
-        public void Constructor_DefaultConstructor_SetsVolumeCorrectly()
-        {
-            PlaySoundAction playSoundAction = new PlaySoundAction();
-            Assert.AreEqual(0.5, playSoundAction.Volume, "Volume should be initialized to 0.5");
-        }
+        PlaySoundAction playSoundAction = new PlaySoundAction();
+        Assert.AreEqual(0.5, playSoundAction.Volume, "Volume should be initialized to 0.5");
+    }
 
-        [UITestMethod]
-        public void Invoke_RelativeSource_Invokes()
-        {
-            PlaySoundAction playSoundAction = new PlaySoundAction();
+    [UITestMethod]
+    public void Invoke_RelativeSource_Invokes()
+    {
+        PlaySoundAction playSoundAction = new PlaySoundAction();
 
-            playSoundAction.Source = "foo.wav";
-            bool result = (bool)playSoundAction.Execute(null, null);
-            Assert.IsTrue(result);
-        }
+        playSoundAction.Source = "foo.wav";
+        bool result = (bool)playSoundAction.Execute(null, null);
+        Assert.IsTrue(result);
+    }
 
-        [UITestMethod]
-        public void Invoke_AbsoluteSource_Invokes()
-        {
-            PlaySoundAction playSoundAction = new PlaySoundAction();
+    [UITestMethod]
+    public void Invoke_AbsoluteSource_Invokes()
+    {
+        PlaySoundAction playSoundAction = new PlaySoundAction();
 
-            playSoundAction.Source = "ms-appx:///foo.wav";
-            bool result = (bool)playSoundAction.Execute(null, null);
-            Assert.IsTrue(result);
-        }
+        playSoundAction.Source = "ms-appx:///foo.wav";
+        bool result = (bool)playSoundAction.Execute(null, null);
+        Assert.IsTrue(result);
+    }
 
-        [UITestMethod]
-        public void Invoke_InvalidSource_ReturnsFalse()
-        {
-            PlaySoundAction playSoundAction = new PlaySoundAction();
+    [UITestMethod]
+    public void Invoke_InvalidSource_ReturnsFalse()
+    {
+        PlaySoundAction playSoundAction = new PlaySoundAction();
 
-            Assert.IsFalse((bool)playSoundAction.Execute(null, null),
-                "PlaySoundAction.Execute should return false with a null source path.");
-        }
+        Assert.IsFalse((bool)playSoundAction.Execute(null, null),
+            "PlaySoundAction.Execute should return false with a null source path.");
     }
 }

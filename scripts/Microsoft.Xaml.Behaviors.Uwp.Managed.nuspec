@@ -47,10 +47,6 @@
 
         <file target="lib\net8.0-windows10.0.19041.0\Design\Microsoft.Xaml.Interactivity.DesignTools.dll"   src="..\out\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactivity.DesignTools.dll" />
         <file target="lib\net8.0-windows10.0.19041.0\Design\Microsoft.Xaml.Interactivity.DesignTools.pdb"   src="..\out\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactivity.DesignTools.pdb" />
-
-        <file target="src\BehaviorsSDKManaged\Microsoft.Xaml.Interactivity"                  src="..\src\BehaviorsSDKManaged\Microsoft.Xaml.Interactivity\**\*.cs" />
-        <file target="src\BehaviorsSDKManaged\Microsoft.Xaml.Interactivity.Design"           src="..\src\BehaviorsSDKManaged\Microsoft.Xaml.Interactivity.Design\**\*.cs" />
-        <file target="src\BehaviorsSDKManaged\Microsoft.Xaml.Interactivity.DesignTools"      src="..\src\BehaviorsSDKManaged\Microsoft.Xaml.Interactivity.DesignTools\**\*.cs" />
     </files>
 
 </package>
