@@ -87,7 +87,7 @@ extends:
             Contents: '**\'
           
           # Make sure required components are installed.
-        - - pwsh: |
+        - pwsh: |
             $vswhere = "C:\Program Files (x86)\Microsoft Visual Studio\Installer\vswhere.exe"
             $vsInstaller = & $vswhere -latest -property properties_setupEngineFilePath
             Write-Host "##[debug]VS Installer: $vsInstaller"
