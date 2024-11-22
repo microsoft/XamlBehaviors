@@ -118,8 +118,8 @@ extends:
         - task: VSBuild@1
           displayName: Build BehaviorsSDKManaged.sln
           inputs:
-            solution: src\BehaviorsSDKManaged\BehaviorsSDKManaged.sln -bl:$(Build.ArtifactStagingDirectory)\Logs\behaviors_sdk_managed.binlog
-            msbuildArgs: /p:ContinuousIntegrationBuild=true
+            solution: src\BehaviorsSDKManaged\BehaviorsSDKManaged.sln
+            msbuildArgs: /p:ContinuousIntegrationBuild=true /bl:$(Build.ArtifactStagingDirectory)\Logs\behaviors_sdk_managed.binlog
             platform: Any CPU
             configuration: Release
             clean: true
