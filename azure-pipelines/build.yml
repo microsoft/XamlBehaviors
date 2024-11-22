@@ -65,6 +65,10 @@ extends:
             displayName: 'Publish Package Artifacts'
             targetPath: $(Build.ArtifactStagingDirectory)\Packages
             artifactName: Packages
+          - output: pipelineArtifact
+            displayName: 'Publish Logs'
+            targetPath: $(Build.ArtifactStagingDirectory)\Logs
+            artifactName: Logs
           - output: nuget
             displayName: 'NuGet push to NuGet.org'
             condition: and(succeeded(), eq(variables['Build.OfficialRelease'], 'true'))
@@ -114,7 +118,7 @@ extends:
         - task: VSBuild@1
           displayName: Build BehaviorsSDKManaged.sln
           inputs:
-            solution: src\BehaviorsSDKManaged\BehaviorsSDKManaged.sln
+            solution: src\BehaviorsSDKManaged\BehaviorsSDKManaged.sln -bl:$(Build.ArtifactStagingDirectory)\Logs\behaviors_sdk_managed.binlog
             msbuildArgs: /p:ContinuousIntegrationBuild=true
             platform: Any CPU
             configuration: Release
