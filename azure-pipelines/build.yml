@@ -86,11 +86,11 @@ extends:
             SourceFolder: out
             Contents: '**\'
           
-          # Temporary: update Visual Studio to latest
+          # Make sure required components are installed.
         - powershell: |
             Invoke-WebRequest -Uri https://aka.ms/vs/17/release/vs_enterprise.exe -OutFile $(Build.SourcesDirectory)\vs_enterprise.exe
-            Start-Process -FilePath '$(Build.SourcesDirectory)\vs_enterprise.exe' -ArgumentList 'updateall','--downloadThenInstall','--quiet','--norestart' -Wait -WorkingDirectory '$(Build.SourcesDirectory)'
-          displayName: Update Visual Studio 2022 Enterprise
+            Start-Process -FilePath '$(Build.SourcesDirectory)\vs_enterprise.exe' -ArgumentList 'modify','--installPath','"C:\Program Files\Microsoft Visual Studio\2022\Enterprise"','--downloadThenInstall','--quiet','--norestart','--config','$(Build.SourcesDirectory)\.vsconfig' -Wait -WorkingDirectory '$(Build.SourcesDirectory)'
+          displayName: Install Required Visual Studio Components
           workingDirectory: $(Build.SourcesDirectory)
           timeoutInMinutes: 30
         - task: UseDotNet@2
