@@ -87,12 +87,33 @@ extends:
             Contents: '**\'
           
           # Make sure required components are installed.
-        - powershell: |
-            Invoke-WebRequest -Uri https://aka.ms/vs/17/release/vs_enterprise.exe -OutFile $(Build.SourcesDirectory)\vs_enterprise.exe
-            Start-Process -FilePath '$(Build.SourcesDirectory)\vs_enterprise.exe' -ArgumentList 'modify','--installPath','"C:\Program Files\Microsoft Visual Studio\2022\Enterprise"','--downloadThenInstall','--quiet','--norestart','--config','$(Build.SourcesDirectory)\.vsconfig' -Wait -WorkingDirectory '$(Build.SourcesDirectory)'
-          displayName: Install Required Visual Studio Components
-          workingDirectory: $(Build.SourcesDirectory)
-          timeoutInMinutes: 30
+        - - pwsh: |
+            $vswhere = "C:\Program Files (x86)\Microsoft Visual Studio\Installer\vswhere.exe"
+            $vsInstaller = & $vswhere -latest -property properties_setupEngineFilePath
+            Write-Host "##[debug]VS Installer: $vsInstaller"
+            Write-Host "##[debug]HKLM:\Software\Microsoft\Net Framework Setup\NDP\v4\Full\Release: $(Get-ItemProperty -Path 'HKLM:\Software\Microsoft\Net Framework Setup\NDP\v4\Full' -Name Release | Select-Object -ExpandProperty Release)"
+            $vsInstallationPath = & $vswhere -latest -property installationPath
+            Write-Host "##[debug]VS Installation Path: $vsInstallationPath"
+            if (Test-Path -Path $vsInstaller) {
+              Write-Host "##[debug]Starting VS Installer"
+              Write-Host "##[command]$vsInstaller modify --installPath `"$vsInstallationPath`" --downloadThenInstall --quiet --norestart --config '$(Build.SourcesDirectory)\.vsconfig'"
+              $p = Start-Process -FilePath "$vsInstaller" -ArgumentList 'modify','--installPath',"`"$vsInstallationPath`"",'--downloadThenInstall','--quiet','--norestart','--config','$(Build.SourcesDirectory)\.vsconfig' -Wait -WorkingDirectory "$vsInstallationPath" -PassThru
+              if ($p.ExitCode -ne 0) {
+                Write-Host "##vso[task.logissue type=error]Visual Studio Installer Failed, exit code $($p.ExitCode)"      
+                Write-Host "##[debug]Downloading https://aka.ms/vscollect.exe"
+                Invoke-WebRequest -Uri https://aka.ms/vscollect.exe -OutFile $(Build.SourcesDirectory)\vscollect.exe
+                Write-Host "##[command]$(Build.SourcesDirectory)\vscollect.exe"
+                Start-Process -FilePath "$(Build.SourcesDirectory)\vscollect.exe" -Wait
+                Copy-Item -Path "$($env:TEMP)/vslogs.zip" -Destination "$(Build.ArtifactStagingDirectory)\Logs" -Verbose
+      
+                exit ($p.ExitCode)
+              }
+            }
+            else {
+              Write-Host "##vso[task.logissue type=warning]Unable to find Visual Studio Installer"
+            }
+          displayName: Configure Visual Studio
+          name: ConfigureVs
         - task: UseDotNet@2
           displayName: Use .NET SDK 9.0.100
           inputs:
