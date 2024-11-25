@@ -71,6 +71,7 @@ extends:
             displayName: 'Publish Logs'
             targetPath: $(Build.ArtifactStagingDirectory)\Logs
             artifactName: Logs
+            condition: always()
           - output: nuget
             displayName: 'NuGet push to NuGet.org'
             condition: and(succeeded(), eq(variables['Build.OfficialRelease'], 'true'))
