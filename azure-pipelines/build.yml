@@ -53,8 +53,6 @@ extends:
         timeoutInMinutes: 120
         pool:
           name: VSEngSS-MicroBuild2022-1ES
-          demands:
-          - ImageOverride -equals server2022-microbuildVS2022-1ES
         templateContext:
           mb:
             signing:
