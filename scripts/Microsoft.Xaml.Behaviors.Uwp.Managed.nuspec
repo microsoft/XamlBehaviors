@@ -28,13 +28,9 @@
     <files>
         <file target="lib\uap10.0\Microsoft.Xaml.Interactivity.dll"                     src="..\out\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactivity.dll" />
         <file target="lib\uap10.0\Microsoft.Xaml.Interactivity.pdb"                     src="..\out\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactivity.pdb" />
-        <file target="lib\uap10.0\Microsoft.Xaml.Interactivity.xml"                     src="..\out\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactivity.xml" />
-        <file target="lib\uap10.0\Microsoft.Xaml.Interactivity.pri"                     src="..\out\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactivity.pri" />
 
         <file target="lib\net8.0-windows10.0.19041.0\Microsoft.Xaml.Interactivity.dll"  src="..\out\uwp\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactivity.dll" />
         <file target="lib\net8.0-windows10.0.19041.0\Microsoft.Xaml.Interactivity.pdb"  src="..\out\uwp\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactivity.pdb" />
-        <file target="lib\net8.0-windows10.0.19041.0\Microsoft.Xaml.Interactivity.xml"  src="..\out\uwp\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactivity.xml" />
-        <file target="lib\net8.0-windows10.0.19041.0\Microsoft.Xaml.Interactivity.pri"  src="..\out\uwp\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactivity.pri" />
 
         <file target="lib\uap10.0\Design\Microsoft.Xaml.Interactivity.Design.dll"       src="..\out\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactivity.Design.dll" />
         <file target="lib\uap10.0\Design\Microsoft.Xaml.Interactivity.Design.pdb"       src="..\out\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactivity.Design.pdb" />
