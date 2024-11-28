@@ -70,7 +70,8 @@ The [documentation](https://github.com/Microsoft/XamlBehaviors/wiki) explains ho
   - Change Build Configuration to Release
   - Build solution with right click > Build, or by clicking F6
 - If you're building from CLI (Visual Studio Developer Command prompt):
-  - Run `msbuild /restore -t:build src\BehaviorsSDKManaged\BehaviorsSDKManaged.sln /p:Configuration=Release`
+  - Run `nuget restore src\BehaviorsSDKManaged\BehaviorsSDKManaged.sln`
+  - Run `msbuild -t:build src\BehaviorsSDKManaged\BehaviorsSDKManaged.sln /p:Configuration=Release`
 - Run `msbuild /t:pack src\BehaviorsSDKManaged\Microsoft.Xaml.Interactivity.Design\Microsoft.Xaml.Interactivity.Design.csproj`
   - *(Optional)* Add `/p:TimestampPackage=true` to include the timestamp in the NuGet package version
 
