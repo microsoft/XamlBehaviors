@@ -116,16 +116,16 @@
     </None>
     <AppDesigner Include="Properties\" />
   </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\Version\NuGetPackageVersion.props" />
   <Import Project="..\..\..\scripts\Microsoft.Xaml.Behaviors.Signing.targets" />
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.VisualStudioEng.MicroBuild.Core.1.0.0\build\Microsoft.VisualStudioEng.MicroBuild.Core.targets" Condition="Exists('..\packages\Microsoft.VisualStudioEng.MicroBuild.Core.1.0.0\build\Microsoft.VisualStudioEng.MicroBuild.Core.targets')" />
   <!--
       This project needs to be packed with 'nuget pack' directly on the .nuspec file.
       Note that in order to add this comment, 'nuget.exe' must be present in PATH.
       This target can be remove if we figure out how to just import the "pack" targets correctly.
     -->
-  <Target Name="Pack">
+  <Target Name="Pack" DependsOnTargets="TimestampNugetPackage">
     <PropertyGroup>
       <PackageOutputPath Condition=" '$(PackageOutputPath)' == '' ">..\..\..\out\NuGetPackages</PackageOutputPath>
     </PropertyGroup>
