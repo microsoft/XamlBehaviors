@@ -171,6 +171,7 @@
   <Import Project="..\..\..\scripts\Microsoft.Xaml.Behaviors.Signing.targets" />
   <PropertyGroup>
     <PackageId>Microsoft.Xaml.Behaviors.WinUI.Managed</PackageId>
+    <Version>$(PackageVersion)</Version>
     <Title>Microsoft.Xaml.Behaviors.WinUI.Managed</Title>
     <Authors>Microsoft</Authors>
     <Copyright>© Microsoft Corporation. All rights reserved.</Copyright>
