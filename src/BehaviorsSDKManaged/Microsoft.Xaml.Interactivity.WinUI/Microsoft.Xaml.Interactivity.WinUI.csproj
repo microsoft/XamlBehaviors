@@ -168,6 +168,7 @@
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
   <Import Project="..\Microsoft.Xaml.Interactivity.Shared\Microsoft.Xaml.Interactivity.Shared.projitems" Label="Shared" />
+  <Import Project="..\Version\NuGetPackageVersion.props" />
   <Import Project="..\..\..\scripts\Microsoft.Xaml.Behaviors.Signing.targets" />
   <PropertyGroup>
     <PackageId>Microsoft.Xaml.Behaviors.WinUI.Managed</PackageId>
