@@ -38,6 +38,19 @@ jobs:
         name: msbuild_binlog_Release_x64
         path: msbuild.binlog
         if-no-files-found: error
+    
+    - name: Build UWP package
+      run: msbuild /t:pack src\BehaviorsSDKManaged\Microsoft.Xaml.Interactivity.Uwp\Microsoft.Xaml.Interactivity.Uwp.csproj /p:Configuration=Release /p:TimestampPackage=true
+    
+    - name: Build WinUI 3 package
+      run: msbuild /t:pack src\BehaviorsSDKManaged\Microsoft.Xaml.Interactivity.WinUI\Microsoft.Xaml.Interactivity.WinUI.csproj /p:Configuration=Release /p:TimestampPackage=true
+    
+    - name: Upload NuGet packages
+      uses: actions/upload-artifact@v4
+      with:
+        name: nuget_packages
+        path: out\NuGetPackages\*.nupkg
+        if-no-files-found: error
 
   samples-build:
     runs-on: windows-latest

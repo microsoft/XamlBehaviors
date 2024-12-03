@@ -72,7 +72,9 @@ The [documentation](https://github.com/Microsoft/XamlBehaviors/wiki) explains ho
 - If you're building from CLI (Visual Studio Developer Command prompt):
   - Run `nuget restore src\BehaviorsSDKManaged\BehaviorsSDKManaged.sln`
   - Run `msbuild -t:build src\BehaviorsSDKManaged\BehaviorsSDKManaged.sln /p:Configuration=Release`
-- Run `msbuild /t:pack src\BehaviorsSDKManaged\Microsoft.Xaml.Interactivity.Design\Microsoft.Xaml.Interactivity.Design.csproj`
+
+For UWP:
+- Run `msbuild /t:pack src\BehaviorsSDKManaged\Microsoft.Xaml.Interactivity.Uwp\Microsoft.Xaml.Interactivity.Uwp.csproj  /p:Configuration=Release`
   - *(Optional)* Add `/p:TimestampPackage=true` to include the timestamp in the NuGet package version
 
 For WinUI:
