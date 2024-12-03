@@ -121,7 +121,7 @@ extends:
         - task: VSBuild@1
           displayName: Build UWP Managed NuGet package
           inputs:
-            solution: src\BehaviorsSDKManaged\Microsoft.Xaml.Interactivity.Design\Microsoft.Xaml.Interactivity.Design.csproj
+            solution: src\BehaviorsSDKManaged\Microsoft.Xaml.Interactivity.Uwp\Microsoft.Xaml.Interactivity.Uwp.csproj
             msbuildArgs: /t:Pack /p:SignType=$(SignType) /p:TimestampPackage=$(TimestampPackage) /p:PackageOutputPath="$(Build.SourcesDirectory)\out"
             configuration: Release
         - task: VSBuild@1
