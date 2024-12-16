@@ -13,8 +13,9 @@
     <CsWinRTGenerateProjection>false</CsWinRTGenerateProjection>
     <CsWinRTAotWarningLevel>2</CsWinRTAotWarningLevel>
 
-    <!-- Temporary workaround for a WebView2 bug -->
+    <!-- Temporary workaround for a WebView2 bugs -->
     <WebView2EnableCsWinRTProjectionExcludeCoreRef>true</WebView2EnableCsWinRTProjectionExcludeCoreRef>
+    <WebView2LoaderPreference>none</WebView2LoaderPreference>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
   </PropertyGroup>
   <PropertyGroup>
@@ -101,6 +102,12 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    
+    <!--
+      This WebView2 dependency is private, just to get the new tooling to fix some 'WebView2Loader.dll' issues
+      that resulted in a broken PRI file with invalid references. Can be removed when WindowsAppSDK 1.7 ships.
+    -->
+    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.2903.40" PrivateAssets="all" />
     <PackageReference Include="Microsoft.Windows.CsWinRT" Version="2.1.6" PrivateAssets="all" />
     <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.6.241114003" />
   </ItemGroup>
