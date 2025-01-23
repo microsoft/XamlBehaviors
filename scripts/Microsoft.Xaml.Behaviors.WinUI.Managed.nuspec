@@ -26,14 +26,6 @@
         <file target="lib\net8.0-windows10.0.17763.0\Microsoft.Xaml.Interactivity.pdb"                     src="..\out\WinUI\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactivity.pdb" />
         <file target="lib\net8.0-windows10.0.17763.0\Microsoft.Xaml.Interactivity.xml"                     src="..\out\WinUI\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactivity.xml" />
         <file target="lib\net8.0-windows10.0.17763.0\Microsoft.Xaml.Interactivity.pri"                     src="..\out\WinUI\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactivity.pri" />
-
-        <!--
-        <file target="lib\net8.0-windows10.0.17763.0\Design\Microsoft.Xaml.Interactivity.Design.dll"       src="..\out\WinUI\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactivity.Design.dll" />
-        <file target="lib\net8.0-windows10.0.17763.0\Design\Microsoft.Xaml.Interactivity.Design.pdb"       src="..\out\WinUI\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactivity.Design.pdb" />
-        -->
-      
-        <file target="lib\net8.0-windows10.0.17763.0\Design\Microsoft.Xaml.Interactivity.DesignTools.dll"   src="..\out\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactivity.DesignTools.dll" />
-        <file target="lib\net8.0-windows10.0.17763.0\Design\Microsoft.Xaml.Interactivity.DesignTools.pdb"   src="..\out\BehaviorsSDKManaged\bin\AnyCPU\Release\Microsoft.Xaml.Interactivity.DesignTools.pdb" />
     </files>
 
 </package>

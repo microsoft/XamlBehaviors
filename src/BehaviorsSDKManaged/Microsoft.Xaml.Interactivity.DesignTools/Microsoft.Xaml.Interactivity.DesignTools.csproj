@@ -37,9 +37,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <DefineConstants>$(DefineConstants);SurfaceIsolation</DefineConstants>
-  </PropertyGroup>
-  <PropertyGroup>
     <OutputPath>..\..\..\out\$(SolutionName)\bin\$(Platform)\$(Configuration)\</OutputPath>
     <IntermediateOutputPath>..\..\..\out\$(SolutionName)\obj\$(Platform)\$(Configuration)\</IntermediateOutputPath>
   </PropertyGroup>
@@ -54,9 +51,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\Microsoft.Xaml.Interactivity.Design\MetadataTableProvider.cs">
-      <Link>MetadataTableProvider.cs</Link>
-    </Compile>
     <Compile Include="..\Microsoft.Xaml.Interactivity.Design\Properties\DesignTools.Resources.Designer.cs">
       <Link>Properties\DesignTools.Resources.Designer.cs</Link>
       <AutoGen>True</AutoGen>
@@ -66,6 +60,7 @@
     <Compile Include="..\Version\Version.cs">
       <Link>Version.cs</Link>
     </Compile>
+    <Compile Include="MetadataTableProvider.cs" />
     <Compile Include="MetadataTableProvider.SurfaceIsolation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
