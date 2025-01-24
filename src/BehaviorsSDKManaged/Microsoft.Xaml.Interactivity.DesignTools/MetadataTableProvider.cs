@@ -3,23 +3,13 @@
 
 using System.ComponentModel;
 using Microsoft.Xaml.Interactivity.Design.Properties;
-
-#if SurfaceIsolation
 using Microsoft.VisualStudio.DesignTools.Extensibility;
 using Microsoft.VisualStudio.DesignTools.Extensibility.Metadata;
 using Microsoft.VisualStudio.DesignTools.Extensibility.PropertyEditing;
 using Editors = Microsoft.VisualStudio.DesignTools.Extensibility.PropertyEditing.Editors;
-#else
-using Microsoft.Windows.Design;
-using Microsoft.Windows.Design.Metadata;
-using Microsoft.Windows.Design.PropertyEditing;
-using Editors = Microsoft.Windows.Design.PropertyEditing.Editors;
-#endif
 
 [assembly: ProvideMetadata(typeof(Microsoft.Xaml.Interactivity.Design.MetadataTableProvider))]
 
-// Please note that both the .Design and .DesignTools project
-// use the same namespace: Microsoft.Xaml.Interactivity.Design
 namespace Microsoft.Xaml.Interactivity.Design;
 
 partial class MetadataTableProvider : IProvideAttributeTable
