@@ -2,7 +2,6 @@
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
 using System;
-using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
 
 #if WinUI
@@ -12,7 +11,10 @@ using Microsoft.UI.Xaml.Media;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Media;
 #endif
-#if WINDOWS_UWP && !NET8_0_OR_GREATER
+
+#if NET5_0_OR_GREATER
+using System.Diagnostics.CodeAnalysis;
+#else
 using System.Runtime.InteropServices.WindowsRuntime;
 #endif
 
@@ -21,7 +23,7 @@ namespace Microsoft.Xaml.Interactivity;
 /// <summary>
 /// A behavior that listens for a specified event on its source and executes its actions when that event is fired.
 /// </summary>
-#if NET8_0_OR_GREATER
+#if NET5_0_OR_GREATER
 [RequiresUnreferencedCode("This behavior is not trim-safe.")]
 #endif
 public sealed class EventTriggerBehavior : Trigger
@@ -49,7 +51,7 @@ public sealed class EventTriggerBehavior : Trigger
     private object _resolvedSource;
     private Delegate _eventHandler;
     private bool _isLoadedEventRegistered;
-#if !NET8_0_OR_GREATER
+#if !NET5_0_OR_GREATER
     private bool _isWindowsRuntimeEvent;
     private Func<Delegate, EventRegistrationToken> _addEventHandlerMethod;
     private Action<EventRegistrationToken> _removeEventHandlerMethod;
@@ -164,7 +166,7 @@ public sealed class EventTriggerBehavior : Trigger
             MethodInfo methodInfo = typeof(EventTriggerBehavior).GetTypeInfo().GetDeclaredMethod("OnEvent");
             this._eventHandler = methodInfo.CreateDelegate(info.EventHandlerType, this);
 
-#if NET8_0_OR_GREATER
+#if NET5_0_OR_GREATER
             info.AddEventHandler(this._resolvedSource, this._eventHandler);
 #else
             this._isWindowsRuntimeEvent = EventTriggerBehavior.IsWindowsRuntimeEvent(info);
@@ -207,7 +209,7 @@ public sealed class EventTriggerBehavior : Trigger
             }
 
             EventInfo info = this._resolvedSource.GetType().GetRuntimeEvent(eventName);
-#if NET8_0_OR_GREATER
+#if NET5_0_OR_GREATER
             info.RemoveEventHandler(this._resolvedSource, this._eventHandler);
 #else
             if (this._isWindowsRuntimeEvent)
@@ -256,7 +258,7 @@ public sealed class EventTriggerBehavior : Trigger
         behavior.RegisterEvent(newEventName);
     }
 
-#if !NET8_0_OR_GREATER
+#if !NET5_0_OR_GREATER
     private static bool IsWindowsRuntimeEvent(EventInfo eventInfo)
     {
         return eventInfo != null &&
@@ -269,7 +271,8 @@ public sealed class EventTriggerBehavior : Trigger
         if (type != null)
         {
             // This will only work when using built-in WinRT interop, ie. where .winmd files are directly
-            // referenced instead of generated projections. That is, this would not work on modern .NET.
+            // referenced instead of generated projections. That is, this would not work on .NET 5 or higher,
+            // where CsWinRT is used instead.
             return type.AssemblyQualifiedName.EndsWith("ContentType=WindowsRuntime", StringComparison.Ordinal);
         }
 

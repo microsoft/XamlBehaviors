@@ -17,7 +17,7 @@ namespace Microsoft.Xaml.Interactivity;
 /// <summary>
 /// An action that will change a specified property to a specified value when invoked.
 /// </summary>
-#if NET8_0_OR_GREATER
+#if NET5_0_OR_GREATER
 [RequiresUnreferencedCode("This action is not trim-safe.")]
 #endif
 public sealed class ChangePropertyAction : DependencyObject, IAction
