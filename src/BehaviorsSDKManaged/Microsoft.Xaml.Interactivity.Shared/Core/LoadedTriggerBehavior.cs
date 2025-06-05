@@ -14,7 +14,7 @@ namespace Microsoft.Xaml.Interactivity;
 /// <summary>
 /// A behavior that listens to an <see cref="FrameworkElement"/> and executes its actions when the element is loaded.
 /// </summary>
-public class LoadedTriggerBehavior : EventTriggerBehaviorBase<FrameworkElement>
+public sealed class LoadedTriggerBehavior : EventTriggerBehaviorBase<FrameworkElement>
 {
     /// <inheritdoc/>
     protected override bool RegisterEventCore(FrameworkElement source)

@@ -12,7 +12,7 @@ namespace Microsoft.Xaml.Interactivity;
 /// <summary>
 /// A behavior that listens to an <see cref="FrameworkElement"/> and executes its actions when the element is unloaded.
 /// </summary>
-public class UnloadedTriggerBehavior : EventTriggerBehaviorBase<FrameworkElement>
+public sealed class UnloadedTriggerBehavior : EventTriggerBehaviorBase<FrameworkElement>
 {
     /// <inheritdoc/>
     protected override bool RegisterEventCore(FrameworkElement source)

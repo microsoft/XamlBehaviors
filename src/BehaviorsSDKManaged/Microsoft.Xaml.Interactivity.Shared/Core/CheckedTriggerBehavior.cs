@@ -12,7 +12,7 @@ namespace Microsoft.Xaml.Interactivity;
 /// <summary>
 /// A behavior that listens to an <see cref="ToggleButton"/> and executes its actions when the button is checked.
 /// </summary>
-public class CheckedTriggerBehavior : EventTriggerBehaviorBase<ToggleButton>
+public sealed class CheckedTriggerBehavior : EventTriggerBehaviorBase<ToggleButton>
 {
     /// <inheritdoc/>
     protected override bool RegisterEventCore(ToggleButton source)

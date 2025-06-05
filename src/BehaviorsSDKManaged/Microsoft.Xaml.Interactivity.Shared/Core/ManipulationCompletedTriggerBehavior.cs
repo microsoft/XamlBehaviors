@@ -12,7 +12,7 @@ namespace Microsoft.Xaml.Interactivity;
 /// <summary>
 /// A behavior that listens to an <see cref="UIElement"/> and executes its actions when the UI element completes manipulation.
 /// </summary>
-public class ManipulationCompletedTriggerBehavior : EventTriggerBehaviorBase<UIElement>
+public sealed class ManipulationCompletedTriggerBehavior : EventTriggerBehaviorBase<UIElement>
 {
     /// <inheritdoc/>
     protected override bool RegisterEventCore(UIElement source)

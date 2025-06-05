@@ -12,7 +12,7 @@ namespace Microsoft.Xaml.Interactivity;
 /// <summary>
 /// A behavior that listens to an <see cref="UIElement"/> and executes its actions when the pointer enters the UI element.
 /// </summary>
-public class PointerEnteredTriggerBehavior : EventTriggerBehaviorBase<UIElement>
+public sealed class PointerEnteredTriggerBehavior : EventTriggerBehaviorBase<UIElement>
 {
     /// <inheritdoc/>
     protected override bool RegisterEventCore(UIElement source)

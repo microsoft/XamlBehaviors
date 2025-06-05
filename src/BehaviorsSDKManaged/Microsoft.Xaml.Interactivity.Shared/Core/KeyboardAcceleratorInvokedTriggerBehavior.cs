@@ -12,7 +12,7 @@ namespace Microsoft.Xaml.Interactivity;
 /// <summary>
 /// A behavior that listens to an <see cref="KeyboardAccelerator"/> and executes its actions when the accelerator is invoked.
 /// </summary>
-public class KeyboardAcceleratorInvokedTriggerBehavior : EventTriggerBehaviorBase<KeyboardAccelerator>
+public sealed class KeyboardAcceleratorInvokedTriggerBehavior : EventTriggerBehaviorBase<KeyboardAccelerator>
 {
     /// <inheritdoc/>
     protected override bool RegisterEventCore(KeyboardAccelerator source)

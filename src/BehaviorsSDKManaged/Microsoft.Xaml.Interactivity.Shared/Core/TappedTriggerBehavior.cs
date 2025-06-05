@@ -12,7 +12,7 @@ namespace Microsoft.Xaml.Interactivity;
 /// <summary>
 /// A behavior that listens to an <see cref="UIElement"/> and executes its actions when the UI element gets tapped.
 /// </summary>
-public class TappedTriggerBehavior : EventTriggerBehaviorBase<UIElement>
+public sealed class TappedTriggerBehavior : EventTriggerBehaviorBase<UIElement>
 {
     /// <inheritdoc/>
     protected override bool RegisterEventCore(UIElement source)
