@@ -8,15 +8,15 @@ on:
 
 jobs:
   managed-build:
-    runs-on: windows-latest
+    runs-on: windows-2022
     steps:
     - name: Checkout XamlBehaviors.git 
       uses: actions/checkout@v4
 
-    - name: Install the .NET 9.0.100 SDK
+    - name: Install the .NET 9.0.306 SDK
       uses: actions/setup-dotnet@v4
       with:
-        dotnet-version: 9.0.100
+        dotnet-version: 9.0.306
 
     - name: Setup MSBuild
       uses: microsoft/setup-msbuild@v2
@@ -53,15 +53,15 @@ jobs:
         if-no-files-found: error
 
   samples-build:
-    runs-on: windows-latest
+    runs-on: windows-2022
     steps:
     - name: Checkout XamlBehaviors.git 
       uses: actions/checkout@v4
 
-    - name: Install the .NET 9.0.100 SDK
+    - name: Install the .NET 9.0.306 SDK
       uses: actions/setup-dotnet@v4
       with:
-        dotnet-version: 9.0.100
+        dotnet-version: 9.0.306
 
     - name: Setup MSBuild
       uses: microsoft/setup-msbuild@v2
