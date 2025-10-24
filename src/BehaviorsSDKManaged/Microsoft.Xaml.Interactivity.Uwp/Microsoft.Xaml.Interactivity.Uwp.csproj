@@ -1,7 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>Library</OutputType>
-    <DefineConstants>$(DefineConstants);MODERN_WINDOWS_UWP</DefineConstants>
     <AssemblyName>Microsoft.Xaml.Interactivity</AssemblyName>
     <TargetFramework>net8.0-windows10.0.19041.0</TargetFramework>
     <WindowsSdkPackageVersion>10.0.19041.57</WindowsSdkPackageVersion>

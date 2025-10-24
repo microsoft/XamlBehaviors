@@ -3,7 +3,7 @@
 
 using System;
 using System.Collections.Generic;
-#if NET8_0_OR_GREATER
+#if NET5_0_OR_GREATER
 using System.Diagnostics.CodeAnalysis;
 #endif
 using System.Reflection;
@@ -30,7 +30,7 @@ internal static class DataBindingHelper
     /// bindings on the action  may not be up-to-date. This routine is called before the action
     /// is executed in order to guarantee that all bindings are refreshed with the most current data.
     /// </remarks>
-#if NET8_0_OR_GREATER
+#if NET5_0_OR_GREATER
     [RequiresUnreferencedCode("This method accesses all fields of input action objects.")]
 #endif
     public static void RefreshDataBindingsOnActions(ActionCollection actions)
@@ -45,7 +45,7 @@ internal static class DataBindingHelper
     }
 
     private static IEnumerable<DependencyProperty> GetDependencyProperties(
-#if NET8_0_OR_GREATER
+#if NET5_0_OR_GREATER
         [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)]
 #endif
         Type type)
