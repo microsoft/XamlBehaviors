@@ -109,7 +109,7 @@
     -->
     <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.2903.40" PrivateAssets="all" />
     <PackageReference Include="Microsoft.Windows.CsWinRT" Version="2.2.0" PrivateAssets="all" />
-    <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.6.250108002" />
+    <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.8.251003001" />
   </ItemGroup>
   <ItemGroup>
     <PRIResource Include="..\Microsoft.Xaml.Interactivity\Resources\de-DE\Strings.resw">

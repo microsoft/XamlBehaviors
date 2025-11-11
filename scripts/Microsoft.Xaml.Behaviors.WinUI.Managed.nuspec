@@ -16,7 +16,7 @@
         <repository type="git" url="http://go.microsoft.com/fwlink/?LinkID=651678" />
         <dependencies>
           <group targetFramework="net8.0-windows10.0.17763.0">
-            <dependency id="Microsoft.WindowsAppSDK" version="1.6.250108002" />
+            <dependency id="Microsoft.WindowsAppSDK" version="1.8.251003001" />
           </group>
         </dependencies>
     </metadata>
