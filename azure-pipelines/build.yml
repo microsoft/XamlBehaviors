@@ -1,10 +1,15 @@
-# This Yaml Document has been converted by ESAI Yaml Pipeline Conversion Tool.
+trigger: none
+schedules:
+- cron: 0 3 * * 1,2,3,4,5
+  branches:
+    include:
+    - refs/heads/main
 name: $(Date:yyyyMMdd).$(Rev:r)
 parameters:
 - name: OfficialRelease
   displayName: "Build and publish an official release"
   type: boolean
-  default: false
+  default: true
 variables:
 - name: Build.OfficialRelease
   value: ${{ parameters.OfficialRelease }}
@@ -21,10 +26,6 @@ variables:
   value: vscx-tools-authoring
 - name: TimestampPackage
   value: ${{ not (parameters.OfficialRelease) }}
-trigger:
-  branches:
-    include:
-    - refs/heads/main
 resources:
   repositories:
   - repository: MicroBuildTemplate
@@ -60,6 +61,8 @@ extends:
             signing:
               enabled: true
               signType: $(SignType)
+              ${{ if eq(variables.SignType, 'real') }}:
+                signWithProd: true
             sbom:
               enabled: true
           outputs:
