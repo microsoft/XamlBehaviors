@@ -143,10 +143,13 @@ extends:
           displayName: Archive Symbols
           condition: and(succeeded(), eq(variables['Build.OfficialRelease'], 'true'))
           inputs:
+            azureSubscription: VSEng-SymbolsUpload
             SymbolsFeatureName: XamlBehaviors
             SymbolsProject: VS
             SymbolsAgentPath: $(Pipeline.Workspace)\Symbols
             SubmitToInternet: false
+          env:
+            SYSTEM_ACCESSTOKEN: $(System.AccessToken)
         - task: CopyFiles@2
           displayName: 'Copy NuGet Packages to: $(Build.ArtifactStagingDirectory)\Packages'
           inputs:
