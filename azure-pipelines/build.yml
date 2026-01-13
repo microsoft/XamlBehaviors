@@ -139,7 +139,7 @@ extends:
             SourceFolder: $(Build.SourcesDirectory)\out
             Contents: '**\bin\**\*.pdb'
             TargetFolder: $(Pipeline.Workspace)\Symbols
-        - task: MicroBuildArchiveSymbols@5
+        - task: MicroBuildArchiveSymbols@6
           displayName: Archive Symbols
           condition: and(succeeded(), eq(variables['Build.OfficialRelease'], 'true'))
           inputs:
