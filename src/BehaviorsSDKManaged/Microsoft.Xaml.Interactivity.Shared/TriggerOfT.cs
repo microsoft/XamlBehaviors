@@ -41,7 +41,7 @@ public abstract class Trigger<T> : Trigger where T : DependencyObject
         {
             string actualType = base.AssociatedObject.GetType().FullName;
             string expectedType = typeof(T).FullName;
-            string message = string.Format(ResourceHelper.GetString("InvalidAssociatedObjectExceptionMessage"), actualType, expectedType);
+            string message = string.Format(ResourceHelper.InvalidAssociatedObjectExceptionMessage, actualType, expectedType);
             throw new InvalidOperationException(message);
         }
     }
