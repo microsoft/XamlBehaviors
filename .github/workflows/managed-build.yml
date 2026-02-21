@@ -13,10 +13,10 @@ jobs:
     - name: Checkout XamlBehaviors.git 
       uses: actions/checkout@v4
 
-    - name: Install the .NET 9.0.306 SDK
+    - name: Install the .NET 9.0.311 SDK
       uses: actions/setup-dotnet@v4
       with:
-        dotnet-version: 9.0.306
+        dotnet-version: 9.0.311
 
     - name: Setup MSBuild
       uses: microsoft/setup-msbuild@v2
@@ -58,10 +58,10 @@ jobs:
     - name: Checkout XamlBehaviors.git 
       uses: actions/checkout@v4
 
-    - name: Install the .NET 9.0.306 SDK
+    - name: Install the .NET 9.0.311 SDK
       uses: actions/setup-dotnet@v4
       with:
-        dotnet-version: 9.0.306
+        dotnet-version: 9.0.311
 
     - name: Setup MSBuild
       uses: microsoft/setup-msbuild@v2

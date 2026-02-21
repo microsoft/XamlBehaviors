@@ -96,9 +96,9 @@ extends:
             SourceFolder: out
             Contents: '**\'
         - task: UseDotNet@2
-          displayName: Use .NET SDK 9.0.306
+          displayName: Use .NET SDK 9.0.311
           inputs:
-            version: 9.0.306
+            version: 9.0.311
             performMultiLevelLookup: true
         - task: NuGetToolInstaller@1
           displayName: Use NuGet 6.x
