@@ -114,6 +114,7 @@ extends:
           inputs:
             solution: src\BehaviorsSDKManaged\BehaviorsSDKManaged.sln
             selectOrConfig: config
+            nugetConfigPath: azure-pipelines/nuget.config
         - task: MicroBuildSigningPlugin@4
           inputs:
             signType: '$(SignType)'
