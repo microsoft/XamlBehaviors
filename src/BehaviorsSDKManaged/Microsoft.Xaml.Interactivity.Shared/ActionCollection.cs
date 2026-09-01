@@ -47,7 +47,7 @@ public sealed partial class ActionCollection : DependencyObjectCollection
     {
         if (!(item is IAction))
         {
-            throw new InvalidOperationException(ResourceHelper.GetString("NonActionAddedToActionCollectionExceptionMessage"));
+            throw new InvalidOperationException(ResourceHelper.NonActionAddedToActionCollectionExceptionMessage);
         }
     }
 }

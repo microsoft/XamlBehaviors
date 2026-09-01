@@ -8,8 +8,10 @@ using System.Reflection;
 
 #if WinUI
 using Microsoft.UI.Xaml;
+using Microsoft.UI.Xaml.Markup;
 #else
 using Windows.UI.Xaml;
+using Windows.UI.Xaml.Markup;
 #endif
 
 namespace Microsoft.Xaml.Interactivity;
@@ -17,9 +19,10 @@ namespace Microsoft.Xaml.Interactivity;
 /// <summary>
 /// An action that will change a specified property to a specified value when invoked.
 /// </summary>
-#if NET8_0_OR_GREATER
-[RequiresUnreferencedCode("This action is not trim-safe.")]
+#if NET5_0_OR_GREATER
+[RequiresUnreferencedCode("This action is not trim-safe, as it uses reflection to set the property. Use ChangeDependencyPropertyAction for dependency properties, or write your own purpose-specific action.")]
 #endif
+[ContentProperty(Name = "Value")]
 public sealed class ChangePropertyAction : DependencyObject, IAction
 {
     /// <summary>

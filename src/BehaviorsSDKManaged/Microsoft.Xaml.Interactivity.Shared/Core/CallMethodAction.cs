@@ -19,7 +19,7 @@ namespace Microsoft.Xaml.Interactivity;
 /// <summary>
 /// An action that calls a method on a specified object when invoked.
 /// </summary>
-#if NET8_0_OR_GREATER
+#if NET5_0_OR_GREATER
 [RequiresUnreferencedCode("This action is not trim-safe.")]
 #endif
 public sealed class CallMethodAction : DependencyObject, IAction
