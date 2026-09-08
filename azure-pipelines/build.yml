@@ -158,6 +158,7 @@ extends:
             SymbolsProject: VS
             SymbolsAgentPath: $(Pipeline.Workspace)\Symbols
             SubmitToInternet: false
+            SuppressSymwebOnlyWarning: true
           env:
             SYSTEM_ACCESSTOKEN: $(System.AccessToken)
         - task: CopyFiles@2
