@@ -3,99 +3,47 @@
 
 namespace Microsoft.Xaml.Interactivity;
 
-using Windows.ApplicationModel.Resources;
-
-internal static class ResourceHelper
+internal static partial class ResourceHelper
 {
-#if NET8_0_OR_GREATER && !MODERN_WINDOWS_UWP
-    private static ResourceLoader strings = new ResourceLoader(ResourceLoader.GetDefaultResourceFilePath(), "Microsoft.Xaml.Interactivity/Strings");
-#endif
-
-    public static string GetString(string resourceName)
-    {
-#if !NET8_0_OR_GREATER || MODERN_WINDOWS_UWP
-        ResourceLoader strings = ResourceLoader.GetForCurrentView("Microsoft.Xaml.Interactivity/Strings");
-#endif
-        return strings.GetString(resourceName);
-    }
-
     public static string CallMethodActionValidMethodNotFoundExceptionMessage
-    {
-        get
-        {
-            return ResourceHelper.GetString("CallMethodActionValidMethodNotFoundExceptionMessage");
-        }
-    }
+        => Strings.GetString(nameof(CallMethodActionValidMethodNotFoundExceptionMessage));
 
     public static string ChangePropertyActionCannotFindPropertyNameExceptionMessage
-    {
-        get
-        {
-            return ResourceHelper.GetString("ChangePropertyActionCannotFindPropertyNameExceptionMessage");
-        }
-    }
+        => Strings.GetString(nameof(ChangePropertyActionCannotFindPropertyNameExceptionMessage));
 
     public static string ChangePropertyActionCannotSetValueExceptionMessage
-    {
-        get
-        {
-            return ResourceHelper.GetString("ChangePropertyActionCannotSetValueExceptionMessage");
-        }
-    }
+        => Strings.GetString(nameof(ChangePropertyActionCannotSetValueExceptionMessage));
 
     public static string ChangePropertyActionPropertyIsReadOnlyExceptionMessage
-    {
-        get
-        {
-            return ResourceHelper.GetString("ChangePropertyActionPropertyIsReadOnlyExceptionMessage");
-        }
-    }
+        => Strings.GetString(nameof(ChangePropertyActionPropertyIsReadOnlyExceptionMessage));
 
     public static string GoToStateActionTargetHasNoStateGroups
-    {
-        get
-        {
-            return ResourceHelper.GetString("GoToStateActionTargetHasNoStateGroups");
-        }
-    }
+        => Strings.GetString(nameof(GoToStateActionTargetHasNoStateGroups));
 
     public static string CannotAttachBehaviorMultipleTimesExceptionMessage
-    {
-        get
-        {
-            return ResourceHelper.GetString("CannotAttachBehaviorMultipleTimesExceptionMessage");
-        }
-    }
+        => Strings.GetString(nameof(CannotAttachBehaviorMultipleTimesExceptionMessage));
 
     public static string CannotFindEventNameExceptionMessage
-    {
-        get
-        {
-            return ResourceHelper.GetString("CannotFindEventNameExceptionMessage");
-        }
-    }
+        => Strings.GetString(nameof(CannotFindEventNameExceptionMessage));
+
+    public static string InvalidAssociatedObjectExceptionMessage
+        => Strings.GetString(nameof(InvalidAssociatedObjectExceptionMessage));
+
+    public static string NonActionAddedToActionCollectionExceptionMessage
+        => Strings.GetString(nameof(NonActionAddedToActionCollectionExceptionMessage));
+
+    public static string NonBehaviorAddedToBehaviorCollectionExceptionMessage
+        => Strings.GetString(nameof(NonBehaviorAddedToBehaviorCollectionExceptionMessage));
+
+    public static string DuplicateBehaviorInCollectionExceptionMessage
+        => Strings.GetString(nameof(DuplicateBehaviorInCollectionExceptionMessage));
 
     public static string InvalidLeftOperand
-    {
-        get
-        {
-            return ResourceHelper.GetString("InvalidLeftOperand");
-        }
-    }
+        => Strings.GetString(nameof(InvalidLeftOperand));
 
     public static string InvalidRightOperand
-    {
-        get
-        {
-            return ResourceHelper.GetString("InvalidRightOperand");
-        }
-    }
+        => Strings.GetString(nameof(InvalidRightOperand));
 
     public static string InvalidOperands
-    {
-        get
-        {
-            return ResourceHelper.GetString("InvalidOperands");
-        }
-    }
+        => Strings.GetString(nameof(InvalidOperands));
 }
