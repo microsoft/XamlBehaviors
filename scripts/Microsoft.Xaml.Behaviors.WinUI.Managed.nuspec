@@ -7,7 +7,7 @@
         <authors>Microsoft</authors>
         <owners>xamlexperiencesteam,Microsoft</owners>
         <requireLicenseAcceptance>true</requireLicenseAcceptance>
-        <description>Easily add interactivity to your WinUI apps using XAML Behaviors. Behaviors encapsulate reusable functionalities for elements that can be easily added to your XAML without the need for more imperative code. This is the managed version for C# UWP WinUI projects.</description>
+        <description>Easily add interactivity to your WinUI 3 apps using XAML Behaviors. Behaviors encapsulate reusable functionalities for elements that can be easily added to your XAML without the need for more imperative code. This is the managed version for C# WinUI 3 (Windows App SDK) projects.</description>
         <license type="expression">MIT</license>
         <projectUrl>http://go.microsoft.com/fwlink/?LinkID=651678</projectUrl>
         <iconUrl>http://go.microsoft.com/fwlink/?LinkID=708511</iconUrl>
