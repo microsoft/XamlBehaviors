@@ -33,7 +33,7 @@ jobs:
       run: msbuild src\BehaviorsSDKManaged\BehaviorsSDKManaged.sln /p:Configuration=Release -v:diag /bl
     
     - name: Upload MSBuild binary log
-      uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+      uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
       with:
         name: msbuild_binlog_Release_x64
         path: msbuild.binlog
@@ -46,7 +46,7 @@ jobs:
       run: msbuild /t:pack src\BehaviorsSDKManaged\Microsoft.Xaml.Interactivity.WinUI\Microsoft.Xaml.Interactivity.WinUI.csproj /p:Configuration=Release /p:TimestampPackage=true
     
     - name: Upload NuGet packages
-      uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+      uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
       with:
         name: nuget_packages
         path: out\NuGetPackages\*.nupkg
@@ -78,7 +78,7 @@ jobs:
       run: msbuild samples\CS\XAMLBehaviorsSample.sln /p:Configuration=Release -v:diag /bl
     
     - name: Upload MSBuild binary log
-      uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+      uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
       with:
         name: msbuild_samples_binlog_Release_x64
         path: msbuild.binlog
