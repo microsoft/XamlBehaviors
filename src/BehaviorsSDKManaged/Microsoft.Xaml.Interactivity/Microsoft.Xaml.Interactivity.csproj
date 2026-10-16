@@ -108,6 +108,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\Version\Version.cs" />
+    <Compile Include="Core\ResourceHelper.cs" />
     <EmbeddedResource Include="Properties\Microsoft.Xaml.Interactivity.rd.xml" />
   </ItemGroup>
   <ItemGroup>

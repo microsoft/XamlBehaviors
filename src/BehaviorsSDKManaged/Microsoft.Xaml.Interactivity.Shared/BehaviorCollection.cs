@@ -60,7 +60,7 @@ public sealed partial class BehaviorCollection : DependencyObjectCollection
 
         if (this.AssociatedObject != null)
         {
-            throw new InvalidOperationException(ResourceHelper.GetString("CannotAttachBehaviorMultipleTimesExceptionMessage"));
+            throw new InvalidOperationException(ResourceHelper.CannotAttachBehaviorMultipleTimesExceptionMessage);
         }
 
         Debug.Assert(associatedObject != null, "The previous checks should keep us from ever setting null here.");
@@ -162,12 +162,12 @@ public sealed partial class BehaviorCollection : DependencyObjectCollection
         IBehavior behavior = item as IBehavior;
         if (behavior == null)
         {
-            throw new InvalidOperationException(ResourceHelper.GetString("NonBehaviorAddedToBehaviorCollectionExceptionMessage"));
+            throw new InvalidOperationException(ResourceHelper.NonBehaviorAddedToBehaviorCollectionExceptionMessage);
         }
 
         if (this._oldCollection.Contains(behavior))
         {
-            throw new InvalidOperationException(ResourceHelper.GetString("DuplicateBehaviorInCollectionExceptionMessage"));
+            throw new InvalidOperationException(ResourceHelper.DuplicateBehaviorInCollectionExceptionMessage);
         }
 
         if (this.AssociatedObject != null)

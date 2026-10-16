@@ -125,7 +125,7 @@ public sealed class GoToStateAction : DependencyObject, IAction
         }
 
         FrameworkElement element = sender as FrameworkElement;
-        if (element == null || !EventTriggerBehaviorHelpers.IsElementLoaded(element))
+        if (element == null || !LoadedTriggerBehavior.IsElementLoaded(element))
         {
             return false;
         }
