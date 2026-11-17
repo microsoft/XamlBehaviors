@@ -42,7 +42,7 @@ extends:
     settings:
       networkIsolationPolicy: Permissive,CFSClean,CFSClean2,CFSClean3
     pool:
-      name: VSEngSS-MicroBuild2022-1ES
+      name: VSEng-MicroBuildVSStable
     sdl:
       sourceAnalysisPool:
         name: AzurePipelines-EO
@@ -62,9 +62,9 @@ extends:
         displayName: 'Build'
         timeoutInMinutes: 120
         pool:
-          name: VSEngSS-MicroBuild2022-1ES
+          name: VSEng-MicroBuildVSStable
           demands:
-          - ImageOverride -equals server2022-microbuildVS2022-1ES
+          - ImageOverride -equals server2025-microbuildVSStable
         templateContext:
           mb:
             signing:
